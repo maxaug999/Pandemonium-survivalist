@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Assault Rifle Ammo Belt</NativeName>
+  <NativeDescription>Assault rifle ammo bundle</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>3</Weight>
+  <BasePrice>60</BasePrice>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ZombieII</Name>
+      <OverrideScarcity>Legendary</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

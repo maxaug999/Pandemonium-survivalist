@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Invisible Strain Antigen</NativeName>
+  <NativeDescription>A mutated variant which means someone must have growing this in a lab. Must administer quickly upon transformation. or just shooting it in the head is much quicker method.</NativeDescription>
+  <Category>3:Medical/Antigen/4</Category>
+  <Weight>0.01</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <AntigenType>Invisible</AntigenType>
+  <EquippedModelName>Prefabs/Equipment/Med Items Pack/Syringe</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

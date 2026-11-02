@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Dried Leaves</NativeName>
+  <NativeDescription>Makes you hallucinate that you've been eating. makes you keep going.</NativeDescription>
+  <Category>9:Special</Category>
+  <Weight>1</Weight>
+  <BasePrice>5</BasePrice>
+  <Nutrition>0.33</Nutrition>
+  <Caffeine>0.125</Caffeine>
+  <Tastiness>50</Tastiness>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+      <OverrideScarcity>Uncommon</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor>
+    <string>Anyone</string>
+  </GiftFor>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>-1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

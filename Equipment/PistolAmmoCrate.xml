@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Pistol Ammo Crate</NativeName>
+  <NativeDescription>Contains 1250 Pistol rounds</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>50</Weight>
+  <BasePrice>1250</BasePrice>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>PassengerPlane</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

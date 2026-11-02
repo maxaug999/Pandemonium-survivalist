@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Energy Drink</NativeName>
+  <NativeDescription>It tastes good before expiration date which is due a long time ago.</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>1</Weight>
+  <BasePrice>15</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Caffeine>1</Caffeine>
+  <Water>0.25</Water>
+  <Tastiness>-20</Tastiness>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>VendingMachine</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>25</SkillOnConsumptionProgression>
+</EquipmentPrototype>

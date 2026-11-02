@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Shovel</TypeName>
+  <NativeName>Shovel</NativeName>
+  <NativeDescription>Can be used to dig graves, pit traps with spikes in them (if you have construction skill level 1), and wells (level 3).  You'll probably also need an axe to chop down some wood, and a backpack to carry it.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>6</Weight>
+  <BasePrice>15</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Prefabs/Equipment/RustyShovel</EquippedModelName>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.25</Damage>
+  <DamageBonusPerSkillLevel>0.05</DamageBonusPerSkillLevel>
+  <Range>2.25</Range>
+  <FatiguePenaltyWhenAttacking>0.125</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

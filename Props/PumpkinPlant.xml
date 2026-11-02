@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PlantableCrop</TypeName>
+  <NativeName>Pumpkin</NativeName>
+  <Category>Crops</Category>
+  <PrefabNames>
+    <string>Prefabs\Props\Farm Plants\Plants\Soil</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage1</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage2</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage3</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage4</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin</string>
+  </PrefabNames>
+  <DeadPrefabNames>
+    <string>Prefabs\Props\Farm Plants\Plants\Soil</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage1_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage2_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage3_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Stage4_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Pumpkin\Pumpkin_Dead</string>
+  </DeadPrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>2</MaxDamage>
+  <CoverType>None</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <BulletHitEffect>None</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WantSoundOnDemolition>false</WantSoundOnDemolition>
+  <RepairAnim>Crafting</RepairAnim>
+  <CaptureResourceType>PumpkinSeeds</CaptureResourceType>
+  <HarvestType>Pumpkin</HarvestType>
+  <HarvestSeedsType>PumpkinSeeds</HarvestSeedsType>
+  <MaxYield>5</MaxYield>
+  <MaxSeedsYield>2</MaxSeedsYield>
+  <WaterNeededPerDayInFlOz>50</WaterNeededPerDayInFlOz>
+  <Color>
+    <r>255</r>
+    <g>153</g>
+    <b>0</b>
+    <a>255</a>
+  </Color>
+</PropPrototype>

@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>18</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-319.546753</x>
+    <y>691.9255</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.635511</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="DrinkingGame_KnowAny" x="599.579956" y="-286.4093" NativeText="Know any good drinking games?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Rules" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="Actor" StringData="Flirt_GetDrunk" />
+        <Condition Type="VariableEquals" Subject="Target" Object="Actor" Data="1" StringData="DrinkingGame_ExplainedRules" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Rules" x="1623.32751" y="-359.4286" NativeText="Here's one we used to play in my old group.  I'll tell you some gossip, and you tell me if I'm lying or telling the truth.  If you get it right, I drink, but if you get it wrong you got to take a swig.  What do you think?">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_CouldBeFun" />
+        <SpeechRef UniqueID="DrinkingGame_DontKnow" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="SetVariable" Subject="Actor" Object="Target" Data="1" StringData="DrinkingGame_ExplainedRules" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_DontKnow" x="2643.10547" y="-939.6468" NativeText="I don't know... I'm not really feeling it.">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_ChangeYourMind" />
+        <SpeechRef UniqueID="DrinkingGame_YoureTheOne" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_CouldBeFun" x="2663.39233" y="-260.69693" NativeText=":-) That could be fun!">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_LetMeKnow" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_LetMeKnow" x="3597.963" y="-244.46701" NativeText=":-) Let me know when you're ready!" />
+    <Speech UniqueID="DrinkingGame_ChangeYourMind" x="3651.05713" y="-814.26" NativeText="Oh, well let me know if you change your mind." />
+    <Speech UniqueID="DrinkingGame_HitMe" x="553.439148" y="-2579.96558" NativeText="Hit me!" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Dry" />
+        <SpeechRef UniqueID="DrinkingGame_YourDrink" />
+        <SpeechRef UniqueID="DrinkingGame_Truth" />
+        <SpeechRef UniqueID="DrinkingGame_Lie" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="Actor" StringData="Flirt_GetDrunk" />
+        <Condition Type="VariableEquals" Subject="Target" Object="Actor" Data="1" StringData="DrinkingGame_ExplainedRules" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_YoureTheOne" x="3639.382" y="-1195.20642" NativeText="}:-| Well you're the one that wanted to play a drinking game, it's up to you!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Truth" x="1814.69031" y="-2669.54932" NativeText="Okay, true or false..." SpecialBehaviour="DrinkingGameTruth">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Truth_True" />
+        <SpeechRef UniqueID="DrinkingGame_Truth_Lie" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Lie" x="1838.75818" y="-3561.88135" NativeText=":-) Okay, true or false..." SpecialBehaviour="DrinkingGameLie">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Lie_True" />
+        <SpeechRef UniqueID="DrinkingGame_Lie_Lie" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Truth_True" x="3153.6394" y="-2136.32031" NativeText="That's true!">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Truth_YoureGood" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Truth_Lie" x="3151.43018" y="-2614.13257" NativeText="That's a lie!">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Truth_DrinkUp" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Truth_YoureGood" x="4438.529" y="-2161.48877" NativeText=":-) Yep!  Damn, you're good.">
+      <Events>
+        <StoryEvent Type="DrinkAlcohol" Subject="Actor" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Truth_DrinkUp" x="4394.53125" y="-2665.32666" NativeText="}:-) Wrong!  Drink up!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DrinkAlcohol" Subject="Target" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Lie_True" x="3156.26514" y="-3309.84863" NativeText="That's true!">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Lie_DrinkUp" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Lie_Lie" x="3149.702" y="-3897.92529" NativeText="That's a lie!">
+      <Replies>
+        <SpeechRef UniqueID="DrinkingGame_Lie_YoureGood" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Lie_DrinkUp" x="4367.861" y="-3282.28271" NativeText="}:-) Wrong!  Drink up!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DrinkAlcohol" Subject="Target" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Lie_YoureGood" x="4358.67236" y="-3922.86621" NativeText=":-) Yep!  Damn, you're good.">
+      <Events>
+        <StoryEvent Type="DrinkAlcohol" Subject="Actor" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_Dry" x="1789.87061" y="-1300.88989" NativeText="I'm dry... top me up first.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasAlcoholicDrink" Subject="Actor" Object="Actor" BoolData="true" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DrinkingGame_YourDrink" x="1800.16589" y="-1948.41577" NativeText="Uh... where's your drink?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasAlcoholicDrink" Subject="Target" Object="Target" BoolData="true" Not="true" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

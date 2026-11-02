@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PlasticBottle</TypeName>
+  <NativeName>Milk Can</NativeName>
+  <NativeDescription>Some old can</NativeDescription>
+  <Category>7:Containers</Category>
+  <Weight>32</Weight>
+  <BasePrice>11</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <LiquidCapacity>500</LiquidCapacity>
+  <DefaultLiquidType>SoyaMilk</DefaultLiquidType>
+  <EquippedModelName>Prefabs/Props/Abandoned Props Pack PBR/PropPlasticBottle</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

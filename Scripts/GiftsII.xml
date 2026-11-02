@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-231.916</x>
+    <y>192.329773</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.663877666</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Gifts_LikeWow" x="407.000366" y="-410.000244" NativeText="8-o Oh wow! I didn't expect that!" Situation="ReceiveGiftLike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Gifts_Neutral" x="398.465149" y="-871.066956" NativeText=":-| Its for? me? ok.." Situation="ReceiveGiftNeutral">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Gifts_Dislike1" x="1075.21863" y="-885.729858" NativeText="}:-) Nice! trash has a new gift!" Situation="ReceiveGiftDislike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Gifts_Dislike2" x="660.1432" y="-1394.4231" NativeText="}:-( Could ya get this back to the sender? thanks." Situation="ReceiveGiftDislike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Gifts_HolyShit" x="1124.84058" y="-421.240326" NativeText="8-o Holy shit! where did you find one!? thanks!" Situation="ReceiveGiftLike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Gifts_AnotherGift" x="1817.13281" y="-442.6514" NativeText="}:-) Oh another gift? you really are spoiling me aren't you? haha!" Situation="ReceiveGiftLike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Gifts_Dislike3" x="1365.89368" y="-1404.36938" NativeText="}:-) You'r gift sucks!" Situation="ReceiveGiftDislike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

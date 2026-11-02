@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Golf Club</NativeName>
+  <NativeDescription>The super-light hollow titanium body construction delivers a masterful combination of power and accuracy, making this the perfect choice for the golfing professional, or anyone in a zombie apocalypse situation.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>1</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Special>true</Special>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Golf/GolfClub_v1</EquippedModelName>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>1</Damage>
+  <DamageBonusPerSkillLevel>0.2</DamageBonusPerSkillLevel>
+  <Range>2.5</Range>
+  <FatiguePenaltyWhenAttacking>0.075</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

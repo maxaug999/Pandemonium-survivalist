@@ -1,0 +1,1001 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>60</NextFreeSpeechID>
+  <NextFreeTriggerID>9</NextFreeTriggerID>
+  <NextFreeConditionBlockID>13</NextFreeConditionBlockID>
+  <NextFreeQuestID>7</NextFreeQuestID>
+  <NextFreeQuestGroupID>3</NextFreeQuestGroupID>
+  <NextFreeTemplateID>5</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>4245.62549</x>
+    <y>-921.3955</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4851489</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="SatPhone_LongTermPlan" x="-8127.89551" y="3132.16968" NativeText="Hi hon.  I'm glad you asked me because I've been thinking... what's our long term plan?  We're never really going to be safe here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_QuarantineZones" />
+        <SpeechRef UniqueID="SatPhone_KnowTheyreOutThere" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="EmpireBuilding_Satphone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="EmpireBuilding_RecruitEveryone" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsPlayer" Subject="Target" />
+        <Condition Type="HasTravelledFromAnotherMap" Subject="Actor" Not="true" />
+        <Condition Type="HasMemory" Subject="Target" Object="Actor" ThirdParty="Target" StringData="ToldAboutFEMA" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="SatPhone_QuarantineZones" x="-6884.929" y="1735.524" NativeText="{:-| I've heard there are still quarantine zones out there somewhere, with army protection.  They've got food, electricity, running water, medical facilities...  Maybe it's not true, I don't know.">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_IfItIsTrue" />
+        <SpeechRef UniqueID="SatPhone_IfItIsTrue2" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_IfItIsTrue" x="-5798.527" y="1938.913" NativeText="{:-) But if it is true... hon, what do you say we try and find one?  We could have a good life together in a place like that.  We could.. have a family.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GreatIdea" />
+        <SpeechRef UniqueID="SatPhone_PipeDream" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_GreatIdea" x="-4283.60156" y="1104.68542" NativeText=":-) That's a great idea!">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GladYoureWithMe" />
+        <SpeechRef UniqueID="SatPhone_OnTheSamePage" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_PipeDream" x="-4282.35938" y="584.785339" NativeText=":-( That's just a pipe dream.  We need to be realistic.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_Alternative" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_GladYoureWithMe" x="-3232.15234" y="2089.85474" NativeText=":-) So glad you're with me!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="SatPhone_OnTheSamePage" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_Satphone" x="6447.21826" y="294.4761" NativeText="I've heard you might be able to contact someone by satellite phone.  I was given a number once, which I've been saving for the right time.  The old terrestrial phone network doesn't work, of course, but satellites are still orbiting.  Some of them, anyway.  We'd just need a satphone.">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ToldAboutFEMA" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Supported" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="GiveEquipment" Subject="Actor" Object="Target" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="SpawnTemplate" StringData="SatPhone_Template" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_Satphone2" x="6463.7085" y="-1490.90332" NativeText="If we could contact someone... we might be able to trade some useful equipment with them.  They'll have access to the kinds of hardware and resources that our regular traders simply can't get hold of.  If we want to take over this area, we'll need that kind of shit!">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_RecruitEveryone" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ToldAboutFEMA" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Contradicted" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="GiveEquipment" Subject="Actor" Object="Target" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="SpawnTemplate" StringData="SatPhone_Template" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_LookingFor" x="-3867.517" y="-5826.99365" NativeText="I'm looking for a satphone..." Situation="QuestTopic" PerObjectType="PerActiveQuestObject">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_Nope" />
+        <SpeechRef UniqueID="SatPhone_Nope2" />
+        <SpeechRef UniqueID="SatPhone_WouldntKnow" />
+        <SpeechRef UniqueID="SatPhone_Wat" />
+        <SpeechRef UniqueID="SatPhone_OrbitalDecay" />
+        <SpeechRef UniqueID="SatPhone_MightKnow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_LookingForSatphone" />
+            <ConditionBlockRef UniqueID="SatPhone_LookingForSatphone2" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="FriendsWith" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_Nope" x="-1071.35583" y="-4809.104" NativeText="I haven't come across one." />
+    <Speech UniqueID="SatPhone_Nope2" x="-1068.954" y="-5130.85059" NativeText="I'm afraid I can't help you." />
+    <Speech UniqueID="SatPhone_WouldntKnow" x="-1067.72522" y="-5396.241" NativeText="I wouldn't know where to find one of those." />
+    <Speech UniqueID="SatPhone_Wat" x="-2477.99121" y="-5977.20361" NativeText="Huh?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_Nope" />
+        <SpeechRef UniqueID="SatPhone_Nope2" />
+        <SpeechRef UniqueID="SatPhone_WouldntKnow" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_MightKnow" x="-2481.20166" y="-7412.095" NativeText="Yeah I might know where you can get one.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_Trader" />
+        <SpeechRef UniqueID="SatPhone_Looter" />
+        <SpeechRef UniqueID="SatPhone_Normal" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_OrbitalDecay" x="-2469.29541" y="-6662.895" NativeText="Hmm, as long as the satellite network hasn't yet succumbed to orbital decay, it should still be quite usable - if you know who to call, of course.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_Nope" />
+        <SpeechRef UniqueID="SatPhone_Nope" />
+        <SpeechRef UniqueID="SatPhone_WouldntKnow" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_Trader" x="924.4496" y="-5239.57275" NativeText="There's a trader by the name of %1 who I've heard can hook you up with one.  Won't be cheap.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingTrader" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Located" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Located2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_Looter" x="932.6991" y="-6558.71826" NativeText="There's a %1 in %2 by the name of %3 who I've heard might have one.  They're looters, watch out!">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="FullName" Subject="ReferringTo" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Located" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Located2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_Normal" x="926.2457" y="-7955.32666" NativeText="There's a %1 in %2 by the name of %3 who I've heard might have one.  Won't be cheap.">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="FullName" Subject="ReferringTo" BoolData="true" />
+      </Params>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Located" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Located2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_GetMeASatphone" x="-915.4984" y="-9532.258" NativeText="I've been told you can get me a satphone." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_RightPrice" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_HasSatPhone" />
+            <ConditionBlockRef UniqueID="SatPhone_HasSatPhone2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_RightPrice" x="-40.19043" y="-9506.072" NativeText="Yeah I might be able to, for the right price.  To you, that'd be %1 gold.">
+      <Params>
+        <SpeechParam Type="PriceToSellItem" Subject="Actor" Object="Target" StringData="SatellitePhone" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GoodForIt" />
+        <SpeechRef UniqueID="SatPhone_CantAffordThat" />
+        <SpeechRef UniqueID="SatPhone_LendMeThePhone" />
+        <SpeechRef UniqueID="SatPhone_LotOfGold" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_GoodForIt" x="3815.48438" y="-8583.559" NativeText="I'm good for it.">
+      <Conditions>
+        <Condition Type="CanAffordItemOfType" Subject="Actor" Object="Target" StringData="SatellitePhone" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OpenTradeScreen" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_CantAffordThat" x="3808.33984" y="-9656.104" NativeText="}:-| I can't afford that." />
+    <Speech UniqueID="SatPhone_LendMeThePhone" x="3820.7666" y="-10377.832" NativeText="}:-| How about you lend me the phone, because we're such good friends?  You don't want me as an enemy do you?">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_YoullGiveItBack" />
+        <SpeechRef UniqueID="SatPhone_ForgetYouSaidThat" />
+        <SpeechRef UniqueID="SatPhone_TryThatShit" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_YoullGiveItBack" x="4663.049" y="-9584.623" NativeText="{:-( Uh.. okay.  You'll give it back, right?" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_WheneverImDone" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="60" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_WheneverImDone" x="5691.47559" y="-9634.264" NativeText="}:-) Sure I will.  Whenever I'm done using it.">
+      <Events>
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="1" StringData="SatellitePhone" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="1" StringData="BrokenSatellitePhone" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_ForgetYouSaidThat" x="4648.73926" y="-10328.49" NativeText="}:-[ How about since we're such good friends I'll forget you said that.  This time.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SatPhone_TryThatShit" x="4659.949" y="-11173.2168" NativeText="}:-[ Don't think you can try that shit on me and get away with it!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="50" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SatPhone_LotOfGold" x="877.359741" y="-11256.1445" NativeText="}:-| That's a lot of gold.  How do I know this thing is even going to work?">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_Trustworthy" />
+        <SpeechRef UniqueID="SatPhone_NotTrustworthy" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_Trustworthy" x="1731.65442" y="-10696.8867" NativeText="Hey, I'm a trustworthy %1, I wouldn't try to rip you off.  Do you have the gold or not?">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GoodForIt" />
+        <SpeechRef UniqueID="SatPhone_CantAffordThat" />
+        <SpeechRef UniqueID="SatPhone_LendMeThePhone" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="SatellitePhone" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_NotTrustworthy" x="1727.99524" y="-11529.8652" NativeText="8-( Hey, I'm a trustworthy %1, I wouldn't try to rip you off.  Do you have the gold or not?">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GoodForIt" />
+        <SpeechRef UniqueID="SatPhone_CantAffordThat" />
+        <SpeechRef UniqueID="SatPhone_LendMeThePhone" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="BrokenSatellitePhone" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_IsAnyoneThere" x="-2610.20557" y="-13473.208" NativeText="Okay here we go..  Hello?  Hello...?  Is anyone there?  Hello?!" Situation="CustomUseAction">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_NothingAtAll" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="BrokenSatellitePhone" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="PhoneNumber" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_NothingAtAll" x="-1876.78662" y="-13549.94" NativeText=":-( Nothing.  Nothing at all.  Not even a wrong number tone, it's dead.">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_Conned" />
+        <SpeechRef UniqueID="SatPhone_FindAnother" />
+        <SpeechRef UniqueID="SatPhone_JustBroken" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_PhoneYouSoldMe" x="2033.147" y="-12670.57" NativeText="}:-| This phone you sold me doesn't work." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_NotUsingItRight" />
+        <SpeechRef UniqueID="SatPhone_DontDoRefunds" />
+        <SpeechRef UniqueID="SatPhone_ShitOutOfLuck" />
+        <SpeechRef UniqueID="SatPhone_NotMyProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="EmpireBuilding_GetRefund" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="BrokenSatellitePhone" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_DontDoRefunds" x="3050.71875" y="-13289.9648" NativeText="Sorry man, I don't do refunds.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GiveMeBack" />
+        <SpeechRef UniqueID="SatPhone_NeverMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_NotUsingItRight" x="3038.86035" y="-12612.6816" NativeText="}:-| You're probably just not using it right.  Maybe you got the wrong number.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GiveMeBack" />
+        <SpeechRef UniqueID="SatPhone_NeverMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_ShitOutOfLuck" x="3047.92969" y="-13875.8594" NativeText="}:-[ I guess you're shit out of luck then aren't you!">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GiveMeBack" />
+        <SpeechRef UniqueID="SatPhone_NeverMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_NotMyProblem" x="3046.53418" y="-14516.2773" NativeText="That's not my problem.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GiveMeBack" />
+        <SpeechRef UniqueID="SatPhone_NeverMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_GiveMeBack" x="4366.56152" y="-13290.4629" NativeText="}:-| Give me back my gold and we'll say no more about this.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_AllIGot" />
+        <SpeechRef UniqueID="SatPhone_MakeAnException" />
+        <SpeechRef UniqueID="SatPhone_TakeAHike" />
+        <SpeechRef UniqueID="SatPhone_CaveatEmptor" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_NeverMind" x="4354.40527" y="-13986.3086" NativeText="Oh okay.  Never mind.">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Target" StringData="EmpireBuilding_GetRefund" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_MakeAnException" x="5677.69727" y="-13428.1563" NativeText="{:-| Uh.. you know normally I don't do refunds but I guess I can make an exception just for you." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CanAffordToRefundItemOfType" Subject="Actor" Object="Target" Data="1000" StringData="BrokenSatellitePhone" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="40" Data2="40" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="RefundItem" Subject="Actor" Object="Target" Data="1" StringData="BrokenSatellitePhone" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="EmpireBuilding_GetRefund" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_TakeAHike" x="5704.22656" y="-15151.4082" NativeText="Take a hike, loser.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SatPhone_CaveatEmptor" x="5664.18652" y="-16033.8594" NativeText="}:-| Caveat emptor motherfucker!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="50" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="FailQuest" Subject="Actor" StringData="EmpireBuilding_GetRefund" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SatPhone_Broken_NeedContactDetails" x="-2605.19727" y="-12813.4424" NativeText="I'd need a new number to try." Situation="CustomUseAction">
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="BrokenSatellitePhone" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="PhoneNumber" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_Conned" x="-309.9075" y="-12119.6543" NativeText="}:-| This is bullshit - %1 got conned!  %2 has got some explaining to do." PerObjectType="PerActiveQuestGiver">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="VariableEquals" Data="1" StringData="BrokenSatPhoneWasTraded" />
+        <Condition Type="QuestIsActive" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" StringData="EmpireBuilding_GetRefund" />
+        <StoryEvent Type="SpawnTemplate" StringData="SatPhone_Template2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_FindAnother" x="-303.817719" y="-14013.9434" NativeText="}:-| Dammit, this thing doesn't work at all.  We're going to need to find another one." PerObjectType="PerActiveQuestGiver">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="VariableEquals" StringData="BrokenSatPhoneWasTraded" />
+        <Condition Type="QuestIsActive" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall" />
+        <StoryEvent Type="SpawnTemplate" StringData="SatPhone_Template2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_Alternative" x="-3400.74414" y="535.2121" NativeText="What alternative is there?">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_NeverBeSafe" />
+        <SpeechRef UniqueID="SatPhone_TakeOver" />
+        <SpeechRef UniqueID="SatPhone_HitTheRoad" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_TakeOver" x="-2074.42285" y="164.877869" NativeText="}:-) We take over this whole area!">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_WhenWereInCharge" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_WhenWereInCharge" x="-1184.84851" y="111.473694" NativeText="When we're in charge we won't need the military or anyone else to protect us!">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GuessSo" />
+        <SpeechRef UniqueID="SatPhone_PushedAround" />
+        <SpeechRef UniqueID="SatPhone_DoItEthically" />
+        <SpeechRef UniqueID="SatPhone_SoundsRisky" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_NeverBeSafe" x="-1708.91833" y="768.553955" NativeText="You're right, we'll never be truly safe here.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GladYoureWithMe" />
+        <SpeechRef UniqueID="SatPhone_OnTheSamePage" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_KeepAnEye" x="5362.546" y="-770.281" NativeText="The old terrestrial phone network doesn't work, of course, but satellites are still orbiting.  Some of them, anyway.  Rumor has it there are still people using satphones.">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_Satphone2" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_AllIGot" x="5670.455" y="-11573.4141" NativeText="{:-| Hey, this is all I got alright?  Just take it!  ...%1." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Data="1" />
+        <Condition Type="CanAffordToRefundItemOfType" Subject="Actor" Object="Target" Data="1000" StringData="BrokenSatellitePhone" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="40" Data2="40" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="RefundItem" Subject="Actor" Object="Target" Data="1" StringData="BrokenSatellitePhone" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="EmpireBuilding_GetRefund" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_LongTermPlan2" x="-8143.225" y="1561.63" NativeText="Hey, whaddup.  I'm glad you asked me actually because I've been thinking... what's our long term plan?  We're never really going to be safe here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_QuarantineZones" />
+        <SpeechRef UniqueID="SatPhone_KnowTheyreOutThere" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="FriendsWith" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="EmpireBuilding_Satphone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="EmpireBuilding_RecruitEveryone" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsPlayer" Subject="Target" />
+        <Condition Type="HasTravelledFromAnotherMap" Subject="Actor" Not="true" />
+        <Condition Type="HasMemory" Subject="Target" Object="Actor" ThirdParty="Target" StringData="ToldAboutFEMA" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="SatPhone_IfItIsTrue2" x="-5794.95557" y="1002.42072" NativeText="{:-) But if it is true... what do you say we try and find one?  We could have a pretty good life in a place like that, and we'd be helping to rebuild civilization.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GreatIdea" />
+        <SpeechRef UniqueID="SatPhone_PipeDream" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_KeepAnEye2" x="5327.507" y="-1424.00562" NativeText="The old terrestrial phone network doesn't work, of course, but satellites are still orbiting.  Some of them, anyway.  And we have a satphone!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_Satphone2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Data="1" StringData="SatellitePhone" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_WeHaveOne" x="6431.9" y="2412.75415" NativeText="We already have a satphone.  And from what I've heard, people in the safe zones are still using them.  I was given a number once, which I've been saving for the right time.  The old terrestrial phone network doesn't work, of course, but satellites are still orbiting.  We should try and call them!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" Data="1" StringData="SatellitePhone" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ToldAboutFEMA" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Supported" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="GiveEquipment" Subject="Actor" Object="Target" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="SpawnTemplate" StringData="SatPhone_Template" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_KnowTheyreOutThere" x="-6619.50635" y="709.3486" NativeText="I want to try and get into a quarantine zone.  We've already contacted FEMA so we know they're out there!  What do you say we try to join them?  We could have a good life, we could help rebuild civilization... and we'd be safe.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_GreatIdea" />
+        <SpeechRef UniqueID="SatPhone_PipeDream" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_HasMetHeliTeam" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_ForTrading" x="3726.14673" y="-1546.14514" NativeText="Don't throw away the phone just yet, it'd be useful to be in touch with FEMA for trading supplies.  They'll have access to the kinds of hardware and resources our regular traders would struggle to get hold of.  If we want to take over this area, we'll need that kind of shit!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_HasMetHeliTeam" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ToldAboutFEMA" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Contradicted" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" StringData="EmpireBuilding_Trust" />
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_RecruitEveryone" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_AcceptUs" x="6434.34229" y="4215.658" NativeText="{:-| We know someone is out there.  Let's just hope their intentions are good and they'll accept us.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_HasMetHeliTeam" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ToldAboutFEMA" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Supported" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" StringData="EmpireBuilding_Trust" />
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_SeekRefuge" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_OnTheSamePage" x="1666.21033" y="951.7938" NativeText="{:-) I knew you'd be on the same page as me.">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_AcceptUs" />
+        <SpeechRef UniqueID="SatPhone_WeHaveOne" />
+        <SpeechRef UniqueID="SatPhone_Satphone" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_HitTheRoad" x="-2231.651" y="-1113.976" NativeText="We hit the road, and just keep on driving until we find somewhere we can call home.">
+      <Replies>
+        <SpeechRef UniqueID="SatPhone_RunAway" />
+        <SpeechRef UniqueID="SatPhone_Irresponsible" />
+        <SpeechRef UniqueID="SatPhone_SomethingBetter" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_SoundsRisky" x="1614.96045" y="-2292.933" NativeText="Take over the area?  That sounds... risky.  Will people mind, do you think?  What if they try to stop us?  We should have a backup plan, just in case.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_TheRightOccasion" />
+        <SpeechRef UniqueID="SatPhone_ForTrading" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_DoItEthically" x="1608.1875" y="-1291.36182" NativeText="{:-| Take over the area?  But we'd do it... ethically, right?  I don't want to be evil overlords, just... the good kind.  I guess if we're protecting people from looters it's okay.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_TheRightOccasion" />
+        <SpeechRef UniqueID="SatPhone_ForTrading" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Amoral" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_TheRightOccasion" x="3708.44263" y="-744.1171" NativeText="Hear me out, I think this might still help.  You might be able to contact someone by satellite phone.  I was given a number once, which I've saved all this time waiting for the right occasion.">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_KeepAnEye" />
+        <SpeechRef UniqueID="SatPhone_KeepAnEye2" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_PushedAround" x="1603.39856" y="-716.9123" NativeText="}:-) Take over the area?  I like your thinking!  I'm sick of getting pushed around.  But we need to build up our strength.">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_TheRightOccasion" />
+        <SpeechRef UniqueID="SatPhone_ForTrading" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_RunAway" x="-1238.04492" y="-617.340942" NativeText=":-) Just drive away and leave it all behind?  That's a plan I could get behind even if all this wasn't going on!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_PartsForOurJourney" />
+        <SpeechRef UniqueID="SatPhone_NeedThatForOurTrip" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_Irresponsible" x="-1253.65308" y="-1456.61023" NativeText="}:-| That sounds kinda irresponsible... what about all the people here?  We abandon them?  I'll go if you go but I'd rather try to build something for us all.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_PartsForOurJourney" />
+        <SpeechRef UniqueID="SatPhone_NeedThatForOurTrip" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_ResponsibleOne" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_SomethingBetter" x="-1257.1792" y="-2372.497" NativeText=":-) I like it.  There has to be something better out there somewhere for us.">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_PartsForOurJourney" />
+        <SpeechRef UniqueID="SatPhone_NeedThatForOurTrip" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_PartsForOurJourney" x="-372.587128" y="-1257.10925" NativeText="But hear me out, I think this could still help.  I've heard rumors the satellite network is still working, if you can find a satphone.  And I was given a number to call, which I've been saving for just such an occasion.  Apparently they can help us, and if not, well we might be able to trade parts and supplies for our journey.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_Quest_FixUpVehicle" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ToldAboutFEMA" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Contradicted" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="GiveEquipment" Subject="Actor" Object="Target" Data="1" StringData="PhoneNumber" />
+        <StoryEvent Type="SpawnTemplate" StringData="SatPhone_Template" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_NeedThatForOurTrip" x="-2349.86572" y="-2225.224" NativeText="But don't throw away the phone just yet, it'd be useful to be in touch with FEMA for trading supplies.  They'll have access to the kinds of hardware and resources our regular traders would struggle to get hold of.  We'll need that for our trip.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_HasMetHeliTeam" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ToldAboutFEMA" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Contradicted" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" StringData="EmpireBuilding_Trust" />
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_Quest_FixUpVehicle" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_JustBroken" x="-308.365356" y="-15571.4092" NativeText=":-( I think this thing is just broken.  God damn it." />
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="SatPhone_DoesntWork" x="8252.413" y="-1307.53235">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_Sociopath" />
+            <ConditionBlockRef UniqueID="SatPhone_Immoral" />
+            <ConditionBlockRef UniqueID="SatPhone_Hypocritical" />
+            <ConditionBlockRef UniqueID="SatPhone_Amoral" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" SubjectModifier="Owner" Data="1" StringData="BrokenSatellitePhone" StringData2="SatPhone_SpawnedBrokenPhone" />
+        <StoryEvent Type="DeleteEquipment" Subject="ReferringTo" SubjectModifier="Owner" Data="1" StringData="SatellitePhone" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone_Located" x="2928.591" y="-5667.089">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone_Location" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone_Located2" x="2926.388" y="-6745.23242">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone2" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone2" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone_Location2" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone_SpawnedBrokenPhone" x="9035.415" y="-1876.34229">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" SubjectModifier="Owner" StringData="EmpireBuilding_Satphone" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone_Works" x="8249.438" y="-2271.46045">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="Or" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_Sociopath" />
+            <ConditionBlockRef UniqueID="SatPhone_Immoral" />
+            <ConditionBlockRef UniqueID="SatPhone_Hypocritical" />
+            <ConditionBlockRef UniqueID="SatPhone_Amoral" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" SubjectModifier="Owner" StringData="EmpireBuilding_Satphone" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone_BrokenSatPhoneWasTraded" x="8474.627" y="-5305.91455">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="HasTradedNItemsOfType" Subject="Player" SubjectModifier="Community" Data="1" StringData="BrokenSatellitePhone" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetVariable" Data="1" StringData="BrokenSatPhoneWasTraded" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="SatPhone_Sociopath" x="10196.4629" y="-992.0244">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Sociopath" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_Immoral" x="10191.6729" y="-1372.09277">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Immoral" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_Hypocritical" x="10178.2988" y="-1725.01465">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Hypocritical" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" StringData="BrokenSatPhone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_Amoral" x="10173.5078" y="-2261.581">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Amoral" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="3" StringData="BrokenSatPhone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_CommunityHasSatellitePhone" x="8698.197" y="-3690.9">
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" SubjectModifier="Community" Data="1" StringData="SatellitePhone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_CommunityHasBrokenSatellitePhone" x="8702.271" y="-4139.286">
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" SubjectModifier="Community" Data="1" StringData="BrokenSatellitePhone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_HasSatellitePhone" x="-3033.55762" y="-9306.248">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="SatellitePhone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_HasBrokenSatellitePhone" x="-3044.643" y="-9790.902">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="BrokenSatellitePhone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_LookingForSatphone" x="-4820.647" y="-6130.29541">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_LookingForSatphone2" x="-4823.577" y="-6503.03467">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone2" />
+        <Condition Type="QuestIsDiscoveredGivenBy" Subject="Target" StringData="EmpireBuilding_Satphone_Location" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_HasSatPhone" x="-1999.29956" y="-9384.633">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="EmpireBuilding_Satphone_Location" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_HasSatellitePhone" />
+            <ConditionBlockRef UniqueID="SatPhone_HasBrokenSatellitePhone" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_HasSatPhone2" x="-2011.27661" y="-10174.9375">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="EmpireBuilding_Satphone_Location2" />
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="SatellitePhone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_HasMetHeliTeam" x="-4958.327" y="106.017578" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="HeliTeam_MeetFEMA" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="HeliTeam_MeetRogueFEMA" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="HeliTeam_MeetInvisibleStrain" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="HeliTeam_MeetLooters" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone_ResponsibleOne" x="-2329.41113" y="-1731.34351" Type="Or">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="EmpireBuilding_Satphone" x="7513.139" y="-2849.51318" GroupID="SatPhone_AWayOut" NativeDescription="Find a Satellite Phone" SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_CommunityHasSatellitePhone" />
+            <ConditionBlockRef UniqueID="SatPhone_CommunityHasBrokenSatellitePhone" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <StartEvents>
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" StringData="EmpireBuilding_Trust" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="EmpireBuilding_WhoYouGonnaCall" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_Satphone_Location" x="6751.16846" y="-4075.66016" GroupID="SatPhone_AWayOut" NativeDescription="%1 can sell you a satphone">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_CommunityHasSatellitePhone" />
+            <ConditionBlockRef UniqueID="SatPhone_CommunityHasBrokenSatellitePhone" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="EmpireBuilding_WhoYouGonnaCall" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_WhoYouGonnaCall" x="7612.09863" y="-5388.69043" GroupID="SatPhone_AWayOut" NativeDescription="Use the satphone and the contact details you've been given to call FEMA">
+      <StartEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_BrokenSatPhoneWasTraded" />
+      </StartEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_Satphone2" x="9758.075" y="-3077.6272" GroupID="SatPhone_AWayOut" NativeDescription="Find a working Satellite Phone">
+      <CompletionConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_CommunityHasSatellitePhone" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="EmpireBuilding_WhoYouGonnaCall2" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_Satphone_Location2" x="9765.913" y="-4205.36328" GroupID="SatPhone_AWayOut" NativeDescription="%1 can sell you a satphone">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone_CommunityHasSatellitePhone" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="EmpireBuilding_WhoYouGonnaCall2" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_WhoYouGonnaCall2" x="9760.409" y="-5377.06" GroupID="SatPhone_AWayOut" NativeDescription="Use the satphone and the contact details you've been given to call FEMA" />
+    <Quest UniqueID="EmpireBuilding_GetRefund" x="1318.84351" y="-12647.1875" GroupID="SatPhone_AWayOut" NativeDescription="Get your gold back from %1.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="HasGold" Subject="Actor" Data="1" Not="true" />
+      </CompletionConditions>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_Quest_FixUpVehicle" x="-1249.77808" y="-3094.62183" GroupID="EmpireBuilding_QuestGroup" NativeDescription="Fix up a vehicle so you can go on a road trip.">
+      <CompletionConditions>
+        <Condition Type="CommunityHasBuildingOfType" Subject="Player" Data="1" StringData="EnterableVehicle" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_Quest_HitTheRoad" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_Quest_HitTheRoad" x="-329.363617" y="-3834.92" GroupID="EmpireBuilding_QuestGroup" NativeDescription="Fill your vehicle with whatever supplies and passengers you want to take with you.  Drive to a route leading out of the area, and don't look back - just hit the road!" />
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="SatPhone_AWayOut" x="6726.2417" y="-5278.91943" NativeTitle="A Way Out" MergeInstances="true" MainQuest="true" />
+  </QuestGroups>
+  <Templates>
+    <Template UniqueID="SatPhone_Template" x="7374.064" y="-1064.33264">
+      <Type>Equipment</Type>
+      <SpawnLocation>AnySettlerOrTrader</SpawnLocation>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>SatellitePhone</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_DoesntWork" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Works" />
+      </Events>
+    </Template>
+    <Template UniqueID="SatPhone_Template2" x="610.9813" y="-13820.1172">
+      <Type>Equipment</Type>
+      <SpawnLocation>AnySettlerOrTrader</SpawnLocation>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>SatellitePhone</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" StringData="EmpireBuilding_Satphone2" />
+      </Events>
+    </Template>
+  </Templates>
+  <Invaders />
+</Script>

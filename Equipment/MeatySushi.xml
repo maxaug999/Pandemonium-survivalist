@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Meaty Sushi</NativeName>
+  <NativeDescription>Rice with a slice of rabbit</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>0.2</Weight>
+  <BasePrice>5</BasePrice>
+  <Nutrition>0.55</Nutrition>
+  <Tastiness>60</Tastiness>
+  <LootableFromLocations />
+  <TypicalLootAmount>0</TypicalLootAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>4</SkillOnConsumptionProgression>
+</EquipmentPrototype>

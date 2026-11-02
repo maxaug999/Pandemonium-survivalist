@@ -1,0 +1,1033 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>40</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>8</NextFreeConditionBlockID>
+  <NextFreeQuestID>7</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>5</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-7794.52539</x>
+    <y>-2484.40942</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5425817</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="DarkPast_GoodToSeeYou" x="1329.16833" y="-104.339539" NativeText=":-) Hey, it's so good to see you again!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_YouTooBuddy" />
+        <SpeechRef UniqueID="DarkPast_MustBeGoing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage4" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="DarkPast_BrightenUpMyDay" x="1319.88245" y="1261.863" NativeText=":-) Hey, have you come to brighten up my day?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_SureHave" />
+        <SpeechRef UniqueID="DarkPast_WhatNo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage4" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="DarkPast_ThanksToSeeYou" x="1321.1062" y="-1443.45093" NativeText=":-) Oh hi!  Thanks to see you!  {:-| I mean, I'm good to see you.  It's good, thanks for asking.  Oh, fuck.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_IKnowWhatYouMean" />
+        <SpeechRef UniqueID="DarkPast_WhatTheHell" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage4" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="DarkPast_SureHave" x="2322.579" y="1425.80286" NativeText=":-) I sure have!">
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="DarkPast_Mmm" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_WhatNo" x="2340.04785" y="837.2329" NativeText="What?  Not really, no.">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_CatchYouLater" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_Mmm" x="4191.75439" y="-286.779449" NativeText=":-) Sooo good to see you!" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_Favour" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_MustBeGoing" x="2356.234" y="-511.329773" NativeText="Right.  Well, must be going.">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_IfYouSaySo" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_YouTooBuddy" x="2338.76514" y="77.2401352" NativeText=":-) Aw, you too, buddy!">
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="DarkPast_Mmm" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_IKnowWhatYouMean" x="2310.532" y="-1292.95532" NativeText=":-) Hey, I know exactly what you mean!">
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="DarkPast_Mmm" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_WhatTheHell" x="2328.00073" y="-1881.52527" NativeText="}:-| What?  Spit it out.">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_NeverMind" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_NeverMind" x="3229.675" y="-1938.59937" NativeText=":-( Uh, never mind." />
+    <Speech UniqueID="DarkPast_CatchYouLater" x="3311.582" y="730.907532" NativeText="{:-( Oh.  Catch you later." />
+    <Speech UniqueID="DarkPast_IfYouSaySo" x="3354.12964" y="-877.659058" NativeText=":-( Alright then, if you say so." />
+    <Speech UniqueID="DarkPast_Favour" x="5183.61475" y="-381.8526" NativeText="Look, uh.. I have a favour I need to ask you.  It's about my ex.">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_Anything" />
+        <SpeechRef UniqueID="DarkPast_NotTouchingThat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_Anything" x="6028.96045" y="64.1122" NativeText="Sure, anything!">
+      <Events>
+        <StoryEvent Type="SpawnTemplate" Subject="Actor" StringData="DarkPast_Ex_Community" />
+        <StoryEvent Type="SpawnTemplate" StringData="DarkPast_Ex_Community_Zombie" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_NotTouchingThat" x="8444.363" y="-865.727661" NativeText="Nope I'm not touching that.">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_IUnderstand" />
+        <SpeechRef UniqueID="DarkPast_SomeFriend" />
+        <SpeechRef UniqueID="DarkPast_MuchMoreImportant" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_IUnderstand" x="9448.624" y="-986.671" NativeText=":-( Oh... of course, I understand." />
+    <Speech UniqueID="DarkPast_SomeFriend" x="9448.626" y="-1421.39709" NativeText="}:-| Some friend you are!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_MuchMoreImportant" x="9444.731" y="-2109.17236" NativeText="}:-| Oh... of course, I understand.  I'm sure you've got your own problems to deal with, which are obviously much more important than my bullshit.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_ProperBurial" x="7205.207" y="382.27478" NativeText="{:-( We never found %1 body.  Everything went to shit when %2 died and I've never dared to go back for %3 and give %4 a proper burial.  Will you help me?" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_OfCourseIWill" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_BuryCorpse" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_PowerHungry" x="7173.62061" y="3021.812" NativeText="%1 was a power-hungry %2.  When I walked out, %3 said %4 would kill me for leaving, and I barely escaped with my life!  I've lived in fear ever since... but I don't want to be afraid anymore.  There's only one way this ends, it's %5 or me!  Will you help me?" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="AssholeOrBitch" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_OfCourseIWill" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_KillAbuser" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_LeftOnBadTerms" x="7169.586" y="4052.954" NativeText="We left on really bad terms, and I just want to go back and see %1 one last time and say, you know, we can't ever get back together again but... I'm sorry.  For the things I said.  Do you think you could help me find %2?" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_OfCourseIWill" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_SaySorry" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_KilledRecently" x="7199.4375" y="1410.738" NativeText="{:-( I heard %1 was killed recently.  We didn't leave on the best of terms, but it's water under the bridge now and... I'm so sad I'll never see %2 again.  Will you help me go and pay my last respects?" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_OfCourseIWill" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_PayRespects" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_OfCourseIWill" x="9367.643" y="1102.07056" NativeText="{:-) Of course, I got your back!">
+      <Events>
+        <StoryEvent Type="Follow" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_MissedYou" x="15243.3672" y="1024.94067" NativeText="{:-) %1!  It's so good to see you, I've really missed you babe!  We had something special, didn't we?" Situation="Opener" PerObjectType="PerActiveQuestSeeker">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="DarkPast_ForgiveYou" />
+      </Continues>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_KillAbuser2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Player" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_ForgiveYou" x="16217.8916" y="471.456482" NativeText="{:-| I was so sorry when you left, you know... {:-[ you really hurt me!  But I've had time to think and... {:-) I think I could forgive you, if you really want to make it up to me.  What do you say?">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_YouKnowWhyImHere" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_YouKnowWhyImHere" x="17255.5215" y="226.512085" NativeText="}:-| You know why I'm here." AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_SuchAShame" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_SuchAShame" x="18232.8379" y="337.290955" NativeText="}:-[ It's such a shame you couldn't be an adult about this.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="DarkPast_KillAbusiveEx" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_HowAreYouDoing" x="21008.6348" y="726.555237" NativeText="How are you doing?" Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_FinallyOver" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="DarkPast_TalkAfterwards" />
+        <Condition Type="IsLeaderOf" Subject="Actor" Object="Player" ObjectModifier="Community" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_FinallyOver" x="21938.3086" y="540.647339" NativeText="It's over.. I can't believe it's finally over.">
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_ThankGoodness" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_ThankGoodness" x="22795.3672" y="252.245468" NativeText="{:-) Thank goodness I had you around to look after me... you're pretty badass you know!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="DarkPast_TalkAfterwards" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" Delay="300" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_DontHaveToHateYou" x="15316.0449" y="-209.960648" NativeText="{:-| So, here you are.  I guess I got here too late for you to make good on your threat, huh.  Well, maybe it's better this way.  I don't have to hate you anymore." Situation="Eulogy" SpecialBehaviour="OverrideEulogy" PerObjectType="PerActiveQuestSeeker">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1001" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_KillAbuser" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MarkEulogyGiven" Subject="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_BuryEx" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_TalkAfterwards" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_NotThePerson" x="15270.585" y="-2179.89648" NativeText="I don't think I'm the person to do this." Situation="Eulogy" SpecialBehaviour="OverrideEulogy">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="Target" Object="Actor" StringData="DarkPast_FindEx" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_NeverThought" x="15255.27" y="2835.34985" NativeText="{:-| Woah, %1!  I... never thought I'd see you again, after you left.  So, uh, how have you been?" Situation="Opener" PerObjectType="PerActiveQuestSeeker">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_ImSorry" />
+        <SpeechRef UniqueID="DarkPast_EasyMark" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_SaySorry2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="ReferringTo" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_ImSorry" x="16269.5742" y="3185.82617" NativeText="{:-| I won't stay for long, %1.  I just came to tell you that... I'm sorry, for what it's worth.  I shouldn't have said what I said.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_MeansALot" />
+        <SpeechRef UniqueID="DarkPast_Fine" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_Fine" x="17324.5" y="2447.309" NativeText="Oh.  Okay, well, that's fine I guess.  I don't know what you want me to say.  But you do what you gotta do to feel better about yourself.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_YourWholeProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_YourWholeProblem" x="18206.6074" y="2435.528" NativeText="}:-| Okay this is your whole problem, you've always got to twist everything nice I try to do into something shitty!">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_YouWantedToComeBack" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_YouWantedToComeBack" x="19191.7969" y="2416.38428" NativeText="}:-| Jesus, you were the one that wanted to come back here!  Sorry I didn't react the way you had planned in your head, but it's not always about you.">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_ForgetIt" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_ForgetIt" x="20156.37" y="2342.75244" NativeText="}:-[ Aaargh forget it!  I'm outta here.">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_RunAway" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_MeansALot" x="17265.8" y="3208.65845" NativeText="{:-) Hey, it means a lot that you came here to say that.  Thank you!">
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_SoLongOldFriend" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_SoLongOldFriend" x="18209.56" y="3201.29443" NativeText="{:-) So long, old friend.  I'll always treasure the time we had." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_MeToo" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_MeToo" x="19207.8281" y="3284.26733" NativeText="{:-) Me too!">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_TalkAfterwards_Happy" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Target" Delay="300" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_RunAway" x="21144.3965" y="2340.11572" NativeText="Sure, run away!  It's what you're best at, right?">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="DarkPast_TalkAfterwards_Upset" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_HowAreYouDoing_Upset" x="23053.166" y="2221.83228" NativeText="How are you doing?" Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_DidntHelp" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="DarkPast_TalkAfterwards_Upset" />
+        <Condition Type="IsLeaderOf" Subject="Actor" Object="Player" ObjectModifier="Community" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_DidntHelp" x="23976.8613" y="2179.392" NativeText="{:-( Goddammit that didn't help at all!  Now I feel even more upset about this whole thing.  Ugh.  {:-) At least you're with me though.">
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_WasteOfTime" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_WasteOfTime" x="24657.6621" y="1687.1051" NativeText="I guess maybe I had to do this in order to figure out that it was a waste of time...  :-) Thanks for being here for me through all this!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="DarkPast_TalkAfterwards_Upset" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" Delay="300" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_HowAreYouDoing_Happy" x="21135.1016" y="3661.65479" NativeText="How are you doing?" Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_GladItWasYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="DarkPast_TalkAfterwards_Happy" />
+        <Condition Type="IsLeaderOf" Subject="Actor" Object="Player" ObjectModifier="Community" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_GladItWasYou" x="22098.1523" y="3505.29224" NativeText="{:-) That went well didn't it?  Thank you so much for accompanying me!  I'm glad it was you.">
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_TurnThePage" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_TurnThePage" x="22946.3633" y="3281.18262" NativeText="I feel I can finally turn the page on this relationship.  And maybe look for a new one, who knows!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="DarkPast_TalkAfterwards_Happy" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_EasyMark" x="16277.25" y="2330.03735" NativeText="}:-) I found an easy mark for you!  Get 'em, gang!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="2" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="2" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DeclareWar" Subject="Target" Object="ReferringTo" ObjectModifier="Community" />
+        <StoryEvent Type="Attack" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="LiedSuccessfullyTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_AllMyFault" x="15252.9238" y="5026.84766" NativeText="{:-( Oh no... %1, I'm so sorry I didn't come back to you sooner.  Maybe I could have prevented this.  It's all my fault." Situation="Eulogy" SpecialBehaviour="OverrideEulogy" PerObjectType="PerActiveQuestSeeker">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1001" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_SaySorry" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MarkEulogyGiven" Subject="Target">
+          <Formulas />
+          <Speeches />
+        </StoryEvent>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_BuryEx" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_TalkAfterwards_Tragic" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="ReferringTo" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_HowAreYouDoing_Tragic" x="17153.11" y="4459.493" NativeText="How are you doing?" Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_ThisIsHowItEnds" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="DarkPast_TalkAfterwards_Tragic" />
+        <Condition Type="IsLeaderOf" Subject="Actor" Object="Player" ObjectModifier="Community" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="DarkPast_ThisIsHowItEnds" x="18076.8047" y="4417.05273" NativeText="{:-( I can't believe this is how it ends!  Poor %1, I should have been here for %2!  I only hope %3 didn't suffer.  Now I'll never be able tell %4 I'm sorry....">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" BoolData="true" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_Cuddle" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_Cuddle" x="18987.1523" y="4466.35742" NativeText="{:-) I'm glad I had you here to cuddle at least...  :-) Thanks for being here for me through this!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="DarkPast_TalkAfterwards_Tragic" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_DeservedBetter" x="16230.06" y="-218.278152" NativeText="{:-| %1, I'm so sorry I was too scared to do this earlier.  You deserved better.  I hope you're finally at peace now." Situation="Eulogy" SpecialBehaviour="OverrideEulogy" PerObjectType="PerActiveQuestSeeker">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1001" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_BuryCorpse" />
+            <ConditionBlockRef UniqueID="DarkPast_PayRespects" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MarkEulogyGiven" Subject="Target">
+          <Formulas />
+          <Speeches />
+        </StoryEvent>
+        <StoryEvent Type="DiscoverCharacterName" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_BuryEx" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_TalkAfterwards" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_YoureAlive" x="15265.38" y="-2879.86914" NativeText="8-o %1, you're alive!" Situation="Opener" PerObjectType="PerActiveQuestSeeker">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_EasyMark" />
+        <SpeechRef UniqueID="DarkPast_ThoughtYouWereDead" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_BuryCorpse2" />
+            <ConditionBlockRef UniqueID="DarkPast_PayRespects2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Player" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_ThoughtYouWereDead" x="16286.9336" y="-2783.08984" NativeText="8-o %1!  I thought you were dead!" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Player" Object="Target" />
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_Incredible" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="DarkPast_JoinedPlayer" x="19038.5254" y="-2275.35742" NativeText="{:-| I... I've joined %1 now.  But you're right, I don't ever want to leave you again.  %2, I'm sorry.  I have to go and be with %3.  We had some good times but... I hope you understand." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+        <SpeechParam Type="FullName" Subject="ReferringTo" BoolData="true" />
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="DarkPast_FindEx" BoolData="true" />
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="Target" Data="100" Data2="50" StringData="SleepingWith" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Reunited" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Target" Delay="60" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="DarkPast_Incredible" x="17196.03" y="-2581.15381" NativeText="{:-) This is incredible!  We have so much catching up to do!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_NeverSplitUp" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_NeverSplitUp" x="18069.7754" y="-2646.27979" NativeText="{:-) Let's never get split up again!!">
+      <Replies>
+        <SpeechRef UniqueID="DarkPast_JoinedPlayer" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="DarkPast_TheBest" x="6070.95068" y="978.759155" NativeText="{:-) You're the best!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="DarkPast_LeftOnBadTerms" />
+        <SpeechRef UniqueID="DarkPast_PowerHungry" />
+        <SpeechRef UniqueID="DarkPast_KilledRecently" />
+        <SpeechRef UniqueID="DarkPast_ProperBurial" />
+      </Continues>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="DarkPast_SetExRelationship" x="13090.4629" y="-1229.24048">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_KillAbuser2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Target" Object="ReferringTo" Data="100" Data2="50" StringData="Ex" BoolData="true" BoolData2="true" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="DarkPast_SetExRelationship_Abusive" x="13092.8809" y="-1912.98474">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_KillAbuser2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Target" Object="ReferringTo" Data="-100" Data2="100" StringData="Ex" BoolData="true" BoolData2="true" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Flirt_Stage4" x="166.30954" y="118.940674">
+      <Conditions>
+        <Condition Type="CanFlirt" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="80" />
+        <Condition Type="HasMemoryQuantityBetween" Subject="Actor" Object="Actor" ThirdParty="Target" Data="3" Data2="4" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_QuestNotActive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_SaySorry" x="5612.886" y="3511.996">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="4" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_KillAbuser" x="5628.098" y="3015.5542">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="4" Data2="1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_PayRespects" x="5620.745" y="2534.512">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="4" Data2="2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_BuryCorpse" x="5620.892" y="2054.08154">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="4" Data2="3" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_ExIsAlive" x="9474.687" y="3043.972">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="3" StringData="ExStatus" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_ExIsBuried" x="9476.682" y="2680.54956">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="3" Data2="1" StringData="ExStatus" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_ExIsZombie" x="9479.59" y="2306.95215">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="3" Data2="2" StringData="ExStatus" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_QuestNotActive" x="-1048.17114" y="-577.0475">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_QuestExplore" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_Quest_FeedBunny" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_QuestWalk" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_FindHatAndCarrot" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_Snowman" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" Not="true" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" Object="Target" StringData="DarkPast_TalkAfterwards_Upset" Not="true" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" Object="Target" StringData="DarkPast_TalkAfterwards_Tragic" Not="true" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" Object="Target" StringData="DarkPast_TalkAfterwards_Happy" Not="true" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" Object="Target" StringData="DarkPast_TalkAfterwards" Not="true" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" Object="Target" StringData="DarkPast_KillAbusiveEx" Not="true" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" Object="Target" StringData="DarkPast_FindEx" Not="true" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" Object="Target" StringData="DarkPast_BuryEx" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_NotIfTheyAreTaken" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_BuryCorpse2" x="14237.07" y="-3081.79272">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="4" Data2="3" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_PayRespects2" x="14235.3125" y="-3469.8208">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="4" Data2="2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_SaySorry2" x="14330.2363" y="2289.40552">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="4" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_KillAbuser2" x="14454.416" y="1377.06812">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="4" Data2="1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_ExIsBuried2" x="10179.8691" y="2689.10425">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="3" Data2="1" StringData="ExStatus" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_NotIfTheyAreTaken" x="-2016.06091" y="-2936.26367" Type="Or">
+      <Conditions>
+        <Condition Type="HasPartner" Subject="Target" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_IsMoralOrPrudish" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="DarkPast_IsMoralOrPrudish" x="-2849.02661" y="-3127.62036" Type="Or">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="DarkPast_FindEx" x="14211.2588" y="501.386536" GroupID="DarkPast_Group" NativeDescription="Help %1 find %2 ex">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="HisOrHer" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_ExIsBuried2" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="Speak" Subject="Actor" Object="Player" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="DarkPast_TheBest" />
+          </Speeches>
+        </StoryEvent>
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="DarkPast_BuryEx" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" SubjectModifier="Community" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="DarkPast_KillAbusiveEx" x="19198.832" y="381.8748" GroupID="DarkPast_Group" NativeDescription="Kill %1 abusive ex">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="DarkPast_TalkAfterwards" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" SubjectModifier="Community" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" SubjectModifier="Community" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="DarkPast_TalkAfterwards" x="20096.6953" y="304.3165" GroupID="DarkPast_Group" NativeDescription="Talk to %1">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+    <Quest UniqueID="DarkPast_BuryEx" x="14231.1963" y="-1388.95642" GroupID="DarkPast_Group" NativeDescription="Help %1 bury %2 ex and give a eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="HisOrHer" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" SubjectModifier="Community" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="DarkPast_TalkAfterwards_Upset" x="22171.1152" y="1728.25793" GroupID="DarkPast_Group" NativeDescription="Talk to %1">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+    <Quest UniqueID="DarkPast_TalkAfterwards_Happy" x="20212.334" y="3250.60132" GroupID="DarkPast_Group" NativeDescription="Talk to %1">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" BoolData="true" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+    <Quest UniqueID="DarkPast_TalkAfterwards_Tragic" x="16253.124" y="4435.77637" GroupID="DarkPast_Group" NativeDescription="Talk to %1">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" BoolData="true" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="DarkPast_Group" x="14207.9248" y="941.0728" NativeTitle="%1 dark past">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates>
+    <Template UniqueID="DarkPast_Ex_Community" x="10457.1934" y="1230.08252">
+      <Type>Community</Type>
+      <SpawnLocation>PreferCountrysideProps</SpawnLocation>
+      <Children>
+        <TemplateChild UniqueID="DarkPast_Ex_Alive" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="DarkPast_Ex_Buried" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_ExIsZombie" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="DarkPast_Henchman" x="13241.5205" y="2235.47876">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Normal</PersonalityFaction>
+      <BodyArmorProbability>35</BodyArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Events>
+        <StoryEvent Type="Follow" Subject="ReferringTo" Object="ReferringTo" ObjectModifier="Leader" />
+      </Events>
+    </Template>
+    <Template UniqueID="DarkPast_Ex_Alive" x="12043.7988" y="2788.078">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Normal</PersonalityFaction>
+      <RelationshipWithTarget>Ex</RelationshipWithTarget>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="DarkPast_Henchman" Min="3" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_ExIsAlive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="DarkPast_SetExRelationship" />
+        <StoryEvent Type="OneShotTrigger" StringData="DarkPast_SetExRelationship_Abusive" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="DarkPast_FindEx" />
+      </Events>
+    </Template>
+    <Template UniqueID="DarkPast_Ex_IsZombie" x="12022.791" y="-368.3837">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>Survivor</LootLocation>
+      <RelationshipWithTarget>Ex</RelationshipWithTarget>
+      <Infection>Red</Infection>
+      <NamedZombie>true</NamedZombie>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="DarkPast_HenchZombies" Min="3" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="DarkPast_SetExRelationship" />
+        <StoryEvent Type="OneShotTrigger" StringData="DarkPast_SetExRelationship_Abusive" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="DarkPast_FindEx" />
+      </Events>
+    </Template>
+    <Template UniqueID="DarkPast_Ex_Buried" x="12032.8721" y="1041.49121">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>Survivor</LootLocation>
+      <SpawnState>Buried</SpawnState>
+      <RelationshipWithTarget>Ex</RelationshipWithTarget>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="DarkPast_Henchman_Buried" Min="3" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_ExIsBuried" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="DarkPast_SetExRelationship" />
+        <StoryEvent Type="OneShotTrigger" StringData="DarkPast_SetExRelationship_Abusive" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="DarkPast_FindEx" />
+        <StoryEvent Type="SetGraveDontDeteriorate" Subject="ReferringTo" BoolData="true" />
+      </Events>
+    </Template>
+    <Template UniqueID="DarkPast_HenchZombies" x="13138.123" y="-193.917267">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>Survivor</LootLocation>
+      <Infection>Red</Infection>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <HelmetProbability>15</HelmetProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="DarkPast_Henchman_Buried" x="13247.0254" y="1146.71912">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>Survivor</LootLocation>
+      <BodyArmorProbability>35</BodyArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>50</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="DarkPast_Ex_Community_Zombie" x="10448.0059" y="562.0785">
+      <Type>Community</Type>
+      <SpawnLocation>PreferCountrysideProps</SpawnLocation>
+      <CommunityType>TemporaryZombie</CommunityType>
+      <Children>
+        <TemplateChild UniqueID="DarkPast_Ex_IsZombie" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="DarkPast_ExIsZombie" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+  </Templates>
+  <Invaders />
+</Script>

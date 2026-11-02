@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Axe</TypeName>
+  <NativeName>Reinforced Axe</NativeName>
+  <NativeDescription>Chops down trees, also works on people.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>6</Weight>
+  <BasePrice>45</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/FireAxe/AxeWood</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.7</Damage>
+  <DamageBonusPerSkillLevel>0.06</DamageBonusPerSkillLevel>
+  <Range>2</Range>
+  <FatiguePenaltyWhenAttacking>0.135</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

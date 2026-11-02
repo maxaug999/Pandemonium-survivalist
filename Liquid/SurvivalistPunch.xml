@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>SurvivalistPunch</NativeName>
+  <NativeDescription>If you want to knock yourself unconcious</NativeDescription>
+  <Category>5:Food/Drink/Alcohol</Category>
+  <Col>
+    <r>255</r>
+    <g>0</g>
+    <b>0</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.7</BasePricePerFlOz>
+  <WaterContent>-75</WaterContent>
+  <AlcoholContent>66</AlcoholContent>
+  <Tastiness>50</Tastiness>
+  <Flammable>true</Flammable>
+  <CanPourIntoBottles>true</CanPourIntoBottles>
+  <GiftFor>
+    <string>Alcoholic</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Nervous</string>
+  </BadGiftFor>
+  <GiftAmount>25</GiftAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgressionPerFlOz>0.1</SkillOnConsumptionProgressionPerFlOz>
+</LiquidPrototype>

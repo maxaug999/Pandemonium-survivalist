@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Boiled Egg</NativeName>
+  <NativeDescription>Lots of protein and tastes pretty good too</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.25</Nutrition>
+  <Tastiness>30</Tastiness>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>10</SkillOnConsumptionProgression>
+</EquipmentPrototype>

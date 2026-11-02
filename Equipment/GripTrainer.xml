@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Grip Trainer</NativeName>
+  <NativeDescription>Makes crushing nuts a lot easier.</NativeDescription>
+  <Category>8:Books/Skill</Category>
+  <Weight>2</Weight>
+  <BasePrice>100</BasePrice>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillBonusType>HandToHand</SkillBonusType>
+  <SkillBonus>2</SkillBonus>
+</EquipmentPrototype>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Rice</NativeName>
+  <NativeDescription>It needs to be cooked</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>0.2</Weight>
+  <BasePrice>0.75</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.15</Nutrition>
+  <Tastiness>5</Tastiness>
+  <SeedForPlantType>RicePlant</SeedForPlantType>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>3</TypicalLootAmount>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>0.1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

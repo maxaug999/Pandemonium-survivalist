@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Tripwire</TypeName>
+  <NativeName>Tripwire I.E.D.</NativeName>
+  <Category>Camp/Props</Category>
+  <PrefabNames>
+    <string>Prefabs\Props\Trap\Tripwire</string>
+    <string>Prefabs\Props\Trap\Tripwire_Tripped</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>1</MaxDamage>
+  <CoverType>None</CoverType>
+  <Flammability>High</Flammability>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WantSoundOnDemolition>false</WantSoundOnDemolition>
+  <ExtentsMin>
+    <x>-1</x>
+    <y>0</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>1</x>
+    <y>0</y>
+  </ExtentsMax>
+  <WheelPos>
+    <x>1.28</x>
+    <y>0.05</y>
+  </WheelPos>
+  <WantClearGrass>false</WantClearGrass>
+  <SetAreaOwnership>false</SetAreaOwnership>
+  <CanBeDemolished>true</CanBeDemolished>
+  <TrapDamage>20</TrapDamage>
+  <TrapDamageRadius>10</TrapDamageRadius>
+</PropPrototype>

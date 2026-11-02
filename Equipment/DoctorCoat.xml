@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Lab Coat</NativeName>
+  <NativeDescription>This labcoat used to belong to a highly skilled surgeon.  Somehow, just wearing it makes you feel more confident about medical matters.</NativeDescription>
+  <Category>4:Clothing/Top</Category>
+  <Gender>Male</Gender>
+  <Weight>10</Weight>
+  <BasePrice>150</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Special>true</Special>
+  <ClothingType>Top</ClothingType>
+  <ColorVariations>
+    <Color32>
+      <r>255</r>
+      <g>255</g>
+      <b>255</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName>Male_Mill_All:long_coat</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:LongCoat</FemaleMeshName>
+  <Insulation>4</Insulation>
+  <SkillBonusType>Medicine</SkillBonusType>
+  <SkillBonus>2</SkillBonus>
+</EquipmentPrototype>

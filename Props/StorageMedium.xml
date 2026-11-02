@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Building</TypeName>
+  <NativeName>Medium Storage Container</NativeName>
+  <Category>Town/Buildings</Category>
+  <Gender>Female</Gender>
+  <PrefabNames>
+    <string>assets/medstorehouseblue.prefab</string>
+    <string>assets/medstorehousegreen.prefab</string>
+    <string>assets/medstorehousered.prefab</string>
+    <string>assets/medstorehouseyellow.prefab</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>-0.255</x>
+      <y>-0.085</y>
+      <z>-2.043</z>
+    </Vector3>
+    <Vector3>
+      <x>-0.255</x>
+      <y>-0.085</y>
+      <z>-2.043</z>
+    </Vector3>
+    <Vector3>
+      <x>-0.255</x>
+      <y>-0.085</y>
+      <z>-2.043</z>
+    </Vector3>
+    <Vector3>
+      <x>-0.255</x>
+      <y>-0.085</y>
+      <z>-2.043</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>40</MaxDamage>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ExtentsMin>
+    <x>0</x>
+    <y>-3</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>2</x>
+    <y>2</y>
+  </ExtentsMax>
+  <VisibleFromFarAway>true</VisibleFromFarAway>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>4800</MaxInventoryWeight>
+  <LootLocation>House</LootLocation>
+  <Inhabitants>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+  </Inhabitants>
+  <Entrances>
+    <EntranceDef>
+      <EntranceOffset>
+        <x>-1</x>
+        <y>1</y>
+      </EntranceOffset>
+      <EntranceAngle>4.712389</EntranceAngle>
+      <NativeName>Door 1</NativeName>
+    </EntranceDef>
+    <EntranceDef>
+      <EntranceOffset>
+        <x>-1</x>
+        <y>-2</y>
+      </EntranceOffset>
+      <EntranceAngle>4.712389</EntranceAngle>
+      <NativeName>Door 2</NativeName>
+    </EntranceDef>
+  </Entrances>
+  <Usage>Commercial</Usage>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>4</RepairResourceNeeded>
+  <CaptureResourceType>SteelIngot</CaptureResourceType>
+  <CaptureResourceNeeded>4</CaptureResourceNeeded>
+  <SpawnProbabilityFactor>0.15</SpawnProbabilityFactor>
+</PropPrototype>

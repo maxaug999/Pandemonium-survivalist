@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Spicy Veggie Soup</NativeName>
+  <NativeDescription>Spicy vegetable soup</NativeDescription>
+  <Category>5:Food/Dishes</Category>
+  <Col>
+    <r>255</r>
+    <g>255</g>
+    <b>204</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.15</BasePricePerFlOz>
+  <NutritionPerFlOz>0.025</NutritionPerFlOz>
+  <Tastiness>25</Tastiness>
+  <Spicy>true</Spicy>
+  <GiftFor />
+  <BadGiftFor />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgressionPerFlOz>0.25</SkillOnConsumptionProgressionPerFlOz>
+</LiquidPrototype>

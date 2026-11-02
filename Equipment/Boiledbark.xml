@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Boiled Bark Chips</NativeName>
+  <NativeDescription>Npc's love to stockpile wood so we made it food and they will stop starving to death or visit you to spread infection ; you'll need lots of water to cook this</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>1</Weight>
+  <BasePrice>1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.25</Nutrition>
+  <Tastiness>15</Tastiness>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>-1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

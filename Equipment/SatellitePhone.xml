@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Satellite Phone</NativeName>
+  <NativeDescription>Maybe it still works, if it has a battery - and if you know what number to call.</NativeDescription>
+  <Category>9:Special</Category>
+  <Weight>1</Weight>
+  <BasePrice>1000</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <HasCustomUseAction>true</HasCustomUseAction>
+  <TradeBehaviour>CantSellToAI</TradeBehaviour>
+</EquipmentPrototype>

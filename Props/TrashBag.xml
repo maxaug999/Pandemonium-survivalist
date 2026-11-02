@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>TiltedProp</TypeName>
+  <NativeName>Trash Bag</NativeName>
+  <Category>Town/Props/Bins</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/GarbageAndTrashProps/Trashbag</string>
+    <string>Prefabs/Props/GarbageAndTrashProps/GargabeBag_A</string>
+    <string>Prefabs/Props/GarbageAndTrashProps/GargabeBag_B</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>2</MaxDamage>
+  <CoverType>WaistHigh</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <MaxYaw>45</MaxYaw>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>30</MaxInventoryWeight>
+  <LootLocation>Bin</LootLocation>
+  <Mass>3</Mass>
+</PropPrototype>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cement</NativeName>
+  <NativeDescription>Can be used to build concrete structures if you have a toolbox equipped and a high enough construction skill.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>40</Weight>
+  <BasePrice>8</BasePrice>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>50</TypicalLootAmount>
+</EquipmentPrototype>

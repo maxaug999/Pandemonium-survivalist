@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Sunflower Seeds</NativeName>
+  <NativeDescription>Sunflower seeds can be eaten, but are more useful for making sunflower oil.</NativeDescription>
+  <Category>5:Food/Seeds</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.1</Nutrition>
+  <Tastiness>10</Tastiness>
+  <SeedForPlantType>SunflowerPlant</SeedForPlantType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>5</TypicalLootAmount>
+</EquipmentPrototype>

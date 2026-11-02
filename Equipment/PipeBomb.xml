@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PipeBomb</TypeName>
+  <NativeName>Pipe Bomb</NativeName>
+  <NativeDescription>Useful for knocking down buildings.  Stand well back.  You can throw it further if you have a higher Fitness skill, and it will be more effective if you have a higher Construction skill.</NativeDescription>
+  <Category>2:Weapons/Throwable</Category>
+  <Weight>4</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Prefabs/Equipment/PipeBomb/pipeBomb_lod01</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations />
+  <InjuryType>Explosion</InjuryType>
+  <Damage>10</Damage>
+  <Range>16</Range>
+  <RangeBonusPerSkillLevel>2</RangeBonusPerSkillLevel>
+  <FatiguePenaltyWhenAttacking>0.15</FatiguePenaltyWhenAttacking>
+  <AccurateRange>3</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>2</MaxAimTime>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>2</MinTimeBetweenFiring>
+  <DamageRadius>3</DamageRadius>
+</EquipmentPrototype>

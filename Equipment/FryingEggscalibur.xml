@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Eggscalibur</NativeName>
+  <NativeDescription>Better at serving eggs</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>6</Weight>
+  <BasePrice>6</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Pan/Pan</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.5</Damage>
+  <DamageBonusPerSkillLevel>0.1</DamageBonusPerSkillLevel>
+  <Range>2</Range>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

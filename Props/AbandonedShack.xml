@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Building</TypeName>
+  <NativeName>Abandoned Shack</NativeName>
+  <Category>Countryside/LogCabin</Category>
+  <PrefabNames>
+    <string>Prefabs/Buildings/Shack</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>10</MaxDamage>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ExtentsMin>
+    <x>-1</x>
+    <y>0</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>1</x>
+    <y>1</y>
+  </ExtentsMax>
+  <VisibleFromFarAway>true</VisibleFromFarAway>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>800</MaxInventoryWeight>
+  <LootLocation>House</LootLocation>
+  <Inhabitants>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+  </Inhabitants>
+  <Entrances>
+    <EntranceDef>
+      <EntranceOffset>
+        <x>-1</x>
+        <y>2</y>
+      </EntranceOffset>
+      <EntranceAngle>0</EntranceAngle>
+      <NativeName>Front</NativeName>
+    </EntranceDef>
+  </Entrances>
+  <Usage>Domestic</Usage>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>2</RepairResourceNeeded>
+  <CaptureResourceType>Wood</CaptureResourceType>
+  <CaptureResourceNeeded>1</CaptureResourceNeeded>
+</PropPrototype>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Pickaxe</TypeName>
+  <NativeName>Stone Pickaxe</NativeName>
+  <NativeDescription>Works on rocks and zombies</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>8</Weight>
+  <BasePrice>7</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>assets/stonepickaxe.prefab</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.2</Damage>
+  <DamageBonusPerSkillLevel>0.06</DamageBonusPerSkillLevel>
+  <Range>2</Range>
+  <FatiguePenaltyWhenAttacking>0.2</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

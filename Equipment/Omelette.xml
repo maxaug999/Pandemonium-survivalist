@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Omelette</NativeName>
+  <NativeDescription>Tasty and packed with protein</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>1</Weight>
+  <BasePrice>10</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.5</Nutrition>
+  <Tastiness>70</Tastiness>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>30</SkillOnConsumptionProgression>
+</EquipmentPrototype>

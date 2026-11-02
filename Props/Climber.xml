@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Climber</NativeName>
+  <Category>Town/Props/Playground</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Old School Playground Gear/Climber_A</string>
+    <string>Prefabs/Props/Old School Playground Gear/Climber_B</string>
+    <string>Prefabs/Props/Old School Playground Gear/Climber_C</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0.62</y>
+      <z>0.5</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0.62</y>
+      <z>0.5</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0.62</y>
+      <z>0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>15</MaxDamage>
+  <CoverType>Transparent</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <ExtentsMax>
+    <x>0</x>
+    <y>1</y>
+  </ExtentsMax>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>SteelIngot</RepairResourceType>
+  <RepairResourceNeeded>2</RepairResourceNeeded>
+  <Mass>15</Mass>
+</PropPrototype>

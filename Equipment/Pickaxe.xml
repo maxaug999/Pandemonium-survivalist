@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Pickaxe</TypeName>
+  <NativeName>Pickaxe</NativeName>
+  <NativeDescription>Works on rocks and zombies</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>14</Weight>
+  <BasePrice>15</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Prefabs/Equipment/Pickaxe</EquippedModelName>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.3</Damage>
+  <DamageBonusPerSkillLevel>0.06</DamageBonusPerSkillLevel>
+  <Range>2</Range>
+  <FatiguePenaltyWhenAttacking>0.14</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

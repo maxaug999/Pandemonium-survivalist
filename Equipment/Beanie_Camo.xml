@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Beanie</TypeName>
+  <NativeName>Camo Beanie</NativeName>
+  <Category>4:Clothing/Hats</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>16</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Hat</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ClothesStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SportsStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <MaterialVariations>
+    <string>MillHat/Desert</string>
+    <string>MillHat/Snow</string>
+    <string>MillHat/Digital</string>
+    <string>MillHat/Woodland1</string>
+    <string>MillHat/Woodland2</string>
+    <string>MillHat/Woodland3</string>
+  </MaterialVariations>
+  <MaleMeshName>Mill_hat_fix_01:Mill_hat</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Mill_hat</FemaleMeshName>
+  <Insulation>3</Insulation>
+  <SkillBonusType>Stealth</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

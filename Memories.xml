@@ -1,0 +1,1395 @@
+<?xml version="1.0"?>
+<MemoryList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Memories>
+    <MemoryPrototype>
+      <UniqueID>AccusedOfInvisibleStrain</UniqueID>
+      <NativeDescription>%1 accused %2 of being infected with Invisible Strain</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-30</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <ApprovalLimit>30</ApprovalLimit>
+      <ReciprocalMemoryID>InvisibleStrainSuspect</ReciprocalMemoryID>
+      <Replace>
+        <string>InterrogatedAboutInvisibleStrain</string>
+      </Replace>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>AccusedOfInvisibleStrainCorrectly</UniqueID>
+      <NativeDescription>%1 was proven right that %2 had Invisible Strain</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <Replace>
+        <string>AccusedOfInvisibleStrain</string>
+        <string>InterrogatedAboutInvisibleStrain</string>
+      </Replace>
+      <CanBeARumour>false</CanBeARumour>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Annoyed</UniqueID>
+      <NativeDescription>%1 annoyed %2</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>25</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ApologisedSuccessfully</UniqueID>
+      <NativeDescription>%1 apologised to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>-20</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ApologisedUnsuccessfully</UniqueID>
+      <NativeDescription>%1 apologised but %2 did not accept it</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>-40</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ArsonSuspect</UniqueID>
+      <NativeDescription>%1 was lurking in the area when property belonging to %2 was destroyed</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Assisted</UniqueID>
+      <NativeDescription>%1 assisted %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>AteDisgustingFood</UniqueID>
+      <NativeDescription>%1 had to eat some disgusting food recently</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectType>None</ObjectType>
+      <ActorMustBeSelf>true</ActorMustBeSelf>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>AteTastyFood</UniqueID>
+      <NativeDescription>%1 ate some delicious food recently</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectType>None</ObjectType>
+      <ActorMustBeSelf>true</ActorMustBeSelf>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>AttackSuspect</UniqueID>
+      <NativeDescription>%1 was lurking in the area when [speaker(2)?I was:listener(2)?you were:%2 was] attacked</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>20</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>BadMouthed</UniqueID>
+      <NativeDescription>%1 talked some shit about %2 behind [speaker(2)?my:male(2)?his:her] back</NativeDescription>
+      <WitnessedByObject>false</WitnessedByObject>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>BandagedForFree</UniqueID>
+      <NativeDescription>%1 gave medical assistance to %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>BandagedForGold</UniqueID>
+      <NativeDescription>%1 got paid for medical assistance by %2</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>BeatUp</UniqueID>
+      <NativeDescription>%1 beat %2 up</NativeDescription>
+      <CanForget>IfNotInvolvingMeOrOld</CanForget>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>SelfInterest</RuleSet>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <Replace>
+        <string>Hurt</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>BeatUpBy</UniqueID>
+      <NativeDescription>%1 got beaten up by %2</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-50</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <Replace>
+        <string>Hurt</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Begged</UniqueID>
+      <NativeDescription>%1 begged for aid from %2</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Betrayed</UniqueID>
+      <NativeDescription>%1 betrayed %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>20</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>BoughtFrom</UniqueID>
+      <NativeDescription>%1 bought supplies from %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0.1</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>100</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Brave</UniqueID>
+      <NativeDescription>%1 held firm when threatened by %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>25</DifficultyPatheticness>
+      <ObjectType>None</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>BrokeAlliance</UniqueID>
+      <NativeDescription>%1 broke the alliance with %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <SpreadToAllCommunities>true</SpreadToAllCommunities>
+      <RuleSet>Alliance</RuleSet>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <Replace>
+        <string>MadeAlliance</string>
+      </Replace>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Cannibal</UniqueID>
+      <NativeDescription>%1 ate human meat</NativeDescription>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>Cannibal</RuleSet>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+      <ObjectType>None</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>CastAspersions</UniqueID>
+      <NativeDescription>%1 cast aspersions about %2</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Chatted</UniqueID>
+      <NativeDescription>%1 chatted with %2</NativeDescription>
+      <GoodnessBadness>1</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>CheatedOn</UniqueID>
+      <NativeDescription>%1 cheated on %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Personal</RuleSet>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MustBeACouple>true</MustBeACouple>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Complimented</UniqueID>
+      <NativeDescription>%1 complimented %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Confided</UniqueID>
+      <NativeDescription>%1 shared secrets with %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>-5</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ContractedInvisibleStrain</UniqueID>
+      <NativeDescription>%1 was infected with invisible strain</NativeDescription>
+      <CanForget>No</CanForget>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <Replace>
+        <string>InvisibleStrainSuspect</string>
+      </Replace>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Contradicted</UniqueID>
+      <NativeDescription>%1 disagreed with %2</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>25</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Coup</UniqueID>
+      <NativeDescription>%1 seized power from %2</NativeDescription>
+      <CanForget>IfNotInvolvingMeOrOld</CanForget>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>SelfInterest</RuleSet>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Cowardly</UniqueID>
+      <NativeDescription>%1 capitulated when threatened by %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-25</DifficultyPatheticness>
+      <RespectLimit>25</RespectLimit>
+      <ObjectType>None</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>CuckoldedSuccessfully</UniqueID>
+      <NativeDescription>%1 slept with [speaker(2)?my:listener(2)?your:%2's] partner</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Personal</RuleSet>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>100</DifficultyPatheticness>
+      <Replace>
+        <string>CuckoldedUnsuccessfully</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>CuckoldedUnsuccessfully</UniqueID>
+      <NativeDescription>%1 made a move on [speaker(2)?my:listener(2)?your:%2's] partner but was rejected</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Personal</RuleSet>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>-50</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DeclaredLove</UniqueID>
+      <NativeDescription>%1 likes %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Romantic</RuleSet>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <CanBeARumour>false</CanBeARumour>
+      <MustBeAttractedTo>true</MustBeAttractedTo>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DeclaredWar</UniqueID>
+      <NativeDescription>%1 attacked %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectType>Community</ObjectType>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Defended</UniqueID>
+      <NativeDescription>%1 stood up for %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DesecratedCorpse</UniqueID>
+      <NativeDescription>%1 desecrated the corpse of %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MoraleMultiplier>0.25</MoraleMultiplier>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DestroyedProperty</UniqueID>
+      <NativeDescription>%1 destroyed property belonging to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>25</DifficultyPatheticness>
+      <MoraleMultiplier>0.25</MoraleMultiplier>
+      <ApprovalLimit>50</ApprovalLimit>
+      <RespectLimit>25</RespectLimit>
+      <Replace>
+        <string>ArsonSuspect</string>
+      </Replace>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Died</UniqueID>
+      <NativeDescription>%2 died</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MoraleBoost>-100</MoraleBoost>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DiedInChildbirth</UniqueID>
+      <NativeDescription>%2 died in childbirth</NativeDescription>
+      <CanForget>No</CanForget>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MoraleBoost>-200</MoraleBoost>
+      <CanBeARumour>false</CanBeARumour>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DrankDisgustingAlcohol</UniqueID>
+      <NativeDescription>%1 drunk some liquor that wasn't the best in terms of quality.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectType>None</ObjectType>
+      <ActorMustBeSelf>true</ActorMustBeSelf>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DrankDisgustingDrink</UniqueID>
+      <NativeDescription>%1 had to drink something horrible recently</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectType>None</ObjectType>
+      <ActorMustBeSelf>true</ActorMustBeSelf>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DrankTastyAlcohol</UniqueID>
+      <NativeDescription>%1 had some top quality booze recently.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>15</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectType>None</ObjectType>
+      <ActorMustBeSelf>true</ActorMustBeSelf>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>DrankTastyDrink</UniqueID>
+      <NativeDescription>%1 has gotten some nice drinks lately</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectType>None</ObjectType>
+      <ActorMustBeSelf>true</ActorMustBeSelf>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Dumped</UniqueID>
+      <NativeDescription>%1 dumped %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Personal</RuleSet>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <Replace>
+        <string>FlirtedSuccessfullyWith</string>
+        <string>FlirtedUnsuccessfullyWith</string>
+        <string>DeclaredLove</string>
+      </Replace>
+      <MustBeACouple>true</MustBeACouple>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>FailedAttack</UniqueID>
+      <NativeDescription>%1 tried to attack %2 but failed</NativeDescription>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>-50</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <Replace>
+        <string>Hurt</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>FailedWorkFor</UniqueID>
+      <NativeDescription>%1 was hired by %2 but failed</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>-40</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Faithful</UniqueID>
+      <NativeDescription>%1 was faithful to %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <MustBeACouple>true</MustBeACouple>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>FedHumanMeatTo</UniqueID>
+      <NativeDescription>%1 fed human meat to %2</NativeDescription>
+      <RuleSet>Cannibal</RuleSet>
+      <GoodnessBadness>-30</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MoraleMultiplier>0.25</MoraleMultiplier>
+      <ApprovalLimit>50</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>FlirtedSuccessfullyWith</UniqueID>
+      <NativeDescription>%1 flirted with %2</NativeDescription>
+      <CanForget>UnlessInvolvingMeAndPlayer</CanForget>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>Romantic</RuleSet>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <ApprovalLimit>80</ApprovalLimit>
+      <RespectLimit>20</RespectLimit>
+      <FadeSpeed>0.5</FadeSpeed>
+      <ReciprocalMemoryID>FlirtedSuccessfullyWith</ReciprocalMemoryID>
+      <Replace>
+        <string>FlirtedUnsuccessfullyWith</string>
+      </Replace>
+      <MustBeAttractedTo>true</MustBeAttractedTo>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>FlirtedUnsuccessfullyWith</UniqueID>
+      <NativeDescription>%1 got the brush off from %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>Romantic</RuleSet>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>-20</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+      <ReciprocalMemoryID>RebuffedFlirting</ReciprocalMemoryID>
+      <Replace>
+        <string>FlirtedSuccessfullyWith</string>
+      </Replace>
+      <MustBeAttractedTo>true</MustBeAttractedTo>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>FoughtOff</UniqueID>
+      <NativeDescription>%1 fought %2 off</NativeDescription>
+      <CanForget>IfNotInvolvingMeOrOld</CanForget>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>SelfInterest</RuleSet>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <ReciprocalMemoryID>FailedAttack</ReciprocalMemoryID>
+      <Replace>
+        <string>Hurt</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>GaveGift</UniqueID>
+      <NativeDescription>%1 gave gifts to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Envy</RuleSet>
+      <GoodnessBadness>15</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>GaveInappropriateGift</UniqueID>
+      <NativeDescription>%1 gave inappropriate gifts to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Envy</RuleSet>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>-20</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>GaveInformationTo</UniqueID>
+      <NativeDescription>%1 gave valuable information to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>40</GoodnessBadness>
+      <DifficultyPatheticness>20</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>GaveNegativeEulogy</UniqueID>
+      <NativeDescription>%1 insulted the memory of %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>GaveNeutralEulogy</UniqueID>
+      <NativeDescription>%1 spoke some words over %2's grave</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>GavePositiveEulogy</UniqueID>
+      <NativeDescription>%1 gave a touching tribute to %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>50</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>GaveThoughtfulGift</UniqueID>
+      <NativeDescription>%1 gave thoughtful gifts to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>Envy</RuleSet>
+      <GoodnessBadness>25</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <ApprovalLimit>100</ApprovalLimit>
+      <RespectLimit>40</RespectLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Grovelled</UniqueID>
+      <NativeDescription>%1 kissed %2's ass</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>HasInvisibleStrain</UniqueID>
+      <NativeDescription>%1 had invisible strain</NativeDescription>
+      <CanForget>No</CanForget>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <Replace>
+        <string>InvisibleStrainSuspect</string>
+      </Replace>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Helped</UniqueID>
+      <NativeDescription>%1 helped %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>History</UniqueID>
+      <NativeDescription>I've known %1 for a long time</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Humiliated</UniqueID>
+      <NativeDescription>%1 humiliated %2</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <ReciprocalMemoryID>HumiliatedBy</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>HumiliatedBy</UniqueID>
+      <NativeDescription>%1 was humiliated by %2</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>HungOut</UniqueID>
+      <NativeDescription>%1 hung out with %2</NativeDescription>
+      <CanForget>UnlessInvolvingMeAndPlayer</CanForget>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <FadeSpeed>0.5</FadeSpeed>
+      <ReciprocalMemoryID>HungOut</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Hurt</UniqueID>
+      <NativeDescription>%1 hurt %2</NativeDescription>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>25</DifficultyPatheticness>
+      <MoraleMultiplier>0.2</MoraleMultiplier>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>HurtAccidentally</UniqueID>
+      <NativeDescription>%1 hurt %2 accidentally</NativeDescription>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>-25</DifficultyPatheticness>
+      <MoraleMultiplier>0.1</MoraleMultiplier>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>HurtPossibleInvisibleStrain</UniqueID>
+      <NativeDescription>%1 attacked %2 because of suspected infection</NativeDescription>
+      <GoodnessBadness>-25</GoodnessBadness>
+      <DifficultyPatheticness>25</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Insulted</UniqueID>
+      <NativeDescription>%1 insulted %2</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Intelligent</UniqueID>
+      <NativeDescription>%1 made a good point to %2</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>InterrogatedAboutInvisibleStrain</UniqueID>
+      <NativeDescription>%1 interrogated %2 about Invisible Strain</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>5</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>InvisibleStrainSuspect</UniqueID>
+      <NativeDescription>[speaker(2)?I suspect:%2 suspects] %1 of having Invisible Strain</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-30</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <ApprovalLimit>30</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>KickedFromCommunity</UniqueID>
+      <NativeDescription>%1 kicked %2 out of [speaker(1)?my:their] community.</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <CanBeARumour>false</CanBeARumour>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>KickedPossibleInvisibleStrain</UniqueID>
+      <NativeDescription>%1 kicked %2 from [speaker(1)?my:their] community due to suspected infection</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-25</GoodnessBadness>
+      <DifficultyPatheticness>25</DifficultyPatheticness>
+      <CanBeARumour>false</CanBeARumour>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Killed</UniqueID>
+      <NativeDescription>%1 killed %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <FadeSpeed>0.5</FadeSpeed>
+      <Replace>
+        <string>Hurt</string>
+        <string>MurderSuspect</string>
+        <string>AttackSuspect</string>
+        <string>KnockedOut</string>
+        <string>FailedAttack</string>
+        <string>BeatUp</string>
+        <string>KilledAccidentally</string>
+        <string>HurtAccidentally</string>
+        <string>HurtPossibleInvisibleStrain</string>
+        <string>KilledPossibleInvisibleStrain</string>
+      </Replace>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>KilledAccidentally</UniqueID>
+      <NativeDescription>%1 killed %2 accidentally</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-100</GoodnessBadness>
+      <DifficultyPatheticness>-50</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <FadeSpeed>0.5</FadeSpeed>
+      <Replace>
+        <string>HurtAccidentally</string>
+      </Replace>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>KilledLooter</UniqueID>
+      <NativeDescription>%1 killed a looter</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>5</DifficultyPatheticness>
+      <Replace>
+        <string>Hurt</string>
+        <string>MurderSuspect</string>
+        <string>AttackSuspect</string>
+        <string>KnockedOut</string>
+        <string>FailedAttack</string>
+      </Replace>
+      <ObjectType>None</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>KilledPossibleInvisibleStrain</UniqueID>
+      <NativeDescription>%1 executed %2 because of suspected infection</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-75</GoodnessBadness>
+      <DifficultyPatheticness>75</DifficultyPatheticness>
+      <FadeSpeed>0.5</FadeSpeed>
+      <Replace>
+        <string>HurtPossibleInvisibleStrain</string>
+      </Replace>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>KilledZombie</UniqueID>
+      <NativeDescription>%1 killed infected</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>1</DifficultyPatheticness>
+      <RespectLimit>20</RespectLimit>
+      <ObjectType>None</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>KnockedOut</UniqueID>
+      <NativeDescription>%1 knocked %2 out</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>25</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipBuiltTech</UniqueID>
+      <NativeDescription>Under %1's leadership, the %2 camp has improved.</NativeDescription>
+      <CanForget>No</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <MoraleBoost>10</MoraleBoost>
+      <ApprovalLimit>50</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedDeath</UniqueID>
+      <NativeDescription>%1's decisions led to the death of %2</NativeDescription>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>-20</DifficultyPatheticness>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedHunger</UniqueID>
+      <NativeDescription>Under %1's leadership [speaker(2)?I haven't:listener(2)?you haven't:%2 hasn't] had enough to eat.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <MoraleBoost>-10</MoraleBoost>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedHypothermia</UniqueID>
+      <NativeDescription>Under %1's leadership [speaker(2)?I:%2] froze [speaker(2)?my:listener(2)?your:male(2)?his:her] ass off.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <MoraleBoost>-10</MoraleBoost>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedLackOfHygiene</UniqueID>
+      <NativeDescription>Under %1's leadership [speaker(2)?I've:%2] found the camp has become unhygienic.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <MoraleBoost>-10</MoraleBoost>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedLackOfSpace</UniqueID>
+      <NativeDescription>Under %1's leadership [speaker(2)?I've:%2] found we've had cramped living quarters.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <MoraleBoost>-10</MoraleBoost>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedLowMorale</UniqueID>
+      <NativeDescription>Life has been a struggle for %2 in %1's crew.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedOverwork</UniqueID>
+      <NativeDescription>[speaker(2)?I've:listener(2)?You've:%2 has] had a high workload in %1's crew.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <FadeSpeed>0.5</FadeSpeed>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedSleepDeprivation</UniqueID>
+      <NativeDescription>Under %1's leadership [speaker(2)?I've:listener(2)?you've:%2 has] not had enough sleep.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <MoraleBoost>-10</MoraleBoost>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipCausedThirst</UniqueID>
+      <NativeDescription>Under %1's leadership [speaker(2)?I haven't:listener(2)?you haven't:%2 hasn't] had enough to drink.</NativeDescription>
+      <CanForget>OnlyIfNotInvolvingMe</CanForget>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <MoraleBoost>-10</MoraleBoost>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeadershipDefeated</UniqueID>
+      <NativeDescription>%1 defeated %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>Defeated</RuleSet>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <ObjectType>Community</ObjectType>
+      <ActorMustBeLeader>true</ActorMustBeLeader>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LeftCommunity</UniqueID>
+      <NativeDescription>%1 defected from %2 to another community</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LiedAbout</UniqueID>
+      <NativeDescription>%1 lied about %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LiedSuccessfullyTo</UniqueID>
+      <NativeDescription>%1 lied to %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LiedUnsuccessfullyTo</UniqueID>
+      <NativeDescription>%1 lied unconvincingly to %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-25</GoodnessBadness>
+      <DifficultyPatheticness>-25</DifficultyPatheticness>
+      <MoraleMultiplier>0.25</MoraleMultiplier>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LookedAfter</UniqueID>
+      <NativeDescription>%1 cared for %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>5</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LostFisticuffs</UniqueID>
+      <NativeDescription>%1 lost to %2 at fisticuffs</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>-40</DifficultyPatheticness>
+      <ReciprocalMemoryID>WonFisticuffs</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>LostSnowballFight</UniqueID>
+      <NativeDescription>%1 lost to %2 in a snowball fight</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+      <ReciprocalMemoryID>WonSnowballFight</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>MadeAlliance</UniqueID>
+      <NativeDescription>%1 made an alliance with %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <SpreadToAllCommunities>true</SpreadToAllCommunities>
+      <RuleSet>Alliance</RuleSet>
+      <GoodnessBadness>20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <QuantityLimit>1</QuantityLimit>
+      <Replace>
+        <string>BrokeAlliance</string>
+      </Replace>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Miscarriage</UniqueID>
+      <NativeDescription>[speaker(2)?!:%2] had a miscarriage</NativeDescription>
+      <CanForget>No</CanForget>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MoraleBoost>-150</MoraleBoost>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>MoralStand</UniqueID>
+      <NativeDescription>%1 took a moral stand against %2</NativeDescription>
+      <RuleSet>MoralStand</RuleSet>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>MotivatedSuccessfully</UniqueID>
+      <NativeDescription>%1 gave encouragement to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <MoraleBoost>10</MoraleBoost>
+      <Replace>
+        <string>MotivatedUnsuccessfully</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>MotivatedUnsuccessfully</UniqueID>
+      <NativeDescription>%1 found it difficult to motivate %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>-20</DifficultyPatheticness>
+      <MoraleBoost>-10</MoraleBoost>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>MurderSuspect</UniqueID>
+      <NativeDescription>%1 was lurking in the area when %2 died</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-40</GoodnessBadness>
+      <DifficultyPatheticness>40</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>NeededRescue</UniqueID>
+      <NativeDescription>%1 needed to be rescued by %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-20</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>NegotiatedSuccessfully</UniqueID>
+      <NativeDescription>%1 negotiated successfully with %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <Replace>
+        <string>NegotiatedUnsuccessfully</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>NegotiatedUnsuccessfully</UniqueID>
+      <NativeDescription>%1 tried to negotiate with %2 but failed</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <RespectLimit>10</RespectLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>PaidDebt</UniqueID>
+      <NativeDescription>%1 repaid a debt to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Past</UniqueID>
+      <NativeDescription>I've been through some shit</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>PersuadedSuccessfully</UniqueID>
+      <NativeDescription>%1 persuaded %2 successfully</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <Replace>
+        <string>PersuadedUnsuccessfully</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>PersuadedUnsuccessfully</UniqueID>
+      <NativeDescription>%1 failed to persuade %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <RespectLimit>10</RespectLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>PoachedFrom</UniqueID>
+      <NativeDescription>%1 poached people from %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-30</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <Replace>
+        <string>PoachedUnsuccessfullyFrom</string>
+      </Replace>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>PoachedUnsuccessfullyFrom</UniqueID>
+      <NativeDescription>%1 tried to poach people from %2</NativeDescription>
+      <GoodnessBadness>-15</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <ApprovalLimit>15</ApprovalLimit>
+      <RespectLimit>10</RespectLimit>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Praised</UniqueID>
+      <NativeDescription>%1 had nice things to say about %2</NativeDescription>
+      <WitnessedByObject>false</WitnessedByObject>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Protected</UniqueID>
+      <NativeDescription>%1 protected %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>40</GoodnessBadness>
+      <DifficultyPatheticness>20</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>RebuffedFlirting</UniqueID>
+      <NativeDescription>%1 rebuffed %2</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>RefusedAssistance</UniqueID>
+      <NativeDescription />
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>RefusedToHangOut</UniqueID>
+      <NativeDescription>%1 refused to hang out with %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>RefusedToHelp</UniqueID>
+      <NativeDescription>%1 refused to help %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+      <RespectLimit>10</RespectLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Regrets</UniqueID>
+      <NativeDescription>Regrets?  I've had a few.</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Rejected</UniqueID>
+      <NativeDescription>%1 turned %2 down</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>Rejected</RuleSet>
+      <GoodnessBadness>-40</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MustBeAttractedTo>true</MustBeAttractedTo>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Rescued</UniqueID>
+      <NativeDescription>%1 rescued %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>60</GoodnessBadness>
+      <DifficultyPatheticness>40</DifficultyPatheticness>
+      <ReciprocalMemoryID>NeededRescue</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>RestrainedSuccessfully</UniqueID>
+      <NativeDescription>%1 restrained %2 from fighting %3</NativeDescription>
+      <CanForget>IfNotInvolvingMeOrOld</CanForget>
+      <RuleSet>Restrain</RuleSet>
+      <GoodnessBadness>-5</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <Replace>
+        <string>RestrainedUnsuccessfully</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>RestrainedUnsuccessfully</UniqueID>
+      <NativeDescription>%1 couldn't stop %2 from fighting %3</NativeDescription>
+      <RuleSet>Restrain</RuleSet>
+      <GoodnessBadness>-5</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+      <ApprovalLimit>25</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+      <Replace>
+        <string>RestrainedSuccessfully</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ReturnedCorpse</UniqueID>
+      <NativeDescription>%1 returned the body of %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Righteous</UniqueID>
+      <NativeDescription>%1 is trying to do the right thing, in %2's opinion</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>RippedOff</UniqueID>
+      <NativeDescription>%1 ripped %2 off</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-0.1</GoodnessBadness>
+      <DifficultyPatheticness>0.2</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Robbed</UniqueID>
+      <NativeDescription>%1 robbed %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <QuantityLimit>1</QuantityLimit>
+      <ApprovalLimit>50</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+      <ReciprocalMemoryID>Cowardly</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>SavedLife</UniqueID>
+      <NativeDescription>%1 saved %2 from an infected</NativeDescription>
+      <GoodnessBadness>5</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+      <RespectLimit>40</RespectLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Secretive</UniqueID>
+      <NativeDescription>%1 withheld information from %2</NativeDescription>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>5</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>SelfSacrificed</UniqueID>
+      <NativeDescription>%1 self-sacrificed on behalf of %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>50</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <CanBeARumour>false</CanBeARumour>
+      <ObjectType>Community</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ShookDown</UniqueID>
+      <NativeDescription>%1 shook %2 down</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <GoodnessBadness>-25</GoodnessBadness>
+      <DifficultyPatheticness>25</DifficultyPatheticness>
+      <MoraleMultiplier>0.25</MoraleMultiplier>
+      <ApprovalLimit>25</ApprovalLimit>
+      <RespectLimit>25</RespectLimit>
+      <ReciprocalMemoryID>Cowardly</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>SoldTo</UniqueID>
+      <NativeDescription>%1 sold supplies to %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>0.1</DifficultyPatheticness>
+      <RespectLimit>100</RespectLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>SparedLife</UniqueID>
+      <NativeDescription>%1 spared the life of %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>25</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <ApprovalLimit>50</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>StartedFight</UniqueID>
+      <NativeDescription>%1 started a fight with %2</NativeDescription>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>StoleFrom</UniqueID>
+      <NativeDescription>%1 stole from %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RuleSet>OnlyNegative</RuleSet>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>StoodUpTo</UniqueID>
+      <NativeDescription>%1 stood up to %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-30</GoodnessBadness>
+      <DifficultyPatheticness>30</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Supported</UniqueID>
+      <NativeDescription>%1 agreed with %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>25</ApprovalLimit>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Surrendered</UniqueID>
+      <NativeDescription>%1 surrendered to %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <RememberedBySubject>true</RememberedBySubject>
+      <GoodnessBadness>5</GoodnessBadness>
+      <DifficultyPatheticness>-20</DifficultyPatheticness>
+      <ApprovalLimit>20</ApprovalLimit>
+      <RespectLimit>20</RespectLimit>
+      <CanBeARumour>false</CanBeARumour>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Sympathized</UniqueID>
+      <NativeDescription>%1 sympathized with %2</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ThreatenedSuccessfully</UniqueID>
+      <NativeDescription>%1 threatened %2</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-50</GoodnessBadness>
+      <DifficultyPatheticness>50</DifficultyPatheticness>
+      <MoraleMultiplier>0.5</MoraleMultiplier>
+      <ApprovalLimit>50</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+      <ReciprocalMemoryID>Cowardly</ReciprocalMemoryID>
+      <Replace>
+        <string>ThreatenedUnsuccessfully</string>
+      </Replace>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>ThreatenedUnsuccessfully</UniqueID>
+      <NativeDescription>%1 tried to threaten %2 but failed</NativeDescription>
+      <SpreadToAllSubjectCommunity>true</SpreadToAllSubjectCommunity>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-25</GoodnessBadness>
+      <DifficultyPatheticness>-50</DifficultyPatheticness>
+      <MoraleMultiplier>0.25</MoraleMultiplier>
+      <ApprovalLimit>25</ApprovalLimit>
+      <RespectLimit>50</RespectLimit>
+      <ReciprocalMemoryID>Brave</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Unconvincing</UniqueID>
+      <NativeDescription>%1 made an unconvincing argument to %2</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>UsedHumanIngredients</UniqueID>
+      <NativeDescription>%1 used human ingredients in food</NativeDescription>
+      <RememberedBySubject>true</RememberedBySubject>
+      <RuleSet>Cannibal</RuleSet>
+      <GoodnessBadness>-20</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ApprovalLimit>50</ApprovalLimit>
+      <ObjectType>None</ObjectType>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>VisitedGrave</UniqueID>
+      <NativeDescription>%1 paid respects to %2's grave</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+      <ObjectMustBeDead>true</ObjectMustBeDead>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>WarnedAboutTraps</UniqueID>
+      <NativeDescription>%1 warned %2 about traps in the area</NativeDescription>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>0</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>Weak</UniqueID>
+      <NativeDescription>%1 seemed timid or uncertain to %2</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>-10</DifficultyPatheticness>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>WonFisticuffs</UniqueID>
+      <NativeDescription>%1 beat %2 at fisticuffs</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>-10</GoodnessBadness>
+      <DifficultyPatheticness>40</DifficultyPatheticness>
+      <ReciprocalMemoryID>LostFisticuffs</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>WonSnowballFight</UniqueID>
+      <NativeDescription>%1 beat %2 in a snowball fight</NativeDescription>
+      <GoodnessBadness>0</GoodnessBadness>
+      <DifficultyPatheticness>10</DifficultyPatheticness>
+      <RespectLimit>20</RespectLimit>
+      <ReciprocalMemoryID>LostSnowballFight</ReciprocalMemoryID>
+    </MemoryPrototype>
+    <MemoryPrototype>
+      <UniqueID>WorkedFor</UniqueID>
+      <NativeDescription>%1 worked for %2</NativeDescription>
+      <SpreadToAllObjectCommunity>true</SpreadToAllObjectCommunity>
+      <GoodnessBadness>10</GoodnessBadness>
+      <DifficultyPatheticness>40</DifficultyPatheticness>
+    </MemoryPrototype>
+  </Memories>
+</MemoryList>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Scrap Leather Helmet</NativeName>
+  <NativeDescription>Its smells like feet since its made from discarded zed boots. offers the least protection among all helmets. 3 Damage absorption from zed.</NativeDescription>
+  <Category>4:Clothing/Armor/Helmets</Category>
+  <Weight>3</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>-2</SightRangeModifier>
+  <ClothingType>Hat</ClothingType>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Zombie</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>27</r>
+      <g>27</g>
+      <b>27</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations3 />
+  <MaterialVariations>
+    <string>Army Headgear Pack/helmet 8-a</string>
+    <string>Army Headgear Pack/helmet 8-b</string>
+  </MaterialVariations>
+  <MaleMeshName>M_Helmet6:helmet_8</MaleMeshName>
+  <FemaleMeshName>F_Helmet6:helmet_8</FemaleMeshName>
+  <DamageAbsorption>3</DamageAbsorption>
+</EquipmentPrototype>

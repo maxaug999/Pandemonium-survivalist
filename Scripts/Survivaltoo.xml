@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>294.182068</x>
+    <y>39.50746</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.698337257</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Survivaltoo_Itsharvestseason" x="486.47998" y="-433.319641" NativeText=":-) Its harvest season!" Situation="PickingCrops" Importance="Low" RepeatTime="300" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

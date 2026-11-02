@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Swing</NativeName>
+  <Category>Town/Props/Playground</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Old School Playground Gear/Swing_A</string>
+    <string>Prefabs/Props/Old School Playground Gear/Swing_B</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0.5</x>
+      <y>0.9</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0.5</x>
+      <y>0.9</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>20</MaxDamage>
+  <CoverType>Transparent</CoverType>
+  <Flammability>Low_RequiresExplosion</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <ExtentsMax>
+    <x>1</x>
+    <y>0</y>
+  </ExtentsMax>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>SteelIngot</RepairResourceType>
+  <RepairResourceNeeded>2</RepairResourceNeeded>
+  <SpawnProbabilityFactor>2</SpawnProbabilityFactor>
+  <Mass>150</Mass>
+</PropPrototype>

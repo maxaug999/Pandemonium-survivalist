@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>2</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <EditorScrollPos>
+    <x>981.8687</x>
+    <y>-499.4233</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.712392867</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Bitten_YouAreInfected_Immoral" x="-1127.93628" y="255.789886" NativeText="}:-) Hahaha you've been bitten, lucky you I don't have any antigen." Situation="Opener">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Target" BoolData="false" />
+        <Condition Type="InfectedInjuryIsOlderThan" Subject="Target" Data="10" BoolData="false" />
+        <Condition Type="IsShowingDialogueOptions" BoolData="false" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" BoolData="false" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" BoolData="false" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" BoolData="false" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten_YouAreInfected_Alcoholic" x="-414.958" y="235.662872" NativeText=":-| I think you only need to pour some booze on it" Situation="Opener">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Target" BoolData="false" />
+        <Condition Type="InfectedInjuryIsOlderThan" Subject="Target" Data="10" BoolData="false" />
+        <Condition Type="IsShowingDialogueOptions" BoolData="false" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" BoolData="false" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" BoolData="false" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" BoolData="false" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten_YouAreInfected_Stupid" x="286.144684" y="231.181152" NativeText="8-o Oh no! you'll be turning into one of them right?" Situation="Opener">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Target" BoolData="false" />
+        <Condition Type="InfectedInjuryIsOlderThan" Subject="Target" Data="10" BoolData="false" />
+        <Condition Type="IsShowingDialogueOptions" BoolData="false" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" BoolData="false" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" BoolData="false" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" BoolData="false" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+</Script>

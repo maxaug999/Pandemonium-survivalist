@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PipeBomb</TypeName>
+  <NativeName>Pumpkin Bomb</NativeName>
+  <NativeDescription>Spread the infection, not effective on zeds</NativeDescription>
+  <Category>2:Weapons/Throwable</Category>
+  <Weight>5</Weight>
+  <BasePrice>12</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Prefabs/Props/Gore/RancidMeatChunk_01</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>ZombieBite</InjuryType>
+  <Damage>0.6</Damage>
+  <Range>20</Range>
+  <RangeBonusPerSkillLevel>1</RangeBonusPerSkillLevel>
+  <AttackSoundRadius>10</AttackSoundRadius>
+  <AccurateRange>10</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>2</MaxAimTime>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>2</MinTimeBetweenFiring>
+  <DamageRadius>3</DamageRadius>
+</EquipmentPrototype>

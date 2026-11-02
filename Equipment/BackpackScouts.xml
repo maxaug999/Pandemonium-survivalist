@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Explorer's Backpack</NativeName>
+  <NativeDescription>A scout backpack, perfect for exploration and sight. +10 max weight per Strength skill.</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>3</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>3</SightRangeModifier>
+  <ClothingType>Backpack</ClothingType>
+  <LiquidCapacity>75</LiquidCapacity>
+  <DefaultLiquidType>Water</DefaultLiquidType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>142</r>
+      <g>68</g>
+      <b>173</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2>
+    <Color32>
+      <r>236</r>
+      <g>240</g>
+      <b>241</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations2>
+  <MaleMeshName>Male_Mill_All:Backpack3</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack3</FemaleMeshName>
+  <CarryWeight>40</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>10</CarryWeightBonusPerSkillLevel>
+</EquipmentPrototype>

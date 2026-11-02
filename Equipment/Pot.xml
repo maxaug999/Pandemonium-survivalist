@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Pot</NativeName>
+  <NativeDescription>Cook tasty dishes over a campfire</NativeDescription>
+  <Category>7:Containers</Category>
+  <Weight>14</Weight>
+  <BasePrice>4</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <LiquidCapacity>200</LiquidCapacity>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Restaurant</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

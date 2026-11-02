@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Pipe</NativeName>
+  <NativeDescription>If you have access to a workbench, a match, and some gunpowder, you can use this to make pipe bombs and blow your enemies to pieces in a cloud of firey destruction.  If not, you could just use this to hit them.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>16</Weight>
+  <BasePrice>4</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Pipe/Pipe</EquippedModelName>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.4</Damage>
+  <DamageBonusPerSkillLevel>0.08</DamageBonusPerSkillLevel>
+  <Range>2</Range>
+  <FatiguePenaltyWhenAttacking>0.15</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

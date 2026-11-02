@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Roundabout</NativeName>
+  <Category>Town/Props/Playground</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Old School Playground Gear/Carousel_A</string>
+    <string>Prefabs/Props/Old School Playground Gear/Carousel_B</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0.5</x>
+      <y>0.275</y>
+      <z>0.5</z>
+    </Vector3>
+    <Vector3>
+      <x>0.5</x>
+      <y>0.275</y>
+      <z>0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>20</MaxDamage>
+  <CoverType>Transparent</CoverType>
+  <Flammability>Low_RequiresExplosion</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <ExtentsMax>
+    <x>1</x>
+    <y>1</y>
+  </ExtentsMax>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>SteelIngot</RepairResourceType>
+  <RepairResourceNeeded>2</RepairResourceNeeded>
+  <Mass>200</Mass>
+</PropPrototype>

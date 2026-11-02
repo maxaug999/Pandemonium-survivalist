@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Corn Syrup</NativeName>
+  <NativeDescription>Addicting when drinking it pure</NativeDescription>
+  <Category>5:Food/Drink</Category>
+  <Col>
+    <r>255</r>
+    <g>249</g>
+    <b>166</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.3</BasePricePerFlOz>
+  <NutritionPerFlOz>0.02</NutritionPerFlOz>
+  <CaffeinePerFlOz>0.001</CaffeinePerFlOz>
+  <WaterContent>33</WaterContent>
+  <Tastiness>45</Tastiness>
+  <CanPourIntoBottles>true</CanPourIntoBottles>
+</LiquidPrototype>

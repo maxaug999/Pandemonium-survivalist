@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Trash</TypeName>
+  <NativeName>Trash</NativeName>
+  <Category>Town/Props/Trash</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBasket</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBeerBottle</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBigPack</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrick</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenBeerBottle</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenBrick</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenCoffeeMug</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenEnergyCan</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenMilkPackA</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenMilkPackB</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenPacks</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenPlate</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenTakewayCoffee</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenTinCan</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropBrokenWineBottle</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropCoffeeMug</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropFoodPack</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropJerrycan</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropMediumCanister</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropMilkPack</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropPlasticBottle</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropPlate</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropTakewayCoffee</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropTinCan</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropTunaCan</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropWineBottle</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropYogurtBottle</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <CoverType>None</CoverType>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeClearedForBuilding>true</CanBeClearedForBuilding>
+</PropPrototype>

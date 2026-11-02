@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Green Strain Antigen</NativeName>
+  <NativeDescription>The Green Strain takes a week to gestate.  The antigen must be administered during this time.</NativeDescription>
+  <Category>3:Medical/Antigen/1</Category>
+  <Weight>0.01</Weight>
+  <BasePrice>8</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <AntigenType>Green</AntigenType>
+  <EquippedModelName>Prefabs/Equipment/Med Items Pack/Syringe</EquippedModelName>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Medical</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

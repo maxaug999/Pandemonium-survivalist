@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>32</NextFreeSpeechID>
+  <NextFreeTriggerID>4</NextFreeTriggerID>
+  <NextFreeConditionBlockID>6</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-6939.485</x>
+    <y>6544.78</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.7693347</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Extortion_NicePlace" x="792.2503" y="-426.250183" NativeText=":-) Hey, how you doing?  Nice place you got here.  Real nice." Situation="Opener" RepeatTime="5" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Continues>
+        <SpeechRef UniqueID="Extortion_DownToBusiness" />
+        <SpeechRef UniqueID="Extortion_Vulnerable" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="Extortion" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="VariableEquals" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" StringData="Extorted" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TargetRanOff" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Extortion_DownToBusiness" x="1721.08923" y="-173.085876" NativeText="But let's get down to business.  We are %1, and this whole area here is our land.  It belongs to us, and we keep it safe, see?  So anyone that builds a settlement here, they got to pay us rent.  }:-| And today is payment day for you.  Got it?">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_FederalLands" />
+        <SpeechRef UniqueID="Extortion_DoesntSeemSafe" />
+        <SpeechRef UniqueID="Extortion_HowManyOfYou" />
+        <SpeechRef UniqueID="Extortion_TaxDay" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Extortion_FederalLands" x="2753.20459" y="63.62121" NativeText="}:-| What do you mean, your land?  These are federal lands!" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Extortion_WeGotHereFirst" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="IsNemesis" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Extortion_WeGotHereFirst" x="3905.756" y="64.7247543" NativeText="}:-| That shit don't mean anything anymore.  We got here first, so it's ours.">
+      <Continues>
+        <SpeechRef UniqueID="Extortion_Actually" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Extortion_Actually" x="5010.67" y="-305.863129" NativeText="Well actually there were some people before us, but we killed them.  My point is, we got here before you did, so it's ours.">
+      <Replies>
+        <SpeechRef UniqueID="Extortion_DoesntSeemSafe" />
+        <SpeechRef UniqueID="Extortion_DoingFine" />
+        <SpeechRef UniqueID="Extortion_HowManyOfYou" />
+        <SpeechRef UniqueID="Extortion_TaxDay" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Extortion_DoesntSeemSafe" x="2776.14429" y="-731.479" NativeText="}:-| You keep it safe?  It doesn't seem very safe to me." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Extortion_GivingMeLip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Extortion_GivingMeLip" x="3950.0686" y="-743.253662" NativeText="}:-[ It'll be a hell of a lot less safe for you if you keep giving me lip, %1.">
+      <Params>
+        <SpeechParam Type="BoyOrGirl" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_FederalLands" />
+        <SpeechRef UniqueID="Extortion_DoingFine" />
+        <SpeechRef UniqueID="Extortion_HowManyOfYou" />
+        <SpeechRef UniqueID="Extortion_TaxDay" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Extortion_TaxDay" x="2805.20068" y="-2414.71362" NativeText="}:-| What the hell is this so-called rent?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Extortion_YouOweUs" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Extortion_YouOweUs" x="4045.53833" y="-2163.83984" NativeText="You owe us... looking at your head count, I'd say %1 gold pieces.  But if you don't have the gold, we can always take food or other goods of equivalent value instead.  Remember, it's for a good cause - we're keeping you safe!  }:-| So don't try to fuck with us.">
+      <Params>
+        <SpeechParam Type="Formula" Subject="Actor" Object="Target">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Extortion_Formula_Price_Seller" />
+          </Formulas>
+        </SpeechParam>
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_TakeTheGold" />
+        <SpeechRef UniqueID="Extortion_TakeSupplies" />
+        <SpeechRef UniqueID="Extortion_LetUsOff" />
+        <SpeechRef UniqueID="Extortion_WalkAway" />
+        <SpeechRef UniqueID="Extortion_TakeOurLives" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Extortion_TakeTheGold" x="5329.96973" y="-1201.01538" NativeText="}:-( Take the damn gold, then." MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_ThatWasEasy" />
+        <SpeechRef UniqueID="Extortion_MakeEndsMeet" />
+        <SpeechRef UniqueID="Extortion_FeelingFlush" />
+        <SpeechRef UniqueID="Extortion_WatchHowYouTalk" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Object="Target" SubjectModifier="Community">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_Formula_Price_Buyer" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Extortion_TakeSupplies" x="5337.615" y="-2489.41772" NativeText="{:-( Fine, take some supplies." MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_LugAllThisStuff" />
+        <SpeechRef UniqueID="Extortion_RightChoice" />
+        <SpeechRef UniqueID="Extortion_FobbingUsOff" />
+        <SpeechRef UniqueID="Extortion_ThisIsALot" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Extortion_FeelingFlush" x="7731.55469" y="-693.9208" NativeText="}:-) Ooh, feeling flush are you?  We'll be back for more of that later.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Data="1" StringData="Extortion_Trigger_Extorted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_RightChoice" x="7770.42969" y="-2646.86816" NativeText="}:-) You made the right choice, my friend.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_ExtortedSupplies" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_TakeOurLives" x="6188.87354" y="-8413.304" NativeText="}:-[ You may take our lives but you will never take our property!" MaxRange="5">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="IncrementVariable" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Data="1" StringData="Extorted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_DoneWithThePlace" x="2806.21973" y="-2809.61" NativeText=":-) Hey, what's up?  Did I mention, I love what you've done with the place!  Great job!  }:-| Anyway, it's time for you to pay your rent again." Situation="Opener" RepeatTime="5" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Continues>
+        <SpeechRef UniqueID="Extortion_YouOweUs" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TimeToPayRentAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TargetRanOff" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Extortion_CantWalkAway" x="-510.538483" y="-2170.535" NativeText="}:-| Hey, you can't walk away from your rent obligations!" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_ConditionBlock_IsPlayer" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Target" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsInCombat" Subject="Actor" />
+        <Condition Type="IsInCombat" Subject="Target" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="IncrementVariable" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Data="1" StringData="Extorted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_Vulnerable" x="1746.23914" y="-1427.66943" NativeText="The bad news is, your little community here looks pretty vulnerable right now.  But you're in luck, because we are %1 and we help to keep this area safe, for a fee.  Think of it like rent.  }:-) And today is payment day.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_DoingFine" />
+        <SpeechRef UniqueID="Extortion_DoesntSeemSafe" />
+        <SpeechRef UniqueID="Extortion_HowManyOfYou" />
+        <SpeechRef UniqueID="Extortion_TaxDay" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="Actor" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Extortion_DoingFine" x="2784.851" y="-1724.422" NativeText="We don't want your protection, thanks.  We're doing fine." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Extortion_Exceptions" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Extortion_Exceptions" x="4020.01343" y="-1594.42981" NativeText="}:-| This isn't a voluntary kind of deal.  We can't make exceptions for you, as it {:-| wouldn't be fair on the people who do pay.">
+      <Replies>
+        <SpeechRef UniqueID="Extortion_FederalLands" />
+        <SpeechRef UniqueID="Extortion_DoesntSeemSafe" />
+        <SpeechRef UniqueID="Extortion_HowManyOfYou" />
+        <SpeechRef UniqueID="Extortion_TaxDay" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Extortion_LowStocks" x="-323.347168" y="-4154.50146" NativeText="{:-| Hey, uh, we've got a problem.  We're really low on food stocks for the winter.  Can you help us out?" Situation="Opener" RepeatTime="5" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Conditions>
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="Beg" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TargetRanOff" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Begged" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Extortion_DontBelieveWeveMet" x="782.1298" y="1575.7926" NativeText=":-) Hey, how you doing?  I don't believe we've met, but I'm %1.  Real nice place you got here!" Situation="Opener" RepeatTime="5" MaxRange="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="Extortion_DownToBusiness" />
+        <SpeechRef UniqueID="Extortion_Vulnerable" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="Extortion" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TargetRanOff" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_MakeEndsMeet" x="7731.826" y="29.8003159" NativeText="}:-| Doesn't exactly look like you were struggling to make ends meet, with all this gold.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Data="1" StringData="Extortion_Trigger_Extorted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_WatchHowYouTalk" x="7743.777" y="-1171.23352" NativeText="}:-[ Yeah and watch how you talk to us too!  Politeness don't cost anything.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Data="1" StringData="Extortion_Trigger_Extorted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_ThatWasEasy" x="7708.7793" y="735.8571" NativeText="Cool, that was easy.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Data="1" StringData="Extortion_Trigger_Extorted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_LugAllThisStuff" x="7763.4" y="-1990.51074" NativeText="}:-| Great, now I'll have to lug this stuff back home.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_ExtortedSupplies" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_FobbingUsOff" x="7774.32373" y="-3096.97583" NativeText="}:-[ Yeah we'll take that, and don't try to fob us off with any shitty, low quality merchandise either.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_ExtortedSupplies" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_ThisIsALot" x="7768.082" y="-3808.60962" NativeText="Alright, yeah, that'll do.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_ExtortedSupplies" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_AlrightMotherfuckers" x="2789.77075" y="-3861.67017" NativeText="}:-[ Alright motherfuckers, it's time to pay your rent again!" Situation="Opener" RepeatTime="5" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Extortion_YouOweUs" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TimeToPayRentAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TargetRanOff" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Extortion_LooksLikeYoureLate" x="2789.3584" y="-5047.50342" NativeText="Howdy, yeah great to see you.  }:-| Looks like you're late with the rent, so I had to come all the way here to chase up you up.  It's no trouble of course, I'm happy to do it." Situation="Opener" RepeatTime="5" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Extortion_YouOweUs" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TimeToPayRentAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TargetRanOff" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Extortion_JustTheMessenger" x="2798.259" y="-6430.21533" NativeText="Hey, what's up.  Looks like your rent is due again.  Hey don't blame me, I'm just the messenger." Situation="Opener" RepeatTime="5" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Extortion_YouOweUs" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Extortion_CantWalkAway" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TimeToPayRentAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_TargetRanOff" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Extortion_HowManyOfYou" x="2821.26758" y="773.469666" NativeText="}:-| Is this a scam?  How many of you are there?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Extortion_Plenty" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Extortion_Plenty" x="3945.71216" y="956.7126" NativeText="}:-| Plenty to keep this area safe, believe me.  We've got a camp full of %1 well armed soldiers and we've got the contacts to pay more!  So don't think about messing us around.  We'll come after you, I promise!">
+      <Params>
+        <SpeechParam Type="CommunitySize" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_FederalLands" />
+        <SpeechRef UniqueID="Extortion_DoesntSeemSafe" />
+        <SpeechRef UniqueID="Extortion_DoingFine" />
+        <SpeechRef UniqueID="Extortion_TaxDay" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Extortion_LetUsOff" x="8976.799" y="-4911.97363" NativeText="{:-| Can you let us off this time, buddy?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_InMyGoodBooks" />
+        <SpeechRef UniqueID="Extortion_InMyGoodBooks2" />
+        <SpeechRef UniqueID="Extortion_NotYourBuddy" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Extortion_InMyGoodBooks" x="9933.908" y="-3753.865" NativeText="{:-| Eh... alright.  Just count yourself lucky that you're in my good books right now." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="30" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" Data="1" StringData="Grovelled" />
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_Complete" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Extortion_NotYourBuddy" x="7956.442" y="-5371.717" NativeText="}:-| I ain't your buddy.  Let's see some gold.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="70" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_TakeTheGold" />
+        <SpeechRef UniqueID="Extortion_TakeSupplies" />
+        <SpeechRef UniqueID="Extortion_WalkAway" />
+        <SpeechRef UniqueID="Extortion_TakeOurLives" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" Data="1" StringData="PersuadedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_InMyGoodBooks2" x="9944.853" y="-5269.61865" NativeText="{:-| Eh... alright.  Just count yourself lucky that %1 is in my good books right now." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="30">
+          <ConditionBlocks />
+        </Condition>
+        <Condition Type="Approval" Subject="Actor" Object="Target" ObjectModifier="Leader" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" SubjectModifier="Leader" />
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" Data="1" StringData="Grovelled" />
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_Complete" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Extortion_WalkAway" x="8905.211" y="-7285.7583" NativeText="}:-| You're in over your head - walk away and don't come back.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_AnExceptionForYou" />
+        <SpeechRef UniqueID="Extortion_AnExceptionForYou2" />
+        <SpeechRef UniqueID="Extortion_FindOut" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Extortion_AnExceptionForYou" x="9952.356" y="-7139.93164" NativeText="8-( Uh... you know, I guess we can make an exception for you this year actually.  Yeah." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="30" />
+        <Condition Type="CommunitySize" Subject="Target" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="Actor" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" Data="1" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_Complete" />
+        <StoryEvent Type="PretendExtortion" Subject="Actor" Object="Target" Data="84" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Extortion_FindOut" x="7890.28271" y="-7952.829" NativeText="}:-[ Fuck around with us and you'll find out who's in over their head!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="30" />
+        <Condition Type="CommunitySize" Subject="Actor" PriorityFactor="10" />
+        <Condition Type="Always" PriorityFactor="40" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Extortion_TakeTheGold" />
+        <SpeechRef UniqueID="Extortion_TakeSupplies" />
+        <SpeechRef UniqueID="Extortion_TakeOurLives" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Extortion_AnExceptionForYou2" x="9940.56" y="-8830.474" NativeText="}:-| Uh... I guess I can make an exception for you just this once.  Don't push it." RepeatTime="151200" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="30" />
+        <Condition Type="CommunitySize" Subject="Target" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" Data="1" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_Complete" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Extortion_Trigger_Extorted" x="8811.233" y="-342.521881">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="TakeAllGold" Subject="Actor" Object="Target" BoolData="true" BoolData3="true">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Extortion_Formula_Price_Seller" />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_Complete" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Extortion_Trigger_ExtortedSupplies" x="8729.291" y="-2368.17554">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="TakeAllSupplies" Subject="Actor" Object="Target" BoolData="true" BoolData3="true">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Extortion_Formula_Price_Seller" />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="OneShotTrigger" StringData="Extortion_Trigger_Complete" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Extortion_Trigger_Complete" x="12248.5664" y="-2921.43042">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="IncrementVariable" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Data="1" StringData="Extorted" />
+        <StoryEvent Type="SetVariable" Subject="Actor" SubjectModifier="Community" StringData="OpenGatesExtortion" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Extortion_Formula_Price_Seller" x="6513.562" y="-1958.594" Type="Sum">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Target" PriorityFactor="5" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Extortion_Formula_Price_Buyer" x="6506.533" y="-1559.42249" Type="Sum">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Actor" PriorityFactor="5" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Extortion_TimeToPayRentAgain" x="1831.44287" y="-3635.3833">
+      <Conditions>
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="Extortion" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Extortion_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="VariableIsGreaterThan" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" StringData="Extorted" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Extortion_ConditionBlock_IsPlayer" x="-1402.96619" y="-2235.05225" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" SubjectModifier="Community" />
+        <Condition Type="CommunityHasAlliance" Subject="Target" Object="Player" SubjectModifier="Community" ObjectModifier="Community" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Extortion_TargetRanOff" x="-208.060272" y="-68.7452">
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="Target" Data="10" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Extortion_FindingTarget" x="-162.614166" y="-560.162354" Type="Or">
+      <Conditions>
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="FindTarget" />
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="StopForWarmth" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

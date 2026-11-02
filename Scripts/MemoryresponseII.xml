@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>318.706177</x>
+    <y>335.576355</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.562309146</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="MemoryResponse_Simp!" x="123.000977" y="-433.000183" NativeText=":-( Simp!" Situation="MemoryResponse" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalLessThan" Data="-15" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_PainInTheAss" x="867.9996" y="-410.000244" NativeText="}:-| %1 is a pain in the ass!" Situation="MemoryResponse" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryRespectLessThan" Data="-20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_LooksDumb" x="108.503265" y="-1148.59924" NativeText="}:-| %1 is acting dumb!" Situation="MemoryResponse" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryRespectLessThan" Subject="MemoryActor" Data="-15" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_MostLikely" x="874.6366" y="-1163.58252" NativeText="}:-| %1 will most likely be bitten first!" Situation="MemoryResponse" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryRespectLessThan" Data="-20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_LooksLikeInfected" x="1642.69641" y="-618.016541" NativeText="}:-) %1 looks like infected! haha.." Situation="MemoryResponse" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryRespectLessThan" Data="-20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_Always" x="2341.38086" y="-643.7476" NativeText=":-) How is it that you always get gifts?!" Situation="MemoryResponse" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalAtLeast" Data="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_Awesome" x="2342.24634" y="-1221.32471" NativeText="8-o How did you do that?!" Situation="MemoryResponse" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalAtLeast" Data="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_Clown" x="-655.28186" y="-420.432526" NativeText=":-( What a clown!" Situation="MemoryResponse" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalLessThan" Data="-10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_niceperson" x="3091.36475" y="-452.150024" NativeText=":-) %1 , what nice person!" Situation="MemoryResponse" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalAtLeast" Data="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_gotyourback" x="3103.515" y="-1239.66077" NativeText=":-) I got your back!" Situation="MemoryResponse" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalAtLeast" Data="30" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_Nice" x="2347.67041" y="-1847.51831" NativeText=":-) That's nice of you to say." Situation="MemoryResponse" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalAtLeast" Data="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_Lucky" x="3098.72119" y="-1835.16248" NativeText=":-) Lucky!" Situation="MemoryResponse" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryApprovalAtLeast" Data="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_ohreally" x="1621.92236" y="-1405.66077" NativeText=":-| Oh? really?" Situation="MemoryResponse" Importance="Memory" RepeatTime="900">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies />
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountBetween" Data2="19" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_suchamess" x="117.127029" y="-1996.58264" NativeText="}:-| %1 is such a mess!" Situation="MemoryResponse" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryRespectLessThan" Subject="MemoryActor" Data="-30" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryResponse_Pig" x="-703.152954" y="-1171.728" NativeText="}:-| %1 is such a pig!" Situation="MemoryResponse" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryRespectLessThan" Subject="MemoryActor" Data="-10" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

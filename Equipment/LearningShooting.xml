@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Learning Art of Shooting Book</NativeName>
+  <NativeDescription>The act or process of discharging a projectile from a ranged weapon.</NativeDescription>
+  <Category>8:Books/Novel</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>100</BasePrice>
+  <HasCustomUseAction>true</HasCustomUseAction>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor>
+    <string>Normie</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Nerd</string>
+  </BadGiftFor>
+  <TradeBehaviour>CantSellToAI</TradeBehaviour>
+</EquipmentPrototype>

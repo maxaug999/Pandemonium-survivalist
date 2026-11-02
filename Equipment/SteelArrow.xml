@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Arrow</TypeName>
+  <NativeName>Steel Arrow</NativeName>
+  <NativeDescription>An arrow with a heavy steel 'bodkin' point, useful for piercing armor.</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>0.05</Weight>
+  <BasePrice>0.2</BasePrice>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ArmorPiercing>0.25</ArmorPiercing>
+  <DamageModifier>2</DamageModifier>
+  <DefaultCarryAmount>60</DefaultCarryAmount>
+</EquipmentPrototype>

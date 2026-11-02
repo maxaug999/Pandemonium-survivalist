@@ -1,0 +1,1663 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>63</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>11</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-532.1311</x>
+    <y>-310.465057</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.504116952</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Threat_Shakedown" x="-737.401367" y="221.450882" NativeText=":-[ Hand over your gold!" Situation="Threat" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_Attack" x="-3375.73657" y="-528.371338" NativeText="}:-[ Die, scum!" Situation="Threat" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_NoGold" x="1497.20178" y="-1009.46277" NativeText="{:-[ I don't have any gold." MaxRange="5" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_ThatsOkay" />
+      </Replies>
+      <Conditions>
+        <Condition Type="VisibleCommunityMembersHaveGold" Subject="Target" Object="Actor" Data="1" Not="true" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_IsPlayerControllable" />
+            <ConditionBlockRef UniqueID="Threat_IsScared" />
+            <ConditionBlockRef UniqueID="Threat_IsScared_Cowardly" />
+            <ConditionBlockRef UniqueID="Threat_IsScared_Brave" />
+            <ConditionBlockRef UniqueID="Threat_IsRefugee" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_TryIt" x="1524.64978" y="-2320.14478" NativeText="}:-[ Try it." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_YourFuneral" />
+        <SpeechRef UniqueID="Threat_Confrontational" />
+        <SpeechRef UniqueID="Threat_LetsDoThis" />
+        <SpeechRef UniqueID="Threat_HopedYoudSayThat" />
+        <SpeechRef UniqueID="Threat_FuckWithMe" />
+        <SpeechRef UniqueID="Threat_JustJoking" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_WhatIThought" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_NowGetOutOfHere" x="4305.775" y="2456.16821" NativeText=":-[ Great.  Now do what you gotta do and then get out of here!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="VisibleCommunityMembersHaveGold" Subject="Actor" Object="Target" Data="5" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_JustJoking" x="3181.57471" y="-1700.67188" NativeText="8-( Woah, calm down, I was just joking around, you know?" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_IsDirectControlled" />
+            <ConditionBlockRef UniqueID="Threat_IsScared" />
+            <ConditionBlockRef UniqueID="Threat_IsScared_Cowardly" />
+            <ConditionBlockRef UniqueID="Threat_IsScared_Brave" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_HopedYoudSayThat" x="3210.47949" y="-294.003662" NativeText="}:-) I hoped you'd say that." MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_ThatsOkay" x="3149.3" y="-4073.32886" NativeText=":-) That's okay, just give me whatever you have.  }:-) Or else." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_DontHaveAnything" />
+        <SpeechRef UniqueID="Threat_TakeMyStuff" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_TakeMyStuff" x="4826.12646" y="-3365.07031" NativeText="8-( I don't want any trouble - take my stuff!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" PriorityFactor="2" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_PlayerGetOutOfHere2" />
+        <SpeechRef UniqueID="Threat_BetterHaveMore2" />
+        <SpeechRef UniqueID="Threat_NowGetOutOfHere2" />
+        <SpeechRef UniqueID="Threat_Jackpot2" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasSuppliesOfValue" Subject="Actor" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveAllSupplies" Subject="Actor" Object="Target" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Threat_LikeItWhenTheyRun" x="4807.06" y="-4972.86768" NativeText="}:-) I like it when they run!" MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_OhNoYouDont" x="4813.71973" y="-6164.7417" NativeText="}:-[ Oh no you don't!" MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_ComeBackHere" x="4802.73926" y="-7387.297" NativeText="}:-| Come back here!" MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_AnyGold" x="-728.7121" y="-544.167542" NativeText="}:-| Hey stranger, you want to cross %1's territory you've got to pay the tax, fair's fair.  Hand over your gold." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedown" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_Toll" x="-735.4213" y="-2446.959" NativeText="Uh... this land belongs to %1.  You have to pay a toll to pass through here, I gotta take your gold.  That's, like, the rules, man." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedown" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_TakeMyGold" x="1471.23181" y="583.874268" NativeText="8-( I don't want any trouble - take my gold!" MaxRange="5" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_PlayerGetOutOfHere" />
+        <SpeechRef UniqueID="Threat_BetterHaveMore" />
+        <SpeechRef UniqueID="Threat_NowGetOutOfHere" />
+        <SpeechRef UniqueID="Threat_Jackpot" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_IsPlayerControllable" />
+            <ConditionBlockRef UniqueID="Threat_IsScared" />
+            <ConditionBlockRef UniqueID="Threat_IsScared_Cowardly" />
+            <ConditionBlockRef UniqueID="Threat_IsScared_Brave" />
+            <ConditionBlockRef UniqueID="Threat_IsRefugee" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="VisibleCommunityMembersHaveGold" Subject="Target" Object="Actor" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveAllGold" Subject="Actor" Object="Target" BoolData="true" BoolData2="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Threat_WhatIThought" x="3174.14038" y="-3135.51978" NativeText="}:-| Yeah, that's what I thought." MustFinish="true" CanTalkOutOfRange="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Intro_StopRightThere" x="-2455.56543" y="-4576.71826" NativeText="}:-| Stop right there and state your business, stranger!" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Replies>
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Trade" />
+        <SpeechRef UniqueID="Intro_Kill" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intro_Howdy" x="-2506.76929" y="-5970.01" NativeText=":-) Howdy stranger.  What can I do for you?" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Trade" />
+        <SpeechRef UniqueID="Intro_Kill" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Actor" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intro_Shakedown" x="-790.9948" y="-4612.749" NativeText=":-[ Hand over your gold!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intro_Trade" x="-1082.22607" y="-6561.393" NativeText="I'm here to trade." MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intro_DontCauseTrouble" />
+        <SpeechRef UniqueID="Intro_Welcome" />
+        <SpeechRef UniqueID="Intro_Trader" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intro_DontCauseTrouble" x="738.37085" y="-5746.573" NativeText="}:-| Just don't cause any trouble." MaxRange="5">
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intro_Welcome" x="732.659363" y="-6237.29541" NativeText=":-) Sure thing!  %1 is the main trader here." MaxRange="5">
+      <Params>
+        <SpeechParam Type="CommunityMemberWithRole" Subject="Actor" StringData="Trader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DiscoverNamesOfCommunityMembersWithRole" Subject="Actor" StringData="Trader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intro_Trader" x="743.8021" y="-7774.599" NativeText=":-) You're in luck, I'm a trader myself - and I've got some great new stock just in.  Check it out!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="OpenTradeScreen" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intro_Kill" x="-1125.99084" y="-8265.955" NativeText="}:-[ Actually I'm here to kill you." MaxRange="5">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Intro_TraderCommunity" x="-2537.25171" y="-7680.435" NativeText=":-) Hey, you look like a smart %1.  %2 have got some fantastic deals for you today!" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Kill" />
+        <SpeechRef UniqueID="Intro_Merchandise" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsTraderCommunity" Subject="Actor" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Intro_Merchandise" x="-1114.7251" y="-9265.923" NativeText="Let's see what you've got." MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intro_Merchandise_Bodyguard" />
+        <SpeechRef UniqueID="Intro_Merchandise_Trader" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intro_Merchandise_Bodyguard" x="238.60907" y="-8954.047" NativeText=":-) Sure thing!  But you need to talk to %1, I'm just here for backup." MaxRange="5">
+      <Params>
+        <SpeechParam Type="CommunityMemberWithRole" Subject="Actor" StringData="Trader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DiscoverNamesOfCommunityMembersWithRole" Subject="Actor" StringData="Trader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intro_Merchandise_Trader" x="227.432587" y="-10330.9326" NativeText=":-) Straight to the point, I like that!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="OpenTradeScreen" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intro_TraderCommunity2" x="-2546.56543" y="-9384.919" NativeText=":-) Hello there, you looking to buy anything?  %1 have got some great merchandise right now, don't miss out!" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Kill" />
+        <SpeechRef UniqueID="Intro_Merchandise" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsTraderCommunity" Subject="Actor" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Intro_RefugeeCommunity" x="-2534.8833" y="-11050.6172" NativeText="Uh.. hello %1, we're just passing through here.  We don't want any trouble." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Kill" />
+        <SpeechRef UniqueID="Threat_RefugeeTrade" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intro_RefugeeConditions" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_RefugeeTrade" x="-1168.019" y="-11582.3809" NativeText="I'm looking to trade." MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intro_RefugeeTradeReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intro_RefugeeTradeReply" x="-107.895905" y="-11591.48" NativeText=":-( Alright, but %1 haven't got much." MaxRange="5">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="OpenTradeScreen" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intro_RefugeeCommunitySingle" x="-2549.41235" y="-12411.8066" NativeText="Uh.. hello %1, I'm just passing through here.  I don't want any trouble." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Kill" />
+        <SpeechRef UniqueID="Threat_RefugeeTrade" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intro_RefugeeConditions" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Intro_Refugee_Aggressive" x="-2558.74927" y="-13799.4092" NativeText="Hey back off, %1 don't have anything worth stealing." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Kill" />
+        <SpeechRef UniqueID="Threat_RefugeeTrade" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intro_RefugeeConditions" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Target" Data="16" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_AnyGold_Aggressive" x="-1528.03479" y="-411.381348" NativeText="}:-[ Hey asshole, think you can enter %1's property without permission?!  You better hand over some gold right now!" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedown" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_Toll_PassiveAggressive" x="-1519.15833" y="-2409.465" NativeText="Sorry to trouble you but I'm afraid you're actually on the property of %1!  If you want to pass safely through we'll be needing some gold, okay?" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedown" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_FuckWithMe" x="3927.87744" y="-311.566864" NativeText="}:-[ Do not try to fuck with me!" MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_LetsDoThis" x="2500.19434" y="-473.7186" NativeText="}:-| Let's do this!" MustFinish="true" CanTalkOutOfRange="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_YourFuneral" x="3200.403" y="1155.86609" NativeText="{:-| Whatever man, it's your funeral." MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_Confrontational" x="3908.274" y="1153.275" NativeText="}:-( I think you're being needlessly confrontational!" MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_ChaseAfter" x="5579.842" y="-6171.12646" NativeText="}:-| Great, now I have to chase after this idiot." MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_DontBeADick" x="5578.74854" y="-4979.86426" NativeText="}:-( Hey come on, don't be a dick!" MustFinish="true" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_AnyGold_Sociopath" x="-2278.78442" y="-403.828979" NativeText="{:-) Hello, you look a bit lost.  You're lucky you met me!  }:-) This area belongs to %1, and we normally kill tresspassers... but if you give us your gold I can do you a favor and let you live." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedown" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_BetterHaveMore" x="3490.7373" y="2470.67578" NativeText="}:-[ Pathetic!  You better have some more soon if you want to stick around here." MaxRange="5">
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_Jackpot" x="5111.05371" y="2449.134" NativeText=":-) Sweet!  I hit the jackpot today!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="VisibleCommunityMembersHaveGold" Subject="Actor" Object="Target" Data="20" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_BetterHaveMore2" x="6789.772" y="-3231.63013" NativeText="}:-[ Pathetic!  You better have some more soon if you want to stick around here." MaxRange="5">
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_NowGetOutOfHere2" x="7604.80957" y="-3246.1377" NativeText=":-[ Great.  Now do what you gotta do and then get out of here!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSuppliesOfValue" Subject="Target" Data="5" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_Jackpot2" x="8410.088" y="-3253.17188" NativeText=":-) Sweet!  I hit the jackpot today!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSuppliesOfValue" Subject="Target" Data="20" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_DontHaveAnything" x="4828.08936" y="-2627.80078" NativeText="{:-( I don't have anything!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_ShitOutOfLuck" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasSuppliesOfValue" Subject="Actor" Data="1" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_ShitOutOfLuck" x="6015.372" y="-2385.446" NativeText="}:-[ Then you're shit out of luck buddy!" MustFinish="true" CanTalkOutOfRange="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_PayUp" x="-742.6528" y="2148.54761" NativeText="}:-| Hey %1 need some more gold.  Pay up!" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_HelpMeOut" />
+        <SpeechRef UniqueID="Threat_SureYouWanna" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedownAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_PayUp_Aggressive" x="-1485.41589" y="2135.65" NativeText="}:-[ You're still on %1 land, asshole!  Hand over your gold!" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_HelpMeOut" />
+        <SpeechRef UniqueID="Threat_SureYouWanna" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedownAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_PayUp_PassiveAggressive" x="-2209.25586" y="2134.7334" NativeText="{:-| Hey... I'm afraid you'll need to give %1 some more gold if you want to keep hanging around here." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_HelpMeOut" />
+        <SpeechRef UniqueID="Threat_SureYouWanna" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedownAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_PayUp_Passive" x="-2934.22021" y="2126.11963" NativeText="I guess it's time to pay the toll again or whatever." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_HelpMeOut" />
+        <SpeechRef UniqueID="Threat_SureYouWanna" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedownAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_PayUp_Sociopath" x="-3647.701" y="2123.24854" NativeText=":-) Hey it's my good friend, %1 of %2!  You know why %3 like having you here?  :-| Because you do what you're told!  Speaking of, it's time for another payment, hand it over." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="CommunityName" Subject="Target" />
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SomeOtherWay" />
+        <SpeechRef UniqueID="Threat_MostPowerfulWarlord" />
+        <SpeechRef UniqueID="Threat_DontTakeMyShoes" />
+        <SpeechRef UniqueID="Threat_HelpMeOut" />
+        <SpeechRef UniqueID="Threat_SureYouWanna" />
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedownAgain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_PlayerGetOutOfHere" x="2644.77148" y="2463.67847" NativeText="}:-) Now get out of here!" MaxRange="5">
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Robbed" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_PlayerGetOutOfHere2" x="5941.58154" y="-3229.052" NativeText="}:-) Now get out of here!" MaxRange="5">
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Robbed" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_DontTakeMyShoes" x="1015.5116" y="3138.46924" NativeText="Uh.. sure, just don't take my shoes okay?" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_YourShoes_Excited" />
+        <SpeechRef UniqueID="Threat_YourShoes_Suspicious" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsDirectControlled" Subject="Actor" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+        <Condition Type="HasNItemsOfClothingType" Subject="Actor" Data="1" StringData="Shoes" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_YourShoes_Excited" x="2290.23535" y="4601.08252" NativeText="}:-) What?  Your shoes?" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_SpecialEdition" />
+        <SpeechRef UniqueID="Threat_RealSore" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_YourShoes_Suspicious" x="2291.97144" y="3521.07715" NativeText="}:-| What?  Your shoes?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_SpecialEdition" />
+        <SpeechRef UniqueID="Threat_RealSore" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_SpecialEdition" x="3347.3833" y="4120.62549" NativeText="Yeah they're special edition... very valuable back in the day." MaxRange="5" Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="Threat_IllTakeThose" />
+        <SpeechRef UniqueID="Threat_HowStupid" />
+        <SpeechRef UniqueID="Threat_TryingToPull" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_RealSore" x="3351.015" y="3492.366" NativeText="Yeah, my feet get real sore without them." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_AskedForGold" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_IllTakeThose" x="4727.724" y="7672.94971" NativeText="}:-) Special edition!  I'll take those!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="2" />
+        <Condition Type="Always" PriorityFactor="-0.5" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" Secrecy="OnlyKnownToSubject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="GiveItemOfClothingType" Subject="Target" Object="Actor" StringData="Shoes" BoolData="true" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="100" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_TryingToPull" x="4700.76563" y="4374.7876" NativeText="}:-[ What are you trying to pull?  I want gold, not your old shoes." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_HowStupid" x="4715.496" y="5852.85254" NativeText="}:-[ How stupid do you think I am?!  You just made a big mistake, buddy!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="-0.5" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_AskedForGold" x="4716.813" y="3420.8042" NativeText="}:-| Right... I asked for gold, not your old shoes, %1." MaxRange="5">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_MostPowerfulWarlord" x="-103.691772" y="4954.06" NativeText="I'm the most powerful warlord this side of the Rockies!  Think you can take me on?" MaxRange="5" Lie="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_YeahRight_Scared" />
+        <SpeechRef UniqueID="Threat_YeahRight" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsDirectControlled" Subject="Actor" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_Aggressive" />
+            <ConditionBlockRef UniqueID="Threat_Bold" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_YeahRight_Scared" x="870.9853" y="5606.28125" NativeText="8-( Yeah right!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-50" />
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_Consequences" />
+        <SpeechRef UniqueID="Threat_DontMind" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_YeahRight" x="868.7281" y="4228.32227" NativeText="}:-| Yeah right!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="49" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_Consequences" />
+        <SpeechRef UniqueID="Threat_DontMind" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_Consequences" x="2044.18042" y="5939.504" NativeText="}:-[ Stand aside or suffer the consequences!" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_WasntRealBothered" />
+        <SpeechRef UniqueID="Threat_DontScareMe" />
+        <SpeechRef UniqueID="Threat_BringTheWholeArmy" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_DontMind" x="2014.40515" y="5425.84375" NativeText="{:-| Of course, my army isn't all here right now." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_BringTheWholeArmy" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_BringTheWholeArmy" x="3301.44458" y="5615.49854" NativeText="}:-| I ain't impressed by you.  Let's see some gold now." MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="48" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_WasntRealBothered" x="3321.855" y="9185.089" NativeText="8-( You know, I wasn't real bothered about that gold anyway.  You seem cool, you can stay for now.  %1." MaxRange="5">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-50" />
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" Secrecy="OnlyKnownToSubject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="100" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_DontScareMe" x="3333.2583" y="7101.491" NativeText="}:-[ You don't scare me!  The bigger they come, the harder they fall!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="49" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_SomeOtherWay" x="-1047.52954" y="6302.28369" NativeText="Perhaps there's some... other way I could pay you?" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_HaveInMind_Flirty" />
+        <SpeechRef UniqueID="Threat_HaveInMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsDirectControlled" Subject="Actor" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_HaveInMind_Flirty" x="3.47731018" y="7280.979" NativeText="8-) What did you have in mind?" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_Hug" />
+        <SpeechRef UniqueID="Threat_Charming" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_WantsAHug" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_HaveInMind" x="4.73062134" y="6201.13867" NativeText="}:-| What did you have in mind?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_Hug" />
+        <SpeechRef UniqueID="Threat_Charming" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_Hug" x="1055.87976" y="8025.59375" NativeText="I could show you a good time..." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_DontMindIfIDo" />
+        <SpeechRef UniqueID="Threat_WhatKindOf" />
+        <SpeechRef UniqueID="Threat_NotInterested" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_Charming" x="1065.50989" y="7127.73926" NativeText="With my charming personality?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_CharmingGold" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_CharmingGold" x="2078.84058" y="6803.34375" NativeText="}:-| The only thing I find charming about you is your gold." MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_DontMindIfIDo" x="2102.0083" y="11250.6553" NativeText=":-) I bet you could!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_WantsAHug" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="100" />
+        <StoryEvent Type="Hug" Subject="Target" Object="Actor" StringData="Threat_YeahBaby" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Threat_WhatKindOf" x="2106.284" y="9796.7" NativeText="}:-[ What kind of %1 do you think I am?  Get the hell out of here!" MaxRange="5">
+      <Params>
+        <SpeechParam Type="ManOrWoman" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_NotInterested" x="2096.89355" y="8057.23242" NativeText="}:-| Not interested.  Where's that gold?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_YeahBaby" x="3310.79785" y="9915.723" NativeText=":-) Yeah baby!  You can stay here as long as you need!" MaxRange="5" />
+    <Speech UniqueID="Threat_Outnumbered" x="-4617.67773" y="-2177.07446" NativeText="8-[ Oh, uh.. hello %1.  You're on %2 land, but you can pass through here this time, no questions asked." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Threat_ShouldShakedown" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" Not="true" />
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Threat_AllIveGot" x="913.0803" y="1863.03259" NativeText="{:-( All I've got is 5 gold pieces... I'll be destitute!" MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_StripSearch" />
+        <SpeechRef UniqueID="Threat_NotMyProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="VisibleCommunityMembersHaveGold" Subject="Target" Object="Actor" Data="6" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_NotMyProblem" x="2206.09082" y="1266.62585" NativeText="}:-) Not my problem, you should have thought of that before you wandered onto our turf, shouldn't you?  Hand it over now!" MaxRange="5" SuccessfulResponse="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveAllGold" Subject="Target" Object="Actor" Data="5" BoolData="true" BoolData2="true">
+          <Formulas>
+            <ConditionBlockRef />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_StripSearch" x="6175.61" y="1277.30432" NativeText="}:-| Huh, that's all the gold you have?  Sorry to hear that, friend.  So if we strip search you right now, we won't find anything more?">
+      <Replies>
+        <SpeechRef UniqueID="Threat_Dinner" />
+        <SpeechRef UniqueID="Threat_GoAhead" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="20" Data2="20" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_Dinner" x="7167.01" y="1570.32837" NativeText="8-) Hey we only just met, at least take me out to dinner first?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_MakeThisWeird" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_MakeThisWeird" x="8235.141" y="1975.81067" NativeText="}:-| Don't make this weird.. Fuck it, just give me the 5 gold pieces." MaxRange="5" SuccessfulResponse="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveAllGold" Subject="Target" Object="Actor" Data="5" BoolData="true" BoolData2="true">
+          <Formulas>
+            <ConditionBlockRef />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Annoyed" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ShookDown" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_GoAhead" x="7169.678" y="585.1947" NativeText="{:-| Go ahead, I'm not hiding anything." Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="Threat_GiveMeYourClothes" />
+        <SpeechRef UniqueID="Threat_ICanSeeThat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_GiveMeYourClothes" x="8253.08" y="524.833252" NativeText="}:-| Give me your clothes.  Hurry up, I ain't got all day!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_Here" />
+        <SpeechRef UniqueID="Threat_SecondThoughts" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HasNItemsOfClothingType" Subject="Target" Data="1" StringData="Top" />
+        <Condition Type="HasNItemsOfClothingType" Subject="Target" Data="1" StringData="Bottom" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Threat_ICanSeeThat" x="8230.468" y="-700.789063" NativeText="I can see that, smartass.  Guess I'll have to conduct a full cavity search.">
+      <Replies>
+        <SpeechRef UniqueID="Threat_SecondThoughts" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Threat_Here" x="9340.134" y="1936.5354" NativeText="Here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_KeepingTheseThreads" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="GiveItemOfClothingType" Subject="Actor" Object="Target" StringData="Top" BoolData="true" />
+        <StoryEvent Type="GiveItemOfClothingType" Subject="Actor" Object="Target" StringData="Bottom" BoolData="true" />
+        <StoryEvent Type="GiveAllGold" Subject="Actor" Object="Target" Data="5" BoolData="true" BoolData2="true">
+          <Formulas>
+            <ConditionBlockRef />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ShookDown" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Threat_SecondThoughts" x="9327.467" y="-145.789429" NativeText=":-( On second thoughts, I guess I might have some more gold.">
+      <Replies>
+        <SpeechRef UniqueID="Threat_MoreLikeIt" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveAllGold" Subject="Actor" Object="Target" BoolData="true" BoolData2="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ShookDown" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LiedUnsuccessfullyTo" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_KeepingTheseThreads" x="10433.2949" y="1554.42859" NativeText="}:-| Fine, I guess you're either telling the truth, or you're hiding it in your butt.  Either way, I don't care anymore.  }:-) But I'm keeping these threads." />
+    <Speech UniqueID="Threat_MoreLikeIt" x="10356.3535" y="-165.940552" NativeText="}:-) Yeah that's more like it!  Don't try to bullshit me again." />
+    <Speech UniqueID="Threat_HelpMeOut" x="-5505.961" y="3545.277" NativeText="{:-) I'm a bit short, can you help me out?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_SpotYouTheToll" />
+        <SpeechRef UniqueID="Threat_HowIsThatMyProblem" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_SureYouWanna" x="-5363.986" y="1556.0072" NativeText="}:-[ Sure you wanna go down this road with me?" MaxRange="5">
+      <Replies>
+        <SpeechRef UniqueID="Threat_BeenAMistake" />
+        <SpeechRef UniqueID="Threat_MisterToughGuy" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Threat_SpotYouTheToll" x="-6905.115" y="5876.20947" NativeText="}:-| Oh for fuck's sake I'll spot you the toll amount this time.  This is just because I have a soft spot for you, okay?  Don't test my patience." MaxRange="5" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="-40" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Begged" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Helped" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="5" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_HowIsThatMyProblem" x="-6914.14551" y="3839.27466" NativeText="}:-| How is that my problem?  Quit crying and show me some fucking gold." MaxRange="5">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedUnsuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_BeenAMistake" x="-6919.73" y="1850.58521" NativeText="8-| Er... I think there's been a mistake.  You're free to go." MaxRange="5" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-40" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+        <StoryEvent Type="Introduce" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Threat_MisterToughGuy" x="-6916.93652" y="252.822525" NativeText="}:-) Ooh, look at %1 tough %2 here!  }:-| Stop stalling and show me the fucking gold." MaxRange="5">
+      <Params>
+        <SpeechParam Type="MrOrMs" Subject="Target" />
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Threat_AllIveGot" />
+        <SpeechRef UniqueID="Threat_TakeMyGold" />
+        <SpeechRef UniqueID="Threat_NoGold" />
+        <SpeechRef UniqueID="Threat_TryIt" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Threat_DontBeADick" />
+        <SpeechRef UniqueID="Threat_LikeItWhenTheyRun" />
+        <SpeechRef UniqueID="Threat_ChaseAfter" />
+        <SpeechRef UniqueID="Threat_OhNoYouDont" />
+        <SpeechRef UniqueID="Threat_ComeBackHere" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Threat_IsDirectControlled" x="5306.66943" y="-13.5723171">
+      <Conditions>
+        <Condition Type="IsDirectControlled" Subject="Actor" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_IsScared" x="5315.96045" y="-1119.10693">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="40" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_IsScared_Cowardly" x="5323.308" y="-610.114563">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="-10" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_IsScared_Brave" x="5317.34033" y="-1751.684">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="70" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intro_RefugeeConditions" x="-3650.813" y="-11814.5039">
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsRefugeeCommunity" Subject="Actor" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_ShouldShakedown" x="-3443.82959" y="-1988.43835">
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Looter" />
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="RovingTrader" Not="true" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" StringData="None" />
+        <Condition Type="SquadBehaviourEquals" Subject="Target" StringData="None" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="64" />
+        <Condition Type="IsFEMA" Subject="Target" Not="true" />
+        <Condition Type="IsFollowingAlly" Subject="Target" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Captive" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_IsRefugee" x="5320.821" y="-2288.63965">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_WantsAHug" x="-1036.87109" y="8313.938">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+        <Condition Type="IsMale" Subject="Actor" />
+        <Condition Type="IsAttractedTo" Subject="Actor" Object="Target" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_Aggressive" x="-1070.2262" y="4875.248">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_Bold" x="-1071.22375" y="4571.512">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_ShouldShakedownAgain" x="-4622.41162" y="241.651627">
+      <Conditions>
+        <Condition Type="IsTimeToShakedownAgain" Subject="Actor" Object="Target">
+          <ConditionBlocks>
+            <ConditionBlockRef />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" StringData="None" />
+        <Condition Type="SquadBehaviourEquals" Subject="Target" StringData="None" />
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="64" />
+        <Condition Type="IsFEMA" Subject="Target" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Captive" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Threat_IsPlayerControllable" x="5313.717" y="-307.197754">
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

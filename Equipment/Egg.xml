@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Egg</NativeName>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.25</Nutrition>
+  <Tastiness>-60</Tastiness>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>-2</SkillOnConsumptionProgression>
+</EquipmentPrototype>

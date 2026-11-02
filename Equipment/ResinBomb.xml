@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MolotovCocktail</TypeName>
+  <NativeName>Resin Bomb</NativeName>
+  <NativeDescription>Made from melted plastic resin which can be ignited to cause some harm.</NativeDescription>
+  <Category>2:Weapons/Throwable</Category>
+  <Weight>2</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Prefabs/Equipment/MolotovCocktail/MolotovCocktail</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.33</Damage>
+  <Range>20</Range>
+  <AttackSoundRadius>20</AttackSoundRadius>
+  <Fuel>25</Fuel>
+  <AccurateRange>10</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <DamageRadius>2.5</DamageRadius>
+</EquipmentPrototype>

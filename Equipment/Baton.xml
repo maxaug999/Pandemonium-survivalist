@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Baton</NativeName>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>1</Weight>
+  <BasePrice>4</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Baton/Baton</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.2</Damage>
+  <DamageBonusPerSkillLevel>0.04</DamageBonusPerSkillLevel>
+  <Range>2</Range>
+  <FatiguePenaltyWhenAttacking>0.05</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

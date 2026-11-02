@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Beet</NativeName>
+  <NativeDescription>Beets can be eaten, or used to make sugar.</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>0.45</Weight>
+  <BasePrice>1.5</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.2</Nutrition>
+  <Tastiness>10</Tastiness>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftAmount>10</GiftAmount>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

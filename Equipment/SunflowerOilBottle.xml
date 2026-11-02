@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PlasticBottle</TypeName>
+  <NativeName>Sunflower Oil Bottle</NativeName>
+  <NativeDescription>Sunflower oil can be used to fry eggs and make omelettes, or as fuel for vehicles with diesel engines.  Doesn't really work as a weapon due to the high flashpoint.</NativeDescription>
+  <Category>7:Containers</Category>
+  <Weight>2.5</Weight>
+  <BasePrice>1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <LiquidCapacity>33</LiquidCapacity>
+  <DefaultLiquidType>VegetableOil</DefaultLiquidType>
+  <DefaultLiquidFilledMin>25</DefaultLiquidFilledMin>
+  <EquippedModelName>Prefabs/Props/Abandoned Props Pack PBR/PropPlasticBottle</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Bin</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Restaurant</Name>
+      <OverrideScarcity>Uncommon</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GasStation</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

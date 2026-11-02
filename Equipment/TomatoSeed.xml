@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Tomato Seed</NativeName>
+  <NativeDescription>Is there a seedless tomatoe?</NativeDescription>
+  <Category>5:Food/Seeds</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>0.7</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <SeedForPlantType>TomatoPlant</SeedForPlantType>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

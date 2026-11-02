@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Shotgun</TypeName>
+  <NativeName>Improvised Shotgun</NativeName>
+  <NativeDescription>Fires single round slug, you also need fast legs ; uses shotgun shells</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>6</Weight>
+  <BasePrice>30</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/improvisedsg.prefab</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+      <OverrideScarcity>Legendary</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Bullet</InjuryType>
+  <Damage>0.11</Damage>
+  <DamageBonusPerSkillLevel>0.02</DamageBonusPerSkillLevel>
+  <Range>15</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>1.5</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.25</MaxLegsAimTime>
+  <Recoil>1.1</Recoil>
+  <AimPenaltyWhenMoving>0.25</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>1.8</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>ShotgunShell</string>
+  </AmmoTypes>
+  <MaxAmmo>1</MaxAmmo>
+  <NumPelletsPerShot>8</NumPelletsPerShot>
+  <ReloadSlideSounds>
+    <string>Sounds\Equipment\Shotgun\870_pump</string>
+  </ReloadSlideSounds>
+</EquipmentPrototype>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Veggie Sushi</NativeName>
+  <NativeDescription>Vegetables Wrapped with rice</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>0.2</Weight>
+  <BasePrice>2</BasePrice>
+  <Nutrition>0.25</Nutrition>
+  <Tastiness>50</Tastiness>
+  <LootableFromLocations />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Dead Rabbit</NativeName>
+  <NativeDescription>You need a Hunting Knife and a Cooking skill of 1 to skin a rabbit.</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>2</Weight>
+  <BasePrice>8</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+</EquipmentPrototype>

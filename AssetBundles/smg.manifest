@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 3177975260
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 26d4a0cb115e0afc79ff51ef08ed45da
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 35b36f5babfbffec6f91a1d6c810571d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/smg.prefab
+- Assets/mp5edt.obj
+- Assets/seletor.mat
+Dependencies: []

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>21</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-82.96199</x>
+    <y>-518.748657</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.540202141</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchGold_FetchingJob" x="-966.2071" y="-474.913422" NativeText=":-| One of our lookout guard %1 needs to speak to you, go talk to %2." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Guard" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="FetchGold_Fetch" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchGold_WantGold" x="-90.3260956" y="-876.3183" NativeText=":-) I need you to gather me some gold ok? don't tell anyone but I have a secret deal with the trader! I can't gather gold myself since I can't leave this post.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchGold_GoldFetcher" />
+        <SpeechRef UniqueID="FetchGold_NoGold" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Guard" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="FetchGold_Fetch" Not="true" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="35" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchGold_GoldFetcher" x="920.873657" y="-953.118" NativeText=":-) Yeah I'll assist you but what do I get?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchGold_AsForYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="Player" ObjectModifier="Community" Data="1" StringData="Farming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchGold_NoGold" x="1000.93164" y="-1787.90344" NativeText=":-( Sorry I'm busy.">
+      <Replies>
+        <SpeechRef UniqueID="FetchGold_MissingOut" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchGold_MissingOut" x="1841.36108" y="-1841.51318" NativeText=":-( You'll be missing out on stuff that I'm willing to give." />
+    <Speech UniqueID="FetchGold_AsForYou" x="1813.68689" y="-1185.39124" NativeText=":-) As for you It will be a surprise!">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchGold_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_GotSome" x="2952.47827" y="-738.254333" NativeText="Here's the Gold! }:-)" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchGold_Reward" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchGold_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="50" StringData="Gold" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchGold_Reward" x="3867.8623" y="-143.8605" NativeText="}:-) Nice! here's your reward, choose one.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchGold_RewardAxe" />
+        <SpeechRef UniqueID="FetchGold_RewardToolbox" />
+        <SpeechRef UniqueID="FetchGold_RewardShovel" />
+        <SpeechRef UniqueID="FetchGold_RewardPickAxe" />
+        <SpeechRef UniqueID="FetchGold_RewardHuntingKnife" />
+        <SpeechRef UniqueID="FetchGold_RewardPot" />
+        <SpeechRef UniqueID="FetchGold_RewardBackpack" />
+        <SpeechRef UniqueID="FetchGold_RewardBow" />
+        <SpeechRef UniqueID="FetchGold_RewardImprovisedPistol" />
+        <SpeechRef UniqueID="FetchGold_RewardArrow" />
+        <SpeechRef UniqueID="FetchGold_RewardPistolAmmo" />
+        <SpeechRef UniqueID="FetchGold_RewardTent" />
+        <SpeechRef UniqueID="FetchGold_RewardIBowl" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="50" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="FetchGold_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_WhereIsTheGold" x="-462.723572" y="-2370.558" NativeText="Where do I get some gold?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchGold_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchGold_Fetch" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchGold_Tip" x="428.79425" y="-2575.49219" NativeText="Sell some stuff or just kill a bunch of those zeds. or maybe ambush a trader }:-) you get what I'm talking about?">
+      <Replies>
+        <SpeechRef UniqueID="FetchGold_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchGold_TipEnd" x="1376.61548" y="-2691.60327" NativeText=":-) Got it!" />
+    <Speech UniqueID="FetchGold_RewardAxe" x="4683.12646" y="838.6079" NativeText="Axe to chop wood.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Axe" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardToolbox" x="4744.572" y="105.078835" NativeText="Toolbox to build buildings.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Toolbox" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardShovel" x="4745.63" y="-527.2524" NativeText="Shovel to dig wells.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Shovel" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardPickAxe" x="4767.459" y="-1180.14111" NativeText="Pickaxe to break stone.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Pickaxe" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardPot" x="5507.6626" y="778.524353" NativeText="Pot for cooking.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Pot" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardBackpack" x="5519.34131" y="13.7487259" NativeText="Small backpack to carry things.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Backpack_Small" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardBow" x="5540.00928" y="-654.614746" NativeText="Bow for hunting.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Bow" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardImprovisedPistol" x="5537.965" y="-1317.03271" NativeText="Improvised Pistol for protection.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Pistolimprovised" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardHuntingKnife" x="6300.56152" y="766.3122" NativeText="Hunting Knife for skinning.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="HuntingKnife" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardArrow" x="6271.93945" y="1.6692543" NativeText="Arrows for bow.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="30" StringData="Arrow" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardPistolAmmo" x="6245.36035" y="-691.4162" NativeText="Pistol Ammo for handguns.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="20" StringData="PistolAmmo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardTent" x="4751.38232" y="-1869.20923" NativeText="Tent for sleeping.">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="TentBag" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchGold_RewardIBowl" x="5560.85742" y="-1916.03271" NativeText="Bowl for my chicken">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Bowl" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="FetchGold_Fetch" x="927.441162" y="276.914368" GroupID="FetchGold_QuestGroup" NativeDescription="%1 wants you to give %3 50 gold in exchange for %2 stuff.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="HisOrHer" Subject="Actor" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="50" StringData="Gold" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchGold_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchGold_Return" x="1774.095" y="105.1393" GroupID="FetchGold_QuestGroup" NativeDescription="Take the Gold to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchGold_QuestGroup" x="18.8628922" y="-144.3215" NativeTitle="Gather Gold for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

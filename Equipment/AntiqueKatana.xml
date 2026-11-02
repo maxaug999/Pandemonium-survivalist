@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Antique Katana</NativeName>
+  <NativeDescription>An ornate ceremonial katana that was once worn by a samurai in Edo period Japan.  Despite being used primarily for decorative purposes, it is very very sharp.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Gender>Female</Gender>
+  <Weight>3</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Special>true</Special>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Katana/Katana</EquippedModelName>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>1.5</Damage>
+  <DamageBonusPerSkillLevel>0.3</DamageBonusPerSkillLevel>
+  <Range>2.5</Range>
+  <FatiguePenaltyWhenAttacking>0.1</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

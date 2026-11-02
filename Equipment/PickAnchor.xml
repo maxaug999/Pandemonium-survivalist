@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Pickaxe</TypeName>
+  <NativeName>Anchor</NativeName>
+  <NativeDescription>Hit like a ship</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>10</Weight>
+  <BasePrice>50</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>Prefabs/Equipment/Pickaxe</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>1</Damage>
+  <DamageBonusPerSkillLevel>0.25</DamageBonusPerSkillLevel>
+  <Range>2.4</Range>
+  <FatiguePenaltyWhenAttacking>0.2</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

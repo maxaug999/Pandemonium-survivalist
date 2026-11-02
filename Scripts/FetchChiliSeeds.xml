@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>4.675659</x>
+    <y>-511.1594</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.6715892</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchChiliSeed_FetchingJob" x="-966.2071" y="-474.913422" NativeText="}:-( Community Farmer %1 got a job for you got talk to %2 ." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="FetchChiliSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_WantSeeds" x="-90.3260956" y="-876.3183" NativeText="}:-) Our new community members are complaining that our food tastes bland so my task for you is to get us some chili seeds for us to plant to spice things up.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchChiliSeed_NoviceFarmer" />
+        <SpeechRef UniqueID="FetchChiliSeed_No" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="FetchChiliSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_NoviceFarmer" x="901.0089" y="-998.0284" NativeText=":-) Ok I'll look for some!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchChiliSeed_Okey" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="Player" ObjectModifier="Community" Data="1" StringData="Farming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_No" x="1000.93164" y="-1787.90344" NativeText=":-( Sadly I don't think I could get you some in the meantime.">
+      <Replies>
+        <SpeechRef UniqueID="FetchChiliSeed_NotMuchUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_NotMuchUse" x="1841.36108" y="-1841.51318" NativeText=":-( Damn those noobs will pester me till you find some." />
+    <Speech UniqueID="FetchChiliSeed_Okey" x="1813.68689" y="-1185.39124" NativeText="I'll be right here waiting.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchChiliSeed_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_GotSome" x="2690.88916" y="-642.2201" NativeText="Here's your seeds! }:-)" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchChiliSeed_SavedAss" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchChiliSeed_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="15" StringData="ChilliSeeds" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_SavedAss" x="3539.47339" y="-506.83136" NativeText="8-o Ow! now I'll make them only eat chili! :-)">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="50" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="15" StringData="ChilliSeeds" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="FetchChiliSeed_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_HowToPlant" x="-462.723572" y="-2370.558" NativeText="Where do I find Chili seeds?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchChiliSeed_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchChiliSeed_Fetch" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_Tip" x="428.79425" y="-2575.49219" NativeText="You know they are a commodity this days I won't be surprised if you haven't come across one.">
+      <Replies>
+        <SpeechRef UniqueID="FetchChiliSeed_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchChiliSeed_TipEnd" x="1376.61548" y="-2691.60327" NativeText="8-o Huh so its RNG based!" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="FetchChiliSeed_Fetch" x="876.7397" y="238.451035" GroupID="FetchChiliSeed_QuestGroup" NativeDescription="%1 wants you to gather 15 chilli seeds.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="15" StringData="ChilliSeeds" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchChiliSeed_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchChiliSeed_Return" x="1774.095" y="105.1393" GroupID="FetchChiliSeed_QuestGroup" NativeDescription="Take the Chilli seeds to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchChiliSeed_QuestGroup" x="18.8628922" y="-144.3215" NativeTitle="Fetch Seeds for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

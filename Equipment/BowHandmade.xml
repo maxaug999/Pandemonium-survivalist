@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Bow</TypeName>
+  <NativeName>Handmade Bow</NativeName>
+  <NativeDescription>Good for temporary use ; uses arrows</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>4</Weight>
+  <BasePrice>8</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>Prefabs/Equipment/Bow/Bow</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Arrow</InjuryType>
+  <Damage>0.15</Damage>
+  <DamageBonusPerSkillLevel>0.09</DamageBonusPerSkillLevel>
+  <Range>15</Range>
+  <RangeBonusPerSkillLevel>1</RangeBonusPerSkillLevel>
+  <AttackSoundRadius>16</AttackSoundRadius>
+  <FatiguePenaltyWhenAiming>0.03</FatiguePenaltyWhenAiming>
+  <FatiguePenaltyWhenAttacking>0.01</FatiguePenaltyWhenAttacking>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.2</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>2</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.5</MaxLegsAimTime>
+  <Recoil>2</Recoil>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>1.5</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>Arrow</string>
+    <string>IronArrow</string>
+    <string>SteelArrow</string>
+    <string>StoneArrow</string>
+    <string>WoodArrow</string>
+  </AmmoTypes>
+  <MaxAmmo>1</MaxAmmo>
+  <ReloadInsertSounds>
+    <string>Sounds\Equipment\Bow\pull1</string>
+  </ReloadInsertSounds>
+</EquipmentPrototype>

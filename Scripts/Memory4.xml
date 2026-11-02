@@ -1,0 +1,511 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>3</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>224.431213</x>
+    <y>17491.1543</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.8103549</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Memory_CastAspersions_Like" x="-26.8192139" y="-212.759766" NativeText="}:-| %1 [thirdperson(1)?has:have] some well founded suspicions about %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="CastAspersions" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_CastAspersions_Dislike" x="922.4839" y="-252.652344" NativeText="}:-| %1 cast some unwarranted aspersions about %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="CastAspersions" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Protected_Like" x="40.7420654" y="-1262.774" NativeText=":-) %1 helped %2 out of a tight spot." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Protected" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Protected_Dislike" x="908.29895" y="-1274.42712" NativeText="}:-| %1 stood between %2 and some well-deserved consequences." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Protected" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Assisted_Like" x="20.67714" y="-2329.18921" NativeText=":-) %1 helped %2 out." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Assisted" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Assisted_Dislike" x="950.6583" y="-2290.30859" NativeText="}:-| %1 unfortunately helped %2 out." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Assisted" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Weak" x="429.931824" y="-3388.79736" NativeText="{:-| %1 looked weak to %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Weak" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Righteous_Like" x="-76.27087" y="-4545.25146" NativeText="%1 [listener(1)?are:is] trying to do the right thing, in %2 opinion." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Righteous" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Righteous_Dislike" x="891.879639" y="-4525.839" NativeText="%1 [listener(1)?think:thinks] %2 [listener(2)?are:is] trying to do the right thing, which just goes show %3 probably [listener(3)?aren't:isn't]." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HeOrSheOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Righteous" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_PersuadedSuccessfully" x="-30.72631" y="-5720.974" NativeText="%1 managed to persuade %2 to help %3." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HimOrHerOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="PersuadedSuccessfully" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_PersuadedUnsuccessfully" x="880.411133" y="-5749.57568" NativeText="%1 couldn't persuade %2 to help %3." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HimOrHerOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="PersuadedUnsuccessfully" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Grovelled_Like" x="-58.6332" y="-6934.08936" NativeText=":-) %1 [listener(1)?were:was] polite to %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullName" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Grovelled" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Grovelled_Dislike" x="909.5174" y="-6914.677" NativeText="}:-| %1 really kissed %2 ass." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Grovelled" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Confided_Like" x="-38.91886" y="-7978.29" NativeText=":-) %1 told %2 some juicy secrets." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Confided" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Confided_Dislike" x="929.2319" y="-7958.877" NativeText="}:-| %1 [listener(1)?have:has] shared too much information with %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Confided" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Secretive_Like" x="-33.16182" y="-9027.118" NativeText="}:-| %1 made sure not to divulge anything to %2 that %3 didn't need to know." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HeOrSheOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Secretive" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Secretive_Dislike" x="934.988953" y="-9007.706" NativeText="{:-| %1 refused to keep %2 in the loop." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Secretive" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Intelligent_Like" x="-55.5860367" y="-10196.9023" NativeText=":-) %1 made some good points to %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Intelligent" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Intelligent_Dislike" x="912.5647" y="-10177.49" NativeText="}:-| I don't like %1 but %2 made some good points to %3." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryActor" />
+        <SpeechParam Type="HeOrSheOrYou" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Intelligent" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_History_Like" x="-69.66017" y="-11490.2363" NativeText=":-) %1 and I go back a long way." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="History" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_History_Dislike" x="898.490051" y="-11470.8242" NativeText="}:-| %1 and I haven't always seen eye to eye." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="History" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Unconvincing_Like" x="1930.38806" y="-10152.0752" NativeText="{:-| %1 tried to win %2 over but %3 [listener(3)?were:was] not very convincing." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HeOrSheOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Unconvincing" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Unconvincing_Dislike" x="2882.34521" y="-10126.65" NativeText="}:-| %1 made some ridiculous arguments to %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Unconvincing" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Regrets_ButThenAgain" x="929.6979" y="-12568.1211" NativeText="When I think about the things I've done, I'd have to say... I regret nothing!" Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Regrets" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Regrets_IveHadAFew" x="-73.8898544" y="-12569.5029" NativeText=":-( I've done some things I regret." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Regrets" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Past_GoodTimes" x="-60.6098366" y="-13546.6416" NativeText=":-) I've had some good times in the past." Situation="Memory" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Past" />
+        <Condition Type="MemoryMoraleAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Past_BadTimes" x="942.9782" y="-13545.26" NativeText=":-( I've been through some shit." Situation="Memory" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Past" />
+        <Condition Type="MemoryMoraleLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_DiedInChildbirth" x="-48.26509" y="-14440.4229" NativeText="{:-| %1 and %2 child both passed away during labor." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+        <SpeechParam Type="HisOrHerOrYour" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DiedInChildbirth" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_DiedInChildbirth_Dislike2" x="759.100342" y="-14429.3076" NativeText="{:-( Can't believe %1 and %2 little one are both gone." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryObject" />
+        <SpeechParam Type="HisOrHerOrYour" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DiedInChildbirth" />
+        <Condition Type="MemoryMoraleLessThan" Data="-30" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Miscarriage" x="-46.37365" y="-15638.0234" NativeText="{:-( %1 had complications during the birth and %2 baby didn't make it." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryObject" />
+        <SpeechParam Type="HisOrHerOrYour" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Miscarriage" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Miscarriage_Mine" x="799.541565" y="-15646.12" NativeText=":-( I lost my poor little one." Situation="Memory" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Miscarriage" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryObject" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Miscarriage_Yours" x="1621.86511" y="-15628.502" NativeText="{:-| I'm so sorry about the baby." Situation="Memory" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Miscarriage" />
+        <Condition Type="Equals" Subject="Target" Object="MemoryObject" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_RefusedAssistance_Like" x="-39.1851349" y="-16574.4551" NativeText=":-) %1 ignored %2 sob story." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="RefusedAssistance" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_RefusedAssistance_Dislike" x="890.796" y="-16535.5762" NativeText="}:-[ %1 refused assistance to %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="RefusedAssistance" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_BadMouthed_Like" x="-26.0226059" y="-17548.666" NativeText="}:-) %1 had a few choice words to say about %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BadMouthed" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_BadMouthed_Dislike" x="903.9587" y="-17509.7871" NativeText="}:-| %1 talked some shit about %2 behind %3 back." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HisOrHerOrYour" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BadMouthed" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Praised_Like" x="-20.69786" y="-18638.9941" NativeText=":-) %1 had good things to say about %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Praised" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Praised_Dislike" x="909.2833" y="-18600.1152" NativeText="}:-| %1 [listener(1)?have:has] an overly high opinion of %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Praised" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_Praised_Like2" x="-825.5403" y="-18639.1836" NativeText=":-) %1 put in a good word for %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Praised" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_BadMouthed_Dislike2" x="1704.91956" y="-17522.2559" NativeText="}:-| %1 [thirdperson(1)?has:have] been bad-mouthing %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BadMouthed" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="MemoryActor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_WarnedAboutTraps_Like" x="-18.9386139" y="-19649.91" NativeText=":-) %1 made sure to warn %2 about the traps %3 set." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="CommunityIOrWe" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="WarnedAboutTraps" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_WarnedAboutTraps_Dislike" x="911.042542" y="-19611.0313" NativeText="}:-| %1 gave away the location of %2 traps to %3." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="CommunityPossessive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="WarnedAboutTraps" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_RebuffedFlirting_Like" x="-14.3006134" y="-20717.8438" NativeText=":-) %1 completely ignored %2 attempts to chat %3 up." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNamePossessive" Subject="MemoryObject" />
+        <SpeechParam Type="HimOrHerOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="RebuffedFlirting" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_RebuffedFlirting_Dislike" x="915.680542" y="-20678.9648" NativeText="}:-| %1 cruelly rebuffed %2 attempts at flirting." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="RebuffedFlirting" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_BadMouthed_Dislike3" x="2487.18286" y="-17534.89" NativeText="}:-| %1 [thirdperson(1)?was:were] bitching about %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BadMouthed" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_FoughtOff_Like" x="-21.0773315" y="-21782.3848" NativeText=":-) %1 fought %2 off after %3 attacked %4!" Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HeOrSheOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HimOrHerOrYou" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FoughtOff" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_FoughtOff_Dislike" x="903.5807" y="-21853.959" NativeText="}:-( %1 [listener(1)?were:was] too tough for %2 to take down." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FoughtOff" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_BeatUpBy_Like" x="-10.7778778" y="-22905.7871" NativeText="}:-) %1 got %2 ass whooped by %3." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="HisOrHerOrYour" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BeatUpBy" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_BeatUpBy_Dislike" x="903.941956" y="-22989.3086" NativeText="{:-( %1 had no chance to fight back against %2." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BeatUpBy" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

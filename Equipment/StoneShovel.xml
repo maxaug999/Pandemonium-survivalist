@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Shovel</TypeName>
+  <NativeName>Stone Shovel</NativeName>
+  <NativeDescription>Can be used to dig graves, pit traps with spikes in them (if you have construction skill level 1), and wells (level 4).  You'll probably also need an axe to chop down some wood, and a backpack to carry it.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>6</Weight>
+  <BasePrice>2</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>assets/stoneshovel.prefab</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.175</Damage>
+  <DamageBonusPerSkillLevel>0.06</DamageBonusPerSkillLevel>
+  <Range>2.6</Range>
+  <FatiguePenaltyWhenAttacking>0.15</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

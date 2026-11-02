@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Thermal Scanner</NativeName>
+  <NativeDescription>It became popular in the year 2020, it predates brain scanner in which could maybe detects who's infected.</NativeDescription>
+  <Category>8:Books/Skill</Category>
+  <Weight>2</Weight>
+  <BasePrice>100</BasePrice>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>PassengerPlane</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Medical</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillBonusType>Medicine</SkillBonusType>
+  <SkillBonus>2</SkillBonus>
+</EquipmentPrototype>

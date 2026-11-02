@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Lucky Camo Jacket</NativeName>
+  <NativeDescription>This jacket used to belong to a marine who swore by its ability to keep him concealed even in the sparsest of cover.  He was eventually scratched to death by a grizzly bear who mistook him for a tree.</NativeDescription>
+  <Category>4:Clothing/Top</Category>
+  <Gender>Female</Gender>
+  <Weight>4</Weight>
+  <BasePrice>150</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Special>true</Special>
+  <ClothingType>Top</ClothingType>
+  <ColorVariations>
+    <Color32>
+      <r>255</r>
+      <g>255</g>
+      <b>255</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2 />
+  <MaterialVariations>
+    <string>MercJacket/TigerStripe</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:MercJacket</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:MercJacket</FemaleMeshName>
+  <Insulation>4</Insulation>
+  <SkillBonusType>Stealth</SkillBonusType>
+  <SkillBonus>2</SkillBonus>
+</EquipmentPrototype>

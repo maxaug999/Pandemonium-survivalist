@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>4</NextFreeTriggerID>
+  <NextFreeConditionBlockID>6</NextFreeConditionBlockID>
+  <NextFreeQuestID>10</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>6.97583</x>
+    <y>504.072357</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5434194</EditorZoomScale>
+  <Speeches />
+  <Triggers>
+    <Trigger UniqueID="EmpireBuilding_Start" x="-1490.2771" y="-1395.69006">
+      <Type>GameStart</Type>
+      <Conditions>
+        <Condition Type="IsHitTheRoadCountAtLeast" Data="1" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_FindSettlement" Delay="2" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="EmpireBuilding_TrustNoone" x="692.9427" y="-1654.67712">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="UnlockAchievement" StringData="CompleteSandbox_Conquest" Delay="5" />
+        <StoryEvent Type="GameComplete" BoolData="true" Delay="5" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="FortNight_HasMatch" x="-771.502869" y="-3789.234">
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="Match" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="FortNight_HasKnifeAndFlint" x="-774.268738" y="-4303.825">
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="Flint" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="HuntingKnife" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="EmpireBuilding_HasWood" x="2370.11719" y="-2289.88257" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="Wood" />
+        <Condition Type="CommunityHasBuildingOfType" Subject="Player" StringData="Campfire" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="EmpireBuilding_LoneWolfConquest" x="376.292328" y="-554.7853">
+      <Conditions>
+        <Condition Type="IsLoneWolf" />
+        <Condition Type="SurvivorCampDensityIsAtLeast" Data="100" />
+        <Condition Type="HasConqueredArea" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="EmpireBuilding_RecruitEveryone" x="3849.03735" y="-638.247742" GroupID="EmpireBuilding_QuestGroup" NativeDescription="Recruit everyone living in this area into your community, or allied communities.">
+      <Metric>PercentageOfAllNPCsRecruited</Metric>
+      <CompletionEvents>
+        <StoryEvent Type="UnlockAchievement" StringData="CompleteSandbox_Conquest" />
+        <StoryEvent Type="GameComplete" BoolData="true" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_FindSettlement" x="-633.0595" y="-1158.1676" GroupID="EmpireBuilding_QuestGroup" NativeDescription="You're new to this area!  Find a friendly settlement.  Or at least, a non-hostile one.">
+      <CompletionConditions>
+        <Condition Type="NumberOfCommunitiesIntroduced" Subject="Player" Data="1" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="EmpireBuilding_LoneWolfConquest" />
+          </ConditionBlocks>
+        </Condition>
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="SaveGame" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_RecruitSomeone" />
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_FindAxe" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="EmpireBuilding_TrustNoone" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_RecruitSomeone" x="1610.38525" y="-281.318726" GroupID="EmpireBuilding_QuestGroup" NativeDescription="Convince someone to join your community." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Player" Data="2" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="EmpireBuilding_LoneWolfConquest" />
+          </ConditionBlocks>
+        </Condition>
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_Trust" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="EmpireBuilding_TrustNoone" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_FindToolbox" x="5499.9585" y="-2967.16724" GroupID="FortNight_QuestGroup" NativeDescription="Find a toolbox so you can build a fort." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="Toolbox" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_BuildSomething" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_BuildSomething" x="6542.7915" y="-2907.03833" GroupID="FortNight_QuestGroup" NativeDescription="Start building your home.  Equip the toolbox and select Build from the action menu.  The building options are dependant on your Construction skill, which will increase as you build more.  Build some fences and a Shack once you are able." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasAccomodation" Subject="Player" Data="1" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_BuildOuthouse" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_PlantSomething" x="10802.7188" y="-3631.70068" GroupID="FortNight_QuestGroup" NativeDescription="To build a sustainable community you need a reliable food source.  Plant some crops.  (You can see how many you need by pressing [Community])" SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasCrops" Subject="Player" Data="10" />
+      </CompletionConditions>
+    </Quest>
+    <Quest UniqueID="FortNight_FindBackpack" x="4551.029" y="-2771.80518" GroupID="FortNight_QuestGroup" NativeDescription="You'll need to be able to carry supplies around.  Find a backpack." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfClothingType" Subject="Player" Data="1" StringData="Backpack" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_FindToolbox" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_FindAxe" x="438.25946" y="-2503.35083" GroupID="FortNight_QuestGroup" NativeDescription="Key to staying alive is keeping warm.  Find an axe to cut down trees with, and something to start a fire." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="Axe" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="FortNight_HasMatch" />
+            <ConditionBlockRef UniqueID="FortNight_HasKnifeAndFlint" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_ChopDownTree" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_BuildCampfire" x="2714.24756" y="-2898.29272" GroupID="FortNight_QuestGroup" NativeDescription="To build a campfire, equip the Wood and select Make Campfire from the action menu." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasBuildingOfType" Subject="Player" StringData="Campfire" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_LightCampfire" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_ChopDownTree" x="1484.587" y="-2906.99146" GroupID="FortNight_QuestGroup" NativeDescription="You need wood to make a campfire.  Use your axe to chop down a tree." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="EmpireBuilding_HasWood" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_BuildCampfire" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_LightCampfire" x="3629.93921" y="-2618.36279" GroupID="FortNight_QuestGroup" NativeDescription="Light your campfire by equipping a Match or Hunting Knife (if you have a flint), walking up to it and selecting the Light Fire option from the action menu." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasLitCampfires" Subject="Player" Data="1" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_FindBackpack" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_Trust" x="2915.511" y="-1195.64551" GroupID="EmpireBuilding_QuestGroup" NativeDescription="In this world, you need people you can trust.  As you build your community, get to know the people in it.  Ask them what's up.  Become friends, or something more.">
+      <Metric>RelationshipProgress</Metric>
+      <MetricStringData>FlirtedSuccessfullyWith</MetricStringData>
+      <MetricLimit>6</MetricLimit>
+      <MetricStringData2>HungOut</MetricStringData2>
+      <MetricLimit2>5</MetricLimit2>
+    </Quest>
+    <Quest UniqueID="FortNight_DigWell" x="9627.098" y="-3262.75244" GroupID="FortNight_QuestGroup" NativeDescription="Dig a well so you can have a reliable water supply.  You will need someone with Construction skill level 3.  Equip the shovel and select Dig from the action menu." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasBuildingOfType" Subject="Player" StringData="Well" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_PlantSomething" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_FindShovel" x="8530.814" y="-3224.24341" GroupID="FortNight_QuestGroup" NativeDescription="You'll also need a reliable water supply.  Find a shovel so you can dig a well." SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="Shovel" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_DigWell" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FortNight_BuildOuthouse" x="7548.74561" y="-3049.72119" GroupID="FortNight_QuestGroup" NativeDescription="Build an outhouse, to stop the camp from getting unhygienic.  (You can see how many you need by pressing [Community])" SkipNotificationIfAlreadyCompleted="true">
+      <CompletionConditions>
+        <Condition Type="CommunityHasBuildingOfType" Subject="Player" StringData="Outhouse" />
+      </CompletionConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" StringData="FortNight_FindShovel" />
+      </CompletionEvents>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="EmpireBuilding_QuestGroup" x="-2398.559" y="-1504.29272" NativeTitle="Empire Building" MainQuest="true" />
+    <QuestGroup UniqueID="FortNight_QuestGroup" x="-1758.72961" y="-2766.00732" NativeTitle="Fort Building" />
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

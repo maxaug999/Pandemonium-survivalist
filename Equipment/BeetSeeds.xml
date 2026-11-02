@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Beetroot Seeds</NativeName>
+  <NativeDescription>Beets can be eaten, or used to make sugar.</NativeDescription>
+  <Category>5:Food/Seeds</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <SeedForPlantType>BeetPlant</SeedForPlantType>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>5</TypicalLootAmount>
+</EquipmentPrototype>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Throwable</TypeName>
+  <NativeName>Snowball</NativeName>
+  <Category>2:Weapons/Throwable</Category>
+  <Weight>0.1</Weight>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanMelt>true</CanMelt>
+  <EquippedModelName>Prefabs/Props/Snowball</EquippedModelName>
+  <Range>16</Range>
+  <RangeBonusPerSkillLevel>2</RangeBonusPerSkillLevel>
+  <FatiguePenaltyWhenAttacking>0.02</FatiguePenaltyWhenAttacking>
+  <AccurateRange>3</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <ProjectileHitSounds>
+    <string>Sounds\Equipment\Snowball\SnowballHit1</string>
+    <string>Sounds\Equipment\Snowball\SnowballHit2</string>
+    <string>Sounds\Equipment\Snowball\SnowballHit3</string>
+  </ProjectileHitSounds>
+  <HitEffectName>Prefabs/SpecialEffects/SnowballHit</HitEffectName>
+</EquipmentPrototype>

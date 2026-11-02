@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Mashed Potato</NativeName>
+  <NativeDescription>Smash the potato on infected</NativeDescription>
+  <Category>5:Food/Dishes</Category>
+  <Col>
+    <r>238</r>
+    <g>233</g>
+    <b>221</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.1</BasePricePerFlOz>
+  <NutritionPerFlOz>0.02</NutritionPerFlOz>
+  <Tastiness>30</Tastiness>
+  <GiftFor />
+  <BadGiftFor />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgressionPerFlOz>0.25</SkillOnConsumptionProgressionPerFlOz>
+</LiquidPrototype>

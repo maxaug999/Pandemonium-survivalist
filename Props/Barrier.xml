@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>TiltedProp</TypeName>
+  <NativeName>Barrier</NativeName>
+  <Category>Town/Props</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Barricades/kw_barrier_striped</string>
+    <string>Prefabs/Props/Barricades/kw_barrier_police</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0.5</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>2</MaxDamage>
+  <CoverType>WaistHigh</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <ExtentsMin>
+    <x>0</x>
+    <y>-1</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>0</x>
+    <y>2</y>
+  </ExtentsMax>
+  <WheelPos>
+    <x>0.4787234</x>
+    <y>1.43617022</y>
+  </WheelPos>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>1</RepairResourceNeeded>
+  <SpawnProbabilityFactor>0</SpawnProbabilityFactor>
+  <Mass>50</Mass>
+</PropPrototype>

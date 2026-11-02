@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Rag</NativeName>
+  <NativeDescription>If you're injured you can use a rag to stop the bleeding, but you'll need a sterilised bandage to recover properly.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>0.0625</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <BandageLevel>0</BandageLevel>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Bin</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Medical</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>PassengerPlane</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ClothesStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ShoeStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>2</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>5</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-112.859955</x>
+    <y>905.141846</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4826162</EditorZoomScale>
+  <Speeches />
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates>
+    <Template UniqueID="Junkies_Community" x="1043.37183" y="-437.229584">
+      <Type>Community</Type>
+      <SpawnLocation>Anywhere</SpawnLocation>
+      <CommunityType>RovingTrader</CommunityType>
+      <Children>
+        <TemplateChild UniqueID="Junkies_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Junkies_Mob" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Junkies_Leader" x="1777.82373" y="-277.724854">
+      <Type>Character</Type>
+      <LootLocation>Junkies</LootLocation>
+      <Role>Trader</Role>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <GeneratedLootCount>32</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Junkies_Gold" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Junkies_Shotgun" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Junkies_Shotgun" x="2592.869" y="-583.3842">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Shotgun</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Junkies_Gold" x="2594.65259" y="-810.1739">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+      <Amount>50</Amount>
+    </Template>
+    <Template UniqueID="Junkies_Mob" x="1797.55615" y="-1430.97815">
+      <Type>Character</Type>
+      <LootLocation>Junkies</LootLocation>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <GeneratedLootCount>3</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Junkies_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Junkies_Pistol" x="2588.327" y="-1402.09729">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Pistol</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Invaders_Refugees_Community2" x="1890.72937" y="-2840.539">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>100</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Refugee2" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Refugee2" x="2843.83643" y="-2873.63281">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <GenderRatio>40</GenderRatio>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+  </Templates>
+  <Invaders>
+    <Invader UniqueID="Junkies_Trader" x="200.757568" y="-306.70166" NativeDescription="Junkies will buy anything!" IconPath="Junkies.png" TemplateID="Junkies_Community" DifficultySetting="TraderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="3" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Refugees2" x="918.2677" y="-2664.37354" NativeDescription="Another small groups of refugees, usually fleeing some catastrophe that befell their former settlements to the east." IconPath="Refugees2.png" TemplateID="Invaders_Refugees_Community2" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="3" MinCooldownDays="0.25" MaxCooldownDays="0.5">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+  </Invaders>
+</Script>

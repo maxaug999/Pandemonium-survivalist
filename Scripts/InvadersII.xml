@@ -1,0 +1,2611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>3</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>107</NextFreeTemplateID>
+  <NextFreeInvaderID>25</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-553.095</x>
+    <y>10399.5859</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.489574045</EditorZoomScale>
+  <Speeches />
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Raiders_Max" x="1396.93433" y="3391.54053" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.25" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Raiders_Min" x="1388.23083" y="3868.20972" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Boss_Raiders_Min" x="1426.61755" y="1718.98547" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Boss_Raiders_Max" x="1354.86743" y="1189.11365" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.25" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Mass_Refugee_Max" x="1383.15808" y="-525.1686" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Mass_Refugee_Min" x="1368.608" y="7.52604866" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Zednami_Min" x="1284.07751" y="-1115.93457" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Zednami_Max" x="1317.935" y="-1621.80347" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.25" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hostile_Swordsmen_Min" x="1211.05884" y="-8148.92" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hostile_Swordsmen_Max" x="1221.59" y="-8635.479" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.15" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Daycrawlers_Min" x="1007.66003" y="-9615.857" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Daycrawlers_Max" x="1053.85376" y="-9964.587" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.15" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Nightroamers_Min" x="971.14386" y="-10633.9941" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Nightroamers_Max" x="979.985" y="-11049.5977" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.15" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Fearals_Min" x="965.2759" y="-12066.7031" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Fearals_Max" x="953.0871" y="-12386.3262" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.15" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hungry_Raiders_Min" x="912.0838" y="-15026.4941" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hungry_Raiders_Max" x="913.003" y="-15410.4307" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.25" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Fearals_XYMin" x="955.368835" y="-12721.4678" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Fearals_XYMax" x="965.5603" y="-13079.8662" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.15" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="PotDealers_Raiders_Min" x="824.6646" y="-16020.0908" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="PotDealers_Raiders_Max" x="813.4015" y="-16462.7148" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Miners_Raiders_Min" x="1508.35181" y="-17820.0234" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Miners_Raiders_Max" x="1450.91589" y="-18217.99" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Arsonists_Raiders_Min" x="1229.65491" y="-19212.41" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Arsonists_Raiders_Max" x="1238.63623" y="-19703.3535" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="LostBoys_Raiders_Min" x="1214.02161" y="-21433.166" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="LostBoys_Raiders_Max" x="1229.78833" y="-21904.123" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="The_Disciples_Min" x="1244.15393" y="-23415.5488" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="The_Disciples_Max" x="1255.69092" y="-23851.8164" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Crazy_Dudes_Min" x="210.442154" y="18190.875" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Crazy_Dudes_Max" x="219.397415" y="17769.502" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" Subject="Player" SubjectModifier="Community" Data="1" PriorityFactor="0.25" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates>
+    <Template UniqueID="Passing_Trader_Community" x="1013.59363" y="11061.2686" NativeCommunityName="Passing Traders">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Passing_Trader_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Passing_Trader_Guard" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Passing_Trader_Guard" x="2313.71045" y="10617.9443">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>75</AmmoWeaponProbability>
+      <MolotovProbability>10</MolotovProbability>
+      <PipeBombProbability>10</PipeBombProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Passing_Traders_Gold" Min="0" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Passing_Traders_PlasticBottle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Passing_Traders_Ration" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Passing_Trader_Leader" x="2222.79614" y="12001.6035">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <Role>Trader</Role>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>75</AmmoWeaponProbability>
+      <MolotovProbability>10</MolotovProbability>
+      <PipeBombProbability>10</PipeBombProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>17</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Passing_Traders_SaveToken" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Passing_Traders_Gold" Min="10" Max="24">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Passing_Traders_PlasticBottle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Passing_Traders_Sackbag" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Passing_Traders_Ration" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Passing_Traders_Gold" x="3393.06885" y="10867.0986">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Passing_Traders_PlasticBottle" x="3414.84375" y="10428.1035">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>PlasticBottle</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Passing_Traders_SaveToken" x="3389.425" y="11414.1689">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Crucifix</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="AreSaveTokensEnabled" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Passing_Traders_Sackbag" x="3362.871" y="11762.5469">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BagSack</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Passing_Traders_Ration" x="3433.4126" y="10139.1885">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Ration</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Lone_Refugee_Community" x="873.2691" y="9396.097">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Lone_Refugee_Solo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Lone_Refugee_Solo" x="1816.996" y="9481.018">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <WaterBottleProbability>50</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>6</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Lone_Refugee_BackpackPackers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Lone_Refugee_Gold" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Lone_Refugee_BackpackPackers" x="2729.21143" y="9355.22">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BackpackPackers</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Community" x="861.8512" y="8332.052" NativeCommunityName="Refugee Farmers">
+      <Type>Community</Type>
+      <SpawnLocation>PreferOpenCountryside</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Refugee_Farmers_Character" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Companion" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Character" x="1915.33875" y="8332.896">
+      <Type>Character</Type>
+      <LootLocation>Farmers</LootLocation>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <WaterBottleProbability>50</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Refugee_Farmers_Boots" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Sombrero" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Backpack" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Shirt" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Overalls" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Carrotseed" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Beetseed" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Cabbageseed" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Pumpkin" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Cucumber" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Corn" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Gold" Min="0" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Riceseed" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Boots" x="2880.252" y="8313.809">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Farmer's Boots</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Sombrero" x="2900.87158" y="7964.58936">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Sombrero</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Backpack" x="2905.73926" y="7574.87256">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BackpackFarming</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Shirt" x="3636.52515" y="7909.892">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>ShirtFarming</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Overalls" x="3655.19" y="8293.063">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>TrousersFarming</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Carrotseed" x="3709.29639" y="7525.828">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CarrotSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Beetseed" x="3716.708" y="7245.403">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BeetSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Cabbageseed" x="3735.79834" y="6994.0415">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CabbageSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Sunflowerseed" x="5913.474" y="7296.573">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>SunflowerSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Chili" x="6004.031" y="7006.224">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>ChilliSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Lone_Refugee_Gold" x="2720.29761" y="8967.263">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Corn" x="4459.50049" y="6988.862">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CornSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Tomato" x="5203.71973" y="7545.942">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>TomatoSeed</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Potato" x="5216.771" y="7253.907">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>PotatoSeed</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Soybean" x="5211.877" y="6992.87158">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Soybean</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Cannabaceae" x="5926.055" y="7541.96">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CannabaceaeSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Pumpkin" x="4427.17627" y="7540.97949">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>PumpkinSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Cucumber" x="4446.54834" y="7295.7666">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CucumberSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Companion" x="1910.81165" y="6491.47461">
+      <Type>Character</Type>
+      <LootLocation>Farmers</LootLocation>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <WaterBottleProbability>50</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Refugee_Farmers_Boots" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Sombrero" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Backpack" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Shirt" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Overalls" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Cannabaceae" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Tomato" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Sunflowerseed" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Potato" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Soybean" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Chili" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Refugee_Farmers_Gold" Min="0" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Gold" x="4445.011" y="7928.427">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Female_Refugees_Community" x="811.351868" y="12683.5791">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Female_Refugee" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Female_Refugee" x="1739.57007" y="12730.2285">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <GenderRatio>0</GenderRatio>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Prepared_Refugees_Community" x="785.24" y="13585.085">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Prepared_Refugee" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Prepared_Refugee" x="1740.85571" y="13688.4082">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>100</LegArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Prepared_Refugee_Ration" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Prepared_Refugee_Gold" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Town_Raiders_Community" x="2216.14233" y="4046.80835">
+      <Type>Community</Type>
+      <SpawnLocation>PreferVisitedTowns</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>10</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Town_Raider" Min="1" Max="2">
+          <MinFormula UniqueID="Raiders_Min" />
+          <MaxFormula UniqueID="Raiders_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Town_Raider" x="3175.3833" y="4352.69043">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>10</PipeBombProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Raiding_Party_Community" x="2013.117" y="2725.607">
+      <Type>Community</Type>
+      <SpawnLocation>PreferVisitedTowns</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>10</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Raiding_Party_Pooper" Min="3" Max="4">
+          <MinFormula UniqueID="Raiders_Min" />
+          <MaxFormula UniqueID="Raiders_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Raiding_Party_Pooper" x="2790.07837" y="2837.19873">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>85</BodyArmorProbability>
+      <LegArmorProbability>85</LegArmorProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>66</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>10</PipeBombProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Raiding_Party_Balaklava" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Raiding_Party_Balaklava" x="3626.9082" y="2462.46045">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Balaklava</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Prepared_Refugee_Ration" x="2610.06934" y="13411.9922">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Ration</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Prepared_Refugee_Gold" x="2640.90186" y="13113.2861">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Ration</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Boss_Raider_Member" x="3006.799" y="1706.03979">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>100</LegArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <AmmoWeaponProbability>75</AmmoWeaponProbability>
+      <MolotovProbability>10</MolotovProbability>
+      <PipeBombProbability>5</PipeBombProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Boss_Raider_Boss" x="2978.30884" y="932.7467">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>100</GenderRatio>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>100</LegArmorProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <MolotovProbability>10</MolotovProbability>
+      <PipeBombProbability>5</PipeBombProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>3</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Boss_Raider_Headband" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Boss_Raider_Headband" x="3803.81958" y="689.344055">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Headband</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="IS_Refugees_Community" x="721.4526" y="14769.6855">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="IS_Refugee_Subtle" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="IS_Refugee_Excitable" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="IS_Refugee_Excitable" x="1582.17175" y="14606.5088">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <GenderRatio>40</GenderRatio>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <HasInvisibleStrain>Excitable</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="IS_Refugee_Gold" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="IS_Refugee_Gold" x="2286.91357" y="14582.459">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="IS_Refugee_Subtle" x="1513.04712" y="15451.99">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <GenderRatio>40</GenderRatio>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <HasInvisibleStrain>Subtle</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="IS_Refugee_Gold" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Boss_Raiders_Community" x="2182.48926" y="1608.1051">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>75</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>10</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Boss_Raider_Member" Min="3" Max="4">
+          <MinFormula UniqueID="Boss_Raiders_Min" />
+          <MaxFormula UniqueID="Boss_Raiders_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Raider_Boss" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Mass_Refugee_Community" x="2303.05981" y="-55.152832">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>15</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Mass_Refugee_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Mass_Refugee_Member" Min="1" Max="3">
+          <MinFormula UniqueID="Mass_Refugee_Min" />
+          <MaxFormula UniqueID="Mass_Refugee_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Mass_Refugee_Member" x="3405.01855" y="101.314728">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <BodyArmorProbability>10</BodyArmorProbability>
+      <LegArmorProbability>10</LegArmorProbability>
+      <HelmetProbability>10</HelmetProbability>
+      <MeleeWeaponProbability>25</MeleeWeaponProbability>
+      <AmmoWeaponProbability>10</AmmoWeaponProbability>
+      <WaterBottleProbability>10</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Mass_Refugee_Leader" x="3414.41577" y="-524.152466">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>50</MeleeWeaponProbability>
+      <AmmoWeaponProbability>10</AmmoWeaponProbability>
+      <WaterBottleProbability>50</WaterBottleProbability>
+      <GeneratedLootCount>2</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Zednami_Community" x="2170.8396" y="-1118.30188">
+      <Type>Community</Type>
+      <SpawnLocation>Anywhere</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Green_Zednami" Min="0" Max="3">
+          <MinFormula UniqueID="Zednami_Min" />
+          <MaxFormula UniqueID="Zednami_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Blue_Zednami" Min="0" Max="2">
+          <MinFormula UniqueID="Zednami_Min" />
+          <MaxFormula UniqueID="Zednami_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Red_Zednami" Min="0" Max="1">
+          <MinFormula UniqueID="Zednami_Min" />
+          <MaxFormula UniqueID="Zednami_Min" />
+        </TemplateChild>
+        <TemplateChild UniqueID="White_Zednami" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Green_Zednami" x="3055.927" y="-1140.83838">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>Green</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Blue_Zednami" x="3020.72168" y="-1531.99341">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>Blue</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Red_Zednami" x="3020.81567" y="-1868.05688">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>Red</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="White_Zednami" x="3012.955" y="-2201.90161">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>White</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Supid_Raider_Community" x="1441.80627" y="-2676.53735">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <PlayerTrackingProbability>1</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Stupid_Raider_Solo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Stupid_Raider_Solo" x="2342.7522" y="-2599.10083">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <WaterBottleProbability>50</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="TheHunters_Community" x="1501.27075" y="-4113.504">
+      <Type>Community</Type>
+      <SpawnLocation>PreferOpenCountryside</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>100</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="TheHunters_Members" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="TheHunters_Members" x="2380.72681" y="-3740.63477">
+      <Type>Character</Type>
+      <LootLocation>Hunters</LootLocation>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="TheHunters_CowboyHat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_BagSack" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_SniperRifleOld" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_BowHandmade" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_SkinnedRabbit" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_DeadRabbit" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_Carrot" Min="2" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_Gold" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_StoneDagger" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_CookedRabbitPiece" Min="0" Max="4">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_CookedRabbitMeat" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_CookedVenison" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="TheHunters_Venison" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="TheHunters_CowboyHat" x="3358.78369" y="-3544.11548">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CowboyHat</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_SniperRifleOld" x="3391.816" y="-4009.71045">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>SniperRifleOld</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_BagSack" x="3378.83838" y="-4313.36963">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BagSack</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_BowHandmade" x="3370.65552" y="-4642.403">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BowHandmade</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="TheHunters_SkinnedRabbit" x="4158.66455" y="-3894.46631">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>SkinnedRabbit</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_DeadRabbit" x="4179.684" y="-4230.77539">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>DeadRabbit</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_Carrot" x="4156.91357" y="-4542.56152">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Carrot</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_Gold" x="4163.60645" y="-4842.87158">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_StoneDagger" x="4994.52344" y="-3805.123">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>StoneDagger</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_CookedRabbitPiece" x="4968.69531" y="-4215.09473">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CookedRabbitPiece</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_CookedRabbitMeat" x="4995.35547" y="-4524.773">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CookedRabbitMeat</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Armsdealer_Community" x="1462.05347" y="-5948.86572" NativeCommunityName="Armsdealer">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>33</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Armsdealer_Member" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Armsdealer_Leader" x="2234.37158" y="-6433.23828">
+      <Type>Character</Type>
+      <LootLocation>AmmoTraders</LootLocation>
+      <Role>Trader</Role>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>34</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Armsdealer_Gold" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_PantsCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_Backpack" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_MilitaryCap" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_InsulatedBoots" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_InsulatedArmor" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_VestCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Armsdealer_Member" x="2385.21118" y="-5405.354">
+      <Type>Character</Type>
+      <LootLocation>AmmoTraders</LootLocation>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Armsdealer_PantsCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Armsdealer_Gold" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Armsdealer_PantsCamo" x="3333.401" y="-5468.94531">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CombatTrousers_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Armsdealer_Gold" x="3340.45435" y="-5845.53174">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Armsdealer_Backpack" x="3357.11743" y="-6127.653">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Backpack_Large</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_Community" x="2153.287" y="-8200.864">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>10</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Hostile_Swordsmen_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_Member" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_Member2" Min="0" Max="1">
+          <MinFormula UniqueID="Hostile_Swordsmen_Min" />
+          <MaxFormula UniqueID="Hostile_Swordsmen_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_Leader" x="3246.53687" y="-7420.168">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>90</GenderRatio>
+      <MolotovProbability>66</MolotovProbability>
+      <PipeBombProbability>1</PipeBombProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Hostile_Swordsmen_KendoArmor" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_BusterSword" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_LegArmor" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_Member" x="3234.317" y="-8306.636">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>90</GenderRatio>
+      <MolotovProbability>66</MolotovProbability>
+      <PipeBombProbability>1</PipeBombProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Hostile_Swordsmen_Katana" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_KendoArmor" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_LegArmor" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_Katana" x="4171.837" y="-8376.843">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Katana</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_KendoArmor" x="4103.187" y="-7683.51563">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BulletResistantVestScrap</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_BusterSword" x="4087.3833" y="-8084.10352">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BusterSword</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Daycrawlers_Community" x="1865.41248" y="-9612.185">
+      <Type>Community</Type>
+      <SpawnLocation>Anywhere</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <Children>
+        <TemplateChild UniqueID="Daycrawlers_Green" Min="1" Max="2">
+          <MinFormula UniqueID="Daycrawlers_Min" />
+          <MaxFormula UniqueID="Daycrawlers_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Daycrawlers_Blue" Min="0" Max="1">
+          <MinFormula UniqueID="Dayroamers_Min" />
+          <MaxFormula UniqueID="Dayroamers_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Daycrawlers_Green" x="2651.16235" y="-9614.024">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>Green</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Daycrawlers_Blue" x="2751.939" y="-10017.3721">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>Blue</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Nightroamers_Community" x="1838.71277" y="-10654.6016">
+      <Type>Community</Type>
+      <SpawnLocation>Anywhere</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <Children>
+        <TemplateChild UniqueID="Nightroamers_Red" Min="1" Max="2">
+          <MinFormula UniqueID="Nightroamers_Min" />
+          <MaxFormula UniqueID="Nightroamers_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Nightroamers_White" Min="0" Max="1">
+          <MinFormula UniqueID="Nightroamers_Min" />
+          <MaxFormula UniqueID="Nightroamers_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Nightroamers_Red" x="2745.43628" y="-10644.2979">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>Red</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Nightroamers_White" x="2753.679" y="-10988.44">
+      <Type>Character</Type>
+      <LootLocation>ZombieII</LootLocation>
+      <Infection>White</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Fearals_Community" x="1841.44189" y="-11948.9473">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <Children>
+        <TemplateChild UniqueID="Fearals_A" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_X" Min="0" Max="1">
+          <MinFormula UniqueID="Fearals_XYMin" />
+          <MaxFormula UniqueID="Fearals_XYMax" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_Y" Min="0" Max="1">
+          <MinFormula UniqueID="Fearals_XYMin" />
+          <MaxFormula UniqueID="Fearals_XYMax" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_Green" Min="1" Max="2">
+          <MinFormula UniqueID="Fearals_Min" />
+          <MaxFormula UniqueID="Fearals_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_Blue" Min="0" Max="1">
+          <MinFormula UniqueID="Fearals_Min" />
+          <MaxFormula UniqueID="Fearals_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_Red" Min="0" Max="1">
+          <MinFormula UniqueID="Fearals_XYMin" />
+          <MaxFormula UniqueID="Fearals_XYMax" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_White" Min="0" Max="1">
+          <MinFormula UniqueID="Fearals_XYMin" />
+          <MaxFormula UniqueID="Fearals_XYMax" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Fearals_A" x="2753.88843" y="-11459.9268">
+      <Type>Character</Type>
+      <GenderRatio>100</GenderRatio>
+      <Infection>Invisible</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <Children>
+        <TemplateChild UniqueID="Fearals_MilitaryCapCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_JacketCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_CombatTrousersCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_Sunglasses" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Fearals_Y" x="2795.50439" y="-12904.74">
+      <Type>Character</Type>
+      <GenderRatio>0</GenderRatio>
+      <Infection>Invisible</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <Children>
+        <TemplateChild UniqueID="Fearals_CombatTrousersCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_BalaklavaCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_VestCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Fearals_X" x="2768.75024" y="-12193.2949">
+      <Type>Character</Type>
+      <GenderRatio>0</GenderRatio>
+      <Infection>Invisible</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <Children>
+        <TemplateChild UniqueID="Fearals_CombatTrousersCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_MilitaryCapCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Fearals_VestCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Armsdealer_MilitaryCap" x="4193.182" y="-5555.929">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>MilitaryCap</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Fearals_MilitaryCapCamo" x="3747.54346" y="-11222.7637">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>MilitaryCap_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Fearals_JacketCamo" x="3754.03149" y="-11593.5527">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Jacket_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Fearals_CombatTrousersCamo" x="4516.682" y="-11169.8594">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CombatTrousers_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Fearals_BalaklavaCamo" x="5296.28027" y="-11299.791">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Balaklava_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Fearals_VestCamo" x="4509.7417" y="-11646.2793">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Vest_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Fearals_Green" x="3899.6145" y="-12276.0879">
+      <Type>Character</Type>
+      <GenderRatio>10</GenderRatio>
+      <Infection>Green</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Fearals_Red" x="3886.23218" y="-12972.1182">
+      <Type>Character</Type>
+      <GenderRatio>10</GenderRatio>
+      <Infection>Red</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Fearals_Blue" x="3889.88525" y="-12643.501">
+      <Type>Character</Type>
+      <GenderRatio>10</GenderRatio>
+      <Infection>Red</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Fearals_White" x="3862.02954" y="-13364.4561">
+      <Type>Character</Type>
+      <GenderRatio>10</GenderRatio>
+      <Infection>White</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+    </Template>
+    <Template UniqueID="Fearals_Sunglasses" x="5394.408" y="-11726.5557">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Sunglasses</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Infected_Stranger_Community" x="1016.18372" y="-13966.1641">
+      <Type>Community</Type>
+      <CommunityType>HunterZombie</CommunityType>
+      <PlayerTrackingProbability>1</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="Infected_Stranger_Dead" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Infected_Stranger_Dead" x="2017.49536" y="-13919.1563">
+      <Type>Character</Type>
+      <SpawnLocation>PreferCountrysideProps</SpawnLocation>
+      <LootLocation>SurvivorII</LootLocation>
+      <Infection>White</Infection>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>12</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Infected_Stranger_Gold" Min="0" Max="100">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Infected_Stranger_GoldBar" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Infected_Stranger_Bagsack" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Infected_Stranger_Gold" x="2763.54175" y="-13799.2168">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Infected_Stranger_GoldBar" x="2761.80176" y="-14182.8457">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>GoldBar</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Infected_Stranger_Bagsack" x="2784.02319" y="-14463.125">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BagSack</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Hungry_Raiders_Community" x="1749.026" y="-14998.8252">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>10</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Hungry_Raiders_Member" Min="2" Max="3">
+          <MinFormula UniqueID="Hungry_Raiders_Min" />
+          <MaxFormula UniqueID="Hungry_Raiders_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Hungry_Raiders_Member" x="2565.05322" y="-15039.9014">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>10</BodyArmorProbability>
+      <LegArmorProbability>10</LegArmorProbability>
+      <HelmetProbability>10</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>10</AmmoWeaponProbability>
+      <MolotovProbability>50</MolotovProbability>
+      <PipeBombProbability>1</PipeBombProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Armsdealer_InsulatedBoots" x="4205.821" y="-5986.03271">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>InsulatedBoots</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Armsdealer_InsulatedArmor" x="4173.315" y="-6361.83154">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BulletResistantVest1</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Armsdealer_VestCamo" x="4032.14771" y="-6766.50732">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Vest_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="TheHunters_Venison" x="4968.224" y="-4817.12939">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Venison</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="TheHunters_CookedVenison" x="5002.587" y="-5092.496">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CookedVenison</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_LegArmor" x="4154.2334" y="-8659.255">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>LegArmorScrap</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_Community" x="1563.74084" y="-16023.4141">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="PotDealers_Raiders_Member" Min="1" Max="2">
+          <MinFormula UniqueID="PotDealers_Raiders_Min" />
+          <MaxFormula UniqueID="PotDealers_Raiders_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_Leader" x="2507.61938" y="-15975.2627">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <WaterBottleProbability>50</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>6</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="PotDealers_Raiders_CannabaceaeSeeds" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_CannabaceaeLeaves" Min="0" Max="4">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_Hush" Min="1" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_DriedLeaves" Min="1" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_Bagsack" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_GreenAntigen" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_BlueAntigen" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_RedAntigen" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PotDealers_Raiders_WhiteAntigen" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_CannabaceaeSeeds" x="3426.05176" y="-16053.9824">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CannabaceaeSeeds</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_CannabaceaeLeaves" x="3390.566" y="-16379.7715">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CannabaceaeLeaves</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_Hush" x="4184.68359" y="-16067.9434">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Hush</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_DriedLeaves" x="4207.424" y="-16402.56">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>DriedLeaves</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_Bagsack" x="4207.424" y="-16731.916">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BagSack</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_GreenAntigen" x="3403.44" y="-16815.97">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Antigen_Green</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_BlueAntigen" x="3430.5708" y="-17148.38">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Antigen_Blue</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_RedAntigen" x="4235.04834" y="-17061.2676">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Antigen_Red</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_WhiteAntigen" x="4239.29736" y="-17343.875">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Antigen_White</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="PotDealers_Raiders_Member" x="1821.6698" y="-16792.53">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <WaterBottleProbability>50</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Community" x="2310.38452" y="-17834.209">
+      <Type>Community</Type>
+      <SpawnLocation>PreferOpenCountryside</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>25</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Miners_Raiders_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Member" Min="0" Max="2">
+          <MinFormula UniqueID="Miners_Raiders_Min" />
+          <MaxFormula UniqueID="Miners_Raiders_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Leader" x="3116.30713" y="-17500.4238">
+      <Type>Character</Type>
+      <LootLocation>Miners</LootLocation>
+      <PipeBombProbability>100</PipeBombProbability>
+      <GeneratedLootCount>6</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Miners_Raiders_ConstructionHelmet" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_SafetyVest" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_ConstructionBoots" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Shovel" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Charcoal" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Lead" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Flint" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_IronOre" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_CorrugatedIron" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_BagSack" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Miners_Raiders_ConstructionHelmet" x="3880.38184" y="-17816.8555">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>ConstructionHelmet</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Miners_Raiders_SafetyVest" x="3854.86377" y="-18172.4043">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>SafetyVest</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Miners_Raiders_ConstructionBoots" x="3861.66919" y="-18495.6348">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>ConstructionBoots</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Shovel" x="4655.16" y="-17826.1855">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Shovel</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Pickaxe" x="4651.5625" y="-18100.7637">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Pickaxe</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Member" x="3116.41" y="-18790.0059">
+      <Type>Character</Type>
+      <LootLocation>Miners</LootLocation>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Miners_Raiders_ConstructionHelmet" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_SafetyVest" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_ConstructionBoots" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Pickaxe" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Lead" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_IronOre" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Miners_Raiders_Flint" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_Community" x="2010.78918" y="-19280.377">
+      <Type>Community</Type>
+      <SpawnLocation>PreferTowns</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>25</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>1</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Arsonists_Raiders_Member" Min="0" Max="2">
+          <MinFormula UniqueID="Arsonists_Raiders_Min" />
+          <MaxFormula UniqueID="Arsonists_Raiders_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Arsonists_Raiders_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_Member" x="2859.63354" y="-19762.2949">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>10</BodyArmorProbability>
+      <LegArmorProbability>10</LegArmorProbability>
+      <HelmetProbability>10</HelmetProbability>
+      <MolotovProbability>100</MolotovProbability>
+      <WaterBottleProbability>33</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Arsonists_Raiders_Match" Min="0" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Arsonists_Raiders_FryingPan" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Arsonists_Raiders_Pot" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Arsonists_Raiders_Charcoal" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_Match" x="3970.57983" y="-19395.0371">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Match</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_FryingPan" x="3971.90283" y="-19674.1367">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>FryingPan</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_Pot" x="3965.726" y="-19960.33">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Pot</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_Charcoal" x="4745.108" y="-19387.9414">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Charcoal</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_FryingEggscalubur" x="4756.255" y="-19639.2559">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>FryingEggscalibur</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Arsonists_Raiders_Leader" x="3735.97314" y="-20337.8672">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>10</BodyArmorProbability>
+      <LegArmorProbability>10</LegArmorProbability>
+      <HelmetProbability>10</HelmetProbability>
+      <MolotovProbability>100</MolotovProbability>
+      <WaterBottleProbability>33</WaterBottleProbability>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Arsonists_Raiders_Match" Min="0" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Arsonists_Raiders_FryingEggscalubur" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Arsonists_Raiders_Pot" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Arsonists_Raiders_Charcoal" Min="0" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_Community" x="2161.37183" y="-21364">
+      <Type>Community</Type>
+      <SpawnLocation>Anywhere</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>25</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>1</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="LostBoys_Raiders_Member" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_Member1" Min="0" Max="1">
+          <MinFormula UniqueID="LostBoys_Raiders_Min" />
+          <MaxFormula UniqueID="LostBoys_Raiders_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_Member" x="3120.26416" y="-21350.65">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>95</GenderRatio>
+      <BodyArmorProbability>10</BodyArmorProbability>
+      <LegArmorProbability>10</LegArmorProbability>
+      <WaterBottleProbability>33</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="LostBoys_Raiders_BaseballBat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_BaseballCap" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_Sunglasses" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_BaseballBat" x="4285.03857" y="-21348.5957">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BaseballBat</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_BaseballCap" x="4307.6123" y="-21676.8535">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BaseballCap</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_Leader" x="3089.00244" y="-22210.5781">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>95</GenderRatio>
+      <BodyArmorProbability>10</BodyArmorProbability>
+      <LegArmorProbability>10</LegArmorProbability>
+      <WaterBottleProbability>33</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="LostBoys_Raiders_SpikedBaseballBat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_BaseballCap" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_Sunglasses2" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_SpikedBaseballBat" x="4282.8623" y="-22223.8418">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>SpikedBaseballBat</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_Sunglasses" x="5157.17529" y="-21562.0684">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Sunglasses</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_Sunglasses2" x="5176.529" y="-22183.3535">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Sunglasses2</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="The_Disciples_Community" x="2221.35913" y="-23332.3672">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <PlayerTrackingProbability>1</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="The_Disciples_Member1" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_Member2" Min="0" Max="2">
+          <MinFormula UniqueID="The_Disciples_Min" />
+          <MaxFormula UniqueID="The_Disciples_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_Member3" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="The_Disciples_Member1" x="3139.54956" y="-23077.6016">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <LegArmorProbability>100</LegArmorProbability>
+      <WaterBottleProbability>25</WaterBottleProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="The_Disciples_BruceLee" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_JoggingPants" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_IronKnuckles" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_Sunglasses" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="The_Disciples_BruceLee" x="4022.42139" y="-23230.2363">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BruceLee</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="The_Disciples_JoggingPants" x="4011.16016" y="-23661.9121">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>JoggingPants</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <ColorVariation>1</ColorVariation>
+    </Template>
+    <Template UniqueID="The_Disciples_Member2" x="3136.56982" y="-23931.38">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <GenderRatio>80</GenderRatio>
+      <LegArmorProbability>100</LegArmorProbability>
+      <WaterBottleProbability>25</WaterBottleProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="The_Disciples_BruceLee" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_JoggingPants" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_HandWraps" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_Sunglasses2" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="The_Disciples_Member3" x="3149.44238" y="-24890.2344">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <GenderRatio>80</GenderRatio>
+      <LegArmorProbability>100</LegArmorProbability>
+      <WaterBottleProbability>25</WaterBottleProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="The_Disciples_BruceLee" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_JoggingPants" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="The_Disciples_Sunglasses" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="The_Disciples_HandWraps" x="4109.31" y="-24064.9141">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>HandWraps</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="The_Disciples_IronKnuckles" x="4082.93359" y="-24409.4746">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>IronKnuckles</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="The_Disciples_Sunglasses" x="4921.67139" y="-23280.58">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Sunglasses</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="The_Disciples_Sunglasses2" x="4900.048" y="-23820.041">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Sunglasses2</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="PeaceCorpse_Community" x="1777.83679" y="-26097.26">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>10</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="PeaceCorpse_Members" Min="1" Max="5">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="PeaceCorpse_Members" x="2645.332" y="-26015.0625">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <GenderRatio>33</GenderRatio>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <Children>
+        <TemplateChild UniqueID="PeaceCorpse_CombatBoots" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PeaceCorpse_CombatTousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PeaceCorpse_TrenchCoat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="PeaceCorpse_Headband" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="PeaceCorpse_CombatBoots" x="3566.65942" y="-25850.248">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CombatBoots</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="PeaceCorpse_CombatTousers" x="3598.66431" y="-26181.46">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CombatTrousers</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <ColorVariation>6</ColorVariation>
+    </Template>
+    <Template UniqueID="PeaceCorpse_TrenchCoat" x="3619.19067" y="-26564.377">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>TrenchCoat</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <ColorVariation>3</ColorVariation>
+    </Template>
+    <Template UniqueID="LostCommand_Community" x="1847.28345" y="-27158.5059">
+      <Type>Community</Type>
+      <SpawnLocation>PreferTowns</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <PlayerTrackingProbability>1</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="LostCommand_Members1" Min="1" Max="4">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_Members2" Min="0" Max="4">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostCommand_Members1" x="2856.51929" y="-26992.19">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <Infection>Invisible</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>5</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="LostCommand_Helmet8" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_BulletResistantVest" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_LegArmor" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_CombatTrousersCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_VestCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostCommand_Helmet8" x="3942.29761" y="-26970.4238">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Helmet8</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostCommand_BulletResistantVest" x="3956.40552" y="-27354.8">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BulletResistantVest</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostCommand_LegArmor" x="3925.02075" y="-27792.707">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>LegArmor</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostCommand_CombatTrousersCamo" x="4733.191" y="-26968.6738">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CombatTrousers_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostCommand_VestCamo" x="4740.367" y="-27417.87">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Vest_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostCommand_Members2" x="2871.54688" y="-27894.6758">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <Infection>Invisible</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>7</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="LostCommand_Helmet8" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_BulletResistantVest" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_LegArmor" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_CombatTrousersCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostCommand_JacketCamo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostCommand_JacketCamo" x="4731.35938" y="-27987.4551">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Jacket_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="PeaceCorpse_Headband" x="4455.228" y="-26096.4434">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Headband</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_Member2" x="3254.27539" y="-9144.348">
+      <Type>Character</Type>
+      <LootLocation>SurvivorII</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>90</GenderRatio>
+      <MolotovProbability>66</MolotovProbability>
+      <PipeBombProbability>1</PipeBombProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Hostile_Swordsmen_KendoArmor" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_LegArmor" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Hostile_Swordsmen_WoodenSword" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Hostile_Swordsmen_WoodenSword" x="4158.26563" y="-9029.97949">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>WoodenSword</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_Member1" x="2200.54053" y="-22268.3164">
+      <Type>Character</Type>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>95</GenderRatio>
+      <BodyArmorProbability>10</BodyArmorProbability>
+      <LegArmorProbability>10</LegArmorProbability>
+      <WaterBottleProbability>33</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="LostBoys_Raiders_BaseballCap" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_Sunglasses2" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="LostBoys_Raiders_SpikedPlank" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="LostBoys_Raiders_SpikedPlank" x="4735.795" y="-22543.4063">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>SpikedPlank</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Charcoal" x="4669.142" y="-18340.38">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Charcoal</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Lead" x="4679.19727" y="-18584.043">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>LeadOre</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_IronOre" x="4702.505" y="-18819.23">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>IronOre</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_Flint" x="3874.05835" y="-18887.0313">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Flint</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_CorrugatedIron" x="4691.911" y="-19079.8379">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CorrugatedIron</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Miners_Raiders_BagSack" x="5455.3335" y="-18315.9746">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>BagSack</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Illegal_Trader_Community" x="607.486633" y="16440.2266" NativeCommunityName="Traders">
+      <Type>Community</Type>
+      <SpawnLocation>Anywhere</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>15</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Illegal_Trader_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Illegal_Trader_Guard" Min="1" Max="5">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Illegal_Trader_Leader" x="1264.20557" y="17466.2773">
+      <Type>Character</Type>
+      <LootLocation>IllegalTraders</LootLocation>
+      <Role>Trader</Role>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>32</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Illegal_Trader_SaveToken" Min="2" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Illegal_Trader_Gold" Min="50" Max="100">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Illegal_Trader_PlasticBottle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Illegal_Trader_Guard" x="1484.67761" y="16453.2246">
+      <Type>Character</Type>
+      <LootLocation>IllegalTraders</LootLocation>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Illegal_Trader_Gold" Min="5" Max="10">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Illegal_Trader_PlasticBottle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Illegal_Trader_SaveToken" x="2400.51758" y="16828.8984">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Crucifix</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="AreSaveTokensEnabled" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Illegal_Trader_Gold" x="2409.6543" y="16390.2051">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Illegal_Trader_PlasticBottle" x="2414.4707" y="16018.2383">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>PlasticBottle</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Crazy_Dudes_Community" x="1075.53076" y="18407.209">
+      <Type>Community</Type>
+      <SpawnLocation>Anywhere</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>25</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>10</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Crazy_Dudes_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Crazy_Dudes_Member" Min="1" Max="3">
+          <MinFormula UniqueID="Crazy_Dudes_Min" />
+          <MaxFormula UniqueID="Crazy_Dudes_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Crazy_Dudes_Member" x="2085.89844" y="18055.5664">
+      <Type>Character</Type>
+      <LootLocation>Nakedudes</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <WaterBottleProbability>25</WaterBottleProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Crazy_Dudes_Leader" x="1919.299" y="18872.78">
+      <Type>Character</Type>
+      <LootLocation>Nakedudes</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <WaterBottleProbability>25</WaterBottleProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>3</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Refugee_Farmers_Riceseed" x="5278.39746" y="7897.17139">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>RiceSeed</EquipmentPrototypeName>
+    </Template>
+  </Templates>
+  <Invaders>
+    <Invader UniqueID="Passing_Traders" x="-80.22385" y="11219.0977" NativeDescription="There is Passing Trader in your area. it might be worthwhile to check their wares or sell them your junk before they leave the locale or before you ambush them for thier stuff." IconPath="PassingTraders.png" TemplateID="Passing_Trader_Community" Density="5" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Lone_Refugee" x="-17.2466812" y="9520.911" NativeDescription="A Lone Refugee who got busy packing extra stuff before leaving and got left out by his/her companions." IconPath="LoneRefugee.png" TemplateID="Lone_Refugee_Community" Density="10" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Refugee_Farmers" x="45.0515442" y="8435.457" NativeDescription="Refugee Farmers from the countryside suddenly displaced by the ongoing outbreak. they might sell you some seeds. they only pass by when the weather is warm." IconPath="RefugeeFarmers.png" TemplateID="Refugee_Farmers_Community" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="IsSnowing" Not="true" />
+        <Condition Type="IsTemperatureAtLeast" Data="15" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Female_Refugees" x="-111.874405" y="12941.3721" NativeDescription="Small group of Female Refugees, banded together since thier male companions left them out cold." IconPath="FemaleRefugees.png" TemplateID="Female_Refugees_Community" Density="10" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Prepared_Refugees" x="-136.486572" y="13961.6143" NativeDescription="Small group of Prepared Refugees brought together by circumstances they are all well equipped and decided to group up for better survivability." IconPath="PreparedRefugees.png" TemplateID="Prepared_Refugees_Community" Density="10" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Town_Raiders" x="584.887939" y="4409.123" NativeDescription="The Town Raiders plan on looting a town but as it turns out you preceded them and now they want revenge. they are amply equipped. and may find your tracks!" IconPath="TownRaiders.png" TemplateID="Town_Raiders_Community" Density="25" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="3" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="5" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Raiding_Party" x="649.561951" y="2970.85425" NativeDescription="A Raiding Party is passing your area they are heavily armed and equipped best avoid thier route if you can. you could identify them wearing thier balaklava. also if your lucky they might pay you a visit." IconPath="RaidingParty.png" TemplateID="Raiding_Party_Community" Density="25" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="5" MaxCooldownDays="12">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="5" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Boss_Raiders" x="639.511169" y="1781.49146" NativeDescription="A word is spreading around that a raider once you Left for Dead unified a bunch of raiders and made a force to be reckoned with and is planning on attack your settlemen to settle it once in for all. The Boss Raider is always bald and only carries his melee weapon." IconPath="BossRaiders.png" TemplateID="Boss_Raiders_Community" Density="25" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="7" MaxCooldownDays="12">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="25" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="IS_Refugees" x="-104.806007" y="14933.15" NativeDescription="There is a rumour swirling around that some survivors that are infected by Invisible Strain are pretending as Refugees and are spreading infection. so beware who you recruit." IconPath="ISRefugees.png" TemplateID="IS_Refugees_Community" Density="25" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Mass_Refugees" x="530.0377" y="-88.32861" NativeDescription="The infection started a mass exodus so don't be surprised if you encounter a Mass Refugees." IconPath="MassRefugees.png" TemplateID="Mass_Refugee_Community" Density="10" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" Data="50" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Zednami" x="486.297363" y="-1211.74731" NativeDescription="Zednami is a collection of very huge horde zombie infection, they snack on everything in thier path." IconPath="Zednami.png" TemplateID="Zednami_Community" Density="25" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="3" MaxCooldownDays="12" MaxTimeoutDays="3">
+      <StartConditions>
+        <Condition Type="Always" Data="50" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Stupid_Raider" x="530.42334" y="-2504.711" NativeDescription="Sometimes you could encounter some Stupid Raider who's trying hard and is desperate to survive the post apocalyptic environment." IconPath="StupidRaider.png" TemplateID="Supid_Raider_Community" Density="10" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="1" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="TheHunters_Refugee" x="636.225952" y="-4143.4707" NativeDescription="The Hunters are known to pass thru the area during cold seasons they have hunted stuff that you could obtain in different ways." IconPath="TheHunters.png" TemplateID="TheHunters_Community" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="IsTemperatureLessThan" Data="-5" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Armsdealer_Refugees" x="603.2714" y="-5764.46436" NativeDescription="An Armsdealer is in the area they sometimes carry military grade weapons and ammo which is scarce and vital for your survival." IconPath="Armsdealer.png" TemplateID="Armsdealer_Community" Density="5" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Hostile_Swordsmen" x="310.692078" y="-8171.36865" NativeDescription="Hostile Swordsmen consists of crazy dudes who thinks they are cool with just wielding thier sword and fanatically belives in &quot;The way of the sword&quot;. they are roaming to burn everything down." IconPath="HostileSwordsmen.png" TemplateID="Hostile_Swordsmen_Community" Density="25" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="3" MinCooldownDays="3" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Daycrawlers" x="285.740784" y="-9380.535" NativeDescription="Daycrawlers consists of timid green and blue strain, they usually spawn during the day." IconPath="Daycrawlers.png" TemplateID="Daycrawlers_Community" Density="25" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7" MaxTimeoutDays="1">
+      <StartConditions>
+        <Condition Type="IsDay" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Nightroamers" x="38.1834259" y="-10565" NativeDescription="Nightroamers consists by nasty Red and white strain, they usually spawn during the night." IconPath="Nightroamers.png" TemplateID="Nightroamers_Community" Density="25" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7" MaxTimeoutDays="1">
+      <StartConditions>
+        <Condition Type="IsNight" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Fearal_Horde" x="85.79956" y="-12104.0166" NativeDescription="Fearal Horde consists of a single alpha male, they mostly accompanied by female horde. survivors &quot;jokingly&quot; say its a &quot;harem&quot; horde until they encounter one. so survivors beware!" IconPath="Fearals.png" TemplateID="Fearals_Community" Density="25" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="12" MaxTimeoutDays="3">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Infected_Stranger" x="118.440048" y="-13793.0117" NativeDescription="Some Infected are worth the trouble." IconPath="InfectedStranger.png" TemplateID="Infected_Stranger_Community" Density="25" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7" MaxTimeoutDays="3">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Hungry_Raiders" x="70.35724" y="-15049.583" NativeDescription="Hungry Raiders around the area are looking for an easy snack." IconPath="HungryRaiders.png" TemplateID="Hungry_Raiders_Community" Density="33" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="3" MinCooldownDays="3" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="PotDealers_Raiders" x="14.1825562" y="-16160.9727" NativeDescription="This Pot Dealers carry illigal substances for recreational use. or maybe some cure. they have well armed escorts." IconPath="PotDealers.png" TemplateID="PotDealers_Raiders_Community" Density="5" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="7" MaxCooldownDays="12">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Miners_Raiders" x="363.614532" y="-17808.55" NativeDescription="They were underground when the infection started, when they resurfaced they got confused, paranoid and hostile after seeing on what the infection did to humanity." IconPath="Miners.png" TemplateID="Miners_Raiders_Community" Density="5" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="5" MaxCooldownDays="12">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Arsonists_Raiders" x="444.222626" y="-19418.5117" NativeDescription="Arsonists Raiders that want to set the world on fire." IconPath="Arsonists.png" TemplateID="Arsonists_Raiders_Community" Density="25" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="3" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="LostBoys_Raiders" x="439.172943" y="-21519.8359" NativeDescription="This Lost Boys are mean, angry and hostile you can spot them sporting caps or shades while causing trouble to everyone they meet. they can overwhelm you with sheer number." IconPath="LostBoys.png" TemplateID="LostBoys_Raiders_Community" Density="33" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="3" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="The_Disciples" x="492.2234" y="-23494.9336" NativeDescription="The Disciples are fanatics and believers of &quot;The One&quot; their motto is &quot;Let the fist do the talking&quot;." IconPath="TheDisciples.png" TemplateID="The_Disciples_Community" Density="25" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="PeaceCorpse" x="695.4225" y="-26013.707" NativeDescription="These refugees chose to be unarmed and prefers a peaceful resolution, that's why others call them &quot;Peace Corpse&quot; since they are good as dead." IconPath="PeaceCorpse.png" TemplateID="PeaceCorpse_Community" Density="25" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="3" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="LostCommand" x="742.090454" y="-27066.0332" NativeDescription="There's a rumor that a well armed special unit has been infected because one or more member of the unit contacted invisible strain." IconPath="LostCommand.png" TemplateID="LostCommand_Community" Density="5" MinCooldownDays="1" MaxCooldownDays="7" MaxTimeoutDays="3">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Illegal_Trader" x="-205.49971" y="16565.9043" NativeDescription="Illegal Traders sometimes appear in the area to trade sketchy goods." IconPath="IllegalTrader.png" TemplateID="Illegal_Trader_Community" Density="5" DifficultySetting="TraderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="1" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Crazy_Dudes" x="-507.6039" y="18529.5059" NativeDescription="This Crazy dudes hunt in pack and hostile against everybody, can overwhelm you with their sheer number and by surprise." IconPath="Nakedudes.png" TemplateID="Crazy_Dudes_Community" Density="25" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="3" MinCooldownDays="3" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="IsTemperatureAtLeast" Data="10" />
+      </StartConditions>
+    </Invader>
+  </Invaders>
+</Script>

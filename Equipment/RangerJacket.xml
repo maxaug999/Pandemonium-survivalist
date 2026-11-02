@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Ranger's Jacket</NativeName>
+  <NativeDescription>Makes you good at bows</NativeDescription>
+  <Category>4:Clothing/Top</Category>
+  <Weight>4</Weight>
+  <BasePrice>16</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Top</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ZombieII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations2>
+    <Color32>
+      <r>105</r>
+      <g>110</g>
+      <b>76</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations2>
+  <ColorVariations3>
+    <Color32>
+      <r>255</r>
+      <g>102</g>
+      <b>0</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations3>
+  <MaleMeshName>Male_Mill_All:MalePaddedVest</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:FemalePaddedVest</FemaleMeshName>
+  <Insulation>3</Insulation>
+  <SkillBonusType>Archery</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

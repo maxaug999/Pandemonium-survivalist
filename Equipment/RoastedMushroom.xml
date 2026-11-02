@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Roasted Mushroom</NativeName>
+  <NativeDescription>Mushroom cooked with fire</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>2</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.3</Nutrition>
+  <Tastiness>25</Tastiness>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>3</TypicalLootAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

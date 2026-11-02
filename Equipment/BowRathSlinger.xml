@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Bow</TypeName>
+  <NativeName>Rathslinger Bow</NativeName>
+  <NativeDescription>Its forged off a dead dragon from a different world, Ignores armor.</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>8</Weight>
+  <BasePrice>40</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>Prefabs/Equipment/Bow/Bow</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.2</Damage>
+  <DamageBonusPerSkillLevel>0.05</DamageBonusPerSkillLevel>
+  <Range>16</Range>
+  <RangeBonusPerSkillLevel>2</RangeBonusPerSkillLevel>
+  <AttackSoundRadius>16</AttackSoundRadius>
+  <FatiguePenaltyWhenAiming>0.04</FatiguePenaltyWhenAiming>
+  <FatiguePenaltyWhenAttacking>0.02</FatiguePenaltyWhenAttacking>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.45</MinAimTime>
+  <MaxAimTime>1.3</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>2</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.5</MaxLegsAimTime>
+  <Recoil>2</Recoil>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>1.5</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>Arrow</string>
+  </AmmoTypes>
+  <MaxAmmo>1</MaxAmmo>
+  <ReloadInsertSounds>
+    <string>Sounds\Equipment\Bow\pull1</string>
+  </ReloadInsertSounds>
+</EquipmentPrototype>

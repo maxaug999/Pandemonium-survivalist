@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 2708302477
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 02ba217e457da298b654e6e05afbf2d5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: eac5af37e2c611b9696d348e24a968fb
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+Assets:
+- Assets/containersmlblue.prefab
+- Assets/custom shader blue.mat
+Dependencies: []

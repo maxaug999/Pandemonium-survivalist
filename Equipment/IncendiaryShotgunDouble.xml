@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Shotgun</TypeName>
+  <NativeName>Incendiary Double Barrel Shotgun</NativeName>
+  <NativeDescription>Uses Incendiary Rounds, Ignores Armor</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>6</Weight>
+  <BasePrice>45</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/sawedoff.prefab</EquippedModelName>
+  <LootLocations />
+  <LootableFromLocations />
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.09</Damage>
+  <DamageBonusPerSkillLevel>0.01</DamageBonusPerSkillLevel>
+  <Range>16</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>0.9</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>1.5</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.25</MaxLegsAimTime>
+  <Recoil>1.25</Recoil>
+  <AimPenaltyWhenMoving>0.2</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.65</MinTimeBetweenFiring>
+  <AmmoType>IncendiaryAmmo</AmmoType>
+  <MaxAmmo>2</MaxAmmo>
+  <NumPelletsPerShot>16</NumPelletsPerShot>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

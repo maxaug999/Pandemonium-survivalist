@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Charcoal</NativeName>
+  <NativeDescription>You can make a fire with it, or make a forge burn hot enough to craft metal items such as bullets.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>5</Weight>
+  <BasePrice>4</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>50</TypicalLootAmount>
+</EquipmentPrototype>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Reinforced Machete</NativeName>
+  <NativeDescription>Better cutting weeds, grass and raiders.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>2.5</Weight>
+  <BasePrice>45</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Machete/Machete_Old</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.9</Damage>
+  <DamageBonusPerSkillLevel>0.12</DamageBonusPerSkillLevel>
+  <Range>2</Range>
+  <FatiguePenaltyWhenAttacking>0.12</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Axe</TypeName>
+  <NativeName>Battle Axe</NativeName>
+  <NativeDescription>Axe for chopping heads</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>8</Weight>
+  <BasePrice>50</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>assets/battleaxe.prefab</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>255</r>
+      <g>0</g>
+      <b>0</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaterialVariations />
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>1</Damage>
+  <DamageBonusPerSkillLevel>0.25</DamageBonusPerSkillLevel>
+  <Range>2.3</Range>
+  <FatiguePenaltyWhenAttacking>0.18</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

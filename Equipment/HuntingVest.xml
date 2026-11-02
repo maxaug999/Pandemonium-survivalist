@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Hunting Armor</NativeName>
+  <NativeDescription>Makes you one with the wild. 2.5 Damage absorption from zed.</NativeDescription>
+  <Category>4:Clothing/Armor/Vest</Category>
+  <Weight>3</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>BodyArmor</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>242</r>
+      <g>244</g>
+      <b>244</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaterialVariations />
+  <MaleMeshName>Male_Mill_All:MaleBulletProofVest</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:FemaleBulletProofVest</FemaleMeshName>
+  <DamageAbsorption>2.5</DamageAbsorption>
+  <SkillBonusType>Archery</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>30</NextFreeSpeechID>
+  <NextFreeTriggerID>4</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>2</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>2</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>13.8273163</x>
+    <y>1800.97693</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.514587641</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Romance_DoingMuchBetter" x="81.72705" y="89.79492" NativeText=":-) I'm doing much better now thanks to you!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage5" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="Romance_GladToHearIt" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Romance_GladToHearIt" x="994.9961" y="193.729584" NativeText=":-) I'm glad you're okay!" Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Romance_ListenBabe" />
+        <SpeechRef UniqueID="Romance_GoSteady" />
+        <SpeechRef UniqueID="Romance_LetMeDown" />
+        <SpeechRef UniqueID="Romance_FeelTheSame" />
+        <SpeechRef UniqueID="Romance_HopeYouDontMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_FeelTheSame" x="3252.45459" y="-815.6137" NativeText=":-) Hey, I really love spending time with you, and how much you've helped me out.  {:-) You know what, I think I'm in love with you!  8-| Um.. what about you, do you feel the same way?" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_InARelationship" />
+        <SpeechRef UniqueID="Romance_LoveYouToo" />
+        <SpeechRef UniqueID="Romance_GotTheWrongIdea" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_HopeYouDontMind" x="3250.51782" y="-1800.49243" NativeText="So, uh... I hope you don't mind me saying this, but it's been great hanging out with you.  I mean, what if we were to, like..." Importance="Low" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_Yes" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_Yes" x="4291.12061" y="-2159.684" NativeText=":-) Yes..?" Importance="Low" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Romance_DateOfficially" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_DateOfficially" x="5312.135" y="-1882.96521" NativeText="Oh god.  Well.  I mean, how would you like us to date each other?  Like officially?" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Romance_InARelationship" />
+        <SpeechRef UniqueID="Romance_LoveYouToo" />
+        <SpeechRef UniqueID="Romance_GotTheWrongIdea" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_LetMeDown" x="3236.337" y="162.810486" NativeText=":-) I really feel like I can trust you, like you won't let me down the way others have... will you?  :-| Where is this even going?  Are we, like, a thing now, or what?" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_InARelationship" />
+        <SpeechRef UniqueID="Romance_LoveYouToo" />
+        <SpeechRef UniqueID="Romance_GotTheWrongIdea" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_GoSteady" x="3233.99121" y="1034.29883" NativeText=":-) Say... maybe it's time us crazy kids got together?!  You wanna go steady?" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_InARelationship" />
+        <SpeechRef UniqueID="Romance_LoveYouToo" />
+        <SpeechRef UniqueID="Romance_GotTheWrongIdea" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_LoveYouToo" x="7489.94971" y="754.3198" NativeText=":-) I love you too!" Importance="Low" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="-20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="Romance_SoHappy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Romance_GotTheWrongIdea" x="7494.80859" y="-536.188354" NativeText="I think you've got the wrong idea..." Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_Idiot" />
+        <SpeechRef UniqueID="Romance_ScrewYou" />
+        <SpeechRef UniqueID="Romance_SoSorry" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_Idiot" x="8655.453" y="75.39498" NativeText="{:-( Oh shit, I'm such an idiot." Importance="Low" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Rejected" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_ScrewYou" x="8653.139" y="-785.9564" NativeText="}:-| Yeah?  Screw you, I never liked you anyway!" Importance="Low" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Rejected" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_SoSorry" x="8672.362" y="-2102.45557" NativeText="}:-| Oh shit, I'm so sorry.  That's on me... for thinking you were different." Importance="Low" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Rejected" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="CastAspersions" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_SoHappy" x="8657.654" y="987.791" NativeText="{:-) I'm so happy!  We'll make a great couple, I know it!" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Romance_BreakItGently" />
+        <SpeechRef UniqueID="Romance_Together" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_HeyHon" x="1153.17224" y="-2554.56885" NativeText=":-) Hey hon!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Romance_HeyBabe" x="1156.88684" y="-3975.11353" NativeText=":-) Hey babe!  Looking sexy today!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Romance_InARelationship" x="5028.071" y="1678.669" NativeText="{:-| I'm in a relationship with %1!" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" PerObjectType="PerRomanticRelationship">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="Always" PriorityFactor="40" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_LeaveThem" />
+        <SpeechRef UniqueID="Romance_Idiot" />
+        <SpeechRef UniqueID="Romance_ScrewYou" />
+        <SpeechRef UniqueID="Romance_SoSorry" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_LeaveThem" x="6085.72266" y="1967.38855" NativeText="So leave %1, baby!  Nothing can stand in the way of our love!" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_LoveYouToo" />
+        <SpeechRef UniqueID="Romance_GotTheWrongIdea" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Romance_ListenBabe" x="3231.10522" y="2145.565" NativeText="Look babe, we both know you and I are made to be together.  I know I don't want anyone but you!  Let's stop pretending, and make it official!" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" PriorityFactor="-2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_InARelationship" />
+        <SpeechRef UniqueID="Romance_LoveYouToo" />
+        <SpeechRef UniqueID="Romance_GotTheWrongIdea" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_Together" x="9667.121" y="526.0595" NativeText="{:-) You and me, together we'll be unstoppable!" Importance="Low" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Romance_DifficultConversation" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasRomanticRelationshipWithAnyone" Subject="Actor" BoolData="true" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="Target" Data="50" StringData="SleepingWith" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_BreakItGently" x="9663.993" y="3409.09717" NativeText="{:-( I'll have to break it gently to %1, but it's the right decision.  What you and I have together is so much more meaningful." Importance="Low" AIOverridesControl="true" PerObjectType="PerRomanticRelationship">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Romance_DifficultConversation" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="CuckoldedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Dumped" />
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" Data="-20" StringData="Ex" BoolData="true" />
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="Target" Data="50" StringData="SleepingWith" BoolData="true" />
+        <StoryEvent Type="OneShotTrigger" StringData="Romance_Trigger_BreakUpQuest" />
+        <StoryEvent Type="SetVariable" Subject="Actor" Object="ReferringTo" Data="1" StringData="BreakUp" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_HowCouldYou" x="11796.0176" y="-2456.13037" NativeText="{:-[ How could you do this to me, after everything we've been through together?" Situation="Opener" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Romance_IWasWeak" />
+        <SpeechRef UniqueID="Romance_DriftedApart" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Romance_WantBreakUp" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Romance_IWasWeak" x="12841.47" y="-1306.86731" NativeText="{:-| I'm so sorry, %1.  I didn't mean for it to happen like this.  I was weak, I should have told you sooner." Importance="Low">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="50" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Romance_ForgiveMe" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Romance_ForgiveMe" x="13765.7617" y="-1372.37476" NativeText="{:-| Can you forgive me?  I'd really like it if we could still be friends." Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <Replies>
+        <SpeechRef UniqueID="Romance_CantHateYou" />
+        <SpeechRef UniqueID="Romance_CantFixThis" />
+        <SpeechRef UniqueID="Romance_NeverWantToSpeak" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_CantHateYou" x="14881.832" y="763.948242" NativeText="{:-( Ugh, I suppose so.  I just can't hate you, you goddam idiot." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Romance_Trigger_BreakUpFinished" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedSuccessfully" />
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="Target" StringData="FriendsWith" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_CantFixThis" x="14871.4609" y="-910.052246" NativeText="{:-[ You can't fix this that easily.  I think... I need some time to myself." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-50" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Romance_Trigger_BreakUpFinished" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_DriftedApart" x="12800.8857" y="-3264.344" NativeText="We've drifted apart.  This is the right thing, for both of us." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="100" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Romance_BeAdults" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Romance_NeverWantToSpeak" x="14880.9492" y="-2199.91553" NativeText="}:-[ I never want to speak to you again!  I'm out.  I quit.  Goodbye!" Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Romance_Trigger_BreakUpFinished" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedUnsuccessfully" />
+        <StoryEvent Type="RejoinInitialCommunity" Subject="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_BeAdults" x="13754.18" y="-3634.417" NativeText="Let's just be adults about this, and... try to remember the good times." Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <Replies>
+        <SpeechRef UniqueID="Romance_MightBeRight" />
+        <SpeechRef UniqueID="Romance_Stick" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_MightBeRight" x="14904.16" y="-3340.12646" NativeText="}:-| You might be right, but you're still a fucking %1." Importance="Low">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Romance_Trigger_BreakUpFinished" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_Stick" x="14884.1719" y="-4565.70557" NativeText="}:-[ You can stick your good times up your ass, I'm leaving.  Don't try to contact me again!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="-25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="-25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Romance_Trigger_BreakUpFinished" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="RejoinInitialCommunity" Subject="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Romance_GladIMetYou" x="75.1489258" y="-941.6422" NativeText=":-) I'm doing good actually.  You know, I'm really glad I met you!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.6" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage5_NPC" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="Romance_MeToo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Romance_MeToo" x="986.693359" y="-872.1318" NativeText=":-) Hey, of course!  Me too." Importance="Low" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoiceForNPC" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Romance_ListenBabe" />
+        <SpeechRef UniqueID="Romance_GoSteady" />
+        <SpeechRef UniqueID="Romance_LetMeDown" />
+        <SpeechRef UniqueID="Romance_FeelTheSame" />
+        <SpeechRef UniqueID="Romance_HopeYouDontMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Romance_DifficultConversation" x="10950.3027" y="899.2366" NativeText="{:-( Of course, I will have to end things with %1.  It's going to be a difficult conversation.  I hope %2 will understand." AIOverridesControl="true" PerObjectType="PerRomanticRelationship">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="CuckoldedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Dumped" />
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" Data="-20" StringData="Ex" BoolData="true" />
+        <StoryEvent Type="SetVariable" Subject="Actor" Object="ReferringTo" Data="1" StringData="BreakUp" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Romance_Trigger_BreakUpQuest" x="12170.4541" y="1572.3363">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" ThirdParty="Actor" StringData="Romance_Quest_BreakItGently" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Romance_Trigger_BreakUpFinished" x="18286.8086" y="287.036682">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" ThirdParty="Target" StringData="Romance_Quest_BreakItGently" />
+        <StoryEvent Type="SetVariable" Subject="Target" Object="Actor" Data="2" StringData="BreakUp" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Flirt_Stage5" x="-1049.30066" y="105.50882">
+      <Conditions>
+        <Condition Type="CanFlirt" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="100" />
+        <Condition Type="HasMemoryQuantityAtLeast" Subject="Actor" Object="Actor" ThirdParty="Target" Data="4" Data2="100000" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_QuestNotActive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Romance_WantBreakUp" x="10745.2227" y="-2605.819" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" ThirdParty="Target" StringData="Romance_Quest_BreakItGently" />
+        <Condition Type="VariableEquals" Subject="Target" Object="Actor" Data="1" StringData="BreakUp" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_Stage5_NPC" x="-1070.72742" y="-1039.04028">
+      <Conditions>
+        <Condition Type="CanFlirt" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" />
+        <Condition Type="HasMemoryQuantityAtLeast" Subject="Actor" Object="Actor" ThirdParty="Target" Data="3" Data2="100000" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_QuestNotActive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Romance_Quest_BreakItGently" x="19711.1328" y="1459.11377" GroupID="Romance_QuestGroup_BreakUp" NativeDescription="Break it gently to %1">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Romance_QuestGroup_BreakUp" x="19657.6172" y="2116.84155" NativeTitle="Break up with %1">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

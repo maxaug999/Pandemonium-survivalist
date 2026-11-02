@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Herbed Rabbit Piece</NativeName>
+  <NativeDescription>Tasty and addicting</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>6</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.65</Nutrition>
+  <Tastiness>60</Tastiness>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor>
+    <string>Likes Spicy Food</string>
+    <string>Likes Bland Food</string>
+  </GiftFor>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>8</SkillOnConsumptionProgression>
+</EquipmentPrototype>

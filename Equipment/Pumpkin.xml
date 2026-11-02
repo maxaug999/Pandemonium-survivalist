@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Pumpkin</NativeName>
+  <Category>5:Food/Crops</Category>
+  <Weight>5</Weight>
+  <BasePrice>5</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>1</Nutrition>
+  <Tastiness>-5</Tastiness>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftAmount>10</GiftAmount>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>5</SkillOnConsumptionProgression>
+</EquipmentPrototype>

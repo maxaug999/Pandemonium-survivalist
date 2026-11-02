@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cosplay Backpack</NativeName>
+  <NativeDescription>The original owner was cosplaying when the outbreak happened.</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>3</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Backpack</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>0</r>
+      <g>49</g>
+      <b>110</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2>
+    <Color32>
+      <r>93</r>
+      <g>64</g>
+      <b>55</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations2>
+  <MaleMeshName>Male_Mill_All:Backpack3</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack3</FemaleMeshName>
+  <CarryWeight>40</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>10</CarryWeightBonusPerSkillLevel>
+  <SkillBonusType>HandToHand</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

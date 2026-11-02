@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>WateringCan</TypeName>
+  <NativeName>Watering Can</NativeName>
+  <NativeDescription>You can use any bottle to water crops, but a watering can carries more water in one go.</NativeDescription>
+  <Category>7:Containers</Category>
+  <Weight>14</Weight>
+  <BasePrice>12</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <LiquidCapacity>200</LiquidCapacity>
+  <EquippedModelName>Prefabs/Equipment/Watering Can/Watering Can</EquippedModelName>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

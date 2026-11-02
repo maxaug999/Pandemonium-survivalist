@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Construction Blueprints</NativeName>
+  <NativeDescription>pre-made plans for construction. Too bad its not a weapons blueprint! :)</NativeDescription>
+  <Category>8:Books/Skill</Category>
+  <Weight>2</Weight>
+  <BasePrice>100</BasePrice>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillBonusType>Construction</SkillBonusType>
+  <SkillBonus>2</SkillBonus>
+</EquipmentPrototype>

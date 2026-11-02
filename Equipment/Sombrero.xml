@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Sombrero</NativeName>
+  <NativeDescription>Protection againts the sun</NativeDescription>
+  <Category>4:Clothing/Hats</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>16</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Hat</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>245</r>
+      <g>176</g>
+      <b>65</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaterialVariations>
+    <string>CowboyHat/Woven</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:CowboyHat</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:CowboyHat</FemaleMeshName>
+  <SkillBonusType>Farming</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

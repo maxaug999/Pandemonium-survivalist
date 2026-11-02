@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-273.848938</x>
+    <y>-119.456665</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5932634</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchCabbageSeeds_FetchingJob" x="-966.2071" y="-474.913422" NativeText="}:-( Community Farmer %1 Is quite upset since our cabbage crops patch has been devastated by wild rabbits that went inside the broken fence that those raiders wreck. you need to talk to %2 for more details." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="FetchCabbageSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_WantSeeds" x="-90.3260956" y="-876.3183" NativeText="}:-( Those rabbits ravaged our cabbage crops that I just planted! anyway do you have a bunch of extra cabbage seeds that you could share? It would be much appriciated.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchCabbageSeeds_NoviceFarmer" />
+        <SpeechRef UniqueID="FetchCabbageSeeds_No" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="FetchCabbageSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_NoviceFarmer" x="955.4131" y="-889.22" NativeText=":-) I do sure have!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchCabbageSeeds_Okey" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="Player" ObjectModifier="Community" Data="1" StringData="Farming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_No" x="1000.93164" y="-1787.90344" NativeText="}:-) Sorry I'll be busy hunting those rabbits! so..">
+      <Replies>
+        <SpeechRef UniqueID="FetchCabbageSeeds_NotMuchUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_NotMuchUse" x="1841.36108" y="-1841.51318" NativeText=":-( Oh hell no! why you doing this to me." />
+    <Speech UniqueID="FetchCabbageSeeds_Okey" x="1813.68689" y="-1185.39124" NativeText=":-) Hey thanks! I'll owe you one.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchCabbageSeed_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_GotSome" x="2695.31079" y="-706.3341" NativeText="Here's your seeds! }:-)" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchCabbageSeeds_SavedAss" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchCabbageSeed_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="40" StringData="CabbageSeeds" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_SavedAss" x="3572.193" y="-516.794739" NativeText="8-o Now I owe you one! come again anytime!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="50" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="40" StringData="CabbageSeeds" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="FetchCabbageSeed_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_HowToPlant" x="-462.723572" y="-2370.558" NativeText="Where do I find Cabbage seeds?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchCabbageSeeds_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchCabbageSeed_Fetch" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_Tip" x="428.79425" y="-2575.49219" NativeText=":-) Cabbages take longer to grow than carrots and beets. and it yields less seeds than carrots. You go buy a bunch from other communities or steal them if you can't grow it yourself.">
+      <Replies>
+        <SpeechRef UniqueID="FetchCabbageSeeds_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchCabbageSeeds_TipEnd" x="1376.61548" y="-2691.60327" NativeText=":-( easier to say than done." />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="FetchCabbageSeed_Fetch" x="880.1109" y="267.106018" GroupID="FetchCabbageSeed_QuestGroup" NativeDescription="%1 wants you to gather 40 Cabbage seeds.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="40" StringData="CabbageSeeds" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchCabbageSeed_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchCabbageSeed_Return" x="1774.095" y="105.1393" GroupID="FetchCabbageSeed_QuestGroup" NativeDescription="Take the Cabbage seeds to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchCabbageSeed_QuestGroup" x="18.8628922" y="-144.3215" NativeTitle="Fetch Seeds for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

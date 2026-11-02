@@ -1,0 +1,829 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>45</NextFreeSpeechID>
+  <NextFreeTriggerID>3</NextFreeTriggerID>
+  <NextFreeConditionBlockID>9</NextFreeConditionBlockID>
+  <NextFreeQuestID>5</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-1877.89868</x>
+    <y>13034.0645</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.80657953</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Rebellion_GangOfLooters" x="193.0198" y="-2620.29321" NativeText="There's a gang of looters that keeps extorting gold from us, %1.  Think you can deal with them?" PerObjectType="PerKnownCommunity">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_SortThemOut" />
+        <SpeechRef UniqueID="Rebellion_NotNow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Normal" />
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_KillLeaderSilently" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_KillEveryone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_Negotiate" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_KillLeader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_Frequency" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Rebellion_SortThemOut" x="1203.99915" y="-2612.43164" NativeText="I'll sort them out for you.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_InCharge" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_NotNow" x="1209.313" y="-3269.66724" NativeText="Not right now.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_IUnderstand" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_InCharge" x="2380.56543" y="-2602.16748" NativeText="{:-) We've been looking for someone like you!  We'll pay you in gold, of course.">
+      <Continues>
+        <SpeechRef UniqueID="Rebellion_WipeThemOut" />
+        <SpeechRef UniqueID="Rebellion_DontLetThemKnow" />
+        <SpeechRef UniqueID="Rebellion_AndStuff" />
+        <SpeechRef UniqueID="Rebellion_EncourageTheOthers" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Rebellion_IUnderstand" x="6658.85" y="-4691.33545" NativeText="{:-( Sure... I understand." />
+    <Speech UniqueID="Rebellion_WipeThemOut" x="3615.036" y="-1198.53943" NativeText="}:-| These assholes have been bothering everyone in the area.  We need to make sure none of them is left alive, so they can't trouble in anyone else.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_UhOkay" />
+        <SpeechRef UniqueID="Rebellion_ChangedMyMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_DontLetThemKnow" x="3611.50122" y="-2078.74731" NativeText="They said they'll do some horrible things to us if we retaliate, so don't let them know you're coming.  Kill their leader, %1.  With any luck they'll disintegrate without %2.">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_UhOkay" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_AndStuff" x="3604.7" y="-3318.05127" NativeText="{:-( Can you get them to leave us alone?  They might listen to you, I guess.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_UhOkay" />
+        <SpeechRef UniqueID="Rebellion_ChangedMyMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_EncourageTheOthers" x="3594.66" y="-4078.24878" NativeText="The best strategy is to assassinate their leader, %1.  Without %2 they won't be organised enough to retaliate.">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_UhOkay" />
+        <SpeechRef UniqueID="Rebellion_ChangedMyMind" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_ChangedMyMind" x="4951.901" y="-3207.30127" NativeText="Actually I changed my mind.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_IUnderstand" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_UhOkay" x="4943.55225" y="-2485.25513" NativeText="Uh.. okay.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_LeaderBody" />
+        <SpeechRef UniqueID="Rebellion_ProveYouDidIt" />
+        <SpeechRef UniqueID="Rebellion_GoodLuck" />
+        <SpeechRef UniqueID="Rebellion_WhatItTakes" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_WhatItTakes" x="6664.641" y="-3689.44653" NativeText="Bring me %1 body so we can all see %2 is dead.  {:-| We're counting on you.">
+      <Params>
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" SubjectModifier="Leader" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Params>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillLeader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_GoodLuck" x="6664.069" y="-2666.17" NativeText="{:-| Good luck!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_Negotiate" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_ProveYouDidIt" x="6656.73145" y="-1616.02869" NativeText="So, if you could bring me %1 body to prove you did it... that'd be cool.">
+      <Params>
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillLeaderSilently" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_LeaderBody" x="6665.61328" y="-437.21936" NativeText="Bring me the body of their leader, %1, and you'll get paid.  }:-) Let's make them regret they ever crossed us!">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillEveryone" />
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="ReferringTo" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_Persuaded" x="-108.362" y="-14323.4746" NativeText="%1 has agreed to leave you alone." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_GreatNews" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_InformTruceAgreed" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_GreatNews" x="1314.08325" y="-13864.874" NativeText="{:-) Really..?  Oh that's such great news!  Here, take this - you deserve it.">
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_InformTruceAgreed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_ThatCorpse" x="-61.0917358" y="-17147.709" NativeText="I killed %1 for you." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" SubjectModifier="Carrying" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_Teach" />
+        <SpeechRef UniqueID="Rebellion_DidTheyKnow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="Rebellion_KillEveryone" Not="true" />
+        <Condition Type="IsCarrying" Subject="Actor" Object="ReferringTo" ObjectModifier="Leader" />
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_Teach" x="1302.84827" y="-16277.0137" NativeText="{:-) You got %1?  Jesus, maybe they'll finally leave us alone now.  :-| Here's your payment.">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_WhoIsThis" x="1322.08044" y="-21231.1719" NativeText="}:-| Who is this?  What are you trying to pull?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_Mistake" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillLeader" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillEveryone" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillLeaderSilently" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_PickUpBody" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_PickUpLeaderBody" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Rebellion_Mistake" x="2601.13672" y="-21444.502" NativeText="Erm... I must have made a mistake.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_DontComeBack" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_DontComeBack" x="3739.26221" y="-20936.33" NativeText="}:-[ Get out of here!  And don't come back." />
+    <Speech UniqueID="Rebellion_Teach_Credulous" x="1326.0343" y="-18426.7012" NativeText="}:-) Yeah!  That should teach %1 to mess with us!  Here's your payment." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="120" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="IgnoredByObjectCommunity" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillLeader" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillEveryone" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillLeaderSilently" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_PickUpBody" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_PickUpLeaderBody" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_DidTheyKnow" x="1302.39929" y="-17561.0762" NativeText="Did you do it silently?  Did they know it was you?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_NeverKnew" />
+        <SpeechRef UniqueID="Rebellion_UmYeah" />
+        <SpeechRef UniqueID="Rebellion_MadeThemMad" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillLeaderSilently" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_UmYeah" x="2723.53027" y="-17539.3613" NativeText="Um.. yeah.  Sure." Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_Teach_CrawlingBack" />
+        <SpeechRef UniqueID="Rebellion_SlaughterUsAll" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="CommunityHasAnyActiveMembers" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_NeverKnew" x="2705.38086" y="-16531.2422" NativeText=":-) %1 never knew what hit %2.">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="Leader" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_Teach" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_NeverKnewWhatHitThem" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_MadeThemMad" x="2713.31543" y="-18760.9434" NativeText="Well, no.  I think I made them mad.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_SlaughterUsAll" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="CommunityHasAnyActiveMembers" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_SlaughterUsAll" x="4483.875" y="-18204.4512" NativeText="}:-| Oh great job, really, well done.  Here's your gold, let's hope they don't come back here and slaughter us all.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="200" StringData="Gold" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FailedWorkFor" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_Teach_CrawlingBack" x="4487.539" y="-16037.1865" NativeText=":-) I'm sure glad I hired you!  :-| Let's stay on each other's good side.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="120" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="IgnoredByObjectCommunity" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_AnyMoreTrouble" x="-94.48582" y="-15278.8926" NativeText="You won't be getting any more trouble from %1!" Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_GotThemAll" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+        <Condition Type="QuestIsCompleted" Subject="Target" Object="ReferringTo" StringData="Rebellion_KillEveryone" />
+        <Condition Type="IsCarrying" Subject="Actor" Object="ReferringTo" ObjectModifier="Leader" />
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_ThisIsTheirLeader" x="-169.772247" y="-20286.9668" NativeText="Uh, this is %1, their leader... I killed them all for you." Situation="QuestTopic" Lie="true" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_Teach_Credulous" />
+        <SpeechRef UniqueID="Rebellion_WhoIsThis" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsCarrying" Subject="Actor" Object="ReferringTo" ObjectModifier="Leader" Not="true" />
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="Target" StringData="Human" Not="true" />
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_QuestActive_KillEveryone" />
+            <ConditionBlockRef UniqueID="Rebellion_QuestActive_KillLeader" />
+            <ConditionBlockRef UniqueID="Rebellion_QuestActive_KillLeaderSilently" />
+            <ConditionBlockRef UniqueID="Rebellion_QuestActive_PickUpLeaderBody" />
+            <ConditionBlockRef UniqueID="Rebellion_QuestActive_PickUpBody" />
+            <ConditionBlockRef UniqueID="Rebellion_QuestActive_BringBackBody" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_NeedHelp" x="-1341.02222" y="-2610.28564" NativeText="We need help to get these damn looters off our backs!  Talk to %1, our leader." PerObjectType="PerKnownCommunity">
+      <Params>
+        <SpeechParam Type="CommunityLeaderName" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Normal" />
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" SubjectModifier="Leader" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_KillLeaderSilently" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_KillEveryone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_Negotiate" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Rebellion_KillLeader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_Frequency" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Rebellion_GotThemAll" x="1312.189" y="-14985.4941" NativeText="{:-) You got them all?  Thank goodness for you!  Here's your pay, as promised.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_StopFighting" x="-929.1718" y="-8475.818" NativeText="You need to lay off %1." Situation="QuestTopic" PerObjectType="PerActiveQuestReferringToTarget">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_WhatsItToYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="Rebellion_Negotiate" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_WhatsItToYou" x="152.947815" y="-8700.969" NativeText="}:-| That's none of your business.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_Problem" />
+        <SpeechRef UniqueID="Rebellion_ImportantToMe" />
+        <SpeechRef UniqueID="Rebellion_WhatYoureDoingIsWrong" />
+        <SpeechRef UniqueID="Rebellion_ActuallyIDontCare" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_ImportantToMe" x="1388.27466" y="-8721.734" NativeText=":-) We're friends aren't we?  This is important to me.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_AnythingForMyPal" />
+        <SpeechRef UniqueID="Rebellion_Awkward" />
+        <SpeechRef UniqueID="Rebellion_WhyWouldYouThinkThat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_Problem" x="1419.63208" y="-6857.23926" NativeText=":-[ Stay away from them, or you and me are going to have a problem.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_DontWantAnyTrouble" />
+        <SpeechRef UniqueID="Rebellion_TryingToTellMeWhatToDo" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Rebellion_DontWantAnyTrouble" x="2737.41187" y="-4949.47949" NativeText="8-( Hey man, you don't need to get angry... I don't want any trouble with you." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="60" Data2="40" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_InformTruceAgreed" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_TryingToTellMeWhatToDo" x="2745.09131" y="-6470.52246" NativeText=":-[ Are you trying to tell me what to do?  Seriously?">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_KillEveryone" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_AnythingForMyPal" x="2725.49731" y="-7805.238" NativeText=":-) Yeah man, sure.  Anything for my pal %1." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="60" Data2="40" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_InformTruceAgreed" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_Awkward" x="2722.72754" y="-9442.427" NativeText="{:-| I mean, I think you're alright, I guess.  But friends?  Man, this is awkward...">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="10" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_WhyWouldYouThinkThat" x="2719.16284" y="-10510.7783" NativeText="}:-| Why would you think that?">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_HardToGetBy" x="2720.21826" y="-11187.8486" NativeText=":-( Well... shit, it's just so hard to get by out here, you know?  It started out just stealing a few things here and there... but you're right, we'll leave them alone." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Rebellion_InformTruceAgreed" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_WhatYoureDoingIsWrong" x="1486.33838" y="-11711.4443" NativeText=":-[ What you're doing is wrong.">
+      <Replies>
+        <SpeechRef UniqueID="Rebellion_HardToGetBy" />
+        <SpeechRef UniqueID="Rebellion_Ridiculous" />
+        <SpeechRef UniqueID="Rebellion_TryingToTellMeWhatToDo" />
+        <SpeechRef UniqueID="Rebellion_Amoral" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_Moral" />
+            <ConditionBlockRef UniqueID="Rebellion_Hypocritical" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rebellion_Amoral" x="2708.031" y="-12884.3369" NativeText="And..?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Amoral" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rebellion_ActuallyIDontCare" x="1493.97681" y="-12850.4775" NativeText="Actually I don't care." />
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Rebellion_AtWarTrigger" x="2370.46753" y="-574.5404">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_LeaderDead" />
+            <ConditionBlockRef UniqueID="Rebellion_AtWar" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_KillEveryone" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Rebellion_Trigger_LeaderBuried" x="2378.74854" y="796.5005">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsBuried" Subject="QuestObject" SubjectModifier="Leader" />
+        <Condition Type="QuestIsDiscovered" Subject="QuestGiver" Object="QuestObject" StringData="Rebellion_KillEveryone" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" Object="QuestObject" StringData="Rebellion_PickUpLeaderBody" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="QuestGiver" Object="QuestObject" StringData="Rebellion_PickUpBody" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Rebellion_LeaderDead" x="1501.90576" y="-450.481659">
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_AtWar" x="1495.38477" y="-732.3443">
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Player" Object="ReferringTo" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_Moral" x="260.752716" y="-11855.16">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_Hypocritical" x="260.752777" y="-12219.35">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_QuestActive_KillEveryone" x="-1143.20752" y="-20583.9922">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_KillEveryone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_QuestActive_KillLeader" x="-1147.211" y="-21087.9551">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_KillLeader" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_QuestActive_KillLeaderSilently" x="-1145.843" y="-21499.7969">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_KillLeaderSilently" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_QuestActive_PickUpLeaderBody" x="-1146.3103" y="-21959.127">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_PickUpLeaderBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_QuestActive_BringBackBody" x="-1149.761" y="-22842.1367">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+        <Condition Type="QuestIsCompleted" Subject="Target" Object="ReferringTo" StringData="Rebellion_KillEveryone" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_Frequency" x="-555.2537" y="-4286.49" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_WantRebellion" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_QuestActive_PickUpBody" x="-1157.24744" y="-22403.252">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rebellion_PickUpBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_WantRebellion" x="-1298.64063" y="-4701.928">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" SubjectModifier="Community" Data="2" StringData="Rebellion" />
+        <Condition Type="VariableIsGreaterThan" Subject="ReferringTo" Object="Actor" SubjectModifier="Community" ObjectModifier="Community" StringData="Extorted" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rebellion_NeverKnewWhatHitThem" x="3646.70386" y="-16457.2852" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityHasAnyActiveMembers" Subject="ReferringTo" Not="true" />
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Rebellion_KillLeader" x="507.651459" y="2902.691" GroupID="Rebellion_QuestGroup" NativeDescription="Kill the leader of %1, and bring back the body as proof.  Of course, they might not look too closely at a corpse?" SkipNotificationIfAlreadyCompleted="true" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_PickUpLeaderBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Rebellion_KillEveryone" x="483.011078" y="1367.97937" GroupID="Rebellion_QuestGroup" NativeDescription="Exterminate everyone in %1.  Or maybe you can just pretend you did?" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="ReferringTo" Data="1" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_PickUpLeaderBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Rebellion_BringBackBody" x="2382.15527" y="2048.69238" GroupID="Rebellion_QuestGroup" NativeDescription="Bring the body back to %1.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Rebellion_PickUpLeaderBody" x="1484.38525" y="1576.491" GroupID="Rebellion_QuestGroup" NativeDescription="Pick up the body of their leader, %1.">
+      <Params>
+        <SpeechParam Type="CommunityLeaderName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsCarrying" Subject="Player" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Leader" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" BoolData="true" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </FailureEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Rebellion_Trigger_LeaderBuried" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Rebellion_KillLeaderSilently" x="497.847534" y="4464.036" GroupID="Rebellion_QuestGroup" NativeDescription="Kill the leader of %1 without letting them know it was you.  You must bring back their body as proof... then again, the dead are all alike in a way aren't they?" SkipNotificationIfAlreadyCompleted="true" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_PickUpLeaderBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Rebellion_Negotiate" x="481.1931" y="-122.826828" GroupID="Rebellion_QuestGroup" NativeDescription="Persuade %1 to stop harassing %2.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rebellion_LeaderDead" />
+            <ConditionBlockRef UniqueID="Rebellion_AtWar" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Rebellion_AtWarTrigger" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Rebellion_InformTruceAgreed" x="3339.93945" y="60.02412" GroupID="TurfWar_QuestGroup" NativeDescription="Inform %1 that %2 will no longer be bothering them.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="CeaseFire" Subject="ReferringTo" Object="Actor" />
+      </StartEvents>
+    </Quest>
+    <Quest UniqueID="Rebellion_PickUpBody" x="1489.24365" y="2906.301" GroupID="Rebellion_QuestGroup" NativeDescription="Pick up the body" QuestMarkerType="DeadButUnburied">
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsCarryingCommunityMember" Subject="Player" Object="ReferringTo" SubjectModifier="Community" StringData="Human" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rebellion_BringBackBody" />
+      </CompletionEvents>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Rebellion_QuestGroup" x="-494.861237" y="2394.105" NativeTitle="%1 want you to end the tyranny of %2">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Sniper Rifle Ammo Crate</NativeName>
+  <NativeDescription>Contains 650 Sniper Rifle Rounds</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>41</Weight>
+  <BasePrice>1950</BasePrice>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

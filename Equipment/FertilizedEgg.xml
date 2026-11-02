@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>FertilizedEgg</TypeName>
+  <NativeName>Fertilized Egg</NativeName>
+  <Category>9:Special</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>10</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+</EquipmentPrototype>

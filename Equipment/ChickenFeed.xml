@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Chicken Feed</NativeName>
+  <NativeDescription>Made from ear of corn or sunflower seeds.</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>0.03</Weight>
+  <BasePrice>0.75</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.25</Nutrition>
+  <Tastiness>-50</Tastiness>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>30</TypicalLootAmount>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>-15</SkillOnConsumptionProgression>
+</EquipmentPrototype>

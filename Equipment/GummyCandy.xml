@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Gummy Candy</NativeName>
+  <NativeDescription>The best thing that ever happened</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>0.5</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.2</Nutrition>
+  <Caffeine>0.1</Caffeine>
+  <Water>-0.05</Water>
+  <Tastiness>75</Tastiness>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>VendingMachine</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>10</TypicalLootAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>-0.1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

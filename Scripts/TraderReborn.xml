@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>3</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>9</NextFreeConditionBlockID>
+  <NextFreeQuestID>2</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>350.846069</x>
+    <y>-162.341125</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5802429</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="AssignRole_Trader" x="676.5674" y="274.3252" NativeText=":-) I'll be the new community trader." Situation="OpenerToSelf" Importance="Low" RepeatTime="5400">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="4" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" Not="true" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" Not="true" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Lumberjack" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Backpack_Large" />
+      </Events>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRole" Subject="Actor" StringData="Trader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AssignRole_RoamingTrader" x="1515.4989" y="245.946777" NativeText="{:-| I'll be the new trader." Situation="OpenerToSelf" Importance="Low" RepeatTime="5400">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Normal" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRole" Subject="Actor" StringData="Trader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AssignRole_RoamingTraderDead" x="3091.11426" y="254.82431" NativeText="{:-( Huh where's my leader?" Situation="OpenerToSelf" Importance="Low" RepeatTime="10800">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Normal" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" Not="true" />
+        <Condition Type="CommunityHasLeader" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRank" Subject="Actor" StringData="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AssignRole_RoamingTradeNew" x="3794.91064" y="267.000763" NativeText=":-| Need to follow the leader." Situation="OpenerToSelf" Importance="Low" RepeatTime="10800">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Normal" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRole" Subject="Actor" StringData="None" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AssignRole_Needbackpack." x="-37.47338" y="270.411163" NativeText=":-) Need a backpack." Situation="OpenerToSelf" Importance="Low" RepeatTime="5400">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" />
+        <Condition Type="HasBackpack" Subject="Actor" Data="1" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Backpack_Large" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AssignRole_NeedbackpackTrader" x="2311.27539" y="282.50882" NativeText=":-) Need a backpack." Situation="OpenerToSelf" Importance="Low" RepeatTime="5400">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Normal" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Trader" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" />
+        <Condition Type="HasBackpack" Subject="Actor" Data="1" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Backpack_Large" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

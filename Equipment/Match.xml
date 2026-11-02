@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Match</NativeName>
+  <NativeDescription>Useful for lighting fires, and for crafting molotov cocktails and pipe bombs.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>0.01</Weight>
+  <BasePrice>0.25</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Medical</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Restaurant</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>10</TypicalLootAmount>
+</EquipmentPrototype>

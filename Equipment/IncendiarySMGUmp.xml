@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>AssaultRifle</TypeName>
+  <NativeName>Incendiary Sub Machine Gun</NativeName>
+  <NativeDescription>Uses Incendiary Rounds, Ignores Armor</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>7</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/ump.prefab</EquippedModelName>
+  <LootLocations />
+  <LootableFromLocations />
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.235</Damage>
+  <DamageBonusPerSkillLevel>0.08</DamageBonusPerSkillLevel>
+  <Range>22</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1.5</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>1.4</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.35</MaxLegsAimTime>
+  <Recoil>0.225</Recoil>
+  <AimPenaltyWhenMoving>0.35</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.135</MinTimeBetweenFiring>
+  <AmmoType>IncendiaryAmmo</AmmoType>
+  <MaxAmmo>25</MaxAmmo>
+  <FireSounds>
+    <string>assets/magnumfire1.wav</string>
+    <string>assets/magnumfire2.wav</string>
+  </FireSounds>
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

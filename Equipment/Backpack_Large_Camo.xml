@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Large Camo Backpack</NativeName>
+  <NativeDescription>This backpack not only carries a lot, but also improves your camouflage. 15 max weight per Strength from zed.</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>4</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Backpack</ClothingType>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ClothesStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SportsStore</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <MaleMeshName>Male_Mill_All:Backpack4</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack4</FemaleMeshName>
+  <CarryWeight>50</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>15</CarryWeightBonusPerSkillLevel>
+  <SkillBonusType>Stealth</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

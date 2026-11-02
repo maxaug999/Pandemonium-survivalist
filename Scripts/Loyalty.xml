@@ -1,0 +1,1043 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>46</NextFreeSpeechID>
+  <NextFreeTriggerID>9</NextFreeTriggerID>
+  <NextFreeConditionBlockID>5</NextFreeConditionBlockID>
+  <NextFreeQuestID>4</NextFreeQuestID>
+  <NextFreeQuestGroupID>3</NextFreeQuestGroupID>
+  <NextFreeTemplateID>8</NextFreeTemplateID>
+  <NextFreeInvaderID>2</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>494.3589</x>
+    <y>36.83419</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.634641469</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Loyalty_CouldUseSomeHelp" x="302.6401" y="-221.091064" NativeText="Hey, I could use some help.  I need to go meet... someone.  Could you back me up?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_GotYourBack" />
+        <SpeechRef UniqueID="Loyalty_CantDeal" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="QuestIsDiscoveredGivenByWithSeeker" Subject="Actor" ThirdParty="Target" StringData="Loyalty_Quest_MeetContact" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" StringData="Chicken_Quest_GoTo" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Friendship_AnyQuestsActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="60" />
+        <Condition Type="HasMemoryQuantityAtLeast" Subject="Target" Object="Target" ThirdParty="Actor" Data="2" StringData="HungOut" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="None" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" Data="7" StringData="FlirtedSuccessfullyWith" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" Data="7" StringData="RefusedToHangOut" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Loyalty_GotYourBack" x="1467.065" y="0.393953979" NativeText=":-) Sure, I got your back anytime.">
+      <Events>
+        <StoryEvent Type="SpawnTemplate" StringData="Loyalty_Template_Contact_Group1" />
+        <StoryEvent Type="SpawnTemplate" StringData="Loyalty_Template_Contact_Group2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Loyalty_CantDeal" x="1454.79724" y="-663.412964" NativeText="Sorry, I've got problems of my own right now.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_BeenHiding" x="6103.008" y="-45.82771" NativeText="%1.  So this is where you've been hiding." Situation="Opener" Run="true" PerObjectType="PerActiveQuestSeeker">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_NotGoingBack" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="Loyalty_Quest_MeetContact" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="HeldCaptive" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Loyalty_NotGoingBack" x="7244.74268" y="-303.335846" NativeText="}:-| I'm not going back with you.">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_ThePenalty" />
+        <SpeechRef UniqueID="Loyalty_WeStillHaveYourFriends" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_ThePenalty" x="8359.871" y="-145.7217" NativeText="}:-| Doesn't look like you have much of a choice.  You know the penalty for desertion!">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_ILiveHereNow" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_ILiveHereNow" x="9467.237" y="-258.242249" NativeText="8-( I was told this would just be a negotiation!  }:-| I live here now!">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_NotWithYou" />
+        <SpeechRef UniqueID="Loyalty_WhereIsYourLeader" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_WhereIsYourLeader" x="10726.6455" y="-717.0171" NativeText="}:-| It's a negotiation, but not with you.  Where is your leader?">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_NotHere" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_NotWithYou" x="10728.6943" y="599.899536" NativeText="}:-| It's a negotiation, but not with you.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="ReferringTo" Data="24" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Loyalty_ATokenOfOurRespect" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Speech>
+    <Speech UniqueID="Loyalty_NotHere" x="11857.1787" y="-695.367554" NativeText="{:-| %1... %2 isn't here.  Whatever you have to say, you can say to me.">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_Tight" />
+        <SpeechRef UniqueID="Loyalty_FeedYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_Tight" x="12935.4609" y="-600.3131" NativeText="}:-) Oh, sounds like you found yourself a real tight little group!  }:-| Well here's your negotiation, %1.  Come back with me, or suffer the full penalty for disloyalty.">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_NeverTakeMeAlive" />
+        <SpeechRef UniqueID="Loyalty_DontCareAnyway" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_NeverTakeMeAlive" x="14028.2891" y="-215.500427" NativeText="}:-[ You'll never take me alive!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="100" />
+        <Condition Type="AlliesNearby" Subject="Actor" Data="32" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_DontCareAnyway" x="14236.9111" y="-1483.55823" NativeText="{:-[ You know what, I don't care anyway.  %1 can go to hell, I can't believe I ever thought %2 would come through for me.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="100" />
+        <Condition Type="AlliesNearby" Subject="Target" Data="32" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TheRightChoice" />
+        <SpeechRef UniqueID="Loyalty_HappyToSeeYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_TheRightChoice" x="15462.0547" y="-1468.75122" NativeText="}:-| Yeah well done, you fucking prick, you made the right choice finally.  :-| Once you've served out your punishment duties, and if you survive the beatings of course, you'll be back to regular labor duties pretty soon.  I mean it'll probably only take a few years.">
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Loyalty_Trigger_Surrender" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_ATokenOfOurRespect" x="11919.9492" y="924.903931" NativeText="%1 needs to come back with us now.  If you try to resist, we will send our enforcers to crush you.  But we don't want to inconvenience you.  As a token of our deep respect for you, we'll offer you 500 gold in compensation if you do the right thing and hand %2 over peacefully." Run="true" SpecialBehaviour="PreventEscape">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" BoolData="true" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="Loyalty_CuteIdeas" />
+        <SpeechRef UniqueID="Loyalty_CuteIdeas2" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TooLateForYou" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_CuteIdeas" x="13117.0664" y="2290.70215" NativeText="}:-| Don't get any cute ideas though, the gold isn't on me now.  It'll be left in a hidden location for you to retrieve after we have secured this... traitor.">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_WhatWillHappen" />
+        <SpeechRef UniqueID="Loyalty_TrustYou" />
+        <SpeechRef UniqueID="Loyalty_ImSorry" />
+        <SpeechRef UniqueID="Loyalty_ComeThroughMe" />
+        <SpeechRef UniqueID="Loyalty_RiskingYourLife" />
+        <SpeechRef UniqueID="Loyalty_SnipersPoised" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TooLateForYou" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_WhatWillHappen" x="14385.3291" y="6869.169" NativeText="What will happen to %1?">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_UnpleasantChores" />
+        <SpeechRef UniqueID="Loyalty_WeHaveAUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_UnpleasantChores" x="15601.1738" y="7387.248" NativeText="We take disloyalty very seriously, because that's what we need to do to survive!  But don't worry, %1 won't be executed.  %2 will have to perform some unpleasant chores for a time, and %3 may lose some.. non-essential body parts.  :-) But in the end %4 will be forgiven.">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TrustYou" />
+        <SpeechRef UniqueID="Loyalty_ImSorry" />
+        <SpeechRef UniqueID="Loyalty_ComeThroughMe" />
+        <SpeechRef UniqueID="Loyalty_RiskingYourLife" />
+        <SpeechRef UniqueID="Loyalty_SnipersPoised" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TooLateForYou" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_TrustYou" x="14406.38" y="6046.81641" NativeText="How do I know I can trust you?">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_DifficultQuestion" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_DifficultQuestion" x="15606.2285" y="6153.486" NativeText="Always a difficult question these days, isn't it?  But if we wanted, we could kill you all now.  We have the soldiers, and the weapons.  %1 can vouch for that.  }:-| Don't make the stupid choice.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_WhatWillHappen" />
+        <SpeechRef UniqueID="Loyalty_ImSorry" />
+        <SpeechRef UniqueID="Loyalty_ComeThroughMe" />
+        <SpeechRef UniqueID="Loyalty_RiskingYourLife" />
+        <SpeechRef UniqueID="Loyalty_SnipersPoised" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TooLateForYou" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_ImSorry" x="14417.3623" y="5379.876" NativeText="{:-| I'm sorry, %1.  You have to go with them.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Events>
+        <StoryEvent Type="Speak" Subject="ReferringTo" Object="Actor" ThirdParty="Target" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Loyalty_DontDoThis" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Speech>
+    <Speech UniqueID="Loyalty_ComeThroughMe" x="14413.3965" y="4634.667" NativeText="}:-| %1 is my friend.  If you want %2, you'll have to come through me.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Protected" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="StoodUpTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="HungOut" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Target" ThirdParty="Actor" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="OneShotTriggerWithParams" Subject="ReferringTo" Object="Actor" ThirdParty="Target" StringData="Loyalty_Trigger_Invaders" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_DontDoThis" x="15600.7969" y="5123.225" NativeText="8-( N.. no..!  Don't do this to me, %1!" Run="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TheGreaterGood" />
+        <SpeechRef UniqueID="Loyalty_EveryManForHimself" />
+        <SpeechRef UniqueID="Loyalty_TooPowerful" />
+        <SpeechRef UniqueID="Loyalty_TheGold" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TrustedYou" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Loyalty_TheGreaterGood" x="16828.4512" y="6527.44727" NativeText="{:-( This is killing me, but I need to think of the safety of everyone in %1.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TrustedYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_EveryManForHimself" x="16833.9023" y="5368.53125" NativeText="{:-| It's every man for himself in this world, you know that.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TrustedYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_TooPowerful" x="16838.0078" y="4498.66" NativeText="{:-( It's not my fault, they're too powerful.  I can't fight them.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TrustedYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_TrustedYou" x="18067.9922" y="5352.06934" NativeText="{:-[ I should never have let myself trust you." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Betrayed" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <StoryEvent Type="StartSimulatingSurvivalFactors" Subject="Actor" BoolData2="true" />
+        <StoryEvent Type="SetRank" Subject="Actor" StringData="Captive" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Loyalty_Quest_WaitForGold" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_TheGold" x="16849.9473" y="3778.1814" NativeText="Look man, I want the gold.  You'd do the same to me.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="10" />
+        <Condition Type="Always" PriorityFactor="-1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TrustedYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_SnipersPoised" x="14399.1025" y="2248.39014" NativeText="}:-) I have snipers poised to take you out.  {:-| Go home, and say you couldn't find %1.">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_MisreadTheSituation" />
+        <SpeechRef UniqueID="Loyalty_DontBullshitMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_MisreadTheSituation" x="15869.4951" y="2801.95459" NativeText="8-( Uh... I may have misread the situation.  Now that I see %1 up close %2 looks kinda different.  I think we got the wrong %3.  Let's go, squad." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="GuyOrChick" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="AlliesNearby" Subject="Target" Data="48" PriorityFactor="10" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-50" />
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="Actor" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="Protected" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="HungOut" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ThirdParty="Target" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="SetTimer" Subject="Actor" Data="1800" StringData="FeudDisabled" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Loyalty_DontBullshitMe" x="15887.4531" y="3824.26123" NativeText="}:-[ Don't bullshit me, it won't end well for you.">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_WhatWillHappen" />
+        <SpeechRef UniqueID="Loyalty_TrustYou" />
+        <SpeechRef UniqueID="Loyalty_ImSorry" />
+        <SpeechRef UniqueID="Loyalty_ComeThroughMe" />
+        <SpeechRef UniqueID="Loyalty_RiskingYourLife" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TooLateForYou" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_WeStillHaveYourFriends" x="8359.774" y="-702.5858" NativeText="We still have your friends.  Do you want them to go on suffering?  We can end it, if you come back.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_WantSomeGold" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_WantSomeGold" x="9465" y="-839.652649" NativeText="}:-| You'll keep torturing them anyway, I'm not stupid.  }:-[ I was told this would just be a negotiation for their release!  {:-[ I can get you gold!">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_NotWithYou" />
+        <SpeechRef UniqueID="Loyalty_WhereIsYourLeader" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_FeedYou" x="12962.7656" y="-1316.93555" NativeText="}:-) Oh, sounds like they really look after you here!  }:-| Come back to the cage, at least we feed you.  Or, we can bring you back in pieces and feed you to your friends.  Your choice!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_NeverTakeMeAlive" />
+        <SpeechRef UniqueID="Loyalty_DontCareAnyway" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_HappyToSeeYou" x="15498.7793" y="-2225.83252" NativeText="}:-) Good %1.  They'll be real happy to see you.">
+      <Params>
+        <SpeechParam Type="BoyOrGirl" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_GetThem" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Loyalty_Trigger_Surrender" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_CuteIdeas2" x="13103.7979" y="1425.00171" NativeText="}:-| Don't get any cute ideas though, the gold isn't on me now.  It'll be left in a hidden location for you to retrieve after we have secured the prisoner.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_WhatWillHappen" />
+        <SpeechRef UniqueID="Loyalty_TrustYou" />
+        <SpeechRef UniqueID="Loyalty_ImSorry" />
+        <SpeechRef UniqueID="Loyalty_ComeThroughMe" />
+        <SpeechRef UniqueID="Loyalty_RiskingYourLife" />
+        <SpeechRef UniqueID="Loyalty_SnipersPoised" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TooLateForYou" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_WeHaveAUse" x="15601.0928" y="8768.996" NativeText=":-) That's none of your concern.  But don't worry, we're not going to kill %1, }:-[ as much as %2 deserves it.  :-) We have a use for %3.">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_TrustYou" />
+        <SpeechRef UniqueID="Loyalty_ImSorry" />
+        <SpeechRef UniqueID="Loyalty_ComeThroughMe" />
+        <SpeechRef UniqueID="Loyalty_RiskingYourLife" />
+        <SpeechRef UniqueID="Loyalty_SnipersPoised" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Loyalty_TooLateForYou" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_BelieveYouDo" x="5167.68164" y="-2134.324" NativeText="{:-) I believe you do. :-| Yes.  They said they would meet me near %1, and I could bring.. uh, a representative of my group." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="NearestTownOrSettlementName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_WhatsItAbout" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_WhatsItAbout" x="6126.74365" y="-2402.478" NativeText="What's it about?">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_ItllBeFine" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_Okay" x="7942.079" y="-2779.251" NativeText="{:-| Okay." />
+    <Speech UniqueID="Loyalty_ItllBeFine" x="7106.04053" y="-2373.586" NativeText="It's... not a big deal, just something I need to sort out.  Before I joined you a passing trader told me they were looking for me, and they'd be here now, and I should go to them.  It'll be fine.  I'm sure it'll be fine.">
+      <Replies>
+        <SpeechRef UniqueID="Loyalty_Okay" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Loyalty_GetThem" x="16384.4082" y="-3853.96484" NativeText="}:-[ Get %1!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="RefusedToHangOut" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="OneShotTriggerWithParams" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Loyalty_Trigger_Invaders" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_TooLateForYou" x="18287.84" y="497.195862" NativeText="}:-[ Too late for you to back out of this!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="RefusedToHangOut" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ThirdParty="Target" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="OneShotTriggerWithParams" Subject="ReferringTo" Object="Target" ThirdParty="Actor" StringData="Loyalty_Trigger_Invaders" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Loyalty_GetPrepared" x="25575.4355" y="-2656.31079" NativeText="8-( Uh.. you know that gang that came looking for me?  We've got radio reports saying they've sent more enforcers.  Let's get prepared, these guys don't fuck around." Importance="FriendComplaint">
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" Data="1" StringData="Radio" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_TheDickheads" x="25580.834" y="-3387.88428" NativeText="}:-| Hey remember the dickheads that tried to abduct me?  }:-[ They're back with more enforcers.  Let's give them a welcome they won't forget." Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" Data="1" StringData="Radio" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_OldFriends" x="25582.3984" y="-4382.206" NativeText="Oh I hear my old friends are in town, and they'd like to pay us a visit.  How lovely.  Do we have any vodka?  Let's mix some drinks, if you know what I mean." Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" Data="1" StringData="Radio" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_ThoseCreeps" x="26798.1348" y="-3584.45752" NativeText="}:-[ Incoming!  It's those creeps that captured %1 before.  They are deadly, be prepared!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsInvader" Subject="ReferringTo" Object="Actor" SubjectModifier="Community" StringData="Loyalty_Invader_Creeps" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_ThoseAssholes" x="26787.584" y="-2696.27759" NativeText="}:-[ Watch out!  It's those assholes %1 used to work for.  They are dangerous, get ready!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsInvader" Subject="ReferringTo" Object="Actor" SubjectModifier="Community" StringData="Loyalty_Invader_Assholes" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Loyalty_RescueMe" x="19214.959" y="-3612.67969" NativeText="{:-( For fucks sake help me!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Loyalty_ConditionBlock_WaitFor" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="AskToJoin_Friendly" />
+        <SpeechRef UniqueID="AskToJoin_Threatening" />
+        <SpeechRef UniqueID="LetMeIn_Questions" />
+        <SpeechRef UniqueID="LetMeIn_DontWantYou" />
+        <SpeechRef UniqueID="Traps_SetSomeTraps" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Loyalty_DontWantToTalk" x="19213.7637" y="-4498.3667" NativeText="{:-( I don't want to talk to you!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Loyalty_ConditionBlock_WaitFor" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Basic_Trade" />
+        <SpeechRef UniqueID="Basic_AskOpinion" />
+        <SpeechRef UniqueID="Basic_AskMorale" />
+        <SpeechRef UniqueID="AskForBandage" />
+        <SpeechRef UniqueID="AskForAntigen_Green" />
+        <SpeechRef UniqueID="AskForAntigen_Blue" />
+        <SpeechRef UniqueID="AskForAntigen_Red" />
+        <SpeechRef UniqueID="AskForAntigen_White" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Loyalty_Concluded" x="19198.4688" y="-5838.386" NativeText="}:-| Our business is concluded.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Loyalty_ConditionBlock_WaitFor2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Loyalty_Trigger_Surrender" x="16518.9219" y="-2096.841">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="RefusedToHangOut" />
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="JoinCommunity" Subject="Target" Object="Actor" />
+        <StoryEvent Type="StartSimulatingSurvivalFactors" Subject="Target" BoolData2="true" />
+        <StoryEvent Type="SetRank" Subject="Target" StringData="Captive" />
+        <StoryEvent Type="Follow" Subject="Target" Object="Actor" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="Actor" ThirdParty="ReferringTo" StringData="Loyalty_Quest_WaitForTrackers" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Loyalty_Trigger_Rescue" x="20690.8184" y="4178.758">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Loyalty_ConditionBlock_Rescue" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="QuestGiver" Object="QuestSeeker" />
+        <StoryEvent Type="MemorableEvent" Subject="QuestSeeker" Object="QuestGiver" StringData="Rescued" />
+        <StoryEvent Type="MemorableEvent" Subject="QuestSeeker" Object="QuestGiver" StringData="HungOut" />
+        <StoryEvent Type="Follow" Subject="QuestGiver" Object="QuestSeeker" />
+        <StoryEvent Type="Attack" Subject="QuestGiver" Object="QuestObject" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="QuestGiver" Object="QuestObject" ThirdParty="QuestSeeker" StringData="Loyalty_Quest_WaitForGold" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="QuestGiver" Object="QuestObject" ThirdParty="QuestSeeker" StringData="Loyalty_Quest_WaitForTrackers" BoolData="true" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Loyalty_Trigger_Invaders" x="21880.4512" y="-962.800964">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Loyalty_Trigger_Assholes" />
+        <StoryEvent Type="OneShotTrigger" StringData="Loyalty_Trigger_Creeps" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Loyalty_Trigger_Assholes" x="23022.8262" y="-665.594055">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="ReferringTo" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="ActivateInvader" Subject="Actor" StringData="Loyalty_Invader_Assholes" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Loyalty_Trigger_Creeps" x="23024.26" y="-1350.03113">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="HadInvisibleStrainFromStart" Subject="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="ActivateInvader" Subject="Actor" StringData="Loyalty_Invader_Creeps" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Loyalty_ConditionBlock_WaitFor" x="20588.48" y="-3852.48926" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" StringData="Loyalty_Quest_WaitForTrackers" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" StringData="Loyalty_Quest_WaitForGold" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Loyalty_ConditionBlock_WaitFor2" x="20476.0859" y="-5766.774" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="Actor" SubjectModifier="Leader" StringData="Loyalty_Quest_WaitForTrackers" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="Actor" SubjectModifier="Leader" StringData="Loyalty_Quest_WaitForGold" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Loyalty_ConditionBlock_Rescue" x="21693.9434" y="4176.42432" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityIsAtWar" Subject="QuestObject" Object="QuestSeeker" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="QuestGiver" Data="2" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Loyalty_Quest_MeetContact" x="4849.148" y="91.35474" GroupID="Loyalty_QuestGroup" NativeDescription="%1 wants %2 to go with %3 and meet %4 mysterious contact.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" />
+        <SpeechParam Type="HisOrHer" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <Metric>TimeSinceStarted</Metric>
+      <MetricLimit>3600</MetricLimit>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="ReferringTo" ThirdParty="Target" Data="3600" StringData="Loyalty_Quest_MeetContact" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="DontInfectWithInvisibleStrain" Subject="ReferringTo" Object="Actor" SubjectModifier="Community" />
+      </StartEvents>
+      <FailureEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="RefusedToHangOut" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" />
+        <StoryEvent Type="OneShotTrigger" StringData="Loyalty_Trigger_Invaders" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Loyalty_Quest_WaitForGold" x="19529.1133" y="4867.239" GroupID="Loyalty_QuestGroup" NativeDescription="Wait for the tracker squad to deposit the gold and leave.  Or you could still rescue %1.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsDeleted" Subject="ReferringTo" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="SpawnTemplate" StringData="Loyalty_Template_Gold" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Loyalty_Trigger_Invaders" />
+      </FailureEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Loyalty_Trigger_Rescue" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Loyalty_Quest_CollectGold" x="21854.61" y="5075.04834" GroupID="Loyalty_QuestGroupPayoff" NativeDescription="Collect your payoff from %1.">
+      <Params>
+        <SpeechParam Type="NearestTownOrSettlementName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="HasGold" Subject="ReferringTo" Data="1" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsDeleted" Subject="ReferringTo" />
+      </FailureConditions>
+    </Quest>
+    <Quest UniqueID="Loyalty_Quest_WaitForTrackers" x="17857.7031" y="-2208.89233" GroupID="Loyalty_QuestGroup" NativeDescription="You could still rescue %1, or just let the tracker squad leave and they won't bother you again.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsDeleted" Subject="ReferringTo" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Loyalty_Trigger_Invaders" />
+      </FailureEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Loyalty_Trigger_Rescue" />
+      </Triggers>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Loyalty_QuestGroup" x="4852.323" y="530.678833" NativeTitle="%1 needs backup">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+    <QuestGroup UniqueID="Loyalty_QuestGroupPayoff" x="21820.97" y="5558.92432" NativeTitle="You sold out %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates>
+    <Template UniqueID="Loyalty_Template_Contact_Group1" x="2648.641" y="845.984" NativeCommunityName="Tracker Squad">
+      <Type>Community</Type>
+      <SpawnLocation>PreferCountrysideProps</SpawnLocation>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <Children>
+        <TemplateChild UniqueID="Loyalty_Template_Contact_Leader1" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Loyalty_Template_Contact_Grunt1" Min="2" Max="4">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="2" StringData="TrackerSquad" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Actor" Object="ReferringTo" />
+      </Events>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Contact_Leader1" x="3811.4458" y="3064.6814">
+      <Type>Character</Type>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>100</LegArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <InfectedWeaponsMaxStrain>Red</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="Speak" Subject="Target" Object="Actor" ThirdParty="ReferringTo">
+          <Speeches>
+            <SpeechRef UniqueID="Loyalty_BelieveYouDo" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="HeldCaptive" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="Escaped" Secrecy="OnlyKnownToObject" />
+      </Events>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Contact_Grunt1" x="3797.77734" y="742.6697">
+      <Type>Character</Type>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <InfectedWeaponsMaxStrain>Red</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Events>
+        <StoryEvent Type="Follow" Subject="ReferringTo" Object="ReferringTo" ObjectModifier="Leader" />
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="HeldCaptive" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="Escaped" Secrecy="OnlyKnownToObject" />
+      </Events>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Assholes_Group" x="25263.9316" y="-706.085938">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <PlayerSurrenderDisabled>true</PlayerSurrenderDisabled>
+      <Children>
+        <TemplateChild UniqueID="Loyalty_Template_Assholes_Grunt" Min="6" Max="8">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Assholes_Grunt" x="26337.3535" y="-503.1223">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>Red</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Contact_Group2" x="2671.89038" y="-2305.793" NativeCommunityName="Tracker Squad">
+      <Type>Community</Type>
+      <SpawnLocation>PreferCountrysideProps</SpawnLocation>
+      <Children>
+        <TemplateChild UniqueID="Loyalty_Template_Contact_Leader2" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Loyalty_Template_Contact_Grunt2" Min="2" Max="4">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Target" Data="2" Data2="1" StringData="TrackerSquad" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Actor" Object="ReferringTo" />
+      </Events>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Contact_Grunt2" x="3792.005" y="-3796.59766">
+      <Type>Character</Type>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <InfectedWeaponsMaxStrain>Invisible</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Events>
+        <StoryEvent Type="Follow" Subject="ReferringTo" Object="ReferringTo" ObjectModifier="Leader" />
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="HeldCaptive" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="Escaped" Secrecy="OnlyKnownToObject" />
+      </Events>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Contact_Leader2" x="3782.05444" y="-1353.55493">
+      <Type>Character</Type>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>100</LegArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <InfectedWeaponsMaxStrain>Invisible</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Loyalty_Quest_MeetContact" />
+        <StoryEvent Type="Speak" Subject="Target" Object="Actor" ThirdParty="ReferringTo">
+          <Speeches>
+            <SpeechRef UniqueID="Loyalty_BelieveYouDo" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="HeldCaptive" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="Escaped" Secrecy="OnlyKnownToObject" />
+      </Events>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Gold" x="20691.2715" y="4973.276">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+      <Amount>500</Amount>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" ObjectModifier="Owner" StringData="Loyalty_Quest_CollectGold" />
+      </Events>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Creeps_Group" x="25307.4219" y="-1872.53625">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <PlayerSurrenderDisabled>true</PlayerSurrenderDisabled>
+      <Children>
+        <TemplateChild UniqueID="Loyalty_Template_Creeps_Grunt" Min="6" Max="8">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Loyalty_Template_Creeps_Grunt" x="26338.3" y="-1626.10339">
+      <Type>Character</Type>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>White</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+  </Templates>
+  <Invaders>
+    <Invader UniqueID="Loyalty_Invader_Assholes" x="24249.1523" y="-166.4196" NativeDescription="Looks like %1 used to know some real assholes before %2 came here, and now they're angry at you too!" IconPath="BadassRaiders.png" TemplateID="Loyalty_Template_Assholes_Group" Density="1000" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="4" MaxCooldownDays="8" MinTimeoutDays="16" MaxTimeoutDays="24">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <OnSpawnedEvents>
+        <StoryEvent Type="Speak" Subject="ExtraParam">
+          <Speeches>
+            <SpeechRef UniqueID="Loyalty_GetPrepared" />
+            <SpeechRef UniqueID="Loyalty_TheDickheads" />
+            <SpeechRef UniqueID="Loyalty_OldFriends" />
+          </Speeches>
+        </StoryEvent>
+      </OnSpawnedEvents>
+    </Invader>
+    <Invader UniqueID="Loyalty_Invader_Creeps" x="24253.0977" y="-1966.52686" NativeDescription="Apparently %1 was held captive by some creepy strangers before coming here, and they aren't happy %2 escaped." IconPath="Reaper.png" TemplateID="Loyalty_Template_Creeps_Group" Density="1000" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="4" MaxCooldownDays="8" MinTimeoutDays="16" MaxTimeoutDays="24">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <OnSpawnedEvents>
+        <StoryEvent Type="Speak" Subject="ExtraParam">
+          <Speeches>
+            <SpeechRef UniqueID="Loyalty_GetPrepared" />
+            <SpeechRef UniqueID="Loyalty_TheDickheads" />
+            <SpeechRef UniqueID="Loyalty_OldFriends" />
+          </Speeches>
+        </StoryEvent>
+      </OnSpawnedEvents>
+    </Invader>
+  </Invaders>
+</Script>

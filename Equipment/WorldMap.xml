@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>WorldMap</TypeName>
+  <NativeName>Area Map</NativeName>
+  <NativeDescription>Find out what's in those unexplored places.</NativeDescription>
+  <Category>9:Special</Category>
+  <IsProperNoun>true</IsProperNoun>
+  <Weight>1</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <CanHitTheRoad>false</CanHitTheRoad>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GasStation</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>BookStore</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

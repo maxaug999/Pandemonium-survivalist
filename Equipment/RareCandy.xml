@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Rare Candy</NativeName>
+  <NativeDescription>A special candy that have been accidentally discovered while searching for the infection cure, It might make one stronger after consumption or nothing at all. better use it to people who you think are scrubs.</NativeDescription>
+  <Category>9:Special</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>75</BasePrice>
+  <HasCustomUseAction>true</HasCustomUseAction>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TradeBehaviour>CantSellToAI</TradeBehaviour>
+</EquipmentPrototype>

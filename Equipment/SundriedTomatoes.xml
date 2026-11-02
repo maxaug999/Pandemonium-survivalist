@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Sundried Tomatoes</NativeName>
+  <NativeDescription>Sun + tomatoes</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>1</Weight>
+  <BasePrice>3.5</BasePrice>
+  <Nutrition>0.5</Nutrition>
+  <Tastiness>25</Tastiness>
+  <LootableFromLocations />
+  <TypicalLootAmount>3</TypicalLootAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>2</SkillOnConsumptionProgression>
+</EquipmentPrototype>

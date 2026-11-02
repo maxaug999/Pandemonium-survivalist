@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Chicken Wire</NativeName>
+  <NativeDescription>Can be used to build fences, if you have a toolbox equipped.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>10</Weight>
+  <BasePrice>4</BasePrice>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>50</TypicalLootAmount>
+</EquipmentPrototype>

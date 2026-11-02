@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Iron Knuckles</NativeName>
+  <NativeDescription>When your best weapon is your fingers ; damage scales with hand to hand level</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>1.5</Weight>
+  <BasePrice>10</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/fistfinal variant.prefab</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.15</Damage>
+  <DamageBonusPerSkillLevel>0.17</DamageBonusPerSkillLevel>
+  <Range>1.6</Range>
+  <FatiguePenaltyWhenAttacking>0.1</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

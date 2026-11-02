@@ -1,0 +1,763 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>48</NextFreeSpeechID>
+  <NextFreeTriggerID>5</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>3664.72754</x>
+    <y>92.33261</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.687229455</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchQuest_TookSomething" x="-3785.223" y="-68.54742" NativeText="}:-( %1 took something from me.  Something I want back." PerObjectType="PerLooterCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_GetItBack" />
+        <SpeechRef UniqueID="FetchQuest_SecondThoughts" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="FetchQuest_IsQuestGiver" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="QuestIsDiscoveredGivenBy" Subject="Actor" StringData="FetchQuest_RetrieveItem" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchQuest_GetItBack" x="-2545.47729" y="70.16553" NativeText="I'll get it back!  What is it?">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_MyLuckyJacket" />
+        <SpeechRef UniqueID="FetchQuest_MyLabCoat" />
+        <SpeechRef UniqueID="FetchQuest_MyArcheryBook" />
+        <SpeechRef UniqueID="FetchQuest_SilencedSniperRifle" />
+        <SpeechRef UniqueID="FetchQuest_Steroids" />
+        <SpeechRef UniqueID="FetchQuest_MySheriffHat" />
+        <SpeechRef UniqueID="FetchQuest_MyFarmingBook" />
+        <SpeechRef UniqueID="FetchQuest_MyModifiedPistol" />
+        <SpeechRef UniqueID="FetchQuest_GolfClub" />
+        <SpeechRef UniqueID="FetchQuest_WorkoutBook" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_SecondThoughts" x="-2537.61743" y="-850.8606" NativeText="On second thoughts, no." />
+    <Speech UniqueID="FetchQuest_MyLuckyJacket" x="941.065063" y="5517.224" NativeText="My lucky camo jacket.  It used to belong to a friend of mine, who was a marine back in the day.  {:-) He swore by it.">
+      <PriorityTerms>
+        <Condition Type="SkillCap" Subject="Actor" StringData="Stealth" PriorityFactor="1" />
+        <Condition Type="Skill" Subject="Actor" StringData="Stealth" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="LuckyCamoJacket" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="LuckyCamoJacket" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MyLabCoat" x="938.1797" y="4226.09033" NativeText="It's the doc's old labcoat.  {:-| She died a few years back, but we kept it to remember her by.">
+      <PriorityTerms>
+        <Condition Type="SkillCap" Subject="Actor" StringData="Medicine" PriorityFactor="1" />
+        <Condition Type="Skill" Subject="Actor" StringData="Medicine" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="DoctorCoat" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="DoctorCoat" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MyModifiedPistol" x="916.6504" y="-3736.558" NativeText="It's just a pistol, but I made some special modifications to it.  Rarely missed a shot!">
+      <PriorityTerms>
+        <Condition Type="Skill" Subject="Actor" StringData="Construction" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="ModifiedPistol" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="ModifiedPistol" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Stolen" x="5423.13232" y="-1221.471" NativeText="}:-[ It was stolen by %1 when %2 forced us to hand over our gold and other valuables.  :-| I don't care how you get it back, just bring it to me.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Looter" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_GotBack" x="7701.546" y="1864.07983" NativeText="I got your %1 back." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_HandItOver" />
+        <SpeechRef UniqueID="FetchQuest_NotEnough" />
+        <SpeechRef UniqueID="FetchQuest_Finish_Emotional" />
+        <SpeechRef UniqueID="FetchQuest_Finish" />
+        <SpeechRef UniqueID="FetchQuest_Finish_Unflappable" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="FetchQuest_ReturnItem" />
+        <Condition Type="HasItem" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Finish_Emotional" x="9278.788" y="793.4958" NativeText="{:-) Oh wow... I'm so glad to have this back!  Thank you so much!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bipolar" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="FetchQuest_Trigger_Finish" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Finish_Unflappable" x="9266.141" y="-587.144531" NativeText="Okay, here's your payment.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="FetchQuest_Trigger_Finish" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Finish" x="9263.208" y="-28.1994629" NativeText=":-) Great job!  Here's your payment.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.99" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="FetchQuest_Trigger_Finish" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_TakingBack" x="-5927.8125" y="799.637268" NativeText="%1 keeps talking about taking back the stuff those looters stole from us... %2 might hire you." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Normal" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="FetchQuest_ReferringToQuestGiver" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="QuestIsDiscoveredGivenBy" Subject="ReferringTo" StringData="FetchQuest_RetrieveItem" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MyArcheryBook" x="934.975464" y="2976.03979" NativeText="My old archery handbook.  It gave really great tips, plus it's got sentimental value on account of my mom gave it to me.">
+      <PriorityTerms>
+        <Condition Type="SkillCap" Subject="Actor" StringData="Archery" PriorityFactor="1" />
+        <Condition Type="Skill" Subject="Actor" StringData="Archery" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="AdvancedArcheryBook" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="AdvancedArcheryBook" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_SilencedSniperRifle" x="930.7048" y="1715.14624" NativeText="It's a sniper rifle with a silencer.  }:-| That thing's helped me eliminate more than a few undesirables who thought they could fuck me over.  I need it back!">
+      <PriorityTerms>
+        <Condition Type="Skill" Subject="Actor" StringData="Firearms" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="2" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="SilencedSniperRifle" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="SilencedSniperRifle" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MyFarmingBook" x="920.2707" y="-2391.46436" NativeText="It's an agricultural textbook.  Taught me everything I know about farming, and a few things I can't remember now.  That's why I need it back!">
+      <PriorityTerms>
+        <Condition Type="SkillCap" Subject="Actor" StringData="Farming" PriorityFactor="1" />
+        <Condition Type="Skill" Subject="Actor" StringData="Farming" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="AdvancedFarmingBook" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="AdvancedFarmingBook" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Steroids" x="928.9477" y="391.27597" NativeText="Steroids.  I found a pack of them in a gym locker.  I... {:-| need to get in shape.  I can't stand the thought of being grabbed and held down by the infected... I've seen it happen to too many people." Once="true">
+      <PriorityTerms>
+        <Condition Type="SkillCap" Subject="Actor" StringData="Strength" PriorityFactor="1" />
+        <Condition Type="Skill" Subject="Actor" StringData="Strength" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="Steroids" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="10" StringData="Steroids" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MySheriffHat" x="917.877563" y="-1056.5863" NativeText="It's a hat.  Used to belong to a county sheriff, from the looks of it. }:-) I just like it because it makes me feel like a badass.">
+      <PriorityTerms>
+        <Condition Type="SkillCap" Subject="Actor" StringData="Firearms" PriorityFactor="1" />
+        <Condition Type="Skill" Subject="Actor" StringData="Firearms" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="SheriffHat" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="SheriffHat" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_GolfClub" x="916.215637" y="-4852.0874" NativeText="}:-) It's this super-sweet titanium golf club that I looted off some rich asshole.  Well, he didn't need it anymore.  Not after I cracked his face open with it.  Really improved my game, it did.">
+      <PriorityTerms>
+        <Condition Type="Skill" Subject="Actor" StringData="HandToHand" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="2" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="-2" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="EliteGolfClub" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="EliteGolfClub" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_WorkoutBook" x="897.207947" y="-6384.93262" NativeText="My workout training book.  Really helped me tone my abs. {:-| I'm having all kinds of trouble with my regimen now it's gone.">
+      <PriorityTerms>
+        <Condition Type="SkillCap" Subject="Actor" StringData="Strength" PriorityFactor="1" />
+        <Condition Type="Skill" Subject="Actor" StringData="Strength" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" PriorityFactor="2" />
+        <Condition Type="WorldHasNItemsOfType" Data="1" StringData="HealthFreakBook" Not="true" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="ReferringTo" Data="1" StringData="HealthFreakBook" StringData2="FetchQuest_Trigger_RetrieveItem" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_NotEnough" x="9254.297" y="1893.78711" NativeText="}:-| There were more than that... where's the rest of them?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_AllTheyHad" />
+        <SpeechRef UniqueID="FetchQuest_MayHavePoppedAFew" />
+        <SpeechRef UniqueID="FetchQuest_GetThemForYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="Steroids" />
+        <Condition Type="HasNItemsOfType" Subject="ReferringTo" Data="10" StringData="Steroids" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchQuest_AllTheyHad" x="10312.52" y="2638.86157" NativeText="{:-| That's all they had!  They must have necked the rest themselves!" Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_TypicalLooters" />
+        <SpeechRef UniqueID="FetchQuest_BornYesterday" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MayHavePoppedAFew" x="10307.2383" y="1647.61853" NativeText="I, uh, may have popped a few myself.">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_ShouldntHaveTrusted" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_GetThemForYou" x="10315.4551" y="1083.27539" NativeText="I'll go get them for you." />
+    <Speech UniqueID="FetchQuest_ShouldntHaveTrusted" x="11318.4268" y="1632.85791" NativeText="}:-| Goddammit, the job was to get all of them.  I knew I shouldn't have trusted you.  At least you fessed up... just take this and be on your way.">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="FetchQuest_ReturnItem" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FailedWorkFor" />
+        <StoryEvent Type="SellItem" Subject="Target" Object="Actor" Data="10" StringData="Steroids" BoolData="true" BoolData2="true" />
+        <StoryEvent Type="SetGifted" Subject="ReferringTo" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_BornYesterday" x="11315.8965" y="2728.1438" NativeText="}:-| Do I have a giant sign above my head saying 'Sucker'?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="60" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_MayHavePoppedAFew" />
+        <SpeechRef UniqueID="FetchQuest_GetThemForYou" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_TypicalLooters" x="11329.04" y="3841.00366" NativeText="{:-| Typical looters.  Well, at least you got me the remainder so here you go... I keep my promises." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-30" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="FetchQuest_Trigger_Finish" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_HandItOver" x="9461.018" y="6452.27" NativeText="Great job!  Hand it over.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="2" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="-1" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-0.01" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_Here" />
+        <SpeechRef UniqueID="FetchQuest_WheresMyPayment" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="FetchQuest_StoleMyThing" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="FetchQuest_WheresMyPayment" x="10743.3506" y="4711.334" NativeText="Where's my payment first?">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_NeverSaidAnything" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Here" x="12780.8066" y="5678.9165" NativeText="Here.">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_YouDidGood" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_YouDidGood" x="14235.43" y="7268.464" NativeText="You did good.  Best of luck to you now!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="FetchQuest_ReturnItem" />
+        <StoryEvent Type="GiveObject" Subject="Target" Object="Actor" ThirdParty="ReferringTo" ThirdPartyModifier="QuestObject" BoolData="true" />
+        <StoryEvent Type="SetGifted" Subject="ReferringTo" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_NeverSaidAnything" x="11762.1885" y="4735.11865" NativeText="}:-| I never said anything about payment.  It's my %1, hand it over.">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_Here" />
+        <SpeechRef UniqueID="FetchQuest_Polite" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="FetchQuest_StoleMyThing" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Polite" x="12867.3252" y="3940.63916" NativeText="It's polite to pay someone when they fetch an item for you.  Impoliteness makes me angry.">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_MadeMeAngry" />
+        <SpeechRef UniqueID="FetchQuest_DontWantIt" />
+        <SpeechRef UniqueID="FetchQuest_NoNeedToGetAngry" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_NoNeedToGetAngry" x="14212.5166" y="2094.112" NativeText="8-( Okay, okay, wow, no need to get angry! :-| I'll give you some gold for it, if it makes you happy. }:-| As bad as the damn looters, you are." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="50" Data2="25" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="FetchQuest_Trigger_Finish" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_DontWantIt" x="14220.1387" y="3497.73926" NativeText="}:-| Take that attitude somewhere else.  I don't want the damn thing that much anyway.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="FetchQuest_ReturnItem" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FailedWorkFor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MadeMeAngry" x="14244.3242" y="6000.539" NativeText="}:-[ Buddy, you just made *me* angry.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FailedWorkFor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="FetchQuest_ReturnItem" />
+        <StoryEvent Type="SetAutoCollectItem" Subject="Actor" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_NiceItemYouGotThere" x="13045.9834" y="-8700.773" NativeText="That's [plural(1)?some nice:a nice] %1 you got there." Situation="QuestTopic" PerObjectType="PerActiveQuest" PerStringData="FetchQuest_RetrieveItem">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_WhatsItToYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasItem" Subject="Target" Object="ReferringTo" ObjectModifier="QuestObject" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchQuest_WhatsItToYou" x="14091.6182" y="-9017.594" NativeText="}:-| What's it to you?">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_AlwaysWantedOne" />
+        <SpeechRef UniqueID="FetchQuest_IWantIt" />
+        <SpeechRef UniqueID="FetchQuest_ForSale" />
+        <SpeechRef UniqueID="FetchQuest_Rumor" />
+        <SpeechRef UniqueID="FetchQuest_CanIBorrow" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_AlwaysWantedOne" x="16948.6719" y="-5010.26953" NativeText="{:-) I always wanted [plural(1)?some:a] %1!  It was my childhood dream.">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_MyGoodFriend" />
+        <SpeechRef UniqueID="FetchQuest_DreamOn" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_IWantIt" x="17131.5566" y="-7523.449" NativeText="}:-| I want [plural(1)?them:it].  Give me [plural(1)?them:it].">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_TakeIt" />
+        <SpeechRef UniqueID="FetchQuest_GetLost" />
+        <SpeechRef UniqueID="FetchQuest_HadEnough" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_ForSale" x="17195.166" y="-10004.7842" NativeText="[plural(1)?Are they:Is it] for sale?">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_EverythingsForSale" />
+        <SpeechRef UniqueID="FetchQuest_WhyNot" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_EverythingsForSale" x="18299.74" y="-10022.3936" NativeText="Everything's for sale.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OpenTradeScreen" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_WhyNot" x="18305.1465" y="-10820.2021" NativeText="If you got the gold, why not.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OpenTradeScreen" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_HadEnough" x="18304.44" y="-8292.459" NativeText="}:-[ I've had enough crap from you.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="40" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_GetLost" x="18306.8848" y="-7469.47852" NativeText="}:-| Who do you think you are?  Get lost.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_TakeIt" x="18329.2715" y="-6084.638" NativeText="8-| Uh, take [plural(1)?them:it] then, I don't care. {:-| Don't mean shit to me anyway." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="60" Data2="20" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" ThirdPartyModifier="QuestObject" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_DreamOn" x="18328.06" y="-5408.333" NativeText="/:-| Well.. dream on.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_MyGoodFriend" x="18323.1953" y="-3655.59937" NativeText="/:-) You know what, who am I to deny my good friend %1 of %2 dream.  If you want [plural(3)?them, they're:it, it's] yours." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="HisOrHer" Subject="Target" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="90" Data2="30" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedSuccessfully" />
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" ThirdPartyModifier="QuestObject" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Rumor" x="17213.5313" y="-11818.7" NativeText="Heard [plural(1)?they:it] belonged to a pretty sadistic warlord, %2.  But it's probably just a rumor." Lie="true">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+        <SpeechParam Type="FullName" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_VerySadistic" />
+        <SpeechRef UniqueID="FetchQuest_DimeADozen" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchQuest_VerySadistic" x="18306.6855" y="-11427.3428" NativeText="8-| Oh really?  A warlord, you say?  Very sadistic?  Any chance you could take [plural(1)?them:it] off my hands?" SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="40" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_CouldDoThatForYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_DimeADozen" x="18312.0039" y="-12861.958" NativeText="}:-| Rumors are a dime a dozen these days.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_CouldDoThatForYou" x="19315.8184" y="-12264.9248" NativeText="I could do that for you, yeah.">
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_LifeSaver" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchQuest_LifeSaver" x="20400.4551" y="-12074.3965" NativeText="{:-) You're a lifesaver!">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Assisted" />
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" ThirdPartyModifier="QuestObject" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_TakingBack_Enemies" x="-5928.078" y="-527.6909" NativeText="%1 keeps talking about taking back the stuff our enemies stole from us... %2 might hire you." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Looter" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="FetchQuest_ReferringToQuestGiver" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="QuestIsDiscoveredGivenBy" Subject="ReferringTo" StringData="FetchQuest_RetrieveItem" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchQuest_TakingBack_Rivals" x="-5931.764" y="-2030.00488" NativeText="%1 keeps talking about taking back the stuff our rivals stole from us... %2 might hire you." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Looter" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="FetchQuest_ReferringToQuestGiver" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="QuestIsDiscoveredGivenBy" Subject="ReferringTo" StringData="FetchQuest_RetrieveItem" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchQuest_Stolen2" x="5426.282" y="-2314.92773" NativeText="}:-[ It was stolen by %1 when we got into a fight with %2. :-| I don't care how you get it back, just bring it to me.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Looter" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_CanIBorrow" x="17323.5332" y="-14354.2061" NativeText="{:-| Can I borrow [plural(1)?them:it]?  I'll give [plural(1)?them:it] back." Lie="true">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="FetchQuest_IfYouGiveItBack" />
+        <SpeechRef UniqueID="FetchQuest_DontBeStupid" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchQuest_IfYouGiveItBack" x="18336.3984" y="-13734.2139" NativeText="Okay, as long as you give [plural(1)?them:it] back." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" PriorityFactor="80" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="40" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedSuccessfully" />
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" ThirdPartyModifier="QuestObject" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchQuest_DontBeStupid" x="18348.3477" y="-15331.38" NativeText="}:-| Don't be stupid.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="90" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="FetchQuest_StoleMyThing" x="10714.8232" y="6682.931" NativeText="Hey, %1 stole my %2!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoleFrom" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="FetchQuest_Trigger_RetrieveItem" x="3961.17627" y="-518.8943">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="FetchQuest_RetrieveItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo">
+          <Speeches>
+            <SpeechRef UniqueID="FetchQuest_Stolen" />
+            <SpeechRef UniqueID="FetchQuest_Stolen2" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="FetchQuest_Trigger_Finish" x="15787.2813" y="-625.4972">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="FetchQuest_ReturnItem" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="80" StringData="Gold" />
+        <StoryEvent Type="GiveObject" Subject="Target" Object="Actor" ThirdParty="ReferringTo" BoolData="true" />
+        <StoryEvent Type="SetGifted" Subject="ReferringTo" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="FetchQuest_IsQuestGiver" x="-4592.504" y="-322.30072">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="30" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="IsFEMA" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsHidden" Subject="Actor" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="FetchQuest_ReferringToQuestGiver" x="-4601.8584" y="-955.481567">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="30" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="IsFEMA" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsHidden" Subject="Actor" Not="true" />
+        <Condition Type="HasAnySurvivingOtherCommunitiesOfType" Subject="Actor" StringData="Looter" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="FetchQuest_RetrieveItem" x="14569.85" y="-4303.22949" GroupID="FetchQuest_Group" NativeDescription="Retrieve %1 %2, by any means necessary.">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="Actor" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="HasItem" Subject="Player" Object="ReferringTo" SubjectModifier="Community" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Player" Object="Actor" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="FetchQuest_ReturnItem" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchQuest_ReturnItem" x="19074.2266" y="-445.586426" GroupID="FetchQuest_Group" NativeDescription="Return the %1 to %2.">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="HasItem" Subject="Actor" Object="ReferringTo" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchQuest_Group" x="6486.72852" y="706.403564" NativeTitle="%1 %2">
+      <Params>
+        <SpeechParam Type="FullNamePossessive" Subject="Actor" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

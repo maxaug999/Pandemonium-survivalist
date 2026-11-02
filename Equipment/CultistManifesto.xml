@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cultist Manifesto</NativeName>
+  <NativeDescription>Contains a lot of highly specific instructions about firearm maintainance and usage.</NativeDescription>
+  <Category>8:Books/Skill</Category>
+  <Gender>Male</Gender>
+  <Weight>1</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Special>true</Special>
+  <SkillBonusType>Firearms</SkillBonusType>
+  <SkillBonus>2</SkillBonus>
+</EquipmentPrototype>

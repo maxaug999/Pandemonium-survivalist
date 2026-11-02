@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Survivors Soup</NativeName>
+  <NativeDescription>Boiled wood and rabbit</NativeDescription>
+  <Category>5:Food/Dishes</Category>
+  <Col>
+    <r>249</r>
+    <g>231</g>
+    <b>159</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.25</BasePricePerFlOz>
+  <NutritionPerFlOz>0.04</NutritionPerFlOz>
+  <Tastiness>50</Tastiness>
+  <GiftFor>
+    <string>Likes Bland Food</string>
+  </GiftFor>
+  <BadGiftFor />
+  <GiftAmount>50</GiftAmount>
+</LiquidPrototype>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Fried Egg</NativeName>
+  <NativeDescription>A tasty treat which also provides some protein, though the oil it's fried in isn't so good for you</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.25</Nutrition>
+  <Tastiness>50</Tastiness>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>5</SkillOnConsumptionProgression>
+</EquipmentPrototype>

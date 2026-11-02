@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>43</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-6003.456</x>
+    <y>-666.937866</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.578398</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="WarnOffAlliance_Friends" x="689.9773" y="124.329712" NativeText="Hey, it's our friends, %1.  I was just saying to my associates here how nice it would be to run into you, and here you are." Situation="Opener" RepeatTime="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Target" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="WarnOffAlliance_BeenBusy" />
+        <SpeechRef UniqueID="WarnOffAlliance_Growing" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="WarnOffAlliance_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="WarnOffAlliance_IsWarning" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="VariableEquals" Subject="Actor" SubjectModifier="Community" StringData="WarnedOffAllianceCount" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_BeenBusy" x="1727.2334" y="147.941132" NativeText="It's lucky we ran into each other like this, {:-| because I have a problem I need to discuss with you.  }:-| In fact, the problem is you.  You've been busy haven't you?  Making alliances all over.  Did you think we wouldn't notice?">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_NotAThreat" />
+        <SpeechRef UniqueID="WarnOffAlliance_NoneOfYourBusiness" />
+        <SpeechRef UniqueID="WarnOffAlliance_HowYouTreatPeople" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="WarnOffAlliance" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_NotAThreat" x="2805.18066" y="1037.51208" NativeText="{:-| We're not a threat to you!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_AThreat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_NoneOfYourBusiness" x="2832.03247" y="-298.0618" NativeText="}:-| It's none of your business who we make alliances with.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_OurBackyard" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_HowYouTreatPeople" x="2825.21143" y="-1463.0929" NativeText="}:-) Better watch how you treat people round here in future!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_ThinIce" />
+        <SpeechRef UniqueID="WarnOffAlliance_PushUs" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_AThreat" x="3987.839" y="1003.01489" NativeText="}:-| A threat?  If we thought you were a threat, do you think we'd be talking right now?  Haha.">
+      <Continues>
+        <SpeechRef UniqueID="WarnOffAlliance_ProveIt" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_ThinIce" x="4019.61743" y="-1330.01526" NativeText="8-( We always treat people fairly, no one is fairer than us!  :-| We take the same amount of gold from everyone.  }:-| And you're on thin ice buddy.  Don't say you weren't warned." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="AlliesNearby" Subject="Target" Data="64" PriorityFactor="10" />
+        <Condition Type="AlliesNearby" Subject="Actor" Data="64" PriorityFactor="-10" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="-50" />
+        <Condition Type="Always" PriorityFactor="-50" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_PushUs" x="4009.60083" y="-2834.92554" NativeText="}:-[ Is that a threat?  Don't think you can push us around!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_OldFriends" x="688.491333" y="-1582.15955" NativeText="Hey, it's our old friends, %1 again.  How nice that we keep bumping into each other." Situation="Opener" RepeatTime="5" Run="true" SpecialBehaviour="RepeatShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Target" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="WarnOffAlliance_BeenBusy" />
+        <SpeechRef UniqueID="WarnOffAlliance_Growing" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="WarnOffAlliance_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="WarnOffAlliance_IsWarning" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="VariableIsGreaterThan" Subject="Actor" SubjectModifier="Community" StringData="WarnedOffAllianceCount" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_WeRunThisPlace" x="695.0991" y="1797.15991" NativeText="Hey, you might not know us, but we're %1.  We're kind of a big deal around here.  We run this place.  Anything that happens here, we know about it." Situation="Opener" RepeatTime="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="WarnOffAlliance_BeenBusy" />
+      </Continues>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="WarnOffAlliance_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="WarnOffAlliance_IsWarning" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_ProveIt" x="5025.062" y="1174.884" NativeText="But if you want to prove you're honest, you should be able to put your money where your mouth is, eh?  Give us all your guns, and we'll give you the benefit of the doubt.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_TakeTheGuns" />
+        <SpeechRef UniqueID="WarnOffAlliance_ColdDeadHands" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_TakeTheGuns" x="6184.196" y="2098.72217" NativeText="{:-| Uh.. okay, take the guns.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_CallMeMaster" />
+        <SpeechRef UniqueID="WarnOffAlliance_BeingReasonable" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Target" BoolData="true" />
+        <StoryEvent Type="GiveAllSupplies" Subject="Actor" Object="Target" StringData="Gun" BoolData2="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_ColdDeadHands" x="6183.31055" y="753.8673" NativeText="}:-[ From out of my cold, dead hands!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Target" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_BeingReasonable" x="7334.00635" y="1380.02869" NativeText="Yeah, that's what we like to see, people being reasonable." />
+    <Speech UniqueID="WarnOffAlliance_CallMeMaster" x="7315.43848" y="2497.85034" NativeText="Good job!  Now, one more thing.  Call me 'Master'.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_What" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_What" x="8342.59" y="2071.01318" NativeText="{:-( What?">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_YouHeardMe" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_YouHeardMe" x="9437.883" y="2056.64355" NativeText="}:-) You heard me.  Call me 'Master'.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_OkayMaster" />
+        <SpeechRef UniqueID="WarnOffAlliance_No" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_OkayMaster" x="10533.1807" y="2652.18921" NativeText="{:-( Okay.  Master.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_YoureLearning" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Humiliated" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_No" x="10526.7939" y="1050.06" NativeText="}:-[ No.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_BigMistake" />
+        <SpeechRef UniqueID="WarnOffAlliance_BigMistake2" />
+        <SpeechRef UniqueID="WarnOffAlliance_WeHaveFun" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_YoureLearning" x="11642.8418" y="2246.64282" NativeText="}:-) Hahaha!  You're learning!" />
+    <Speech UniqueID="WarnOffAlliance_Discussion" x="-1160.5249" y="658.662231" NativeText="}:-[ Hey, we were having a discussion!" CanTalkOutOfRange="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_BigMistake" x="11628.0791" y="1909.65515" NativeText="}:-| Big mistake.  You get to be the example we set for others.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="Assassinate" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_OurBackyard" x="3915.80371" y="-335.132782" NativeText="}:-| Anything that happens in our backyard is our business.  We can't have a network of heavily armed military groups sitting on our doorstep.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_NotAThreat" />
+        <SpeechRef UniqueID="WarnOffAlliance_NotYourDoorstep" />
+        <SpeechRef UniqueID="WarnOffAlliance_HowYouTreatPeople" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_YourAttitude" x="8480.014" y="-727.720642" NativeText="}:-[ I've had enough of your attitude!  Either break the alliance with %1, or we will break it for you." PerObjectType="PerListenerAlliedCommunity">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_ForPeace" />
+        <SpeechRef UniqueID="WarnOffAlliance_UpForNegotiation" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_NotYourDoorstep" x="5066.84375" y="-460.235962" NativeText="}:-| This isn't your backyard, it's open countryside.  We're just trying to find somewhere we can call home and live in safety.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_DoWhatWeSay" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_ForPeace" x="9627.976" y="-299.580872" NativeText="{:-| Fine.  For the sake of peace, we will end the alliance with %1.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_BeingReasonable" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Target" BoolData="true" />
+        <StoryEvent Type="LeaveAlliance" Subject="Actor" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_DoWhatWeSay" x="6193.795" y="-714.5878" NativeText="}:-| You're safe under our protection.  So long as you do what we say.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_TakeYourCut" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_TakeYourCut" x="7336.07861" y="-767.7056" NativeText="}:-| Yeah right, and so long as you take your cut.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_YourAttitude" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_UpForNegotiation" x="9628.804" y="-1540.84753" NativeText="It's not up for negotiation.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_RegretThis" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_RegretThis" x="10724.9453" y="-1522.84851" NativeText=":-[ You'll regret this.  But %1 will regret this even more.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="SetCommunityInvasionTarget" Subject="Actor" Object="ReferringTo" Data="21" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_Growing" x="1709.40991" y="-803.0811" NativeText="We at %1 have all been admiring how much your little group has grown.  :-) I know how it is, you recruit a soldier here, a soldier there, and pretty soon you got yourself a whole damn army!  Haha.  }:-| Yes, we see what you're doing.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_NotAThreat" />
+        <SpeechRef UniqueID="WarnOffAlliance_HowYouTreatPeople" />
+        <SpeechRef UniqueID="WarnOffAlliance_WhatsItToYou" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="WarnPopulation" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_WhatsItToYou" x="2828.96045" y="-3927.93823" NativeText="What's it to you?">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_RivalMilitia" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_RivalMilitia" x="4014.198" y="-4156.23828" NativeText="We can't have a heavily armed rival militia group sitting on our doorstep.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_YouAre" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_YouAre" x="5309.01074" y="-4034.31055" NativeText="}:-| But *you* are a heavily armed military group on *our* doorstep.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_ProtectWhatsOurs" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_ProtectWhatsOurs" x="6466.018" y="-4118.063" NativeText="}:-[ We need to be heavily armed to protect what's ours!  The world is a hostile place, and everybody is out to get us!">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_KeepThreatening" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_KeepThreatening" x="7696.966" y="-4271.15967" NativeText="Maybe that's because you keep threatening everyone?">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_Hostage" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_Hostage" x="8917.895" y="-4181.9375" NativeText="Enough with this crap.  You must reduce your numbers by giving us a hostage.  One of you will come and work for us.  Who's it gonna be?">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_IWillGo" />
+        <SpeechRef UniqueID="WarnOffAlliance_SelectMember" />
+        <SpeechRef UniqueID="WarnOffAlliance_WontBeSlaves" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_BigMistake2" x="11639.7959" y="1048.77271" NativeText="}:-| Big mistake.  But don't worry - as you're the leader, I'll select another to be made an example of." PerObjectType="PerListenerCommunityMember">
+      <PriorityTerms>
+        <Condition Type="Distance" Subject="Actor" Object="ReferringTo" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="32" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="Assassinate" Subject="Actor" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_WeHaveFun" x="11637.0049" y="-130.7624" NativeText="}:-) Haha!  We have fun don't we!" />
+    <Speech UniqueID="WarnOffAlliance_SelectMember" x="10332.6582" y="-3944.71533" NativeText="%1" PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_WellTreated" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_WellTreated" x="11808.5234" y="-3678.97" NativeText="}:-) Good choice.  %1 will be well treated, don't worry!">
+      <Params>
+        <SpeechParam Type="HeOrSheOrYou" Subject="ReferringTo" />
+      </Params>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="Betrayed" />
+        <StoryEvent Type="JoinCommunity" Subject="ReferringTo" Object="Actor" BoolData="true" />
+        <StoryEvent Type="AddToSquad" Subject="ReferringTo" Object="Actor" />
+        <StoryEvent Type="SetRank" Subject="ReferringTo" StringData="Captive" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_AnotherWay2" x="11852.5586" y="-7014.35645" NativeText="}:-| Then we'll reduce your numbers another way.  Starting with %1." PerObjectType="PerListenerCommunityMember">
+      <Params>
+        <SpeechParam Type="HimOrHerOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Distance" Subject="Actor" Object="ReferringTo" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="32" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="IsOutdoors" Subject="ReferringTo" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="Assassinate" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_AnotherWay" x="11853.9707" y="-5386.806" NativeText="}:-| Then we'll reduce your numbers another way, starting with you.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="Assassinate" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_WontBeSlaves" x="10381.06" y="-6353.494" NativeText="}:-[ We won't be your slaves.">
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_AnotherWay" />
+        <SpeechRef UniqueID="WarnOffAlliance_AnotherWay2" />
+        <SpeechRef UniqueID="WarnOffAlliance_AnotherWay3" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_AnotherWay3" x="11779.8887" y="-9058.188" NativeText="}:-[ Then we'll reduce your numbers another way!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_IWillGo" x="10316.7539" y="-2947.40283" NativeText="{:-( Okay.  I'll go.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="WarnOffAlliance_HowNoble" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="WarnOffAlliance_HowNoble" x="11823.8662" y="-1982.34265" NativeText="}:-) How noble.  You'll be well treated, don't worry!">
+      <Params>
+        <SpeechParam Type="HeOrSheOrYou" Subject="ReferringTo" />
+      </Params>
+      <NoReply>
+        <SpeechRef UniqueID="WarnOffAlliance_Discussion" />
+      </NoReply>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Target" ObjectModifier="Community" StringData="SelfSacrificed" />
+        <StoryEvent Type="JoinCommunity" Subject="Target" Object="Actor" BoolData="true" />
+        <StoryEvent Type="AddToSquad" Subject="Target" Object="Actor" />
+        <StoryEvent Type="SetRank" Subject="Target" StringData="Captive" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="WarnOffAlliance_IsWarning" x="-394.4973" y="-592.7423" Type="Or">
+      <Conditions>
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="WarnOffAlliance" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="WarnPopulation" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="WarnOffAlliance_FindingTarget" x="-394.5939" y="-1315.99451" Type="Or">
+      <Conditions>
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="FindTarget" />
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="StopForWarmth" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

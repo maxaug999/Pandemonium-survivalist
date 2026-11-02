@@ -1,0 +1,2153 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>4</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-549.0084</x>
+    <y>6265.53271</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.7251939</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="MemoryOfYou_ArsonSuspect_Like" x="658.674866" y="636.484741" NativeText="}:-) Whenever there's a fire round here you're not far from the scene... hey, I'm not judging!" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ArsonSuspect" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ArsonSuspect_Dislike" x="1476.55762" y="549.196655" NativeText="}:-| Who's been starting all these fires?  I've got my eye on you." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ArsonSuspect" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_BandagedForFree_Like" x="637.2464" y="-979.9834" NativeText=":-) The first aid you gave to %1 was a life-saver." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BandagedForFree" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_BandagedForFree_Dislike" x="2299.474" y="-962.945862" NativeText=":-[ You should have let %1 die." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="MemoryObject" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="50" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BandagedForFree" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Bandaged" x="1411.92773" y="-947.9731" NativeText="You proved your first aid skills on %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BandagedForGold" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DestroyedProperty_Like" x="645.2882" y="-1729.36755" NativeText="}:-) Hey I sure hope %1 didn't need all that stuff you destroyed.. hahaha!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DestroyedProperty" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DestroyedProperty_Dislike" x="1465.64636" y="-1736.86023" NativeText="}:-[ You destroyed %1 stuff!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityPossessive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DestroyedProperty" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Hurt_Like" x="653.9716" y="-2457.207" NativeText="}:-) You gave %1 something to think about!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Hurt" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Hurt_Dislike" x="1474.32959" y="-2464.69971" NativeText="}:-[ Someday you'll pay for hurting %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Hurt" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Killed_Like" x="684.6742" y="-3332.46777" NativeText="}:-) I'm glad you had the balls to take %1 down." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Killed" />
+        <Condition Type="MemoryApprovalAtLeast" Data="10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Killed_Dislike" x="1505.03223" y="-3339.96045" NativeText="}:-( I will never forgive you for killing %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Killed" />
+        <Condition Type="MemoryApprovalLessThan" Data="-10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KilledZombie" x="685.002747" y="-4154.489" NativeText="You killed an infected - well done." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledZombie" />
+        <Condition Type="MemoryQuantityFactorBetween" Data="1" Data2="2" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KilledZombie_Few" x="1520.10046" y="-4061.606" NativeText="I've seen you kill a few of the infected, looks like you can take care of yourself alright." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledZombie" />
+        <Condition Type="MemoryQuantityFactorBetween" Data="2" Data2="10" />
+        <Condition Type="IsAliveAndNotZombie" Subject="MemoryActor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KilledZombie_Many" x="2326.97241" y="-4054.618" NativeText="You've taken down a ton of infected - :-) makes me feel a little safer when you're around." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledZombie" />
+        <Condition Type="MemoryQuantityFactorAtLeast" Data="10" Data2="10" />
+        <Condition Type="IsAliveAndNotZombie" Subject="MemoryActor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHunger_Present" x="671.5106" y="-4830.145" NativeText=":-( I've got nothing to eat, and I blame you for that!" Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHunger" />
+        <Condition Type="HasHunger" Subject="Actor" Data="3" Data2="2" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Object="Player" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHunger_Past" x="1495.4917" y="-4996.151" NativeText="You need to make sure we have enough to eat, I've gone hungry in the past under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHunger" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedThirst_Present" x="663.077942" y="-5774.28174" NativeText=":-( I'm so thirsty right now - and it's your fault!" Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedThirst" />
+        <Condition Type="HasThirst" Subject="Actor" Data="1" Data2="2" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Object="Player" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedThirst_Past" x="1501.72681" y="-5861.504" NativeText="You need to make sure we have a steady water supply, I've gone thirsty in the past under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedThirst" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedSleepDeprivation_Past" x="1504.22034" y="-6738.079" NativeText="You haven't given me enough time to rest in the past - people are less effective when they are tired." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedSleepDeprivation" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedSleepDeprivation_Present" x="-53.7146835" y="-6712.308" NativeText=":-( I feel like I'm going to drop dead from exhaustion - you need to give us some downtime once in a while." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedSleepDeprivation" />
+        <Condition Type="HasSleepDeprivation" Subject="Actor" Data="2" Data2="2" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Object="Player" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipDefeated_Like" x="702.2474" y="-10101.8359" NativeText=":-) Thanks to your brilliant tactics, %1 was defeated!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipDefeated" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipDefeated_Dislike" x="1548.897" y="-10093.1074" NativeText="}:-[ Thanks to your ruthless tactics, %1 was crushed." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipDefeated" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeftCommunity" x="691.810059" y="-10808.5459" NativeText="}:-| You left %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeftCommunity" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_WonFisticuffs" x="688.903564" y="-11449.33" NativeText="}:-| You kicked %1 ass in the fisticuffs!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="WonFisticuffs" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LostFisticuffs" x="1492.85608" y="-11527.9688" NativeText="You lost to %1 at the fisticuffs - {:-) hey, at least you tried." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LostFisticuffs" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_MurderSuspect_Like" x="650.9742" y="-6.212265" NativeText="}:-) %1 never knew what hit %2!  But I'm sure you had nothing to do with that." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="MurderSuspect" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_MurderSuspect_Dislike" x="1472.196" y="-81.00452" NativeText="}:-| You were sneaking around here when %1 died weren't you?" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="MurderSuspect" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfHygiene_Present" x="-32.946167" y="-8453.469" NativeText="Our camp is getting unhygienic, you need to get us building outhouses!" Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfHygiene" />
+        <Condition Type="CommunityIsUnhygienic" Subject="Actor" Data="1" Data2="2" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Object="Player" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfHygiene_Past" x="1494.76025" y="-8384.001" NativeText="You haven't always paid as much attention to camp hygiene as you should have." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfHygiene" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfSpace_Present" x="701.537659" y="-8907.078" NativeText="There isn't enough space in our camp, we need to build more living quarters." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfSpace" />
+        <Condition Type="CommunityLacksSpace" Subject="Actor" Data="1" Data2="2" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Object="Player" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfSpace_Past" x="1517.11548" y="-9275.291" NativeText="You haven't always built enough living quarters to keep pace with the number of people in our group." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfSpace" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHypothermia_Present" x="676.4192" y="-7433.27441" NativeText="{:-( Hey, I'm freezing my ass off out here!  What are you going to do about it?" Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHypothermia" />
+        <Condition Type="HasHypothermia" Subject="Actor" Data="32" Data2="2" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Object="Player" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHypothermia_Past" x="1487.12744" y="-7626.42725" NativeText="It can get pretty damn cold round these parts and you haven't always done enough to make sure we keep warm!" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHypothermia" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ThreatenedSuccessfully_Dislike" x="1491.85925" y="-12173.4355" NativeText="}:-( You've been pushing %1 around." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ThreatenedSuccessfully" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ThreatenedSuccessfully_Like" x="692.6949" y="-12034.6025" NativeText="}:-) You made %1 pretty much piss %2 with fear!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHerself" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ThreatenedSuccessfully" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ThreatenedUnsuccessfully" x="2292.899" y="-12238.0273" NativeText="You tried to threaten %1 and ended up making yourself look foolish." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ThreatenedUnsuccessfully" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Brave" x="673.1426" y="-13897.85" NativeText="You stood up for yourself when %1 tried to push you around." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Brave" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Cowardly" x="1489.04724" y="-13899.8262" NativeText="You backed down when %1 threatened you." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Cowardly" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DeclaredWar_Like" x="676.9346" y="-14547.4883" NativeText="}:-) You attacked %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DeclaredWar" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DeclaredWar_Dislike" x="1495.516" y="-14545.8057" NativeText="}:-[ You attacked %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DeclaredWar" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Robbed_Like" x="680.5313" y="-13093.5127" NativeText="}:-) You made %1 give you some great supplies!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Robbed" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Robbed_Dislike" x="1499.75293" y="-13021.3389" NativeText="}:-( You robbed %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Robbed" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_StoleFrom_Like" x="-169.757355" y="-12956.2734" NativeText="}:-) You relieved %1 of a few of %2 possessions, nothing %3 can't do without I'm sure!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="StoleFrom" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_StoleFrom_Dislike" x="-998.4064" y="-13031.1689" NativeText="}:-( You stole supplies from %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="StoleFrom" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KickedFromCommunity_Like" x="1519.04492" y="-10799.5615" NativeText="I'm glad you got rid of %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KickedFromCommunity" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KickedFromCommunity_Dislike" x="2365.69482" y="-10790.833" NativeText="}:-( I wish you hadn't made %1 leave, that was uncalled for." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KickedFromCommunity" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Begged_Like" x="670.9762" y="-15244.8945" NativeText=":-) You tried to hustle %1 for supplies." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Begged" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_BoughtFrom" x="666.9066" y="-15910.1475" NativeText=":-) You're a valued customer for %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BoughtFrom" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_SoldTo" x="1490.77026" y="-15951.2783" NativeText="You've been a useful source of supplies for %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="SoldTo" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_SavedLife_Like" x="653.3984" y="-16587.7051" NativeText=":-) You saved %1 from being bitten." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="SavedLife" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_SavedLife_Dislike" x="1487.05725" y="-16637.0176" NativeText="Why did you save %1 - should have let %2 get eaten!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="SavedLife" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KilledLooter" x="642.6614" y="-17489.5762" NativeText="You killed a looter - }:-) nice job!" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledLooter" />
+        <Condition Type="MemoryQuantityFactorBetween" Data="1" Data2="2" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KilledLooter_Few" x="1468.11316" y="-17488.33" NativeText="}:-) You've bagged a few looters - I'm sure they all had it coming." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledLooter" />
+        <Condition Type="MemoryQuantityFactorBetween" Data="2" Data2="10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KilledLooter_Many" x="2282.20972" y="-17296.2383" NativeText=":-) You are single-handedly restoring justice to the American West one looter at a time!" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledLooter" />
+        <Condition Type="MemoryQuantityFactorAtLeast" Data="10" Data2="10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveThoughtfulGift_Like" x="638.6489" y="-19006.09" NativeText=":-) You gave %1 a really thoughtful present." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveThoughtfulGift" />
+        <Condition Type="MemoryQuantityFactorLessThan" Data="2" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveThoughtfulGifts_Like" x="1477.567" y="-19016.8359" NativeText=":-) You had some great gift ideas for %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveThoughtfulGift" />
+        <Condition Type="MemoryQuantityFactorAtLeast" Data="2" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveThoughtfulGift_Dislike" x="2357.14819" y="-18897.5879" NativeText="You're really buttering %1 up with presents aren't you?  I don't know why you bother!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveThoughtfulGift" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Approves" Subject="Actor" Object="MemoryObject" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveGift_Like" x="643.363464" y="-18120.0176" NativeText="I [alive(listener)?appreciate:appreciated] your generosity to %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveGift" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveGift_Dislike" x="1466.33032" y="-18093.9629" NativeText="}:-| %1 [alive(listener)&amp;alive(1)?isn't:wasn't] worth your gifts!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveGift" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Approves" Subject="Actor" Object="MemoryObject" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveInappropriateGift_Dislike" x="1489.23462" y="-19872.4785" NativeText="You gave %1 a gift and %2 threw it in your face!  %3 doesn't deserve your generosity." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveInappropriateGift" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveInappropriateGift_Like" x="622.707153" y="-19891.28" NativeText="Your attempt to give %1 a gift didn't go down too great because you didn't put any thought into it." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveInappropriateGift" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLowMorale_Present" x="681.509155" y="-20823.1777" NativeText=":-( With you in charge it's just one thing after another." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLowMorale" />
+        <Condition Type="MoraleIsLessThan" Subject="Actor" Data="-10" Data2="2" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+        <Condition Type="IsAliveAndNotZombie" Subject="MemoryActor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLowMorale_Past" x="1512.59375" y="-20933.4785" NativeText="We've had some bad times together haven't we?" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLowMorale" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FailedAttack_Like" x="670.8861" y="-23821.582" NativeText="{:-| At least you tried to take down %1... shame it didn't work." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FailedAttack" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FailedAttack_Dislike" x="2254.71777" y="-23823.2461" NativeText="}:-[ You were dumb enough to take %1 on, and you got exactly what you deserved!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FailedAttack" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FailedAttack_Like_Dead" x="1470.51709" y="-23880.832" NativeText="{:-| You messed up when you tried to take %1 down... at least %2's gone now though." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FailedAttack" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FailedAttack_Dislike_Dead" x="3055.8606" y="-23952.5" NativeText="}:-( %1 might be dead now but %2 kicked your ass a few times." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FailedAttack" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_AttackSuspect_Like" x="657.339844" y="1345.858" NativeText="}:-) You were in the area when %1 got jumped weren't you.. hey I ain't judgin'." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="AttackSuspect" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_AttackSuspect_Dislike" x="1478.56165" y="1271.06567" NativeText="}:-| You were sneaking around here when %1 got jumped weren't you?" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="AttackSuspect" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KnockedOut_Like" x="655.8183" y="2211.212" NativeText="}:-) You knocked %1 out like a light!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KnockedOut" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KnockedOut_Dislike" x="1476.17627" y="2203.71924" NativeText="}:-[ You knocked %1 out." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KnockedOut" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedDeath_Like" x="657.5871" y="-25064.4551" NativeText="%1 death was unfortunate... but I'm not too sorry %2's gone." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedDeath" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedDeath_Dislike" x="1504.23657" y="-25055.7285" NativeText=":-( I blame you for %1 death." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedDeath" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Chatted_Like" x="644.9448" y="-26246.57" NativeText="You take the time to talk to %1, I like that." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Chatted" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DeclaredLove_Like" x="648.463562" y="-26987.7637" NativeText=":-) I think you and %1 would make a cute couple." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DeclaredLove" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DeclaredLove_Dislike" x="1552.133" y="-27034.8789" NativeText="}:-( I think you should leave %1 alone." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DeclaredLove" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Rejected_Like" x="665.995056" y="-28089.7969" NativeText="You made the right move turning %1 down." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Rejected" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Rejected_Dislike" x="1579.73816" y="-28051.0957" NativeText="}:-| You think you're too good for %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Rejected" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Cheated_Like" x="670.6176" y="-29077.6074" NativeText="}:-) If I were in a relationship with %1 I would've cheated on %2 as well, no judgement here!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="CheatedOn" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Cheated_Dislike" x="1591.5741" y="-29074.9727" NativeText="}:-| You broke %1 heart, sleeping around!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="CheatedOn" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Faithful_Like" x="671.956543" y="-30105.9219" NativeText=":-) You stayed true to %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Faithful" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Faithful_Dislike" x="1592.91309" y="-30103.2871" NativeText="}:-| Don't know why you stuck with %1 really." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Faithful" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_CuckoldedSuccessfully_Like" x="668.093262" y="-31064.584" NativeText="}:-) You fucked %1 %2!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+        <SpeechParam Type="BoyfriendOrGirlfriend" Subject="MemoryThirdParty" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="CuckoldedSuccessfully" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_CuckoldedSuccessfully_Dislike" x="1486.11243" y="-31063.89" NativeText="}:-( You broke %1 heart by sleeping with %2 %3." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+        <SpeechParam Type="HisOrHer" Subject="MemoryObject" />
+        <SpeechParam Type="BoyfriendOrGirlfriend" Subject="MemoryThirdParty" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="CuckoldedSuccessfully" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_CuckoldedUnsuccessfully" x="2268.01514" y="-31069.873" NativeText="You tried to make a pass at %1 %2 but got slapped down!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+        <SpeechParam Type="BoyfriendOrGirlfriend" Subject="MemoryThirdParty" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="CuckoldedUnsuccessfully" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveInfoTo_Like" x="691.4248" y="-31961.6855" NativeText=":-) You've been a useful source of intel for %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveInformationTo" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveInfoTo_Dislike" x="1603.96558" y="-32164.6328" NativeText="}:-( You snitched to %1, should have kept your damn mouth shut!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveInformationTo" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedUnsuccessfullyTo_Like" x="686.9815" y="-33008.3" NativeText="Pity %1 didn't believe the bullshit you fed %2!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedUnsuccessfullyTo" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedUnsuccessfullyTo_Dislike" x="1607.938" y="-33005.6641" NativeText="}:-( [alive(listener)?You're:You were] a terrible liar, %1 saw right through you." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedUnsuccessfullyTo" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedSuccessfullyTo_Like" x="702.221" y="-33881.6523" NativeText="You really sold that bullshit story you told %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedSuccessfullyTo" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedSuccessfullyTo_Dislike" x="1623.17773" y="-33794.86" NativeText="}:-( %1 may have believed you, but one day your web of lies will catch up to you!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedSuccessfullyTo" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_MotivatedSuccessfully_Like" x="708.082031" y="-34708.12" NativeText=":-) You inspired %1 to keep on fighting." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="MotivatedSuccessfully" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_MotivatedSuccessfully_Dislike" x="1629.03882" y="-34705.4844" NativeText="You got %1 to move %2 lazy ass." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="MotivatedSuccessfully" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_MotivatedUnsuccessfully_Like" x="697.5318" y="-35594.375" NativeText="{:-| Your pep talk with %1 earlier didn't do much to motivate %2." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHerOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="MotivatedUnsuccessfully" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_MotivatedUnsuccessfully_Dislike" x="1618.48853" y="-35591.74" NativeText="You couldn't even get %1 to move %2 lazy ass." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="MotivatedUnsuccessfully" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GavePositiveEulogy_Like" x="699.22406" y="-36620.5273" NativeText="{:-) You gave a really touching tribute to %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GavePositiveEulogy" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GavePositiveEulogy_Dislike" x="1620.18091" y="-36617.89" NativeText="{:-| You made out like %1 was some kind of goddam hero in your send-off." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GavePositiveEulogy" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveNeutralEulogy_Like" x="731.7132" y="-37520.2266" NativeText="{:-) You did a good thing making sure  %1 had a proper funeral." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveNeutralEulogy" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="KnowsName" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveNeutralEulogy_Dislike" x="1652.6698" y="-37517.59" NativeText="{:-| You gave a sentimental speech over %1 grave." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveNeutralEulogy" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveNeutralEulogy_Like_Unknown" x="-198.592072" y="-37518.9141" NativeText="{:-) You gave a stranger a decent burial." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveNeutralEulogy" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="KnowsName" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveNegativeEulogy_Like" x="745.4587" y="-38508.65" NativeText="}:-) Your eulogy for %1 was exactly what %2 deserved!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveNegativeEulogy" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveNegativeEulogy_Dislike" x="1666.41528" y="-38506.01" NativeText="}:-[ You insulted %1 memory with your travesty of a speech." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveNegativeEulogy" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_WorkedFor_Like" x="703.1251" y="-39482.6" NativeText=":-) You did some good work for %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="WorkedFor" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FailedWorkFor_Like" x="692.5749" y="-40368.8555" NativeText="You didn't manage to do the work %1 hired you to do." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FailedWorkFor" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FailedWorkFor_Dislike" x="1613.53162" y="-40366.22" NativeText="You were doing some work for %1 weren't you? }:-( I'm glad you fucked it up!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FailedWorkFor" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_WorkedFor_Dislike" x="1624.08191" y="-39479.9648" NativeText=":-[ You shouldn't work for %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="WorkedFor" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_StoodUpTo_Like" x="675.6757" y="-41199.168" NativeText=":-) You stood up to %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="StoodUpTo" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_StoodUpTo_Dislike" x="1596.63245" y="-41196.53" NativeText="}:-| You got all self-righteous with %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="StoodUpTo" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_NegotiatedSuccessfully" x="678.3451" y="-42066.7656" NativeText="You struck an agreement with %1.  I reckon you've got some good instincts." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="NegotiatedSuccessfully" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_NegotiatedUnsuccessfully" x="1596.80652" y="-42066.07" NativeText="You couldn't persuade %1 to do what you wanted.  Well, some folks have that skill and others don't I guess." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="NegotiatedUnsuccessfully" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_PoachedFrom_Like" x="679.511353" y="-42891.99" NativeText="}:-| You took some idiots off our hands, at least." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="PoachedFrom" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_PoachedFrom_Dislike" x="1600.46826" y="-42889.35" NativeText="}:-| You think it's okay to come here and steal our people?" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="PoachedFrom" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_PoachedUnsuccessfullyFrom_Dislike" x="2494.67749" y="-42898.4844" NativeText="}:-| You tried to come here and steal my people!" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="PoachedUnsuccessfullyFrom" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ShookDown_Like" x="2322.45947" y="-12935.4414" NativeText="}:-) You made that freeloading %1 pay %2 way!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ShookDown" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ShookDown_Dislike" x="3156.07813" y="-13146.1729" NativeText="}:-( You shook %1 down." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ShookDown" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Begged_Dislike" x="1496.69409" y="-15240.792" NativeText="}:-| You've been trying to scrounge supplies from %1, you need to get your shit together." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Begged" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Helped_Like" x="2309.24536" y="-15235.334" NativeText=":-) You helped %1 out." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Helped" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Helped_Dislike" x="3134.96313" y="-15231.2314" NativeText="}:-| You shouldn't have bothered helping %1 out... %2 [alive(1)&amp;alive(2)?isn't:wasn't] worth it." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Helped" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_RefusedToHelped_Like" x="3937.45215" y="-15236.585" NativeText="}:-) You didn't let %1 freeload off of you." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="RefusedToHelp" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_RefusedToHelp_Dislike" x="4763.17" y="-15232.4824" NativeText="}:-| You refused to help %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="RefusedToHelp" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedWithMe_Like" x="714.121948" y="-21933.6465" NativeText=":-) We get along pretty well don't we?  I think we have a connection..." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedWith_Dislike" x="2215.46777" y="-22023.2227" NativeText="}:-| I don't know what you [alive(listener)&amp;alive(1)?see:saw] in %1!  Yeeugh." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedWith_Like" x="1437.11523" y="-21922.0684" NativeText=":-) You and %1 are getting on pretty well aren't you?" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedUnsuccessfullyWithMe_Dislike" x="705.982544" y="-22932.14" NativeText="}:-| You're a creep... stay away from me." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedUnsuccessfullyWith" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedUnsuccessfullyWith_Dislike" x="1458.96326" y="-22830.9629" NativeText="}:-| %1 isn't interested in you, you know, so you might as well leave %2 alone." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedUnsuccessfullyWith" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedWithWhoILike_Dislike" x="3069.84155" y="-21179.3438" NativeText="}:-[ %1 is mine, stay away from %2!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="None" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="MemoryOfYou_InLoveWith" />
+            <ConditionBlockRef UniqueID="MemoryOfYou_SleepingWith" />
+            <ConditionBlockRef UniqueID="MemoryOfYou_MarriedTo" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedUnsuccessfullyWith_Like" x="2249.81152" y="-22992.5469" NativeText="}:-) Keep on harrassing %1, it's hilarious!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedUnsuccessfullyWith" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedUnsuccessfullyWithWhoILike_Dislike" x="3067.09448" y="-22525.7422" NativeText="}:-[ %1 is mine and %2's not interested in you - stay away from %3!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedUnsuccessfullyWith" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="MemoryOfYou_InLoveWith" />
+            <ConditionBlockRef UniqueID="MemoryOfYou_SleepingWith" />
+            <ConditionBlockRef UniqueID="MemoryOfYou_MarriedTo" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedAbout_Like" x="677.4709" y="-43639.0469" NativeText="}:-) You've been saying very interesting things about %1!  Keep dropping those truth bombs!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedAbout" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedAbout_Dislike" x="1606.04834" y="-43699.55" NativeText="}:-( You spread lies about %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedAbout" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_BeatUp_Like" x="705.5605" y="-44519.81" NativeText="}:-) You kicked %1 ass!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BeatUp" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_BeatUp_Dislike" x="1642.53052" y="-44508.5234" NativeText="}:-[ You viciously attacked %1 and beat %2 up!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HimOrHerOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BeatUp" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipDefeatedOldCommunity_Dislike" x="2368.46387" y="-9891.14551" NativeText="}:-[ You slaughtered my old gang." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipDefeated" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="WasInitiallyMemberOf" Subject="Actor" Object="MemoryObject" />
+        <Condition Type="IsAmbient" Subject="MemoryObject" StringData="HunterLooter" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipDefeatedAmbient_Like" x="3123.71558" y="-9891.954" NativeText=":-) You defeated some raiders [plural(1)?%1 days ago:zero(1)?today:yesterday]." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="MemoryDaysAgo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipDefeated" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAmbient" Subject="MemoryObject" StringData="HunterLooter" />
+        <Condition Type="CommunityTypeEquals" Subject="MemoryObject" StringData="RovingTrader" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="MemoryObject" StringData="RovingRefugee" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfHygiene" x="2322.39575" y="-8386.642" NativeText="%1 said the camp is really filthy... you should sort out the hygiene situation." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfHygiene" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHypothermia" x="3044.22583" y="-7460.98828" NativeText="}:-| %1 has suffered from hypothermia under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHypothermia" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedSleepDeprivation" x="2314.04028" y="-6460.82471" NativeText="%1 has suffered from sleep deprivation under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedSleepDeprivation" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedThirst" x="3040.08447" y="-5751.887" NativeText="You need to make sure we have a steady water supply, %1 has gone thirsty under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedThirst" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHunger" x="2323.357" y="-4741.53369" NativeText="You need to make sure we have enough to eat, %1 has gone hungry under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHunger" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfSpace" x="3118.06372" y="-8604.319" NativeText="%1 hasn't always had enough space to sleep, you need to get us building more living quarters." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfSpace" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="IsLeaderOf" Subject="MemoryActor" Object="Actor" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYouDesecratedCorpse_Dislike" x="772.833252" y="-47191.95" NativeText="}:-[ You butchered %1 corpse, like an animal!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DesecratedCorpse" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYouDesecratedCorpse_Like" x="1655.88062" y="-47203.3438" NativeText="You cut up %1 corpse.  I won't shed any tears over that." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DesecratedCorpse" />
+        <Condition Type="Equals" Subject="Actor" Object="MemoryActor" Not="true" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYouUsedHumanIngredients_Like" x="1654.869" y="-46288.23" NativeText=":-) You put some funny-looking meat in the pot..." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="UsedHumanIngredients" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYouUsedHumanIngredients_Dislike" x="764.689331" y="-46281.0078" NativeText="}:-( You put some suspicious-looking meat in the pot..." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="UsedHumanIngredients" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Cannibal_Dislike" x="767.8146" y="-45416.5625" NativeText="}:-( That sure didn't look like rabbit meat you were eating..." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Cannibal" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYouCannibal_Like" x="1657.99353" y="-45423.7852" NativeText=":-) That sure didn't look like rabbit meat you were eating..." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Cannibal" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Complimented_Like" x="705.9607" y="-49062.02" NativeText=":-) You said some nice things to %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Complimented" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Complimented_Dislike" x="1646.52625" y="-49061.4023" NativeText="}:-| You were really sucking up to %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Complimented" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Insulted_Like" x="714.7573" y="-48172.2852" NativeText="}:-) You said some mean things to %1, haha!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Insulted" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Insulted_Dislike" x="1655.32288" y="-48171.668" NativeText="}:-[ You were a %1 to %2." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Insulted" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_HasInvisibleStrain1" x="634.709167" y="-49874.48" NativeText=":-( You were infected all this time... Jesus." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="HasInvisibleStrain" />
+        <Condition Type="HasAnyMemoryOlderThan" Subject="Actor" Object="MemoryActor" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_HasInvisibleStrain2" x="1518.87122" y="-49883.47" NativeText="{:-( Can't believe you were one of... them, the infected." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="HasInvisibleStrain" />
+        <Condition Type="ApprovedBeforeThisMemory" Subject="Actor" Object="MemoryActor" Data="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_HasInvisibleStrain3" x="2394.108" y="-49892.32" NativeText="}:-( I guess you were infected all along... I knew something wasn't right about you." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="HasInvisibleStrain" />
+        <Condition Type="ApprovedBeforeThisMemory" Subject="Actor" Object="MemoryActor" Data="-40" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_HasInvisibleStrain4" x="3217.33887" y="-49900.0742" NativeText=":-( You must have been... infected, somehow." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="HasInvisibleStrain" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Dead_KilledZombie_Few" x="3167.85376" y="-4046.18628" NativeText="I saw you kill a few of the infected, you knew how to take care of yourself." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledZombie" />
+        <Condition Type="MemoryQuantityFactorBetween" Data="2" Data2="10" />
+        <Condition Type="IsAliveAndNotZombie" Subject="MemoryActor" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Dead_KilledZombie_Many" x="3919.029" y="-4040.1582" NativeText="You took down a ton of infected - :-) made me feel a little safer when you were around." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledZombie" />
+        <Condition Type="MemoryQuantityFactorAtLeast" Data="10" Data2="10" />
+        <Condition Type="IsAliveAndNotZombie" Subject="MemoryActor" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ContractedInvisibleStrain3" x="-1901.4585" y="-49892.832" NativeText="}:-( So you got infected somehow.  I admit I thought you were a %1 but... I wonder how much of that was because of the disease?" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ContractedInvisibleStrain" />
+        <Condition Type="ApprovedBeforeThisMemory" Subject="Actor" Object="MemoryObject" Data="-40" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ContractedInvisibleStrain4" x="-2707.492" y="-49896.59" NativeText=":-( You must have gotten... infected, by someone." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ContractedInvisibleStrain" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ContractedInvisibleStrain2" x="-1065.38611" y="-49892.84" NativeText="{:-( Can't believe you got infected... how did it happen?" Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ContractedInvisibleStrain" />
+        <Condition Type="ApprovedBeforeThisMemory" Subject="Actor" Object="MemoryObject" Data="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ContractedInvisibleStrain1" x="-206.593536" y="-49891.2031" NativeText=":-( You must have gotten infected at some point... Jesus." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ContractedInvisibleStrain" />
+        <Condition Type="HasAnyMemoryOlderThan" Subject="Actor" Object="MemoryObject" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Annoyed_Like" x="618.251" y="-51018.43" NativeText="}:-) You were really winding %1 up!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Annoyed" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Annoyed_Dislike" x="1539.208" y="-51015.793" NativeText="}:-( You've been annoying %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Annoyed" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_WonSnowballFight" x="2347.79443" y="-11540.3057" NativeText="You had a snowball fight with %1... I think you won." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="WonSnowballFight" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LostSnowballFight_Like" x="3182.00977" y="-11473.1006" NativeText=":-) You had a snowball fight with %1... you got covered in snow!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LostSnowballFight" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LostSnowballFight" x="4002.13745" y="-11459.1338" NativeText="}:-| You looked so stupid having a snowball fight with %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LostSnowballFight" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Contradicted_Like" x="624.6471" y="-51908.7969" NativeText="You were right to disagree with %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Contradicted" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Supported_Like" x="634.529663" y="-52847.6172" NativeText=":-) I'm glad you agreed with %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Supported" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Supported_Dislike" x="1555.48608" y="-52844.98" NativeText="You shouldn't have supported %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Supported" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Contradicted_Dislike" x="1545.60376" y="-51906.16" NativeText="}:-| You had a go at %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Contradicted" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveGift_Dislike2" x="2310.0835" y="-17873.8184" NativeText="}:-| %1 [alive(1)?is:was] okay but what did %2 ever do to be worth all these gifts from you?  Trying to curry favor I suppose!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryObject" />
+        <SpeechParam Type="HeOrShe" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveGift" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Approves" Subject="Actor" Object="MemoryObject" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveThoughtfulGift_Dislike2" x="3181.10547" y="-18961.1172" NativeText="}:-| Why are you giving such great gifts to %1?  What about the rest of us?" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveThoughtfulGift" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Approves" Subject="Actor" Object="MemoryObject" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveInappropriateGift_Like2" x="2358.95068" y="-19838.6543" NativeText="}:-| What are you hoping to gain by giving shitty gifts to %1 that %2 doesn't even like?" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+        <SpeechParam Type="HeOrSheOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveInappropriateGift" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Approves" Subject="Actor" Object="MemoryObject" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedWith_Dislike2" x="4107.96826" y="-21299.4844" NativeText="}:-| I know you were flirting with %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Dumped_Like" x="617.9937" y="-53677.5352" NativeText="}:-) You dumped %1 like a hot potato!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Dumped" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Dumped_Dislike" x="1538.95056" y="-53674.9" NativeText="{:-( You broke up with %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Dumped" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Hurt_Dislike_Dead" x="2259.9834" y="-2470.559" NativeText="}:-[ You paid with your life for hurting %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Hurt" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Killed_Someone_Dislike" x="-912.438" y="-3170.997" NativeText="}:-( You murdered a %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Killed" />
+        <Condition Type="MemoryApprovalAtLeast" Not="true" />
+        <Condition Type="KnowsName" Subject="Actor" Object="MemoryObject" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Killed_Someone_Like" x="-142.353729" y="-3169.025" NativeText="{:-| You had to kill a %1, in self defense." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Killed" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="KnowsName" Subject="Actor" Object="MemoryObject" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ThreatenedSuccessfully_Like2" x="-144.528442" y="-11995.8857" NativeText="}:-) You scared the crap out of %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ThreatenedSuccessfully" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Hurt_Like2" x="-132.343445" y="-2396.066" NativeText="}:-) You gave %1 a bloody nose." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Hurt" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Hurt_Like3" x="-909.166748" y="-2137.75317" NativeText="}:-) You fought well against %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Hurt" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="KnowsName" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="IsAmbient" Subject="MemoryObject" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Hurt_Like4" x="-1729.386" y="-2027.52527" NativeText="}:-) You fought off some raiders [plural(1)?%1 days ago:zero(1)?today:yesterday]." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="MemoryDaysAgo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Hurt" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="KnowsName" Subject="Actor" Object="MemoryObject" Not="true" />
+        <Condition Type="CommunityNameIsKnownByPlayer" Subject="MemoryObject" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Killed_Like2" x="-2511.92041" y="-3169.88647" NativeText="{:-| You had to kill %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Killed" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="MemoryApprovalLessThan" Data="10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Killed_Dislike2" x="-1698.93079" y="-3176.32642" NativeText="}:-( You murdered %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Killed" />
+        <Condition Type="MemoryApprovalAtLeast" Data="-10" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedWithMe_Like_Dead" x="-70.63166" y="-21934.7734" NativeText="{:-( We got along pretty well didn't we?  I thought we had a connection..." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedWith_Like_Dead" x="-849.809937" y="-21940.73" NativeText="{:-( You and %1 got on pretty well.  You could've made a cute couple." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedUnsuccessfullyWithMe_Dislike_Dead" x="-93.2689056" y="-22985.584" NativeText="}:-| You were a creep to %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedUnsuccessfullyWith" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_FlirtedUnsuccessfullyWith_Like_Dead" x="4977.34326" y="-22947.459" NativeText="You struck out big time with %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="FlirtedUnsuccessfullyWith" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ArsonSuspect_Like_Dead" x="-170.702957" y="637.750244" NativeText="}:-) Whenever there was a fire round here you weren't far from the scene... hey, I'm not judging!" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ArsonSuspect" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ArsonSuspect_Dislike_Dead" x="2315.12866" y="547.5974" NativeText="}:-| Was it you who started all those fires?  I guess we'll never know." Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ArsonSuspect" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHunger_Dead" x="-153.30368" y="-4863.208" NativeText=":-( We didn't have enough to eat under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHunger" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedThirst_Dead" x="-170.313232" y="-5811.10449" NativeText=":-( We didn't have enough water under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedThirst" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedSleepDeprivation_Dead" x="-941.9276" y="-6785.286" NativeText=":-( We didn't get enough rest under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedSleepDeprivation" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedHypothermia_Dead" x="-725.4428" y="-7654.318" NativeText=":-( We froze our asses off under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedHypothermia" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfHygiene_Dead" x="-850.883057" y="-8355.753" NativeText=":-( Our camp smelled like shit under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfHygiene" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipCausedLackOfSpace_Dead" x="-798.119568" y="-9327.439" NativeText=":-( Our camp was very overcrowded under your leadership." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipCausedLackOfSpace" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_ThreatenedSuccessfully_Dislike_Dead" x="3175.33276" y="-12204.1914" NativeText="}:-( You pushed %1 around." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ThreatenedSuccessfully" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Begged_Dislike_Dead" x="-144.23642" y="-14959.9424" NativeText="}:-| You tried to scrounge supplies from %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Begged" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_BoughtFrom_Dead" x="-133.1121" y="-15963.3359" NativeText=":-( You were a valued customer for %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BoughtFrom" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_SoldTo_Dead" x="2304.98682" y="-15951.5059" NativeText=":-( You were a useful source of supplies for %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="SoldTo" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_KilledLooter_Few_Dead" x="3094.65942" y="-17239.4141" NativeText=":-( You took down a few looters in your time.  Thanks for keeping us safe." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="KilledLooter" />
+        <Condition Type="MemoryQuantityFactorAtLeast" Data="2" Data2="10" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveThoughtfulGift_Dislike_Dead" x="3985.98779" y="-18964.2852" NativeText="}:-| You gave all the best loot to %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveThoughtfulGift" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveInappropriateGift_Like_Dead" x="3210.21582" y="-19916.0215" NativeText=":-( You gave %1 a poorly thought-out gift." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveInappropriateGift" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Chatted_Like_Dead" x="1536.88733" y="-26090.5273" NativeText="You took the time to talk to %1, I liked that." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Chatted" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DeclaredLove_Like_Dead" x="-269.461761" y="-27127.459" NativeText="{:-) I think you and %1 would have made a cute couple." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DeclaredLove" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DeclaredLove_Dislike_Dead" x="2314.16" y="-27035.6016" NativeText="}:-( I think you should have left %1 alone." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DeclaredLove" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Rejected_Dislike_Dead" x="2338.72461" y="-28086.6035" NativeText="}:-| You thought you were too good for %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Rejected" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_GaveInfoTo_Like_Dead" x="-137.879578" y="-32176.6133" NativeText=":-( You were a useful source of intel for %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="GaveInformationTo" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedSuccessfullyTo_Dislike_Dead" x="2421.67847" y="-33812.8555" NativeText="}:-( %1 may have believed you, but I guess your web of lies caught up to you in the end." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedSuccessfullyTo" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Annoyed_Dislike_Dead" x="2399.77148" y="-51015.0977" NativeText=":-( You annoyed the hell out of %1." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Annoyed" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Annoyed_Like_Dead" x="-287.1882" y="-51027.7578" NativeText="{:-) You really wound %1 up!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Annoyed" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LiedAbout_Like_Dead" x="-144.7834" y="-43706.25" NativeText="}:-) You said some very interesting things about %1!" Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LiedAbout" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_PoachedUnsuccessfullyFrom_Dislike_NotLeader" x="3342.75684" y="-42893.8164" NativeText="}:-| You tried to come here and steal our people!" Situation="MemoryOfYou" Importance="Memory">
+      <Conditions>
+        <Condition Type="MemoryType" StringData="PoachedUnsuccessfullyFrom" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipDefeatedRefugees_Like" x="3900.27686" y="-9885.028" NativeText="}:-) You drove away some scumbags [plural(1)?%1 days ago:zero(1)?today:yesterday]." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="MemoryDaysAgo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipDefeated" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAmbient" Subject="MemoryObject" StringData="HunterLooter" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_LeadershipDefeatedRefugees_Dislike" x="4664.33936" y="-9878.415" NativeText="}:-( You massacred some harmless travellers [plural(1)?%1 days ago:zero(1)?today:yesterday]." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="MemoryDaysAgo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="LeadershipDefeated" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="IsAmbient" Subject="MemoryObject" StringData="HunterLooter" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_Chatted_Like_Travellers" x="2338.63745" y="-26066.1563" NativeText="You stopped to chat with folks on the road here, I liked that." Situation="MemoryOfYou" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="Chatted" />
+        <Condition Type="MemoryApprovalAtLeast" />
+        <Condition Type="IsAmbient" Subject="MemoryObject" />
+        <Condition Type="IsMemberOf" Subject="Actor" Object="MemoryObject" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_DeclaredWar_Dislike2" x="2276.74829" y="-14133.8379" NativeText="{:-( You had to attack %2." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="DeclaredWar" />
+        <Condition Type="MemoryApprovalLessThan" />
+        <Condition Type="Approves" Subject="Actor" Object="MemoryActor" Data="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="MemoryOfYou_BandagedForFree_Dislike2" x="3023.25879" y="-971.1471" NativeText="}:-| You kindly treated %1 wounds." Situation="MemoryOfYou" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="MemoryObject" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="30" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="BandagedForFree" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="MemoryOfYou_InLoveWith" x="4096.25732" y="-22312.8164">
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" StringData="InLoveWith" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="MemoryOfYou_SleepingWith" x="4095.976" y="-22702.7754">
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" StringData="SleepingWith" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="MemoryOfYou_MarriedTo" x="4097.21875" y="-23100.1855">
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" StringData="MarriedTo" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

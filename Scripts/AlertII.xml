@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>742.126</x>
+    <y>855.7585</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.709735751</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="SuspectOfMurder4" x="2842.76758" y="319.501648" NativeText="}:-[ Hey I know this %1? This %2 is always selling used apparel and I don't know where %3 gets it." Situation="SuspectOfMurder" Importance="BlameForAttack" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="BastardOrBitch" Subject="Target" />
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Scared_Flirty" x="-495.449219" y="334.332428" NativeText="}:-) If your out there?! I'm also out here naked!" Situation="Scared" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Scared_Friendly" x="-489.1953" y="-302.292847" NativeText="}:-) Hey come on now lets be friends! I won't hurt you." Situation="Scared" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="RecentHighAlert3" x="362.7957" y="1353.25012" NativeText="}:-) Whew I think I'm safe." Situation="RecentHighAlert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="RecentHighAlert_Bold" x="353.2273" y="-264.456177" NativeText="}:-) You guys I think I scared that %1!" Situation="RecentHighAlert" Importance="Low">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="RecentHighAlert4" x="336.1266" y="843.6816" NativeText="}:-) I think we won!" Situation="RecentHighAlert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Alert_Infected2" x="337.933258" y="-2963.71338" NativeText="8-| Zeds!" Situation="Alert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsZombie" Subject="Target" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alert_Infected_Nervous" x="334.249878" y="-3684.81763" NativeText="}:-) Ohhh Zeds! Free stuff!" Situation="Alert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsZombie" Subject="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HighAlert_Fickle" x="1143.47461" y="10.155921" NativeText="8-o Oh my Gaaaawd!" Situation="HighAlert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="RecentHighAlert5" x="359.728577" y="235.32428" NativeText="8-o Yikes!" Situation="RecentHighAlert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="TargetLost3" x="3657.37" y="617.242737" NativeText="}:-| You better hide %1!" Situation="TargetLost" Importance="Low">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Boneheadthief" x="4381.995" y="381.2603" NativeText="8-[ Hey bonehead thats mine!" Situation="StopThief" />
+    <Speech UniqueID="TargetLost4" x="3670.18042" y="167.167511" NativeText="}:-| I'll beat the shit out of you if you ever come back!" Situation="TargetLost" Importance="Low" />
+    <Speech UniqueID="BlameForMurder3" x="1978.92944" y="328.086823" NativeText="8-o Murderer!" Situation="BlameForMurder" Importance="BlameForAttack" CanTalkOutOfRange="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="TargetLost5" x="3655.97827" y="-172.418289" NativeText="}:-[ Where the hell are you!?" Situation="TargetLost" Importance="Low" />
+    <Speech UniqueID="TargetLost6" x="3653.94922" y="-501.16272" NativeText="}:-[ Shoooow yourself!" Situation="TargetLost" Importance="Low" />
+    <Speech UniqueID="Heythatntoyours" x="4390.535" y="93.05747" NativeText="8-[ Hey thats not yours!" Situation="StopThief" />
+    <Speech UniqueID="BlameForMurder4" x="1973.24622" y="-406.7989" NativeText="8-o You killed my friend!" Situation="BlameForMurder" Importance="BlameForAttack" CanTalkOutOfRange="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Thiefalert" x="4394.68359" y="-182.17836" NativeText="8-[ Thief alert thief alert!" Situation="StopThief" />
+    <Speech UniqueID="SuspectOfMurder5" x="2816.7334" y="-437.8779" NativeText="}:-[ Hey this %1? looks suspicious, This %2 always talks to us with no apparent reason and keeps on asking the same thing." Situation="SuspectOfMurder" Importance="BlameForAttack" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="BastardOrBitch" Subject="Target" />
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Scared_Alcoholic" x="-496.386261" y="-1005.70459" NativeText="}:-) I will drink from your skull!" Situation="Scared" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Scared_Nervous" x="-501.5501" y="-1642.11133" NativeText="}:-( Don't worry I'll flee as soon as I can!" Situation="Scared" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Scared_immoral" x="-520.8749" y="-2311.92871" NativeText="}:-) You look tasty!" Situation="Scared" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Heywhatareyoudoing" x="4407.371" y="-512.1073" NativeText="8-[ Hey what are you doing!?" Situation="StopThief" />
+    <Speech UniqueID="Stopthatthief" x="4405.32471" y="-782.082" NativeText="8-[ Stop that thief!" Situation="StopThief" />
+    <Speech UniqueID="Haaalpthief" x="4391.008" y="-1088.87122" NativeText="8-[ Haaalp thief!" Situation="StopThief" />
+    <Speech UniqueID="TargetLost7" x="3670.02759" y="-811.7553" NativeText="}:-| I'll be right here if you come back!" Situation="TargetLost" Importance="Low" />
+    <Speech UniqueID="SuspectOfMurder6" x="2782.83862" y="-1149.33643" NativeText="}:-[ Someone just died and this %1 shows up this %2 better be innocent or %3 will be sorry!" Situation="SuspectOfMurder" Importance="BlameForAttack" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="BastardOrBitch" Subject="Target" />
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="HighAlert_Smart" x="1125.06165" y="623.511047" NativeText=":-| I need some help over here!" Situation="HighAlert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HighAlert_Nerd" x="1141.30444" y="1226.35254" NativeText=":-| Need backup!" Situation="HighAlert" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="RecentHighAlert_Friendly" x="329.250458" y="-956.6805" NativeText="}:-) We could have been friends %1!" Situation="RecentHighAlert" Importance="Low">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="TargetLost8" x="3644.68433" y="-1139.06763" NativeText="}:-[ I'll make sure you'll suffer if I see you again!" Situation="TargetLost" Importance="Low" />
+    <Speech UniqueID="TargetLost9" x="3636.379" y="-1474.29419" NativeText="}:-[ I'm coming for you!" Situation="TargetLost" Importance="Low" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

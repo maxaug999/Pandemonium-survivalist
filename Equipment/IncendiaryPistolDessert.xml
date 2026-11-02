@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Pistol</TypeName>
+  <NativeName>Incendiary Pistol</NativeName>
+  <NativeDescription>Uses Incendiary Rounds, Ignores Armor</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>2.5</Weight>
+  <BasePrice>40</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/desert.prefab</EquippedModelName>
+  <LootLocations />
+  <LootableFromLocations />
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.41</Damage>
+  <DamageBonusPerSkillLevel>0.08</DamageBonusPerSkillLevel>
+  <Range>22</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>0.7</MaxAimTime>
+  <MinHeadAimTime>0.45</MinHeadAimTime>
+  <MaxHeadAimTime>0.9</MaxHeadAimTime>
+  <MinLegsAimTime>0.2</MinLegsAimTime>
+  <MaxLegsAimTime>0.65</MaxLegsAimTime>
+  <Recoil>0.2</Recoil>
+  <AimPenaltyWhenMoving>0.125</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.5</MinTimeBetweenFiring>
+  <AmmoType>IncendiaryAmmo</AmmoType>
+  <MaxAmmo>7</MaxAmmo>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

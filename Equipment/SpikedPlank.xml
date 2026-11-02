@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Spiked Wooden Plank</NativeName>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>6</Weight>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Plank/Plank</EquippedModelName>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.3</Damage>
+  <DamageBonusPerSkillLevel>0.06</DamageBonusPerSkillLevel>
+  <Range>2.25</Range>
+  <FatiguePenaltyWhenAttacking>0.125</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

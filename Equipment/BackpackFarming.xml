@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Harvesting Bag</NativeName>
+  <NativeDescription>Put Harvest here. +15 max weight per Strength skill.</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>4</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Backpack</ClothingType>
+  <LiquidCapacity>100</LiquidCapacity>
+  <DefaultLiquidType>Water</DefaultLiquidType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>20</r>
+      <g>90</g>
+      <b>50</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2>
+    <Color32>
+      <r>20</r>
+      <g>90</g>
+      <b>50</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations2>
+  <ColorVariations3 />
+  <MaterialVariations>
+    <string>Backpack/Backpack4</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:Backpack4</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack4</FemaleMeshName>
+  <CarryWeight>50</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>15</CarryWeightBonusPerSkillLevel>
+  <SkillBonusType>Farming</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

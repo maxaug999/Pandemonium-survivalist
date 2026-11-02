@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Phalange</NativeName>
+  <NativeDescription>You're not sure what it is but it looks important</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>2</Weight>
+  <BasePrice>10</BasePrice>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <CanHitTheRoad>false</CanHitTheRoad>
+  <Special>true</Special>
+</EquipmentPrototype>

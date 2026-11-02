@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>HuntingKnife</TypeName>
+  <NativeName>Stone Dagger</NativeName>
+  <NativeDescription>Can be used for hand to hand combat, stealth assassinations, skinning game, and even lighting fires if you have a flint.  You can skin corpses with it and then throw the meat around to distract the infected.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>2</Weight>
+  <BasePrice>7</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>assets/stoneknife.prefab</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.2</Damage>
+  <DamageBonusPerSkillLevel>0.04</DamageBonusPerSkillLevel>
+  <Range>1.7</Range>
+  <FatiguePenaltyWhenAttacking>0.075</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

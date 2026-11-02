@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Wooden Sword</NativeName>
+  <NativeDescription>Practice Sword</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>4</Weight>
+  <BasePrice>8</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Katana/Katana</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>213</r>
+      <g>170</g>
+      <b>136</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.35</Damage>
+  <DamageBonusPerSkillLevel>0.07</DamageBonusPerSkillLevel>
+  <Range>2.5</Range>
+</EquipmentPrototype>

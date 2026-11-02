@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>2</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>2</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <EditorScrollPos>
+    <x>64.190155</x>
+    <y>855.9168</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5156572</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="SurveyQuest_StartSmart" x="863.3049" y="-1029.39893" NativeText=":-| I think I could trust you with this, I'm having a problem finding a World Map, thats the reason I'm scavanging the area. nobody knows except you now... I will give you something for the trouble if you manage to find one before I leave the area.">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_OkSmart" />
+        <SpeechRef UniqueID="SurveyQuest_NoSmart" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" BoolData="false" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="SurveyQuest_Fetch" BoolData="false" Not="true" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="60" Data2="30" BoolData="false" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" BoolData="false" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" BoolData="false" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_StartStreetSmart" x="856.8526" y="-2728.11914" NativeText=":-| I think I could trust you with this, I'm having a problem finding a world map, thats the reason I'm scavanging the area. nobody knows except you now... I will give you something for the trouble if you manage to find one before I leave the area.">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_OkStreetSmart" />
+        <SpeechRef UniqueID="SurveyQuest_NoStreetSmart" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" BoolData="false" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="SurveyQuest_Fetch" BoolData="false" Not="true" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="60" Data2="30" BoolData="false" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" BoolData="false" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" BoolData="false" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_OkSmart" x="1937.23584" y="-1278.8783" NativeText=":-) Ok I'll help..">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_AgreedSmart" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="PlayerCommunity" Data="1" StringData="Farming" BoolData="false" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_AgreedSmart" x="2893.044" y="-1402.57141" NativeText="}:-) Great! and be quick, I'm unsure on how long I'll stay in the area...">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="SurveyQuest_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_NoSmart" x="1882.378" y="-2059.86182" NativeText=":-( Not for the time being. I'm still busy buddy..">
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_SadSmart" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_SadSmart" x="2882.63232" y="-2159.2" NativeText=":-( Hey if you changed your mind.." />
+    <Speech UniqueID="SurveyQuest_WhereToFind" x="1177.50391" y="-4767.18066" NativeText="Where could I find one?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="SurveyQuest_Fetch" BoolData="false" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" BoolData="false" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_Tip" x="2036.87109" y="-4905.527" NativeText="They are very hard to find. I thought you might have an extra one before accepting my task. you might find it sometimes being sold by roaming and community merchants or on unexpected places but sometimes some passing refugees have them so you might want to trade with them.">
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_TipEnd" x="2957.36963" y="-5070.6626" NativeText=":-( Oh damn I might be screwed.." />
+    <Speech UniqueID="SurveyQuest_GotIt" x="3900.383" y="-1021.70044" NativeText="Got your goddamn map! }:-)" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_Wow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="SurveyQuest_Return" BoolData="false" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="WorldMap" BoolData="false" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_Wow" x="4931.238" y="-927.3641" NativeText="8-o Wow I thought I won't find one and here's your reward I scavanged while looking for a map!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_RewardNoodle" />
+        <SpeechRef UniqueID="SurveyQuest_RewardPistolAmmo" />
+        <SpeechRef UniqueID="SurveyQuest_RewardAssaultRifleAmmo" />
+        <SpeechRef UniqueID="SurveyQuest_RewardShotgunShells" />
+        <SpeechRef UniqueID="SurveyQuest_RewardSniperRifleAmmo" />
+        <SpeechRef UniqueID="SurveyQuest_RewardBetterTent" />
+        <SpeechRef UniqueID="SurveyQuest_RewardScope" />
+        <SpeechRef UniqueID="SurveyQuest_RewardQuiver" />
+        <SpeechRef UniqueID="SurveyQuest_RewardFitnessBelt" />
+        <SpeechRef UniqueID="SurveyQuest_RewardThermalScanner" />
+        <SpeechRef UniqueID="SurveyQuest_RewardCamoBlanket" />
+        <SpeechRef UniqueID="SurveyQuest_RewardFertilizer" />
+        <SpeechRef UniqueID="SurveyQuest_RewardRadio" />
+        <SpeechRef UniqueID="SurveyQuest_RewardGeologicalMap" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="DeleteEquipment" Subject="Target" Object="Actor" Data="1" StringData="WorldMap" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="SurveyQuest_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardNoodle" x="5828.75635" y="-779.6046" NativeText="Noodles x100!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="100" StringData="Noodle" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardPistolAmmo" x="5813.228" y="-1468.01733" NativeText="Pistol Ammo x300!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="300" StringData="PistolAmmo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardAssaultRifleAmmo" x="5889.907" y="-2160.435" NativeText="Assault Rifle Ammo x240!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="240" StringData="AssaultRifleAmmo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardShotgunShells" x="6726.062" y="-875.211853" NativeText="Shotgun Shells x180!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="180" StringData="ShotgunShell" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardSniperRifleAmmo" x="6735.696" y="-1536.79846" NativeText="Sniper Rifle Ammo x150!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="150" StringData="SniperRifleAmmo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardBetterTent" x="6741.654" y="-2208.77759" NativeText="Better Tent x2!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="2" StringData="BetterTentBag" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardScope" x="7489.41553" y="-866.48114" NativeText="Scope +2 firearms!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Scope" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardQuiver" x="7461.813" y="-1569.26685" NativeText="Scope +2 Archery!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Quiver" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardFitnessBelt" x="7464.63965" y="-2232.61353" NativeText="Fitness Belt +2 Stregth!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Fitnessbelt" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardThermalScanner" x="8257.797" y="-918.61145" NativeText="Thermal Scanner +2 Medicine!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="ThermalScanner" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardCamoBlanket" x="8250.699" y="-1622.76355" NativeText="Camo Blanket +2 Stealth!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="CamoBlanket" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardFertilizer" x="8219.377" y="-2315.073" NativeText="Fertilizer +2 Farming">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Fertilizer" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardRadio" x="8966.944" y="-996.460632" NativeText="Radio!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="Radio" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_RewardGeologicalMap" x="8978.821" y="-1679.28784" NativeText="Geological Map!">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="GeologicalMap" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_OkStreetSmart" x="1656.862" y="-2711.66772" NativeText=":-) Ok I'll help..">
+      <PriorityTerms>
+        <Condition Type="Always" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_AgreedStreetSmart" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="PlayerCommunity" Data="1" StringData="Farming" BoolData="false" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_AgreedStreetSmart" x="3472.06543" y="-2652.02832" NativeText="}:-) Great! and be quick, I'm unsure on how long I'll stay in the area...">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="SurveyQuest_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_NoStreetSmart" x="1707.30957" y="-3536.82764" NativeText=":-( Not for the time being I'm still busy buddy..">
+      <Replies>
+        <SpeechRef UniqueID="SurveyQuest_SadStreetSmart" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SurveyQuest_SadStreetSmart" x="3244.70557" y="-3629.34326" NativeText=":-( Hey if you changed your mind.." />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="SurveyQuest_Fetch" x="1867.73914" y="194.267059" GroupID="SurveyQuest_QuestGroup" NativeDescription="You need to find and give %1 a map">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="1" StringData="WorldMap" BoolData="false" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" BoolData="false" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" BoolData="false" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="SurveyQuest_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="SurveyQuest_Return" x="2892.56445" y="-18.2596035" GroupID="SurveyQuest_QuestGroup" NativeDescription="Give the world map to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" BoolData="false" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" BoolData="false" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="SurveyQuest_QuestGroup" x="1078.72363" y="-253.295181" NativeTitle="Give a world map to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+</Script>

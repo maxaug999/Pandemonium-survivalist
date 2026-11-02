@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 2374768750
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0fe33a40327529055695d9a621367e23
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 27295f96fcdc2b917bd061e8817c7e02
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+Assets:
+- Assets/flat.prefab
+Dependencies: []

@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>11</NextFreeSpeechID>
+  <NextFreeTriggerID>10</NextFreeTriggerID>
+  <NextFreeConditionBlockID>6</NextFreeConditionBlockID>
+  <NextFreeQuestID>4</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>4706.187</x>
+    <y>3131.793</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.7017893</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Hunting_NeedToGetOutOfHere" x="-4638.04053" y="-3933.02783" NativeText="Hey, I need to get out of here.  Let's go deer hunting sometime?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Hunting_SoundsGood" />
+        <SpeechRef UniqueID="Hunting_TooBusy" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasDiscoveredDeer" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_CanStart" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Hunting_SoundsGood" x="-3557.80859" y="-4299.74" NativeText="Sounds good to me!">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" ThirdParty="Actor" StringData="Hunting_Quest_FindDeer" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Hunting_TooBusy" x="-3566.99121" y="-4939.1333" NativeText="Sorry I'm too busy.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Hunting_SignsOfDeer" x="118.4707" y="-3668.809" NativeText="Signs of deer here.  I don't see any right now though." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="CanSeeAnimal" Subject="Actor" Data="24" StringData="Deer" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_FindDeer" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_HuntDeer" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Hunting_BagSomeVenison" x="134.048752" y="-4922.642" NativeText="This is where the deer like to come... let's approach downwind and stick to cover." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_FindDeer" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_HuntDeer" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Hunting_CircleOfLife" x="4844.82666" y="-2429.71777" NativeText="Sorry deer, circle of life and all that." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_DidntSuffer" x="4847.43555" y="-2941.51465" NativeText="{:-| Ugh, I hope %1 didn't suffer." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_OnMyWall" x="4847.43555" y="-3593.86719" NativeText=":-) Woo, I'm gonna put that on my wall!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_ThatDeerWasAnAsshole" x="4905.737" y="-4230.461" NativeText="Don't worry, I have it on good authority that deer was an asshole.  %1 had it coming." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_AboutToLineUpAShot" x="4915.191" y="-4925.35938" NativeText="Great!  }:-| I mean, I was about to line up a shot but yeah, I probably would have missed anyway." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_WasLiningUpShot" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_WontGoHungry" x="4910.46436" y="-5550.92529" NativeText=":-) You did good, we won't go hungry tonight!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_WasLiningUpShot" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_LetTheUndeadDoIt" x="4903.62842" y="-6306.65332" NativeText="...or we could just let the undead do our hunting for us." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_WantedToTakeTheShot" x="4918.94" y="-6892.268" NativeText="}:-| I wanted to take the shot!  Stupid zombie." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_InfectedGotIt" x="4916.03955" y="-7463.254" NativeText="Infected got %1!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_GetThisHome" x="9323.165" y="-7989.28955" NativeText="Let's get this home." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_GruntWork" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_KnowWhatYoureDoing" x="9258.183" y="-5842.199" NativeText="{:-| Uh... Are you sure you know what you're doing?" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Target" Data="3" StringData="Cooking" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_IfYouWereGood" x="9271.226" y="-5144.165" NativeText="{:-| You might get more meat if... uh, you were good at this." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Target" Data="3" StringData="Cooking" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_TakesSomePractice" x="9236.444" y="-6790.462" NativeText="{:-| Yeah that's it, just takes some practice to get the best cuts." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Target" Data="3" StringData="Cooking" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_DoneThisBefore" x="10100.88" y="-6807.8374" NativeText="You've got this down, not leaving any meat to waste." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Target" Data="3" StringData="Cooking" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_LikeANinja" x="10111.7627" y="-4990.547" NativeText="Damn %1, slicing that deer up like a hungry ninja." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Target" Data="3" StringData="Cooking" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_SmellBad" x="10111.96" y="-5854.327" NativeText="Ugh.  And I thought they smelled bad... on the outside." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Target" Data="3" StringData="Cooking" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_GruntWork" x="9331.751" y="-8484.021" NativeText="Okay sure, I'll do the grunt work.  I don't mind." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_GruntWork" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_LowOnFood" x="-4621.011" y="-4819.4126" NativeText="I'm hungry!  You and I should go look for deer.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Hunting_SoundsGood" />
+        <SpeechRef UniqueID="Hunting_TooBusy" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasDeerOnMap" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_CanStart" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasHunger" Subject="Actor" Data="2" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Hunting_TheresOne" x="146.347321" y="-5992.701" NativeText="Deer over there!... let's approach downwind and stick to cover." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_FindDeer" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_HuntDeer" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Hunting_GoodHunting" x="4893.21826" y="-8650.94" NativeText="Well, a deer died so.. good hunting, I guess." CanTalkOutOfRange="true" AIOverridesControl="true" />
+    <Speech UniqueID="Hunting_Startled" x="5038.854" y="1150.82544" NativeText="}:-| Careful, you startled %1!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_RunAway" x="5027.58643" y="-1763.33447" NativeText="{:-) Oh shit, must have spooked %1." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_TrySomethingElse" x="5036.796" y="1815.87817" NativeText="Uh.. maybe we should try hunting something that doesn't run as fast, like.. rocks." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_NowLook" x="5029.21143" y="431.969421" NativeText="}:-| Now look what you've done!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_ThoughWeHadThatOne" x="5019.2124" y="-1232.24243" NativeText=":-( Damn, thought we had that one." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_TheyDontWantToBeEaten" x="5033.09766" y="2431.0647" NativeText="Dammit!  It's like they don't even want to be eaten." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_NeverGonnaCatch" x="5026.26465" y="-126.420074" NativeText="Eh, we're never gonna catch that one." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_RunSwiftRunFree" x="5019.898" y="-669.232239" NativeText="Run swift, run free, you noble beast!  Sorry, I kinda like it when they get away." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Hunting_IfIWereGood" x="9149.617" y="-2454.56274" NativeText="I'd probably be able to get more meat if.. I were any good at this." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Actor" Data="3" StringData="Cooking" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_GettingTheRightBits" x="9146.296" y="-3269.929" NativeText="{:-| Uh... I hope I'm getting the right.. bits." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Actor" Data="3" StringData="Cooking" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_NeedSomePractice" x="9150.921" y="-4125.78271" NativeText="{:-| I think I need some more practice at this.  At least I got some.. meat.. out." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Actor" Data="3" StringData="Cooking" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_HowYouSkinADeer" x="10117.8037" y="-4104.194" NativeText=":-) And that's how you skin a deer." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Actor" Data="3" StringData="Cooking" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Hunting_SmellBad2" x="10107.01" y="-3217.49829" NativeText="Ugh.  And I thought they smelled bad... on the outside." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Actor" Data="3" StringData="Cooking" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Hunting_Trigger_DeerKilledByQuestGiver" x="3755.863" y="-2607.39355" OnceOnly="true">
+      <Type>Killed</Type>
+      <Conditions>
+        <Condition Type="IsAnimal" Subject="ReferringTo" StringData="Deer" />
+        <Condition Type="Equals" Subject="Actor" Object="QuestGiver" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" ThirdParty="QuestSeeker" StringData="Hunting_Quest_HuntDeer" />
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="ReferringTo" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_CircleOfLife" />
+            <SpeechRef UniqueID="Hunting_DidntSuffer" />
+            <SpeechRef UniqueID="Hunting_OnMyWall" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_DeerKilledByQuestSeeker" x="3717.431" y="-4147.004" OnceOnly="true">
+      <Type>Killed</Type>
+      <Conditions>
+        <Condition Type="IsAnimal" Subject="ReferringTo" StringData="Deer" />
+        <Condition Type="Equals" Subject="Actor" Object="QuestSeeker" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" ThirdParty="QuestSeeker" StringData="Hunting_Quest_HuntDeer" />
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="ReferringTo" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_ThatDeerWasAnAsshole" />
+            <SpeechRef UniqueID="Hunting_AboutToLineUpAShot" />
+            <SpeechRef UniqueID="Hunting_WontGoHungry" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_DeerKilledByZombie" x="3665.44434" y="-5920.633" OnceOnly="true">
+      <Type>Killed</Type>
+      <Conditions>
+        <Condition Type="IsAnimal" Subject="ReferringTo" StringData="Deer" />
+        <Condition Type="IsZombie" Subject="Actor" />
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="ReferringTo" Data="32" />
+        <Condition Type="IsFullyTracked" Subject="QuestGiver" Object="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" ThirdParty="QuestSeeker" StringData="Hunting_Quest_HuntDeer" />
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="ReferringTo" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_LetTheUndeadDoIt" />
+            <SpeechRef UniqueID="Hunting_WantedToTakeTheShot" />
+            <SpeechRef UniqueID="Hunting_InfectedGotIt" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_DeerPickedUp" x="7997.39648" y="-7896.159" OnceOnly="true">
+      <Type>PickedUp</Type>
+      <Conditions>
+        <Condition Type="IsAnimal" Subject="ReferringTo" StringData="Deer" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_PickedUpByUs" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="Actor" StringData="" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_GetThisHome" />
+            <SpeechRef UniqueID="Hunting_GruntWork" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_DeerSkinned" x="7932.581" y="-5302.90625" OnceOnly="true">
+      <Type>Skinned</Type>
+      <Conditions>
+        <Condition Type="IsAnimal" Subject="ReferringTo" StringData="Deer" />
+        <Condition Type="Equals" Subject="QuestSeeker" Object="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="ReferringTo" StringData="" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_IfYouWereGood" />
+            <SpeechRef UniqueID="Hunting_LikeANinja" />
+            <SpeechRef UniqueID="Hunting_KnowWhatYoureDoing" />
+            <SpeechRef UniqueID="Hunting_SmellBad" />
+            <SpeechRef UniqueID="Hunting_DoneThisBefore" />
+            <SpeechRef UniqueID="Hunting_TakesSomePractice" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" ThirdParty="QuestSeeker" StringData="Hunting_Quest_SkinDeer" />
+        <StoryEvent Type="MemorableEvent" Subject="QuestSeeker" Object="QuestGiver" StringData="HungOut" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_SeeDeerAtSpawn" x="-1030.76831" y="-4451.61" OnceOnly="true">
+      <Type>EverySecond</Type>
+      <Conditions>
+        <Condition Type="IsInRangeOfDiscoveredDeerSpawnpoint" Subject="QuestGiver" Data="64" />
+        <Condition Type="CanSeeAnimal" Subject="QuestGiver" Data="24" StringData="Deer" />
+        <Condition Type="IsInSameSquad" Subject="QuestGiver" Object="QuestSeeker" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_BagSomeVenison" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_ReachedSpawn" x="-1053.29517" y="-3176.48755" OnceOnly="true">
+      <Type>EverySecond</Type>
+      <Conditions>
+        <Condition Type="IsInRangeOfDiscoveredDeerSpawnpoint" Subject="QuestGiver" Data="16" />
+        <Condition Type="CanSeeAnimal" Subject="QuestGiver" Data="24" StringData="Deer" Not="true" />
+        <Condition Type="IsInSameSquad" Subject="QuestGiver" Object="QuestSeeker" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_SignsOfDeer" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_SeeDeer" x="-1041.63867" y="-5728.91748" OnceOnly="true">
+      <Type>EverySecond</Type>
+      <Conditions>
+        <Condition Type="CanSeeAnimal" Subject="QuestGiver" Data="24" StringData="Deer" />
+        <Condition Type="IsInRangeOfDiscoveredDeerSpawnpoint" Subject="QuestGiver" Data="64" Not="true" />
+        <Condition Type="IsInSameSquad" Subject="QuestGiver" Object="QuestSeeker" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_TheresOne" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_FindCarcass" x="3687.70239" y="-8173.041" OnceOnly="true">
+      <Type>EverySecond</Type>
+      <Conditions>
+        <Condition Type="CanSeeDeadAnimal" Subject="QuestGiver" Data="8" StringData="Deer" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" ThirdParty="QuestSeeker" StringData="Hunting_Quest_HuntDeer" />
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" StringData="" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_GoodHunting" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_DeerFled" x="3705.0603" y="-86.46533" TriggerRepeatTime="300">
+      <Type>Fled</Type>
+      <Conditions>
+        <Condition Type="IsAnimal" Subject="ReferringTo" StringData="Deer" />
+        <Condition Type="HasBloodLoss" Subject="ReferringTo" Data="0.001" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Hunting_ConditionBlock_FledFrom" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="ReferringTo" StringData="" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_TheyDontWantToBeEaten" />
+            <SpeechRef UniqueID="Hunting_TrySomethingElse" />
+            <SpeechRef UniqueID="Hunting_Startled" />
+            <SpeechRef UniqueID="Hunting_NowLook" />
+            <SpeechRef UniqueID="Hunting_NeverGonnaCatch" />
+            <SpeechRef UniqueID="Hunting_RunSwiftRunFree" />
+            <SpeechRef UniqueID="Hunting_ThoughWeHadThatOne" />
+            <SpeechRef UniqueID="Hunting_RunAway" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Hunting_Trigger_DeerSkinned2" x="7909.54932" y="-3340.86377" OnceOnly="true">
+      <Type>Skinned</Type>
+      <Conditions>
+        <Condition Type="IsAnimal" Subject="ReferringTo" StringData="Deer" />
+        <Condition Type="Equals" Subject="QuestGiver" Object="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="ReferringTo" StringData="" Delay="1">
+          <Speeches>
+            <SpeechRef UniqueID="Hunting_IfIWereGood" />
+            <SpeechRef UniqueID="Hunting_GettingTheRightBits" />
+            <SpeechRef UniqueID="Hunting_SmellBad2" />
+            <SpeechRef UniqueID="Hunting_HowYouSkinADeer" />
+            <SpeechRef UniqueID="Hunting_NeedSomePractice" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" ThirdParty="QuestSeeker" StringData="Hunting_Quest_SkinDeer" />
+        <StoryEvent Type="MemorableEvent" Subject="QuestSeeker" Object="QuestGiver" StringData="HungOut" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Hunting_ConditionBlock_WasLiningUpShot" x="5827.546" y="-5358.68652">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="HasAmmoWeapon" Subject="Actor" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hunting_ConditionBlock_PickedUpByUs" x="6842.17" y="-7851.18945" Type="Or">
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="QuestGiver" />
+        <Condition Type="Equals" Subject="Actor" Object="QuestSeeker" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hunting_ConditionBlock_GruntWork" x="10259.37" y="-8237.396">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hunting_ConditionBlock_CanStart" x="-5571.439" y="-4300.61426">
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_FindDeer" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" StringData="Chicken_Quest_GoTo" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Friendship_AnyQuestsActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" Data="7" StringData="FlirtedSuccessfullyWith" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" Data="7" StringData="RefusedToHangOut" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Hunting_ConditionBlock_FledFrom" x="2583.25122" y="-224.505188" Type="Or">
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="QuestGiver" />
+        <Condition Type="Equals" Subject="Actor" Object="QuestSeeker" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Hunting_Quest_FindDeer" x="-2352.5293" y="-4405.246" GroupID="Hunting_QuestGroup" NativeDescription="Bring %1 with you to a site where deer are commonly found.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </FailureConditions>
+      <Triggers>
+        <TriggerRef UniqueID="Hunting_Trigger_ReachedSpawn" />
+        <TriggerRef UniqueID="Hunting_Trigger_SeeDeerAtSpawn" />
+        <TriggerRef UniqueID="Hunting_Trigger_SeeDeer" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Hunting_Quest_HuntDeer" x="2397.10034" y="-4669.496" GroupID="Hunting_QuestGroup" NativeDescription="Take down a deer with %1">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" ThirdParty="Target" StringData="Hunting_Quest_SkinDeer" />
+      </CompletionEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Hunting_Trigger_DeerFled" />
+        <TriggerRef UniqueID="Hunting_Trigger_DeerKilledByQuestGiver" />
+        <TriggerRef UniqueID="Hunting_Trigger_DeerKilledByQuestSeeker" />
+        <TriggerRef UniqueID="Hunting_Trigger_DeerKilledByZombie" />
+        <TriggerRef UniqueID="Hunting_Trigger_FindCarcass" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Hunting_Quest_SkinDeer" x="6761.30029" y="-6392.02539" GroupID="Hunting_QuestGroup" NativeDescription="Skin the deer">
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </FailureConditions>
+      <Triggers>
+        <TriggerRef UniqueID="Hunting_Trigger_DeerSkinned2" />
+        <TriggerRef UniqueID="Hunting_Trigger_DeerSkinned" />
+        <TriggerRef UniqueID="Hunting_Trigger_DeerPickedUp" />
+      </Triggers>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Hunting_QuestGroup" x="-2350.33447" y="-3756.42578" NativeTitle="Go hunting with %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" BoolData="true" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

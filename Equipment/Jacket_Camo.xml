@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Camo Jacket</NativeName>
+  <Category>4:Clothing/Top</Category>
+  <Weight>4</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Top</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ClothesStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <MaterialVariations>
+    <string>MercJacket/Red</string>
+    <string>MercJacket/TigerStripe</string>
+    <string>MercJacket/Desert</string>
+    <string>MercJacket/Snow</string>
+    <string>MercJacket/Woodland</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:MercJacket</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:MercJacket</FemaleMeshName>
+  <Insulation>3</Insulation>
+  <SkillBonusType>Stealth</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

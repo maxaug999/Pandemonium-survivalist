@@ -1,0 +1,487 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>4</NextFreeTriggerID>
+  <NextFreeConditionBlockID>6</NextFreeConditionBlockID>
+  <NextFreeQuestID>4</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-4506.12744</x>
+    <y>896.725464</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.7027209</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Chicken_WouldntItBeCool" x="633.64325" y="945.923157" NativeText="Wouldn't it be cool if we had some chickens?  Scratching around in the yard...  I could take care of them!" PerObjectType="PerKnownCommunity">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Chicken_IdLikeThat" />
+        <SpeechRef UniqueID="Chicken_EnoughProblems" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Chicken_NeverMind" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Chicken_ConditionBlock_CanHeist" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+        <Condition Type="CommunityHasAnimals" Subject="Actor" Data="1" StringData="Chicken" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Chicken_IdLikeThat" x="1896.643" y="-808.3886" NativeText="I'd like that!">
+      <Replies>
+        <SpeechRef UniqueID="Chicken_WontMissOne" />
+        <SpeechRef UniqueID="Chicken_Compensation" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Chicken_EnoughProblems" x="1940.9856" y="-1680.94849" NativeText="We've got enough problems right now.">
+      <Replies>
+        <SpeechRef UniqueID="Chicken_NeverMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Chicken_EggLayingHen" x="611.449" y="-354.517761" NativeText="Hey, you know what would improve our diet is if we had an egg laying hen or two." PerObjectType="PerKnownCommunity">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Chicken_IdLikeThat" />
+        <SpeechRef UniqueID="Chicken_EnoughProblems" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Chicken_NeverMind" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Chicken_ConditionBlock_CanHeist" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" Not="true" />
+        <Condition Type="CommunityHasAnimals" Subject="Actor" Data="1" StringData="Chicken" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Chicken_WontMissOne" x="2889.896" y="534.0487" NativeText="%1 wouldn't miss one, I bet!  One of us can create a diversion, while the other tempts a chicken away with some snacks.  What do you say?  We'll make the perfect crime duo!">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Chicken_WhatDidTheyDo" />
+        <SpeechRef UniqueID="Chicken_LetsDoThis" />
+        <SpeechRef UniqueID="Chicken_Omelette" />
+        <SpeechRef UniqueID="Chicken_BuyOne" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Chicken_NeverMind" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Chicken_Compensation" x="2709.434" y="-926.609436" NativeText="}:-| %1 have been shaking us down, acting like they own this place.  It's time we got something in return, and I'd say a chicken would be adequate compensation!">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="Chicken_Diversion" />
+      </Continues>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Chicken_Diversion" x="3421.16431" y="-960.7108" NativeText="}:-) Let's both of us go there, and bring some food for the chickens.  One of us can create a diversion while the other tempts a chicken away with delicious snacks.  Sounds like a plan?">
+      <Replies>
+        <SpeechRef UniqueID="Chicken_BuyOne" />
+        <SpeechRef UniqueID="Chicken_Risky" />
+        <SpeechRef UniqueID="Chicken_PerfectCrime" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Chicken_NeverMind" />
+      </NoReply>
+    </Speech>
+    <Speech UniqueID="Chicken_WhatDidTheyDo" x="4043.09082" y="2160.06274" NativeText="}:-| What did %1 ever do to us?">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Chicken_Virtuous" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Chicken_Omelette" x="4046.53345" y="503.07016" NativeText=":-) You can't make an omelette without... stealing someone's chickens, I guess.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Chicken_Quest_GoTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Chicken_LetsDoThis" x="4042.49683" y="1307.11365" NativeText="}:-) Let's do this.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Chicken_Quest_GoTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Chicken_BuyOne" x="4297.7" y="-723.806335" NativeText="}:-| I don't like this plan.  Let's just buy one instead.">
+      <Replies>
+        <SpeechRef UniqueID="Chicken_SpareTheGold" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Chicken_SpareTheGold" x="5184.74854" y="-466.433838" NativeText=":-( Sure, if we can spare the gold.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_Virtuous" x="5164.58057" y="2052.626" NativeText="}:-| Don't get all virtuous, I'm just spitballing.  Like you never stole anything...">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MoralStand" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_Risky" x="4331.582" y="-1278.9906" NativeText="{:-| Uh, that sounds risky.  We don't want to anger them.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Chicken_TheRealChickens" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Chicken_TheRealChickens" x="5275.807" y="-1330.55212" NativeText=":-( Ugh, we are the real chickens.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Contradicted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_PerfectCrime" x="4323.52539" y="-2155.5415" NativeText="}:-) It'll be the perfect crime!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Chicken_Quest_GoTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Chicken_NeverMind" x="4372.98438" y="-3013.10669" NativeText="Oh... okay, never mind then.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_WereIn" x="9206.79" y="-1703.59424" NativeText="We're in.  One of us needs to distract %1 while the other sneaks in, finds a chicken, and introduces it to the sweet taste of freedom.  Or snacks." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="Chicken_Fisticuffs" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Chicken_Fisticuffs" x="10169.4668" y="-1705.0249" NativeText="For a distraction, how about starting a round of fisticuffs?  That always gets everbody watching." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Chicken_Quest_Steal" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_Amazing" x="13514.6758" y="-1941.95789" NativeText="8-) We made it out of there!  That was amazing!  You were amazing!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Chicken_Trigger_Finish" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_CriminalGeniuses" x="13538.8311" y="-2931.19751" NativeText="}:-) We are criminal geniuses!  They never saw us coming!  :-| And to think Dad always said I'd never amount to anything." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Chicken_Trigger_Finish" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_HeartPounding" x="13560.3779" y="-3899.03076" NativeText="8-| Oh God, we did it!  My heart was pounding in my chest." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Chicken_Trigger_Finish" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_TakeThat" x="13540.3643" y="-4838.35742" NativeText=":-) We got one!  }:-) Take that, %1!  How do you like it when other people steal your stuff?!" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Chicken_Trigger_Finish" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_JustFine" x="13526.1064" y="-5825.837" NativeText="We did it.  Hooray for us!  I mean, %1 will be just fine, I'm sure, no need to worry about them." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Chicken_Trigger_Finish" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Chicken_More" x="603.153" y="-3356.6272" NativeText="You know what's better than egg for breakfast?  Two eggs.  Let's find us some more chickens." PerObjectType="PerKnownCommunity">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Chicken_IdLikeThat" />
+        <SpeechRef UniqueID="Chicken_EnoughProblems" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Chicken_NeverMind" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Chicken_ConditionBlock_CanHeist" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" Not="true" />
+        <Condition Type="CommunityHasAnimals" Subject="Actor" Data="1" StringData="Chicken" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Chicken_NeedsCompany" x="608.4352" y="-1611.92737" NativeText="%1 looks kinda lonely to me, maybe %2 needs some more chickens for company?" PerObjectType="PerKnownCommunity">
+      <Params>
+        <SpeechParam Type="NearestCommunityMemberName" Subject="Actor" Object="Actor" StringData="Chicken" />
+        <SpeechParam Type="NearestCommunityMemberHeOrShe" Subject="Actor" Object="Actor" StringData="Chicken" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Chicken_IdLikeThat" />
+        <SpeechRef UniqueID="Chicken_EnoughProblems" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="Chicken_NeverMind" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Chicken_ConditionBlock_CanHeist" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+        <Condition Type="CommunityHasAnimals" Subject="Actor" Data="1" StringData="Chicken" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Chicken_Trigger_CloseToBase" x="8157.218" y="-1181.5531">
+      <Type>EverySecond</Type>
+      <Conditions>
+        <Condition Type="IsCloseToBase" Subject="QuestGiver" Object="QuestObject" Data="32" />
+        <Condition Type="IsCloseToBase" Subject="QuestSeeker" Object="QuestObject" Data="32" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" Object="QuestObject" ThirdParty="QuestSeeker" StringData="Chicken_Quest_GoTo" />
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject">
+          <Speeches>
+            <SpeechRef UniqueID="Chicken_WereIn" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Chicken_Trigger_Stolen" x="11410.751" y="-3929.01563">
+      <Type>StoleAnimal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Chicken_IsQuestGiverOrSeeker" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" Object="QuestObject" ThirdParty="QuestSeeker" StringData="Chicken_Quest_GetOut" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Chicken_Trigger_Finish" x="14506.1494" y="-3487.569">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="HungOut" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Chicken_ConditionBlock_CanHeist" x="-412.0642" y="-978.609">
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="QuestIsDiscoveredGivenByWithSeeker" Subject="Actor" ThirdParty="Target" StringData="Chicken_Quest_GoTo" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" StringData="Chicken_Quest_GoTo" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Friendship_AnyQuestsActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityHasBuildings" Subject="Actor" Data="1" />
+        <Condition Type="CommunityHasAnimals" Subject="Actor" Data="4" StringData="Chicken" Not="true" />
+        <Condition Type="CommunityHasAnimals" Subject="ReferringTo" Data="1" StringData="Chicken" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="CommunityHasAlliance" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Chicken_ConditionBlock_Morality" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" Data="7" StringData="FlirtedSuccessfullyWith" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" Data="7" StringData="RefusedToHangOut" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Chicken_ConditionBlock_Morality" x="-1341.84106" y="-1460.663" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Chicken_QuestGiver_Has_Chicken" x="12383.5986" y="-1897.45215">
+      <Conditions>
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="ReferringTo" StringData="Chicken" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Carrying" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Chicken_QuestSeeker_Has_Chicken" x="12374.8506" y="-2445.30542">
+      <Conditions>
+        <Condition Type="IsCarryingCommunityMember" Subject="Target" Object="ReferringTo" StringData="Chicken" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" SubjectModifier="Carrying" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Chicken_IsQuestGiverOrSeeker" x="10392" y="-3876.883" Type="Or">
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="QuestGiver" />
+        <Condition Type="Equals" Subject="Actor" Object="QuestSeeker" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Chicken_Quest_GoTo" x="7255.923" y="-380.0327" GroupID="Chicken_QuestGroup" NativeDescription="%1 wants %2 to help %3 liberate a chicken from %4">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <QuestMarkerConditions>
+        <Condition Type="IsAnimal" Subject="ExtraParam" StringData="Chicken" />
+        <Condition Type="IsAlive" Subject="ExtraParam" />
+      </QuestMarkerConditions>
+      <FailureConditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="CommunityHasAnimals" Subject="ReferringTo" Data="1" StringData="Chicken" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="ReferringTo" Data="1" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Target" Object="ReferringTo" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="EnsureCommunityHasBoxer" Subject="ReferringTo" />
+      </StartEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Chicken_Trigger_CloseToBase" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Chicken_Quest_Steal" x="11155.0293" y="-1526.22192" GroupID="Chicken_QuestGroup" NativeDescription="One of you distract %1 so the other can pick up a chicken without being spotted.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <QuestMarkerConditions>
+        <Condition Type="IsAnimal" Subject="ExtraParam" StringData="Chicken" />
+        <Condition Type="IsAlive" Subject="ExtraParam" />
+      </QuestMarkerConditions>
+      <CompletionConditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Chicken_QuestGiver_Has_Chicken" />
+            <ConditionBlockRef UniqueID="Chicken_QuestSeeker_Has_Chicken" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="CommunityHasAnimals" Subject="ReferringTo" Data="1" StringData="Chicken" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="ReferringTo" Data="1" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Target" Object="ReferringTo" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Chicken_Quest_GetOut" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Chicken_Quest_GetOut" x="12383.6" y="-3280.67432" GroupID="Chicken_QuestGroup" NativeDescription="You got the chicken!  Make a dash for it before they see you!">
+      <FailureConditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Target" Object="ReferringTo" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo">
+          <Speeches>
+            <SpeechRef UniqueID="Chicken_Amazing" />
+            <SpeechRef UniqueID="Chicken_CriminalGeniuses" />
+            <SpeechRef UniqueID="Chicken_HeartPounding" />
+            <SpeechRef UniqueID="Chicken_TakeThat" />
+            <SpeechRef UniqueID="Chicken_JustFine" />
+          </Speeches>
+        </StoryEvent>
+      </CompletionEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Chicken_Trigger_Stolen" />
+      </Triggers>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Chicken_QuestGroup" x="7253.062" y="76.27286" NativeTitle="Chicken Heist" />
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>GlassBottle</TypeName>
+  <NativeName>Small Bottle</NativeName>
+  <NativeDescription>An empty small bottle where you could put small amounts of liquid.</NativeDescription>
+  <Category>7:Containers</Category>
+  <Weight>3</Weight>
+  <BasePrice>1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <LiquidCapacity>25</LiquidCapacity>
+  <DefaultLiquidType />
+  <EquippedModelName>Prefabs/Props/Abandoned Props Pack PBR/PropVodkaBottle</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Zombie</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.2</Damage>
+  <DamageBonusPerSkillLevel>0.04</DamageBonusPerSkillLevel>
+  <Range>16</Range>
+  <RangeBonusPerSkillLevel>2</RangeBonusPerSkillLevel>
+  <AccurateRange>3</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>2</MaxAimTime>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>2</MinTimeBetweenFiring>
+</EquipmentPrototype>

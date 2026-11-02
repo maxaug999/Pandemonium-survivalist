@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Frying Pan</NativeName>
+  <NativeDescription>You can hit people with it, or maybe use it to fry eggs.</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>4</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Pan/Pan</EquippedModelName>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Restaurant</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>BluntObject</InjuryType>
+  <Damage>0.15</Damage>
+  <DamageBonusPerSkillLevel>0.03</DamageBonusPerSkillLevel>
+  <Range>1.5</Range>
+  <FatiguePenaltyWhenAttacking>0.1</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

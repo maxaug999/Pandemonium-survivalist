@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Ammo</TypeName>
+  <NativeName>Armor Piercing A.R. Ammo</NativeName>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>0.05</Weight>
+  <BasePrice>2</BasePrice>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ArmorPiercing>0.5</ArmorPiercing>
+  <DefaultCarryAmount>60</DefaultCarryAmount>
+</EquipmentPrototype>

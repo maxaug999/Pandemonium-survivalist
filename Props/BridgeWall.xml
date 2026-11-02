@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>BridgeWall</TypeName>
+  <NativeName>Bridge Wall</NativeName>
+  <Category>Town</Category>
+  <PrefabNames>
+    <string>Prefabs/Buildings/BridgeWall</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <CoverType>WaistHigh</CoverType>
+  <ExtentsMin>
+    <x>0</x>
+    <y>-4</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>0</x>
+    <y>4</y>
+  </ExtentsMax>
+  <CanBeDemolished>true</CanBeDemolished>
+</PropPrototype>

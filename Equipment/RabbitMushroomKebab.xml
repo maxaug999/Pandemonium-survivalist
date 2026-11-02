@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>RabbitMushroomKebab</NativeName>
+  <NativeDescription>Tasty piece of meat and mushrooms in a stick.</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>5</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.6</Nutrition>
+  <Tastiness>50</Tastiness>
+  <LootableFromLocations />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>8</SkillOnConsumptionProgression>
+</EquipmentPrototype>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-278.535522</x>
+    <y>-222.880615</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.470742822</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchPumpkinSeed_FetchingJob" x="-966.2071" y="-474.913422" NativeText="}:-( Farmer %1 is searching for a high yielding crop if you know something go talk to %2 ." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="FetchPumpkinSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_WantSeeds" x="-90.3260956" y="-876.3183" NativeText=":-| Do you know any high yield crop? a pumpkin? right! do you have any idea how to get some?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchPumpkinSeed_NoviceFarmer" />
+        <SpeechRef UniqueID="FetchPumpkinSeed_No" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="FetchPumpkinSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_NoviceFarmer" x="918.7551" y="-979.1985" NativeText=":-) Ok I gotchu fam!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchPumpkinSeed_Okey" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="Player" ObjectModifier="Community" Data="1" StringData="Farming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_No" x="956.567444" y="-1755.4834" NativeText=":-) Heh sorry I need them for halloween.">
+      <Replies>
+        <SpeechRef UniqueID="FetchPumpkinSeed_NotMuchUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_NotMuchUse" x="1834.53577" y="-1802.26782" NativeText=":-( But we got unlimited zombies and undead already!" />
+    <Speech UniqueID="FetchPumpkinSeed_Okey" x="1857.36829" y="-1018.84363" NativeText=":-| I need them asap! since If i'm not mistaken they take a while to grow.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchPumpkinSeed_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_GotSome" x="2938.90454" y="-747.2489" NativeText="}:-) Got em!" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchPumpkinSeed_WowNice" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchPumpkinSeed_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="20" StringData="PumpkinSeeds" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_WowNice" x="3825.336" y="-539.6634" NativeText="8-o Wow nice! I hope we still have enough time to grow them.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="50" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="20" StringData="PumpkinSeeds" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="FetchPumpkinSeed_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_HowToPlant" x="-462.723572" y="-2370.558" NativeText="Where do I find Pumpkin seeds?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchPumpkinSeed_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchPumpkinSeed_Fetch" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_Tip" x="428.79425" y="-2575.49219" NativeText="Hey your the one who suggested! I'm pretty sure there's someother community that have them I think.">
+      <Replies>
+        <SpeechRef UniqueID="FetchPumpkinSeed_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchPumpkinSeed_TipEnd" x="1376.61548" y="-2691.60327" NativeText=":-) Well then time to get going." />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="FetchPumpkinSeed_Fetch" x="927.441162" y="276.914368" GroupID="FetchPumpkinSeed_QuestGroup" NativeDescription="%1 wants you to gather them seeds.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="20" StringData="PumpkinSeeds" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchPumpkinSeed_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchPumpkinSeed_Return" x="1774.095" y="105.1393" GroupID="FetchPumpkinSeed_QuestGroup" NativeDescription="Take the seeds to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchPumpkinSeed_QuestGroup" x="18.8628922" y="-144.3215" NativeTitle="Fetch Seeds for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>17</NextFreeSpeechID>
+  <NextFreeTriggerID>6</NextFreeTriggerID>
+  <NextFreeConditionBlockID>9</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <EditorScrollPos>
+    <x>5754.924</x>
+    <y>629.3725</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.508640468</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="EncourageMC_Speech1" x="-10000.8623" y="-2116.35669" NativeText="{:-) You look distressed leader!" Situation="Opener" Importance="Low" RepeatTime="900">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_Speech2" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" BoolData="false">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="EncourageMC_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Speech2" x="-9140.347" y="-1979.28259" NativeText="{:-( Yeah.." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_Flirty" />
+        <SpeechRef UniqueID="EncourageMC_Sociopath" />
+        <SpeechRef UniqueID="EncourageMC_Loyal" />
+        <SpeechRef UniqueID="EncourageMC_Alcoholic" />
+        <SpeechRef UniqueID="EncourageMC_Immoral" />
+        <SpeechRef UniqueID="EncourageMC_Aggressive" />
+        <SpeechRef UniqueID="EncourageMC_Idealistic" />
+        <SpeechRef UniqueID="EncourageMC_Stupid" />
+        <SpeechRef UniqueID="EncourageMC_Joker" />
+        <SpeechRef UniqueID="EncourageMC_Friendly" />
+        <SpeechRef UniqueID="EncourageMC_Skeptical" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Flirty" x="-8949.441" y="3467.281" NativeText="{:-) You could use a hug." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="EncourageMC_I needed that" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="EncourageMC_I needed that" x="-8227.732" y="3382.068" NativeText="{:-) I needed that." Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Sociopath" x="-7307.49463" y="2864.031" NativeText="}:-) Don't you worry I'll dispose our enemies!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" BoolData="false" PriorityFactor="-25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_SociopathReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_SociopathReply" x="-6589.979" y="2630.55249" NativeText="{:-) Alright I'll be counting on you!" Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Loyal" x="-5181.806" y="2005.64221" NativeText="{:-) We'll support you no matter what!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_LoyalReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_LoyalReply" x="-4346.44336" y="1865.662" NativeText="{:-) Gee thanks!" Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Friendly" x="-2622.77612" y="-6617.61" NativeText="{:-) don't worry we got your back!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_FriendlyReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_FriendlyReply" x="-1789.738" y="-6711.713" NativeText="{:-) Now thats reassuring." Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Alcoholic" x="-4189.634" y="857.3848" NativeText="{:-) We need some booze to forget then!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" BoolData="false" PriorityFactor="25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_AlcoholicReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_AlcoholicReply" x="-3426.93457" y="1019.6358" NativeText="{:-) So where could we get one..?" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_AlcoholicReply2" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_AlcoholicReply2" x="-2699.2168" y="687.6196" NativeText="8-o Oh oh! ow..." Importance="Low" />
+    <Speech UniqueID="EncourageMC_Immoral" x="-2800.651" y="-95.1877747" NativeText=":-) You want me to strip naked?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Amoral" BoolData="false" PriorityFactor="-25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" BoolData="false" PriorityFactor="-25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_ImmoralReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_ImmoralReply" x="-2032.69238" y="-79.67059" NativeText="8-o I sure do!" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_ImmoralReply2" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_ImmoralReply2" x="-1237.45361" y="-523.6025" NativeText="8-o Oops..." Importance="Low" />
+    <Speech UniqueID="EncourageMC_Aggressive" x="-2677.97974" y="-1304.53955" NativeText=":-) We shall need to strike our foes first!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" BoolData="false" PriorityFactor="-25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_AggressiveReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_AggressiveReply" x="-1863.79749" y="-1359.17" NativeText="{:-) You think so?" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_AggressiveReply2" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_AggressiveReply2" x="-1788.235" y="-2316.4812" NativeText=":-) I know so!" Importance="Low" />
+    <Speech UniqueID="EncourageMC_Idealistic" x="-2539.26025" y="-2729.05664" NativeText=":-) I know Its tough but we need your leadership." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_IdealisticReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_IdealisticReply" x="-1718.38135" y="-2811.43018" NativeText="{:-) Maybe you're right." Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Stupid" x="-2529.397" y="-3751.138" NativeText="8-o I guessed that?! Am I getting smarter?!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" BoolData="false" PriorityFactor="-25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_StupidReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_StupidReply" x="-1730.4425" y="-3793.10327" NativeText=":-) No your getting dumber!" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_StupidReply2" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_StupidReply2" x="-1640.6499" y="-4679.4707" NativeText="8-o Whaaat......!" Importance="Low" />
+    <Speech UniqueID="EncourageMC_Joker" x="-2562.37378" y="-5094.379" NativeText=":-) And I know why.." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Serious" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_JokerReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_JokerReply3" x="-1702.01758" y="-5889.77051" NativeText=":-) Hehe I sure did!" Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_JokerReply2" x="-1709.34241" y="-5506.864" NativeText=":-) Because your INFECTED with problems!" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_JokerReply3" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_JokerReply" x="-1737.3938" y="-5136.92773" NativeText=":-( Why..." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_JokerReply2" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_Skeptical" x="-2561.5564" y="-7667.21729" NativeText="{:-) Maybe your just tired?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" BoolData="false" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" BoolData="false" PriorityFactor="-25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_SkepticalReply" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="EncourageMC_SkepticalReply" x="-1769.98682" y="-7706.4375" NativeText="}:-| Huh? But I just woke up..." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="EncourageMC_SkepticalReply2" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="EncourageLeader" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="EncourageMC_SkepticalReply2" x="-994.087341" y="-7922.907" NativeText="{:-) Then maybe your just hungry." Importance="Low" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="EncourageMC_ConditionBlock" x="-10911.3516" y="-1944.111">
+      <Conditions>
+        <Condition Type="KnowsName" Subject="Actor" Object="Target" BoolData="false" />
+        <Condition Type="IsDirectControlled" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" BoolData="false" />
+        <Condition Type="MoraleIsLessThan" Subject="Target" Data="-19" BoolData="false" />
+        <Condition Type="IsPlayer" Subject="Target" BoolData="false" />
+        <Condition Type="IsRefugeeCommunity" Subject="Actor" BoolData="false" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Actor" BoolData="false" Not="true" />
+        <Condition Type="IsTraderCommunity" Subject="Actor" BoolData="false" Not="true" />
+        <Condition Type="Or" BoolData="false">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="EncourageMC_Withdrawn" />
+            <ConditionBlockRef UniqueID="EncourageMC_NotWithdrawn" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="EncourageMC_NotWithdrawn" x="-12355.4453" y="-2600.13843">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" BoolData="false" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-40" BoolData="false" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="EncourageMC_Withdrawn" x="-12337.8857" y="-1783.68274">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" BoolData="false" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="70" BoolData="false" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+</Script>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Buster Sword</NativeName>
+  <NativeDescription>A Replica of a very Iconic sword, It is classified as an enormous broadsword. From tip to handle, it is approximately five to six feet long, weights around 15.4lbs and with a single-edged large blade approximately one foot wide. "by google"</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>15.4</Weight>
+  <BasePrice>50</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/bustersword.prefab</EquippedModelName>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.9</Damage>
+  <DamageBonusPerSkillLevel>0.18</DamageBonusPerSkillLevel>
+  <Range>2.8</Range>
+  <FatiguePenaltyWhenAttacking>0.135</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Snowcone</NativeName>
+  <NativeDescription>Its yummy and addicting</NativeDescription>
+  <Category>5:Food/Drink</Category>
+  <Col>
+    <r>255</r>
+    <g>80</g>
+    <b>255</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.08</BasePricePerFlOz>
+  <NutritionPerFlOz>0.015</NutritionPerFlOz>
+  <Tastiness>25</Tastiness>
+  <CanPourIntoBottles>true</CanPourIntoBottles>
+  <GiftFor>
+    <string>Likes Bland Food</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Likes Spicy Food</string>
+  </BadGiftFor>
+  <GiftAmount>50</GiftAmount>
+</LiquidPrototype>

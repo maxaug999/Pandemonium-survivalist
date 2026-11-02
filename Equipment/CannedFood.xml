@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Canned Food</NativeName>
+  <NativeDescription>Possibly still edible but well past its expiration date</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>1</Weight>
+  <BasePrice>2</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.75</Nutrition>
+  <Tastiness>-40</Tastiness>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+      <OverrideScarcity>Uncommon</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+      <OverrideScarcity>Uncommon</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Restaurant</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>3</TypicalLootAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>-10</SkillOnConsumptionProgression>
+</EquipmentPrototype>

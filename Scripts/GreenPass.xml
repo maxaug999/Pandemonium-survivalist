@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>9</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-22.1879272</x>
+    <y>3316.75977</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.6263151</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="GreenPass_WheresMine" x="597.08" y="-368.962067" NativeText="}:-| Where's my green pass?  I contribute as much as anyone to this community, I deserve one!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_WaitYourTurn" />
+        <SpeechRef UniqueID="GreenPass_DontWorry" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="GreenPass_TalkingToYou" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" SubjectModifier="Community" Data="1" StringData="GreenPass" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GreenPass_AllYourFriends" x="596.9459" y="1006.17932" NativeText="}:-| So you're giving out green passes to all your friends, huh?  Sure hope there'll be some left over for the rest of us.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_WaitYourTurn" />
+        <SpeechRef UniqueID="GreenPass_DontWorry" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="GreenPass_TalkingToYou" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" SubjectModifier="Community" Data="1" StringData="GreenPass" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GreenPass_Spare" x="597.989258" y="2330.6604" NativeText=":-) Nice job on the green passes, boss.  Any chance you got a spare one for me?  No?  That's cool, that's cool.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_WaitYourTurn" />
+        <SpeechRef UniqueID="GreenPass_DontWorry" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="GreenPass_TalkingToYou" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" SubjectModifier="Community" Data="1" StringData="GreenPass" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GreenPass_WorkedMyAssOff" x="601.0709" y="3893.85522" NativeText="}:-[ I've worked my ass off for this community, where's my damn green pass?  You better not be thinking of short-changing me.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_WaitYourTurn" />
+        <SpeechRef UniqueID="GreenPass_DontWorry" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="GreenPass_TalkingToYou" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" SubjectModifier="Community" Data="1" StringData="GreenPass" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GreenPass_Carrying" x="616.375244" y="5491.11035" NativeText="}:-| This green pass I'm carrying... is it for me?  When do I get mine?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_WaitYourTurn" />
+        <SpeechRef UniqueID="GreenPass_DontWorry" />
+      </Replies>
+      <NoReply>
+        <SpeechRef UniqueID="GreenPass_TalkingToYou" />
+      </NoReply>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" SubjectModifier="Community" Data="1" StringData="GreenPass" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" />
+        <Condition Type="HasNGiftedItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GreenPass_WaitYourTurn" x="2293.41431" y="4734.14063" NativeText="You're going to get one, just wait your turn.">
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_SameSide" />
+        <SpeechRef UniqueID="GreenPass_DontPlayFavourites" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="GreenPass_DontWorry" x="2304.77954" y="3107.05371" NativeText="Don't worry, I would never leave any of you behind.">
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_GoodToKnow" />
+        <SpeechRef UniqueID="GreenPass_YouWouldSayThat" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GreenPass_ConditionBlock_NeverLeaveYou" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="GreenPass_GoodToKnow" x="4263.36865" y="3560.928" NativeText="}:-| That's good to know, man.  We're all doing our best here." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="25" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GreenPass_YouWouldSayThat" x="4252.515" y="2387.34521" NativeText="}:-( Yeah right, well you would say that wouldn't you?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="25" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GreenPass_SameSide" x="4277.32471" y="5891.83057" NativeText="Hey it's all good, we're all on the same side." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="25" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GreenPass_DontPlayFavourites" x="4276.988" y="4778.13965" NativeText="}:-[ Don't play favourites if you want us to work for you!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="25" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GreenPass_Unfair" x="702.573059" y="-2631.26416" NativeText="}:-| Seems pretty unfair that you've got a green pass while some of us are still waiting for ours." Situation="Opener" Importance="Quest" RepeatTime="1800" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="-80" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Amoral" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="100" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="GreenPass_KeepItSafe" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="IsDirectControlled" Subject="Target" Not="true" />
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Actor" StringData="StealGreenPass" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Target" StringData="StolenGreenPass" Not="true" />
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="GreenPass" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" Not="true" />
+        <Condition Type="AreApparentlyAloneTogether" Subject="Actor" Object="Target" Data="6" />
+        <Condition Type="HasRecentMemory" Subject="Actor" Object="Target" ThirdParty="Actor" Data="1" StringData="ThreatenedSuccessfully" Not="true">
+          <ConditionBlocks />
+        </Condition>
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" Data="1" StringData="ThreatenedUnsuccessfully" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsTimerRunning" Subject="Actor" StringData="StealGreenPass" />
+        <Condition Type="IsTimerRunning" Subject="Target" StringData="StolenGreenPass" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="Target" StringData="GreenPass_Unfair" />
+        <StoryEvent Type="SetTimer" Subject="Actor" Data="600" StringData="StealGreenPass" />
+        <StoryEvent Type="SetTimer" Subject="Target" Data="600" StringData="StolenGreenPass" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="GreenPass_TalkingToYou" x="2987.3833" y="-481.3715" NativeText="}:-( Don't walk away from me when I'm talking to you!  %1!">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GreenPass_KeepItSafe" x="1794.7666" y="-4320.34131" NativeText="}:-| You ought to be more careful with that.  Lot of assholes out there who might want to steal it.  Give it to me so I can keep it safe." CanTalkOutOfRange="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <Replies>
+        <SpeechRef UniqueID="GreenPass_GiveItBack" />
+        <SpeechRef UniqueID="GreenPass_KiddingMe" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="GreenPass_GiveItBack" x="3184.12866" y="-3046.65039" NativeText="8-| Uh... okay.  But... you'll give it back, right?" CanTalkOutOfRange="true" SuccessfulResponse="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="50" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="GiveEquipment" Subject="Actor" Object="Target" Data="1" StringData="GreenPass" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="GreenPass_KiddingMe" x="3162.21167" y="-5002.397" NativeText="}:-[ Are you fucking kidding me?  No chance, go bother someone else." CanTalkOutOfRange="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="50" />
+        <Condition Type="Always" PriorityFactor="25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="GreenPass_ConditionBlock_NeverLeaveYou" x="3125.58765" y="2164.64966" Type="Or">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

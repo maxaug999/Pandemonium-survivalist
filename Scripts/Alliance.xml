@@ -1,0 +1,645 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>34</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>4547.10059</x>
+    <y>1512.64392</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.737741947</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Alliance_TeamUp" x="-594.332642" y="-1402.7384" NativeText="Let's team up." Situation="AskToJoinCommunity">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_LeaderDead" />
+        <SpeechRef UniqueID="Alliance_LikeTheIdea" />
+        <SpeechRef UniqueID="Alliance_NotDesperateEnough" />
+        <SpeechRef UniqueID="Alliance_Convince" />
+        <SpeechRef UniqueID="Alliance_AnyIdiot" />
+        <SpeechRef UniqueID="Alliance_StupidEnough" />
+        <SpeechRef UniqueID="Alliance_TalkToLeader" />
+        <SpeechRef UniqueID="Alliance_AnAsset" />
+        <SpeechRef UniqueID="Alliance_WhyWouldWe" />
+        <SpeechRef UniqueID="Alliance_PactWithOurEnemies" />
+        <SpeechRef UniqueID="Alliance_PactWithYourEnemies" />
+        <SpeechRef UniqueID="Alliance_NemesisWouldntApprove" />
+        <SpeechRef UniqueID="Alliance_Nemesis" />
+        <SpeechRef UniqueID="Alliance_Nemesis_Weakened" />
+        <SpeechRef UniqueID="Alliance_Nemesis_Admire" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Target" Data="2" />
+        <Condition Type="RankEquals" Subject="Target" StringData="Captive" Not="true" />
+        <Condition Type="IsAISettlement" Subject="Target" />
+        <Condition Type="CommunityHasAlliance" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_Convince" x="2359.05" y="3556.328" NativeText="}:-| What for?  It's %1 you've got to convince, %2's our leader.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_AnyIdiot" x="2356.315" y="2532.1748" NativeText="}:-| It's %1 decision, but we're not going to make an alliance with just any bunch of idiots!">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" Data2="10" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_StupidEnough" x="2364.853" y="1323.52563" NativeText="}:-[ I sure hope %1 wouldn't be stupid enough to make an alliance with you!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-40" Data2="20" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_TalkToLeader" x="2359.91919" y="110.783829" NativeText=":-) An alliance?  You want to talk to our leader, %1, about that.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="10" Data2="10" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_AnAsset" x="2356.5022" y="-1118.20911" NativeText=":-) I think you could be an asset but it's up to %1 ultimately.  Good luck!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="20" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_WhyWouldWe" x="2356.00684" y="-2406.625" NativeText="}:-| Why would we do that?">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_WorkingTogether" />
+        <SpeechRef UniqueID="Alliance_WithUsOrAgainst" />
+        <SpeechRef UniqueID="Alliance_Gold" />
+        <SpeechRef UniqueID="Alliance_IGotNothing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_WorkingTogether" x="3891.26221" y="373.241852" NativeText="We should be working together to keep our people safe.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_UniteOrDie" />
+        <SpeechRef UniqueID="Alliance_Appreciate" />
+        <SpeechRef UniqueID="Alliance_DoingOkay" />
+        <SpeechRef UniqueID="Alliance_NotTheRightPerson" />
+        <SpeechRef UniqueID="Alliance_AdmireYou" />
+        <SpeechRef UniqueID="Alliance_NotThatPopular" />
+        <SpeechRef UniqueID="Alliance_Useless" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Alliance_WithUsOrAgainst" x="3943.50952" y="-3242.873" NativeText="}:-) %1 will be the ultimate power in this area.  You're either with us... }:-[ or against us.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_Useless" />
+        <SpeechRef UniqueID="Alliance_InControl" />
+        <SpeechRef UniqueID="Alliance_DoubtIt" />
+        <SpeechRef UniqueID="Alliance_TakeYourThreatsElsewhere" />
+        <SpeechRef UniqueID="Alliance_MyAss" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_Gold" x="4063.21753" y="-6428.325" NativeText="Because I'm going to give you gold.  Lots of gold.  Name your price!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_Interesting" />
+        <SpeechRef UniqueID="Alliance_NotForSale" />
+        <SpeechRef UniqueID="Alliance_NotWellLiked" />
+        <SpeechRef UniqueID="Alliance_GettingUsInvolved" />
+        <SpeechRef UniqueID="Alliance_HaveDoubts" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Alliance_IGotNothing" x="3870.86816" y="-7926.803" NativeText=":-( Uh.. I got nothing." />
+    <Speech UniqueID="Alliance_UniteOrDie" x="5423.65527" y="6801.302" NativeText="You're right, we need to unite the settlements round here or we'll all eventually be killed off one by one." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="CommunityTypeEquals" Subject="Target" PriorityFactor="-150" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="-25" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="MadeAlliance" />
+        <StoryEvent Type="LeaveAllAlliances" Subject="Actor" />
+        <StoryEvent Type="FormAlliance" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Alliance_NotTheRightPerson" x="5419.98242" y="2824.3623" NativeText="}:-| You're hardly the right person to be talking about working together!">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" Data2="50" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_DoingOkay" x="5429.871" y="3912.31958" NativeText="We're doing okay by ourselves, thanks.  We don't need some stranger's help.">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" Data2="50" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" Data2="50" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_Appreciate" x="5427.86768" y="4866.442" NativeText="I appreciate what you're trying to do, but I can't risk involving my group in other people's fights.">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" Data2="50" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_InControl" x="5339.148" y="-2117.86865" NativeText="8-( Uh.. okay, we're with you then.  It's good to have someone in control, at least.  :-( I guess." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="CommunityTypeEquals" Subject="Target" PriorityFactor="-90" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-20" />
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="MadeAlliance" />
+        <StoryEvent Type="LeaveAllAlliances" Subject="Actor" />
+        <StoryEvent Type="FormAlliance" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Alliance_MyAss" x="5254.0293" y="-5270.6084" NativeText="8-) Hahaha!  'Ultimate power' my ass.">
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Alliance_TakeYourThreatsElsewhere" x="5250.12451" y="-4151.67627" NativeText="}:-[ You'd best take your threats somewhere else %1, we don't take kindly to that sort of thing here.">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Alliance_Interesting" x="5256.465" y="-6280.213" NativeText="Interesting... I'd join your alliance for %1 gold pieces.">
+      <Params>
+        <SpeechParam Type="PriceToSell" Subject="Actor" Object="Target">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Alliance_Formula_Price" />
+          </Formulas>
+        </SpeechParam>
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_FairPrice" />
+        <SpeechRef UniqueID="Alliance_DontHaveThat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Alliance_NotForSale" x="5260.38" y="-7094.225" NativeText="}:-| %1 is not for sale!">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_FairPrice" x="7172.755" y="-5783.06348" NativeText="That's a fair price.  Here's the gold.">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_Business" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CanAffordPrice" Subject="Actor" Object="Target">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Alliance_Formula_Price" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Sell" Subject="Target" Object="Actor">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Alliance_Formula_Price" />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ObjectModifier="Community" StringData="MadeAlliance" />
+        <StoryEvent Type="LeaveAllAlliances" Subject="Target" />
+        <StoryEvent Type="FormAlliance" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Alliance_DontHaveThat" x="7184.71875" y="-7539.59131" NativeText="I don't have that much on me.">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_ICanWait" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Alliance_ICanWait" x="8408.765" y="-7638.799" NativeText="}:-| I can wait.  No gold, no deal." />
+    <Speech UniqueID="Alliance_Business" x="8401.893" y="-5745.246" NativeText=":-) %1, I do believe this could be the beginning of a beautiful business arrangement.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Alliance_NotThatPopular" x="5406.414" y="342.5818" NativeText="}:-| I don't think so.  I don't mind you personally, but your gang ain't all that popular around here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_Useless" x="5375.248" y="-906.0087" NativeText="{:-| Not likely!  My people see your group as a bit.. uh, useless, I'm afraid.  Present company excepted!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_AdmireYou" x="5416.507" y="1958.86829" NativeText="Look man, I admire you personally, and I wish you the best, but I'm not so sure about %1.  And ultimately %2's your boss.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" SubjectModifier="Leader" BoolData="true" />
+        <SpeechParam Type="HeOrShe" Subject="Target" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" Object="Target" StringData="Leader" Not="true" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" ObjectModifier="Leader" Data="50" Not="true" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="50" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_NotWellLiked" x="5261.74561" y="-8298.669" NativeText="I like the sound of that gold but I'll have to pass.  Your group isn't well-liked around here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_GettingUsInvolved" x="5268.605" y="-9515.656" NativeText="The gold sounds nice but I don't think my people would thank me for getting us involved in %1 bullshit.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_DoubtIt" x="6114.229" y="-3510.87183" NativeText="With %1 as your leader?  I fucking doubt it!">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" SubjectModifier="Leader" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" Object="Target" StringData="Leader" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="50" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_HaveDoubts" x="5122.242" y="-10741.45" NativeText="Okay I like your gold, but I have my doubts about your leader, %1.  I just don't think I could follow %2.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" SubjectModifier="Leader" BoolData="true" />
+        <SpeechParam Type="HimOrHer" Subject="Target" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" Object="Target" StringData="Leader" Not="true" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" ObjectModifier="Leader" Data="50" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_PactWithOurEnemies" x="2244.46631" y="-3167.1875" NativeText="}:-| You already have a pact with our enemies, %1!" PerObjectType="PerEnemyCommunity">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="8" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunityHasAlliance" Subject="Target" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_NemesisWouldntApprove" x="2082.33374" y="-5451.63574" NativeText="}:-| %1 wouldn't approve of that.  Here's some free advice for you: don't get on their bad side!" PerObjectType="PerKnownCommunity">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="ReferringTo" />
+        <Condition Type="CommunityHasAlliance" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_Nemesis" x="2002.6698" y="-6483.467" NativeText="}:-[ Watch it buddy, we are the power in this area.  We decide what goes on here, not you!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="Actor" />
+        <Condition Type="CommunitySizeIsLargest" Subject="Actor" Object="Target" Data="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_Nemesis_Weakened" x="1974.20361" y="-7328.09668" NativeText="}:-( Don't think you can take this area from us!  We were here first, and we're not going to bow to some rival faction!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="Actor" />
+        <Condition Type="CommunitySizeIsLargest" Subject="Actor" Object="Target" Data="20" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_AnOffer" x="-602.647461" y="-3389.73779" NativeText=":-) Hey, what's up.  I represent %1 and I'm here to make you a fantastic offer!  We want an alliance with your group.  }:-| Together, we will rule this region and keep all the other groups in line!" Situation="Opener" RepeatTime="5" Run="true" SpecialBehaviour="IntroductionShakedown">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_WhyWouldWe" />
+        <SpeechRef UniqueID="Alliance_PactWithOurEnemies" />
+        <SpeechRef UniqueID="Alliance_PactWithYourEnemies" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="IsSquadLeader" Subject="Actor" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="RequestAlliance" />
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Alliance_FindingTarget" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SetSquadGoalAchieved" Subject="Actor" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Alliance_PactWithYourEnemies" x="2218.95239" y="-4238.068" NativeText="}:-| We're already aligned with %1 thanks, we don't need more alliances." PerObjectType="PerKnownCommunity">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="9" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunityHasAlliance" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_Nemesis_Admire" x="1873.22864" y="-8205.598" NativeText="{:-| Look, man, I like you, and I think you've got cojones, so I'm going to cut you some slack.  But we are %1 and we won't be the junior partner in any kind of deal.  Tell me, why would we do that?" SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="30" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_WorkingTogether" />
+        <SpeechRef UniqueID="Alliance_WithUsOrAgainst" />
+        <SpeechRef UniqueID="Alliance_Gold" />
+        <SpeechRef UniqueID="Alliance_IGotNothing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsNemesis" Subject="Actor" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunitySizeIsLargest" Subject="Target" Object="Actor" Data="20" />
+        <Condition Type="CommunitySizeIsLargest" Subject="Target" Object="Actor" Data="20" BoolData="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="195" Data2="100" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_NotDesperateEnough" x="2371.518" y="4875.65" NativeText="}:-| %1 may be dead but we're not desperate enough to make an alliance with you yet!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" Data2="10" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_LikeTheIdea" x="2362.89478" y="5829.863" NativeText="{:-| I like the idea of an alliance with you, but we'll need to pick a new leader before we can negotiate anything.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_LeaderDead" x="2364.2688" y="6990.43359" NativeText="{:-| We're still figuring out what happens now that our leader, %1, is gone.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Alliance_NotWorkingOut" x="-5973.15625" y="-2279.24634" NativeText="This alliance isn't working out." Situation="AskToJoinCommunity">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_SorryToHearThat" />
+        <SpeechRef UniqueID="Alliance_AllTheSameToMe" />
+        <SpeechRef UniqueID="Alliance_FeelingIsMutual" />
+        <SpeechRef UniqueID="Alliance_SomeInYourGroup" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader">
+          <ConditionBlocks />
+        </Condition>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="CommunityHasAlliance" Subject="Actor" Object="Target">
+          <ConditionBlocks />
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_SorryToHearThat" x="-4868.28955" y="-587.1439" NativeText="{:-( Shit %1, I'm sorry to hear you say that, I thought you were cool.  You sure you want to end this?">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_YesEndIt" />
+        <SpeechRef UniqueID="Alliance_SecondThoughts" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" Data2="50" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_AllTheSameToMe" x="-4856.67334" y="-1774.55566" NativeText="It's all the same to me I guess.  You sure?">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_YesEndIt" />
+        <SpeechRef UniqueID="Alliance_SecondThoughts" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Alliance_FeelingIsMutual" x="-4838.92236" y="-2542.94824" NativeText="}:-| Hey, the feeling is pretty fucking mutual.  I won't complain, if that's what you wanna do?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_YesEndIt" />
+        <SpeechRef UniqueID="Alliance_SecondThoughts" />
+      </Replies>
+      <NoReply />
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-50" Data2="50" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Alliance_YesEndIt" x="-3433.60083" y="-2137.35718" NativeText="Yes, let's end it.">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_SoBeIt" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Alliance_SecondThoughts" x="-3418.72" y="-2778.234" NativeText="On second thoughts, no.">
+      <Replies>
+        <SpeechRef UniqueID="Alliance_MakeUpYourMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Alliance_SoBeIt" x="-2306.77881" y="-2147.705" NativeText="So be it.">
+      <Events>
+        <StoryEvent Type="LeaveAlliance" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Alliance_MakeUpYourMind" x="-2305.1" y="-2797.09" NativeText="/:-| Geez, make up your mind." />
+    <Speech UniqueID="Alliance_SomeInYourGroup" x="-4837.95166" y="-3486.93433" NativeText="}:-| I wouldn't be sorry to see the back of some in your group.  But it's up to you.">
+      <Params />
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Alliance_YesEndIt" />
+        <SpeechRef UniqueID="Alliance_SecondThoughts" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" ObjectModifier="Community" Data="-50" Data2="50" Not="true" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Alliance_Formula_Price" x="6204.3584" y="-5783.329" Type="Sum">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Actor" PriorityFactor="50" />
+        <Condition Type="CommunityHasBuildingOfType" Subject="Actor" StringData="Mine" PriorityFactor="100" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Alliance_FindingTarget" x="-1618.29016" y="-4213.797" Type="Or">
+      <Conditions>
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="FindTarget" />
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="StopForWarmth" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

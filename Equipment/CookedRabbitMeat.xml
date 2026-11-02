@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cooked Rabbit Meat</NativeName>
+  <Category>5:Food/Meat</Category>
+  <Weight>2</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>2</Nutrition>
+  <Tastiness>20</Tastiness>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>32</SkillOnConsumptionProgression>
+</EquipmentPrototype>

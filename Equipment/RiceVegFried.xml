@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Veggie Fried Rice</NativeName>
+  <NativeDescription>Yum</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>1</Weight>
+  <BasePrice>7</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>1</Nutrition>
+  <Tastiness>50</Tastiness>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>6</SkillOnConsumptionProgression>
+</EquipmentPrototype>

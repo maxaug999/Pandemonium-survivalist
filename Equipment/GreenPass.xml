@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Anonymous Green Pass</NativeName>
+  <NativeDescription>Grants the bearer the right to settle in one of the last remaining FEMA Quarantine Zones.</NativeDescription>
+  <Category>9:Special</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <CanHitTheRoad>false</CanHitTheRoad>
+  <GiftFor>
+    <string>Anyone</string>
+  </GiftFor>
+  <GiftLimit>1</GiftLimit>
+  <TradeBehaviour>CantSellToAnyone</TradeBehaviour>
+</EquipmentPrototype>

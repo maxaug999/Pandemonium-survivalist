@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Toque</NativeName>
+  <NativeDescription>So you could skin a rabbit</NativeDescription>
+  <Category>4:Clothing/Hats</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>14</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>1</SightRangeModifier>
+  <ClothingType>Hat</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>PassengerPlane</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Restaurant</Name>
+      <OverrideScarcity>Uncommon</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>236</r>
+      <g>240</g>
+      <b>241</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaterialVariations>
+    <string>CowboyHat/Woven</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:CowboyHat</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:CowboyHat</FemaleMeshName>
+  <SkillBonusType>Cooking</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>TiltedProp</TypeName>
+  <NativeName>Ice Machine</NativeName>
+  <Category>Town/Props/Shop</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Icemachine</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0.5</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>10</MaxDamage>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <ExtentsMax>
+    <x>1</x>
+    <y>0</y>
+  </ExtentsMax>
+  <MaxYaw>0</MaxYaw>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>20</MaxInventoryWeight>
+  <LootLocation>Bin</LootLocation>
+  <CrouchToLoot>true</CrouchToLoot>
+  <RepairAnim>Crafting</RepairAnim>
+  <RepairResourceType>SteelIngot</RepairResourceType>
+  <RepairResourceNeeded>1</RepairResourceNeeded>
+  <SpawnWithBackAgainstBuilding>0.75</SpawnWithBackAgainstBuilding>
+  <Mass>300</Mass>
+</PropPrototype>

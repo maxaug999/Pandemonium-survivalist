@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>14</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>1243.1311</x>
+    <y>236.296753</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.8259613</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Dumped_NotWorkingOut" x="-1176.10413" y="-452.359619" NativeText="%1, it's not working out between us..." Situation="KickFromCommunity">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Dumped_WhatDoYouMean" />
+        <SpeechRef UniqueID="Dumped_ButWhy" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Dumped_WhatDoYouMean" x="-132.0774" y="-8.970505" NativeText="8-( Huh?  What do you mean?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Dumped_SomeoneElse" />
+        <SpeechRef UniqueID="Dumped_ItsNotYouItsMe" />
+        <SpeechRef UniqueID="Dumped_NotThePersonIThought" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Dumped_ButWhy" x="-132.526" y="-901.2141" NativeText="{:-| Oh, well this isn't exactly a surprise but.. what happened to us?">
+      <Replies>
+        <SpeechRef UniqueID="Dumped_SomeoneElse" />
+        <SpeechRef UniqueID="Dumped_ItsNotYouItsMe" />
+        <SpeechRef UniqueID="Dumped_NotThePersonIThought" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Dumped_SomeoneElse" x="991.4831" y="756.1179" NativeText="{:-| I've met someone else.">
+      <Replies>
+        <SpeechRef UniqueID="Dumped_HowCanAnyone" />
+        <SpeechRef />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Dumped_ItsNotYouItsMe" x="3122.28418" y="-312.2654" NativeText="{:-| I'm sorry.  It's not you, it's me.  I'm not in the right place for a relationship right now.  I just want to be friends.">
+      <Replies>
+        <SpeechRef UniqueID="Dumped_RespectYourWishes" />
+        <SpeechRef UniqueID="Dumped_AfterEverything" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Dumped_NotThePersonIThought" x="3334.33936" y="-3191.40454" NativeText="}:-| You're not the person I thought you were.  This whole thing was a big mistake.">
+      <Replies>
+        <SpeechRef UniqueID="Dumped_StillLoveYou" />
+        <SpeechRef UniqueID="Dumped_HowDareYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Dumped_RespectYourWishes" x="4788.57" y="1230.36377" NativeText="{:-| Oh.  Well, I respect your wishes.  You did the right thing by telling me in a mature way.  I'll always be here for you, hon." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Dumped" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedSuccessfully" />
+        <StoryEvent Type="SetRelationship" Subject="Target" Object="Actor" StringData="FriendsWith" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Dumped_StillLoveYou" x="4745.2373" y="-2638.586" NativeText="{:-( I can't believe this is happening.  Why would you say that?  I still love you.  I thought we had something." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Dumped" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="SetRelationship" Subject="Target" Object="Actor" StringData="Ex" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Dumped_HowDareYou" x="4741.00146" y="-4590.517" NativeText="8-[ How... dare you!  I'm not going to take this bullshit from you anymore!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Dumped" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+        <StoryEvent Type="SetRelationship" Subject="Target" Object="Actor" StringData="Ex" BoolData="true" />
+        <StoryEvent Type="RejoinInitialCommunity" Subject="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Dumped_AfterEverything" x="4771.845" y="-784.6619" NativeText="{:-( After everything we've been through?  This is too much for me to take in right now... I need some space.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="25" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Dumped" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedUnsuccessfully" />
+        <StoryEvent Type="SetRelationship" Subject="Target" Object="Actor" StringData="Ex" BoolData="true" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Dumped_HowCanAnyone" x="1962.921" y="974.996643" NativeText="{:-( How can anyone compare to what we have?">
+      <Replies>
+        <SpeechRef UniqueID="Dumped_PutYouThroughThis" />
+        <SpeechRef UniqueID="Dumped_CantLiveThisLie" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Dumped_PutYouThroughThis" x="3129.899" y="1180.93372" NativeText="{:-| I'm so sorry to have put you through this.  I still want to be friends.">
+      <Replies>
+        <SpeechRef UniqueID="Dumped_RespectYourWishes" />
+        <SpeechRef UniqueID="Dumped_AfterEverything" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Dumped_CantLiveThisLie" x="3095.576" y="433.2922" NativeText="}:-| What we have is bullshit!  I can't live this lie anymore!">
+      <Replies>
+        <SpeechRef UniqueID="Dumped_StillLoveYou" />
+        <SpeechRef UniqueID="Dumped_HowDareYou" />
+      </Replies>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

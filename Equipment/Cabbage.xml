@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cabbage</NativeName>
+  <Category>5:Food/Crops</Category>
+  <Weight>2</Weight>
+  <BasePrice>2</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.4</Nutrition>
+  <Tastiness>5</Tastiness>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>3</SkillOnConsumptionProgression>
+</EquipmentPrototype>

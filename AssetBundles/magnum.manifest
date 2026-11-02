@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 2757588129
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 66ce7105f814457394b08e0627aa7052
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9e4f53b885d9e3891083589bd2521812
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/MagnumFire2.wav
+- Assets/MagnumFire1.wav
+- Assets/3D Models/Props/Weapons/DWm715 FPS Model/Prefabs/DW_Set0.prefab
+- Assets/MagnumReloadInsert.wav
+- Assets/MagnumReloadSpin.wav
+- Assets/MagnumReloadRelease.wav
+Dependencies: []

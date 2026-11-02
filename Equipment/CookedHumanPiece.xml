@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cooked Suspicious Meat Piece</NativeName>
+  <NativeDescription>It smells delicious, but you're not exactly sure which... animal this came from.</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>5</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.75</Nutrition>
+  <Tastiness>30</Tastiness>
+  <ContainsHumanMeat>true</ContainsHumanMeat>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>8</SkillOnConsumptionProgression>
+</EquipmentPrototype>

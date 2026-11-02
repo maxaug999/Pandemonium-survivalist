@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Corn Soup</NativeName>
+  <NativeDescription>Soup made out of corn.</NativeDescription>
+  <Category>5:Food/Dishes</Category>
+  <Col>
+    <r>255</r>
+    <g>241</g>
+    <b>118</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.2</BasePricePerFlOz>
+  <NutritionPerFlOz>0.02</NutritionPerFlOz>
+  <Tastiness>30</Tastiness>
+  <GiftFor />
+  <BadGiftFor />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgressionPerFlOz>0.25</SkillOnConsumptionProgressionPerFlOz>
+</LiquidPrototype>

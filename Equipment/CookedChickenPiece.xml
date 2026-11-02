@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cooked Chicken Piece</NativeName>
+  <NativeDescription>Tastes like chicken!  Because it is chicken.</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>5</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.5</Nutrition>
+  <Tastiness>25</Tastiness>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>8</SkillOnConsumptionProgression>
+</EquipmentPrototype>

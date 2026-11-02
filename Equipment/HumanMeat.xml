@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>ThrowableFood</TypeName>
+  <NativeName>Human Meat</NativeName>
+  <NativeDescription>The meat of the so-called "long pig that speaks".  Can be thrown to distract the infected, who will find its fresh scent particularly appealing.</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>2</Weight>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>1.5</Nutrition>
+  <Tastiness>-80</Tastiness>
+  <ContainsHumanMeat>true</ContainsHumanMeat>
+  <EquippedModelName>Prefabs/Props/Gore/MeatChunk_01</EquippedModelName>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>-20</SkillOnConsumptionProgression>
+  <Range>16</Range>
+  <RangeBonusPerSkillLevel>2</RangeBonusPerSkillLevel>
+  <FatiguePenaltyWhenAttacking>0.05</FatiguePenaltyWhenAttacking>
+  <AccurateRange>3</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>2</MaxAimTime>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>2</MinTimeBetweenFiring>
+</EquipmentPrototype>

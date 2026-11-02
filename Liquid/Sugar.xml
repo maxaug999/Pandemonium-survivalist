@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Sugar</NativeName>
+  <Category>6:Crafting</Category>
+  <Col>
+    <r>255</r>
+    <g>255</g>
+    <b>255</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.5</BasePricePerFlOz>
+  <NutritionPerFlOz>0.001</NutritionPerFlOz>
+  <Tastiness>100</Tastiness>
+  <GiftFor />
+  <BadGiftFor />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+</LiquidPrototype>

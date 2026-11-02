@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Construction Boot's</NativeName>
+  <NativeDescription>Heavy duty boots</NativeDescription>
+  <Category>4:Clothing/Shoes</Category>
+  <Weight>3</Weight>
+  <BasePrice>16</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Shoes</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ZombieII</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>44</r>
+      <g>62</g>
+      <b>80</b>
+      <a>255</a>
+    </Color32>
+    <Color32>
+      <r>145</r>
+      <g>140</g>
+      <b>101</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2 />
+  <MaleMeshName>Male_Mill_All:Mill_boots</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Mill_boots</FemaleMeshName>
+  <Insulation>2</Insulation>
+  <SkillBonusType>Construction</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

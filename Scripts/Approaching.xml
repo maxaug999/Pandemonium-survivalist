@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>2</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-596.8681</x>
+    <y>3896.983</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.742509</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Approaching_Zombies_Small" x="785.752563" y="-323.062744" NativeText="}:-| There's a pack of %1 infected in my area." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="Strain" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterZombie" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Zombies" x="778.122" y="-1368.93665" NativeText="}:-| We've got radio reports of a pack of %1 infected approaching our base." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="Strain" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterZombie" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Zombies_Nervous" x="1593.25659" y="-334.423676" NativeText="8-| Oh shit, there's reports of a pack of %1 infected in this area." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="Strain" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterZombie" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Zombies_Bold" x="2375.498" y="-334.3612" NativeText="}:-) I hear there's a pack of %1 infected near this location.  Bring 'em on!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="Strain" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterZombie" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Zombies_Base_Nervous" x="1589.89685" y="-1385.53235" NativeText="8-| Oh shit, we've got radio reports of a pack of %1 infected approaching our base.  Stay safe!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="Strain" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterZombie" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Zombies_Base_Bold" x="2376.6228" y="-1392.14331" NativeText="}:-) Spotters are saying there's a pack of %1 infected approaching our base, let's get 'em!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Params>
+        <SpeechParam Type="Strain" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterZombie" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Raiders" x="771.9463" y="-2826.731" NativeText="}:-| There's a gang of raiders in my area." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterLooter" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Raiders_Base" x="764.315735" y="-3872.60474" NativeText="}:-| Raiders incoming!  They're approaching our base!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterLooter" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Raiders_Base_Nervous" x="1576.09058" y="-3889.20044" NativeText="8-| Oh my god there's a gang of raiders near our base." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterLooter" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Raiders_Nervous" x="1579.4502" y="-2838.0918" NativeText="8-| Jesus, we've got reports of raiders roaming around this area." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterLooter" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Raiders_Bold" x="2361.692" y="-2838.02954" NativeText="}:-) Raiders nearby!  Let's go kick their asses!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterLooter" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Raiders_Base_Bold" x="2362.81641" y="-3895.81152" NativeText="}:-) We're hearing radio reports of raiders close to our base!  Let's fuck 'em up." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterLooter" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Refugees_Base" x="775.102356" y="-9197.645" NativeText="There are reports of a group of refugees wandering near our base." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Refugees_Base_Friendly" x="1586.8772" y="-9214.24" NativeText=":-) Radio spotters are reporting a group of refugees heading for our base, maybe they'd like to join us?" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Refugees_Base_Withdrawn" x="2373.603" y="-9220.852" NativeText="}:-| There are reports of refugees in the vicinity of our base.  Let them pass through, we don't need more people." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Refugees_Withdrawn" x="2372.47852" y="-8163.07031" NativeText="}:-| There's some refugees passing through here, they're not hostile though so let's just leave them be." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Refugees_Friendly" x="1590.23682" y="-8163.13232" NativeText=":-) I hear there's a group of refugees nearby.  Should we go over and say hi?" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Refugees" x="782.7329" y="-8151.772" NativeText="There's a group of refugees in my area." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Trader" x="780.676" y="-10741.8789" NativeText="I've heard there's a trader on this route." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingTrader" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Trader_Base" x="784.9741" y="-11589.4395" NativeText="We're getting reports of a trading party near our base." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingTrader" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Mercs_Base" x="790.680237" y="-6687.58838" NativeText="}:-| Mercenaries incoming!  They're approaching our base!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterMercenary" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Mercs_Base_Nervous" x="1602.45532" y="-6704.184" NativeText="8-| Oh my god there's a band of mercs heading straight for our base." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterMercenary" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Mercs_Base_Bold" x="2389.18115" y="-6710.795" NativeText="}:-| That group of mercenaries is closing in on our base.  We can take them, come on!" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterMercenary" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Mercs" x="760.3552" y="-5548.951" NativeText="}:-| There are mercenaries operating in this area." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterMercenary" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Mercs_Nervous" x="1567.85913" y="-5560.31152" NativeText="8-| Look out everyone, those mercenaries are somewhere nearby." Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterMercenary" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Approaching_Mercs_Bold" x="2350.10156" y="-5560.24951" NativeText="}:-) We've got mercs moving through here!  Shall we ambush them?" Situation="InvadersApproaching" Importance="InvadersApproaching">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="HunterMercenary" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsAlive" Subject="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

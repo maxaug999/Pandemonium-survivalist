@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Portable Campfire</NativeName>
+  <Category>6:Crafting</Category>
+  <Weight>2.5</Weight>
+  <BasePrice>10</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <LootableFromLocations />
+</EquipmentPrototype>

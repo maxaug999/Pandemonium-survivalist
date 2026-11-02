@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Pistol</TypeName>
+  <NativeName>Machine Pistol</NativeName>
+  <NativeDescription>Semi-Automatic Pistol ; uses pistol ammo</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>3</Weight>
+  <BasePrice>50</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>Prefabs/Equipment/Pistol/Low_Poly_153</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+      <OverrideScarcity>Legendary</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Bullet</InjuryType>
+  <Damage>0.2</Damage>
+  <DamageBonusPerSkillLevel>0.04</DamageBonusPerSkillLevel>
+  <Range>20</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>0.75</MaxAimTime>
+  <MinHeadAimTime>0.4</MinHeadAimTime>
+  <MaxHeadAimTime>1</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>0.75</MaxLegsAimTime>
+  <Recoil>0.2</Recoil>
+  <AimPenaltyWhenMoving>0.125</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.15</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>PistolAmmo</string>
+  </AmmoTypes>
+  <MaxAmmo>33</MaxAmmo>
+  <ReloadReleaseSounds>
+    <string>Sounds\Equipment\Pistol\colt_release</string>
+  </ReloadReleaseSounds>
+  <ReloadInsertSounds>
+    <string>Sounds\Equipment\Pistol\colt_insert</string>
+  </ReloadInsertSounds>
+  <ReloadSlideSounds>
+    <string>Sounds\Equipment\Pistol\colt_slide</string>
+  </ReloadSlideSounds>
+</EquipmentPrototype>

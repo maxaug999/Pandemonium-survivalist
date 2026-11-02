@@ -1,0 +1,1357 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>36</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>5</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>2</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2808.018</x>
+    <y>68.82744</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5664435</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="GossipAbout_Aggressive" x="329.49176" y="-425.1434" NativeText="Stay away from %1 if %2's in a bad mood... }:-| Jesus, what a %3." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="BastardOrBitch" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Aggressive" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Alcoholic" x="1110.365" y="3456.50439" NativeText="Saw %1 drinking again... }:-| %2 needs to lay off that booze if you ask me." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Alcoholic_UhHuh" />
+        <SpeechRef UniqueID="GossipAbout_Alcoholic_StayAlert" />
+        <SpeechRef UniqueID="GossipAbout_Alcoholic_YouLayOff" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Alcoholic" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_AlcoholicShare" x="1060.82153" y="6712.481" NativeText="Saw %1 drinking again... :-) %2 needs to share that booze around more if you ask me." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_AlcoholicShare_IGuess" />
+        <SpeechRef UniqueID="GossipAbout_AlcoholicShare_ShareItAround" />
+        <SpeechRef UniqueID="GossipAbout_AlcoholicShare_Problem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Alcoholic" />
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Alcoholic" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Stupid" x="2099.98657" y="-414.369324" NativeText="%1 is such an idiot!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Stupid" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Loyal" x="2943.38159" y="-418.8635" NativeText="%1 is a solid %2 - %3'll stick with us." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="GuyOrChick" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Loyal" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Fickle_Like" x="3838.949" y="-439.477539" NativeText="%1 is okay but I wouldn't rely on %2 - when the shit hits the fan %3'll be outta here." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Fickle" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" Data="0.5" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Fickle_Dislike" x="3827.29272" y="-2738.074" NativeText="}:-| %1 will abandon us at the first sign of trouble." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Fickle" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Leader_Admire" x="4789.15137" y="-26.0138931" NativeText=":-) %1 is a good leader, I think %2's doing a great job." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="ReferringTo" StringData="Leader" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data2="90" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="ReferringTo" Data="10" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Leader_Pity" x="4795.364" y="-2296.315" NativeText="%1 is a nice %2 but :-( %3 isn't a great leader." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="GuyOrChick" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="ReferringTo" StringData="Leader" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="90" Data2="180" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="ReferringTo" Data="10" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Leader_Despise" x="4795.26953" y="-4739.953" NativeText="}:-| %1 is such a useless leader." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="ReferringTo" StringData="Leader" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="180" Data2="270" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="ReferringTo" Data="10" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Leader_Fear" x="4802.86035" y="-6944.39648" NativeText=":-[ %1 may be a %2 but %3 runs a tight ship..." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="BastardOrBitch" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="ReferringTo" StringData="Leader" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="270" Data2="360" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="ReferringTo" Data="10" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Leader" x="4798.86328" y="-9416.048" NativeText="%1 makes the decisions around here and  I guess I'm fine with that." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="ReferringTo" StringData="Leader" />
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="ReferringTo" Data="10" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Bold" x="5765.68164" y="-405.3815" NativeText="}:-| %1 will fight anyone... even if it's not the smart move." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Bold" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Nervous" x="6671.994" y="-414.369659" NativeText="}:-| %1 runs away at the first sign of trouble." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Nervous" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Fickle" x="3897.62964" y="1693.64758" NativeText="%1 would leave us without a second thought.." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Fickle" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="10" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Normie_Nerd" x="5187.784" y="7523.3335" NativeText="}:-| I tried to read one of %1 comic books the other day but, man, I really don't understand that space lizard shit at all." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_Each" />
+        <SpeechRef UniqueID="GossipAbout_Calypso_Twelve" />
+        <SpeechRef UniqueID="GossipAbout_Calypso_SmartEnough" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Nerd" />
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Normie" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Nerd_Nerd" x="4877.47363" y="5485.06738" NativeText="%1 thinks 'Empress' is the best of Calypso series... }:-) %2'll learn!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_Original" />
+        <SpeechRef UniqueID="GossipAbout_Calypso_Witches" />
+        <SpeechRef UniqueID="GossipAbout_Calypso_StupidBullshit" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Nerd" />
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Nerd" />
+        <Condition Type="IsOlderThan" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Nerd_Nerd2" x="4864.78467" y="2940.59448" NativeText="%1 thinks 'Witches' is the pinnacle of Calypso series... }:-| what a joke!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_Original" />
+        <SpeechRef UniqueID="GossipAbout_Calypso_Empress" />
+        <SpeechRef UniqueID="GossipAbout_Calypso_StupidBullshit" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Nerd" />
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Nerd" />
+        <Condition Type="IsOlderThan" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Nerd_Normie" x="5231.953" y="11704.2266" NativeText="I guess if I'm really desperate I might read one of those Dickerson novels that %1 likes.. {:-( ugh, kill me now." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Dickerson_DesperateTimes" />
+        <SpeechRef UniqueID="GossipAbout_Dickerson_ZombieFiction" />
+        <SpeechRef UniqueID="GossipAbout_Dickerson_Favor" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Normie" />
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Nerd" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Normie_Normie" x="5185.78271" y="14712.9473" NativeText=":-) At least %1 is easy to talk to.. %2 likes the same detective books I do." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Dickerson_Nice" />
+        <SpeechRef UniqueID="GossipAbout_Dickerson_Taste" />
+        <SpeechRef UniqueID="GossipAbout_Dickerson_Trash" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Normie" />
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Normie" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Credulous_Like" x="9398.979" y="-427.9253" NativeText="{:-| %1 is too trusting... people can exploit that." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Credulous" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Credulous_Dislike" x="9392.746" y="-2477.42285" NativeText="}:-| %1 will believe anything... idiot." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Credulous" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Skeptical_Like" x="10265.2754" y="-427.338776" NativeText="%1 won't trust you unless %2 knows you well." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Skeptical" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Skeptical_Dislike" x="10264.55" y="-2138.546" NativeText="}:-| It's impossible to get through to %1, %2 doesn't trust anyone." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Skeptical" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutCommunity_Couple" x="11194.251" y="-0.0387420654" NativeText=":-) %1 and %2 are a great couple." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" SubjectModifier="Partner" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPartner" Subject="ReferringTo" />
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" StringData="InLoveWith" Not="true" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" StringData="InLoveWith" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Partner" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Partner" />
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="ReferringTo" ThirdParty="ReferringTo" ThirdPartyModifier="Partner" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutCommunity_TooGood" x="11210.76" y="-3396.81982" NativeText="{:-| %1 [listener(1)?are:is] too good for %2!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" SubjectModifier="Partner" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPartner" Subject="ReferringTo" />
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Partner" />
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="ReferringTo" ThirdParty="ReferringTo" ThirdPartyModifier="Partner" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutCommunity_TooGood2" x="11215.7373" y="-6289.69629" NativeText="{:-| %1 [listener(1)?are:is] too good for %2!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNameActive" Subject="ReferringTo" SubjectModifier="Partner" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPartner" Subject="ReferringTo" />
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" StringData="Praised" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Partner" />
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="ReferringTo" ThirdParty="ReferringTo" ThirdPartyModifier="Partner" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutCommunity_CoupleSuck" x="11226.875" y="-9162.496" NativeText="}:-| %1 and %2 are such an awful couple!  Well, [listener(1)|listener(2)?you:they] deserve each other." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" SubjectModifier="Partner" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPartner" Subject="ReferringTo" />
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Partner" />
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="ReferringTo" ThirdParty="ReferringTo" ThirdPartyModifier="Partner" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Alcoholic_YouLayOff" x="2196.556" y="1602.75317" NativeText="}:-| Maybe you should lay off %1!" Importance="Low">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="ReferringTo" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Alcoholic_ShootStraight" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Contradicted" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Supported" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Alcoholic_StayAlert" x="2201.89722" y="3379.90381" NativeText="Damn right, we've all got to stay alert.  %1's being irresponsible!" Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" PriorityFactor="50" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Alcoholic_Yeah" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Supported" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Alcoholic_UhHuh" x="2202.95386" y="3658.63843" NativeText="Uh huh." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Alcoholic_Yeah" x="3197.20386" y="3164.473" NativeText=":-) Yeah!  Glad you're with me on this." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Alcoholic_ShootStraight" x="3189.54858" y="2183.91528" NativeText="}:-| If someone gets eaten because %1 can't shoot straight, that's on %2... and anyone who enabled %3!" Importance="Low">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Contradicted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_AlcoholicShare_Problem" x="2189.74878" y="5627.84131" NativeText="}:-| Sounds like you both have a problem." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_AlcoholicShare_TheOnlyProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GossipAbout_AlcoholicShare_Moral" />
+            <ConditionBlockRef UniqueID="GossipAbout_AlcoholicShare_Hypocritical" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Insulted" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_AlcoholicShare_TheOnlyProblem" x="3260.23926" y="5314.337" NativeText="}:-| The only problem I got is you!" Importance="Low">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Contradicted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_AlcoholicShare_ShareItAround" x="2199.17285" y="7156.29" NativeText=":-) You deserve a little drink now and then after how hard you've been working for this camp." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_AlcoholicShare_SureDo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_AlcoholicShare_SureDo" x="3273.20557" y="6666.108" NativeText="{:-) I sure do!" Importance="Low" />
+    <Speech UniqueID="GossipAbout_AlcoholicShare_IGuess" x="2186.84814" y="7418.00928" NativeText="Sure, I guess." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Calypso_Original" x="6632.785" y="5254.276" NativeText="I like the original best." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_ItsFine" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Calypso_ItsFine" x="7618.83" y="5196.06543" NativeText="Sure it's fine I guess.  But the ending was unrealistic.  There's no way she could have done that with her tail." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Calypso_Witches" x="6631.03369" y="4852.42139" NativeText="What a fool!  People with taste such as ourselves know it's 'Witches', obviously." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_Obviously" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Complimented" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Calypso_Obviously" x="7730.19434" y="3607.41235" NativeText="}:-| Obviously!" Importance="Low" />
+    <Speech UniqueID="GossipAbout_Calypso_Empress" x="6641.272" y="3376.144" NativeText="%1 doesn't know anything.  Intelligent people such as ourselves know it's 'Empress', obviously." Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_Obviously" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Complimented" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Calypso_StupidBullshit" x="6625.6167" y="1726.54651" NativeText="Is that those crappy young adult books with the lizards who are training to be wizards?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_Noted" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Normie" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Calypso_Noted" x="7714.593" y="1430.04883" NativeText="}:-| We don't talk about 'Wizards'." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Calypso_SmartEnough" x="6616.33" y="6805.796" NativeText="}:-| It's an allegory for late stage capitalism.  You have to be able to understand subtext." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_ThosePeople" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Insulted" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Supported" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Calypso_Twelve" x="6617.361" y="8497.357" NativeText="It's all just boobs and talking lizards and space battles.  %1 should try to find some proper literature." Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Calypso_Exactly" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Normie" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Supported" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Calypso_Each" x="6615.648" y="8845.009" NativeText="Each to their own." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Calypso_ThosePeople" x="7668.899" y="6446.051" NativeText="}:-| Oh, you're one of those people I guess." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Calypso_Exactly" x="7684.9" y="8134.111" NativeText=":-) Exactly." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Dickerson_Favor" x="6593.616" y="10259.0049" NativeText="I'd be doing the world a favor." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Dickerson_StayAway" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Insulted" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Supported" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Dickerson_DesperateTimes" x="6591.49463" y="12411.1094" NativeText="I'll try to find you something more to your taste." Importance="Low">
+      <Conditions>
+        <Condition Type="IsDirectControlled" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Dickerson_StayAway" x="7689.621" y="10290.6514" NativeText="8-| Stay away from me." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Dickerson_ZombieFiction" x="6586.55273" y="11853.082" NativeText="%1 has terrible taste but at least it's not zombie fiction." Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Dickerson_Yeah" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Supported" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Dickerson_Yeah" x="7695.612" y="11572.95" NativeText=":-) Fuck, yeah." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Dickerson_Trash" x="6588.661" y="13892.8994" NativeText=":-) That's cute, you both like the same trash." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Dickerson_Attitude" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Insulted" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Dickerson_Attitude" x="7683.9624" y="13484.6289" NativeText="}:-| You're not going to make many friends around here with that attitude." Importance="Low" />
+    <Speech UniqueID="GossipAbout_Dickerson_Taste" x="6589.791" y="15276.1953" NativeText=":-) A %1 of taste I see - Dickerson is my fave author." Importance="Low">
+      <Params>
+        <SpeechParam Type="ManOrWoman" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAbout_Dickerson_GetAlong" />
+        <SpeechRef UniqueID="GossipAbout_Dickerson_NotSoBad" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Normie" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Dickerson_GetAlong" x="7688.988" y="15241.9629" NativeText=":-) I can see we're going to get along!" Importance="Low">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Dickerson_NotSoBad" x="7681.67236" y="14665.915" NativeText="Maybe you're not so bad." Importance="Low">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Dickerson_Nice" x="6588.71338" y="15624.7246" NativeText="That's nice." Importance="Low" />
+    <Speech UniqueID="GossipAbout_GayMale" x="7554.154" y="-99.01996" NativeText="One of the refugee women was trying to attract %1 attention.  I don't think she's his type!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Homosexual" />
+        <Condition Type="IsMale" Subject="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Confided" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_GayFemale" x="8362.526" y="-109.066071" NativeText="}:-| One of the refugee guys kept trying to chat %1 up.  :-) She wasn't interested, obviously!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Homosexual" />
+        <Condition Type="IsFemale" Subject="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Confided" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_BiMale" x="7561.54541" y="-1942.036" NativeText="I heard %1 had a fling with a guy who came through here last month.  Yeah I'm here for all your gossip needs!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Bisexual" />
+        <Condition Type="IsMale" Subject="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Confided" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_BiFemale" x="8337.697" y="-1951.76807" NativeText="I heard %1 had a thing with a woman who guards one of the traders a few months back.  It's like this big secret or something so you didn't hear it from me!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Bisexual" />
+        <Condition Type="IsFemale" Subject="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Confided" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Jealous_Like" x="12104.4258" y="-502.791382" NativeText=":-) %1 really doesn't like to lose out when dividing up rations." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Jealous" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="10" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Jealous_Dislike" x="12107.5361" y="-2288.25146" NativeText="}:-| Man, if you get a little extra rations and %1 doesn't, you better prepare for trouble." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Jealous" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="10" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Unpossessive_Like" x="12963.5957" y="-28.5239487" NativeText=":-) %1 gave me some of %2 rations the other day." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Unpossessive" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Unpossessive_Dislike" x="12964.9971" y="-2274.99756" NativeText="}:-| %1 offered to share %2 rations with me the other day, I said no thanks I've got mine!  What does %3 want?  I call it needy!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Unpossessive" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutCommunity_CoupleDead" x="11188.623" y="3480.28" NativeText="{:-( %1 and %2 were a great couple." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="ReferringTo" SubjectModifier="Partner" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPartner" Subject="ReferringTo" />
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" StringData="InLoveWith" Not="true" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" StringData="InLoveWith" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GossipAboutCommunity_ConditionBlock_OneOfCoupleIsDead" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" ObjectModifier="Partner" StringData="Praised" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Partner" />
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="ReferringTo" ThirdParty="ReferringTo" ThirdPartyModifier="Partner" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Emotional" x="1199.59143" y="-24.7121964" NativeText="{:-| %1 is too sensitive sometimes... %2 really gets affected by things." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Emotional" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Bipolar" x="1188.66187" y="-1944.67358" NativeText="}:-| %1 wild mood swings are a bit much to have to deal with." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Bipolar" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Unflappable" x="1180.08081" y="-3886.49854" NativeText="}:-| %1 rarely seems bothered by anything.  %2's kind of cold if you ask me." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Unflappable" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" Not="true" />
+        <Condition Type="IsDepressed" Subject="ReferringTo" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_NotAppropriate" x="-660.646545" y="-416.141571" NativeText="%1 jokes around too much.  It's not appropriate." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Serious" />
+        <Condition Type="HasPersonality" Subject="ReferringTo" StringData="Joker" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" Secrecy="IgnoredByThirdParty" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAbout_Fickle2" x="3893.38672" y="3690.21167" NativeText="}:-| If %1 says %2'll do something, you can rest assured it won't get done." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="ReferringTo" StringData="Fickle" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="GossipAbout_AlcoholicShare_Moral" x="3249.61328" y="4622.04639">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="GossipAbout_AlcoholicShare_Hypocritical" x="3250.871" y="4264.95752">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="GossipAboutCommunity_ConditionBlock_OneOfCoupleIsDead" x="12063.7139" y="1010.84729" Type="Or">
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Partner" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

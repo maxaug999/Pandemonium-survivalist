@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Book</TypeName>
+  <NativeName>Detective Novel</NativeName>
+  <NativeDescription>"The Case Of The Clandestine Jellyfish" by Denny Dickerson</NativeDescription>
+  <Category>8:Books/Novel</Category>
+  <Gender>Male</Gender>
+  <IsProperNoun>true</IsProperNoun>
+  <Weight>1</Weight>
+  <BasePrice>10</BasePrice>
+  <EquippedModelName>Prefabs/Equipment/book</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>PassengerPlane</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>BookStore</Name>
+      <OverrideScarcity>Uncommon</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor>
+    <string>Normie</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Nerd</string>
+  </BadGiftFor>
+</EquipmentPrototype>

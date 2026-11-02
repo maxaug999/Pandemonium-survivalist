@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>29</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>4597.31055</x>
+    <y>114.44603</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.692692935</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Election_NewLeader" x="-5724.92725" y="58.8372955" NativeText="{:-| Now that %1 is gone, we need a new leader." Situation="QuestTopic" RepeatTime="600">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Election_ShouldBeYou" />
+        <SpeechRef UniqueID="Election_YouCameToMe" />
+        <SpeechRef UniqueID="Election_SomeoneInMind" />
+        <SpeechRef UniqueID="Election_ImGuessing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="VotedFor" Subject="Target" Object="Actor" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Election_ShouldBeMe" x="1944.0033" y="-571.1242" NativeText="{:-| I think it should be me.  I'll make sure everyone is looked after.  Do I have your vote?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_OfCourse" />
+        <SpeechRef UniqueID="Election_PreferSomeoneElse" />
+        <SpeechRef UniqueID="Election_LookAfterYourself" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Election_CrushOurEnemies" x="1868.34473" y="2958.07129" NativeText="}:-[ I'll be a strong leader.  Under me, we'll crush our enemies and you won't have anything to fear!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_StrengthThroughFear" />
+        <SpeechRef UniqueID="Election_WorkingTogether" />
+        <SpeechRef UniqueID="Election_Disaster" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Election_TheWrongHorse" x="1782.092" y="6728.97" NativeText="}:-| It's going to be me, so you should support me.  There might be consequences for backing the wrong horse!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="40" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_Yessir" />
+        <SpeechRef UniqueID="Election_TryThatShit" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Election_SomethingForYou" x="1990.40894" y="-3766.47974" NativeText=":-) Can I count on your support?  There might be a little something in it for you!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Amoral" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_AcceptBribe" />
+        <SpeechRef UniqueID="Election_RefuseBribe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+        <Condition Type="HasGiftableItems" Subject="Actor" Data="1" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Election_TooDifficult" x="2152.61865" y="-7095.992" NativeText=":-( It sounds like a difficult job, I don't want it.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_NominatingYou" />
+        <SpeechRef UniqueID="Election_ThatCountsForMe" />
+        <SpeechRef UniqueID="Election_SomeKindOfIdiot" />
+        <SpeechRef UniqueID="Election_Responsibility" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Election_OfCourse" x="3502.81836" y="1020.84912" NativeText=":-) Of course!  I know you'll do a good job." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Supported" />
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_PreferSomeoneElse" x="3531.50952" y="-684.0767" NativeText="}:-| I don't think you're gonna be able to take the tough decisions.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="40" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Contradicted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_LookAfterYourself" x="3532.35718" y="-2175.775" NativeText="{:-| You can't even look after yourself!">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="-20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_StrengthThroughFear" x="3472.77563" y="5207.179" NativeText="That's what we need - strength through fear!" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Supported" />
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_WorkingTogether" x="3481.23853" y="3560.22559" NativeText="}:-| We should be working together with the other survivors to solve our common problems.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Contradicted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_Disaster" x="3495.13379" y="2208.29956" NativeText="{:-| You're even more crazy than you are stupid!  You'd lead us to disaster!">
+      <PriorityTerms>
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_Yessir" x="3465.3855" y="8058.977" NativeText="8-( I.. uh.. yes, %1." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="40" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_TryThatShit" x="3463.65747" y="6590.66846" NativeText="}:-[ I'll show you consequences if you try that shit on me!">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="30" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_AcceptBribe" x="3541.72266" y="-3409.72949" NativeText="8-) Like what kind of something?" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_LetMeSee" />
+        <SpeechRef UniqueID="Election_Friendship" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Election_RefuseBribe" x="3544.19482" y="-4574.66162" NativeText="}:-| You can't buy my vote.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="40" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="StoodUpTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_LetMeSee" x="4672.80029" y="-3491.82886" NativeText="Let me see what I've got..." SpecialBehaviour="OfferGift" />
+    <Speech UniqueID="Election_Friendship" x="4669.94043" y="-4001.06055" NativeText="My friendship.">
+      <Replies>
+        <SpeechRef UniqueID="Election_WantedAPresent" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Election_WantedAPresent" x="5832.07471" y="-4044.718" NativeText=":-( Oh.. I thought you meant like a present or something." />
+    <Speech UniqueID="Election_Thoughtful" x="6946.37549" y="-2638.60864" NativeText=":-) How thoughtful!  You've definitely got my vote!" Situation="ReceiveGiftLike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_SupportYou" x="6943.34766" y="-3986.07" NativeText="Alright, I'll support you." Situation="ReceiveGiftNeutral">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_NotWhatIHadInMind" x="6949.06934" y="-5314.93555" NativeText=":-( This isn't really what I had in mind." Situation="ReceiveGiftDislike">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_ThatMeansItsMe" x="8804.215" y="-2808.602" NativeText="Alright!  That means I'm the leader!" Situation="ElectionVictory" MustFinish="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="Election_IronFist" />
+        <SpeechRef UniqueID="Election_SoHappy" />
+        <SpeechRef UniqueID="Election_NotInVain" />
+        <SpeechRef UniqueID="Election_Cool" />
+        <SpeechRef UniqueID="Election_EveryoneWelcome" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Election_NominatingYou" x="3733.573" y="-6177.242" NativeText="The only suitable person to be a leader is someone who absolutely doesn't want to be, so I'm nominating you!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="VoteFor" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_Win" x="8788.024" y="-3867.51465" NativeText=":-) Okay I got %1 votes to %2 %3, so I win!" Situation="ElectionVictory" MustFinish="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="VoteCount" Subject="Actor" />
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+        <SpeechParam Type="VoteCount" Subject="ReferringTo" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="Election_IronFist" />
+        <SpeechRef UniqueID="Election_SoHappy" />
+        <SpeechRef UniqueID="Election_NotInVain" />
+        <SpeechRef UniqueID="Election_TheOnesThatVotedForMe" />
+        <SpeechRef UniqueID="Election_Cool" />
+        <SpeechRef UniqueID="Election_EveryoneWelcome" />
+      </Continues>
+      <Conditions>
+        <Condition Type="Exists" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Election_NewLeaderAI" x="-4327.111" y="-1917.70837" NativeText="{:-| Now that %1 is gone, we need a new leader." Situation="Opener" RepeatTime="600">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="Election_TheWrongHorse" />
+        <SpeechRef UniqueID="Election_CrushOurEnemies" />
+        <SpeechRef UniqueID="Election_ShouldBeMe" />
+        <SpeechRef UniqueID="Election_SomethingForYou" />
+        <SpeechRef UniqueID="Election_TooDifficult" />
+      </Continues>
+      <Conditions>
+        <Condition Type="TimeSinceDeathIsAtLeast" Subject="Actor" SubjectModifier="Leader" Data="1" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Election_HasElections" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="VotedFor" Subject="Target" Object="Actor" Not="true" />
+        <Condition Type="VotedFor" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="VotePlacingIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="Contradicted" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="Insulted" Not="true" />
+        <Condition Type="HasMemory" Subject="Target" Object="Actor" ThirdParty="Target" StringData="ThreatenedUnsuccessfully" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Election_SoHappy" x="10795.15" y="-2242.61548" NativeText="{:-) I'm so happy you voted for me!  We're gonna keep on fighting, and we're gonna survive, and we're gonna build a better life for ourselves, I just know it!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="2" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Election_NotInVain" x="10813.9844" y="-3057.57422" NativeText="{:-| %1 death will not be in vain!  We're going to finish what %2 started, and we're going to live on, and we're going to make a home for ourselves, because that's the best way to honor %3 memory.">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ExtraParam" />
+        <SpeechParam Type="HeOrShe" Subject="ExtraParam" />
+        <SpeechParam Type="HisOrHer" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ExtraParam" Data="-10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Election_TheOnesThatVotedForMe" x="10801.9395" y="-4491.345" NativeText="{:-) I want to thank you for voting for me, I am deeply honored that you chose to put your trust in me!  }:-| Those of you that did vote for me, I mean.  {:-) I won't let you down!  }:-| Even though some of you did let *me* down.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="2" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Election_IronFist" x="10798.3486" y="-1068.66064" NativeText="}:-[ Under my iron fist, we're going sweep our enemies before us and utterly destroy anyone who stands in our way!  Bring it, motherfuckers!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="2" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Election_Cool" x="10799.4111" y="-5377.51172" NativeText="Cool.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Election_EveryoneWelcome" x="10799.6006" y="-6348.5835" NativeText="{:-) I'm going to make %1 a community where everyone is welcome, everyone is looked after, and we all strive towards the common good.  We all came here because we were running away from something... but we're going to make this into a place to run towards!">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Election_SomeoneInMind" x="-4271.917" y="-275.824768" NativeText="You got someone in mind?">
+      <Replies>
+        <SpeechRef UniqueID="Election_TheWrongHorse" />
+        <SpeechRef UniqueID="Election_CrushOurEnemies" />
+        <SpeechRef UniqueID="Election_ShouldBeMe" />
+        <SpeechRef UniqueID="Election_SomethingForYou" />
+        <SpeechRef UniqueID="Election_TooDifficult" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Election_ImGuessing" x="-4268.137" y="-900.529358" NativeText="}:-| I'm guessing you think it should be you.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_TheWrongHorse" />
+        <SpeechRef UniqueID="Election_CrushOurEnemies" />
+        <SpeechRef UniqueID="Election_ShouldBeMe" />
+        <SpeechRef UniqueID="Election_SomethingForYou" />
+        <SpeechRef UniqueID="Election_TooDifficult" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Election_YouCameToMe" x="-4321.29443" y="832.6795" NativeText=":-) And you came to me?  Why, thank you so much for this vote of confidence!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Election_TheWrongHorse" />
+        <SpeechRef UniqueID="Election_CrushOurEnemies" />
+        <SpeechRef UniqueID="Election_ShouldBeMe" />
+        <SpeechRef UniqueID="Election_SomethingForYou" />
+        <SpeechRef UniqueID="Election_TooDifficult" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Election_ShouldBeYou" x="-4272.35742" y="1824.30774" NativeText=":-) Maybe it should be you!">
+      <Replies>
+        <SpeechRef UniqueID="Election_TheWrongHorse" />
+        <SpeechRef UniqueID="Election_CrushOurEnemies" />
+        <SpeechRef UniqueID="Election_ShouldBeMe" />
+        <SpeechRef UniqueID="Election_SomethingForYou" />
+        <SpeechRef UniqueID="Election_TooDifficult" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="100" Data2="100" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Election_ThatCountsForMe" x="3727.212" y="-7061.95654" NativeText=":-) Great, that counts as a vote for me then!  Good for you!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="VoteFor" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_SomeKindOfIdiot" x="3731.95874" y="-7956.403" NativeText="{:-| Are you some kind of idiot?  Being the leader means you can tell other people what to do and have whatever you want!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Election_Responsibility" x="3729.083" y="-9054.414" NativeText="}:-| Well somebody's got to take responsibility!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Contradicted" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Election_HasElections" x="-5195.16748" y="-2839.97729">
+      <Conditions>
+        <Condition Type="IsAISettlement" Subject="Actor" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

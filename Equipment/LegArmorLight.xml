@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Light Leg Armor</NativeName>
+  <NativeDescription>Lighter and less protection and no Strength malus. 2 Damage absorption.</NativeDescription>
+  <Category>4:Clothing/Armor/Legs</Category>
+  <Weight>2.2</Weight>
+  <BasePrice>8</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>LegArmor</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Zombie</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>190</r>
+      <g>190</g>
+      <b>190</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName>Male_Mill_All:MaleLegProtector</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:FemaleLegProtector</FemaleMeshName>
+  <DamageAbsorption>2</DamageAbsorption>
+</EquipmentPrototype>

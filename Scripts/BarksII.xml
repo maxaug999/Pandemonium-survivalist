@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>4</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>86.69781</x>
+    <y>-504.444031</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.486435175</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Barks_Targeted_Joker" x="-899.325562" y="301.592041" NativeText=":-) Is that a new toy gun?" Situation="Targeted">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Targeted2" x="-890.6942" y="-257.161469" NativeText="}:-[ Hey watch it!" Situation="Targeted">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_RevivedAngry_Joker" x="215.991562" y="324.479431" NativeText="8-o Well what a nice nap! I needed that." Situation="RevivedAngry">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RegisterAttack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Barks_Death4" x="1124.91675" y="296.785522" NativeText="8-( Yolo!" Situation="Death" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Death5" x="1119.382" y="-172.582733" NativeText="8-( I should've just stayed at home." Situation="Death" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Nervous" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Eating_Yummers" x="1911.31372" y="411.4092" NativeText="8-) Mmmm.. Yummers!" Situation="Eating" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="TastinessIsAtLeast" Subject="Actor" Object="ReferringTo" Data="30" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Eating_Meat" x="1914.8949" y="-188.68924" NativeText="8-o Ohhh! could this have meat?!" Situation="Eating" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="TastinessIsAtLeast" Subject="Actor" Object="ReferringTo" Data="45" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Death6" x="1104.88684" y="-629.8851" NativeText="8-( You just got lucky %1!" Situation="Death" Importance="Low">
+      <Params>
+        <SpeechParam Type="BastardOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Death7" x="1110.84851" y="-1278.74" NativeText="8-( Shame on you if you stripped me naked!" Situation="Death" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Nervous" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Death8" x="1117.90222" y="-1800.73914" NativeText="8-( I'll be sure to bite you if I turned!" Situation="Death" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Nervous" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_RevivedAngry_Alcoholic" x="196.9231" y="-298.27298" NativeText="8-o! I'm sure I didn't passed out from alcohol." Situation="RevivedAngry">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RegisterAttack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Barks_RevivedAngry_Bold" x="187.513046" y="-1010.29639" NativeText="8-o Try doing that again!" Situation="RevivedAngry">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RegisterAttack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Barks_RevivedAngry_Skeptical" x="177.556229" y="-1713.25891" NativeText="8-o Hey who hit me behind my back!" Situation="RevivedAngry">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RegisterAttack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Barks_Death9" x="1124.9187" y="-2272.59473" NativeText="8-( I'll see ya in hell!" Situation="Death" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Nervous" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Death10" x="1125.906" y="-2746.163" NativeText="8-( They told me its only a training exercise..." Situation="Death" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Nervous" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Eating_TastesGreat" x="1905.52393" y="-801.355469" NativeText="8-o Mmmm... Tasty!" Situation="Eating" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="TastinessIsAtLeast" Subject="Actor" Object="ReferringTo" Data="60" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Barks_Eating_Bleh" x="1910.0697" y="777.0101" NativeText="8-o Bleh... Bland..." Situation="Eating" Importance="Low" RepeatTime="900">
+      <PriorityTerms />
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

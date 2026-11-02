@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Bulletproof Vest</NativeName>
+  <NativeDescription>This body armor is stab-rated, it will protect against bullets, arrows and sharp objects but not blunt force trauma or fire. 4 Damage absorption from zed.</NativeDescription>
+  <Category>4:Clothing/Armor/Vest</Category>
+  <Gender>Female</Gender>
+  <Weight>5</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>BodyArmor</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Zombie</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <MaleMeshName>Male_Mill_All:MaleBulletProofVest</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:FemaleBulletProofVest</FemaleMeshName>
+  <DamageAbsorption>4</DamageAbsorption>
+  <SkillBonusType>Stealth</SkillBonusType>
+  <SkillBonus>-1</SkillBonus>
+</EquipmentPrototype>

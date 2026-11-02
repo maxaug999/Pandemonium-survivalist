@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Torn F.E.M.A. Contact Details</NativeName>
+  <NativeDescription>A torn phone number of a contact in the last remnants of the Federal Emergency Management Agency, you need to find a few more pieces to make it readable. You'll also need a working Satellite Phone to call it.</NativeDescription>
+  <Category>9:Special</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TradeBehaviour>CantSellToAI</TradeBehaviour>
+</EquipmentPrototype>

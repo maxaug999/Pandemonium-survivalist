@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Iron</NativeName>
+  <Category>6:Crafting</Category>
+  <Weight>5</Weight>
+  <BasePrice>2</BasePrice>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>4</TypicalLootAmount>
+</EquipmentPrototype>

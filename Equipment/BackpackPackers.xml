@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Packer's backpack</NativeName>
+  <NativeDescription>Hoarder's Dream, even small it outperforms huge ones. Increase 25 max weight by Fitness.</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>8</Weight>
+  <BasePrice>120</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Backpack</ClothingType>
+  <LiquidCapacity>100</LiquidCapacity>
+  <DefaultLiquidType>Water</DefaultLiquidType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>255</r>
+      <g>0</g>
+      <b>255</b>
+      <a>255</a>
+    </Color32>
+    <Color32>
+      <r>0</r>
+      <g>255</g>
+      <b>51</b>
+      <a>255</a>
+    </Color32>
+    <Color32>
+      <r>255</r>
+      <g>221</g>
+      <b>0</b>
+      <a>255</a>
+    </Color32>
+    <Color32>
+      <r>255</r>
+      <g>0</g>
+      <b>0</b>
+      <a>255</a>
+    </Color32>
+    <Color32>
+      <r>255</r>
+      <g>126</g>
+      <b>0</b>
+      <a>255</a>
+    </Color32>
+    <Color32>
+      <r>0</r>
+      <g>0</g>
+      <b>255</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2 />
+  <MaleMeshName>Male_Mill_All:Backpack1</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack1</FemaleMeshName>
+  <CarryWeight>75</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>25</CarryWeightBonusPerSkillLevel>
+</EquipmentPrototype>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Flower</TypeName>
+  <NativeName>Mayweed</NativeName>
+  <Category>Nature/Flowers/Meadow</Category>
+  <PrefabNames>
+    <string>Prefabs/Trees/Mayweed1</string>
+    <string>Prefabs/Trees/Mayweed2</string>
+    <string>Prefabs/Trees/Mayweed3</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale>
+    <Vector2>
+      <x>3.75</x>
+      <y>6.25</y>
+    </Vector2>
+    <Vector2>
+      <x>3.75</x>
+      <y>6.25</y>
+    </Vector2>
+    <Vector2>
+      <x>3.75</x>
+      <y>6.25</y>
+    </Vector2>
+  </MinMaxScale>
+  <MaxDamage>1</MaxDamage>
+  <CoverType>None</CoverType>
+  <PlantCover>0.25</PlantCover>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <BulletHitEffect>None</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WantSoundOnDemolition>false</WantSoundOnDemolition>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeClearedForBuilding>true</CanBeClearedForBuilding>
+</PropPrototype>

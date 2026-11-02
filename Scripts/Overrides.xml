@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-196.086914</x>
+    <y>-662.3405</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.623606443</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Fisticuffs_StartFight" x="353.2152" y="-467.119141" NativeText="}:-[ Okay %1 you asked for it!" Situation="Opener" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Fisticuffs_IsValidTarget" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Fisticuffs_WantStartFight_Normal" />
+            <ConditionBlockRef UniqueID="Fisticuffs_WantStartFight_Bold" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsInFisticuffs" Subject="Actor" Not="true" />
+        <Condition Type="IsInFisticuffs" Subject="Target" Not="true" />
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Target" Not="true" />
+        <Condition Type="HasBloodLoss" Subject="Actor" Data="0.9" Not="true" />
+        <Condition Type="HasBloodLoss" Subject="Target" Data="0.9" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Captive" Not="true" />
+        <Condition Type="RankEquals" Subject="Target" StringData="Captive" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Overrides_CanStartFight" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="InLoveWith" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="Feuding" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="StartedFight" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Basic_DeclareWar" x="384.1383" y="1139.412" NativeText="}:-[ I've had about enough of you, %1!" Situation="Opener">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="21" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantToDeclareWar" Subject="Actor" Object="Target" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Overrides_CanStartWar" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Overrides_CanStartWar" x="1491.66748" y="1037.07971">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="DarkPast_FindEx" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="Escaped" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="HeldCaptive" Not="true" />
+        <Condition Type="QuestGroupIsActiveGivenBy" Subject="Target" StringData="Jalopy_QuestGroup" Not="true" />
+        <Condition Type="QuestGroupIsActiveGivenBy" Subject="Actor" StringData="Jalopy_QuestGroup" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Actor" SubjectModifier="Leader" StringData="FeudDisabled" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Overrides_CanStartFight" x="1502.71118" y="-1117.06152">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="DarkPast_FindEx" Not="true" />
+        <Condition Type="QuestGroupIsActiveGivenBy" Subject="Actor" StringData="Jalopy_QuestGroup" Not="true" />
+        <Condition Type="QuestGroupIsActiveGivenBy" Subject="Target" StringData="Jalopy_QuestGroup" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="Escaped" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="HeldCaptive" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Actor" SubjectModifier="Leader" StringData="FeudDisabled" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

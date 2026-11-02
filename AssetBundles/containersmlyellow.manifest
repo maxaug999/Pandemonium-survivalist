@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 311185371
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c4ec684e26d7510e4831007247a151e8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: eac5af37e2c611b9696d348e24a968fb
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+Assets:
+- Assets/containersmlyellow.prefab
+- Assets/custom shader yellow.mat
+Dependencies: []

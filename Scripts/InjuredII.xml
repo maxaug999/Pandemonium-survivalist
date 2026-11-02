@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <EditorScrollPos>
+    <x>219.976685</x>
+    <y>-30.7807617</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.81211555</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Injured_YouGonnaCry" x="167.217529" y="-2.523056" NativeText="8-) What? you gonna cry? huh? little cry baby's gonna cry?" Situation="Opener" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" BoolData="false" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="InjuryIsRemarkedOn" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="HasUnbandagedInjury" Subject="Target" BoolData="false" />
+        <Condition Type="IsShowingDialogueOptions" BoolData="false" Not="true" />
+        <Condition Type="UnbandagedInjuryIsOlderThan" Subject="Target" Data="10" BoolData="false" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" BoolData="false" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" BoolData="false" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasUnbandagedInjury" Subject="Target" BoolData="false" Not="true" />
+        <Condition Type="InjuryIsRemarkedOn" Subject="Target" BoolData="false" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInjuryRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+</Script>

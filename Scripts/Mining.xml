@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>18</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>26.37352</x>
+    <y>253.898361</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.65173763</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Mining_Rights" x="431.340942" y="-1084.65625" NativeText="Let's talk mining rights...">
+      <Replies>
+        <SpeechRef UniqueID="Mining_RichDeposits" />
+        <SpeechRef UniqueID="Mining_BelongsToUs" />
+        <SpeechRef UniqueID="Mining_BuiltThisSettlement" />
+        <SpeechRef UniqueID="Mining_WantAPiece" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityHasBuildingOfType" Subject="Target" StringData="Mine" />
+        <Condition Type="HasCommunityGrantedMiningRightsToPlayer" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_RichDeposits" x="2188.033" y="1760.517" NativeText=":-) Yeah we're sitting on some pretty rich %1 deposits here!  Talk to %2 if you want to do a deal.">
+      <Params>
+        <SpeechParam Type="CommunityMiningResource" Subject="Actor" />
+        <SpeechParam Type="FullName" Subject="Actor" SubjectModifier="Leader" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Mining_BelongsToUs" x="2190.283" y="527.9478" NativeText="}:-| Our %1 belongs to us.  %2 shouldn't just sell us out to anyone at the first opportunity...">
+      <Params>
+        <SpeechParam Type="CommunityMiningResource" Subject="Actor" />
+        <SpeechParam Type="FullName" Subject="Actor" SubjectModifier="Leader" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Jealous" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Mining_BuiltThisSettlement" x="2192.598" y="-677.1781" NativeText="We built this settlement here because of the %1 deposits.  %2 might let you work the mine, for a price.">
+      <Params>
+        <SpeechParam Type="CommunityMiningResource" Subject="Actor" />
+        <SpeechParam Type="FullName" Subject="Actor" SubjectModifier="Leader" BoolData="true" />
+      </Params>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Mining_WantAPiece" x="2197.99829" y="-1698.12976" NativeText="Oh you want a piece of our %1 operation do you?  Sure, I guess I could let you work the mine, for a price.  Say, 500 gold pieces.">
+      <Params>
+        <SpeechParam Type="CommunityMiningResource" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Mining_GotYourselfADeal" />
+        <SpeechRef UniqueID="Mining_CantAffordThat" />
+        <SpeechRef UniqueID="Mining_Discount" />
+        <SpeechRef UniqueID="Mining_YouNeedMe" />
+        <SpeechRef UniqueID="Mining_CrushYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_GotYourselfADeal" x="3364.569" y="-1088.85852" NativeText="You got yourself a deal.">
+      <Replies>
+        <SpeechRef UniqueID="Mining_Partnership" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Data="500" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_Partnership" x="4667.81152" y="-302.677948" NativeText=":-) %1, I do believe this could be the beginning of a beautiful business arrangement.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <CancelConditions>
+        <Condition Type="HasGold" Subject="Target" Data="500" Not="true" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="500" StringData="Gold" />
+        <StoryEvent Type="GrantMiningRightsToPlayer" Subject="Actor" SubjectModifier="Community" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="NegotiatedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Mining_CantAffordThat" x="3365.12354" y="-1985.3584" NativeText="I can't afford that!">
+      <Replies>
+        <SpeechRef UniqueID="Mining_ComeBackLater" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Mining_ComeBackLater" x="4678.09473" y="-1945.44165" NativeText="Business is business.  Come back when you've got some more gold." />
+    <Speech UniqueID="Mining_Discount" x="3392.20947" y="-2776.563" NativeText="How about a discount for your good buddy %1?">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Mining_PushingIt" />
+        <SpeechRef UniqueID="Mining_RemainsTheSame" />
+        <SpeechRef UniqueID="Mining_YouThinkWeAreBuddies" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Mining_PushingIt" x="4689.5" y="-2401.63232" NativeText="You're pushing it but.. I like you, so alright.  Give me 250 gold for it." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Mining_GotYourselfADeal2" />
+        <SpeechRef UniqueID="Mining_CantAffordThat" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="60" Data2="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_GotYourselfADeal2" x="5840.70557" y="-2546.53784" NativeText=":-) You got yourself a deal!">
+      <Replies>
+        <SpeechRef UniqueID="Mining_YouOweMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Data="250" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_YouOweMe" x="6917.3623" y="-2176.8938" NativeText="Yeah, you owe me one, man.">
+      <CancelConditions>
+        <Condition Type="HasGold" Subject="Target" Data="250" Not="true" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="250" StringData="Gold" />
+        <StoryEvent Type="GrantMiningRightsToPlayer" Subject="Actor" SubjectModifier="Community" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Mining_RemainsTheSame" x="4683.797" y="-3272.67" NativeText="No deal, my price remains the same.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Mining_YouThinkWeAreBuddies" x="4681.15039" y="-3924.16724" NativeText="}:-| Really, you thought we're buddies?  Um, no.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" Data2="40" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Mining_CrushYou" x="3321.67188" y="-7772.402" NativeText="{:-| Look, I don't like you and you don't like me.  But right now we have to work together because if we don't, }:-[ I'll fucking crush you like a beetle.">
+      <Replies>
+        <SpeechRef UniqueID="Mining_ForFree" />
+        <SpeechRef UniqueID="Mining_DontScareMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_ForFree" x="4730.6875" y="-7561.563" NativeText="8-| When you put it like that... okay, you can use the mine for free." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="80" Data2="20" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="GrantMiningRightsToPlayer" Subject="Actor" SubjectModifier="Community" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Mining_DontScareMe" x="4740.10742" y="-8765.534" NativeText="}:-[ You don't scare me.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Mining_YouNeedMe" x="3688.45068" y="-5254.43" NativeText="You need me.  My workers will help protect your base.">
+      <Replies>
+        <SpeechRef UniqueID="Mining_ExtraHands" />
+        <SpeechRef UniqueID="Mining_RemainsTheSame" />
+        <SpeechRef UniqueID="Mining_Useless" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_ExtraHands" x="4644.81641" y="-5261.957" NativeText="You've got a point.  It couldn't hurt to have a few extra hands around here to fight off raiders.  Make it 250, then." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Mining_GotYourselfADeal2" />
+        <SpeechRef UniqueID="Mining_CantAffordThat" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="60" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Mining_Useless" x="4642.94141" y="-6288.109" NativeText="}:-| Not if they're as useless as you.">
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="-20" Data2="20" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

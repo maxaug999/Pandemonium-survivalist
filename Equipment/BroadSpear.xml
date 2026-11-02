@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Shovel</TypeName>
+  <NativeName>Broad Spear</NativeName>
+  <NativeDescription>Dig with it</NativeDescription>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>7</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>assets/broadspear.prefab</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootLocations />
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.5</Damage>
+  <DamageBonusPerSkillLevel>0.12</DamageBonusPerSkillLevel>
+  <Range>3</Range>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

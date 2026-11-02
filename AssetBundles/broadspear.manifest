@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 2438486700
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ef1ede09407d814b4be85ed9e9b7fe48
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 35b36f5babfbffec6f91a1d6c810571d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/greyish.mat
+- Assets/broadspear.prefab
+Dependencies: []

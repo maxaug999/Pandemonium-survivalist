@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>MeleeWeapon</TypeName>
+  <NativeName>Spiked Baseball Bat</NativeName>
+  <Category>2:Weapons/Melee</Category>
+  <Weight>2.5</Weight>
+  <BasePrice>10</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Models/Equipment/Melee Weapon Pack/Bat/SpikedBat</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.5</Damage>
+  <DamageBonusPerSkillLevel>0.1</DamageBonusPerSkillLevel>
+  <Range>2.25</Range>
+  <FatiguePenaltyWhenAttacking>0.1</FatiguePenaltyWhenAttacking>
+</EquipmentPrototype>

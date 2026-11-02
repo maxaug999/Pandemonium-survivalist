@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>546.1402</x>
+    <y>19.9743652</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.464293361</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Fisticuffs_StartFight2" x="125.6635" y="59.5090561" NativeText="}:-[ %1! What are you looking at!" Situation="Opener" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+        <Condition Type="ApprovalSinceLastFight" Subject="Actor" Object="Target" Data="-55" Data2="45" Not="true" />
+        <Condition Type="IsInFisticuffs" Subject="Actor" Not="true" />
+        <Condition Type="IsInFisticuffs" Subject="Target" Not="true" />
+        <Condition Type="IsInCombat" Subject="Actor" Not="true" />
+        <Condition Type="IsInCombat" Subject="Target" Not="true" />
+        <Condition Type="HasBloodLoss" Subject="Actor" Data="0.9" Not="true" />
+        <Condition Type="HasBloodLoss" Subject="Target" Data="0.9" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="BeatUp" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" StringData="BeatUp" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Captive" Not="true" />
+        <Condition Type="RankEquals" Subject="Target" StringData="Captive" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="Feuding" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

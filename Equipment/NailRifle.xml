@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>SniperRifle</TypeName>
+  <NativeName>Nail Sniper Rifle</NativeName>
+  <NativeDescription>Nail them far away</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>8</Weight>
+  <BasePrice>45</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>1</SightRangeModifier>
+  <EquippedModelName>assets/nailsniper.prefab</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+      <OverrideScarcity>Legendary</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.25</Damage>
+  <DamageBonusPerSkillLevel>0.02</DamageBonusPerSkillLevel>
+  <Range>20</Range>
+  <AttackSoundRadius>20</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.15</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.4</MinHeadAimTime>
+  <MaxHeadAimTime>1.3</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.25</MaxLegsAimTime>
+  <Recoil>1</Recoil>
+  <AimPenaltyWhenMoving>0.25</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>1.25</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>Nail</string>
+  </AmmoTypes>
+  <MaxAmmo>5</MaxAmmo>
+</EquipmentPrototype>

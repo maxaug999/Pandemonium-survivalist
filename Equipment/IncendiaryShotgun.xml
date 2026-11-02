@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Shotgun</TypeName>
+  <NativeName>Incendiary Shotgun</NativeName>
+  <NativeDescription>Uses Incendiary Rounds, Ignores Armor</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>7</Weight>
+  <BasePrice>50</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>Prefabs/Equipment/Shotgun/Shotgun</EquippedModelName>
+  <LootLocations />
+  <LootableFromLocations />
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.16</Damage>
+  <DamageBonusPerSkillLevel>0.03</DamageBonusPerSkillLevel>
+  <Range>16</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>1.5</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.25</MaxLegsAimTime>
+  <Recoil>1</Recoil>
+  <AimPenaltyWhenMoving>0.25</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.75</MinTimeBetweenFiring>
+  <AmmoType>IncendiaryAmmo</AmmoType>
+  <MaxAmmo>8</MaxAmmo>
+  <NumPelletsPerShot>8</NumPelletsPerShot>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

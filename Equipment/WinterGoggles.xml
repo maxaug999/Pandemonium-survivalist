@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Winter Goggles</NativeName>
+  <NativeDescription>Protection against cold</NativeDescription>
+  <Category>4:Clothing/Glasses</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>16</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Glasses</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ZombieII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>PassengerPlane</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>229</r>
+      <g>232</g>
+      <b>232</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2 />
+  <MaleMeshName>long coat glasses:Plane_000</MaleMeshName>
+  <FemaleMeshName>F_Long coat_glasses:Plane_000</FemaleMeshName>
+  <Insulation>1</Insulation>
+</EquipmentPrototype>

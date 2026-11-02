@@ -1,0 +1,616 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>60</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2171.6626</x>
+    <y>4193.92139</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.492434323</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="InvisibleStrain_FeelsGood" x="-2630.171" y="2812.02466" NativeText="}:-[ Yeah!  Feels good to kill something!" Situation="Opener" Importance="Critical" MaxRange="10" Run="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasInvisibleStrainType" Subject="Actor" StringData="Excitable" />
+        <Condition Type="HasExcitement" Subject="Actor" Data="100" />
+        <Condition Type="HasInvisibleStrain" Subject="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="ActivateInvisibleStrain" Subject="Actor" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Exciting" x="-2603.55225" y="1640.863" NativeText="}:-) That was exciting!  I want... more!" Situation="Opener" Importance="Critical" MaxRange="10" Run="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasInvisibleStrainType" Subject="Actor" StringData="Excitable" />
+        <Condition Type="HasExcitement" Subject="Actor" Data="100" />
+        <Condition Type="HasInvisibleStrain" Subject="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="ActivateInvisibleStrain" Subject="Actor" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_HardestPart" x="-981.9165" y="2867.45142" NativeText=":-) The hardest part about all this was pretending I liked you." Situation="Opener" Importance="Critical" MaxRange="10" Run="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInvisibleStrain" Subject="Actor" StringData="None" />
+        <Condition Type="HasInvisibleStrain" Subject="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="CommunityHasInvisibleStrainExceptPlayer" Subject="Actor" SubjectModifier="Community" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="ActivateInvisibleStrain" Subject="Actor" SubjectModifier="Community" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Flesh" x="-2641.18066" y="4090.20459" NativeText="}:-[ Flesh... must have flesh..." Situation="Opener" Importance="Critical" MaxRange="10" Run="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasInvisibleStrainType" Subject="Actor" StringData="Excitable" />
+        <Condition Type="HasExcitement" Subject="Actor" Data="100" />
+        <Condition Type="HasInvisibleStrain" Subject="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="ActivateInvisibleStrain" Subject="Actor" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_OurTurn" x="-1009.60034" y="4119.27734" NativeText=":-) Your kind has had its day.  It's our turn now!" Situation="Opener" Importance="Critical" MaxRange="10" Run="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasInvisibleStrain" Subject="Actor" StringData="None" />
+        <Condition Type="HasInvisibleStrain" Subject="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="CommunityHasInvisibleStrainExceptPlayer" Subject="Actor" SubjectModifier="Community" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="ActivateInvisibleStrain" Subject="Actor" SubjectModifier="Community" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Gossip_InvisibleStrain_RunAway" x="863.0803" y="4263.11426" NativeText="{:-( %1 had to run away from %2 old settlement.  Something happened there... I don't want to talk about it.">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="CommunityMyOrOur" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_InvisibleStrain_TornApart" x="872.533447" y="3039.7666" NativeText="8-( %1 old camp got torn apart, %2 barely made it out!  {:-( Been on the run ever since, with nothing but the clothes on %3 backs.">
+      <Params>
+        <SpeechParam Type="CommunityMyOrOur" Subject="Actor" />
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="CommunityMyOrOur" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_InvisibleStrain_GoodPeople" x="864.5193" y="1605.17847" NativeText="{:-( %1 lost so many good people back home.  I didn't even see how it happened, someone must have been bitten.  But who?  I can still see their faces...">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_InvisibleStrain_TurnOnYou" x="5395.29248" y="826.198853" NativeText="}:-| Don't trust anyone!  They can turn on you at any time.. I've seen it happen.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_IfYouSaySo" />
+        <SpeechRef UniqueID="InvisibleStrain_SeenWhat" />
+        <SpeechRef UniqueID="InvisibleStrain_WordsToLiveBy" />
+        <SpeechRef UniqueID="InvisibleStrain_YouCanTrustMe" />
+        <SpeechRef UniqueID="InvisibleStrain_CrazyOld" />
+        <SpeechRef UniqueID="InvisibleStrain_Crazy" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="InvisibleStrain_WantWarnings" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" Data2="1" />
+        <Condition Type="VariableEquals" Subject="Actor" StringData="GavePsychTestQuestion" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Test_HasAllQuestions" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_SeenWhat" x="6589.855" y="1515.02222" NativeText="Seen what happen?">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_GroupsBreakDown" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_WordsToLiveBy" x="6563.41064" y="1000.30487" NativeText="You got it right, friend - words to live by.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_JustRun" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_CrazyOld" x="6562.707" y="67.8553543" NativeText="}:-| You're just a crazy old %1.">
+      <Params>
+        <SpeechParam Type="ManOrWoman" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_YoullBeSorry" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsAgeAtLeast" Subject="Target" Data="50" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Crazy" x="6563.59131" y="-1050.34814" NativeText="}:-| You're crazy.">
+      <Params>
+        <SpeechParam Type="ManOrWoman" Subject="Target" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_YoullBeSorry" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsAgeAtLeast" Subject="Target" Data="50" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_GroupsBreakDown" x="7654.155" y="1586.79456" NativeText="Groups break down... starts with people talking shit about you, then one day they're at your throat.  And I mean that literally.  }:-[ People you thought were your crew.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_IfYouSaySo" />
+        <SpeechRef UniqueID="InvisibleStrain_WordsToLiveBy" />
+        <SpeechRef UniqueID="InvisibleStrain_YouCanTrustMe" />
+        <SpeechRef UniqueID="InvisibleStrain_CrazyOld" />
+        <SpeechRef UniqueID="InvisibleStrain_Crazy" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_JustRun" x="7710.314" y="748.8237" NativeText="{:-| When it happens, just run!  Don't look back.  Forget about them.  They're gone.  Infected.  Only way to stop it is if you catch it early.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_CatchItEarly" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_YoullBeSorry" x="7716.55127" y="-459.36264" NativeText="}:-| You'll be sorry you ignored me!" />
+    <Speech UniqueID="Gossip_InvisibleStrain_Hoax" x="5204.437" y="-3219.7207" NativeText="}:-| Have you heard the latest hoax?  There's always some new bullshit round here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_HeardTheRumors" />
+        <SpeechRef UniqueID="InvisibleStrain_WhatHoax" />
+        <SpeechRef UniqueID="InvisibleStrain_DontKnowWhatYoureTalkingAbout" />
+        <SpeechRef UniqueID="InvisibleStrain_Surrounded" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="InvisibleStrain_WantWarnings" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Skeptical" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" />
+        <Condition Type="VariableEquals" Subject="Actor" StringData="GavePsychTestQuestion" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_DontKnowWhatYoureTalkingAbout" x="6491.74463" y="-3570.91187" NativeText="}:-| You don't know what you're talking about.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_OneOfThem" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Surrounded" x="6502.5293" y="-4540.502" NativeText="{:-) You and me, we're surrounded by idiots!">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_GotThatRight" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_IfYouSaySo" x="6605.185" y="1880.66223" NativeText="If you say so." />
+    <Speech UniqueID="InvisibleStrain_OneOfThem" x="7555.008" y="-3894.63354" NativeText="}:-| Ah, I see you're one of them." />
+    <Speech UniqueID="InvisibleStrain_GotThatRight" x="7538.973" y="-4696.784" NativeText=":-) You got that right!" />
+    <Speech UniqueID="InvisibleStrain_WhatHoax" x="6517.993" y="-2980.04541" NativeText="What's this hoax?">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_Supposedly" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Supposedly" x="7915.97559" y="-2214.26733" NativeText="Supposedly there's this new strain where people keep acting like normal, but internally they want to just... murder everyone or skin you alive or pull out your eyeballs or something.  Then one day they snap!  Haha!">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_HeardTheRumors" />
+        <SpeechRef UniqueID="InvisibleStrain_DontKnowWhatYoureTalkingAbout" />
+        <SpeechRef UniqueID="InvisibleStrain_Surrounded" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_HeardTheRumors" x="6546.587" y="-2434.36548" NativeText="Yeah I've heard the rumors." />
+    <Speech UniqueID="Gossip_InvisibleStrain_Spreading" x="5170.78857" y="-5282.39355" NativeText="{:-| There's a new strain spreading through the settlements right now!  You don't know who's got it, until it's too late.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_OnMyGuard" />
+        <SpeechRef UniqueID="InvisibleStrain_WhatNewStrain" />
+        <SpeechRef UniqueID="InvisibleStrain_CampfireStories" />
+        <SpeechRef UniqueID="InvisibleStrain_Detect" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="InvisibleStrain_WantWarnings" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" Not="true" />
+        <Condition Type="VariableEquals" Subject="Actor" StringData="GavePsychTestQuestion" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Test_HasAllQuestions" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_CampfireStories" x="6475.54" y="-6584.61035" NativeText="You've been listening to too many campfire stories.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_WarnYou" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_WhatNewStrain" x="6458.043" y="-6220.36133" NativeText="What new strain?">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_Inhuman" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Inhuman" x="7561.97" y="-6434.34473" NativeText="People who are infected with it look and act the same on the outside, but inside they're just... different.  Inhuman.  Be careful who you trust!">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_OnMyGuard" />
+        <SpeechRef UniqueID="InvisibleStrain_CampfireStories" />
+        <SpeechRef UniqueID="InvisibleStrain_Detect" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_OnMyGuard" x="6496.78" y="-5570.249" NativeText="I'll be on my guard.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_NotThatEasy" />
+        <SpeechRef UniqueID="InvisibleStrain_WhatElseCanWeDo" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_WarnYou" x="7584.335" y="-7285.908" NativeText="}:-| Don't say I didn't warn you!" />
+    <Speech UniqueID="Gossip_InvisibleStrain_ScareStories" x="5184.77" y="-7031.06934" NativeText="People keep talking about this new strain... but who knows if it's real or just scare stories.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_OnMyGuard" />
+        <SpeechRef UniqueID="InvisibleStrain_WhatNewStrain" />
+        <SpeechRef UniqueID="InvisibleStrain_CampfireStories" />
+        <SpeechRef UniqueID="InvisibleStrain_Detect" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="InvisibleStrain_WantWarnings" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" Data2="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" />
+        <Condition Type="VariableEquals" Subject="Actor" StringData="GavePsychTestQuestion" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Test_HasAllQuestions" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Growling" x="5201.706" y="-8637.527" NativeText="8-| I thought I heard a growling noise coming from somewhere in the camp today...  }:-| Something's not right here." PerObjectType="PerCommunityMemberSample">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInvisibleStrain" Subject="ReferringTo" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" Not="true" />
+        <Condition Type="CommunityHasAccomodation" Subject="Actor" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_StrangeStories" x="5205.45361" y="-9623.198" NativeText="}:-| There's some strange stories going round the group... don't believe everything you hear.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityHasAnyoneWithInvisibleStrain" Subject="Actor" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_BadVibe" x="6041.384" y="-9635.652" NativeText="}:-| There's a bad vibe in this group right now, I've heard some things I'd rather not repeat.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityHasAnyoneWithInvisibleStrain" Subject="Actor" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" Not="true" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Snarling" x="6034.26074" y="-8644.345" NativeText="Did you hear, like, a snarling noise recently?  I thought it was just the infected but... }:-| it was coming from inside our camp." PerObjectType="PerCommunityMemberSample">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInvisibleStrain" Subject="ReferringTo" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" Not="true" />
+        <Condition Type="CommunityHasAccomodation" Subject="Actor" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_CatchItEarly" x="8766.422" y="374.871765" NativeText="Catch it early?  How do I do that?">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_SomethingsOff" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_SomethingsOff" x="9859.134" y="370.6893" NativeText="You might notice something's a little bit.. off about them before it happens.  Talk to them about something.. emotional, and see how they react.  Study their faces.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_Emotional" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Emotional" x="10908.3184" y="273.999" NativeText="Emotional?  Like what?">
+      <Replies>
+        <SpeechRef UniqueID="Test_PsychologicalTest" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Detect" x="6477.97" y="-7468.19971" NativeText="What symptoms should I look for?">
+      <Replies>
+        <SpeechRef UniqueID="Test_PsychologicalTest" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_ItsInvisible" x="8641.162" y="-7265.612" NativeText="I don't know man, their eyes don't change color like with the other strains.  It's invisible." />
+    <Speech UniqueID="InvisibleStrain_Diagnose" x="8663.809" y="-6281.244" NativeText="I've been thinking of a way to diagnose it actually.  If I'm correct, the infection must be attacking the limbic system but not the rest of the neocortex - they can still seem self-aware but their ability to feel emotions and experience emotional empathy is broken down.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="InvisibleStrain_Hypothetical" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Hypothetical" x="9641.088" y="-6356.38525" NativeText="So propose to them a hypothetical situation designed to trigger an emotional empathetic response and watch them to see how they react.  Their facial expressions may give them away!">
+      <Events>
+        <StoryEvent Type="SetVariable" Data="1" StringData="Interrogation_HypotheticalScenario" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_BehindNewStrain" x="3504.903" y="3895.82422" NativeText="Want to know who's behind this new strain?  And how to find out if someone's got it?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_Who" />
+        <SpeechRef UniqueID="InvisibleStrain_NoThanks" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="InvisibleStrain_WantWarnings" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" />
+        <Condition Type="VariableEquals" Subject="Actor" StringData="GavePsychTestQuestion" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Test_HasAllQuestions" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_HeardEnough" x="6607.99463" y="4583.78027" NativeText="I think I've heard enough." />
+    <Speech UniqueID="InvisibleStrain_MakesALotOfSense" x="6614.901" y="3430.13916" NativeText="8-| Damn, I think you're onto something.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_HowToProtect" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_HowToProtect" x="7662.868" y="3568.733" NativeText="}:-) Yeah, you know what I'm talking about.  But they're not gonna get me!">
+      <Continues>
+        <SpeechRef UniqueID="Test_PsychologicalTest" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Idiot" x="6612.301" y="4334.92432" NativeText="}:-| You're an idiot.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_TheyLaughed" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_TheyLaughed" x="7656.86963" y="4111.458" NativeText="}:-| They laughed at Jesus too." />
+    <Speech UniqueID="InvisibleStrain_Who" x="4435.223" y="3490.31738" NativeText="Who?">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_GeorgeSoros" />
+        <SpeechRef UniqueID="InvisibleStrain_LizardPeople" />
+        <SpeechRef UniqueID="InvisibleStrain_Aliens" />
+        <SpeechRef UniqueID="InvisibleStrain_FEMA" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_GeorgeSoros" x="5434.17139" y="4302.35449" NativeText="}:-| It's George Soros!  He created the whole thing!  He's out there somewhere, him and World Economic Forum, pulling all the strings.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_HeardEnough" />
+        <SpeechRef UniqueID="InvisibleStrain_Idiot" />
+        <SpeechRef UniqueID="InvisibleStrain_MakesALotOfSense" />
+        <SpeechRef UniqueID="InvisibleStrain_DetectIt" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_LizardPeople" x="5422.229" y="3641.65332" NativeText="The lizard people.  This is the next stage in their plan to make us all like them - baby-eating pedophiles.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_HeardEnough" />
+        <SpeechRef UniqueID="InvisibleStrain_Idiot" />
+        <SpeechRef UniqueID="InvisibleStrain_MakesALotOfSense" />
+        <SpeechRef UniqueID="InvisibleStrain_DetectIt" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_Aliens" x="5421.893" y="3021.88428" NativeText="Aliens.  Or what we're thinking of as aliens, they're actually extra-dimensional beings.  They were responsible for the original pandemic of course, but it didn't kill enough of us!  They're trying to wipe out the majority of the population, so that the few that are left will be more easily controllable.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_HeardEnough" />
+        <SpeechRef UniqueID="InvisibleStrain_Idiot" />
+        <SpeechRef UniqueID="InvisibleStrain_MakesALotOfSense" />
+        <SpeechRef UniqueID="InvisibleStrain_DetectIt" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_NoThanks" x="4434.266" y="2855.3623" NativeText="No thanks." />
+    <Speech UniqueID="InvisibleStrain_FEMA" x="5421.99072" y="2231.16479" NativeText="It was developed by FEMA.  Want to know why?  They're trying to create a race of super soldiers which they're going to use to dominate the world and bring about a new world order.  All the top people are waiting in a giant bunker and one day they're going to come out and make us all their slaves.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_HeardEnough" />
+        <SpeechRef UniqueID="InvisibleStrain_Idiot" />
+        <SpeechRef UniqueID="InvisibleStrain_MakesALotOfSense" />
+        <SpeechRef UniqueID="InvisibleStrain_DetectIt" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsFEMA" Subject="Actor" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_DetectIt" x="6603.531" y="2484.31665" NativeText="Uh, okay... you mentioned there's a way to detect it...?">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_MightKnowAWay" />
+        <SpeechRef UniqueID="InvisibleStrain_SaidTooMuch" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_MightKnowAWay" x="7668.616" y="3018.095" NativeText="}:-| Yeah I might know a way.  I'll tell you, 'cos I like you.  But don't spread this around - I don't need *them* finding out I told you." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Test_PsychologicalTest" />
+      </Continues>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" Data2="50" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_SaidTooMuch" x="7664.095" y="2189.04541" NativeText="}:-| Forget it, I've said too much already." />
+    <Speech UniqueID="InvisibleStrain_YouCanTrustMe" x="8788.722" y="1475.22791" NativeText="{:-| You can trust me.">
+      <Replies>
+        <SpeechRef UniqueID="InvisibleStrain_ProtectYourself" />
+        <SpeechRef UniqueID="InvisibleStrain_WhatTheydSay" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_ProtectYourself" x="9948.889" y="1908.01306" NativeText="{:-) Yeah, well, I know that of course!  I'm just telling you how to protect yourself." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Test_PsychologicalTest" />
+      </Continues>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" Data2="50" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="InvisibleStrain_WhatTheydSay" x="9952.087" y="1053.68848" NativeText="}:-| That's exactly what one of them would say." />
+    <Speech UniqueID="InvisibleStrain_WhatElseCanWeDo" x="7576.49561" y="-6042.968" NativeText="}:-| Sure, what else can you do." />
+    <Speech UniqueID="InvisibleStrain_NotThatEasy" x="7574.51758" y="-5084.51025" NativeText="I know you can handle yourself, but it's not that easy.  There is something that might help though." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Test_PsychologicalTest" />
+      </Continues>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="50" Data2="50" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="InvisibleStrain_WantWarnings" x="1035.51318" y="-577.2091">
+      <Conditions>
+        <Condition Type="IsInvisibleStrainEnabled" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

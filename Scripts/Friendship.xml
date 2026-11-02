@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>15</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>489.478943</x>
+    <y>2291.60083</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.479869068</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Friendship_Speech" x="615.111145" y="127.635368" NativeText=":-) We've had some adventures, haven't we?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Friendship_Speech_Trust" />
+        <SpeechRef UniqueID="Friendship_Speech_BeingThere" />
+        <SpeechRef UniqueID="Friendship_Speech_YouDidGood" />
+        <SpeechRef UniqueID="Friendship_BackingMeUp" />
+      </Continues>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="None" />
+        <Condition Type="HasMemoryQuantityAtLeast" Subject="Target" Object="Target" ThirdParty="Actor" Data="3" StringData="HungOut" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="60" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Friendship_Speech_BeingThere" x="1762.63184" y="474.4747" NativeText="{:-) Thanks for always being there for me!  I'm so glad I met you!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_ItsNothing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_Speech_YouDidGood" x="1782.27454" y="-396.577179" NativeText="You held it together pretty well out there, you know.  You're alright in my opinion.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_Emotional" />
+        <SpeechRef UniqueID="Friendship_ItsNothing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_BackingMeUp" x="1790.53577" y="-1302.11646" NativeText=":-) Thanks for backing me up!  We're a good team.">
+      <Replies>
+        <SpeechRef UniqueID="Friendship_ItsNothing" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Friendship_Speech_Trust" x="1754.55554" y="1371.01746" NativeText="{:-) In this world full of assholes and grifters, you are that most special, wonderful, beautiful thing.. a person I can actually trust!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_ItsNothing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bipolar" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_Fwiend" x="5141.922" y="-1982.46252" NativeText=":-) You're a good friend." Importance="Low">
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="Target" Data="20" StringData="FriendsWith" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Friendship_Emotional" x="3004.06226" y="-614.2922" NativeText=":-) Woah, let's not get too emotional.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_Fwiend" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_ItsNothing" x="2929.5835" y="323.1392" NativeText="Hey man, it's nothing.  Don't worry about it.">
+      <Replies>
+        <SpeechRef UniqueID="Friendship_Fwiend" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Friendship_Buddy" x="-317.5033" y="-4748.868" NativeText="Hey buddy, how've you been?" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_AreWeReady" />
+        <SpeechRef UniqueID="Friendship_AreWeBuddiesNow" />
+        <SpeechRef UniqueID="Friendship_NotSoBad" />
+        <SpeechRef UniqueID="Friendship_TalkToYou" />
+        <SpeechRef UniqueID="Friendship_GoodToSeeYa" />
+        <SpeechRef UniqueID="Friendship_NotGreat" />
+        <SpeechRef UniqueID="Friendship_HaveWeMet" />
+        <SpeechRef UniqueID="Friendship_GetOutOfMyFace" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="None" />
+        <Condition Type="HasMemoryQuantityAtLeast" Subject="Target" Object="Target" ThirdParty="Actor" Data="3" StringData="HungOut" />
+        <Condition Type="HasMemory" Subject="Target" Object="Actor" StringData="RefusedToHangOut" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="20" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Friendship_AreWeReady" x="1808.56482" y="-1806.46558" NativeText="/:-) Buddy?  Wait, are you sure we're ready for such terms of endearment?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_ThinkWeAre" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_ThinkWeAre" x="3085.3833" y="-2691.34717" NativeText="You know, I think we are." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Friendship_Fwiend" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Friendship_AreWeBuddiesNow" x="1805.22229" y="-2722.09741" NativeText="Oh, are we buddies now?  I guess I could do worse." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_ThinkWeAre" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_NotSoBad" x="1808.541" y="-3576.75146" NativeText=":-) Not so bad with you around buddy." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_WhatILikeToHear" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_WhatILikeToHear" x="3068.263" y="-3744.73657" NativeText=":-) That's what I like to hear." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Friendship_Fwiend" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Friendship_HaveWeMet" x="1786.82666" y="-6511.452" NativeText="/:-| I'm okay, yeah... Have we met?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_ForgetIt" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data2="20" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Humiliated" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Friendship_ForgetIt" x="3181.2854" y="-7519.867" NativeText="{:-( I thought we... oh, forget it." Importance="Low" />
+    <Speech UniqueID="Friendship_GoodToSeeYa" x="1790.9137" y="-5238.51563" NativeText=":-) I'm alright man, good to see ya." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Treat_WannaGetFood" />
+        <SpeechRef UniqueID="SnowFight_PerfectWeather" />
+      </Replies>
+      <Conditions>
+        <Condition Type="MoraleIsAtLeast" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_TalkToYou" x="1803.50452" y="-4374.69434" NativeText=":-( Not great... {:-) but I'm glad I can talk to you about it." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="MoraleIsLessThan" Subject="Actor" Data="-10" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_WhatAreFriendsFor" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="20" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Friendship_WhatAreFriendsFor" x="3063.69751" y="-4515.46826" NativeText="{:-) Sure, what are friends for, right?" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Friendship_Fwiend" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Friendship_GetOutOfMyFace" x="1791.19788" y="-8063.52344" NativeText="}:-| Get out of my face." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Friendship_ForgetIt" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" Data2="20" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Friendship_NotGreat" x="1781.77063" y="-5848.773" NativeText=":-( Not great but it's good to see you." Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Treat_WannaGetFood" />
+        <SpeechRef UniqueID="SnowFight_PerfectWeather" />
+      </Replies>
+      <Conditions>
+        <Condition Type="MoraleIsLessThan" Subject="Actor" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Friendship_AnyQuestsActive" x="-523.0809" y="384.767029" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Chicken_Quest_GoTo" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Chicken_Quest_Steal" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Chicken_Quest_GetOut" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Hunting_Quest_FindDeer" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Hunting_Quest_HuntDeer" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="LostItem_Quest_FindItem" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Loyalty_Quest_MeetContact" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Loyalty_Quest_WaitForTrackers" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="Loyalty_Quest_WaitForGold" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

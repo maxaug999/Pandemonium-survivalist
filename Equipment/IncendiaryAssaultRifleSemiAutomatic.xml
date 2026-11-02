@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>AssaultRifle</TypeName>
+  <NativeName>Incendiary Assault Rifle</NativeName>
+  <NativeDescription>Uses Incendiary Rounds, Ignores Armor</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>8</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/semiauto.prefab</EquippedModelName>
+  <LootLocations />
+  <LootableFromLocations />
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.31</Damage>
+  <DamageBonusPerSkillLevel>0.06</DamageBonusPerSkillLevel>
+  <Range>23</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4.5</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.12</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.4</MinHeadAimTime>
+  <MaxHeadAimTime>1.7</MaxHeadAimTime>
+  <MinLegsAimTime>0.2</MinLegsAimTime>
+  <MaxLegsAimTime>1.25</MaxLegsAimTime>
+  <Recoil>0.3</Recoil>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.25</MinTimeBetweenFiring>
+  <AmmoType>IncendiaryAmmo</AmmoType>
+  <MaxAmmo>20</MaxAmmo>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

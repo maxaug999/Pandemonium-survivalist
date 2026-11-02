@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>AssaultRifle</TypeName>
+  <NativeName>Heavy Machine Gun</NativeName>
+  <NativeDescription>Best defense is offense ; Uses pistol ammo</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>15</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/hmg.prefab</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+      <OverrideScarcity>VeryRare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Bullet</InjuryType>
+  <Damage>0.2</Damage>
+  <DamageBonusPerSkillLevel>0.05</DamageBonusPerSkillLevel>
+  <Range>20</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1.5</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.3</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>1.75</MaxHeadAimTime>
+  <MinLegsAimTime>0.3</MinLegsAimTime>
+  <MaxLegsAimTime>1.35</MaxLegsAimTime>
+  <Recoil>0.5</Recoil>
+  <AimPenaltyWhenMoving>1</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.11</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>PistolAmmo</string>
+  </AmmoTypes>
+  <MaxAmmo>100</MaxAmmo>
+</EquipmentPrototype>

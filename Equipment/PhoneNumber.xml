@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Possible F.E.M.A. Contact Details</NativeName>
+  <NativeDescription>It's supposedly the phone number of a contact in the last remnants of the Federal Emergency Management Agency, if they're still out there.  You'll need a working Satellite Phone to call it.</NativeDescription>
+  <Category>9:Special</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>500</BasePrice>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TradeBehaviour>CantSellToAI</TradeBehaviour>
+</EquipmentPrototype>

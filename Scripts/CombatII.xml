@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-136.133728</x>
+    <y>1023.76807</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.416706949</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Combat_RecentKill_Joker" x="251.528015" y="-151.009018" NativeText="}:-) Whew! I pissed my pants a little bit." Situation="RecentKill" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_Fleeing_Nerd" x="1213.43188" y="-174.726563" NativeText="8-( Whelp! Where's my mommy!" Situation="Fleeing" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Combat_RecentChase_Immoral" x="2583.54932" y="-166.144379" NativeText="}:-) Come out! Come out! Wherever you are!" Situation="RecentChase" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Combat_Fleeing4" x="1216.65686" y="-735.6826" NativeText="8-| Its a TRAAAP!" Situation="Fleeing" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_GoOnAndHandle" x="2599.14478" y="-774.620667" NativeText="}:-) Go on and handle %1 , I'll stay here just in case!" Situation="RecentChase" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Combat_OutOfAmmoFleeing7" x="1200.70227" y="-1495.916" NativeText="8-| Well I don't want %1 to put new holes on my new garmets!" Situation="OutOfAmmoFleeing" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="EquippedGun" Subject="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasGun" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_OutOfAmmoFleeing8" x="1230.04773" y="-2322.47681" NativeText="}:-| Hey I'm not a rabbit!" Situation="OutOfAmmoFleeing" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="EquippedBow" Subject="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBow" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_Fleeing5" x="1214.43494" y="-1115.0564" NativeText="8-( I'm still not finished begging yet!" Situation="Fleeing" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Attacking_Bow" x="-520.939636" y="-191.727554" NativeText="8-o Wait! I'll put an arrow on your knee!" Situation="Attacking" Importance="FriendComplaint">
+      <Conditions>
+        <Condition Type="EquippedBow" Subject="Actor" />
+        <Condition Type="HasBow" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_Attacking_Gun" x="-535.0255" y="-745.174255" NativeText="}:-) C'mon here! I'll shoot you in your face!" Situation="Attacking" Importance="FriendComplaint">
+      <Conditions>
+        <Condition Type="EquippedGun" Subject="Actor" />
+        <Condition Type="HasGun" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_Attacking4" x="-533.3438" y="-1335.50342" NativeText=":-[ Eat this shit!" Situation="Attacking" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Fleeing6" x="1240.34949" y="-3926.87427" NativeText="8-| You won't catch me!" Situation="Fleeing" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Attacking5" x="-533.343567" y="-1671.87366" NativeText=":-[ Hey! quit running!" Situation="Attacking" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Attacking6" x="-549.184265" y="-2022.62024" NativeText=":-[ Don't you underestemate me!" Situation="Attacking" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_IStillHearYou" x="2597.38672" y="372.256378" NativeText="}:-( I still hear you!" Situation="RecentChase" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Combat_Fleeing7" x="1244.05383" y="-3626.695" NativeText="8-( Don't fool yourself!" Situation="Fleeing" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Attacking7" x="-533.0464" y="-2357.497" NativeText=":-[ Run %1 !" Situation="Attacking" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Combat_Attacking8" x="-522.730957" y="-2828.229" NativeText=":-[ Fight! Me!" Situation="Attacking" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Attacking9" x="-532.3276" y="-3186.943" NativeText=":-[ You better hide your ass!" Situation="Attacking" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_RecentKill_Unpossessive" x="233.046936" y="-1442.59888" NativeText="}:-) You could take thier stuff first I won't mind." Situation="RecentKill" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Unpossessive" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_RecentKill_StuffIsmine" x="226.271545" y="-2237.48462" NativeText="}:-) Their stuff is mine!" Situation="RecentKill" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" StringData="Immoral" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_RecentKill_Jealous" x="236.750748" y="-763.798462" NativeText="}:-) Save some of their stuff to me!" Situation="RecentKill" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Jealous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_OutOfAmmoFleeing9" x="1226.35425" y="-2980.86743" NativeText="}:-| Don't shoot I'm not a deer!" Situation="OutOfAmmoFleeing" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="EquippedBow" Subject="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBow" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_OutOfAmmoFleeing10" x="1932.8363" y="-1472.83191" NativeText="8-| Staaap don't shoot!" Situation="OutOfAmmoFleeing" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="EquippedGun" Subject="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasGun" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_OutOfAmmoFleeing11" x="1928.91028" y="-2136.34131" NativeText="8-| Aaack! stop firing!" Situation="OutOfAmmoFleeing" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="EquippedGun" Subject="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasGun" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_Attacking10" x="-552.2257" y="-3546.03979" NativeText=":-[ Its payback time!" Situation="Attacking" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Fleeing8" x="1239.05334" y="-4224.32373" NativeText="8-| My gear ain't that great!" Situation="Fleeing" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_OutOfAmmoFleeing12" x="1957.83728" y="-2854.08228" NativeText="}:-| I ain't a deer or a rabbit! stop hunting me!" Situation="OutOfAmmoFleeing" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="EquippedBow" Subject="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBow" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Combat_Fleeing9" x="1239.24207" y="-4498.253" NativeText="8-| this ain't what I signed up for!" Situation="Fleeing" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Fleeing10" x="1223.68591" y="-4821.67334" NativeText="8-| Mission abort! special military operations failed..." Situation="Fleeing" Importance="FriendComplaint" />
+    <Speech UniqueID="Combat_Attacking11" x="-554.9568" y="-3893.72827" NativeText=":-[ Prepare for trouble!" Situation="Attacking" Importance="FriendComplaint" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

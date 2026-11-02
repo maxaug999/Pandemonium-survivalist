@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Tactical Backpack</NativeName>
+  <NativeDescription>America favorite backpack</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>3</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Backpack</ClothingType>
+  <SightRangeModifier>1</SightRangeModifier>
+  <LiquidCapacity>25</LiquidCapacity>
+  <DefaultLiquidType>Water</DefaultLiquidType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>33</r>
+      <g>33</g>
+      <b>33</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName>Male_Mill_All:Backpack3</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack3</FemaleMeshName>
+  <CarryWeight>40</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>10</CarryWeightBonusPerSkillLevel>
+  <SkillBonusType>Firearms</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>AnimalFeederProp</TypeName>
+  <NativeName>Feeding Trough</NativeName>
+  <Category>Camp/Props</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Trough</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0.5</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>5</MaxDamage>
+  <CoverType>WaistHigh</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <ExtentsMax>
+    <x>1</x>
+    <y>0</y>
+  </ExtentsMax>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>30</MaxInventoryWeight>
+  <CrouchToLoot>true</CrouchToLoot>
+  <CaptureResourceType>Wood</CaptureResourceType>
+  <CaptureResourceNeeded>1</CaptureResourceNeeded>
+  <Mass>100</Mass>
+</PropPrototype>

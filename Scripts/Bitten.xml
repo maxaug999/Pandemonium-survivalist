@@ -1,0 +1,594 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>13</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2831.54248</x>
+    <y>-4040.62769</y>
+  </EditorScrollPos>
+  <EditorZoomScale>1</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Bitten1" x="598.3881" y="1861.07349" NativeText="Oh God.. I'm bitten!" Situation="OpenerToSelf" Importance="Low">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" Not="true" />
+        <Condition Type="HasInfectedInjuryOfType" Subject="Actor" StringData="ZombieBite" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Actor" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten2" x="1476.83228" y="1867.0072" NativeText="Oh no, no... I've been bitten." Situation="OpenerToSelf" Importance="Low">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" Not="true" />
+        <Condition Type="HasInfectedInjuryOfType" Subject="Actor" StringData="ZombieBite" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Actor" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten_YouAreInfected" x="2314.734" y="2211.54785" NativeText="You've been been bitten haven't you?  You better find some antigen." Situation="Opener" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" Not="true" />
+        <Condition Type="HasInfectedInjuryOfType" Subject="Target" StringData="ZombieBite" />
+        <Condition Type="InfectedInjuryIsOlderThan" Subject="Target" Data="10" />
+        <Condition Type="IsShowingDialogueOptions" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten_YouAreInfectedCritical" x="3113.70557" y="2208.29" NativeText="You need some antigen - fast!" Situation="Opener" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Target" />
+        <Condition Type="HasInfectionProgression" Subject="Target" Data="0.75" />
+        <Condition Type="IsShowingDialogueOptions" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten_IHaveAntigen" x="3901.27637" y="2203.481" NativeText="Have you been bitten?  I've got some antigen if you need it." Situation="Opener" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" Not="true" />
+        <Condition Type="HasInfectedInjuryOfType" Subject="Target" StringData="ZombieBite" />
+        <Condition Type="HasAntigenFor" Subject="Actor" Object="Target" Data="0.75" />
+        <Condition Type="IsShowingDialogueOptions" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Green" x="731.064148" y="-1202.22192" NativeText="I need Green Strain Antigen, can you help?" Situation="AskForAntigen">
+      <Replies>
+        <SpeechRef UniqueID="AskForAntigen_Green_Give" />
+        <SpeechRef UniqueID="AskForAntigen_Green_Sell" />
+        <SpeechRef UniqueID="AskForAntigen_Green_Community" />
+        <SpeechRef UniqueID="AskForAntigen_Green_None2" />
+        <SpeechRef UniqueID="AskForAntigen_Green_None" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="Green" />
+        <Condition Type="CommunityHasNoAntigenKnown" Subject="Target" StringData="Green" Not="true" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Green" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Green_Give" x="2125.63525" y="362.713379" NativeText="You got lucky it was just Green Strain... Here you go." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="4" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Green" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveAntigen" Subject="Actor" Object="Target" StringData="Antigen_Green" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Green_Sell" x="2114.913" y="-777.190857" NativeText="I've got some Green Strain antigen - yours for only %1 gold!">
+      <Params>
+        <SpeechParam Type="PriceToSellItem" Subject="Actor" Object="Target" StringData="Antigen_Green" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Compassionate" PriorityFactor="3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskForAntigen_Green_Pay" />
+        <SpeechRef UniqueID="AskForAntigen_CantAfford" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Green" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Green_None" x="1850.68665" y="-2928.34863" NativeText="I'm afraid I don't have any.">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Green" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityHasNoAntigen" Subject="Actor" StringData="Green" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Green_Pay" x="4559.77441" y="-950.8376" NativeText="Okay, I'll pay." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CanAffordItemOfType" Subject="Actor" Object="Target" StringData="Antigen_Green" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellAntigen" Subject="Target" Object="Actor" StringData="Antigen_Green" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_CantAfford" x="4572.926" y="-1820.11963" NativeText="}:-( I can't afford that." />
+    <Speech UniqueID="AskForAntigen_Blue" x="696.873" y="-5153.98047" NativeText="I need Blue Strain Antigen, can you help?" Situation="AskForAntigen">
+      <Replies>
+        <SpeechRef UniqueID="AskForAntigen_Blue_Give" />
+        <SpeechRef UniqueID="AskForAntigen_Blue_Sell" />
+        <SpeechRef UniqueID="AskForAntigen_Blue_Community" />
+        <SpeechRef UniqueID="AskForAntigen_Blue_None2" />
+        <SpeechRef UniqueID="AskForAntigen_Blue_None" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="Blue" />
+        <Condition Type="CommunityHasNoAntigenKnown" Subject="Target" StringData="Blue" Not="true" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Blue" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Blue_None" x="1620.58569" y="-6828.58447" NativeText="I don't have any Blue Strain antigen.  :-( You better find some quickly, they say the Blue Strain only takes a day.">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Blue" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityHasNoAntigen" Subject="Actor" StringData="Blue" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Blue_Sell" x="1851.93848" y="-4728.737" NativeText="Blue Strain antigen ain't cheap.  I can let you have some for %1 gold.">
+      <Params>
+        <SpeechParam Type="PriceToSellItem" Subject="Actor" Object="Target" StringData="Antigen_Blue" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Compassionate" PriorityFactor="3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskForAntigen_CantAfford" />
+        <SpeechRef UniqueID="AskForAntigen_Blue_Pay" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Blue" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Blue_Give" x="1849.9259" y="-3634.292" NativeText="Blue Strain can be nasty.  :-) Luckily I've got some antigen for you." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="4" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Blue" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveAntigen" Subject="Actor" Object="Target" StringData="Antigen_Blue" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Blue_Pay" x="3812.339" y="-4825.84668" NativeText="Okay, I'll pay." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CanAffordItemOfType" Subject="Actor" Object="Target" StringData="Antigen_Blue" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellAntigen" Subject="Target" Object="Actor" StringData="Antigen_Blue" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Red" x="702.667664" y="-9140.0625" NativeText="I need Red Strain Antigen, can you help?" Situation="AskForAntigen">
+      <Replies>
+        <SpeechRef UniqueID="AskForAntigen_Red_Give" />
+        <SpeechRef UniqueID="AskForAntigen_Red_Sell" />
+        <SpeechRef UniqueID="AskForAntigen_Red_Community" />
+        <SpeechRef UniqueID="AskForAntigen_Red_None2" />
+        <SpeechRef UniqueID="AskForAntigen_Red_None" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="Red" />
+        <Condition Type="CommunityHasNoAntigenKnown" Subject="Target" StringData="Red" Not="true" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Red" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Red_None" x="1852.12671" y="-10684.5176" NativeText="8-( Red Strain!  You need antigen fast, and I don't have any!">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Red" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityHasNoAntigen" Subject="Actor" StringData="Red" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Red_Sell" x="2124.22681" y="-8588.882" NativeText="8-( Red Strain Antigen for %1 gold, better decide fast!">
+      <Params>
+        <SpeechParam Type="PriceToSellItem" Subject="Actor" Object="Target" StringData="Antigen_Red" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" StringData="Compassionate" PriorityFactor="3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskForAntigen_CantAfford" />
+        <SpeechRef UniqueID="AskForAntigen_Red_Pay" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Red" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Red_Give" x="2118.00415" y="-7507.546" NativeText="8-( Quick, take this!" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" PriorityFactor="4" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Red" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveAntigen" Subject="Actor" Object="Target" StringData="Antigen_Red" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Red_Pay" x="3378.32764" y="-8890.83" NativeText="Okay, I'll pay." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CanAffordItemOfType" Subject="Actor" Object="Target" StringData="Antigen_Red" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellAntigen" Subject="Target" Object="Actor" StringData="Antigen_Red" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_White" x="616.94696" y="-11336.5459" NativeText="I need White Strain Antigen, can you help?" Situation="AskForAntigen">
+      <Replies>
+        <SpeechRef UniqueID="AskForAntigen_White_None" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="White" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_White_None" x="2053.30176" y="-11497.6387" NativeText="8-[ Are.. are you sure...?  There's no cure for the White Strain." />
+    <Speech UniqueID="OfferAntigen_Green" x="646.8778" y="-11996.2588" NativeText="You've been bitten, let me give you some Green Strain Antigen." Situation="OfferAntigen">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="OfferAntigen_No_DontLikeYou" />
+        <SpeechRef UniqueID="OfferAntigen_Green_Thankyou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Target" StringData="Green" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Green" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Green_Pay" x="629.4334" y="-13144.5" NativeText="You've been bitten, I've got Green Strain Antigen for %1 gold." Situation="OfferAntigen">
+      <Params>
+        <SpeechParam Type="PriceToSellItem" Subject="Actor" Object="Target" StringData="Antigen_Green" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="OfferAntigen_No_DontLikeYou" />
+        <SpeechRef UniqueID="OfferAntigen_Green_OkayPay" />
+        <SpeechRef UniqueID="OfferAntigen_No_CantAfford" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Target" StringData="Green" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Green" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Green_Thankyou" x="2133.32446" y="-12797.502" NativeText="Thank you.">
+      <Events>
+        <StoryEvent Type="GiveAntigen" Subject="Target" Object="Actor" StringData="Antigen_Green" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_No_DontLikeYou" x="-1470.12036" y="-13516.9434" NativeText="}:-[ I don't want your 'help'.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="180" Data2="315" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Green_OkayPay" x="2105.79688" y="-13373.5557" NativeText="Okay, I'll pay.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CanAffordItemOfType" Subject="Actor" Object="Target" StringData="Antigen_Green" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellAntigen" Subject="Target" Object="Actor" StringData="Antigen_Green" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_No_CantAfford" x="-1461.40771" y="-14584.8486" NativeText="}:-( I can't afford that." />
+    <Speech UniqueID="OfferAntigen_Blue_OkayPay" x="2081.71313" y="-16033.8076" NativeText="Okay, I'll pay.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CanAffordItemOfType" Subject="Actor" Object="Target" StringData="Antigen_Blue" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellAntigen" Subject="Target" Object="Actor" StringData="Antigen_Blue" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Blue_Pay" x="605.349854" y="-15804.751" NativeText="You've been bitten, I've got Blue Strain Antigen for %1 gold." Situation="OfferAntigen">
+      <Params>
+        <SpeechParam Type="PriceToSellItem" Subject="Actor" Object="Target" StringData="Antigen_Blue" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="OfferAntigen_No_DontLikeYou" />
+        <SpeechRef UniqueID="OfferAntigen_Blue_OkayPay" />
+        <SpeechRef UniqueID="OfferAntigen_No_CantAfford" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Target" StringData="Blue" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Blue" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Blue_Thankyou" x="2109.241" y="-15457.7539" NativeText="Thank you.">
+      <Events>
+        <StoryEvent Type="GiveAntigen" Subject="Target" Object="Actor" StringData="Antigen_Blue" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Blue" x="622.79425" y="-14656.5107" NativeText="You've been bitten, let me give you some Blue Strain Antigen." Situation="OfferAntigen">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="OfferAntigen_No_DontLikeYou" />
+        <SpeechRef UniqueID="OfferAntigen_Blue_Thankyou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Target" StringData="Blue" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Blue" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Red" x="598.544556" y="-17355.3047" NativeText="You've been bitten, let me give you some Red Strain Antigen." Situation="OfferAntigen">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="OfferAntigen_No_DontLikeYou" />
+        <SpeechRef UniqueID="OfferAntigen_Red_Thankyou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Target" StringData="Red" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Red" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Red_Pay" x="581.100159" y="-18503.5449" NativeText="You've been bitten, I've got Red Strain Antigen for %1 gold." Situation="OfferAntigen">
+      <Params>
+        <SpeechParam Type="PriceToSellItem" Subject="Actor" Object="Target" StringData="Antigen_Red" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="OfferAntigen_No_DontLikeYou" />
+        <SpeechRef UniqueID="OfferAntigen_Red_OkayPay" />
+        <SpeechRef UniqueID="OfferAntigen_No_CantAfford" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Target" StringData="Red" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Red" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Red_OkayPay" x="2057.463" y="-18732.6016" NativeText="Okay, I'll pay.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CanAffordItemOfType" Subject="Actor" Object="Target" StringData="Antigen_Red" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellAntigen" Subject="Target" Object="Actor" StringData="Antigen_Red" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="OfferAntigen_Red_Thankyou" x="2084.99072" y="-18156.5488" NativeText="Thank you.">
+      <Events>
+        <StoryEvent Type="GiveAntigen" Subject="Target" Object="Actor" StringData="Antigen_Red" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Green_Community" x="2193.33838" y="-1828.80981" NativeText="%1 might have some Green Strain antigen." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="ReferringTo" Data="1" StringData="Antigen_Green" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Green_None2" x="2610.92383" y="-2784.31348" NativeText="I'm afraid I don't have any... don't think anyone round here does.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Green" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityHasNoAntigen" Subject="Actor" StringData="Green" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Blue_Community" x="2540.80518" y="-5581.949" NativeText="%1 might have some Blue Strain antigen." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="ReferringTo" Data="1" StringData="Antigen_Blue" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Red_Community" x="2425.7666" y="-9634.47" NativeText="8-( %1 has some Red Strain antigen.. hurry!" PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="ReferringTo" Data="1" StringData="Antigen_Red" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Blue_None2" x="2588.48682" y="-6589.46533" NativeText="I'm afraid I don't have any... don't think anyone round here does.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Blue" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityHasNoAntigen" Subject="Actor" StringData="Blue" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskForAntigen_Red_None2" x="2839.48242" y="-10599.6572" NativeText="8-( I'm sorry.. none of us have any.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Antigen_Red" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityHasNoAntigen" Subject="Actor" StringData="Red" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Infected1" x="604.669067" y="3040.7688" NativeText="{:-( Oh God.. I think I've picked something up." Situation="OpenerToSelf" Importance="Low">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Actor" />
+        <Condition Type="HasInfectedInjuryOfType" Subject="Actor" StringData="ZombieBite" Not="true">
+          <ConditionBlocks />
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Actor" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Infected2" x="1441.11487" y="3047.36523" NativeText="8-( Oh no, no... I'm getting the symptoms.   I've been infected." Situation="OpenerToSelf" Importance="Low">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Actor">
+          <ConditionBlocks />
+        </Condition>
+        <Condition Type="HasInfectedInjuryOfType" Subject="Actor" StringData="ZombieBite" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Actor" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Actor" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten_YouAreInfected2" x="2317.643" y="3830.52173" NativeText="You've been exposed haven't you?  You better find some antigen." Situation="Opener" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Target">
+          <ConditionBlocks />
+        </Condition>
+        <Condition Type="HasInfectedInjuryOfType" Subject="Target" StringData="ZombieBite" Not="true" />
+        <Condition Type="InfectedInjuryIsOlderThan" Subject="Target" Data="10" />
+        <Condition Type="IsShowingDialogueOptions" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bitten_IHaveAntigen2" x="3886.27881" y="3755.05249" NativeText="Have you caught the virus?  I've got some antigen if you need it." Situation="Opener" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" Not="true" />
+        <Condition Type="HasInfectedInjury" Subject="Target">
+          <ConditionBlocks />
+        </Condition>
+        <Condition Type="HasInfectedInjuryOfType" Subject="Target" StringData="ZombieBite" Not="true" />
+        <Condition Type="HasAntigenFor" Subject="Actor" Object="Target" Data="0.75" />
+        <Condition Type="IsShowingDialogueOptions" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="HasInfectedInjury" Subject="Target" Not="true" />
+        <Condition Type="InfectionIsRemarkedOn" Subject="Target" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="SetInfectionRemarkedOn" Subject="Target" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

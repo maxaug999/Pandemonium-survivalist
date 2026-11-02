@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cornmeal</NativeName>
+  <NativeDescription>A meal out of corn</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>2</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.9</Nutrition>
+  <Tastiness>15</Tastiness>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor />
+  <BadGiftFor />
+</EquipmentPrototype>

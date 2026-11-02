@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Twinkies</NativeName>
+  <NativeDescription>Enjoy the little things</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>5</BasePrice>
+  <Nutrition>1</Nutrition>
+  <Caffeine>0.5</Caffeine>
+  <Water>-0.1</Water>
+  <Tastiness>100</Tastiness>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ZombieII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>VendingMachine</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Zombie</Name>
+      <OverrideScarcity>Legendary</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor>
+    <string>Anyone</string>
+  </GiftFor>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>15</SkillOnConsumptionProgression>
+</EquipmentPrototype>

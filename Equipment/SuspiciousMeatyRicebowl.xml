@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Suspicious Meaty Ricebowl</NativeName>
+  <NativeDescription>Taste suspiciously delicious</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>1</Weight>
+  <BasePrice>6</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.6</Nutrition>
+  <Tastiness>65</Tastiness>
+  <ContainsHumanMeat>true</ContainsHumanMeat>
+  <LootableFromLocations />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>8</SkillOnConsumptionProgression>
+</EquipmentPrototype>

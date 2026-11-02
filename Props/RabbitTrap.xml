@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>RabbitTrap</TypeName>
+  <NativeName>Rabbit Trap</NativeName>
+  <Category>Camp/Props</Category>
+  <PrefabNames>
+    <string>Prefabs\Props\Trap\RabbitTrap</string>
+    <string>Prefabs\Props\Trap\RabbitTrap_Closed</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>2</MaxDamage>
+  <CoverType>WaistHigh</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ImpactSusceptibility>Medium_BulletHits</ImpactSusceptibility>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WantSoundOnDemolition>false</WantSoundOnDemolition>
+  <WheelPos>
+    <x>0.159574479</x>
+    <y>0.159574479</y>
+  </WheelPos>
+  <WheelOffset>
+    <x>-1.04895E-09</x>
+    <y>0</y>
+  </WheelOffset>
+  <SetAreaOwnership>false</SetAreaOwnership>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>2</MaxInventoryWeight>
+  <CrouchToLoot>true</CrouchToLoot>
+  <Mass>5</Mass>
+</PropPrototype>

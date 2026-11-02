@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Flint</NativeName>
+  <NativeDescription>Strike a flint with a hunting knife to light a campfire.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>1</Weight>
+  <BasePrice>1</BasePrice>
+  <EquippedModelName>Prefabs/Equipment/Flint</EquippedModelName>
+  <Scarcity>Common</Scarcity>
+  <LootLocations>
+    <LootLocation>Survivor</LootLocation>
+    <LootLocation>Camp</LootLocation>
+  </LootLocations>
+  <GiftFor />
+  <BadGiftFor />
+</EquipmentPrototype>

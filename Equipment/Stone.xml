@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Stone</NativeName>
+  <NativeDescription>Can be used as a building material for some structures, if you have a toolbox or a shovel equipped and your Construction skill is high enough.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>40</Weight>
+  <BasePrice>1</BasePrice>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>50</TypicalLootAmount>
+</EquipmentPrototype>

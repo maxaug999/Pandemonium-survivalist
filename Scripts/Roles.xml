@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>15</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>48.73736</x>
+    <y>2658.8645</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.65748316</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Roles_LumberjackComplete" x="803.629761" y="-898" NativeText=":-) That's the last of the trees in this area." Situation="LumberjackComplete" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_GatherComplete" x="807.5099" y="-1243.81433" NativeText=":-) That's all of them." Situation="GatherDepleted" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_GatherTooHeavy_NoBackpack" x="804.255249" y="-1572.47314" NativeText=":-( I can't carry that.  I need a backpack." Situation="GatherTooHeavy" Importance="FriendComplaint">
+      <Conditions>
+        <Condition Type="HasBackpack" Subject="Actor" Data="1" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_GatherTooHeavy_HaveBackpack" x="800" y="-2056.36646" NativeText=":-( I don't have enough space for that in my backpack." Situation="GatherTooHeavy" Importance="FriendComplaint">
+      <Conditions>
+        <Condition Type="HasBackpack" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_ConstructionComplete" x="808.510864" y="-2635.40918" NativeText=":-) Construction Complete!" Situation="ConstructionComplete" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_NoGatherDepotFound" x="817.1709" y="-3386.771" NativeText=":-( We've got nowhere to dump this stuff." Situation="NoGatherDepotFound" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_CaptureComplete" x="812.569763" y="-3711.92847" NativeText=":-) Alright, %1 should be safe here." Situation="CaptureComplete" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Roles_RepairsComplete" x="823.1284" y="-4144.091" NativeText=":-) That's all fixed." Situation="RepairsComplete" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_CraftingComplete" x="836.7455" y="-4501.26074" NativeText=":-) Job done!" Situation="CraftingComplete" Importance="Low" />
+    <Speech UniqueID="Roles_CookingComplete" x="804.1439" y="-4887.17041" NativeText=":-) Food is ready!" Situation="CookingComplete" Importance="Low" />
+    <Speech UniqueID="Roles_TooColdToFarm" x="814.883" y="-5639.2" NativeText="Ain't going to be able to grow much this time of year." Situation="TooColdToFarm" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_InsufficientCraftResources" x="1664.8739" y="-3003.15479" NativeText=":-( I need some more supplies to make this." Situation="InsufficientCraftingResources" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_InsufficientCookingResources" x="2503.109" y="-3000.08447" NativeText=":-( I'm out of cooking ingredients." Situation="InsufficientCookingResources" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_BoozeComplete" x="804.1206" y="-5253.47949" NativeText=":-) Booze is ready!" Situation="BoozeComplete" Importance="Low" />
+    <Speech UniqueID="Roles_NeedBottle" x="808.587036" y="-6088.73" NativeText="I need a bottle or something to store this in." Situation="NeedBottle" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_NeedSealedContainer" x="1704.8811" y="-6091.7085" NativeText="I need a sealed container to store this in." Situation="NeedSealedContainer" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_MiningComplete" x="801.9845" y="-512.653" NativeText="I've run out of rocks." Situation="MiningComplete" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_NeedAxe" x="2550.87964" y="-6091.938" NativeText="I need an axe." Situation="NeedAxe" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_NeedPickaxe" x="3298.94019" y="-6095.672" NativeText="I need a pickaxe." Situation="NeedPickaxe" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_NeedToolbox" x="4017.0437" y="-6098.165" NativeText="I need a toolbox." Situation="NeedToolbox" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_NeedShovel" x="4754.84766" y="-6099.90967" NativeText="I need a shovel." Situation="NeedShovel" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_GatherTooHeavy_HaveBackpack2" x="1652.2002" y="-2053.66968" NativeText=":-( I don't have enough space to put the %1 in my backpack." Situation="GatherTooHeavy" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBackpack" Subject="Actor" Data="1" />
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_GatherTooHeavy_NoBackpack2" x="1653.88965" y="-1106.81934" NativeText=":-( I can't carry the %1.  I need a backpack." Situation="GatherTooHeavy" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBackpack" Subject="Actor" Data="1" Not="true" />
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_InsufficientCraftResources2" x="3329.938" y="-3003.77222" NativeText=":-( I need %1 to make this." Situation="InsufficientCraftingResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_InsufficientCookingResources2" x="4176.57227" y="-3010.23462" NativeText=":-( I need %1 to cook this." Situation="InsufficientCookingResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_NeedSealedContainer2" x="1698.06641" y="-6513.103" NativeText="I need a sealed container to store this %1 in." Situation="NeedSealedContainer" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_NeedBottle2" x="817.502" y="-6522.798" NativeText="I need a bottle or something to store this %1 in." Situation="NeedBottle" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_NeedLighter" x="805.351563" y="-100.961273" NativeText="I need a match or flint to light the fire." Situation="NeedLighter" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_NeedKnife" x="1752.57886" y="-41.0575333" NativeText="I need a knife to strike the flint with." Situation="NeedLighter" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Flint" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_NeedWood" x="801.6077" y="432.5556" NativeText="I need some wood or charcoal for the fire." Situation="NeedFuelForFire" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_InsufficientResources" x="789.933655" y="-3005.51831" NativeText=":-( We're out of building materials." Situation="InsufficientResources" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_InsufficientResources2" x="-114.379" y="-2863.166" NativeText=":-( I need more %1 to build this %2." Situation="InsufficientResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_NoGatherDepotFound2" x="1682.51038" y="-3389.726" NativeText=":-( We've got nowhere to dump this %1." Situation="NoGatherDepotFound" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_InsufficientRepairResources2" x="-1880.82373" y="-2857.06226" NativeText=":-( I need more %1 to repair the %2." Situation="InsufficientRepairingResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_InsufficientRepairResources" x="-1019.21307" y="-3025.03564" NativeText=":-( I need more materials to repair the %1." Situation="InsufficientRepairingResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Roles_InsufficientCaptureResources" x="-2749.52441" y="-3000.76245" NativeText=":-( I'll need some more materials to fix up the %1 so %2 can use it." Situation="InsufficientCapturingResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Roles_InsufficientCaptureResources2" x="-3611.135" y="-2832.789" NativeText=":-( I'll need some more %1 to fix up the %2 so %3 can use it." Situation="InsufficientCapturingResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_CaptureComplete_Vehicle" x="59.039978" y="-3707.827" NativeText=":-) That's it, I think I got it working!" Situation="CaptureComplete" Importance="FriendComplaint">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsVehicle" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Roles_InsufficientCaptureResources3" x="-4479.773" y="-2858.78247" NativeText=":-( I need some more %1." Situation="InsufficientCapturingResources" Importance="FriendComplaint">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ExtraParam" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsPlantableCrop" Subject="ReferringTo" />
+        <Condition Type="Exists" Subject="ExtraParam" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

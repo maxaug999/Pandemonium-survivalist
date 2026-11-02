@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>1306.25244</x>
+    <y>-533.366455</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4329665</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Refugee_WantToJoinIS" x="-432.373444" y="-773.454041" NativeText=":-) Could I join your group?" Situation="Opener" Importance="Low" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesIS" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoIS" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="25" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesIS" x="408.2747" y="-964.665466" NativeText=":-| Sure I guess..." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulIS" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoIS" x="459.829956" y="-1468.59985" NativeText=":-) No" CanTalkOutOfRange="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulIS" x="1344.19519" y="-922.4037" NativeText="}:-) Thanks!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinCold" x="-401.1717" y="-2356.21948" NativeText="{:-( I feel so cold.. could I join your group?" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesCold" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoCold" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="5" />
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="Actor" ObjectModifier="Leader" Data="-2" />
+        <Condition Type="HasHypothermia" Subject="Actor" Data="30" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesCold" x="493.852234" y="-2509.913" NativeText=":-| Ok fine.. I guess." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulCold" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoCold" x="522.6542" y="-3055.64258" NativeText=":-) Sorry %1 there's no room for more." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="BrotherOrSister" Subject="Target" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulCold" x="1328.36572" y="-2559.07349" NativeText="{:-| Oh how warm... Thanks!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinBitten" x="-451.5144" y="-8133.83057" NativeText="{:-( I've been bitten! please help me! let me join your group!" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesBitten" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoBitten" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="10" />
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="Actor" ObjectModifier="Leader" Data="-2" />
+        <Condition Type="HasInfectionProgression" Subject="Actor" Data="0.1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesBitten" x="515.197449" y="-8341.42" NativeText=":-) Lucky you I think we have spare antigen and space!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulBitten" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoBitten" x="514.1982" y="-9134.074" NativeText="}:-) No! but I'll make sure to shoot you as soon as you turn." CanTalkOutOfRange="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulBitten" x="1513.50732" y="-8228.201" NativeText="8-| Gee Thanks! so where's the antigen?" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinFickle" x="-436.717621" y="965.044067" NativeText=":-| Could I join your group?" Situation="Opener" Importance="Low" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYes" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="33" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYes" x="424.264954" y="806.3533" NativeText=":-| Sure I guess..." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesful" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesful" x="1412.47241" y="1072.85" NativeText=":-) Thanks!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinWar" x="-405.9059" y="2781.455" NativeText=":-| Could I join your group?" Situation="Opener" Importance="Low" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesWar" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoWar" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+        <Condition Type="CommunityIsAtWar" Subject="Target" Object="Target" ObjectModifier="Community" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesWar" x="408.922668" y="2445.50073" NativeText=":-| I guess more soldiers won't hurt." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulWar" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoWar" x="420.202728" y="1975.50391" NativeText="}:-( Sorry you look like a wimp so no." CanTalkOutOfRange="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulWar" x="1305.67639" y="2500.02" NativeText="}:-) Now Lets get going!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinThirsty" x="-422.820618" y="-4239.197" NativeText="{:-( I'm Sooo thirsty.. could I join your group?" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesThirsty" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoThirsty" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="5" />
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="Actor" ObjectModifier="Leader" Data="-2" />
+        <Condition Type="HasThirst" Subject="Actor" Data="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesThirsty" x="428.519867" y="-4316.656" NativeText=":-| I hope I won't regret this." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulThirsty" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoThirsty" x="485.900024" y="-4862.08545" NativeText=":-) Nah I don't care." CanTalkOutOfRange="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulThirsty" x="1367.32275" y="-4268.845" NativeText="}:-( Now I need that water fast!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinHungry" x="-359.856628" y="-6116.68066" NativeText="{:-( So... Hungry... Can.. I... Join..." Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesHungry" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoHungry" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="5" />
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="Actor" ObjectModifier="Leader" Data="-2" />
+        <Condition Type="HasHunger" Subject="Actor" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesHungry" x="473.033722" y="-6188.44629" NativeText=":-) Ok! Now help yourself out!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulHungry" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulHungry" x="1419.45984" y="-6136.91064" NativeText="{:-) Gee thanks!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoHungry" x="471.655975" y="-6796.57764" NativeText="}:-( %1 ain't running a free buffet!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinMorale" x="-3077.81519" y="-416.916718" NativeText=":-( Could I join your group?" Situation="Opener" Importance="Low" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesMorale" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoMorale" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="10" />
+        <Condition Type="MoraleIsLessThan" Subject="Actor" Data="-75" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesMorale" x="-2305.469" y="-465.63385" NativeText=":-| Sure I guess..." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulMorale" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulMorale" x="-1483.69312" y="-426.14035" NativeText="{:-) tahnks.. {:-( my previous leader sucks." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoMorale" x="-2307.775" y="-990.3793" NativeText=":-) No" CanTalkOutOfRange="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinRelation" x="-3105.64429" y="-2218.89819" NativeText=":-( Could I join your group?" Situation="Opener" Importance="Low" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinYesRelation" />
+        <SpeechRef UniqueID="Refugee_WantToJoinNoRelation" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="10" />
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="Actor" ObjectModifier="Leader" Data="-25" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinYesRelation" x="-2306.98633" y="-2337.74561" NativeText=":-| Sure I guess..." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfulRelation" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfulRelation" x="-1449.51746" y="-2416.57813" NativeText=":-) Thank you! :-( I just hate my previous leader!" CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinNoRelation" x="-2298.00854" y="-2946.2" NativeText=":-) No " CanTalkOutOfRange="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoin" x="-2850.14355" y="1174.53027" NativeText=":-| Could I join you? :-) your one skilled leader aren't you?" Situation="Opener" Importance="Low" RepeatTime="600" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinY" />
+        <SpeechRef UniqueID="Refugee_WantToJoinN" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Target" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Target" />
+        <Condition Type="CommunityIsIntroduced" Subject="Target" Object="Actor" />
+        <Condition Type="KnowsName" Subject="Target" Object="Actor" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="66" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinY" x="-2029.26685" y="1031.8291" NativeText=":-| Sure..." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Refugee_WantToJoinSuccesfully" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinN" x="-2106.018" y="453.7517" NativeText=":-) No." CanTalkOutOfRange="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Refugee_WantToJoinSuccesfully" x="-1334.77478" y="1041.65186" NativeText=":-) You won't regret it." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="LeftCommunity" Secrecy="Private" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Helped" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

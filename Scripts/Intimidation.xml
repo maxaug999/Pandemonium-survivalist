@@ -1,0 +1,866 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>45</NextFreeSpeechID>
+  <NextFreeTriggerID>3</NextFreeTriggerID>
+  <NextFreeConditionBlockID>8</NextFreeConditionBlockID>
+  <NextFreeQuestID>5</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-7.542553</x>
+    <y>2643.283</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.486740232</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Intimidation_LatePayments" x="193.0198" y="-2620.29321" NativeText="Yeah I could have a job for you.  Those lazy assholes in %1 have been late with their payments again.  You in?" PerObjectType="PerKnownCommunity">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_DontWant" />
+        <SpeechRef UniqueID="Intimidation_InnocentPeople" />
+        <SpeechRef UniqueID="Intimidation_PayIsRight" />
+        <SpeechRef UniqueID="Intimidation_LearnRespect" />
+        <SpeechRef UniqueID="Intimidation_NotNow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsLooter" Subject="Actor" />
+        <Condition Type="IsNormalCommunity" Subject="ReferringTo" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_KillSomeoneSilently" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_KillSomeone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_KillEveryone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_Negotiate" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_Warn" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intimidation_Frequency" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Intimidation_DontWant" x="1823.40027" y="-1531.79163" NativeText="}:-| I don't want any part of this.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_BetterThanMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_LearnRespect" x="1816.32141" y="-3528.85352" NativeText="}:-) Sounds like they need to learn some respect!">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_DamnRight" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_PayIsRight" x="1819.1687" y="-2915.86035" NativeText="If the pay is right.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_MyRespect" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Amoral" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_InnocentPeople" x="1832.1" y="-2225.118" NativeText="Okay, {:-| but I'm not going to hurt any innocent people!">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_TheirFault" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_NotNow" x="1837.39014" y="-4189.46533" NativeText="Not right now.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_GrowAPair" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_BetterThanMe" x="2970.39819" y="-1401.43542" NativeText="}:-| Oh, like you're so much better than me!">
+      <Events>
+        <StoryEvent Type="FailQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeone" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="StoodUpTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_TheirFault" x="2975.202" y="-2314.54468" NativeText="Sure, I mean it's their fault for not paying up.">
+      <Continues>
+        <SpeechRef UniqueID="Intimidation_InCharge" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Intimidation_InCharge" x="4208.48145" y="-3172.90918" NativeText="We can't let them take advantage of us.  We need to show them who's in charge!">
+      <Continues>
+        <SpeechRef UniqueID="Intimidation_WipeThemOut" />
+        <SpeechRef UniqueID="Intimidation_PushThem" />
+        <SpeechRef UniqueID="Intimidation_AndStuff" />
+        <SpeechRef UniqueID="Intimidation_EncourageTheOthers" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Intimidation_MyRespect" x="2965.60913" y="-2907.29736" NativeText="Of course, %1, but what's worth more than gold is my respect.">
+      <Params>
+        <SpeechParam Type="BrotherOrSister" Subject="Target" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="Intimidation_InCharge" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Intimidation_DamnRight" x="2956.9646" y="-3629.79468" NativeText="}:-) Damn right they do!">
+      <Continues>
+        <SpeechRef UniqueID="Intimidation_InCharge" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Intimidation_GrowAPair" x="9152.338" y="-6513.42529" NativeText="}:-| Let me know when you grow a pair." />
+    <Speech UniqueID="Intimidation_WipeThemOut" x="5442.95166" y="-1510.33447" NativeText="And the only way to do that is to completely wipe them out!  That way everyone else in the region will know not to fuck with us.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_UhOkay" />
+        <SpeechRef UniqueID="Intimidation_ChangedMyMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_PushThem" x="5448.29932" y="-2686.28735" NativeText="{:-| Now, if we push them too far they may turn round and attack us.  :-| So what I need you to do is sneak in there and... :-[ kill one of them - but don't let them know it was you that did it, or us!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Intimidation_Accident" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_Accident" x="6391.263" y="-2941.63428" NativeText="Make it look like an accident.  That way they'll always wonder if was really just bad luck or if they did something to piss us off.  }:-) But without proof they won't come back at us!  See?">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_UhOkay" />
+        <SpeechRef UniqueID="Intimidation_ChangedMyMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_AndStuff" x="5430.07764" y="-3626.13013" NativeText="So how about you go over there and be, like, all intimidating and stuff?  And get them to pay up.  Or if they refuse then just, like, do whatever you have to, man.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_UhOkay" />
+        <SpeechRef UniqueID="Intimidation_ChangedMyMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_EncourageTheOthers" x="5422.57568" y="-4648.9917" NativeText="Your job is to execute one of those fuckers, to discourage the others.  Tell them that's what happens to people who disrespect %1!">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_UhOkay" />
+        <SpeechRef UniqueID="Intimidation_ChangedMyMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_ChangedMyMind" x="7663.651" y="-3783.782" NativeText="Actually I changed my mind.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_GrowAPair" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_UhOkay" x="7655.30225" y="-3061.73584" NativeText="Uh.. okay.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_LeaderBody" />
+        <SpeechRef UniqueID="Intimidation_Credit" />
+        <SpeechRef UniqueID="Intimidation_SplitIt" />
+        <SpeechRef UniqueID="Intimidation_WhatItTakes" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_WhatItTakes" x="9376.392" y="-4265.92725" NativeText="Bring me the body so I know you did it.  Show me you got what it takes!">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_Warn" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_SplitIt" x="9375.819" y="-3242.65063" NativeText=":-) Oh, and bring the gold back to me and we'll split it!  Or, you know, one of their corpses.  Whichever is cool with you.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_Negotiate" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_Credit" x="9387.35" y="-2262.07935" NativeText="Some people round here like to claim credit for things without doing the work... I'm sure you're not like that, but bring me the body just to be sure.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeoneSilently" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_LeaderBody" x="9364.28" y="-928.919" NativeText="Bring me the body of their leader, %1, to prove you did it.  Don't try to screw ME over, I will crush you!">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillEveryone" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_YoureLate" x="235.627411" y="-7069.61475" NativeText="}:-[ You missed your payment to %1." Situation="QuestTopic" PerObjectType="PerActiveQuestReferringToTarget">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_GotYourPayment" />
+        <SpeechRef UniqueID="Intimidation_NeedMoreTime" />
+        <SpeechRef UniqueID="Intimidation_NoMoreGold" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="Intimidation_Warn" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_GotYourPayment" x="1566.39929" y="-5176.57959" NativeText="}:-[ I got your payment... right here!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="10" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="10" />
+        <Condition Type="Always" PriorityFactor="15" />
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Intimidation_Warn" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Intimidation_Negotiate" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Intimidation_NeedMoreTime" x="1569.80029" y="-7128.09" NativeText="{:-( I just need a bit more time!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_OneOfYouMustDie" />
+        <SpeechRef UniqueID="Intimidation_WatchYourBack" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_NoMoreGold" x="1581.794" y="-7827.397" NativeText="They won't get any more gold from us.  You can tell them that.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_OneOfYouMustDie" />
+        <SpeechRef UniqueID="Intimidation_WatchYourBack" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_OneOfYouMustDie" x="2748.889" y="-6607.045" NativeText="}:-[ That was your last warning.  One of you must die now!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="Intimidation_Warn" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="Intimidation_Negotiate" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_WatchYourBack" x="2771.0752" y="-8228.84" NativeText="I'd watch my back if I were you.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="Intimidation_Warn" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="Intimidation_Negotiate" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_LastChance" x="120.803604" y="-8904.221" NativeText="This is your last chance to pay %1." Situation="QuestTopic" PerObjectType="PerActiveQuestReferringToTarget">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_GotYourPayment" />
+        <SpeechRef UniqueID="Intimidation_NeedMoreTime" />
+        <SpeechRef UniqueID="Intimidation_NoMoreGold" />
+        <SpeechRef UniqueID="Intimidation_UsedToBeFriends" />
+        <SpeechRef UniqueID="Intimidation_RealAsshole" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="Intimidation_Negotiate" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_UsedToBeFriends" x="1587.8783" y="-8428.666" NativeText="{:-( Alright but, shit... I thought we were friends." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Intimidation_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Intimidation_BringBackPayment" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Object="Target" Data="400" StringData="Gold" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_RealAsshole" x="1593.62134" y="-10024.0107" NativeText="{:-[ Alright, alright.  You're a real %1, you know that?" SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Intimidation_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="Intimidation_BringBackPayment" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Object="Target" Data="400" StringData="Gold" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_Persuaded" x="-69.0392456" y="-12018.18" NativeText="I persuaded %1 to pay up!" Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_GreatJob" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_BringBackPayment" />
+        <Condition Type="HasGold" Subject="Actor" Data="200" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_GreatJob" x="1338.83936" y="-11733.29" NativeText=":-) Woah, great job!  I'll take my half and you keep yours.">
+      <Events>
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="200" StringData="Gold" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackPayment" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_ThatCorpse" x="-21.76899" y="-14842.416" NativeText="Here's that corpse you wanted." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_Teach" />
+        <SpeechRef UniqueID="Intimidation_DidTheyKnow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intimidation_LeaderNotNeeded" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="ReferringTo" StringData="Human" />
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_Teach" x="1338.97351" y="-14387.8311" NativeText="}:-) Yeah!  That should teach %1 to mess with us!  Here's your payment.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_ThisGuy" x="-63.01378" y="-16468.3535" NativeText="Uh, this %1's from %2... I killed %3 for you." Situation="QuestTopic" Lie="true" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Actor" SubjectModifier="Carrying" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" SubjectModifier="Carrying" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_Teach_Credulous" />
+        <SpeechRef UniqueID="Intimidation_WhoIsThis" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intimidation_IsKillSomeoneSilentlyActive" />
+            <ConditionBlockRef UniqueID="Intimidation_IsKillSomeoneActive" />
+            <ConditionBlockRef UniqueID="Intimidation_IsWarnActive" />
+            <ConditionBlockRef UniqueID="Intimidation_IsPickUpBodyActive" />
+            <ConditionBlockRef UniqueID="Intimidation_IsBringBackBodyActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="ReferringTo" StringData="Human" Not="true" />
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="Target" StringData="Human" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_WhoIsThis" x="1336.72046" y="-20340.1133" NativeText="}:-| Who is this?  What are you trying to pull?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_Mistake" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeone" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeoneSilently" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillEveryone" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_Warn" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_PickUpBody" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_PickUpLeaderBody" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Intimidation_Mistake" x="2640.45923" y="-19139.207" NativeText="Erm... I must have made a mistake.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_DontComeBack" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Intimidation_DontComeBack" x="3778.585" y="-18631.0352" NativeText="}:-[ Get out of here!  And don't come back." />
+    <Speech UniqueID="Intimidation_Teach_Credulous" x="1344.37219" y="-16552.93" NativeText="}:-) Yeah!  That should teach %1 to mess with us!  Here's your payment." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="120" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="IgnoredByObjectCommunity" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeone" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeoneSilently" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillEveryone" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_Warn" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_PickUpBody" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_PickUpLeaderBody" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" BoolData="true" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_DidTheyKnow" x="1340.08752" y="-15743.1328" NativeText="Did you do it silently?  Did they know it was you?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_NeverKnew" />
+        <SpeechRef UniqueID="Intimidation_UmYeah" />
+        <SpeechRef UniqueID="Intimidation_MadeThemMad" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeoneSilently" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_UmYeah" x="2762.85278" y="-15234.0664" NativeText="Um.. yeah." Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_Teach_CrawlingBack" />
+        <SpeechRef UniqueID="Intimidation_SurroundedByIdiots" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_NeverKnew" x="2814.16479" y="-13930.043" NativeText=":-) They never knew what hit them.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_Teach" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_MadeThemMad" x="2752.638" y="-16455.6484" NativeText="Well, no.  I think I made them mad.">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_SurroundedByIdiots" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_SurroundedByIdiots" x="4139.99756" y="-15933.86" NativeText="}:-| Can't anyone do anything right around here?!  Well I suppose I better pay you something for the body even though you obviously didn't follow my instructions at all.  {:-[ I'm surrounded by idiots.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="200" StringData="Gold" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FailedWorkFor" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_Teach_CrawlingBack" x="4149.21826" y="-13688.292" NativeText="}:-) Thank goodness you didn't screw it up.  Now, they'll come crawling back.  You'll see!">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="120" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="IgnoredByObjectCommunity" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Intimidation_KilledThemAll" x="-43.2522964" y="-13151.0693" NativeText=":-( I killed them... all of them." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_Kings" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="Intimidation_KillEveryone" />
+        <Condition Type="IsCarrying" Subject="Actor" Object="ReferringTo" ObjectModifier="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_ThisIsTheirLeader" x="-65.15576" y="-18253.1973" NativeText="Uh, this is %1, their leader... I killed them all for you." Situation="QuestTopic" Lie="true" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Intimidation_Teach_Credulous" />
+        <SpeechRef UniqueID="Intimidation_WhoIsThis" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intimidation_IsKillEveryoneActive" />
+            <ConditionBlockRef UniqueID="Intimidation_IsPickUpLeaderBodyActive" />
+            <ConditionBlockRef UniqueID="Intimidation_IsBringBackLeaderBodyActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+        <Condition Type="IsCarrying" Subject="Actor" Object="ReferringTo" ObjectModifier="Leader" Not="true" />
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="Target" StringData="Human" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Intimidation_SomeoneToKickAss" x="-1482.44775" y="-2620.75952" NativeText="I heard %1 wants someone to go kick %2 ass since they stopped paying us our dues." PerObjectType="PerKnownCommunity">
+      <Params>
+        <SpeechParam Type="CommunityLeaderName" Subject="Actor" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="IsLooter" Subject="Actor" />
+        <Condition Type="IsNormalCommunity" Subject="ReferringTo" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" SubjectModifier="Leader" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_KillSomeoneSilently" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_KillSomeone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_KillEveryone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_Negotiate" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="Intimidation_Warn" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intimidation_Frequency" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Intimidation_Kings" x="1344.671" y="-13001.1553" NativeText="}:-) Alright!  We are the fucking kings of this area!  This is what it's all about!  You have earned this my friend.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Intimidation_AtWarTrigger" x="1364.4895" y="-763.961731">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intimidation_LeaderDead" />
+            <ConditionBlockRef UniqueID="Intimidation_AtWar" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeone" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Intimidation_Trigger_LeaderBuried" x="2214.31982" y="-658.614868">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsBuried" Subject="QuestObject" SubjectModifier="Leader" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" Object="QuestObject" StringData="Intimidation_PickUpLeaderBody" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="QuestGiver" Object="QuestObject" StringData="Intimidation_PickUpBody" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Intimidation_LeaderDead" x="477.700165" y="-431.300262">
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_AtWar" x="481.305725" y="-727.3397">
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Player" Object="ReferringTo" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsKillSomeoneActive" x="-1171.418" y="-16629.498">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_KillSomeone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsWarnActive" x="-1187.98071" y="-17027.9434">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_Warn" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsPickUpLeaderBodyActive" x="-1120.969" y="-18795.2031">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_PickUpLeaderBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsKillEveryoneActive" x="-1120.96912" y="-18399.0352">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_KillEveryone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsBringBackLeaderBodyActive" x="-1117.54285" y="-19247.791">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="Intimidation_PickUpLeaderBody" />
+        <Condition Type="IsBuried" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsPickUpBodyActive" x="-1190.72791" y="-17435.2656">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_PickUpBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsBringBackBodyActive" x="-1174.87427" y="-17821.87">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="Intimidation_PickUpBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_Frequency" x="-627.70105" y="-4178.73535" Type="Or">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" SubjectModifier="Community" Data="2" StringData="Intimidation" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_IsKillSomeoneSilentlyActive" x="-1160.96216" y="-16205.8076">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Intimidation_KillSomeoneSilently" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Intimidation_LeaderNotNeeded" x="-1074.252" y="-15184.4785" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="Intimidation_KillEveryone" Not="true" />
+        <Condition Type="IsBuried" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Intimidation_KillSomeone" x="484.681244" y="2719.83154" GroupID="Intimidation_QuestGroup" NativeDescription="Kill someone from %1, and bring back the body.  Although who's to say they'd know the difference if you brought back someone else's?" SkipNotificationIfAlreadyCompleted="true" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunityHasDeadUnburied" Subject="ReferringTo" Data="1" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_PickUpBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Intimidation_KillEveryone" x="489.3925" y="1110.99756" GroupID="Intimidation_QuestGroup" NativeDescription="Exterminate everyone in %1!  Or maybe you can just pretend you did?" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="ReferringTo" Data="1" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_PickUpLeaderBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Intimidation_BringBackBody" x="2254.61865" y="1524.92773" GroupID="Intimidation_QuestGroup" NativeDescription="Bring the body back to %1.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Intimidation_PickUpLeaderBody" x="1389.93286" y="1227.7821" GroupID="Intimidation_QuestGroup" NativeDescription="Pick up the body of their leader, %1.">
+      <Params>
+        <SpeechParam Type="CommunityLeaderName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsCarrying" Subject="Player" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Leader" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" BoolData="true" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </FailureEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Intimidation_Trigger_LeaderBuried" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Intimidation_Warn" x="-477.0601" y="2537.4895" GroupID="Intimidation_QuestGroup" NativeDescription="Inform %1 that they have incurred the wrath of %2.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_KillSomeone" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Intimidation_PickUpBody" x="1369.47864" y="2527.05322" GroupID="Intimidation_QuestGroup" NativeDescription="Pick up the body" QuestMarkerType="DeadButUnburied">
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsCarryingCommunityMember" Subject="Player" Object="ReferringTo" SubjectModifier="Community" StringData="Human" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_BringBackBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Intimidation_KillSomeoneSilently" x="488.105225" y="4352.8" GroupID="Intimidation_QuestGroup" NativeDescription="Kill someone from %1 without letting them know it was you.  You must bring back a body as proof - then again, who's going to look too closely at a corpse?" SkipNotificationIfAlreadyCompleted="true" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunityHasDeadUnburied" Subject="ReferringTo" Data="1" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Intimidation_PickUpBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Intimidation_Negotiate" x="-515.8204" y="-55.2840958" GroupID="Intimidation_QuestGroup" NativeDescription="Persuade %1 to pay their protection money to %2.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Intimidation_LeaderDead" />
+            <ConditionBlockRef UniqueID="Intimidation_AtWar" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Intimidation_AtWarTrigger" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Intimidation_BringBackPayment" x="2263.417" y="239.412582" GroupID="Intimidation_QuestGroup" NativeDescription="Bring half of the payment (200 gold) back to %2.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Intimidation_QuestGroup" x="-1522.184" y="2368.301" NativeTitle="Intimidate %1 for %2">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

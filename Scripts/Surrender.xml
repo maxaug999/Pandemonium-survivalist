@@ -1,0 +1,856 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>33</NextFreeSpeechID>
+  <NextFreeTriggerID>3</NextFreeTriggerID>
+  <NextFreeConditionBlockID>11</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2623.83984</x>
+    <y>4164.919</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.740171134</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Surrender" x="195.2445" y="677.045349" NativeText="8-| Please don't kill me!" Situation="Surrender" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_NotFallingForThat" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+        <SpeechRef UniqueID="Surrender_HandOver" />
+        <SpeechRef UniqueID="Surrender_Donations" />
+        <SpeechRef UniqueID="Surrender_AintPersonal" />
+        <SpeechRef UniqueID="Surrender_MakeItWorthOurWhile" />
+        <SpeechRef UniqueID="Surrender_CameAllThisWay" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+        <SpeechRef UniqueID="Surrender_NotWorthIt" />
+        <SpeechRef UniqueID="Surrender_NoSuddenMoves" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_WorkForMe" x="1799.38367" y="896.0996" NativeText="}:-) You're going to work for me from now on." CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_WorkForYou" />
+        <SpeechRef UniqueID="Surrender_WorkForYou_Cowardly" />
+        <SpeechRef UniqueID="Surrender_WorkForYou_Leader" />
+        <SpeechRef UniqueID="Surrender_WorkForYou_Brave" />
+        <SpeechRef UniqueID="Surrender_WorkForYou_NoRespect" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Player" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_HandOver" x="1785.02625" y="-103.39476" NativeText="}:-) Hand over your gold, weapons and supplies." CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_TakeIt" />
+        <SpeechRef UniqueID="Surrender_SecondThoughts" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="Player" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_EndOfTheRoad" x="1763.79224" y="-4074.06665" NativeText="}:-[ It's the end of the road for you." CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_Condition_Attack" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_NotWorthIt" x="1786.65771" y="-4986.41064" NativeText="You're not even worth the trouble." CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="Target" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" SubjectModifier="Leader" ObjectModifier="Community" StringData="LeadershipDefeated" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="SparedLife" />
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_Brave" x="200.405792" y="-336.941833" NativeText="}:-( Kill me then, and get it over with!" Situation="Surrender" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_NotFallingForThat" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+        <SpeechRef UniqueID="Surrender_HandOver" />
+        <SpeechRef UniqueID="Surrender_Donations" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+        <SpeechRef UniqueID="Surrender_NotWorthIt" />
+        <SpeechRef UniqueID="Surrender_NoSuddenMoves" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Player" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_Cowardly" x="193.6659" y="-1461.69519" NativeText="8-| Please don't kill me, I don't want to die!" Situation="Surrender" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_NotFallingForThat" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+        <SpeechRef UniqueID="Surrender_HandOver" />
+        <SpeechRef UniqueID="Surrender_Donations" />
+        <SpeechRef UniqueID="Surrender_AintPersonal" />
+        <SpeechRef UniqueID="Surrender_CameAllThisWay" />
+        <SpeechRef UniqueID="Surrender_MakeItWorthOurWhile" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+        <SpeechRef UniqueID="Surrender_NotWorthIt" />
+        <SpeechRef UniqueID="Surrender_NoSuddenMoves" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_WorkForYou" x="3785.354" y="5271.70654" NativeText="}:-( Fine, I guess I have no choice." CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" SubjectModifier="Leader" ObjectModifier="Community" StringData="LeadershipDefeated" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="Target" BoolData2="true" />
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Surrender_WorkForYou_Brave" x="3775.868" y="667.637634" NativeText="}:-[ Never!" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" Object="Target" StringData="Bold" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_WorkForYou_Cowardly" x="3783.996" y="3203.78979" NativeText="8-| Yes %1, absolutely, whatever you want!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" Object="Target" StringData="Nervous" />
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" SubjectModifier="Leader" ObjectModifier="Community" StringData="LeadershipDefeated" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="Target" />
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Surrender_WorkForYou_NoRespect" x="3772.08228" y="-480.530029" NativeText="}:-[ You've got to be joking!" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" StringData="Bold" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_TakeIt" x="3770.771" y="-1651.59729" NativeText="{:-[ Here, take it!" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Surrender_GetOutOfHere" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_GetOutOfHere" x="4911.014" y="-1176.63843" NativeText="}:-| Now get out of here!" CanTalkOutOfRange="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveAllSupplies" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Robbed" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" SubjectModifier="Leader" ObjectModifier="Community" StringData="LeadershipDefeated" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_NotFallingForThat" x="1783.444" y="2056.88574" NativeText="}:-[ I'm not falling for this bullshit routine again!" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" />
+        <Condition Type="HasRecentMemoryOfAnyoneInCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" Data="1" StringData="Surrendered" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_NoSuddenMoves" x="1784.2572" y="-6876.99268" NativeText="8-| Okay, just.. no sudden moves!  How do I know I can trust you?" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_SomethingStupid" />
+        <SpeechRef UniqueID="Surrender_WrongFoot" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" SubjectModifier="Community" StringData="Player" />
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterMercenary" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_SomethingStupid" x="2975.103" y="-5629.006" NativeText="}:-[ You're outnumbered - don't do anything stupid or you'll regret it!" CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Surrender_CallMeStupid" />
+        <SpeechRef UniqueID="Surrender_WalkAway" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_WrongFoot" x="3040.42139" y="-7115.755" NativeText="We got off on the wrong foot... lower your weapons and let's talk." CanTalkOutOfRange="true">
+      <Replies>
+        <SpeechRef UniqueID="Surrender_WorkThisOut" />
+        <SpeechRef UniqueID="Surrender_TalkYourWayOut" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_CallMeStupid" x="4288.40674" y="-4468" NativeText="}:-[ Who are you calling stupid!?" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_WalkAway" x="4300.9" y="-5875.18457" NativeText="}:-| Alright just walk away, man.  Stay cool." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="ThreatenedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_WorkThisOut" x="4326.026" y="-7141.89746" NativeText="}:-| Okay, okay, we can work this out.  I'll lower my weapons if you do too." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="ApologisedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_TalkYourWayOut" x="4324.54736" y="-8316.971" NativeText="}:-[ Oh no, you don't get to talk your way out of this one." CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-90" Data2="20" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="ApologisedUnsuccessfully" />
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_Donations" x="1803.00452" y="-908.423" NativeText="}:-| [plural(speaker)?We're:I'm] going to need to take some donations from you, by way of reparations." CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_SecondThoughts" />
+        <SpeechRef UniqueID="Surrender_WhatDoYouWant" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="Player" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_SecondThoughts" x="3776.057" y="-2106.89355" NativeText="}:-[ On second thoughts, fuck off!" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_TakeItAll" x="6043.5625" y="-3505.75879" NativeText="{:-[ Whatever, take it all!" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_DontFuck" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" SubjectModifier="Community">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_Reparations2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_DontFuck" x="8087.80225" y="-2502.80249" NativeText="}:-| Smart choice.  Don't fuck with %1 again!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveAllGold" Subject="Target" Object="Actor" BoolData3="true">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Surrender_Reparations" />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" SubjectModifier="Leader" ObjectModifier="Community" StringData="LeadershipDefeated" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_WhatDoYouWant" x="3713.614" y="-3523.57275" NativeText="{:-[ What do you want?" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_GiveUs" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_GiveUs" x="4842.65" y="-3448.136" NativeText="}:-[ Give [plural(speaker)?us:me] %1 gold pieces and [plural(speaker)?we'll:I'll] call a truce." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="Formula">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Surrender_Reparations" />
+          </Formulas>
+        </SpeechParam>
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_SecondThoughts" />
+        <SpeechRef UniqueID="Surrender_TakeItAll" />
+        <SpeechRef UniqueID="Surrender_SuppliesInstead" />
+        <SpeechRef UniqueID="Surrender_DontHaveEnough" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_DontHaveEnough" x="5857.596" y="-6254.09863" NativeText="%1 can't afford that!  Can't we just get along?" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_WastingMyTIme" />
+        <SpeechRef UniqueID="Surrender_DontMakeMeRegret" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_WastingMyTIme" x="6912.556" y="-5075.3457" NativeText="}:-[ Stop wasting my time with this bullshit!" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="25" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="Killed" PriorityFactor="100" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="StoleFrom" PriorityFactor="100" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="DestroyedProperty" PriorityFactor="20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+        <StoryEvent Type="RefusePlayerSurrender" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_DontMakeMeRegret" x="6908.841" y="-7293.57861" NativeText="}:-( Don't make me regret this." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="25" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" SubjectModifier="Leader" ObjectModifier="Community" StringData="LeadershipDefeated" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_WantFromMe" x="-4079.75342" y="2807.96021" NativeText="8-( Where am I?  What do you want from me?" Situation="Surrender" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_TeamUp" />
+        <SpeechRef UniqueID="Surrender_LookingAfterYou" />
+        <SpeechRef UniqueID="Surrender_LookingAfterYou_Lie" />
+        <SpeechRef UniqueID="Surrender_Truce" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="WasRevivedInCaptivity" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_LookingAfterYou" x="-2286.38672" y="5308.203" NativeText=":-) It's okay, %1've been looking after you.  You should join %2!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_GuessIOweYou" />
+        <SpeechRef UniqueID="Surrender_Lackey" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_IsLeaderOfAISettlement" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_LookedAfter" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_LookingAfterYou_Lie" x="-2400.18945" y="3346.517" NativeText=":-) It's okay, %1've been looking after you.  You should join %2!" CanTalkOutOfRange="true" Lie="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_WowGuessIOweYou" />
+        <SpeechRef UniqueID="Surrender_StayAway" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_IsLeaderOfAISettlement" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_LookedAfter" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_GuessIOweYou" x="-1237.90625" y="7102.081" NativeText="{:-| Oh man, I wouldn't have made it without you... I guess I owe you." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="40" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="10000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasRecentMemoryOfAnyoneInCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" Data="1" StringData="KnockedOut" Not="true" PriorityFactor="-50" />
+        <Condition Type="HasRecentMemoryWhereObjectIsAnyoneInCommunity" Subject="Actor" Object="Actor" ThirdParty="Target" ThirdPartyModifier="Community" Data="1" StringData="DeclaredWar" Not="true" PriorityFactor="-50" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="PoachedFrom" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Surrender_Lackey" x="-1254.6134" y="4791.636" NativeText="}:-| Not interested.  I won't be your lackey!" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="40" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Actor" ObjectModifier="Leader" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="10000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_Truce" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_WowGuessIOweYou" x="-1222.8252" y="3604.44775" NativeText="Wow, thanks!  {:-| I... guess I owe you then.  I wouldn't be standing here without you." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="40" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="10000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasRecentMemoryOfAnyoneInCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" Data="1" StringData="KnockedOut" Not="true" PriorityFactor="-50" />
+        <Condition Type="HasRecentMemoryWhereObjectIsAnyoneInCommunity" Subject="Actor" Object="Actor" ThirdParty="Target" ThirdPartyModifier="Community" Data="1" StringData="DeclaredWar" Not="true" PriorityFactor="-50" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="PoachedFrom" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Surrender_StayAway" x="-1225.8269" y="969.2568" NativeText="}:-| Yeah right.  Stay the hell away from me!" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="40" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Actor" ObjectModifier="Leader" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="10000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_Truce" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_Truce" x="-92.21709" y="2663.56348" NativeText="I want to have a truce between our two sides.  Will you vouch for %1?" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_GoodwillGesture" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_GoodwillGesture" x="1061.08423" y="6061.917" NativeText="I can't just wave my hand and stop the fighting.  We'd need some kind of goodwill gesture, let's say %1 gold pieces." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="Formula">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Surrender_LowReparations" />
+          </Formulas>
+        </SpeechParam>
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_Acceptable" />
+        <SpeechRef UniqueID="Surrender_NotMadeOfGold" />
+        <SpeechRef UniqueID="Surrender_SecondThoughts" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_NotMadeOfGold" x="2251.39478" y="6245.977" NativeText="%1 [plural(1)?aren't:am not] made of gold!  I'm just trying to end the cycle of violence!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_CantSellThat" />
+        <SpeechRef UniqueID="Surrender_DontMakeMeRegret" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Surrender_CantSellThat" x="3331.53662" y="7228.139" NativeText="}:-| I can't sell that to %1!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="25" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="Killed" PriorityFactor="20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_Acceptable" x="2252.95068" y="7229.688" NativeText="}:-| Fine, that's an acceptable price for %1." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_DidTheRightThing" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" SubjectModifier="Community">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_LowReparations2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_DidTheRightThing" x="3335.86841" y="8491.746" NativeText="You did the right thing." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveAllGold" Subject="Target" Object="Actor" BoolData3="true">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Surrender_LowReparations" />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="NegotiatedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_TeamUp" x="-2316.99316" y="9182.54" NativeText=":-) It's okay, %1've been looking after you.  Let's put aside our differences and team up!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_SavedMyAss" />
+        <SpeechRef UniqueID="Surrender_WontBeSlaves" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_IsLeaderOfAISettlement" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_SavedMyAss" x="-957.6186" y="11056.0869" NativeText="{:-| Hmm, maybe you aren't so bad.  I guess you didn't have to save my ass.  You could be useful allies." CanTalkOutOfRange="true" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="20" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasRecentMemoryOfAnyoneInCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" Data="1" StringData="KnockedOut" PriorityFactor="-20" />
+        <Condition Type="HasRecentMemoryWhereObjectIsAnyoneInCommunity" Subject="Actor" Object="Actor" ThirdParty="Target" ThirdPartyModifier="Community" Data="1" StringData="DeclaredWar" PriorityFactor="-20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MadeAlliance" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="Target" />
+        <StoryEvent Type="LeaveAllAlliances" Subject="Actor" />
+        <StoryEvent Type="FormAlliance" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Surrender_WontBeSlaves" x="-975.9065" y="8464.029" NativeText="}:-| Not interested.  %1 won't be your slaves!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_Truce" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_WorkForYou_Leader" x="4603.45068" y="1358.84607" NativeText="}:-[ I'm the leader of %1!  You won't take me alive!" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_AintPersonal" x="1787.60034" y="-1651.76489" NativeText="}:-) %1 hired us to teach you a lesson, but it ain't personal.  Give %2 a little something for %3 trouble and %4'll walk away." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" SubjectModifier="InvaderSource" />
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+        <SpeechParam Type="CommunityMyOrOur" Subject="Actor" />
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_SecondThoughts" />
+        <SpeechRef UniqueID="Surrender_WhatDoYouWant" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="Player" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterMercenary" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_SuppliesInstead" x="6079.031" y="-4363.22168" NativeText="{:-( %1 don't have that much gold.  Can you take some supplies instead?" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_Loser" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasSuppliesOfValue" Subject="Actor" SubjectModifier="Community">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_Reparations2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_Loser" x="8086.695" y="-4065.234" NativeText="}:-| Ugh, hand it over then, loser.  And don't try to fuck with %1 again." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveAllSupplies" Subject="Target" Object="Actor" BoolData3="true">
+          <Formulas>
+            <ConditionBlockRef UniqueID="Surrender_Reparations" />
+          </Formulas>
+        </StoryEvent>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="Surrendered" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" SubjectModifier="Leader" ObjectModifier="Community" StringData="LeadershipDefeated" Secrecy="OnlyKnownToSubjectCommunity" />
+        <StoryEvent Type="CeaseFire" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Surrender_MakeItWorthOurWhile" x="1763.59875" y="-2931.10229" NativeText="}:-) You fucking [plural(listener)?losers:loser]!  Make it worth our while and we might just leave you alone." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityMyOrOur" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_SecondThoughts" />
+        <SpeechRef UniqueID="Surrender_WhatDoYouWant" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="Player" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" Not="true" PriorityFactor="0.1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_CameAllThisWay" x="2505.387" y="-3062.919" NativeText="{:-| %1 came all this way looking for gold to look after %2 poor, starving children, do you want %3 to go back to them empty handed?" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="CommunityMyOrOur" Subject="Actor" />
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_SecondThoughts" />
+        <SpeechRef UniqueID="Surrender_WhatDoYouWant" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="Player" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="0.1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Surrender_Outnumber" x="188.283218" y="-2591.56226" NativeText="}:-| It doesn't have to be like this, you know!" Situation="Surrender" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Surrender_NotFallingForThat" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+        <SpeechRef UniqueID="Surrender_HandOver" />
+        <SpeechRef UniqueID="Surrender_Donations" />
+        <SpeechRef UniqueID="Surrender_AintPersonal" />
+        <SpeechRef UniqueID="Surrender_CameAllThisWay" />
+        <SpeechRef UniqueID="Surrender_MakeItWorthOurWhile" />
+        <SpeechRef UniqueID="Surrender_EndOfTheRoad" />
+        <SpeechRef UniqueID="Surrender_NotWorthIt" />
+        <SpeechRef UniqueID="Surrender_NoSuddenMoves" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="IsOutnumberedBy" Subject="Target" Object="Actor" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Surrender_Condition_Attack" x="348.947876" y="-4184.05762" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="Player" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-50" Data2="50" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_Reparations" x="6442.94971" y="-1362.64111" Type="SumRoundedUp">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Target" PriorityFactor="5" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="Killed" PriorityFactor="100" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="StoleFrom" PriorityFactor="100" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="DestroyedProperty" PriorityFactor="20" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterMercenary" PriorityFactor="20" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="1">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_LooterPremium" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_Reparations2" x="7106.615" y="-1364.61" Type="SumRoundedUp">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Actor" PriorityFactor="5" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Target" Object="Actor" ThirdParty="Target" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="Killed" PriorityFactor="100" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Target" Object="Actor" ThirdParty="Target" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="StoleFrom" PriorityFactor="100" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Target" Object="Actor" ThirdParty="Target" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="DestroyedProperty" PriorityFactor="20" />
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="HunterMercenary" PriorityFactor="20" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="1">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Surrender_LooterPremium2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_LowReparations" x="228.646515" y="7527.4043" Type="SumRoundedUp">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Target" PriorityFactor="2" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="Killed" PriorityFactor="50" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="StoleFrom" PriorityFactor="25" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Actor" Object="Target" ThirdParty="Actor" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="DestroyedProperty" PriorityFactor="5" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_LowReparations2" x="908.2851" y="7525.4834" Type="SumRoundedUp">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Actor" PriorityFactor="1" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Target" Object="Actor" ThirdParty="Target" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="Killed" PriorityFactor="50" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Target" Object="Actor" ThirdParty="Target" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="StoleFrom" PriorityFactor="25" />
+        <Condition Type="MemoryQuantityForCommunity" Subject="Target" Object="Actor" ThirdParty="Target" ObjectModifier="Community" ThirdPartyModifier="Community" StringData="DestroyedProperty" PriorityFactor="5" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_LookedAfter" x="-3143.07666" y="4265.0083" Type="Or">
+      <Conditions>
+        <Condition Type="HasRecentMemoryOfAnyoneInCommunity" Subject="Target" Object="Actor" ThirdParty="Target" Data="3" StringData="LookedAfter" />
+        <Condition Type="HasRecentMemoryOfAnyoneInCommunity" Subject="Target" Object="Actor" ThirdParty="Target" Data="3" StringData="BandagedForFree" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_IsLeaderOfAISettlement" x="-3403.47949" y="8553.853">
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="IsAISettlement" Subject="Target" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_LooterPremium" x="6436.68164" y="-2772.12451" Type="Multiply">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="CommunitySize" Subject="Actor" PriorityFactor="20" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Surrender_LooterPremium2" x="7109.644" y="-2766.058" Type="Multiply">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="HunterLooter" Not="true" />
+        <Condition Type="CommunitySize" Subject="Target" PriorityFactor="20" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

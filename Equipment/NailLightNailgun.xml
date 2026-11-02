@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Pistol</TypeName>
+  <NativeName>Light Nailgun</NativeName>
+  <NativeDescription>Compact and easy to use nailgun</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>4</Weight>
+  <BasePrice>25</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/lightnailgun.prefab</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+      <OverrideScarcity>Legendary</OverrideScarcity>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.1</Damage>
+  <DamageBonusPerSkillLevel>0.01</DamageBonusPerSkillLevel>
+  <Range>18.5</Range>
+  <AttackSoundRadius>18</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>0.9</MaxAimTime>
+  <MinHeadAimTime>0.4</MinHeadAimTime>
+  <MaxHeadAimTime>1</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>0.9</MaxLegsAimTime>
+  <Recoil>0.55</Recoil>
+  <AimPenaltyWhenMoving>0.12</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.25</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>Nail</string>
+  </AmmoTypes>
+  <MaxAmmo>25</MaxAmmo>
+</EquipmentPrototype>

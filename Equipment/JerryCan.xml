@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PlasticBottle</TypeName>
+  <NativeName>Jerry Can</NativeName>
+  <NativeDescription>Most of the gasoline has long since expired but you might be able to get a little bit of use out of it.  You can use it to fuel vehicles (unless they take diesel), to make molotov cocktails, or pour it on something you want to burn.</NativeDescription>
+  <Category>7:Containers</Category>
+  <Weight>24</Weight>
+  <BasePrice>10</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <LiquidCapacity>350</LiquidCapacity>
+  <DefaultLiquidType>Gasoline</DefaultLiquidType>
+  <DefaultLiquidFilledMax>10</DefaultLiquidFilledMax>
+  <DefaultLiquidFilledMin>5</DefaultLiquidFilledMin>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>GasStation</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Medical</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

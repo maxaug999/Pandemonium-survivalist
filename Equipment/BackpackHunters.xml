@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Hunter's Backpack</NativeName>
+  <NativeDescription>Favored by hunters, bow and arrow not included</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>4</Weight>
+  <BasePrice>100</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Backpack</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+      <OverrideScarcity>Rare</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Scientific</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>150</r>
+      <g>75</g>
+      <b>0</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2 />
+  <MaterialVariations>
+    <string>Backpack/Backpack4_Camo</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:Backpack4</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack4</FemaleMeshName>
+  <CarryWeight>50</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>15</CarryWeightBonusPerSkillLevel>
+  <SkillBonusType>Archery</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

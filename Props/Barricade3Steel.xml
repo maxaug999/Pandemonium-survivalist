@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>TiltedProp</TypeName>
+  <NativeName>Barricade</NativeName>
+  <Category>Camp/Fences</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Wooden Barricades Pack/Wooden_spike_wall_01</string>
+    <string>Prefabs/Props/Wooden Barricades Pack/Wooden_spike_wall_02</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>-0.5</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>-0.5</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>20</MaxDamage>
+  <Flammability>Low_RequiresExplosion</Flammability>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <ExtentsMin>
+    <x>-1</x>
+    <y>0</y>
+  </ExtentsMin>
+  <WheelPos>
+    <x>0.5</x>
+    <y>0.5</y>
+  </WheelPos>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>2</RepairResourceNeeded>
+</PropPrototype>

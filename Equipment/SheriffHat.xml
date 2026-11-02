@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Sheriff's Hat</NativeName>
+  <NativeDescription>What's that feeling when you place it on your head?  Ah yes, *authority*.  The confidence to pull the trigger, and worry about asking questions later.</NativeDescription>
+  <Category>4:Clothing/Hats</Category>
+  <Weight>2</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Special>true</Special>
+  <SightRangeModifier>5</SightRangeModifier>
+  <ClothingType>Hat</ClothingType>
+  <ColorVariations />
+  <MaterialVariations>
+    <string>CowboyHat/Sheriff</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:CowboyHat</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:CowboyHat</FemaleMeshName>
+  <SkillBonusType>Firearms</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

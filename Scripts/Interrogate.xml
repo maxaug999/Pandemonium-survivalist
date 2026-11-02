@@ -1,0 +1,608 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>47</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-3709.07031</x>
+    <y>547.6923</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.450491726</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Interrogate_NeedToTalk" x="731.643555" y="-490.1481" NativeText="I need to talk to you..." Situation="Rumor" RepeatTime="600" StandUp="true">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_NeedRedStrainAntigen" />
+        <SpeechRef UniqueID="Interrogate_Sure" />
+        <SpeechRef UniqueID="Interrogate_Okay" />
+        <SpeechRef UniqueID="Interrogate_What" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsInvisibleStrainEnabled" />
+        <Condition Type="IsPlayer" Subject="Actor" />
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Target" StringData="Red" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Test_HasAnyQuestions" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_Sure" x="1881.95349" y="337.240265" NativeText=":-) Sure!">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Questions" />
+        <SpeechRef UniqueID="Interrogate_MoreQuestions" />
+        <SpeechRef UniqueID="Interrogate_Infected" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_Okay" x="1879.98853" y="-489.6191" NativeText="Okay...">
+      <PriorityTerms>
+        <Condition Type="Always" Subject="Actor" Object="Target" PriorityFactor="20" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Questions" />
+        <SpeechRef UniqueID="Interrogate_MoreQuestions" />
+        <SpeechRef UniqueID="Interrogate_Infected" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_What" x="1886.5304" y="-1367.47839" NativeText="}:-| What do you want?">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Questions" />
+        <SpeechRef UniqueID="Interrogate_MoreQuestions" />
+        <SpeechRef UniqueID="Interrogate_Infected" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_Infected" x="3249.343" y="994.3784" NativeText="}:-( I think you're infected.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_NeedAntigen" />
+        <SpeechRef UniqueID="Interrogate_WhatAreYouSaying" />
+        <SpeechRef UniqueID="Interrogate_OutOfLine" />
+        <SpeechRef UniqueID="Interrogate_Evidence" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="AccusedOfInvisibleStrain" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Interrogate_WhatAreYouSaying" x="4324.34229" y="1837.47974" NativeText="8-( What.. what are you saying?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_UnexplainedInjuries" />
+        <SpeechRef UniqueID="Interrogate_MyQuestions" />
+        <SpeechRef UniqueID="Interrogate_Hunch" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_OutOfLine" x="4334.923" y="1012.96033" NativeText="}:-[ You're out of line.  Maybe it's you who's infected!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_UnexplainedInjuries" />
+        <SpeechRef UniqueID="Interrogate_MyQuestions" />
+        <SpeechRef UniqueID="Interrogate_Hunch" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_Evidence" x="4341.74365" y="110.807426" NativeText="{:-[ Look, whatever you think you found, I expect there's a perfectly innocent explanation.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_UnexplainedInjuries" />
+        <SpeechRef UniqueID="Interrogate_MyQuestions" />
+        <SpeechRef UniqueID="Interrogate_Hunch" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_Hunch" x="6886.955" y="-995.45" NativeText="}:-[ Let's just call it a hunch.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_WeWereFriends" />
+        <SpeechRef UniqueID="Interrogate_WeHadSomething" />
+        <SpeechRef UniqueID="Interrogate_TrustedYou" />
+        <SpeechRef UniqueID="Interrogate_KnewYouWereAPrick" />
+        <SpeechRef UniqueID="Interrogate_DontDoThis" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_MyQuestions" x="5794.635" y="922.307739" NativeText="}:-( You didn't answer my questions right.  Something felt off.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_WitchHunt" />
+        <SpeechRef UniqueID="Interrogate_WitchHunt2" />
+        <SpeechRef UniqueID="Interrogate_YourQuestions" />
+      </Replies>
+      <Conditions>
+        <Condition Type="VariableIsGreaterThan" Subject="Target" StringData="Tested" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_UnexplainedInjuries" x="5825.2124" y="2599.03223" NativeText="}:-[ You have unexplained bite marks.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_GreenStrain" />
+        <SpeechRef UniqueID="Interrogate_BlueStrain" />
+        <SpeechRef UniqueID="Interrogate_RedStrain" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInjuryOfType" Subject="Target" StringData="ZombieBite" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_NeedAntigen" x="4333.91748" y="2823.69458" NativeText="{:-[ I know I'm infected, I need antigen!  Help me!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInfectedInjury" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_GreenStrain" x="6909.66" y="3826.99023" NativeText="8-( I got bitten with green strain [plural(1)?%1 days ago:zero(1)?today:yesterday], remember?">
+      <Params>
+        <SpeechParam Type="DaysSinceMostRecentInfectedInjury" Subject="Actor" StringData="Green" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="MostRecentInfectedInjuryHadStrain" Subject="Actor" StringData="Green" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_IRememberNow" />
+        <SpeechRef UniqueID="Interrogate_Bullshit" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_BlueStrain" x="6899.16748" y="2970.78076" NativeText="8-( I fought off an infected with clear signs of blue strain just [plural(1)?%1 days ago:zero(1)?today:yesterday]!">
+      <Params>
+        <SpeechParam Type="DaysSinceMostRecentInfectedInjury" Subject="Actor" StringData="Blue" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="MostRecentInfectedInjuryHadStrain" Subject="Actor" StringData="Blue" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_IRememberNow" />
+        <SpeechRef UniqueID="Interrogate_Bullshit" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_RedStrain" x="6896.663" y="2177.315" NativeText="8-( Surely you remember I had a close call with a red strain infected [plural(1)?%1 days ago:zero(1)?today:yesterday]!">
+      <Params>
+        <SpeechParam Type="DaysSinceMostRecentInfectedInjury" Subject="Actor" StringData="Red" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="MostRecentInfectedInjuryHadStrain" Subject="Actor" StringData="Red" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_IRememberNow" />
+        <SpeechRef UniqueID="Interrogate_Bullshit" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_Bullshit" x="8200.526" y="2070.48267" NativeText="}:-[ That's bullshit.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_WeWereFriends" />
+        <SpeechRef UniqueID="Interrogate_WeHadSomething" />
+        <SpeechRef UniqueID="Interrogate_TrustedYou" />
+        <SpeechRef UniqueID="Interrogate_KnewYouWereAPrick" />
+        <SpeechRef UniqueID="Interrogate_DontDoThis" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_IRememberNow" x="8226.954" y="3323.81128" NativeText="Oh yeah, I remember now.  My bad!">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_KeepingUsSafe" />
+        <SpeechRef UniqueID="Interrogate_SpreadingShit" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_KeepingUsSafe" x="10099.96" y="5078.566" NativeText="{:-| Well, you're just trying to keep us all safe I guess." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_SpreadingShit" x="10104.4336" y="3481.50732" NativeText="Next time don't go spreading shit around if you can't back it up!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="20" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_WeWereFriends" x="10116.4346" y="1973.40625" NativeText="{:-( Come on, %1.. I thought we were friends.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_CantAllowYouToLive" />
+        <SpeechRef UniqueID="Interrogate_InColdBlood" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="FriendsWith" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="Target" StringData="None" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Interrogate_WeHadSomething" x="10120.8018" y="725.1869" NativeText="{:-( Seriously %1?  I.. I thought you loved me!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_CantAllowYouToLive" />
+        <SpeechRef UniqueID="Interrogate_InColdBlood" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="FriendsWith" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="Target" StringData="Ex" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Interrogate_WitchHunt" x="6897.017" y="1387.81653" NativeText="{:-[ You're paranoid!  Your questions don't prove anything, this is a witch hunt!  Can't you see how arbitrary this is?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Mistaken" />
+        <SpeechRef UniqueID="Interrogate_TalkYourWayOut" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_Mistaken" x="8207.412" y="1361.96411" NativeText=":-( I might have been mistaken.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_KeepingUsSafe" />
+        <SpeechRef UniqueID="Interrogate_SpreadingShit" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_YourQuestions" x="6891.951" y="-464.76358" NativeText="8-( Your questions?  What was I supposed to say?  Let me take the test again, I'll ace it this time, I promise!">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Mistaken" />
+        <SpeechRef UniqueID="Interrogate_TalkYourWayOut" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_WitchHunt2" x="6891.81641" y="579.653748" NativeText="{:-[ You're paranoid!  Your questions don't prove anything, }:-) this is a witch hunt!  {:-[ Can't you see how arbitrary this is?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Mistaken" />
+        <SpeechRef UniqueID="Interrogate_TalkYourWayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasInvisibleStrain" Subject="Actor" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_TalkYourWayOut" x="8214.765" y="450.1542" NativeText="{:-[ You can't talk your way out of this.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_WeWereFriends" />
+        <SpeechRef UniqueID="Interrogate_WeHadSomething" />
+        <SpeechRef UniqueID="Interrogate_TrustedYou" />
+        <SpeechRef UniqueID="Interrogate_KnewYouWereAPrick" />
+        <SpeechRef UniqueID="Interrogate_DontDoThis" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_TrustedYou" x="10128.6611" y="-569.280151" NativeText="{:-[ I trusted you!  I thought you were a good person!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_CantAllowYouToLive" />
+        <SpeechRef UniqueID="Interrogate_InColdBlood" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_KnewYouWereAPrick" x="10132.0313" y="-1355.93921" NativeText="}:-[ I always knew you were a piece of shit!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_CantAllowYouToLive" />
+        <SpeechRef UniqueID="Interrogate_InColdBlood" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Interrogate_DontDoThis" x="10126.0762" y="-2514.26929" NativeText="{:-( Don't do this, man!  I'm not what you think.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_CantAllowYouToLive" />
+        <SpeechRef UniqueID="Interrogate_InColdBlood" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_CantAllowYouToLive" x="12180.251" y="1361.55444" NativeText="}:-[ I can't allow you to live.  It's too dangerous.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_YouGotMe" />
+        <SpeechRef UniqueID="Interrogate_AllAMistake" />
+        <SpeechRef UniqueID="Interrogate_AllAMistake_NoGun" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_InColdBlood" x="12175.2988" y="-189.153992" NativeText="{:-( I can't kill you in cold blood.  Just go.  Get out of here.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_HowDidItComeToThis" />
+        <SpeechRef UniqueID="Interrogate_Whatever" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_YouGotMe" x="13485.0186" y="2923.377" NativeText=":-) Aw shucks, you got me!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInvisibleStrainType" Subject="Actor" StringData="Excitable" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" StringData="Amogus" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="EnableTrigger" Subject="Actor" StringData="Interrogate_Trigger_Died" />
+        <StoryEvent Type="ActivateInvisibleStrain" Subject="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_AllAMistake" x="13479.9219" y="1843.66162" NativeText="8-[ This is all a mistake!  I didn't do anything!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasGun" Subject="Target" BoolData="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="EnableTrigger" Subject="Actor" StringData="Interrogate_Trigger_Died" />
+        <StoryEvent Type="Assassinate" Subject="Target" Object="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_HowDidItComeToThis" x="13466.7227" y="13.6718178" NativeText="{:-( How did it come to this?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="RejoinInitialCommunity" Subject="Actor" BoolData="true" BoolData2="true" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="Basic_LetsGo" />
+            <SpeechRef UniqueID="Basic_NotFriends" />
+            <SpeechRef UniqueID="Basic_ItsOver" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_AllAMistake_NoGun" x="13475.5117" y="822.465149" NativeText="}:-[ You're making a huge mistake!  This won't end well for you!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="EnableTrigger" Subject="Actor" StringData="Interrogate_Trigger_Died" />
+        <StoryEvent Type="StartBoxingMatch" Subject="Target" Object="Actor" StringData="FightToTheDeath" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_Whatever" x="13461.2227" y="-1265.11877" NativeText="}:-[ Whatever, I'm gone.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="RejoinInitialCommunity" Subject="Actor" BoolData="true" BoolData2="true" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="Basic_LetsGo" />
+            <SpeechRef UniqueID="Basic_NotFriends" />
+            <SpeechRef UniqueID="Basic_ItsOver" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_Questions" x="4213.63574" y="-6104.52" NativeText="I'm going to ask you a series of questions.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_IDontWantIt" />
+        <SpeechRef UniqueID="Interrogate_Ominous" />
+        <SpeechRef UniqueID="Interrogate_WhatsThisFor" />
+      </Replies>
+      <Conditions>
+        <Condition Type="VariableEquals" Subject="Target" StringData="Tested" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_ThisBullshit" x="6067.363" y="-4258.673" NativeText="}:-| This bullshit again?" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Overthinking" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_Pseudoscience" x="6069.61963" y="-2297.01855" NativeText="}:-( I'm not letting you use this pseudoscientific crap to falsely incriminate me anymore!  {:-[ You don't know what you're doing.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="11" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="AccusedOfInvisibleStrain" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_DoesntProveAnything" x="6069.07275" y="-3263.65625" NativeText="}:-| I'll answer your questions.  But that shit doesn't prove anything about me." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="12" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Overthinking" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="AccusedOfInvisibleStrain" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="40" Data2="30" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_MoreQuestions" x="4141.90527" y="-2761.97949" NativeText="I need to run you through the questionnaire again.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_MakingItUp" />
+        <SpeechRef UniqueID="Interrogate_Pseudoscience" />
+        <SpeechRef UniqueID="Interrogate_DoesntProveAnything" />
+        <SpeechRef UniqueID="Interrogate_ThisBullshit" />
+        <SpeechRef UniqueID="Interrogate_AnythingBetterToDo" />
+        <SpeechRef UniqueID="Interrogate_IfYouThinkItWillHelp" />
+        <SpeechRef UniqueID="Interrogate_IDontWantIt" />
+      </Replies>
+      <Conditions>
+        <Condition Type="VariableIsGreaterThan" Subject="Target" StringData="Tested" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_MakingItUp" x="6071.884" y="-1548.13623" NativeText="}:-( You're just making this shit up as you go along!  Take it somewhere else!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="AccusedOfInvisibleStrain" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_AnythingBetterToDo" x="6073.03955" y="-4965.338" NativeText="}:-| Ugh, really?  I mean, sure, it's not as if I've got anything better to do or anything." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Overthinking" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_IfYouThinkItWillHelp" x="6071.61963" y="-5747.45947" NativeText="Okay, if you think it will help!" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Overthinking" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_Overthinking" x="7581.26953" y="-5148.91357" NativeText="It's nothing to worry about.  Just pay attention and answer quickly, without overthinking.  Ready?">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Ready" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="InterrogatedAboutInvisibleStrain" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Interrogate_Ready" x="8733.473" y="-5196.44873" NativeText="Go on." />
+    <Speech UniqueID="Interrogate_Ominous" x="6009.72" y="-7393.779" NativeText="8-| That sounds.. kind of ominous." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Overthinking" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_WhatsThisFor" x="6009.72" y="-8252.317" NativeText="What's this for?" SuccessfulResponse="true">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Overthinking" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_AllForNow" x="-134.019165" y="3566.8313" NativeText="Great, that's all the questions for now.">
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_Finally" />
+        <SpeechRef UniqueID="Interrogate_GoodTalk" />
+        <SpeechRef UniqueID="Interrogate_HowDidIDo" />
+        <SpeechRef UniqueID="Interrogate_WhatsThisAbout" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="IncrementVariable" Subject="Target" Data="1" StringData="Tested" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Interrogate_HowDidIDo" x="1195.74951" y="2738.17725" NativeText="How did I do?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_YouDidGreat" />
+        <SpeechRef UniqueID="Interrogate_Infected" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_GoodTalk" x="1201.16125" y="3747.83838" NativeText="}:-| Okay, man.  Glad we had this talk.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_YouDidGreat" />
+        <SpeechRef UniqueID="Interrogate_Infected" />
+      </Replies>
+      <Conditions>
+        <Condition Type="VariableIsGreaterThan" Subject="Actor" Data="1" StringData="Tested" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_Finally" x="1212.92432" y="4759.391" NativeText="}:-| Finally!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_YouDidGreat" />
+        <SpeechRef UniqueID="Interrogate_Infected" />
+      </Replies>
+      <Conditions>
+        <Condition Type="VariableIsGreaterThan" Subject="Actor" Data="1" StringData="Tested" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Interrogate_YouDidGreat" x="2660.4895" y="4097.549" NativeText="You did good, thanks for your time!" />
+    <Speech UniqueID="Interrogate_WhatsThisAbout" x="1195.52246" y="2064.297" NativeText="}:-| What's this all about?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Interrogate_YouDidGreat" />
+        <SpeechRef UniqueID="Interrogate_Infected" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Interrogate_IDontWantIt" x="6030.664" y="-6257.84033" NativeText="}:-| Yeah, I don't think so.  Whatever you're selling, I don't want it.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="10" Data2="30" Not="true" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Interrogate_Trigger_Died" x="14999.33" y="1448.15393">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="UnlockAchievement" StringData="FindInvisibleStrain" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" StringData="Interrogate_Trigger_Died" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

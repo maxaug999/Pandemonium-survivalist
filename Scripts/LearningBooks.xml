@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>13</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>146.660889</x>
+    <y>2601.78174</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.419749171</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="LearningFitness1" x="495.666931" y="-320.000366" NativeText=":-| This book is about fitness.. lets see..." Situation="CustomUseAction">
+      <Continues>
+        <SpeechRef UniqueID="LearningFitness2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningFitness" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningFitness" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningFitness2" x="1401.11511" y="-383.196167" NativeText="8-o Huh I feel a bit stronger now! I wish it works like this in real life.">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningFitness" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningMelee1" x="525.0396" y="-1100.33044" NativeText=":-| This book is about hand to hand combat.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningMelee2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningMelee" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningMelee" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningMelee0" x="2890.31128" y="-1106.98474" NativeText="8-o Huh No one's gonna steal my sweetroll now." Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="HandToHand" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningMelee" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningArchery1" x="527.285767" y="-1835.99426" NativeText=":-| This book is about Archery.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningArchery2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningArchery" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningArchery" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningArchery0" x="3192.72974" y="-1895.36011" NativeText="8-o Huh Also I'm pretty sure one's career will be over if one took an arrow on the knee. better be careful." Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Archery" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningArchery" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningFirearms1" x="564.022644" y="-2665.45752" NativeText=":-| This book is about Firearms.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningFirearms2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningShooting" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningShooting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningFirearms0" x="2852.437" y="-2732.36" NativeText="8-o Huh I learned somthing useful." Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Firearms" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningShooting" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningFirearms2" x="1378.615" y="-2639.952" NativeText="Watch that muzzle! Keep it pointed in a safe direction at all times." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFirearms3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningFirearms3" x="1389.15771" y="-3009.72021" NativeText="Treat every firearm with the respect due a loaded gun." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFirearms4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningFirearms4" x="2103.892" y="-2648.70386" NativeText="Be sure of the target and what is in front of it and beyond it." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFirearms5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningFirearms5" x="2133.5166" y="-3009.12646" NativeText="Keep your finger outside the trigger guard until ready to shoot." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFirearms0" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningStealth1" x="540.8588" y="-3577.43" NativeText=":-| This book is about Stealth.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningStealth2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningStealth" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningStealth" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningStealth0" x="2832.03027" y="-3674.519" NativeText="8-o Huh I think I'm like solid snake now." Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Stealth" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningStealth" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningConstruction1" x="535.589966" y="-4477.84131" NativeText=":-| This book is about Construction.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningConstruction2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningConstruction" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningConstruction" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningConstruction0" x="2850.26929" y="-4502.64" NativeText="8-o Huh This is easier than tearing a thousand rags." Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Construction" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningConstruction" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningCooking1" x="537.698242" y="-5291.307" NativeText=":-| This book is about Cooking.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningCooking2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningCooking" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningCooking" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningCooking0" x="2820.40527" y="-5304.103" NativeText="8-o Huh Also stop wasting time melting snow after reading this." Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Cooking" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningCooking" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningFarming1" x="590.3538" y="-6075.79541" NativeText=":-| This book is about Farming.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningFarming2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningFarming" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningFarming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningFarming0" x="2823.75342" y="-6182.311" NativeText="8-o Huh Mmmoney grows on trees." Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Farming" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningFarming" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningMedicine1" x="563.7102" y="-6868.783" NativeText=":-| This book is about Medicine.. lets see..." Situation="CustomUseAction" Anim="ReadStart">
+      <Continues>
+        <SpeechRef UniqueID="LearningMedicine2" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="LearningFirstAid" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="LearningFirstAid" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LearningMedicine0" x="2841.60327" y="-6988.596" NativeText="8-o Huh Time to find some bums who beat each other out!" Anim="ReadFinish">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Medicine" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="LearningFirstAid" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LearningMelee2" x="1400.2688" y="-1082.8728" NativeText="Sweep the feet then hit the head. body hits are inefficient." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMelee3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningArchery2" x="1433.29492" y="-1835.94556" NativeText="Accuracy is the first on a thousand mile journey to Archery." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningArchery3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningArchery4" x="2229.89063" y="-1838.92615" NativeText="Look where your aiming, thats important.." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningArchery5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningArchery3" x="1431.1" y="-2212.66138" NativeText="The trick to Archery is to like, try to really be accurate, like really try to aim." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningArchery4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningArchery5" x="2234.58667" y="-2181.39648" NativeText="And try to aim that spot, instead of other spots, and thats pretty much it." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningArchery0" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningFarming3" x="1389.30859" y="-6426.97266" NativeText="Planting season cold snaps kills crops it can starts early fall till late spring." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFarming4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningFarming5" x="2117.186" y="-6495.95947" NativeText="}:-) Also sunflower seeds are better than chili seeds since they are edible. especially when sold to others." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFarming0" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningFarming2" x="1386.633" y="-6113.95264" NativeText="Its recommended to assign a high farming skill as a farmer." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFarming3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningFarming4" x="2114.782" y="-6123.547" NativeText="You could assign someone with low level farming to help your farmers but make sure they are set to not plant crops." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningFarming5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningMedicine2" x="1370.21021" y="-6898.903" NativeText="You can make a makeshift bandage from snow and rag." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMedicine3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningMedicine3" x="1367.32446" y="-7273.694" NativeText="Got to other communities and fight anyone who wants to fisticuffs then heal them and yourself for free medicine experience" Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMedicine4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningMedicine4" x="2067.272" y="-6882.74561" NativeText="Make sure your other members have rag's or bandages always available since they could bleed to death from thier stupidity." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMedicine5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningMedicine5" x="2089.621" y="-7289.502" NativeText="Getting bitten by a strain makes your body warmer especially if the strain is in advance stages. You can get yourself bitten by green strain before exploring in winter for the extra warmth." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMedicine0" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningCooking2" x="1335.13074" y="-5311.12842" NativeText="Melting snow to turn into water is a good way in gaining cooking experience." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningCooking3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningCooking3" x="1313.54248" y="-5642.20654" NativeText="You need at least have 2 star cooking before you skin bugs bunny." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningCooking4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningCooking5" x="2041.60181" y="-5622.91357" NativeText="Making a gunpowder requires a 5 star cook." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningCooking0" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningCooking4" x="2077.94238" y="-5259.405" NativeText="Higher cooking means more deer meat after skinning." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningCooking5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningStealth2" x="1340.62671" y="-3575.832" NativeText="Be mindful of where the wind is pointing." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningStealth3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningStealth3" x="1338.819" y="-3929.3147" NativeText="You could distract zeds or people by throwing snow or bottles to the opposite direction." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningStealth4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningStealth4" x="2060.309" y="-3589.22485" NativeText="The higher the stealth the more lethal your first undetected shot." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningStealth5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningStealth5" x="2050.11084" y="-3944.96484" NativeText="Don't make noise on an unexplored area." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningStealth0" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningMelee3" x="1403.93518" y="-1432.76" NativeText="Always kite enemies when outnumbered. doing it by backtracking in the area where you came from. don't engage them head on." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMelee4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningMelee4" x="2147.04785" y="-1082.11658" NativeText="blunt weapons for armored targets, blades for unarmored zeds." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMelee5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningMelee5" x="2173.06982" y="-1426.35071" NativeText="Be wary of weapon reach, they could still hit you even you dodged away abit. the longer the weapon the more chance of hitting of the double swing attacks." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningMelee0" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningConstruction2" x="1372.938" y="-4419.538" NativeText="Starting bonfires and building towers attract more hostiles towards you." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningConstruction3" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningConstruction3" x="1357.46936" y="-4815.82031" NativeText="Chicken wire is the best wall if you don't want your pips to waste ammo." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningConstruction4" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningConstruction4" x="2100.80957" y="-4432.068" NativeText="Observe the rocks, if you find specific ore rocks in the area its certain that area has that kind of ore deposit for your mine." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningConstruction5" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LearningConstruction5" x="2090.86084" y="-4808.713" NativeText="Build bases far from roads, towns, communities and hostile path if you want a chill gameplay." Anim="ReadLoop">
+      <Continues>
+        <SpeechRef UniqueID="LearningConstruction0" />
+      </Continues>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

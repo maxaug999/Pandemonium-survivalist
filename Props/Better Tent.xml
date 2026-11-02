@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Building</TypeName>
+  <NativeName>Better Tent</NativeName>
+  <Category>Camp/Buildings</Category>
+  <PrefabNames>
+    <string>Prefabs/Buildings/Tent</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>-0.5</x>
+      <y>0</y>
+      <z>-0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>10</MaxDamage>
+  <CoverType>Transparent</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <ExtentsMin>
+    <x>-1</x>
+    <y>-1</y>
+  </ExtentsMin>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>500</MaxInventoryWeight>
+  <LootLocation>Camp</LootLocation>
+  <Inhabitants>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+  </Inhabitants>
+  <Entrances>
+    <EntranceDef>
+      <EntranceOffset>
+        <x>0</x>
+        <y>1</y>
+      </EntranceOffset>
+      <EntranceAngle>0</EntranceAngle>
+      <NativeName>Front</NativeName>
+    </EntranceDef>
+  </Entrances>
+  <RepairResourceType>Rag</RepairResourceType>
+  <RepairResourceNeeded>4</RepairResourceNeeded>
+  <CaptureResourceType>Rag</CaptureResourceType>
+  <CaptureResourceNeeded>6</CaptureResourceNeeded>
+</PropPrototype>

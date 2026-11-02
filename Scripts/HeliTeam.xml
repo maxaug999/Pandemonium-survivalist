@@ -1,0 +1,1751 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>91</NextFreeSpeechID>
+  <NextFreeTriggerID>9</NextFreeTriggerID>
+  <NextFreeConditionBlockID>5</NextFreeConditionBlockID>
+  <NextFreeQuestID>9</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>11</NextFreeTemplateID>
+  <NextFreeInvaderID>3</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-763.1426</x>
+    <y>-1312.04089</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4333499</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="SatPhone_CanHearSomeone" x="-3370.6582" y="652.417236" NativeText="Okay here we go..  Hello?  Hello...?  Is anyone... yes!  I can hear someone!" Situation="CustomUseAction">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_IsThisFEMA" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="SatellitePhone" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="PhoneNumber" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_IsThisFEMA" x="-2264.26074" y="579.4295" NativeText="Is this FEMA?  I'm.. uh.. requesting extraction.  Can you get %1 out of here?">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_DontHaveAPass" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_DontHaveAPass" x="-1225.94434" y="461.311462" NativeText="No, I don't have a pass.  But, uh, %1 could trade with you or help you out... we could work together.">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_SendSomeoneOver" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_NeedContactDetails" x="-3373.72461" y="1266.62708" NativeText="I'd need a new number to try." Situation="CustomUseAction">
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="SatellitePhone" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="PhoneNumber" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SatPhone_SendSomeoneOver" x="-100.787842" y="-197.02832" NativeText="You'll send someone over?  Yeah I'll look out for them!  You won't regret this!">
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_GotSomeone" />
+        <SpeechRef UniqueID="SatPhone_GotSomeoneThisTime" />
+        <SpeechRef UniqueID="SatPhone_SomeoneReplied" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="SatPhone_GotSomeone" x="1054.31555" y="1141.70129" NativeText="That's it, I got through to someone!  They're going to send a team to liase with %1!" PerObjectType="PerActiveQuestGiver">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall" />
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_SeekRefuge" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Trigger_Phoned" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_GotSomeoneThisTime" x="1054.98682" y="-380.986328" NativeText="That's it, I got through to someone this time!  They're going to send a team to liase with %1!" PerObjectType="PerActiveQuestGiver">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall2" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" StringData="EmpireBuilding_WhoYouGonnaCall2" />
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_SeekRefuge" />
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Trigger_Phoned" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_SomeoneReplied" x="1020.94617" y="-1985.87842" NativeText="Well, someone replied at least.  They're sending a team.  Let's hope they're who they say they are.">
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Trigger_Phoned" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_StopRightThere" x="2831.80225" y="-7850.32666" NativeText="}:-| Keep your hands where I can see them, civilian!  No sudden movements." Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_ContactedYou" />
+        <SpeechRef UniqueID="Intro_Trade" />
+        <SpeechRef UniqueID="Intro_Shakedown" />
+        <SpeechRef UniqueID="Intro_Kill" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Condition_FEMA" />
+            <ConditionBlockRef UniqueID="HeliTeam_Condition_RogueFEMA" />
+            <ConditionBlockRef UniqueID="HeliTeam_Condition_InvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ContactedYou" x="3776.14722" y="-8008.8916" NativeText="I'm the one who contacted you.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HowMany" />
+        <SpeechRef UniqueID="HeliTeam_HopeYouWereWorthIt" />
+        <SpeechRef UniqueID="HeliTeam_WhoKnowsAboutUs" />
+        <SpeechRef UniqueID="HeliTeam_WorkForUs" />
+        <SpeechRef UniqueID="HeliTeam_OweYou" />
+        <SpeechRef UniqueID="HeliTeam_NiceNice" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SatPhone_AlreadyContacted" x="-3360.35254" y="-1668.06677" NativeText="%1 already contacted them." Situation="CustomUseAction">
+      <Params>
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="SatellitePhone" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_IsMeetingSomeone" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HopeYouWereWorthIt" x="4839.145" y="-7949.966" NativeText="Talk to %1, outsider - I'm just here for backup.  I sure hope you were worth this trip.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ContactedYou2" x="3779.67139" y="-9073.367" NativeText="Hello, I'm the one who contacted you." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HowMany" />
+        <SpeechRef UniqueID="HeliTeam_WhoKnowsAboutUs" />
+        <SpeechRef UniqueID="HeliTeam_WorkForUs" />
+        <SpeechRef UniqueID="HeliTeam_OweYou" />
+        <SpeechRef UniqueID="HeliTeam_NiceNice" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Condition_ContactedYou2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WhoKnowsAboutUs" x="4846.577" y="-8866.514" NativeText="}:-| Where did you get our number from?  Who knows about us?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_DetachmentOutEast" />
+        <SpeechRef UniqueID="HeliTeam_Restroom" />
+        <SpeechRef UniqueID="HeliTeam_PassedAround" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="HeliTeam_MeetFEMA" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_PassedAround" x="5841.39355" y="-9444.055" NativeText="It just got passed around, I don't know where it originated.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WasteOfTime" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WasteOfTime" x="6928.09375" y="-9463.169" NativeText="}:-| Yeah it's what I thought, you don't know shit.  This mission was a waste of time.">
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_AnyMoreRefugees" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="HeliTeam_AnyMoreRefugees" x="7993.75" y="-8860.676" NativeText="}:-| Look, outsider, I'm real sorry but we're not giving green passes to any more refugees right now.  Or ever.  There's no spaces in the camp.  Good luck with whatever you got going on over here.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HowDoIGetAGreenPass" />
+        <SpeechRef UniqueID="HeliTeam_NeverWantedOne" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HowDoIGetAGreenPass" x="9019.785" y="-8868.379" NativeText="Wait, so how can I get a green pass?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_MajorThreats" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_MajorThreats" x="10284.0938" y="-8955.828" NativeText="I told you we're not giving them out free anymore.  But, sometimes we do still give 'em out to people who help us take down a major threat.  There are some large organised groups of marauders around this countryside, some of them former army.  And there's... other things, out there.">
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_OurIntel" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="HeliTeam_OurIntel" x="11084.8594" y="-8739.161" NativeText="Our intel could direct them to your location on the promise of a large cache of loot.  You take 'em all out, and you got yourself one green pass.  I mean all of them, mind, not just one raiding party.">
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_YourChoice" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="HeliTeam_YourChoice" x="11976.4229" y="-8777.391" NativeText="Oh yeah, and one green pass gets ONE person in the QZ.  You want your family or your buddies to get in, you'll need one each.  Frankly I don't fancy your chances, but it's your choice - you wanna risk it all and do this?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HitMe" />
+        <SpeechRef UniqueID="HeliTeam_Defenses" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_DetachmentOutEast" x="5880.21533" y="-8172.549" NativeText="I'm the CO of a detachment east of Denver that got overrun.  Your details were in our files.  I demand asylum!" Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_ShouldBeSaluting" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ShouldBeSaluting" x="6941.07764" y="-7853.06152" NativeText="8-) Oh shit a Commanding Officer, I should be saluting... what did you say your unit was?  }:-) Ah, I'm just messin' with you, don't try to bullshit me anymore though.  }:-| And if you're really a CO, start by telling me the pass-phrase like the protocol says.">
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_AnyMoreRefugees" />
+      </Continues>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Restroom" x="5864.49658" y="-8841.042" NativeText="I found it scrawled on the wall of a restroom around here saying I should call it 'if I wanted a good time'.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Cute" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Cute" x="6926.061" y="-8754.183" NativeText="}:-| Cute.  We got ourselves a smartass here.">
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_AnyMoreRefugees" />
+      </Continues>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Annoyed" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NeverWantedOne" x="8833.754" y="-9298.593" NativeText="{:-| Well I never wanted to live with you anyway!">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Right" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Right" x="9555.278" y="-9589.976" NativeText="}:-| Riiiiight.">
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_MajorThreats" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HitMe" x="13196.85" y="-9325.016" NativeText="Yeah, hit me.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_SHTF_Now" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Defenses" x="13194.0059" y="-9778.361" NativeText="Not right now, I need to build up some defenses.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_SHTF_NotYet" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_SHTF_NotYet" x="14184.542" y="-9860.789" NativeText="You got it, chief.  Give us a call when you're ready for some serious shit to hit the fan.">
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Finish" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SatPhone_SpokenBefore" x="-3366.53784" y="-84.03368" NativeText="Hello?  Yes we've spoken before.  Request to set up another meeting with FEMA operatives in this area." Situation="CustomUseAction">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="SatPhone_SendSomeoneOver" />
+        <SpeechRef UniqueID="HeliTeam_Eliminated" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="SatellitePhone" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_SHTF_Now" x="14181.7666" y="-9118.45" NativeText="You got it, chief.  Get ready for the shit to hit the fan.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Object="Actor" ObjectModifier="Community" StringData="HeliTeam_Quest_FEMA_Work" />
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Finish" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WorkForUs" x="4845.61328" y="-9655.657" NativeText="I'm told you'll do some work for us in exchange for a green pass.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_KillABunchOfPeople" />
+        <SpeechRef UniqueID="HeliTeam_ARealChoiceMission" />
+      </Continues>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="HeliTeam_MeetFEMA" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_KillABunchOfPeople" x="5824.288" y="-10134.9736" NativeText="And by 'work' I mean, 'kill a bunch of people'.  And by 'people' I mean 'assholes'.  Are you ready?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HitMe" />
+        <SpeechRef UniqueID="HeliTeam_Defenses" />
+        <SpeechRef UniqueID="HeliTeam_HowCanI" />
+        <SpeechRef UniqueID="HeliTeam_UseMyGreenPass" />
+        <SpeechRef UniqueID="HeliTeam_UseOurGreenPasses" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ARealChoiceMission" x="5826.81348" y="-11068.5342" NativeText="We've got a mission in mind for you.  It's a real doozy of a mission.  Are you ready?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HitMe" />
+        <SpeechRef UniqueID="HeliTeam_Defenses" />
+        <SpeechRef UniqueID="HeliTeam_HowCanI" />
+        <SpeechRef UniqueID="HeliTeam_UseMyGreenPass" />
+        <SpeechRef UniqueID="HeliTeam_UseOurGreenPasses" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NiceNice" x="4881.23047" y="-13123.1611" NativeText=":-) Nice, nice, great to meet you.  And I heard you're looking for a green card to get into the Quarantine Zone?  I can get you one of those.">
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_ABitOfGold" />
+      </Continues>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="HeliTeam_MeetRogueFEMA" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ABitOfGold" x="5863.114" y="-12739.6025" NativeText="The only thing I need from you is a bit of gold, to cover our expenses.  Four hundred should do it.  Do we have ourselves a deal?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_DoesYourCOKnow" />
+        <SpeechRef UniqueID="HeliTeam_HeresYourGold" />
+        <SpeechRef UniqueID="HeliTeam_IsThisAJoke" />
+        <SpeechRef UniqueID="HeliTeam_CantAffordThat" />
+        <SpeechRef UniqueID="HeliTeam_NotInterested" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_IsThisAJoke" x="6948.186" y="-13473.584" NativeText="Is this a joke?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_NotAJoke" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_CantAffordThat" x="6940.297" y="-14180.833" NativeText="I can't afford that right now.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_ComeBackToMe" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HeresYourGold" x="6969.90625" y="-12192.1846" NativeText="Here's your gold.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_SitTight" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Data="400" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_DoesYourCOKnow" x="6958.66943" y="-11311.54" NativeText="Does your CO know you're taking bribes from refugees?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_MyCOIsDead" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Annoyed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_SitTight" x="8068.859" y="-12070.0684" NativeText="}:-) Great doing business with you!  Now just... uh, sit tight and we'll be back real soon with your green passes.   So long!  Suckers.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="400" StringData="Gold" />
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Finish_RogueFEMA" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="RogueFEMA_Invader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ComeBackToMe" x="8050.282" y="-13503.7939" NativeText="I'm sure you can find it somewhere, you just gotta... dig deep.  Think of how great it'll be having running water, electricity, movies, more food than you can eat...  Come back to me when you got that gold!  Don't take too long now.">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetRogueFEMA" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="HeliTeam_Quest_Bribe" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NotAJoke" x="8057.821" y="-12955.2158" NativeText="}:-| No, it's not a joke.  Don't insult me.  I thought you were worth taking a chance on, we came all the way out here to meet you, but I guess I was wrong.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_DoesYourCOKnow" />
+        <SpeechRef UniqueID="HeliTeam_HeresYourGold" />
+        <SpeechRef UniqueID="HeliTeam_CantAffordThat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_MyCOIsDead" x="8075.7583" y="-11130.2227" NativeText="}:-[ My CO is dead, and so will you be, %1!">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Finish_RogueFEMA" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="RogueFEMA_Invader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NotInterested" x="6950.107" y="-14610.1934" NativeText="I'm not interested.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WasteMyTime" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WasteMyTime" x="8033.97461" y="-14399.2773" NativeText="}:-( Hey, that's perfectly okay.  We wasted our time, flew all the way out here for you, now you decide you don't want to part with your hard earned gold.  Fair enough!  I hope that decision works out for you!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Finish_RogueFEMA" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="RogueFEMA_Invader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_GiveBribe" x="6955.8877" y="-12692.9834" NativeText="I got the gold." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_SitTight" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_Quest_Bribe" />
+        <Condition Type="HasGold" Subject="Actor" Data="400" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NotInterestedNow" x="6951.508" y="-14956.1182" NativeText="I changed my mind, I'm not interested." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WasteMyTime" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_Quest_Bribe" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_YourLuckyDay" x="2870.88965" y="-16078.6494" NativeText=":-) Yo!  It's your lucky day, we've come to.. uh.. rescue you!" Situation="Opener" MaxRange="5" Run="true" SpecialBehaviour="Introduction">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_ThankGoodness" />
+        <SpeechRef UniqueID="HeliTeam_ItsFine" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="CommunityIntroductionHasStarted" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" SubjectModifier="Leader" StringData="HeliTeam_MeetLooters" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ThankGoodness" x="3981.90161" y="-16015.874" NativeText=":-) Thank goodness you're here!">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HereToHelp" />
+        <SpeechRef UniqueID="HeliTeam_LotsOfSupplies" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ItsFine" x="3962.05151" y="-16677.22" NativeText="Actually it's fine, I don't need rescuing.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_SureYouDo" />
+        <SpeechRef UniqueID="HeliTeam_LotsOfSupplies" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_LotsOfSupplies" x="5188.88672" y="-16511.2148" NativeText="So, you got a big group here or what?  Anything I should know about?  Lots of... supplies?  Gold?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_DoingWell" />
+        <SpeechRef UniqueID="HeliTeam_WellDefended" />
+        <SpeechRef UniqueID="HeliTeam_WhatYouSee" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_DoingWell" x="6353.90771" y="-15848.6719" NativeText=":-) Yeah we're doing pretty well!">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Fee" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WellDefended" x="6367.98535" y="-16323.4473" NativeText="}:-| We're well defended.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Fee" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WhatYouSee" x="6339.83154" y="-16819.9766" NativeText="It's just what you see right here.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Fee" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Fee" x="7532.52637" y="-16323.4463" NativeText="I see.  That's great.  Okay, the way this works is you're going to need to give us a fee for rescuing you.  It's 300 gold.  Once we've got the fee we'll get you out of here, you'll be living in luxury, we got hot showers, electricity, meat, all that good shit.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HeresYourGold2" />
+        <SpeechRef UniqueID="HeliTeam_CantAffordThat2" />
+        <SpeechRef UniqueID="HeliTeam_DontNeed" />
+        <SpeechRef UniqueID="HeliTeam_FuckOff" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_CantAffordThat2" x="8593.737" y="-16459.0859" NativeText="I can't afford that right now.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_PayUp" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HeresYourGold2" x="8597.379" y="-15822.2207" NativeText="Here's your gold.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Promise" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Data="300" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_DontNeed" x="8588.456" y="-16925.5547" NativeText="}:-| I don't need to be rescued!">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_NotNegotiable" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NotNegotiable" x="9681.528" y="-16937.7012" NativeText="}:-[ It's not negotiable.  You got 2 days to pay up.  Otherwise, believe me, you will need to be rescued.  And there ain't no one coming to do that.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetLooters" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="HeliTeam_Quest_RescueFee" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_PayUp" x="9683.03" y="-16271.9072" NativeText="You got 2 days to pay up.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetLooters" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="HeliTeam_Quest_RescueFee" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Promise" x="9679.751" y="-14976.4258" NativeText="}:-| Where'd you get all this?  Got a lot more where that came from?  }:-) Uh.. anyway, wait here and we'll come back to rescue you... soon, I promise!  Real soon.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="300" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetLooters" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" StringData="HeliTeam_Quest_RescueFee" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="Boss_Looters" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_GotTheGold" x="8607.547" y="-15050.0371" NativeText="I got the gold." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Promise" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_Quest_RescueFee" />
+        <Condition Type="HasGold" Subject="Actor" Data="300" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_FuckOff" x="8569.774" y="-17583.166" NativeText="Fuck off and don't come back here.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_BigMistake" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NotGoingToPay" x="8559.494" y="-18178.2617" NativeText="I'm not going to pay you, so fuck off and don't come back." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_BigMistake" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_Quest_RescueFee" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_BigMistake" x="9635.683" y="-17789.2832" NativeText="}:-[ And I thought you and I were going to be such great buddies!  Ah well.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetLooters" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" StringData="HeliTeam_Quest_RescueFee" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="Boss_Looters" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HowMany" x="5383.236" y="-7051.449" NativeText="Are there more of you out here?  How many?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WhatWantsToKnow" />
+        <SpeechRef UniqueID="HeliTeam_WhatYouSee2" />
+        <SpeechRef UniqueID="HeliTeam_FairSized" />
+        <SpeechRef UniqueID="HeliTeam_BigArmy" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="HeliTeam_MeetInvisibleStrain" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WhatYouSee2" x="6528.09473" y="-6426.82275" NativeText="It's just what you see right here.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HidingAnyone" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_BigArmy" x="6506.36133" y="-7213.1333" NativeText="}:-| We got a whole big army back here.  Lots of guns.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HowManyWomen" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_FairSized" x="6529.688" y="-6832.026" NativeText="It's a fair-sized settlement.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HowManyWomen" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WhatWantsToKnow" x="6523.474" y="-5759.941" NativeText="}:-| Why do you want to know that?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Formality" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Formality" x="7685.82568" y="-5689.414" NativeText="Easy now, it's just a formality.  We just need know how many mouths you're gonna feed.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_DontYouMean" />
+        <SpeechRef UniqueID="HeliTeam_WhatYouSee2" />
+        <SpeechRef UniqueID="HeliTeam_FairSized" />
+        <SpeechRef UniqueID="HeliTeam_BigArmy" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_DontYouMean" x="8762.89551" y="-5738.548" NativeText="Don't you mean.. how many mouths we've got to feed?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WhatISaid" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WhatISaid" x="9807.64" y="-5743.72" NativeText="Sure, that's what I said.  Are you going to answer my fucking question?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WhatYouSee2" />
+        <SpeechRef UniqueID="HeliTeam_FairSized" />
+        <SpeechRef UniqueID="HeliTeam_BigArmy" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HidingAnyone" x="7666.64551" y="-6471.286" NativeText="}:-| Oh really.. not hiding anyone are you?  Any... children with you?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Typical" />
+        <SpeechRef UniqueID="HeliTeam_NotAnswering" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HowManyWomen" x="7656.527" y="-7018.205" NativeText="How many women, and children?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Typical" />
+        <SpeechRef UniqueID="HeliTeam_NotAnswering" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NotAnswering" x="8854.704" y="-7127.141" NativeText="I think it's time you left.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WantToPlay" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Typical" x="8852.793" y="-6521.82666" NativeText="It's just a typical group of refugees.  No children.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_Helpful" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WantToPlay" x="10009.22" y="-7120.203" NativeText="{:-( They never want to play with me.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetInvisibleStrain" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="Boss_InvisibleStrain" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Helpful" x="10008.5127" y="-6339.258" NativeText=":-) Cool, you've been really helpful!  We'll be sending a team out to get you soon!  Have a lovely day!">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetInvisibleStrain" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="Boss_InvisibleStrain" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_OweYou" x="4849.29736" y="-10765.28" NativeText="Looks like we owe you a green pass from the last job you did for us.  Here it is.  Congratulations, yada yada yada!  You want more of them, you need to do some more work.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_KillABunchOfPeople" />
+        <SpeechRef UniqueID="HeliTeam_ARealChoiceMission" />
+      </Continues>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="HeliTeam_MeetFEMA" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" />
+        <Condition Type="VariableIsGreaterThan" StringData="GreenPassOwed" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="1" StringData="GreenPass" />
+        <StoryEvent Type="IncrementVariable" Data="-1" StringData="GreenPassOwed" />
+        <StoryEvent Type="CompleteQuest" StringData="EmpireBuilding_GreenPass" />
+        <StoryEvent Type="DiscoverQuest" StringData="HeliTeam_Gift" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_UseMyGreenPass" x="9016.875" y="-10184.4619" NativeText="I want to use my Green Pass now.  Get me out of here!">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_JustYou" />
+        <SpeechRef UniqueID="HeliTeam_YourGreenPass" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunityHasNMembersWithGiftedItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" Not="true" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" SubjectModifier="Community" Data="1" StringData="GreenPass" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_UseOurGreenPasses" x="9013.077" y="-11088.0254" NativeText="I want to use my Green Pass now.  And I've given out %1 Green Passes to people in my group, besides myself.  It's time for us to go.">
+      <Params>
+        <SpeechParam Type="CommunityNumMembersWithGiftedItem" Subject="Actor" StringData="GreenPass" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_OnePassPerPerson" />
+        <SpeechRef UniqueID="HeliTeam_YourGreenPass" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunityHasNMembersWithGiftedItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_OnePassPerPerson" x="10159.1865" y="-10953.7275" NativeText="}:-| You and %1 more mouths to feed, great. :-| Are you sure you're not leaving anyone behind?">
+      <Params>
+        <SpeechParam Type="CommunityNumMembersWithGiftedItem" Subject="Target" StringData="GreenPass" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_DontWantToLeave" />
+        <SpeechRef UniqueID="HeliTeam_EveryoneICareAbout" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_EveryoneICareAbout" x="11290.8447" y="-11241.7734" NativeText="No one that I really care about.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_WelcomeToFEMA" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_DontWantToLeave" x="11175.8135" y="-10447.7295" NativeText="Actually there are people I don't want to leave.">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_ThatMission" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ThatMission" x="12144.7715" y="-10238.1982" NativeText="How about that mission then?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_HitMe" />
+        <SpeechRef UniqueID="HeliTeam_Defenses" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_WelcomeToFEMA" x="12463.5381" y="-11470.5361" NativeText="Then I'll radio in a transport chopper for you.  Welcome to FEMA, outsider!">
+      <Events>
+        <StoryEvent Type="UnlockAchievement" StringData="CompleteSandbox_Evac" />
+        <StoryEvent Type="GameComplete" StringData="GreenPass" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_YourGreenPass" x="10153.9473" y="-11675.7686" NativeText="Where is your green pass then?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_GetIt" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="GreenPass" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_GetIt" x="11218.4844" y="-12366.4316" NativeText="I'll go and get it." />
+    <Speech UniqueID="HeliTeam_HowCanI" x="6932.149" y="-9842.882" NativeText="How can I use a Green Pass to get out of here?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_NeedLeader" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" Data="1" StringData="GreenPass" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_NeedLeader" x="7934.62256" y="-9617.224" NativeText="I need to hear it from the leader of your group... and that ain't you.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="HeliTeam_JustYou" x="10155.8457" y="-10466.4609" NativeText="It's just you, by yourself?  You're not leaving anyone behind?">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_DontWantToLeave" />
+        <SpeechRef UniqueID="HeliTeam_EveryoneICareAbout" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="HeliTeam_SureYouDo" x="5191.16162" y="-15508.5361" NativeText="}:-| Sure you do, talk to %1, %2's in charge here.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" BoolData="true" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_HereToHelp" x="5191.512" y="-14456.6045" NativeText=":-) We're here to help!  Talk to %1, %2's in charge here.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" BoolData="true" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Introduce" Subject="Actor" Object="Target" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="HeliTeam_ContactedYou3" x="3965.699" y="-17306.1387" NativeText="I'm the one who contacted you." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="HeliTeam_LotsOfSupplies" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_MeetLooters" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_Eliminated" x="-1991.54053" y="-871.2015" NativeText="The hostiles have been eliminated.  You owe me a green pass." PerObjectType="PerActiveQuestObject">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="HeliTeam_IllBeThere" />
+      </Continues>
+      <Conditions>
+        <Condition Type="QuestIsActive" Object="ReferringTo" StringData="Boss_CallFEMA" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="HeliTeam_IllBeThere" x="-718.314453" y="-1082.37073" NativeText="You're sending a crew?  Understood, I'll be there.">
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="SatPhone_Trigger_Phoned" />
+        <StoryEvent Type="CompleteQuest" Object="ReferringTo" StringData="Boss_CallFEMA" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="SatPhone_Trigger_Phoned" x="2142.369" y="-1177.69409">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_DeletePhoneNumber" />
+        <StoryEvent Type="SpawnTemplate" StringData="SatPhone_HeliTeam" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone2_Trigger_MeetFEMA" x="2292.04883" y="-3991.931">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_FEMA" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" StringData="HeliTeam_MeetFEMA" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone2_Trigger_MeetRogueFEMA" x="2283.967" y="-4679.137">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_RogueFEMA" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" StringData="HeliTeam_MeetRogueFEMA" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="HeliTeam_DeletePhoneNumber" x="3043.34351" y="-853.944641">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="PhoneNumber" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="HeliTeam_Finish" x="15245.3779" y="-9825.535">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetFEMA" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="CompleteQuest" StringData="EmpireBuilding_SeekRefuge" />
+        <StoryEvent Type="DiscoverQuest" StringData="EmpireBuilding_GreenPass" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="HeliTeam_Finish_RogueFEMA" x="9030.174" y="-12244.2578">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="HeliTeam_MeetRogueFEMA" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" StringData="HeliTeam_Quest_Bribe" />
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="HeliTeam_Trigger_Looters" x="15321.7051" y="-7936.47363">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" StringData="Boss" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="ActivateInvader" Subject="ReferringTo" StringData="Boss_Looters" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="HeliTeam_Trigger_InvisibleStrain" x="15347.1846" y="-9134.22949">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" Data2="2" StringData="Boss" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="ActivateInvader" Subject="ReferringTo" StringData="Boss_InvisibleStrain" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="HeliTeam_Trigger_RogueFEMA" x="15336.64" y="-8522.544">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" Data2="1" StringData="Boss" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="ActivateInvader" Subject="ReferringTo" StringData="RogueFEMA_Invader" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="SatPhone2_Trigger_MeetInvisibleStrain" x="2273.02075" y="-3304.64136">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_InvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" StringData="HeliTeam_MeetInvisibleStrain" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="HeliTeam_AtWarWithFEMA" x="8922.505" y="-2217.517">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="Player" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="FailQuestIfItIsDiscovered" StringData="EmpireBuilding_SeekRefuge" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" StringData="EmpireBuilding_GreenPass" />
+        <StoryEvent Type="FailQuest" Subject="Actor" StringData="HeliTeam_MeetFEMA" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="SatPhone2_FEMA_LabClothes" x="7725.10938" y="-1190.97559">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="2" Data2="1" StringData="FEMA_Clothes" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="SatPhone2_FEMA_MilitaryClothes" x="7723.818" y="-741.567444">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="2" StringData="FEMA_Clothes" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Type_FEMA" x="3284.72241" y="-4016.60645" Type="Or">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" SubjectModifier="Community" Data="4" StringData="HeliTeamType" />
+        <Condition Type="VariableIsGreaterThanOrEqual" Data="3" StringData="HeliTeamCount" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Type_RogueFEMA" x="3286.66284" y="-4819.516">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" SubjectModifier="Community" Data="4" Data2="1" StringData="HeliTeamType" />
+        <Condition Type="VariableIsLessThan" Data="3" StringData="HeliTeamCount" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Type_Looters" x="3304.09961" y="-5603.22266">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" SubjectModifier="Community" Data="4" Data2="2" StringData="HeliTeamType" />
+        <Condition Type="VariableIsLessThan" Data="3" StringData="HeliTeamCount" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Type_InvisibleStrain" x="3257.06274" y="-3255.29541">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" SubjectModifier="Community" Data="4" Data2="3" StringData="HeliTeamType" />
+        <Condition Type="VariableIsLessThan" Data="3" StringData="HeliTeamCount" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Condition_FEMA" x="1833.84082" y="-8571.966">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" SubjectModifier="Leader" StringData="HeliTeam_MeetFEMA" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Condition_RogueFEMA" x="1825.12732" y="-8969.164">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" SubjectModifier="Leader" StringData="HeliTeam_MeetRogueFEMA" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Condition_InvisibleStrain" x="1822.048" y="-9350.966">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" SubjectModifier="Leader" StringData="HeliTeam_MeetInvisibleStrain" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_IsMeetingSomeone" x="-4222.322" y="-1481.57324" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="HeliTeam_MeetFEMA" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="HeliTeam_MeetRogueFEMA" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="HeliTeam_MeetInvisibleStrain" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="HeliTeam_MeetLooters" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="HeliTeam_Quest_Bribe" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="HeliTeam_Quest_RescueFee" />
+        <Condition Type="QuestIsActiveWithAnyParams" StringData="HeliTeam_Quest_FEMA_Work" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="HeliTeam_Condition_ContactedYou2" x="2855.351" y="-9492.571" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_MeetFEMA" />
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_MeetRogueFEMA" />
+        <Condition Type="QuestIsActive" Subject="Target" StringData="HeliTeam_MeetInvisibleStrain" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="HeliTeam_MeetFEMA" x="7917.643" y="-1921.79858" GroupID="HeliTeam_QuestGroup" NativeDescription="Liase with the FEMA team">
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="EnableTrigger" Subject="Actor" StringData="HeliTeam_AtWarWithFEMA" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DisableTrigger" Subject="Actor" StringData="HeliTeam_AtWarWithFEMA" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" StringData="HeliTeam_AtWarWithFEMA" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="HeliTeam_MeetRogueFEMA" x="7906.1123" y="-3328.43" GroupID="HeliTeam_QuestGroup" NativeDescription="Liase with the FEMA team">
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="RogueFEMA_Invader" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="HeliTeam_MeetInvisibleStrain" x="7898.53271" y="-4119.681" GroupID="HeliTeam_QuestGroup" NativeDescription="Liase with the FEMA team">
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="Boss_InvisibleStrain" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="HeliTeam_MeetLooters" x="7890.664" y="-4909.727" GroupID="HeliTeam_QuestGroup" NativeDescription="Liase with the FEMA team">
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="Boss_Looters" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="EmpireBuilding_SeekRefuge" x="2115.78174" y="256.369537" GroupID="SatPhone_AWayOut" NativeDescription="Try to seek refuge in one of the FEMA Quarantine Zones." SkipNotificationIfAlreadyCompleted="true" />
+    <Quest UniqueID="EmpireBuilding_GreenPass" x="2116.92651" y="-114.990761" GroupID="SatPhone_AWayOut" NativeDescription="You need to be issued green passes by FEMA in order to be allowed to settle in a QZ.  Try to get hold of some green passes for yourself and whoever you want to take with you." />
+    <Quest UniqueID="HeliTeam_Quest_Bribe" x="9339.267" y="-13412.6582" GroupID="HeliTeam_QuestGroup" NativeDescription="Bring 400 gold to the FEMA team, before they leave (2 days).">
+      <Metric>TimeSinceStarted</Metric>
+      <MetricLimit>3600</MetricLimit>
+      <FailureConditions>
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Data="3600" StringData="HeliTeam_Quest_Bribe" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="RogueFEMA_Invader" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="HeliTeam_Quest_RescueFee" x="10773.2549" y="-16410.1758" GroupID="HeliTeam_QuestGroup" NativeDescription="Bring 300 gold to the looters, before they leave (2 days).">
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <Metric>TimeSinceStarted</Metric>
+      <MetricLimit>3600</MetricLimit>
+      <FailureConditions>
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Data="3600" StringData="HeliTeam_Quest_RescueFee" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="Actor" />
+        <StoryEvent Type="ActivateInvader" Subject="Actor" SubjectModifier="Community" StringData="Boss_Looters" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="HeliTeam_Quest_FEMA_Work" x="14180.5908" y="-8051.819" GroupID="Boss_Bait" NativeDescription="Defeat the raiders that FEMA intel are directing your way.">
+      <StartEvents>
+        <StoryEvent Type="IncrementVariable" Data="1" StringData="BossLevel" />
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Trigger_Looters" />
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Trigger_RogueFEMA" />
+        <StoryEvent Type="OneShotTrigger" StringData="HeliTeam_Trigger_InvisibleStrain" />
+      </StartEvents>
+    </Quest>
+    <Quest UniqueID="HeliTeam_Gift" x="2118.11133" y="-549.7326" GroupID="SatPhone_AWayOut" NativeDescription="Give out green passes as gifts to whoever in your community you want to take with you.  But keep one for yourself, of course.">
+      <CompletionConditions>
+        <Condition Type="CommunityHasNMembersWithGiftedItemsOfType" Subject="Player" SubjectModifier="Community" Data="1" StringData="GreenPass" />
+      </CompletionConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="HeliTeam_QuestGroup" x="8865.242" y="-3803.0686" NativeTitle="Get to the chopper!" MainQuest="true" />
+  </QuestGroups>
+  <Templates>
+    <Template UniqueID="SatPhone_HeliTeam" x="3258.13525" y="-1523.03369" NativeCommunityName="FEMA">
+      <Type>Community</Type>
+      <SpawnLocation>PreferOpenCountryside</SpawnLocation>
+      <IsFEMA>true</IsFEMA>
+      <Children>
+        <TemplateChild UniqueID="SatPhone_Helicopter1" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone_Helicopter2" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone_Helicopter3" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone_Helicopter4" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Invis_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Invis_Grunt" Min="3" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_RogueFEMA_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_FEMA_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_FEMA_Grunt" Min="3" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Looters_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Looters_Grunt" Min="3" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="IncrementVariable" Data="1" StringData="HeliTeamCount" />
+      </Events>
+    </Template>
+    <Template UniqueID="SatPhone_Helicopter1" x="660.207458" y="-2484.17">
+      <Type>Prop</Type>
+      <CommunityType>Player</CommunityType>
+      <PropPrototypeName>Helicopter1</PropPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="4" StringData="SatPhone_Helicopter" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone_Helicopter2" x="663.1611" y="-3007.114">
+      <Type>Prop</Type>
+      <CommunityType>Player</CommunityType>
+      <PropPrototypeName>Helicopter2</PropPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="4" Data2="1" StringData="SatPhone_Helicopter" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone_Helicopter3" x="664.1484" y="-3454.15723">
+      <Type>Prop</Type>
+      <CommunityType>Player</CommunityType>
+      <PropPrototypeName>Helicopter3</PropPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="4" Data2="2" StringData="SatPhone_Helicopter" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone_Helicopter4" x="658.0253" y="-3921.83765">
+      <Type>Prop</Type>
+      <CommunityType>Player</CommunityType>
+      <PropPrototypeName>Helicopter4</PropPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="4" Data2="3" StringData="SatPhone_Helicopter" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_FEMA_Leader" x="4456.95752" y="-1192.95068">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>FEMA</LootLocation>
+      <Role>Trader</Role>
+      <TraderLevel>5</TraderLevel>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>32</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="SatPhone2_CamoJacket" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoTrousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoHat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Labcoat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Trousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_AssaultRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_SniperRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Knife" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="HeliTeam_SaveToken" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="HeliTeam_Gold" Min="200" Max="400">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_FEMA" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" Subject="ReferringTo" StringData="SatPhone2_Trigger_MeetFEMA" />
+      </Events>
+    </Template>
+    <Template UniqueID="SatPhone2_CamoJacket" x="5663.45947" y="-857.5928">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>Jacket_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone2_FEMA_MilitaryClothes" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_CamoTrousers" x="5664.256" y="-1389.10217">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>CombatTrousers_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone2_FEMA_MilitaryClothes" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_CamoHat" x="5672.831" y="-1933.4502">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>MilitaryCap_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone2_FEMA_MilitaryClothes" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_AssaultRifle" x="5622.733" y="-4099.17139">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>AssaultRifle</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" Data2="1" StringData="FEMA_Weapon" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_Pistol" x="5627.618" y="-3615.57129">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>Pistol</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" StringData="FEMA_Weapon" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_SniperRifle" x="5626.3457" y="-4601.861">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>SniperRifle</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" Data2="2" StringData="FEMA_Weapon" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_Labcoat" x="5649.00732" y="-2471.40674">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>DoctorCoat</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone2_FEMA_LabClothes" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_Trousers" x="5645.22852" y="-3008.08667">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>Trousers</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="SatPhone2_FEMA_LabClothes" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_FEMA_Grunt" x="4448.453" y="-3137.50073">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>FEMA</LootLocation>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="SatPhone2_CamoJacket" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoTrousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_AssaultRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_SniperRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Knife" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_FEMA" />
+            <ConditionBlockRef UniqueID="HeliTeam_Type_RogueFEMA" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityHasUnusedAccomodation" Subject="ReferringTo" Data="1" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_Knife" x="5627.465" y="-5147.834">
+      <Type>Equipment</Type>
+      <CommunityType>Player</CommunityType>
+      <EquipmentPrototypeName>HuntingKnife</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="SatPhone2_Looters_Leader" x="4445.50439" y="-4758.568">
+      <Type>Character</Type>
+      <Role>Trader</Role>
+      <TraderLevel>1</TraderLevel>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>75</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>White</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>50</InfectedWeaponsProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>32</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="HeliTeam_SaveToken" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="HeliTeam_Gold" Min="100" Max="200">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_Looters" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" StringData="HeliTeam_MeetLooters" />
+      </Events>
+    </Template>
+    <Template UniqueID="SatPhone2_Looters_Grunt" x="4446.951" y="-6541.63672">
+      <Type>Character</Type>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>75</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>White</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>20</InfectedWeaponsProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_Looters" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityHasUnusedAccomodation" Subject="ReferringTo" Data="1" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_InvisibleStrain_Grunt" x="6884.60742" y="-4212.167">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="SatPhone2_CamoJacket" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoTrousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_AssaultRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_SniperRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Knife" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_InvisibleStrain" />
+            <ConditionBlockRef />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_InvisibleStrain_Leader" x="6874.11963" y="-2512.279">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="SatPhone2_CamoJacket" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoTrousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoHat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Labcoat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Trousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_AssaultRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_SniperRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Knife" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_InvisibleStrain" />
+            <ConditionBlockRef />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" StringData="HeliTeam_MeetRogueFEMA" />
+      </Events>
+    </Template>
+    <Template UniqueID="SatPhone2_Invis_Leader" x="4442.411" y="4487.87061">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <Role>Trader</Role>
+      <TraderLevel>1</TraderLevel>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <InfectedWeaponsMaxStrain>Invisible</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>50</InfectedWeaponsProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>32</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="SatPhone2_CamoJacket" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoTrousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoHat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Labcoat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Trousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_AssaultRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_SniperRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Knife" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="HeliTeam_SaveToken" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="HeliTeam_Gold" Min="100" Max="200">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_InvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" Subject="ReferringTo" StringData="SatPhone2_Trigger_MeetInvisibleStrain" />
+      </Events>
+    </Template>
+    <Template UniqueID="SatPhone2_Invis_Grunt" x="4454.114" y="2367.9668">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <InfectedWeaponsMaxStrain>Invisible</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>20</InfectedWeaponsProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="SatPhone2_CamoJacket" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoTrousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_AssaultRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_SniperRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Knife" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_InvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityHasUnusedAccomodation" Subject="ReferringTo" Data="1" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="SatPhone2_RogueFEMA_Leader" x="4457.726" y="760.8754">
+      <Type>Character</Type>
+      <CommunityType>Player</CommunityType>
+      <LootLocation>FEMA</LootLocation>
+      <Role>Trader</Role>
+      <TraderLevel>1</TraderLevel>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilJoinCommunity>true</DontSimulateSurvivalFactorsUntilJoinCommunity>
+      <GeneratedLootCount>32</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="SatPhone2_CamoJacket" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoTrousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_CamoHat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Labcoat" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Trousers" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Pistol" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_AssaultRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_SniperRifle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="SatPhone2_Knife" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="HeliTeam_SaveToken" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="HeliTeam_Gold" Min="100" Max="200">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="HeliTeam_Type_RogueFEMA" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" Subject="ReferringTo" StringData="SatPhone2_Trigger_MeetRogueFEMA" />
+      </Events>
+    </Template>
+    <Template UniqueID="HeliTeam_SaveToken" x="5669.50439" y="-93.91607">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Crucifix</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="AreSaveTokensEnabled" />
+        <Condition Type="ShouldTradersHaveSaveTokens" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="HeliTeam_Gold" x="5675.13135" y="-531.688354">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+  </Templates>
+  <Invaders />
+</Script>

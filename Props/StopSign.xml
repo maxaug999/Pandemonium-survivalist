@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Stop Sign</NativeName>
+  <Category>Town/Props/RoadSigns/Stop</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/RoadSigns/StopSign</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>1</MaxDamage>
+  <Flammability>Low_RequiresExplosion</Flammability>
+  <ImpactSusceptibility>Medium_BulletHits</ImpactSusceptibility>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>SteelIngot</RepairResourceType>
+  <RepairResourceNeeded>1</RepairResourceNeeded>
+  <Mass>4</Mass>
+</PropPrototype>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Gibbet</NativeName>
+  <Category>Camp</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Gibbet</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>25</MaxDamage>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <VisibleFromFarAway>true</VisibleFromFarAway>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeDemolished>true</CanBeDemolished>
+  <Tall>true</Tall>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>1</RepairResourceNeeded>
+  <SpawnProbabilityFactor>0</SpawnProbabilityFactor>
+</PropPrototype>

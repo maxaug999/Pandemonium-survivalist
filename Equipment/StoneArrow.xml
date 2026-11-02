@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Arrow</TypeName>
+  <NativeName>Stone Arrow</NativeName>
+  <NativeDescription>Very easy to produce only requires wood, string &amp; stone. the damage is subpar specially on armored targets. best used for training.</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>0.06</Weight>
+  <BasePrice>0.05</BasePrice>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>12</TypicalLootAmount>
+  <ArmorPiercing>-0.25</ArmorPiercing>
+  <DamageModifier>0.75</DamageModifier>
+</EquipmentPrototype>

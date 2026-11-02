@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Beet Wine</NativeName>
+  <NativeDescription>Alternative to your alcoholic needs.</NativeDescription>
+  <Category>5:Food/Drink/Alcohol</Category>
+  <Col>
+    <r>149</r>
+    <g>76</g>
+    <b>103</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.6</BasePricePerFlOz>
+  <WaterContent>-35</WaterContent>
+  <AlcoholContent>25</AlcoholContent>
+  <Tastiness>50</Tastiness>
+  <Flammable>true</Flammable>
+  <CanPourIntoBottles>true</CanPourIntoBottles>
+  <GiftFor>
+    <string>Alcoholic</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Nervous</string>
+  </BadGiftFor>
+  <GiftAmount>25</GiftAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgressionPerFlOz>0.05</SkillOnConsumptionProgressionPerFlOz>
+</LiquidPrototype>

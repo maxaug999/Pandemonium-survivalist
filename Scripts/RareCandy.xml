@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>7</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-299.675171</x>
+    <y>-192.905334</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.459079772</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="RareCandy" x="564.556763" y="-198.297256" NativeText=":-| Ok lets eat this... *crunch* *crunch* huh I feel..." Situation="CustomUseAction" Anim="Eat">
+      <Continues>
+        <SpeechRef UniqueID="RareCandy_Melee" />
+        <SpeechRef UniqueID="RareCandy_Arch" />
+        <SpeechRef UniqueID="RareCandy_Fire" />
+        <SpeechRef UniqueID="RareCandy_Stealth" />
+        <SpeechRef UniqueID="RareCandy_Construction" />
+        <SpeechRef UniqueID="RareCandy_Farming" />
+        <SpeechRef UniqueID="RareCandy_Med" />
+        <SpeechRef UniqueID="RareCandy_Cook" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsEquipmentType" Subject="ReferringTo" StringData="RareCandy" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="RareCandy_Str" x="1955.65747" y="-9.429321" NativeText="8-o A lot stronger!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Melee" x="1968.32434" y="-569.5198" NativeText="8-o I could knock someone out!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="HandToHand" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Arch" x="1989.92053" y="-1147.56079" NativeText="8-o My hands are getting steady!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Archery" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Fire" x="2000.58215" y="-1734.083" NativeText="8-o Like my vision got better!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Firearms" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Stealth" x="2006.42834" y="-2314.167" NativeText="8-o My shadows ggooone!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Stealth" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Construction" x="2832.935" y="38.1855469" NativeText="8-o I could make something useful!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Construction" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Farming" x="2864.517" y="-590.900269" NativeText="8-o Something would be fruitful!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Farming" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Med" x="2891.10059" y="-1191.27637" NativeText="8-o I overcame my fear of blood!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Medicine" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="RareCandy_Cook" x="2880.87769" y="-1800.54956" NativeText="8-o I remembered some recipes!">
+      <Events>
+        <StoryEvent Type="IncrementSkill" Subject="Actor" StringData="Cooking" Delay="1" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="RareCandy" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

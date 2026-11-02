@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Boulder</TypeName>
+  <NativeName>Boulder (Lead Ore)</NativeName>
+  <Category>Nature/Rocks</Category>
+  <PrefabNames>
+    <string>Prefabs/Nature Package/Rock1_lead_ore</string>
+    <string>Prefabs/Nature Package/Rock2_lead_ore</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0.5</x>
+      <y>1</y>
+      <z>0.5</z>
+    </Vector3>
+    <Vector3>
+      <x>0.5</x>
+      <y>1</y>
+      <z>0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MineralType>Lead</MineralType>
+  <MineralAmount>80</MineralAmount>
+  <ExtentsMax>
+    <x>1</x>
+    <y>1</y>
+  </ExtentsMax>
+  <Inhabitants>
+    <InhabitantSlotDef>
+      <External>false</External>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+      <PipFocusDist>0</PipFocusDist>
+      <SightRangeModifier>0</SightRangeModifier>
+      <WeaponRangeModifier>0</WeaponRangeModifier>
+      <MinWeaponRange>0</MinWeaponRange>
+    </InhabitantSlotDef>
+  </Inhabitants>
+  <Entrances>
+    <EntranceDef>
+      <EntranceOffset>
+        <x>0</x>
+        <y>0</y>
+      </EntranceOffset>
+      <EntranceAngle>0</EntranceAngle>
+    </EntranceDef>
+  </Entrances>
+</PropPrototype>

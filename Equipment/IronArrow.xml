@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Arrow</TypeName>
+  <NativeName>Iron Arrow</NativeName>
+  <NativeDescription>A forge-made arrow with a sharp iron broadhead.</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>0.05</Weight>
+  <BasePrice>0.15</BasePrice>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+      <OverrideScarcity>Uncommon</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SportsStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <DamageModifier>2</DamageModifier>
+  <DefaultCarryAmount>60</DefaultCarryAmount>
+</EquipmentPrototype>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Building</TypeName>
+  <NativeName>Small Housing Container</NativeName>
+  <Category>Camp/Buildings</Category>
+  <PrefabNames>
+    <string>assets/containersmlblue.prefab</string>
+    <string>assets/containersmlgreen.prefab</string>
+    <string>assets/containersmlred.prefab</string>
+    <string>assets/containersmlyellow.prefab</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0.372</x>
+      <y>-0.074</y>
+      <z>-0.149</z>
+    </Vector3>
+    <Vector3>
+      <x>0.372</x>
+      <y>-0.074</y>
+      <z>-0.149</z>
+    </Vector3>
+    <Vector3>
+      <x>0.372</x>
+      <y>-0.074</y>
+      <z>-0.149</z>
+    </Vector3>
+    <Vector3>
+      <x>0.372</x>
+      <y>-0.074</y>
+      <z>-0.149</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>40</MaxDamage>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ExtentsMin>
+    <x>-2</x>
+    <y>-1</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>2</x>
+    <y>1</y>
+  </ExtentsMax>
+  <VisibleFromFarAway>true</VisibleFromFarAway>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>2700</MaxInventoryWeight>
+  <LootLocation>Camp</LootLocation>
+  <Inhabitants>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+    <InhabitantSlotDef>
+      <Pos>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Pos>
+    </InhabitantSlotDef>
+  </Inhabitants>
+  <Entrances>
+    <EntranceDef>
+      <EntranceOffset>
+        <x>-3</x>
+        <y>0</y>
+      </EntranceOffset>
+      <EntranceAngle>4.712389</EntranceAngle>
+      <NativeName>Side</NativeName>
+    </EntranceDef>
+  </Entrances>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>3</RepairResourceNeeded>
+  <CaptureResourceType>Wood</CaptureResourceType>
+  <CaptureResourceNeeded>3</CaptureResourceNeeded>
+</PropPrototype>

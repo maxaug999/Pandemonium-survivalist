@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Newspaper Stand</NativeName>
+  <Category>Town/Props/Roadside</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropNewspaperStand</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>5</MaxDamage>
+  <Flammability>Low_RequiresExplosion</Flammability>
+  <ImpactSusceptibility>Medium_BulletHits</ImpactSusceptibility>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>20</MaxInventoryWeight>
+  <LootLocation>Bin</LootLocation>
+  <RepairAnim>Crafting</RepairAnim>
+  <RepairResourceType>SteelIngot</RepairResourceType>
+  <RepairResourceNeeded>1</RepairResourceNeeded>
+  <Mass>8</Mass>
+</PropPrototype>

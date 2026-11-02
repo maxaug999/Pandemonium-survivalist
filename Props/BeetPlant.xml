@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PlantableCrop</TypeName>
+  <NativeName>Beet</NativeName>
+  <Category>Crops</Category>
+  <PrefabNames>
+    <string>Prefabs\Props\Farm Plants\Plants\Soil</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Beet\Beet_Stage1</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Beet\Beet_Stage2</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Beet\Beet</string>
+  </PrefabNames>
+  <DeadPrefabNames>
+    <string>Prefabs\Props\Farm Plants\Plants\Soil</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Beet\Beet_Stage1_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Beet\Beet_Stage2_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Beet\Beet_Dead</string>
+  </DeadPrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>2</MaxDamage>
+  <CoverType>None</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <BulletHitEffect>None</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WantSoundOnDemolition>false</WantSoundOnDemolition>
+  <RepairAnim>Crafting</RepairAnim>
+  <CaptureResourceType>BeetSeeds</CaptureResourceType>
+  <HarvestType>Beet</HarvestType>
+  <HarvestSeedsType>BeetSeeds</HarvestSeedsType>
+  <MaxYield>1</MaxYield>
+  <MaxSeedsYield>2</MaxSeedsYield>
+  <WaterNeededPerDayInFlOz>50</WaterNeededPerDayInFlOz>
+  <Color>
+    <r>134</r>
+    <g>0</g>
+    <b>255</b>
+    <a>255</a>
+  </Color>
+</PropPrototype>

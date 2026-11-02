@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Insulated Backpack</NativeName>
+  <NativeDescription>Makes your back warmer. 5 max weight per Strength level.</NativeDescription>
+  <Category>4:Clothing/Backpacks</Category>
+  <Weight>2</Weight>
+  <BasePrice>50</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Backpack</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Vehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>146</r>
+      <g>98</g>
+      <b>58</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName>Male_Mill_All:Backpack1</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Backpack1</FemaleMeshName>
+  <Insulation>1</Insulation>
+  <CarryWeight>30</CarryWeight>
+  <CarryWeightBonusPerSkillLevel>5</CarryWeightBonusPerSkillLevel>
+</EquipmentPrototype>

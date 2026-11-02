@@ -1,0 +1,442 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>3</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>1034.12463</x>
+    <y>2475.0415</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5430979</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Opinion_DontKnow" x="808.802856" y="-378.87558" NativeText="I don't know you." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data2="10" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_DontKnowFriendly" x="1622.25464" y="-378.323059" NativeText=":-) I don't know you, but I'd sure like to!" Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data2="10" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_DontKnowRude" x="2413.83423" y="-371.2765" NativeText="}:-| I don't know you, and that's fine by me." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data2="10" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_DontReallyKnow" x="3178.244" y="-382.042816" NativeText="I don't really know you." Situation="Opinion" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data2="10" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="1" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_MixedFeelings" x="3993.79419" y="-379.3512" NativeText="I have mixed feelings about you." Situation="Opinion" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data2="10" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Little" x="780.1661" y="-1449.73145" NativeText="You're alright." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="30" Data2="60" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Medium" x="1631.95374" y="-1451.17725" NativeText=":-) I like you." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="30" Data2="60" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Lots" x="2438.70874" y="-1452.64917" NativeText=":-) You're my hero!" Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="30" Data2="60" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Little_SomeFear" x="777.6552" y="-2176.97559" NativeText="You're pretty cool." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data2="30" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Medium_SomeFear" x="1629.44287" y="-2178.42139" NativeText="}:-) You get things done, and I like that." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data2="30" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Lots_SomeFear" x="2436.19824" y="-2179.89355" NativeText="}:-) You're kicking some serious ass around here!  Keep it up!" Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data2="30" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Little_SomePity" x="768.8221" y="-2929.25952" NativeText="You're a nice %1." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="60" Data2="90" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Medium_SomePity" x="1620.60974" y="-2930.70532" NativeText=":-) You're a good person." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="60" Data2="90" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Admire_Lots_SomePity" x="2427.36475" y="-2932.17749" NativeText=":-) You're a really great %1." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="60" Data2="90" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Little" x="773.238953" y="-3802.2627" NativeText="You're okay... I guess." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="120" Data2="150" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Medium" x="1625.02661" y="-3803.7085" NativeText="{:-| You're doing your best." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="120" Data2="150" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Lots" x="2431.78125" y="-3805.18042" NativeText="{:-( Your heart's in the right place, but sometimes that's not enough." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="120" Data2="150" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Little_SomeAdmire" x="771.766968" y="-4611.962" NativeText="I have a good feeling about you... }:-| don't prove me wrong." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="90" Data2="120" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Medium_SomeAdmire" x="1623.55457" y="-4613.40771" NativeText="{:-) I think you're a decent person doing your best in a difficult situation." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="90" Data2="120" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Lots_SomeAdmire" x="2430.309" y="-4614.88" NativeText="{:-) You're a really good %1, and that can be tough in times like these - hang in there!" Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="90" Data2="120" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Little_SomeDespise" x="762.934" y="-5501.15869" NativeText="You're trying... }:-| maybe you need to try a little harder though." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="150" Data2="180" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Medium_SomeDespise" x="1614.72168" y="-5502.60449" NativeText="{:-| You're okay... but you're weak, you need to get your shit together." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="150" Data2="180" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Pity_Lots_SomeDespise" x="2421.477" y="-5504.07666" NativeText=":-( You're completely useless.  I despair of you." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="150" Data2="180" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Little" x="757.044739" y="-6262.27637" NativeText=":-( I'm not your biggest fan." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="210" Data2="240" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Medium" x="1608.8324" y="-6263.722" NativeText="}:-( I don't like you." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="210" Data2="240" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Lots" x="2415.587" y="-6265.194" NativeText="}:-( You're a real piece of shit." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="210" Data2="240" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Little_SomePity" x="751.1564" y="-7023.394" NativeText=":-( I have a bad feeling about you... }:-| prove me wrong." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="180" Data2="210" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Medium_SomePity" x="1611.7771" y="-7020.42334" NativeText=":-( You're a fool.  {:-( Just stay out of trouble." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="180" Data2="210" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Lots_SomePity" x="2418.532" y="-7021.895" NativeText="{:-[ You're a damn fool." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="180" Data2="210" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Little_SomeFear" x="751.15625" y="-7790.39941" NativeText="}:-| Stay out of my way and we'll get on just fine." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="240" Data2="270" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Medium_SomeFear" x="1611.777" y="-7787.42871" NativeText=":-[ Look, I don't like you and you don't like me... }:-[ maybe that's because you're an asshole." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="240" Data2="270" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Despise_Lots_SomeFear" x="2418.53174" y="-7788.90039" NativeText="}:-[ I don't need your bullshit okay?  You're a real piece of work." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="240" Data2="270" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Little" x="749.6844" y="-8604.516" NativeText="I'm not going to get on your bad side." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="300" Data2="330" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Medium" x="1601.472" y="-8605.962" NativeText=":-( Don't hurt me, I'm not a threat to you!" Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="300" Data2="330" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Lots" x="2408.22656" y="-8607.433" NativeText=":-( Please don't hurt me!  8-( I'll do whatever you want!" Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="300" Data2="330" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Little_SomeDespise" x="737.9073" y="-9408.326" NativeText=":-[ We don't get on, let's keep out of each other's business." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="270" Data2="300" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Medium_SomeDespise" x="1589.695" y="-9409.772" NativeText=":-[ Stay the hell out of my way and I'll stay out of yours." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="270" Data2="300" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Lots_SomeDespise" x="2396.44922" y="-9411.243" NativeText=":-[ One of these days you'll get what's coming to you... }:-( even if it's not from me." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="270" Data2="300" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Little_SomeAdmire" x="734.9632" y="-10213.6094" NativeText="}:-| I don't much care for you but I'll admit you can look after yourself." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="330" Data2="360" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Medium_SomeAdmire" x="1586.75085" y="-10215.0557" NativeText="}:-( You're tough, and I respect that." Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="330" Data2="360" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="40" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_Fear_Lots_SomeAdmire" x="2393.505" y="-10216.5264" NativeText=":-[ You're a badass.  I wouldn't stand in your way!" Situation="Opinion" Importance="Memory">
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="330" Data2="360" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="70" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_OkaySoFar" x="4780.46" y="-382.969543" NativeText="You seem okay so far." Situation="Opinion" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data2="10" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Admire_Little" x="-1265.507" y="-1429.29529" NativeText="%1's a pretty good %2." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="GuyOrChick" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data2="90" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Admire_Lots" x="-543.6338" y="-1425.43115" NativeText="%1's awesome!  I won't hear anything bad about %2." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data2="90" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="40" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Pity_Little" x="-1264.4635" y="-2689.95581" NativeText="{:-| %1's alright, I guess.  %2 tries." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="90" Data2="180" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Pity_Lots" x="-542.5902" y="-2686.0918" NativeText="{:-| %1's a decent person, just ineffectual." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="90" Data2="180" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="40" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Despise_Little" x="-1252.16016" y="-3901.0188" NativeText="}:-| %1's a bit of a douchebag." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="180" Data2="270" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Despise_Lots" x="-530.287048" y="-3897.155" NativeText="}:-[ %1's a pathetic piece of shit." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="180" Data2="270" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="40" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Fear_Little" x="-1247.84009" y="-4997.26025" NativeText="{:-( %1 kind of scares me." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="270" Data2="360" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="10" Data2="40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Fear_Lots" x="-525.9675" y="-4993.397" NativeText="}:-[ %1's a monster." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="ReferringTo" Data="270" Data2="360" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data="40" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_DontKnow" x="-2026.99329" y="-283.674042" NativeText="I don't really know %1." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data2="10" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_NoProblem" x="-1291.2085" y="-287.5259" NativeText="I don't have a problem with %1." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data2="10" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Opinion_ThirdParty_Alright" x="-540.5491" y="-297.9525" NativeText="%1's alright." Situation="Opinion" Importance="Memory">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" Not="true" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="ReferringTo" Data2="10" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

@@ -1,0 +1,547 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>14</NextFreeSpeechID>
+  <NextFreeTriggerID>3</NextFreeTriggerID>
+  <NextFreeConditionBlockID>7</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>453.234253</x>
+    <y>8958.151</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.496290445</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Greet_HowsItGoing" x="1635.021" y="3195.08447" NativeText="Hey %1 how's it going?" Situation="Opener" Importance="Low" SpecialBehaviour="Greeting">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="Target" Data="10" Not="true" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_Alright" x="1631.31287" y="1852.32019" NativeText="Alright %1?" Situation="Opener" Importance="Low" SpecialBehaviour="Greeting">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" Data2="1" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="Target" Data="10" Not="true" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_Speech_Yo" x="1630.114" y="485.660522" NativeText=":-) Yo %1!  What's happening?" Situation="Opener" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="Target" Data="10" Not="true" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_Speech_Hi" x="1638.98376" y="-1155.30115" NativeText="Hi %1.  What's up?" Situation="Opener" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="Target" Data="10" Not="true" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_Speech_Hello" x="1642.80823" y="-2981.84766" NativeText="}:-| %1.  What are you up to?" Situation="Opener" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="Target" Data="10" Not="true" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_PuttingYourFeetUp" x="1652.41528" y="-6985.98633" NativeText="}:-| Hope you're enjoying your break.  Some of us have to work of course!" Situation="Opener" Importance="Low" RepeatTime="5400" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Jealous" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" PriorityFactor="-1" />
+        <Condition Type="HasAnyUrgentRoles" Subject="Actor" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsInDownTime" Subject="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsInDownTime" Subject="Actor" Not="true" />
+        <Condition Type="IsDepressed" Subject="Actor" Not="true" />
+        <Condition Type="HasAnyUnpausedRoles" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_LazeAround" x="1645.57849" y="-4574.331" NativeText="}:-| Shiiit maybe ! should take some 'down time' too and just laze around all day like you!" Situation="Opener" Importance="Low" RepeatTime="5400" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Jealous" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" PriorityFactor="-1" />
+        <Condition Type="HasAnyUrgentRoles" Subject="Actor" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Greet_ChillOut" />
+        <SpeechRef UniqueID="Greet_WeOweYouADebt" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsInDownTime" Subject="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsInDownTime" Subject="Actor" Not="true" />
+        <Condition Type="IsDepressed" Subject="Actor" Not="true" />
+        <Condition Type="HasAnyUnpausedRoles" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_ChillOut" x="2890.562" y="-4858.82959" NativeText="}:-| Yeah, you should try it - it might help you to chill the fuck out!" Importance="Low" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_GladYouGotTimeOff" x="1643.71777" y="-9341.195" NativeText="{:-| Hey, I'm glad you got to take some time off, you need it.  Hope you feel better soon." Situation="Opener" Importance="Low" RepeatTime="5400" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Jealous" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" PriorityFactor="-1" />
+        <Condition Type="HasAnyUrgentRoles" Subject="Actor" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Greet_ThanksMan" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsInDownTime" Subject="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsInDownTime" Subject="Actor" Not="true" />
+        <Condition Type="IsDepressed" Subject="Actor" Not="true" />
+        <Condition Type="HasAnyUnpausedRoles" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Sympathized" />
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_ThanksMan" x="2697.92773" y="-9679.916" NativeText="{:-) Thanks, %1." Importance="Low">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Greet_WeOweYouADebt" x="2882.55835" y="-5873.026" NativeText="}:-| Uh-huh, we all owe you such a debt of gratitude for all of your hard work around here." Importance="Low" CanTalkOutOfRange="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_GetOffYourAss" x="1639.04565" y="-12033.22" NativeText="}:-| Hey, get off your ass and do something useful!" Situation="Opener" Importance="Low" RepeatTime="5400" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Greet_ReallyNope" />
+        <SpeechRef UniqueID="Greet_Nope" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsSitting" Subject="Target" />
+        <Condition Type="IsDepressed" Subject="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsInDownTime" Subject="Actor" Not="true" />
+        <Condition Type="IsDepressed" Subject="Actor" Not="true" />
+        <Condition Type="HasAnyUnpausedRoles" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_AnyChance" x="1628.70825" y="-14011.0938" NativeText="}:-| Any chance you're going to stop sitting around feeling sorry for yourself and start helping?" Situation="Opener" Importance="Low" RepeatTime="5400" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Greet_ReallyNope" />
+        <SpeechRef UniqueID="Greet_Nope" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsSitting" Subject="Target" />
+        <Condition Type="IsDepressed" Subject="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsInDownTime" Subject="Actor" Not="true" />
+        <Condition Type="IsDepressed" Subject="Actor" Not="true" />
+        <Condition Type="HasAnyUnpausedRoles" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_AreYouOkay" x="1635.12012" y="-16060.3975" NativeText="{:-| Are you okay?" Situation="Opener" Importance="Low" RepeatTime="5400" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Greet_Contemplating" />
+        <SpeechRef UniqueID="Greet_NeverBetter" />
+        <SpeechRef UniqueID="Greet_HavingAHardTime" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsSitting" Subject="Target" />
+        <Condition Type="IsDepressed" Subject="Target" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsInDownTime" Subject="Actor" Not="true" />
+        <Condition Type="IsDepressed" Subject="Actor" Not="true" />
+        <Condition Type="HasAnyUnpausedRoles" Subject="Actor" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_Nope" x="2984.72583" y="-13488.2764" NativeText="}:-| Nope.  %1." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_ReallyNope" x="2970.35278" y="-12282.9512" NativeText="}:-| Get fucked!" Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_Contemplating" x="2949.131" y="-15305.5547" NativeText=":-( Just contemplating the misery of our existence." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Greet_FigureItOut" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Sympathized" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_NeverBetter" x="2965.93945" y="-16378.375" NativeText="Yeah I'm fucking great.  Never better!  And you?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Greet_SorryIAsked" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Annoyed" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Humiliated" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_HavingAHardTime" x="2951.83765" y="-17966.33" NativeText="{:-| I'm having a really hard time right now." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Greet_ThingsWillGetBetter" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Sympathized" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Confided" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_SorryIAsked" x="4012.80151" y="-16899.9688" NativeText="}:-| Okay... sorry I asked." />
+    <Speech UniqueID="Greet_ThingsWillGetBetter" x="3934.95923" y="-18023.623" NativeText="{:-| I know, man.  You've been through a lot.  You're a good person and we care about you.  Things will get better." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Greet_IDontKnow" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Greet_IDontKnow" x="4973.847" y="-18066.418" NativeText="{:-| Yeah, maybe.  I don't know. {:-) Thanks, anyway." CanTalkOutOfRange="true" AIOverridesControl="true" />
+    <Speech UniqueID="Greet_FigureItOut" x="4027.19238" y="-15684.168" NativeText="/:-| Oh, that.  Let me know if you figure it out." CanTalkOutOfRange="true" AIOverridesControl="true" />
+    <Speech UniqueID="Greet_LookingGood" x="843.923035" y="-17711.9258" NativeText="}:-) Woo!  Looking good!" Situation="Opener" Importance="Low" RepeatTime="5400" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_IsNaked" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_CanTauntNaked" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_LookingGood_Like" />
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_LookingGood_Dislike" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_ComeHere" x="816.8299" y="-22408.377" NativeText="}:-) Come here sweetie, I'll spank that ass." Situation="Opener" Importance="Low" RepeatTime="5400" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsWearingSomething" Subject="Target" StringData="Bottom" Not="true" />
+        <Condition Type="IsMale" Subject="Actor" />
+        <Condition Type="IsAttractedTo" Subject="Actor" Object="Target" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_IsAsshole" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_CanTauntNaked" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Humiliated" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_Jiggle" x="824.8677" y="-20897.3633" NativeText="}:-) Go on, give us a little jiggle." Situation="Opener" Importance="Low" RepeatTime="5400" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsWearingSomething" Subject="Target" StringData="Top" Not="true" />
+        <Condition Type="IsMale" Subject="Actor" />
+        <Condition Type="IsAttractedTo" Subject="Actor" Object="Target" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_IsAsshole" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_CanTauntNaked" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Humiliated" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Greet_PutSomeClothesOn" x="834.730469" y="-19642.9629" NativeText="}:-| Put some clothes on!" Situation="Opener" Importance="Low" RepeatTime="5400" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_IsNaked" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_CanTauntNaked" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Greet_RememberAll" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Annoyed" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Greet_RememberAll" x="-4610.85156" y="-2900.79639">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="SetTimer" Subject="Actor" Data="600" StringData="Greetings" />
+        <StoryEvent Type="SetTimer" Subject="Target" Data="600" StringData="Greetings" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="Target" StringData="Greet_HowsItGoing" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Greet_LookingGood_Like" x="-128.475937" y="-18523.55">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Target" StringData="Flirty" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Greet_LookingGood_Dislike" x="-123.852905" y="-19268.88">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Target" StringData="Prudish" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Annoyed" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Greet_ConditionBlock" x="-4625.07471" y="-1298.38379">
+      <Conditions>
+        <Condition Type="KnowsName" Subject="Actor" Object="Target" />
+        <Condition Type="IsDirectControlled" Subject="Target" Not="true" />
+        <Condition Type="IsCrouching" Subject="Actor" Not="true" />
+        <Condition Type="IsCrouching" Subject="Target" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Target" Not="true" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_StandingTimers" />
+            <ConditionBlockRef UniqueID="Greet_SittingTimers" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CommunityIsHidden" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="Pillage" Not="true" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Greet_NotWithdrawn" />
+            <ConditionBlockRef UniqueID="Greet_Withdrawn" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Greet_NotWithdrawn" x="-5935.01367" y="-2700.45313">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Greet_Withdrawn" x="-5934.446" y="-3097.423">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Greet_StandingTimers" x="-5912.3833" y="-1063.45581">
+      <Conditions>
+        <Condition Type="IsTimerRunning" Subject="Actor" StringData="Greetings" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Target" StringData="Greetings" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Greet_SittingTimers" x="-5915.682" y="-1552.05017">
+      <Conditions>
+        <Condition Type="IsSitting" Subject="Actor" />
+        <Condition Type="IsSitting" Subject="Target" />
+        <Condition Type="IsTimerAtLeast" Subject="Actor" Data="47" StringData="Greetings" />
+        <Condition Type="IsTimerAtLeast" Subject="Target" Data="31" StringData="Greetings" />
+        <Condition Type="HasSpokenSpeechRecently" Subject="Actor" Object="Target" Data="600" StringData="Greet_HowsItGoing" Not="true" />
+        <Condition Type="HasSpokenSpeechRecently" Subject="Target" Object="Actor" Data="600" StringData="Greet_HowsItGoing" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Greet_IsNaked" x="2804.77979" y="-19515.13" Type="Or">
+      <Conditions>
+        <Condition Type="IsWearingSomething" Subject="Target" StringData="Top" Not="true" />
+        <Condition Type="IsWearingSomething" Subject="Target" StringData="Bottom" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Greet_IsAsshole" x="2863.82446" y="-21826.873" Type="Or">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Greet_CanTauntNaked" x="2882.01953" y="-20361.0918">
+      <Conditions>
+        <Condition Type="IsCrouching" Subject="Actor" Not="true" />
+        <Condition Type="IsCrouching" Subject="Target" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Target" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Actor" StringData="Greetings" Not="true" />
+        <Condition Type="IsTimerAtLeast" Subject="Target" Data="60" StringData="Greetings" />
+        <Condition Type="CommunityIsHidden" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="SquadActionEquals" Subject="Actor" StringData="Pillage" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

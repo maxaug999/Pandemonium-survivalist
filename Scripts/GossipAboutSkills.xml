@@ -1,0 +1,984 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>3</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>763.805</x>
+    <y>-311.640533</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.47638315</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="GossipAboutSkills_Ripped" x="-2086.5437" y="1891.61255" NativeText=":-) %1 is ripped!  I've seen %2 with %3 shirt off.  I had to sit down and catch my breath." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAboutSkills_EyeingUp" />
+        <SpeechRef UniqueID="GossipAboutSkills_WhyILove" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Strength" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="5" StringData="Strength" />
+        <Condition Type="IsAttractedTo" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+        <Condition Type="IsMale" Subject="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Strength" />
+        <StoryEvent Type="DiscoverPersonalityIfPlayer" Subject="Target" Object="Actor" StringData="Homosexual" />
+        <StoryEvent Type="DiscoverPersonalityIfPlayer" Subject="Target" Object="Actor" StringData="Bisexual" />
+        <StoryEvent Type="DiscoverPersonalityIfPlayer" Subject="Target" Object="Actor" StringData="Heterosexual" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_PackMule" x="444.807251" y="-1622.08655" NativeText="%1 is kind of our pack mule.  If you need anything lifted up and put down somewhere else, %2 can do that for you." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Strength" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="Strength" />
+        <Condition Type="HasSkill" Subject="Actor" Data="4" StringData="Strength" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Strength" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_BareHanded" x="1419.85583" y="396.307861" NativeText="I've seen %1 take down a white strain infected bare handed.  }:-| I'd advise you not to tangle with %2." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="HandToHand" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="HandToHand" />
+        <Condition Type="HasSkill" Subject="Actor" Data="4" StringData="HandToHand" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GossipAboutSkills_BeAggressive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="HandToHand" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_HowToDefend" x="2345.351" y="781.1096" NativeText="}:-| We know how to defend ourselves.  %1 can put a bullet between your eyes before you even raise your gun." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Firearms" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="Firearms" />
+        <Condition Type="HasSkill" Subject="Actor" Data="4" StringData="Firearms" Not="true" />
+        <Condition Type="HasGun" Subject="ReferringTo" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GossipAboutSkills_BeAggressive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Firearms" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_StartAnyShit" x="3268.92017" y="587.2721" NativeText="}:-| Start any shit around here and %1 will stick you full of arrows!  %2 is an excellent shot." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Archery" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="Archery" />
+        <Condition Type="HasSkill" Subject="Actor" Data="4" StringData="Archery" Not="true" />
+        <Condition Type="HasBow" Subject="ReferringTo" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GossipAboutSkills_BeAggressive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Archery" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_Sneaky" x="4240.647" y="213.252686" NativeText="}:-| There's something creepy about how %1 can sneak up behind you without making any noise.  Sure it's useful for hunting but it makes me nervous." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Stealth" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="Stealth" />
+        <Condition Type="HasSkill" Subject="Actor" Data="4" StringData="Stealth" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Stealth" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_BuildStuff" x="5203.67529" y="679.807739" NativeText="I never met anyone who can build shit like %1 can, %2's an engineering genius!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Construction" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="5" StringData="Construction" />
+        <Condition Type="HasSkill" Subject="Actor" Data="5" StringData="Construction" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Construction" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_GreenFingers" x="6258.14355" y="310.5033" NativeText=":-( I wish I had %1 green fingers.  Everything I plant dies." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Farming" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="Farming" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Farming" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="Actor" StringData="Farming" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Farming" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_WhyImStillHere" x="7262.335" y="670.2649" NativeText="The best thing about this group is %1 cooking.  It's the biggest reason I'm still here!  In fact... it might be the only reason I'm still here." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Cooking" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="5" StringData="Cooking" />
+        <Condition Type="HasSkill" Subject="Actor" Data="5" StringData="Cooking" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Cooking" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_RealDeal" x="8270.967" y="783.4912" NativeText="Ain't many people I trust in this world but I know I can always rely on %1 for medical advice.  %2's the real deal." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Medicine" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="Medicine" />
+        <Condition Type="HasSkill" Subject="Actor" Data="4" StringData="Medicine" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Medicine" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_StandBehind" x="9226.07" y="886.9806" NativeText="%1 is a good person to stand behind in a fight.  Nothing seems to faze %2, %3 just barrels through it." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Constitution" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="4" StringData="Constitution" />
+        <Condition Type="HasSkill" Subject="Actor" Data="4" StringData="Constitution" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Constitution" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_GetInShape" x="465.562531" y="-7623.04932" NativeText="}:-| %1 needs to get in shape.  There's no room for weakness in this outfit." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Strength" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Strength" Not="true" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Strength" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GossipAboutSkills_BeAggressive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Strength" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_PrettyFit" x="-2083.55127" y="-1588.48132" NativeText=":-) %1 is pretty fit isn't %2?" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="GossipAboutSkills_EyeingUp" />
+        <SpeechRef UniqueID="GossipAboutSkills_WhyILove" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Strength" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="4" StringData="Strength" Not="true" />
+        <Condition Type="IsAttractedTo" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverPersonalityIfPlayer" Subject="Target" Object="Actor" StringData="Homosexual" />
+        <StoryEvent Type="DiscoverPersonalityIfPlayer" Subject="Target" Object="Actor" StringData="Bisexual" />
+        <StoryEvent Type="DiscoverPersonalityIfPlayer" Subject="Target" Object="Actor" StringData="Heterosexual" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Strength" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_Brawl" x="1392.12451" y="-2592.41455" NativeText="%1 can hold %2 own in a brawl.  }:-| Probably a bad idea to cross %3." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="HandToHand" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="4" StringData="HandToHand" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GossipAboutSkills_BeAggressive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="HandToHand" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_NotMuchUse" x="1409.59082" y="-5212.81055" NativeText="}:-| I wouldn't say it to %1 face but %2 really isn't much use in a hand to hand fight.  I can't always be saving %3 ass." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="HandToHand" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="HandToHand" Not="true" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="HandToHand" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="HandToHand" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_PrettyOkay" x="2377.48755" y="-3222.493" NativeText="%1 is pretty okay at shooting guns.  Good enough to work here!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Firearms" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="4" StringData="Firearms" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Firearms" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_LikeToCriticise" x="2386.566" y="-5641.65332" NativeText="}:-| I don't like to criticise but %1 can't shoot to save %2 life.  Which %3 may have to one day." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Firearms" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Firearms" Not="true" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Firearms" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Firearms" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_HitQuiteOften" x="3293.6355" y="-2376.61646" NativeText="I saw %1 shooting arrows at an infected earlier, %2 hit it quite often.  Nice going." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Archery" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="4" StringData="Archery" />
+        <Condition Type="HasBow" Subject="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Archery" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_ShootStraight" x="3291.644" y="-5200.76563" NativeText="}:-| %1 can't shoot straight with that bow and it's going to get someone killed.  But nobody listens to me!" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Archery" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Archery" Not="true" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Archery" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="HasBow" Subject="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Archery" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_HuntingDeer" x="4249.28271" y="-2721.5647" NativeText="I've seen %1 hunting deer and %2 ain't bad!  Could be quieter though." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Stealth" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="4" StringData="Stealth" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Stealth" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_SoMuchNoise" x="4247.05957" y="-5424.99756" NativeText="}:-| %1 freaks me out crashing around making so much noise all the time." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Stealth" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Stealth" Not="true" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Stealth" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Stealth" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_JerryRig" x="5202.27051" y="-1993.08911" NativeText="%1 is a helpful person to have around if you need to jerry-rig some contraption or structure." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Construction" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="3" Data2="5" StringData="Construction" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Construction" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_TwoBoards" x="5211.89258" y="-4535.608" NativeText="{:-| %1 can't nail two boards together without messing it up somehow, I wouldn't trust %2 with any construction projects." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Construction" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="3" StringData="Construction" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Construction" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_Horticulture" x="6263.31" y="-2409.315" NativeText="%1 has a good working knowledge of horticulture in the local conditions." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Farming" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="4" StringData="Farming" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Farming" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_Talents" x="6258.005" y="-4973.736" NativeText="}:-| %1 has many talents but botany isn't one of them.  We'd starve for sure if we relied on %2 for farming... again." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Farming" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Farming" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="10" Data2="50" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Farming" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_Recipes" x="7288.08252" y="-2193.17554" NativeText=":-) %1 knows a few decent recipes, and %2 can skin a rabbit." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Cooking" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="5" StringData="Cooking" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Cooking" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_TriedSoHard" x="7295.446" y="-4813.758" NativeText="{:-) %1 tried so hard to cook something nice for us but the results were... not good." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Cooking" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Cooking" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Cooking" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="BadMouthed" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_FirstAid" x="8285.892" y="-2152.73145" NativeText="%1 has some rough first aid knowledge.  It often comes in useful." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Medicine" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="2" Data2="4" StringData="Medicine" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Medicine" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_Bandage" x="8288.877" y="-4799.25439" NativeText="%1 may not have any fancy medical knowledge but %2 bandages did the job... how hard can it be anyway?" Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Medicine" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Medicine" Not="true" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Medicine" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Medicine" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="Actor" StringData="Medicine" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_GoodHealth" x="9236.061" y="-2003.99023" NativeText=":-) %1 tells me %2's in pretty good health nowadays." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Constitution" Not="true" />
+        <Condition Type="IsSkillBetween" Subject="ReferringTo" Data="1" Data2="4" StringData="Constitution" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+        <Condition Type="HasHunger" Subject="Actor" Data="2" Not="true" />
+        <Condition Type="HasHunger" Subject="ReferringTo" Data="2" Not="true" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Constitution" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_NotEatingWell" x="9261.233" y="-4642.273" NativeText="%1 hasn't been eating too well.  I'm worried %2's more fragile than %3 looks." Importance="Low" PerObjectType="PerCommunityMemberSample">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="IsSkillKnownByPlayer" Subject="ReferringTo" StringData="Constitution" Not="true" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Constitution" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" />
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="ReferringTo" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverSkillIfPlayer" Subject="Target" Object="ReferringTo" StringData="Constitution" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_EyeingUp" x="-543.0631" y="699.454346" NativeText="}:-| Are you eyeing up my %1?  Keep it in your pants!">
+      <Params>
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="150" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Annoyed" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="GossipAboutSkills_WhyILove" x="-554.3538" y="-604.0334" NativeText=":-) That's why I love %1!">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Jealous" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Praised" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="GossipAboutSkills_BeAggressive" x="2473.76" y="-2319.96362" Type="Or">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

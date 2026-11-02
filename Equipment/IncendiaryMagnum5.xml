@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Pistol</TypeName>
+  <NativeName>Incendiary Custom Revolver</NativeName>
+  <NativeDescription>Uses Incendiary Rounds, Ignores Armor</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>5</Weight>
+  <BasePrice>45</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/3d models/props/weapons/dwm715 fps model/prefabs/dw_set0.prefab</EquippedModelName>
+  <LootLocations />
+  <LootableFromLocations />
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.61</Damage>
+  <DamageBonusPerSkillLevel>0.06</DamageBonusPerSkillLevel>
+  <Range>24</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>2</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>0.75</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>1</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>0.75</MaxLegsAimTime>
+  <Recoil>0.55</Recoil>
+  <AimPenaltyWhenMoving>0.125</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.8</MinTimeBetweenFiring>
+  <AmmoType>IncendiaryAmmo</AmmoType>
+  <MaxAmmo>9</MaxAmmo>
+  <FireSounds>
+    <string>assets/magnumfire1.wav</string>
+    <string>assets/magnumfire2.wav</string>
+  </FireSounds>
+  <ReloadReleaseSounds>
+    <string>assets/magnumreloadrelease.wav</string>
+  </ReloadReleaseSounds>
+  <ReloadInsertSounds>
+    <string>assets/magnumreloadinsert.wav</string>
+  </ReloadInsertSounds>
+  <ReloadSlideSounds>
+    <string>assets/magnumreloadspin.wav</string>
+  </ReloadSlideSounds>
+  <ProjectileHitSounds />
+</EquipmentPrototype>

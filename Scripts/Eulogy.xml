@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>3</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>962.6808</x>
+    <y>-831.0786</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.492490172</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Eulogy_AdmireLots" x="-396.567566" y="-1080.11926" NativeText="{:-( I knew %1 well, %2 was a great %3." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+        <SpeechParam Type="ManOrWoman" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data2="90" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="Target" Data="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Admire" x="-1266.20374" y="-1078.65222" NativeText="{:-| %1 was such a good %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data2="90" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Friend_Like" x="-1244.85083" y="1127.21277" NativeText="{:-( %1 was my friend." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="FriendsWith" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Friend_Dislike" x="-445.3711" y="1162.60168" NativeText="{:-( %1 was my friend, though we didn't always see eye to eye." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="FriendsWith" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Parent_Like" x="-1274.61" y="2469.925" NativeText="{:-( %1 was the best %2 a %3 could hope for." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="MomOrDad" Subject="Target" />
+        <SpeechParam Type="SonOrDaughter" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="ChildOf" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Parent_Dislike" x="-460.7816" y="2464.204" NativeText="{:-( %1 was not the world's greatest %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="MomOrDad" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="ChildOf" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Child_Like" x="-1282.7168" y="3931.65454" NativeText="{:-( %1 was a good %2.  No parent should have to outlive their child." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="SonOrDaughter" Subject="Actor" />
+        <SpeechParam Type="MotherOrFather" Subject="Target" />
+        <SpeechParam Type="SonOrDaughter" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="ParentOf" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Child_Dislike" x="-464.598053" y="3917.352" NativeText="{:-( %1 caused me a lot of grief, but I loved %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="ParentOf" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Pity" x="-1261.16492" y="-2216.37158" NativeText="{:-| %1 was a nice %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="90" Data2="180" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_PityLots" x="-391.528748" y="-2217.83887" NativeText="{:-( Through everything, I always believed %1 heart was in the right place." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="90" Data2="180" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="Target" Data="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Despise" x="-1239.21" y="-3209.63281" NativeText="}:-| %1 was a goddam fool." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="180" Data2="270" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_DespiseLots" x="-369.5738" y="-3211.1" NativeText="}:-| I shouldn't speak ill of the dead but I've always hated %1." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="180" Data2="270" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="Target" Data="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Fear" x="-1236.72" y="-4144.70264" NativeText="}:-[ %1 was a real %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="270" Data2="315" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_FearLots" x="-367.0838" y="-4146.16943" NativeText="}:-[ I wish I'd never met %1.  I'm glad %2's finally dead." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="270" Data2="315" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="Target" Data="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Respect" x="-2063.22" y="-4151.239" NativeText="}:-| I didn't always get on with %1." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="315" Data2="360" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_RespectLots" x="-2887.89233" y="-4158.57959" NativeText="}:-| I never much liked %1, but it wasn't a good idea to cross %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="315" Data2="360" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="Actor" Object="Target" Data="70" Data2="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_InLoveWith_Like" x="-1285.2749" y="5136.54053" NativeText="{:-( I loved %1 so much." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="InLoveWith" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Married_Like" x="-1299.75732" y="6422.411" NativeText="{:-( %1 was the love of my life." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="MarriedTo" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Married_Dislike" x="-484.4466" y="6418.652" NativeText="}:-( %1 was a terrible %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="HusbandOrWife" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="MarriedTo" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_InLoveWith_Dislike" x="-487.4816" y="5127.547" NativeText="}:-| I loved %1, goodness knows why." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="InLoveWith" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Partner_Like" x="-1299.75781" y="7656.65" NativeText="{:-( I loved %1 more than anything and now %2's gone!" Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="SleepingWith" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Partner_Dislike" x="-484.447052" y="7652.89063" NativeText="}:-| %1 was a crappy %2." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="BoyfriendOrGirlfriend" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="SleepingWith" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_YoungerSibling_Like" x="-1313.72461" y="9156.953" NativeText="{:-( %1 was my little %2, I was supposed to protect %3." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="BrotherOrSister" Subject="Target" />
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="SiblingOf" />
+        <Condition Type="IsOlderThan" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Sibling_Dislike" x="-492.353" y="9155.619" NativeText="}:-| %1 was my %2, but we didn't get on." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="BrotherOrSister" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="SiblingOf" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_OlderSibling_Like" x="-2072.25513" y="9161.136" NativeText="{:-( %1 was my big %2, I always looked up to %3." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="BrotherOrSister" Subject="Target" />
+        <SpeechParam Type="HimOrHer" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" Data="40" Data2="70" StringData="SiblingOf" />
+        <Condition Type="IsOlderThan" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Eulogy_DiscoverRelationship" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Eulogy_Neutral" x="-1273.47131" y="-30.7883" NativeText="{:-| I didn't know %1 too well." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="Target" Data="10" Data2="10" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="10" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Mixed" x="-375.942719" y="-32.3646355" NativeText="{:-| To tell the truth, I never quite made my mind up about %1.  Guess now I never will." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="ApprovalRespectAmountLessThan" Subject="Actor" Object="Target" Data="10" Data2="10" />
+        <Condition Type="ApprovalRespectAbsoluteSum" Subject="Actor" Object="Target" Data="10" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Unknown" x="-2242.883" y="-34.6608963" NativeText="{:-| Who was this %1?  I guess we'll never know." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="KnowsName" Subject="Actor" Object="Target" Data="10" Data2="10" Not="true" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Eulogy_DiscoverRelationship" x="-3454.43921" y="3402.79321">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="AreCommunityMembersNearby" Subject="Actor" Object="Player" Data="32" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="Target" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

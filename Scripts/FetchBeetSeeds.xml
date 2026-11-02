@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-215.757187</x>
+    <y>-251.736938</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4815664</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchBeetSeeds_FetchingJob" x="-966.2071" y="-474.913422" NativeText="}:-( Farmer %1 Is looking for another crop to plant since one of our community member has an allergy on one of our existing crop. %2 said beet seeds would be ideal. go talk to %3 ." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="FetchBeetSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_WantSeeds" x="-90.3260956" y="-876.3183" NativeText=":-| Could you help me acquire some beet seeds? It would be much appriciated :-). ofcourse you will be rewarded">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchBeetSeeds_NoviceFarmer" />
+        <SpeechRef UniqueID="FetchBeetSeeds_No" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="FetchBeetSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_NoviceFarmer" x="955.4131" y="-889.22" NativeText=":-) I'll try to find you some.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchBeetSeeds_Okey" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="Player" ObjectModifier="Community" Data="1" StringData="Farming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_No" x="1000.93164" y="-1787.90344" NativeText=":-( Sorry buddy I'm quite busy at the moment.">
+      <Replies>
+        <SpeechRef UniqueID="FetchBeetSeeds_NotMuchUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_NotMuchUse" x="1841.36108" y="-1841.51318" NativeText=":-( Ok but be sure to help before cold season starts!" />
+    <Speech UniqueID="FetchBeetSeeds_Okey" x="1846.86963" y="-1031.092" NativeText=":-| Bring them to me before cold season starts or we won't be able to plant them in time.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchBeetSeed_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_GotSome" x="2967.6543" y="-737.665649" NativeText="Here's your seeds! }:-)" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchBeetSeeds_SavedAss" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchBeetSeed_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="40" StringData="BeetSeeds" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_SavedAss" x="3825.336" y="-539.6634" NativeText="8-o Wow thanks a bunch! I hope my community member with allergy won't get it this time.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="50" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="40" StringData="BeetSeeds" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="FetchBeetSeed_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_HowToPlant" x="-462.723572" y="-2370.558" NativeText="Where do I find Beet seeds?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchBeetSeeds_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchBeetSeed_Fetch" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_Tip" x="428.79425" y="-2575.49219" NativeText="You need to be an above average farmer to be able to get more seeds! }:-) since they yield less seeds than carrots. maybe purchase them from other communities or }:-) steal them if you know what I mean.">
+      <Replies>
+        <SpeechRef UniqueID="FetchBeetSeeds_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchBeetSeeds_TipEnd" x="1376.61548" y="-2691.60327" NativeText=":-) Huh? I think its simple enough." />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="FetchBeetSeed_Fetch" x="927.441162" y="276.914368" GroupID="FetchBeetSeed_QuestGroup" NativeDescription="%1 wants you to gather 40 beet seeds.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="40" StringData="BeetSeeds" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchBeetSeed_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchBeetSeed_Return" x="1774.095" y="105.1393" GroupID="FetchBeetSeed_QuestGroup" NativeDescription="Take the beet seeds to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchBeetSeed_QuestGroup" x="18.8628922" y="-144.3215" NativeTitle="Fetch Seeds for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

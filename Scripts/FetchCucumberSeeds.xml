@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-249.158142</x>
+    <y>-224.26651</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4283795</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchCucumberSeed_FetchingJob" x="-966.2071" y="-474.913422" NativeText="}:-( Community Farmer %1 is asking for your assistance go talk to %2 ." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="FetchCucumberSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_WantSeeds" x="-90.3260956" y="-876.3183" NativeText="}:-( Hey I need you to get me some cucumber seeds to plant since we need them as ingridient and I think for some other stuff *wink* *wink*">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchCucumberSeed_NoviceFarmer" />
+        <SpeechRef UniqueID="FetchCucumberSeed_No" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="FetchCucumberSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_NoviceFarmer" x="955.4131" y="-889.22" NativeText="}:-) I'll get you some but promise me you'll only use it as an cooking ingridient.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchCucumberSeed_Okey" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="Player" ObjectModifier="Community" Data="1" StringData="Farming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_No" x="1000.93164" y="-1787.90344" NativeText="}:-( No! I think you'll just mistreat the veggie!">
+      <Replies>
+        <SpeechRef UniqueID="FetchCucumberSeed_NotMuchUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_NotMuchUse" x="1841.36108" y="-1841.51318" NativeText="8-o What are you talking about?!" />
+    <Speech UniqueID="FetchCucumberSeed_Okey" x="1874.10852" y="-1071.5199" NativeText=":-) I promise! *wink* *wink*">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchCucumberSeed_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_GotSome" x="2714.4043" y="-801.801636" NativeText="}:-) Sorry to keep you waiting!" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchCucumberSeed_SavedAss" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchCucumberSeed_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="30" StringData="CucumberSeeds" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_SavedAss" x="3604.4624" y="-521.0972" NativeText="8-o My big dil.. dilemma is solved!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="50" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="30" StringData="CucumberSeeds" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="FetchCucumberSeed_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_HowToPlant" x="-462.723572" y="-2370.558" NativeText="Where do I find Cucumber seeds?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchCucumberSeed_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchCucumberSeed_Fetch" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_Tip" x="428.79425" y="-2575.49219" NativeText=":-) Other communities or survivors might have them also be sure to ask permission first since people don't like stealing their cucumber seeds.">
+      <Replies>
+        <SpeechRef UniqueID="FetchCucumberSeed_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchCucumberSeed_TipEnd" x="1376.61548" y="-2691.60327" NativeText="I'll keep that in mind." />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="FetchCucumberSeed_Fetch" x="876.7397" y="238.451035" GroupID="FetchCucumberSeed_QuestGroup" NativeDescription="%1 wants you to gather 30 Cucumber seeds.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="30" StringData="CucumberSeeds" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchCucumberSeed_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchCucumberSeed_Return" x="1774.095" y="105.1393" GroupID="FetchCucumberSeed_QuestGroup" NativeDescription="Take the Cucumber seeds to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchCucumberSeed_QuestGroup" x="18.8628922" y="-144.3215" NativeTitle="Fetch Seeds for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

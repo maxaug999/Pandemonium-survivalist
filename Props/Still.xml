@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Still</TypeName>
+  <NativeName>Still</NativeName>
+  <Category>Camp/Props</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Still</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>10</MaxDamage>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ExtentsMin>
+    <x>0</x>
+    <y>-1</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>0</x>
+    <y>1</y>
+  </ExtentsMax>
+  <VisibleFromFarAway>true</VisibleFromFarAway>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>100</MaxInventoryWeight>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>2</RepairResourceNeeded>
+  <CaptureResourceType>Wood</CaptureResourceType>
+  <CaptureResourceNeeded>1</CaptureResourceNeeded>
+  <Mass>100</Mass>
+</PropPrototype>

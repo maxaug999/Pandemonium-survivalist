@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>White Strain Antigen</NativeName>
+  <NativeDescription>The government says that there's no cure for this strain but perhaps there is. must administer exactly after bitten or you won't have another chance.</NativeDescription>
+  <Category>3:Medical/Antigen/4</Category>
+  <Weight>0.01</Weight>
+  <BasePrice>50</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <AntigenType>White</AntigenType>
+  <EquippedModelName>Prefabs/Equipment/Med Items Pack/Syringe</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

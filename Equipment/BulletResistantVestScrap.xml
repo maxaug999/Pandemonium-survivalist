@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Scrap Body Armor</NativeName>
+  <NativeDescription>Made from zombie boots, hey at least it got armor. 2 Damage absorption from zed.</NativeDescription>
+  <Category>4:Clothing/Armor/Vest</Category>
+  <Weight>5</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>BodyArmor</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Zombie</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>25</r>
+      <g>40</g>
+      <b>65</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName />
+  <FemaleMeshName />
+  <DamageAbsorption>2</DamageAbsorption>
+  <SkillBonusType>HandToHand</SkillBonusType>
+  <SkillBonus>-1</SkillBonus>
+</EquipmentPrototype>

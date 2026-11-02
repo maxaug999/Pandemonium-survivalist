@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Grave</TypeName>
+  <NativeName>Grave</NativeName>
+  <Category>Camp/Props</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Grave/Grave1</string>
+    <string>Prefabs/Props/Grave/Grave2</string>
+    <string>Prefabs/Props/Grave/Grave3</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames>
+    <string>Prefabs/Props/Grave/Grave1_1</string>
+    <string>Prefabs/Props/Grave/Grave2_1</string>
+    <string>Prefabs/Props/Grave/Grave3_1</string>
+  </Stage1PrefabNames>
+  <Stage2PrefabNames>
+    <string>Prefabs/Props/Grave/Grave1_2</string>
+    <string>Prefabs/Props/Grave/Grave2_2</string>
+    <string>Prefabs/Props/Grave/Grave3_2</string>
+  </Stage2PrefabNames>
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <CoverType>None</CoverType>
+  <ExtentsMin>
+    <x>-1</x>
+    <y>0</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>1</x>
+    <y>0</y>
+  </ExtentsMax>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <SetAreaOwnership>false</SetAreaOwnership>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>200</MaxInventoryWeight>
+  <CrouchToLoot>true</CrouchToLoot>
+</PropPrototype>

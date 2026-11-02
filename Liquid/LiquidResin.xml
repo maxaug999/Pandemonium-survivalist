@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Liquid Resin</NativeName>
+  <NativeDescription>From melted plastic objects</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Col>
+    <r>230</r>
+    <g>246</g>
+    <b>254</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.1</BasePricePerFlOz>
+  <Flammable>true</Flammable>
+  <GiftFor />
+  <BadGiftFor />
+</LiquidPrototype>

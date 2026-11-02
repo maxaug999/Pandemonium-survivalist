@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Heavy Truck Parts</NativeName>
+  <Category>6:Crafting</Category>
+  <Weight>50</Weight>
+  <BasePrice>30</BasePrice>
+</EquipmentPrototype>

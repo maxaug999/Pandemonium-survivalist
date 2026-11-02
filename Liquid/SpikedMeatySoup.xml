@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Spiked Meaty Soup</NativeName>
+  <NativeDescription>Carnivore Alcoholics love this.</NativeDescription>
+  <Category>5:Food/Dishes</Category>
+  <Col>
+    <r>188</r>
+    <g>170</g>
+    <b>164</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.5</BasePricePerFlOz>
+  <NutritionPerFlOz>0.04</NutritionPerFlOz>
+  <AlcoholContent>5</AlcoholContent>
+  <Tastiness>85</Tastiness>
+  <GiftFor>
+    <string>Likes Spicy Food</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Likes Bland Food</string>
+  </BadGiftFor>
+  <GiftAmount>50</GiftAmount>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgressionPerFlOz>1</SkillOnConsumptionProgressionPerFlOz>
+</LiquidPrototype>

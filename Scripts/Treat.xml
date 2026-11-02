@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>11</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>2399.96338</x>
+    <y>376.172882</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5718792</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Treat_MyTreat" x="411.2505" y="-717.125244" NativeText=":-) Hey you!  You're looking hungry... let me do you something special, my treat!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.3" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Treat_Sweet" />
+        <SpeechRef UniqueID="Treat_ImBusy" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_NPCStage3to5" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasHunger" Subject="Target" Data="0.25" />
+        <Condition Type="HasHypothermia" Subject="Actor" Data="36" Not="true" />
+        <Condition Type="HasHypothermia" Subject="Target" Data="36" Not="true" />
+        <Condition Type="IsInAGroup" Subject="Actor" Not="true" />
+        <Condition Type="IsInAGroup" Subject="Target" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Actor" StringData="Treated" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Target" StringData="Treated" Not="true" />
+        <Condition Type="CanTreat" Subject="Actor" Object="Target" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Treat_ImBusy" x="1530.14868" y="-1151.48682" NativeText="Uh... thanks but I'm busy right now." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_Sweet" x="1545.40112" y="250.418579" NativeText=":-) Aw, that'd be sweet!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Treat" Subject="Target" Object="Actor" StringData="Treat_HowWasIt" StringData2="" />
+        <StoryEvent Type="SetTimer" Subject="Actor" Data="600" StringData="Treated" />
+        <StoryEvent Type="SetTimer" Subject="Target" Data="600" StringData="Treated" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_HowWasIt" x="2563.07544" y="-610.1167" NativeText="How was it for you?" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <Replies>
+        <SpeechRef UniqueID="Treat_TopTier" />
+        <SpeechRef UniqueID="Treat_HitTheSpot" />
+        <SpeechRef UniqueID="Treat_NiceThanks" />
+        <SpeechRef UniqueID="Treat_OkayThanks" />
+        <SpeechRef UniqueID="Treat_NotGreat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Treat_TopTier" x="4388.94727" y="2716.89185" NativeText=":-) That was top tier.  You rock!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="50" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" Secrecy="OnlyKnownToSubjectAndObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_HitTheSpot" x="4400.8623" y="1414.63281" NativeText=":-) That really hit the spot, thanks!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="25" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" Secrecy="OnlyKnownToSubjectAndObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_NiceThanks" x="4400.37061" y="55.1363678" NativeText="That was nice, thanks." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="10" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_OkayThanks" x="4406.2876" y="-972.996643" NativeText="That was... okay.  Thanks." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_NotGreat" x="4393.181" y="-2019.70227" NativeText="{:-| Uh, not my thing to honest." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_WannaGetFood" x="-4053.73828" y="-8873.048" NativeText="Wanna get some food?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Treat_SoundsGood" />
+        <SpeechRef UniqueID="Treat_NotHungry" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_CanNPCsHangOut" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasHunger" Subject="Actor" Data="0.25" />
+        <Condition Type="HasHunger" Subject="Target" Data="0.25" />
+        <Condition Type="HasHypothermia" Subject="Actor" Data="36" Not="true" />
+        <Condition Type="HasHypothermia" Subject="Target" Data="36" Not="true" />
+        <Condition Type="IsInAGroup" Subject="Actor" Not="true" />
+        <Condition Type="IsInAGroup" Subject="Target" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Actor" StringData="Treated" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Target" StringData="Treated" Not="true" />
+        <Condition Type="CanTreat" Subject="Actor" Object="Target" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Treat_SoundsGood" x="-2872.51172" y="-8035.307" NativeText=":-) Sounds good." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" PriorityFactor="10" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Treat" Subject="Target" Object="Actor" StringData="Treat_WhatDoYouThink" StringData2="" />
+        <StoryEvent Type="SetTimer" Subject="Actor" Data="600" StringData="Treated" />
+        <StoryEvent Type="SetTimer" Subject="Target" Data="600" StringData="Treated" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_NotHungry" x="-2876.5166" y="-9405.532" NativeText="Uh.. I'm not hungry right now." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" PriorityFactor="10" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_WhatDoYouThink" x="-1689.66785" y="-9483.675" NativeText="Whaddya think?" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <Replies>
+        <SpeechRef UniqueID="Treat_YoureTheBest" />
+        <SpeechRef UniqueID="Treat_MyUsualHighStandards" />
+        <SpeechRef UniqueID="Treat_Incredible" />
+        <SpeechRef UniqueID="Treat_CouldHaveBeenWorse" />
+        <SpeechRef UniqueID="Treat_Choking" />
+        <SpeechRef UniqueID="Treat_PrettyGood" />
+        <SpeechRef UniqueID="Treat_MoreSalt" />
+        <SpeechRef UniqueID="Treat_AppreciateTheCompany" />
+        <SpeechRef UniqueID="Treat_NotBad" />
+        <SpeechRef UniqueID="Treat_Gross" />
+        <SpeechRef UniqueID="Treat_YouTried" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Treat_YoureTheBest" x="4403.8623" y="-3136.68286" NativeText=":-) Good shit.  Thanks, man, you're the best!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="50" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_PrettyGood" x="4386.97559" y="-9687.456" NativeText=":-) Pretty good, chef.  Glad I ran into ya!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="25" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_NotBad" x="4359.371" y="-13386.4414" NativeText="Not bad, all things considered!  See you later." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="10" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_YouTried" x="4352.03027" y="-15988.15" NativeText="{:-| Well, you tried at least.  Maybe cooking isn't your thing." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="10" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Humiliated" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_CouldHaveBeenWorse" x="4411.292" y="-7336.64844" NativeText="Could have been worse." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="25" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_Choking" x="4396.72168" y="-8717.31" NativeText="8-| I... I think I'm choking... what exactly did you put in that?" Importance="Low" RepeatTime="37800">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2.5" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Treat_Kidding" />
+      </Continues>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Treat_Kidding" x="5454.484" y="-8833.06" NativeText=":-) Kidding.  It was great!" Importance="Low">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_MoreSalt" x="4350.953" y="-11022.5791" NativeText="Needed more salt.  But thanks, I guess." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="10" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_Gross" x="4358.155" y="-14428.3574" NativeText="}:-| Gross.  Let's never do this again!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="10" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Humiliated" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_MyUsualHighStandards" x="4399.674" y="-4506.44531" NativeText="Not up to my usual high standards of course but I suppose one can't always have caviar and truffles." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="50" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_Incredible" x="4405.456" y="-5798.511" NativeText="{:-) That was incredible!  I so needed that!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="50" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_AppreciateTheCompany" x="4357.92236" y="-12189.07" NativeText=":-) Not bad.  I appreciate the company!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TastinessIsAtLeast" Data="10" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Treat_ThinkIllPass" x="-3212.36255" y="-3990.26465" NativeText="8-| What kind of meat is this again? :-|  Uh, I think I'll pass on this one." Situation="FedHumanMeat" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_RefuseHumanMeat" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanFlirt" Subject="Target" Object="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="CastAspersions" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Treat_StayAwayFromMe" x="-3196.825" y="-2284.41064" NativeText="8-( Wait, what exactly is this meat?  I'm not eating this! }:-[ Stay the hell away from me you creep!" Situation="FedHumanMeat" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_RefuseHumanMeat" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanFlirt" Subject="Target" Object="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="CastAspersions" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Treat_DisgustingFreak" x="-3200.7207" y="-5612.65527" NativeText="8-( The fuck kind of meat did you put in this? }:-[ You disgusting freak!" Situation="FedHumanMeat" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_RefuseHumanMeat" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanFlirt" Subject="Target" Object="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="CastAspersions" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Treat_ReallyNotHungry" x="-3188.74976" y="-636.157654" NativeText="8-( You know what... I'm really not hungry for whatever this is. {:-| Can't believe I ever thought you were a decent person." Situation="FedHumanMeat" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_RefuseHumanMeat" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanFlirt" Subject="Target" Object="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="CastAspersions" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Flirt_NPCStage3to5" x="-661.3446" y="-57.55246">
+      <Conditions>
+        <Condition Type="CanFlirt" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_QuestNotActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPerformingUrgentRole" Subject="Actor" Not="true" />
+        <Condition Type="IsPerformingUrgentRole" Subject="Target" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Treat_CanNPCsHangOut" x="-5066.25928" y="-8575.013">
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="IsCloseToBase" Subject="Actor" Object="Actor" Data="32" />
+        <Condition Type="IsPerformingUrgentRole" Subject="Actor" Not="true" />
+        <Condition Type="IsPerformingUrgentRole" Subject="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" />
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" Data="7" StringData="FlirtedSuccessfullyWith" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" Data="7" StringData="RefusedToHangOut" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Treat_RefuseHumanMeat" x="-4737.55127" y="-3591.41357" Type="Or">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

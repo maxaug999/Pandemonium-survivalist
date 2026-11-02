@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>12</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-710.7025</x>
+    <y>-1509.44055</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.528868556</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="SnowFight_PerfectWeather" x="1206.93066" y="-1712.50281" NativeText="/:-| Perfect weather for snowballs, wouldn't you say?" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_MoreImportantThings" />
+        <SpeechRef UniqueID="SnowFight_DestroyYou" />
+        <SpeechRef UniqueID="SnowFight_ReadMyMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsSnowCoverAtLeast" Data="0.9" />
+        <Condition Type="IsTimerRunning" Subject="Actor" SubjectModifier="Leader" StringData="FriendlySnowfightAllowed" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_CanNPCsHangOut" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="SnowFight_WatchOutForSnowballs" x="1151.01855" y="2324.06738" NativeText="Watch out for snowballs!  You never know when one might get you." Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.26" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_DontYouDare" />
+        <SpeechRef UniqueID="SnowFight_YankingMyChain" />
+        <SpeechRef UniqueID="SnowFight_Really" />
+        <SpeechRef UniqueID="SnowFight_GetsYouFirst" />
+        <SpeechRef UniqueID="SnowFight_TakeMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsSnowCoverAtLeast" Data="0.9" />
+        <Condition Type="IsTimerRunning" Subject="Actor" SubjectModifier="Leader" StringData="FriendlySnowfightAllowed" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_NPCStage3to5" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="SnowFight_DontYouDare" x="2536.857" y="3728.15723" NativeText="8-| Don't you dare!  I've got enough to worry about as it is!" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_TooLate" />
+        <SpeechRef UniqueID="SnowFight_Startle" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SnowFight_GetsYouFirst" x="2522.87769" y="1107.14136" NativeText="}:-) Not if one gets you first!  You're going down!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_YankingMyChain" x="2518.34253" y="3025.58838" NativeText="What?  I don't see any.  You yanking my chain or something?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_TooLate" x="3708.97339" y="4147.575" NativeText="Too late!  Incoming!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Target" Object="Actor" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_Startle" x="3705.37622" y="2913.828" NativeText="{:-| Oh, right, my bad.  Don't wanna startle you." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedUnsuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_Really" x="2520.073" y="2076.07" NativeText="/:-) Snowballs, really?  Well, so long as it leads to some other kind of physical activity later." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_TakeMe" x="2519.7063" y="167.980179" NativeText=":-) Think you can take me?  Let's go!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_ReadMyMind" x="2523.744" y="-2767.403" NativeText=":-) It's like you read my mind!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_MoreImportantThings" x="2526.052" y="-874.479065" NativeText="}:-| Don't we have more important things to do than playing in the snow?" Importance="Low" SpecialBehaviour="NoReplyChoice">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Serious" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_LightenUp" />
+        <SpeechRef UniqueID="SnowFight_SuitYourself" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SnowFight_LightenUp" x="3820.12354" y="-295.1333" NativeText=":-) Hey, lighten up for a few minutes why don't you?  We could all be dead tomorrow, might as well have some fun before we go." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_MakeMeFeelBetter" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="SnowFight_MakeMeFeelBetter" x="4890.21973" y="-409.197083" NativeText="}:-| Are you trying to make me feel better? {:-) Well... alright then.  Just for a few minutes." Importance="Low">
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_SuitYourself" x="3821.576" y="-1144.0874" NativeText="}:-| Okay, man, suit yourself." Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_DestroyYou" x="2514.47778" y="-1747.55847" NativeText="}:-) Fuck yes!  I will destroy you with snow!  Prepare to be destroyed!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Actor" Object="Target" StringData="SnowballFight" />
+        <StoryEvent Type="SetTimer" Subject="Actor" SubjectModifier="Leader" Data="600" StringData="FriendlySnowfightAllowed" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="SnowFight_YouGotMe" x="5703.161" y="5706.999" NativeText=":-) Damn, you got me!  You sure know your way around a snowball.  I like that in a %1!" Situation="SnowballFightYouWin" Importance="EndFisticuffs" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="ManOrWoman" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_HaveMyMoments" />
+        <SpeechRef UniqueID="SnowFight_TheChamp" />
+        <SpeechRef UniqueID="SnowFight_GoodGame" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_NPCStage3to5" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="LoseBoxingMatch" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WonSnowballFight" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_IStillWon" x="5687.15137" y="2994.26563" NativeText=":-) You did good but... I still won.  Hope you won't hold it against me." Situation="SnowballFightIWin" Importance="EndFisticuffs" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_YouCheated" />
+        <SpeechRef UniqueID="SnowFight_Congratulations" />
+        <SpeechRef UniqueID="SnowFight_MakeItUpToMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_NPCStage3to5" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="WinBoxingMatch" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="WonSnowballFight" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_HaveMyMoments" x="6781.46143" y="5913.758" NativeText=":-) I have my moments!  I'm a %1 of many talents." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="ManOrWoman" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SnowFight_TheChamp" x="6784.447" y="5057.746" NativeText="}:-) Hell yeah, I'm the champ!" Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SnowFight_GoodGame" x="6794.407" y="4514.21338" NativeText=":-) Good game, you did great." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SnowFight_YouCheated" x="6800.44629" y="3977.41821" NativeText="}:-| You must have cheated.  It's the only explanation." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_MakeItUpToMe" x="6811.32764" y="1833.06067" NativeText=":-) You'll just have to make it up to me somehow." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_Congratulations" x="6807.99658" y="2920.27148" NativeText="}:-| Yeah, congratulations!  Don't let it go to your head." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_YesIWin" x="6196.931" y="-2346.19263" NativeText="}:-) Yes!  I win!  Take that!" Situation="SnowballFightIWin" Importance="EndFisticuffs" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_ItsNotOver" />
+        <SpeechRef UniqueID="SnowFight_SoreWinner" />
+        <SpeechRef UniqueID="SnowFight_ThatWasFun" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_CanNPCsHangOut" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="WinBoxingMatch" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="WonSnowballFight" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="HungOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_AwYouWon" x="6198.67529" y="-56.6709" NativeText=":-) Aw, you won." Situation="SnowballFightYouWin" Importance="EndFisticuffs" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoice" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="SnowFight_NoneShallStand" />
+        <SpeechRef UniqueID="SnowFight_KickedYourAss" />
+        <SpeechRef UniqueID="SnowFight_HadAGoodTIme" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Treat_CanNPCsHangOut" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="LoseBoxingMatch" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WonSnowballFight" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="HungOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_NoneShallStand" x="7262.45" y="715.068848" NativeText="}:-) None shall stand against me!" Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SnowFight_KickedYourAss" x="7275.78564" y="105.1651" NativeText="}:-) Hah!  Kicked your ass!" Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SnowFight_HadAGoodTIme" x="7261.159" y="-467.900726" NativeText=":-) Okay... I had a good time." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Serious" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="SnowFight_SoreWinner" x="7834.80127" y="-2430.781" NativeText="}:-| Okay, calm down.  You only won by a little bit, and nobody likes a sore winner." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_ItsNotOver" x="7825.44238" y="-1416.143" NativeText="}:-| This isn't over.  There's gonna be a rematch, and I will crush you!" Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Humiliated" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="SnowFight_ThatWasFun" x="7824.688" y="-3492.26367" NativeText=":-) That was fun." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

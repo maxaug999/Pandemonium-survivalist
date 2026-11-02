@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Lead</NativeName>
+  <NativeDescription>These days, lead is more valuable than gold.  But you'll need a forge and a high construction skill to use it.</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Weight>1</Weight>
+  <BasePrice>2</BasePrice>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>10</TypicalLootAmount>
+</EquipmentPrototype>

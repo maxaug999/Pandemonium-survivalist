@@ -1,0 +1,851 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>51</NextFreeSpeechID>
+  <NextFreeTriggerID>4</NextFreeTriggerID>
+  <NextFreeConditionBlockID>8</NextFreeConditionBlockID>
+  <NextFreeQuestID>5</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2534.80713</x>
+    <y>15438.3428</y>
+  </EditorScrollPos>
+  <EditorZoomScale>1</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="TurfWar_Merc" x="193.0198" y="-2620.29321" NativeText="Are you a merc?  We're at war with a nearby group called %1." PerObjectType="PerEnemyCommunity">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_FightThem" />
+        <SpeechRef UniqueID="TurfWar_NotNow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsLooter" Subject="Actor" />
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_KillSomeone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_KillEveryone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_BurnLivingQuarters" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_Negotiate" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_Frequency" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="TurfWar_FightThem" x="1484.28345" y="-2723.72559" NativeText="I'll fight them for you!">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_JustWhatINeed" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_NotNow" x="1484.891" y="-3288.34277" NativeText="Not right now.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_GrowAPair" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_JustWhatINeed" x="2492.71362" y="-2688.04834" NativeText="Then you're just what I need!">
+      <Continues>
+        <SpeechRef UniqueID="TurfWar_WipeThemOut" />
+        <SpeechRef UniqueID="TurfWar_Infiltrate" />
+        <SpeechRef UniqueID="TurfWar_Truce" />
+        <SpeechRef UniqueID="TurfWar_StrikeBack" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="TurfWar_GrowAPair" x="7868.169" y="-4833.50635" NativeText="}:-| Let me know when you grow a pair." />
+    <Speech UniqueID="TurfWar_WipeThemOut" x="3943.08154" y="-1053.69482" NativeText="The only way to win this is to completely wipe those fuckers out!  So everyone can see that we are baddest motherfuckers around.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_UhOkay" />
+        <SpeechRef UniqueID="TurfWar_ChangedMyMind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_Infiltrate" x="3942.02515" y="-2060.3562" NativeText="I need you to infiltrate their base, and burn down their living quarters.  That's where they store all their food.  }:-) We'll starve them out!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="TurfWar_Suspect" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_Suspect" x="4884.9873" y="-2315.70239" NativeText="Don't let them know it was you.  }:-) Maybe they'll suspect someone else, and they won't come after us!">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_UhOkay" />
+        <SpeechRef UniqueID="TurfWar_ChangedMyMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_Truce" x="3914.838" y="-2943.844" NativeText="All this violence is giving me a headache... we should be, like, exploiting the other groups in this area together, not fighting each other.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="TurfWar_IfYoureInThatArea" />
+      </Continues>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_StrikeBack" x="3916.30151" y="-4023.0603" NativeText="We need to strike back at them.  I don't care how you do it, but make sure one of them doesn't see the light of another day!">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_UhOkay" />
+        <SpeechRef UniqueID="TurfWar_ChangedMyMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_ChangedMyMind" x="6157.375" y="-3157.85034" NativeText="Actually I changed my mind.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_GrowAPair" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_UhOkay" x="6149.02637" y="-2435.804" NativeText="Uh.. okay.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_LeaderBody" />
+        <SpeechRef UniqueID="TurfWar_DoJustGreat" />
+        <SpeechRef UniqueID="TurfWar_Cool" />
+        <SpeechRef UniqueID="TurfWar_WhatItTakes" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_WhatItTakes" x="7870.11426" y="-3639.99585" NativeText="Bring me the body so I know you did it.  Show me you got what it takes!">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_KillSomeone" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_Cool" x="7869.542" y="-2616.719" NativeText=":-) Cool, well, let me know how it goes then.  Whenever you get around to it.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_Negotiate" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_DoJustGreat" x="7881.073" y="-1636.14783" NativeText=":-) Great!  }:-| Don't fuck this up.  :-) I mean, I'm sure you'll do a great job!  }:-| But don't fuck it up.  :-) I know you'll do just great!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_BurnLivingQuarters" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_LeaderBody" x="7878.38037" y="-466.412354" NativeText="Bring me the body of their leader, %1, to prove you did it.  Don't try to screw ME over, I will crush you!">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_KillEveryone" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" ObjectModifier="Leader" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_StopFighting" x="-2173.92041" y="-7409.06543" NativeText="It's time to end your war against %1." Situation="QuestTopic" PerObjectType="PerActiveQuestReferringToTarget">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_WhatsItToYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+        <Condition Type="QuestIsActive" Subject="ReferringTo" Object="Target" ObjectModifier="Community" StringData="TurfWar_Negotiate" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_AnythingForMyPal" x="1499.27612" y="-6837.37939" NativeText=":-) Yeah man, sure.  Anything for my pal %1." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="60" Data2="40" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_InformTruceAgreed" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_DontWantAnyTrouble" x="1495.656" y="-3628.05347" NativeText="8-( Hey man, you don't need to get angry... I don't want any trouble with you." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="60" Data2="40" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_InformTruceAgreed" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_Persuaded" x="-50.1421051" y="-13034.498" NativeText="I convinced %1 to end the war." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_GreatJob" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_InformTruceAgreed" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_GreatJob" x="1368.74878" y="-12883.5791" NativeText=":-) Hey that's awesome news!  I can feel my headache clearing up already.  Here's your gold.">
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Actor" Data="400" StringData="Gold" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_InformTruceAgreed" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_ThatCorpse" x="-84.86326" y="-15392.2764" NativeText="Here's that corpse you wanted." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Teach" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_LeaderNotNeeded" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="ReferringTo" StringData="Human" />
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_Teach" x="1332.58545" y="-15446.2793" NativeText="}:-) Yeah!  That should teach %1 to mess with us!  Here's your payment.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_InformBuildingsBurned" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_ThisGuy" x="-119.625534" y="-17899.3867" NativeText="Uh, this %1's from %2... I killed %3 for you." Situation="QuestTopic" Lie="true" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Actor" SubjectModifier="Carrying" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" SubjectModifier="Carrying" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Teach_Credulous" />
+        <SpeechRef UniqueID="TurfWar_WhoIsThis" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="ReferringTo" StringData="Human" Not="true" />
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="Target" StringData="Human" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_KillSomeone" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_IsKillSomeoneActive" />
+            <ConditionBlockRef UniqueID="TurfWar_IsKillPickUpBodyActive" />
+            <ConditionBlockRef UniqueID="TurfWar_IsKillBringBackBodyActive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_WhoIsThis" x="1314.588" y="-21151.44" NativeText="}:-| Who is this?  What are you trying to pull?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Mistake" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_KillSomeone" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_KillEveryone" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_PickUpBody" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_PickUpLeaderBody" />
+        <StoryEvent Type="FailQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="TurfWar_Mistake" x="2539.28149" y="-19757.0742" NativeText="Erm... I must have made a mistake.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_DontComeBack" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_DontComeBack" x="3728.762" y="-19860.0234" NativeText="}:-[ Get out of here!  And don't come back." />
+    <Speech UniqueID="TurfWar_Teach_Credulous" x="1324.64221" y="-17758.1582" NativeText="}:-) Yeah!  That should teach %1 to mess with us!  Here's your payment." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="120" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="IgnoredByObjectCommunity" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_KillSomeone" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_KillEveryone" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_PickUpBody" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_PickUpLeaderBody" BoolData="true" />
+        <StoryEvent Type="CompleteQuestIfItIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="TurfWar_BringBackBody" BoolData="true" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_DidTheyKnow" x="1334.35193" y="-17132.93" NativeText="}:-| Yes obviously, I saw the smoke from here.  But did they find out it was you?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_DidntSeeMe" />
+        <SpeechRef UniqueID="TurfWar_OfCourseNot" />
+        <SpeechRef UniqueID="TurfWar_Spotted" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_OfCourseNot" x="2713.02979" y="-16463.05" NativeText="Uh.. no, of course not!" Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Teach_KnewICouldTrustYou" />
+        <SpeechRef UniqueID="TurfWar_ForTheLoveOf" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="CommunityHasAnyActiveMembers" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_DidntSeeMe" x="2707.29639" y="-15619.1846" NativeText="They didn't see me.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Teach" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_TheyDidntSeeMe" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_Spotted" x="2719.98462" y="-17392.23" NativeText="I think I may have been spotted.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_ForTheLoveOf" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="CommunityHasAnyActiveMembers" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_ForTheLoveOf" x="4103.412" y="-17093.0469" NativeText="}:-| Oh, for the love of... but I suppose you'll still want to be paid, won't you?  God forbid that anyone should actually do what I ask.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="200" StringData="Gold" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FailedWorkFor" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_InformBuildingsBurned" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="2" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_Teach_KnewICouldTrustYou" x="4092.484" y="-14800.7021" NativeText="}:-) I knew I could trust you!  Now to sit back and wait as they fall apart from lack of food!">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="120" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="IgnoredByObjectCommunity" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="100" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_InformBuildingsBurned" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_KilledThemAll" x="-61.745018" y="-14252.8467" NativeText="}:-) I exterminated your rivals." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_ShowedThem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="TurfWar_KillEveryone" />
+        <Condition Type="IsCarrying" Subject="Actor" Object="ReferringTo" ObjectModifier="Leader" />
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_ThisIsTheirLeader" x="-128.978149" y="-19899.998" NativeText="Uh, this is %1, their leader... I killed them all for you." Situation="QuestTopic" Lie="true" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityLeaderFullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Teach_Credulous" />
+        <SpeechRef UniqueID="TurfWar_WhoIsThis" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_IsKillEveryoneActive" />
+            <ConditionBlockRef UniqueID="TurfWar_IsKillPickUpLeaderBodyActive" />
+            <ConditionBlockRef UniqueID="TurfWar_IsKillBringBackLeaderBodyActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsCarryingCorpse" Subject="Actor" StringData="Human" />
+        <Condition Type="IsCarrying" Subject="Actor" Object="ReferringTo" ObjectModifier="Leader" Not="true" />
+        <Condition Type="IsCarryingCommunityMember" Subject="Actor" Object="Target" StringData="Human" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_SomeKindOfToughGuy" x="-1387.43762" y="-2627.82886" NativeText="}:-| Oh, I suppose you're some kind of tough %1 or something?  Talk to %2, %3 has a job for you.  I mean, if you think you can handle it." PerObjectType="PerEnemyCommunity">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+        <SpeechParam Type="CommunityLeaderName" Subject="Actor" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="IsLooter" Subject="Actor" />
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="Looter" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" SubjectModifier="Leader" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_KillSomeone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_KillEveryone" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_BurnLivingQuarters" Not="true" />
+        <Condition Type="QuestIsDiscoveredWithObject" Subject="ReferringTo" StringData="TurfWar_Negotiate" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_Frequency" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="TurfWar_WhatsItToYou" x="-1091.80078" y="-7634.216" NativeText="What's it to you?">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Problem" />
+        <SpeechRef UniqueID="TurfWar_ImportantToMe" />
+        <SpeechRef UniqueID="TurfWar_GivePeaceAChance" />
+        <SpeechRef UniqueID="TurfWar_ActuallyIDontCare" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_Problem" x="174.88356" y="-5790.48633" NativeText=":-[ Stop fighting them, or you're going to have a problem with me.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_DontWantAnyTrouble" />
+        <SpeechRef UniqueID="TurfWar_TryingToTellMeWhatToDo" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_ImportantToMe" x="143.525986" y="-7654.982" NativeText=":-) We're friends aren't we?  This is important to me.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_AnythingForMyPal" />
+        <SpeechRef UniqueID="TurfWar_Awkward" />
+        <SpeechRef UniqueID="TurfWar_WhyWouldYouThinkThat" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_GivePeaceAChance" x="241.589676" y="-10644.6914" NativeText="Uh.. give peace a chance?">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_Allies" />
+        <SpeechRef UniqueID="TurfWar_Ridiculous" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="TurfWar_ActuallyIDontCare" x="249.228287" y="-11783.7246" NativeText="Actually I don't care." />
+    <Speech UniqueID="TurfWar_TryingToTellMeWhatToDo" x="1503.99817" y="-5333.8667" NativeText=":-[ Are you trying to tell me what to do?  Seriously?">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_KillSomeone" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_IfYoureInThatArea" x="4883.703" y="-2993.87" NativeText="I was thinking if you're in that area you could negotiate a truce between us?  Or try, at least.  And if they don't go for it then I guess you can just fight them a bit for us, so they don't think we've gone soft.">
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_UhOkay" />
+        <SpeechRef UniqueID="TurfWar_ChangedMyMind" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="TurfWar_Awkward" x="1470.80518" y="-8524.48" NativeText="{:-| I mean, I think you're alright, I guess.  But friends?  Man, this is awkward...">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="10" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_WhyWouldYouThinkThat" x="1460.28125" y="-9599.063" NativeText="}:-| Why would you think that?">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_Allies" x="1475.54565" y="-10291.2471" NativeText="8-) You know what, you're right!  All this fighting... what are we even doing? :-| It would be so much easier to oppress the other communities around here if we were allies." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_Negotiate" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="Actor" ObjectModifier="Community" StringData="TurfWar_InformTruceAgreed" />
+        <StoryEvent Type="CeaseFire" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_Ridiculous" x="1474.64856" y="-12158.8135" NativeText="}:-| Don't be ridiculous.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="NegotiatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_ShowedThem" x="1329.65979" y="-14096.5352" NativeText="}:-) Hell yeah!  Those idiots thought they could take us on?  Ha!  We showed them!  :-| Great job, here's your gold.">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="400" StringData="Gold" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="10" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="TurfWar_BurnedDown" x="-89.476944" y="-16662.4277" NativeText="I burned down %1 living quarters." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="TurfWar_DidTheyKnow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_InformBuildingsBurned" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="TurfWar_AtWarTrigger" x="2298.00952" y="-654.3437">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_LeaderDead" />
+            <ConditionBlockRef UniqueID="TurfWar_AtWar" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_KillSomeone" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="TurfWar_BuildingBurned" x="-435.111084" y="4065.62769">
+      <Type>BuildingDestroyed</Type>
+      <Conditions>
+        <Condition Type="IsAccomodationBuilding" Subject="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" Object="QuestObject" StringData="TurfWar_BurnLivingQuarters" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="TurfWar_Trigger_LeaderBuried" x="2270.42236" y="354.106323">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsBuried" Subject="QuestObject" SubjectModifier="Leader" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" Object="QuestObject" StringData="TurfWar_PickUpLeaderBody" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="QuestGiver" Object="QuestObject" StringData="TurfWar_PickUpBody" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="TurfWar_LeaderDead" x="1408.59973" y="-489.9791">
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="Leader" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_AtWar" x="1418.64063" y="-788.1638">
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Player" Object="ReferringTo" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_IsKillSomeoneActive" x="-1171.88525" y="-18498.6523">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_KillSomeone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_IsKillEveryoneActive" x="-1202.70862" y="-20069.2168">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_KillEveryone" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_IsKillPickUpLeaderBodyActive" x="-1197.70862" y="-20496.4824">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_PickUpLeaderBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_IsKillPickUpBodyActive" x="-1178.34656" y="-18892.4316">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_PickUpBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_IsKillBringBackBodyActive" x="-1178.34644" y="-19273.7129">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="TurfWar_PickUpBody" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_IsKillBringBackLeaderBodyActive" x="-1193.24023" y="-20973.084">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="TurfWar_PickUpLeaderBody" />
+        <Condition Type="IsBuried" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_Frequency" x="-586.157" y="-4246.574">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" SubjectModifier="Community" Data="1" StringData="TurfWar" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_LeaderNotNeeded" x="-1442.64746" y="-15793.8965" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" Subject="Target" Object="ReferringTo" StringData="TurfWar_KillEveryone" Not="true" />
+        <Condition Type="IsBuried" Subject="ReferringTo" SubjectModifier="Leader" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="TurfWar_TheyDidntSeeMe" x="3411.24658" y="-15435.8164" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityIsAtWarOrDefeated" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="CommunityHasAnyActiveMembers" Subject="ReferringTo" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="TurfWar_KillSomeone" x="478.019531" y="2966.6543" GroupID="TurfWar_QuestGroup" NativeDescription="Kill someone from %1, and bring back the body as proof.  Or maybe any body would do?" SkipNotificationIfAlreadyCompleted="true" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunityHasDeadUnburied" Subject="ReferringTo" Data="1" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_PickUpBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="TurfWar_KillEveryone" x="481.883331" y="1427.961" GroupID="TurfWar_QuestGroup" NativeDescription="Exterminate everyone in %1.  Or maybe you can just pretend you did?" QuestMarkerType="AliveAndNotZombie">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="ReferringTo" Data="1" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_PickUpLeaderBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="TurfWar_BringBackBody" x="2259.0188" y="1598.37256" GroupID="TurfWar_QuestGroup" NativeDescription="Bring the body back to %1.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="TurfWar_PickUpLeaderBody" x="1402.50879" y="1431.18066" GroupID="TurfWar_QuestGroup" NativeDescription="Pick up the body of their leader, %1.">
+      <Params>
+        <SpeechParam Type="CommunityLeaderName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsCarrying" Subject="Player" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Leader" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" BoolData="true" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="SetDontBury" Subject="ReferringTo" SubjectModifier="Leader" />
+      </FailureEvents>
+      <Triggers>
+        <TriggerRef UniqueID="TurfWar_Trigger_LeaderBuried" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="TurfWar_PickUpBody" x="1407.7887" y="2719.66748" GroupID="TurfWar_QuestGroup" NativeDescription="Pick up the body" QuestMarkerType="DeadButUnburied">
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsCarryingCommunityMember" Subject="Player" Object="ReferringTo" SubjectModifier="Community" StringData="Human" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_BringBackBody" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="TurfWar_BurnLivingQuarters" x="431.1007" y="4788.60254" GroupID="TurfWar_QuestGroup" NativeDescription="Burn down a living quarters building belonging to %1, without them finding out it was you." QuestMarkerType="LivingQuarters">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunityHasAccomodation" Subject="ReferringTo" Data="1" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="TurfWar_InformBuildingsBurned" />
+      </CompletionEvents>
+      <Triggers>
+        <TriggerRef UniqueID="TurfWar_BuildingBurned" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="TurfWar_Negotiate" x="482.974823" y="44.87661" GroupID="TurfWar_QuestGroup" NativeDescription="Negotiate a truce between %1 and %2.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Leader" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="TurfWar_LeaderDead" />
+            <ConditionBlockRef UniqueID="TurfWar_AtWar" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="TurfWar_AtWarTrigger" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="TurfWar_InformTruceAgreed" x="3055.11255" y="27.20259" GroupID="TurfWar_QuestGroup" NativeDescription="Inform %1 that the truce has been agreed.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="CeaseFire" Subject="ReferringTo" Object="Actor" />
+      </StartEvents>
+    </Quest>
+    <Quest UniqueID="TurfWar_InformBuildingsBurned" x="1398.8147" y="3819.28955" GroupID="TurfWar_QuestGroup" NativeDescription="Inform %1 that you have burned down the living quarters of %2.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Actor" Object="ReferringTo" SubjectModifier="Community" ObjectModifier="Community" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="TurfWar_QuestGroup" x="-446.3562" y="2200.65918" NativeTitle="Turf War: %1 vs %2">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

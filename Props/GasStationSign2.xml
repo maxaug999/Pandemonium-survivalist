@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Gas Station Sign</NativeName>
+  <Category>Town/Props/Gas Station</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/GasStation/GasStationSign</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0.638297856</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <ExtentsMin>
+    <x>0</x>
+    <y>-1</y>
+  </ExtentsMin>
+  <VisibleFromFarAway>true</VisibleFromFarAway>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+</PropPrototype>

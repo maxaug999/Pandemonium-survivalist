@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>SniperRifle</TypeName>
+  <NativeName>Incendiary Sniper Rifle</NativeName>
+  <NativeDescription>Uses Incendiary Rounds, Ignores Armor</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>12</Weight>
+  <BasePrice>90</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>2</SightRangeModifier>
+  <EquippedModelName>Prefabs/Equipment/SniperRifle/M40A3 Rifle_prefab</EquippedModelName>
+  <LootLocations />
+  <LootableFromLocations />
+  <GiftFor />
+  <BadGiftFor />
+  <InjuryType>Fire</InjuryType>
+  <Damage>0.46</Damage>
+  <DamageBonusPerSkillLevel>0.1</DamageBonusPerSkillLevel>
+  <Range>24</Range>
+  <RangeBonusPerSkillLevel>1</RangeBonusPerSkillLevel>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>14</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.3</MinAimTime>
+  <MaxAimTime>1.5</MaxAimTime>
+  <MinHeadAimTime>0.75</MinHeadAimTime>
+  <MaxHeadAimTime>2</MaxHeadAimTime>
+  <MinLegsAimTime>0.5</MinLegsAimTime>
+  <MaxLegsAimTime>1.75</MaxLegsAimTime>
+  <Recoil>2.5</Recoil>
+  <AimPenaltyWhenMoving>1</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>2</MinTimeBetweenFiring>
+  <AmmoType>IncendiaryAmmo</AmmoType>
+  <MaxAmmo>1</MaxAmmo>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>GlassBottle</TypeName>
+  <NativeName>Biohazard Cocktail</NativeName>
+  <Category>2:Weapons/Throwable</Category>
+  <Weight>2</Weight>
+  <BasePrice>4</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Prefabs/Props/Abandoned Props Pack PBR/PropWineBottle</EquippedModelName>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.5</Damage>
+  <DamageBonusPerSkillLevel>0.1</DamageBonusPerSkillLevel>
+  <Range>16</Range>
+  <FatiguePenaltyWhenAttacking>0.15</FatiguePenaltyWhenAttacking>
+  <AccurateRange>3</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <DamageRadius>2</DamageRadius>
+  <HitEffectName>Prefabs/SpecialEffects/BloodSplatter</HitEffectName>
+</EquipmentPrototype>

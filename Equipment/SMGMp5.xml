@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>AssaultRifle</TypeName>
+  <NativeName>Sub Machine Gun</NativeName>
+  <NativeDescription>Uses Pistol Ammo.</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>7</Weight>
+  <BasePrice>75</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <EquippedModelName>assets/smg.prefab</EquippedModelName>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Bullet</InjuryType>
+  <Damage>0.225</Damage>
+  <DamageBonusPerSkillLevel>0.05</DamageBonusPerSkillLevel>
+  <Range>22</Range>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>4</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1.5</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>1</MaxAimTime>
+  <MinHeadAimTime>0.5</MinHeadAimTime>
+  <MaxHeadAimTime>1.4</MaxHeadAimTime>
+  <MinLegsAimTime>0.25</MinLegsAimTime>
+  <MaxLegsAimTime>1.35</MaxLegsAimTime>
+  <Recoil>0.25</Recoil>
+  <AimPenaltyWhenMoving>0.35</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>0.13</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>PistolAmmo</string>
+  </AmmoTypes>
+  <MaxAmmo>30</MaxAmmo>
+  <FireSounds>
+    <string>assets/magnumfire1.wav</string>
+    <string>assets/magnumfire2.wav</string>
+  </FireSounds>
+  <ReloadReleaseSounds>
+    <string>Sounds\Equipment\Pistol\colt_release</string>
+  </ReloadReleaseSounds>
+  <ReloadInsertSounds>
+    <string>Sounds\Equipment\AssaultRifle\m16_clipinsert1</string>
+  </ReloadInsertSounds>
+  <ReloadSlideSounds>
+    <string>Sounds\Equipment\Pistol\colt_slide</string>
+  </ReloadSlideSounds>
+</EquipmentPrototype>

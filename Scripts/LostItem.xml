@@ -1,0 +1,746 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>5</NextFreeTriggerID>
+  <NextFreeConditionBlockID>4</NextFreeConditionBlockID>
+  <NextFreeQuestID>4</NextFreeQuestID>
+  <NextFreeQuestGroupID>3</NextFreeQuestGroupID>
+  <NextFreeTemplateID>5</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>3713.47021</x>
+    <y>-116.980347</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.575293839</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="LostItem_LostSomeSupplies" x="-5280.83643" y="88.38873" NativeText="I wanted to talk to you.. {:-| I lost some supplies in one of the towns here a while back.  Infected had us surrounded, and I had to abandon my pack to get out.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="LostItem_CanYouHelp" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LostItem_ConditionBlock_CanStart" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="LostItem_CanYouHelp" x="-4291.601" y="26.1690674" NativeText="I've been meaning to go back there and search for something that was in it, in case it's still there.  Can you help?">
+      <Replies>
+        <SpeechRef UniqueID="LostItem_ImDown" />
+        <SpeechRef UniqueID="LostItem_LongGone" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="LostItem_ImDown" x="-3273.97021" y="260.907959" NativeText="I'm down to help with that.">
+      <Replies>
+        <SpeechRef UniqueID="LostItem_CountOnYou" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="LostItem_LongGone" x="-3269.78" y="-636.3015" NativeText="Nah, it'll be long gone by now.">
+      <Replies>
+        <SpeechRef UniqueID="LostItem_IfYouSaySo" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="LostItem_CountOnYou" x="-2017.491" y="628.345337" NativeText=":-) Thanks man, knew I could count on you.">
+      <Events>
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_CarbonArrows" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_FencingBook" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_CraftingBook" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_BodyArmor" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_CookBook" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_Katana" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_CultistManifesto" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_DrillSargeantsCap" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_SilencedPistol" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_Vitamins" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LostItem_IfYouSaySo" x="-2002.58508" y="-978.007446" NativeText="}:-| Right.  I guess so.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="RefusedToHangOut" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LostItem_OldBodyArmor" x="6034.85547" y="430.9045" NativeText="It's this old body armor that I found in a wrecked limo in the early days of the infection.  Very high grade.  It belonged to some important politician, a senator I think, didn't help her much but it saved my ass more times than I can remember and I always repaired it after it got damaged." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="LostItem_KeptForYears" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LostItem_KeptForYears" x="7035.894" y="253.128265" NativeText="I kept it with me for years until I finally left it behind that night in %1.  It'd be awesome to have it back, I always felt a little safer when I was wearing it.">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_EnhancedCooking" x="6049.56934" y="-369.193" NativeText="It was back in %1 that I lost my gourmet recipe book.  Don't ask me why, but that book really enhanced my cooking abilities, even though we don't have most of the ingredients these days.  I'd love the chance to go back there and dig it out." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_BeautifulAntique" x="6082.2334" y="-1337.62988" NativeText="What happened was I had this beautiful antique katana, pretty sure it was the real deal.  Looted from the back of an antique store.  It would cut through anything." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="LostItem_WentOffToPee" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="LostItem_WentOffToPee" x="7061.76367" y="-1351.624" NativeText="I always kept it close by in case of danger, except this one time in %1 when I just went off to pee and what do you know, that's exactly when the infected showed up.">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_YouComing" x="9744.009" y="3992.03076" NativeText=":-) Hey %1 shall we look for my %2?  I'm in %3 right now." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LostItem_MoreImportantThings" x="9751.659" y="3053.93481" NativeText="}:-| Should I just search all over %1 for my %2 by myself?  It's gonna be difficult to find, but I guess you had more important things to do." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LostItem_WithoutMe" x="9736.812" y="4970.554" NativeText="}:-| Oh you went to %1?  That's cool.  I guess you could search for my %2 while you're there, but I don't know how you're gonna find it without me." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LostItem_ICouldComeOver" x="9734.3" y="5904.858" NativeText=":-) Hey %1 you're in %2?  I could come over there and look for my %3?" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LostItem_WhereILostMy" x="9794.706" y="8677.344" NativeText="%1.  This is where I lost my %2.  It'll be round here somewhere but I don't know exactly where, it was chaotic that night and the infected may have messed everything up since then." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LostItem_TakenBySurprise" x="9798.089" y="7626.16162" NativeText="%1.  This is where I lost my %2.  8-| Watch out for infected, we don't want to get taken by surprise like we were that night." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LostItem_PaybackTime" x="9788.812" y="6792.53174" NativeText="%1.  }:-) It's time to pay back those infected for making me lose my %2!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LostItem_FoundIt" x="9755.431" y="1960.60986" NativeText=":-) We found it!  My %1!" MustFinish="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <Continues>
+        <SpeechRef UniqueID="LostItem_SoCute" />
+        <SpeechRef UniqueID="LostItem_AnOffer" />
+        <SpeechRef UniqueID="LostItem_HearSomething" />
+        <SpeechRef UniqueID="LostItem_ThanksForHelping" />
+      </Continues>
+      <Events>
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LostItem_AnOffer" x="11079.6523" y="4163.619" NativeText="Now that we're alone here... {:-| I'm sorry about this, man.  You know I like and respect you personally but... :-| they made me an offer I couldn't refuse." MustFinish="true" Run="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" Not="true" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LostItem_IsEvil_Fickle" />
+            <ConditionBlockRef UniqueID="LostItem_IsEvil_NotFickle" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="AreApparentlyAloneTogether" Subject="Actor" Object="Target" Data="40" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Betrayed" />
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_Template_Hunters" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LostItem_ThanksForHelping" x="11042.8154" y="692.902344" NativeText=":-) Thanks for helping me out!  Let's go back home." MustFinish="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="HungOut" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Assisted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LostItem_SoCute" x="11071.6709" y="5351.00537" NativeText="It's so cute that you went out of your way to help me, because you wanted us to be friends." MustFinish="true" Run="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInvisibleStrain" Subject="Actor" />
+        <Condition Type="AreApparentlyAloneTogether" Subject="Actor" Object="Target" Data="40" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="ActivateInvisibleStrain" Subject="Actor" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LostItem_HearSomething" x="11077.28" y="1891.773" NativeText=":-) Thanks for helping me.. 8-| wait, do you hear something?" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" Data2="1" StringData="ZombieAttack" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SpawnTemplate" StringData="LostItem_Template_Zombies" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LostItem_HidingSomewhere" x="15090.8115" y="1207.50427" NativeText="{:-| Shit, those were the infected that attacked us before!  Must have been hiding somewhere.  Jesus, I'm glad you were around to help out this time." MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true" AIOverridesListenerControl="true">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="HungOut" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Protected" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LostItem_BestDIYManual" x="6018.403" y="1093.16431" NativeText="It was the best D.I.Y. manual I ever found, gave me all sorts of good ideas.  I've been really off my game since I lost it in %1." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_BookAboutFencing" x="6000.90771" y="1745.94153" NativeText="It's a book about fencing that I left in %1.  I was using it to improve my bladework.  Granted the raiders don't play by FIE rules by they'd learn a lot if they did - their technique is very sloppy." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_MyCarbonArrows" x="5966.53467" y="2433.27954" NativeText="I lost my set of carbon fibre hunting arrows in %1.  They'd cut through anything, and never broke on me. {:-| I always retrieved them after use, every time, and they never failed me.  So I gotta go retrieve them now!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_Loonabomber" x="6088.382" y="-2087.39258" NativeText="It's my copy of the Loonabomber manifesto, lost it in %1. /:-) Yeah I know, but it turned out to be a very useful survival guide!  Half of it is just ranting about how modern industrial society is stealing our souls, but the other half taught me how to strip a rifle in 15 seconds flat." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="LostItem_InHisElement" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="LostItem_InHisElement" x="6975.662" y="-2440.705" NativeText="Wonder what happened to that guy anyway?  He must be in his element now!">
+      <Replies>
+        <SpeechRef UniqueID="LostItem_DiedOfDysentry" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="LostItem_DiedOfDysentry" x="7926.696" y="-2537.36377" NativeText="Nah, I heard he died of dysentery." />
+    <Speech UniqueID="LostItem_ReallyNiceSilencedPistol" x="6112.147" y="-4060.21753" NativeText="I had a pistol with a really nice silencer attached.  You can imagine how useful that was! {:-| I'm kicking myself that I put it down for a few minutes in %1.  They're very hard to find nowadays." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_MyVitamins" x="6118.41846" y="-4882.90625" NativeText="I lost my supplements in %1.  Can you believe it?  The only thing standing between me and vitamin defficiency!  Getting them back would do wonders for my wellbeing." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="LostItem_DrillSargeant" x="6095.218" y="-3108.84229" NativeText="{:-| It's this drill sargeant's cap that I lost in %1.  Inherited it from my dad, who got it from his army days.  Story is he had this bunk buddy who didn't take to the military life, ended up shooting his drill sargeant, then shot himself in the head.  Pop kept the guy's hat and passed it to me.  It's got sentimental value." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="LostItem_QuestGiverCloseToTown" x="8669.341" y="3887.12036" TriggerRepeatTime="600">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="QuestObject" ObjectModifier="Owner" Data="32" />
+        <Condition Type="DistanceToIsLessThan" Subject="QuestSeeker" Object="QuestObject" ObjectModifier="Owner" Data="64" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_YouComing" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_MoreImportantThings" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="LostItem_QuestSeekerCloseToTown" x="8653.783" y="5479.263" TriggerRepeatTime="600">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="QuestSeeker" Object="QuestObject" ObjectModifier="Owner" Data="32" />
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="QuestObject" ObjectModifier="Owner" Data="64" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_ICouldComeOver" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_WithoutMe" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="LostItem_BothCloseToTown" x="8647.874" y="7307.21631" TriggerRepeatTime="600">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="QuestSeeker" Object="QuestObject" ObjectModifier="Owner" Data="32" />
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="QuestObject" ObjectModifier="Owner" Data="32" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_WhereILostMy" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_TakenBySurprise" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="Speak" Subject="QuestGiver" Object="QuestSeeker" ThirdParty="QuestObject" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_PaybackTime" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="SetConcealed" Subject="QuestObject" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="LostItem_Trigger_FoundItem" x="7885.62842" y="1327.33044">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="HasItem" Subject="QuestSeeker" Object="QuestObject" SubjectModifier="Community" />
+        <Condition Type="HasItem" Subject="QuestGiver" Object="QuestObject" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="QuestGiver" Object="QuestObject" ThirdParty="QuestSeeker" StringData="LostItem_Quest_FindItem" BoolData="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="QuestGiver" Object="QuestObject" ThirdParty="QuestSeeker" StringData="LostItem_Quest_GiveItem" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="LostItem_ConditionBlock_CanStart" x="-6252.303" y="8.980988">
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="QuestIsDiscoveredGivenByWithSeeker" Subject="Actor" ThirdParty="Target" StringData="LostItem_Quest_FindItem" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" StringData="Chicken_Quest_GoTo" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Friendship_AnyQuestsActive" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" />
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" Data="7" StringData="FlirtedSuccessfullyWith" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" Data="7" StringData="RefusedToHangOut" Not="true" />
+        <Condition Type="HasTravelledFromAnotherMap" Subject="Actor" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="LostItem_DefeatedHunters" x="15064.6221" y="3154.765" Type="Or">
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="ReferringTo" Data="1" Not="true" />
+        <Condition Type="CommunityIsAtWar" Subject="Target" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="LostItem_IsEvil_Fickle" x="12012.6387" y="4243.15332">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="2" StringData="SecretlyEvil" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="LostItem_IsEvil_NotFickle" x="12005.6855" y="3681.70166">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" Not="true" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="4" StringData="SecretlyEvil" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="LostItem_Quest_FindItem" x="5969.145" y="4571.10742" GroupID="LostItem_QuestGroup" NativeDescription="%1 wants %2 to go with %3 to the town and search for the %4.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" Modifier="Owner" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="HasItem" Subject="Actor" Object="ReferringTo" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="SetGifted" Subject="ReferringTo" BoolData="true" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_FoundIt" />
+          </Speeches>
+        </StoryEvent>
+      </CompletionEvents>
+      <Triggers>
+        <TriggerRef UniqueID="LostItem_BothCloseToTown" />
+        <TriggerRef UniqueID="LostItem_QuestSeekerCloseToTown" />
+        <TriggerRef UniqueID="LostItem_QuestGiverCloseToTown" />
+        <TriggerRef UniqueID="LostItem_Trigger_FoundItem" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="LostItem_Quest_DefeatZombies" x="14047.9443" y="1353.60071" GroupID="LostItem_QuestGroup_DefeatZombies" NativeDescription="Defeat the infected!" QuestMarkerType="Alive">
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="ReferringTo" Data="1" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_HidingSomewhere" />
+          </Speeches>
+        </StoryEvent>
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="LostItem_Quest_GiveItem" x="8776.8" y="1389.24109" GroupID="LostItem_QuestGroup" NativeDescription="Give the %1 to %2.">
+      <Params>
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="HasItem" Subject="Actor" Object="ReferringTo" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="SetGifted" Subject="ReferringTo" BoolData="true" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_FoundIt" />
+          </Speeches>
+        </StoryEvent>
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="LostItem_Quest_DefeatHunters" x="14072.7539" y="3337.02319" GroupID="LostItem_QuestGroup_DefeatHunters" NativeDescription="Defeat the bounty hunters!" QuestMarkerType="Alive">
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LostItem_DefeatedHunters" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="ExfilHeliTeam" Subject="ReferringTo" />
+      </CompletionEvents>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="LostItem_QuestGroup" x="5965.169" y="5148.17" NativeTitle="Find %1 %2">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="Actor" />
+        <SpeechParam Type="ItemName" Subject="ReferringTo" />
+      </Params>
+    </QuestGroup>
+    <QuestGroup UniqueID="LostItem_QuestGroup_DefeatZombies" x="14050.2061" y="1932.07959" NativeTitle="You've stumbled across the infected that attacked %1 earlier.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+    <QuestGroup UniqueID="LostItem_QuestGroup_DefeatHunters" x="14075.0156" y="3915.5022" NativeTitle="%1 sold you out!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates>
+    <Template UniqueID="LostItem_BodyArmor" x="1498.883" y="1629.37109">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>HighGradeBodyArmor</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="3" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_OldBodyArmor" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_CookBook" x="1493.96509" y="305.6307">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>GourmetCookBook</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="4" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_EnhancedCooking" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_Katana" x="1476.655" y="-911.6994">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>AntiqueKatana</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="5" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_BeautifulAntique" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_Template_Zombies" x="12084.2549" y="1364.646" NativeCommunityName="Infected">
+      <Type>Community</Type>
+      <SpawnLocation>PreferSourceTown</SpawnLocation>
+      <CommunityType>TemporaryZombie</CommunityType>
+      <Children>
+        <TemplateChild UniqueID="LostItem_Template_Zombie" Min="4" Max="6">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_DefeatZombies" />
+        <StoryEvent Type="Attack" Subject="ReferringTo" Object="Actor" />
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_Template_Zombie" x="12976.5771" y="1640.988">
+      <Type>Character</Type>
+      <LootLocation>Zombie</LootLocation>
+      <Infection>Red</Infection>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>2</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="LostItem_Template_Hunters" x="12078.8652" y="3082.49341" NativeCommunityName="Bounty Hunters">
+      <Type>Community</Type>
+      <SpawnLocation>PreferSourceTown</SpawnLocation>
+      <CommunityType>TemporaryLooter</CommunityType>
+      <PlayerSurrenderDisabled>true</PlayerSurrenderDisabled>
+      <Children>
+        <TemplateChild UniqueID="LostItem_Template_Hunter" Min="2" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_DefeatHunters" />
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverCommunityName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="SurpriseSaveGameOverwrite" />
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_Template_Hunter" x="12894.4961" y="3559.587">
+      <Type>Character</Type>
+      <LootLocation>Survivor</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="LostItem_CraftingBook" x="1499.96021" y="2965.76465">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>AdvancedCraftingBook</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="2" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_BestDIYManual" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_FencingBook" x="1508.5697" y="4246.20752">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>AdvancedFencingBook</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="1" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_BookAboutFencing" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_CarbonArrows" x="1508.58716" y="5531.231">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>CarbonArrow</EquipmentPrototypeName>
+      <Amount>10</Amount>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_MyCarbonArrows" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_CultistManifesto" x="1463.25793" y="-2201.36">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>CultistManifesto</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="6" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_Loonabomber" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_DrillSargeantsCap" x="1467.94714" y="-3467.46021">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>DrillSargeantsCap</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="7" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_DrillSargeant" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_SilencedPistol" x="1466.38379" y="-4710.114">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>SilencedPistol</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="8" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_ReallyNiceSilencedPistol" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="LostItem_Vitamins" x="1467.947" y="-5954.33057">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>Vitamins</EquipmentPrototypeName>
+      <Amount>10</Amount>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Concealed>true</Concealed>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="10" Data2="9" StringData="LostItem" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="LostItem_Quest_FindItem" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="LostItem_MyVitamins" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+  </Templates>
+  <Invaders />
+</Script>

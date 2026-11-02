@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>AnimalDrinkerProp</TypeName>
+  <NativeName>Drinking Bowl</NativeName>
+  <Category>Camp/Props</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Bowl</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <CoverType>None</CoverType>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <LiquidCapacity>50</LiquidCapacity>
+  <LiquidType>Water</LiquidType>
+  <GrabbableEquipmentType>Bowl</GrabbableEquipmentType>
+</PropPrototype>

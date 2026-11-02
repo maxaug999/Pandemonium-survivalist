@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Veggie Spring Rolls</NativeName>
+  <NativeDescription>Vegetable Wrapped with Vegetable</NativeDescription>
+  <Category>5:Food/Processed</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>2</BasePrice>
+  <Nutrition>0.2</Nutrition>
+  <Tastiness>45</Tastiness>
+  <LootableFromLocations />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

@@ -1,0 +1,412 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>2</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-1458.12915</x>
+    <y>-1110.309</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.598318934</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Gossip_FoodStocksGood" x="-189.475571" y="1602.33313" NativeText=":-) Our food stocks are looking pretty good right now!  I reckon we'll get through the winter... {:-| as long as we don't attract too many looters.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="150" />
+        <Condition Type="DayOfYearIsOnOrAfter" Data="42" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_FoodStocksOkay" x="-180.546051" y="535.6168" NativeText="With the food supplies that we've got, I think we'll scrape by this winter.  It's not great, but it's enough.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="150" Not="true" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="100" />
+        <Condition Type="DayOfYearIsOnOrAfter" Data="42" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_FoodStocksLow" x="-204.141449" y="-678.2517" NativeText="{:-| I'm pretty worried about our food stocks.  By my calculation, we don't have enough for the winter.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_WhatsTheMatter" />
+        <SpeechRef UniqueID="Gossip_GetYouSupplies" />
+        <SpeechRef UniqueID="Food_SucksForYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="100" Not="true" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="50" />
+        <Condition Type="DayOfYearIsOnOrAfter" Data="42" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_FoodStocksDesperate" x="-195.6518" y="-2115.66968" NativeText="{:-( Our food situation is looking desperate!  We're doomed!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_WhatsTheMatter" />
+        <SpeechRef UniqueID="Gossip_GetYouSupplies" />
+        <SpeechRef UniqueID="Food_SucksForYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="50" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_GetYouSupplies" x="1110.37207" y="1156.49878" NativeText="I might be able to get you some supplies.">
+      <Replies>
+        <SpeechRef UniqueID="Food_WhatsYourAngle" />
+        <SpeechRef UniqueID="Food_WorkingTogether" />
+        <SpeechRef UniqueID="Food_AnyFood" />
+        <SpeechRef UniqueID="Food_Markup" />
+        <SpeechRef UniqueID="Food_PayYou" />
+        <SpeechRef UniqueID="Food_AnythingYouCanSell" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Target" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Target" StringData="Food_Quest_FindFood" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Extortion_LowStocks" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Food_SucksForYou" x="1092.93665" y="-1628.945" NativeText="That sucks for you.">
+      <Replies>
+        <SpeechRef UniqueID="Food_OneDay" />
+        <SpeechRef UniqueID="Food_Yeah" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Target" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Target" StringData="Food_Quest_FindFood" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Extortion_LowStocks" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Food_OneDay" x="2171.20044" y="-1604.43909" NativeText="}:-| Thanks for your support, man.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_Yeah" x="2172.834" y="-2313.47852" NativeText="}:-| Yeah, it does." />
+    <Speech UniqueID="Food_PayYou" x="2285.745" y="-259.362244" NativeText="{:-) Folks here would appreciate that.  Our leader %1 would pay you some gold for it.">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_AnythingYouCanSell" x="2280.688" y="-1210.43738" NativeText="Anything you can sell us would be appreciated." />
+    <Speech UniqueID="Food_Markup" x="2303.88672" y="880.8456" NativeText="}:-| Yeah, and at a high markup I assume.  Well, talk to our leader, %1, about it.">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="Extortion" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_AnyFood" x="2311.17725" y="1758.348" NativeText="{:-| Any food you can find, I'd be prepared to pay a fair price for, out of what's left of our emergency gold stash.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Food_Quest_FindFood" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_WorkingTogether" x="2322.91943" y="2971.492" NativeText="{:-) You're just what we needed!  It's by working together we're gonna survive this.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Food_Quest_FindFood" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_WhatsYourAngle" x="2324.78149" y="4133.533" NativeText="}:-| What's your angle?  Yeah, sure, let's see what you got, beggars can't be choosers.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="Extortion" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Food_Quest_FindFood" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_LowOnFood" x="-215.975189" y="4606.107" NativeText="We're low on food.  I know %1 would pay you something if you could find some for us.">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="Food_Quest_FindFood" Not="true" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="100" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Food_LastTheWinter" x="-206.972748" y="3230.55933" NativeText="{:-| The way things are going, I don't know if we've got enough food supplies to last the winter.  We could use your help.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_WhatsTheMatter" />
+        <SpeechRef UniqueID="Gossip_GetYouSupplies" />
+        <SpeechRef UniqueID="Food_SucksForYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="Food_Quest_FindFood" Not="true" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="100" Not="true" />
+        <Condition Type="DayOfYearIsOnOrAfter" Data="42" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Food_BroughtFood" x="4863.703" y="1317.93848" NativeText=":-) I brought you some food for your winter stocks!" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="Food_GreatNews" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="Food_Quest_FindFood" />
+        <Condition Type="HasAnythingEdible" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_GreatNews" x="5853.63" y="1355.47412" NativeText="We sure could use it.  Of course, we're not exactly rolling in gold either..">
+      <Replies>
+        <SpeechRef UniqueID="Food_NoShakedown" />
+        <SpeechRef UniqueID="Food_MyGift" />
+        <SpeechRef UniqueID="Food_NormalPrice" />
+        <SpeechRef UniqueID="Food_DoublePrice" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Food_MyGift" x="7051.543" y="2375.915" NativeText=":-) It's my gift to you all!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_WhatGame" />
+        <SpeechRef UniqueID="Food_ApocalypseNeedsYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsLooter" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_DoublePrice" x="7063.60547" y="856.255859" NativeText="It's gonna be double the regular price... this stuff wasn't easy to get hold of.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_TheCatch" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Food_NormalPrice" x="7052.32861" y="1544.29041" NativeText="Just pay me the normal price.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OpenSwapSuppliesScreen" Subject="Actor" Object="Target" StringData="SellingFood" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_ApocalypseNeedsYou" x="8251.024" y="2202.28662" NativeText="{:-) The apocalypse needs more people like you!">
+      <Events>
+        <StoryEvent Type="OpenSwapSuppliesScreen" Subject="Target" Object="Actor" StringData="GivingFood" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_TheCatch" x="8279.634" y="847.6732" NativeText="}:-| ...and there's the catch.">
+      <Events>
+        <StoryEvent Type="OpenSwapSuppliesScreen" Subject="Target" Object="Actor" StringData="SellingFoodMarkedUp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_WhatGame" x="8240.844" y="3170.6853" NativeText="}:-| Really, what game are you playing..?  :-| Ah well, don't look a gift horse in the teeth.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OpenSwapSuppliesScreen" Subject="Target" Object="Actor" StringData="GivingFood" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_WhatsTheMatter" x="1245.479" y="5813.738" NativeText="}:-| What's the matter, is robbing helpless travellers not working out for you?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_Exempt" />
+        <SpeechRef UniqueID="Food_Exempt2" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsLooter" Subject="Target" />
+        <Condition Type="QuestIsActive" Subject="Target" StringData="Food_Quest_FindFood" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_Exempt" x="2317.766" y="6103.049" NativeText="}:-| Ah.. right, I can exempt you from the toll for crossing our land for a while if you help us out on this.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Food_Quest_FindFood" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_Exempt2" x="2315.96875" y="5058.308" NativeText="}:-| Uh.. you know, %1 could exempt you from the toll for crossing our land if you help us out, talk to %2 about that.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_NoShakedown" x="7069.834" y="3546.961" NativeText="I'll help you out, but I don't want you asking me for more bullshit 'tolls' to cross your land.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_MoreHassle" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsLooter" Subject="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Food_MoreHassle" x="8244.938" y="3863.433" NativeText="{:-) That's real big of you!  You won't get any more hassle from us... }:-| for a while anyway.">
+      <Events>
+        <StoryEvent Type="OpenSwapSuppliesScreen" Subject="Target" Object="Actor" StringData="GivingFood" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Food_PrettyLow" x="-960.7073" y="3226.84375" NativeText="{:-| Our food stocks are looking pretty low right now.  We could use your help.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_WhatsTheMatter" />
+        <SpeechRef UniqueID="Gossip_GetYouSupplies" />
+        <SpeechRef UniqueID="Food_SucksForYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="Food_Quest_FindFood" Not="true" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="100" Not="true" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="50" />
+        <Condition Type="DayOfYearIsBefore" Data="42" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Food_DangerouslyLow" x="-1693.86792" y="3240.58032" NativeText="{:-| Our food stocks are dangerously low!  We could really use your help.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Food_WhatsTheMatter" />
+        <SpeechRef UniqueID="Gossip_GetYouSupplies" />
+        <SpeechRef UniqueID="Food_SucksForYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="QuestIsActive" Subject="Actor" StringData="Food_Quest_FindFood" Not="true" />
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="50" Not="true" />
+        <Condition Type="DayOfYearIsBefore" Data="42" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="Food_Quest_FindFood" x="3831.31958" y="1748.99817" GroupID="Food_QuestGroup" NativeDescription="Bring food to %1.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="CommunityNutritionLevelIsAtLeast" Subject="Actor" Data="125" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Food_QuestGroup" x="3834.27051" y="2272.749" NativeTitle="Help %1 survive the winter">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

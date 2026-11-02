@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Sandbags</NativeName>
+  <Category>Town/Props</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Sandbags</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <CoverType>WaistHigh</CoverType>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <ExtentsMin>
+    <x>0</x>
+    <y>-1</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>0</x>
+    <y>2</y>
+  </ExtentsMax>
+  <CanBeDemolished>true</CanBeDemolished>
+</PropPrototype>

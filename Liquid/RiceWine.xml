@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Rice Wine</NativeName>
+  <NativeDescription>It has alcohol in it.</NativeDescription>
+  <Category>5:Food/Drink/Alcohol</Category>
+  <Col>
+    <r>246</r>
+    <g>248</g>
+    <b>237</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.375</BasePricePerFlOz>
+  <WaterContent>-50</WaterContent>
+  <AlcoholContent>50</AlcoholContent>
+  <Flammable>true</Flammable>
+  <CanPourIntoBottles>true</CanPourIntoBottles>
+  <GiftFor>
+    <string>Alcoholic</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Nervous</string>
+  </BadGiftFor>
+  <GiftAmount>50</GiftAmount>
+</LiquidPrototype>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Tomato</NativeName>
+  <NativeDescription>You can eat it pretty much raw</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>0.3</Weight>
+  <BasePrice>1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.2</Nutrition>
+  <Tastiness>20</Tastiness>
+  <SeedForPlantType>TomatoPlant</SeedForPlantType>
+  <LootableFromLocations />
+  <TypicalLootAmount>2</TypicalLootAmount>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

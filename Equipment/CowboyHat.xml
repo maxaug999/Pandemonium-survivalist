@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cowboy Hat</NativeName>
+  <Category>4:Clothing/Hats</Category>
+  <Weight>2</Weight>
+  <BasePrice>2</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>5</SightRangeModifier>
+  <ClothingType>Hat</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GasStation</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations />
+  <MaterialVariations>
+    <string>CowboyHat/Regular</string>
+    <string>CowboyHat/Detective</string>
+    <string>CowboyHat/Woven</string>
+    <string>CowboyHat/Poor</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:CowboyHat</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:CowboyHat</FemaleMeshName>
+</EquipmentPrototype>

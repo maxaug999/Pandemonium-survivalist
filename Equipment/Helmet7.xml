@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Riot Helmet</NativeName>
+  <NativeDescription>Protect your head from bullets and pretty much anything else. 10 Damage absorption from zed.</NativeDescription>
+  <Category>4:Clothing/Armor/Helmets</Category>
+  <Weight>5</Weight>
+  <BasePrice>12</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>-5</SightRangeModifier>
+  <ClothingType>Hat</ClothingType>
+  <Scarcity>Uncommon</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations3 />
+  <MaterialVariations>
+    <string>Army Headgear Pack/helmet 7-a</string>
+    <string>Army Headgear Pack/helmet 7-c</string>
+  </MaterialVariations>
+  <MaleMeshName>M_Helmet6:helmet_7</MaleMeshName>
+  <FemaleMeshName>F_Helmet6:helmet_7</FemaleMeshName>
+  <DamageAbsorption>10</DamageAbsorption>
+</EquipmentPrototype>

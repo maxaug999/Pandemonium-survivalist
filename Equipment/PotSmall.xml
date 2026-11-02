@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Small Pot</NativeName>
+  <NativeDescription>You Win! its a useless small version of pot</NativeDescription>
+  <Category>7:Containers</Category>
+  <Weight>3</Weight>
+  <BasePrice>2</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <LiquidCapacity>50</LiquidCapacity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GeneralStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

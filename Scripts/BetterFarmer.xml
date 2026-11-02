@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>786.5897</x>
+    <y>-84.33912</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5666427</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="AssignRole_Farmer_M" x="329.518127" y="-99.5174561" NativeText=":-) I think I'll be a better farmer!" Situation="OpenerToSelf" Importance="Low" RepeatTime="9600">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="AssignRole_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" Data="1" />
+        <Condition Type="HasSkill" Subject="Actor" Data="3" StringData="Farming" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsAnyoneFarming" Subject="Actor" SubjectModifier="Community" />
+        <Condition Type="IsDay" />
+        <Condition Type="IsMale" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRole" Subject="Actor" StringData="Farmer" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AssignRole_Farmer_F" x="1123.69287" y="-107.570908" NativeText=":-) I think I'll be a better farmer!" Situation="OpenerToSelf" Importance="Low" RepeatTime="9600">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="AssignRole_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" Data="1" />
+        <Condition Type="HasSkill" Subject="Actor" Data="3" StringData="Farming" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsAnyoneFarming" Subject="Actor" SubjectModifier="Community" />
+        <Condition Type="IsNight" />
+        <Condition Type="IsFemale" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRole" Subject="Actor" StringData="Farmer" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AssignRole_Farmer_NoFarmer" x="-422.5756" y="-118.369553" NativeText=":-) We need a farmer!" Situation="OpenerToSelf" Importance="Low" RepeatTime="9600">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="AmbientLooter" Not="true" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="HunterLooter" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="AssignRole_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="CommunityHasAnyoneWithRole" Subject="Actor" StringData="Farmer" Not="true" />
+        <Condition Type="IsAnyoneFarming" Subject="Actor" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRole" Subject="Actor" StringData="Farmer" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

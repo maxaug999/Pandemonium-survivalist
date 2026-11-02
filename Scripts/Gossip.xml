@@ -1,0 +1,1180 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>33</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>4</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2668.927</x>
+    <y>4894.30566</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.7203188</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Gossip_WhatsUp" x="-4090.75073" y="-3610.47021" NativeText="What's up?" Situation="Gossip" Importance="Low" RepeatTime="600" SpecialBehaviour="Gossip">
+      <Replies>
+        <SpeechRef UniqueID="Gossip_Nothin" />
+        <SpeechRef UniqueID="Gossip_WhiteStrain" />
+        <SpeechRef UniqueID="Gossip_RedStrain" />
+        <SpeechRef UniqueID="Gossip_BlueStrain" />
+        <SpeechRef UniqueID="Gossip_GreenStrain" />
+        <SpeechRef UniqueID="Gossip_Bleeding" />
+        <SpeechRef UniqueID="Gossip_FeelingFaint" />
+        <SpeechRef UniqueID="Gossip_InjuredLeg" />
+        <SpeechRef UniqueID="Gossip_InjuredArm" />
+        <SpeechRef UniqueID="Gossip_InjuredHead" />
+        <SpeechRef UniqueID="Gossip_InjuredTorso" />
+        <SpeechRef UniqueID="Gossip_Hungry" />
+        <SpeechRef UniqueID="Gossip_Starving" />
+        <SpeechRef UniqueID="Gossip_Thirsty" />
+        <SpeechRef UniqueID="Gossip_Parched" />
+        <SpeechRef UniqueID="Gossip_Tired" />
+        <SpeechRef UniqueID="Gossip_Exhausted" />
+        <SpeechRef UniqueID="Gossip_Fatigue" />
+        <SpeechRef UniqueID="Gossip_WabbitSeason" />
+        <SpeechRef UniqueID="Gossip_Wildlife" />
+        <SpeechRef UniqueID="Gossip_Chilli" />
+        <SpeechRef UniqueID="Gossip_FancyFood" />
+        <SpeechRef UniqueID="Gossip_Snacks" />
+        <SpeechRef UniqueID="Gossip_StiffDrink" />
+        <SpeechRef UniqueID="Gossip_Books_Nerd" />
+        <SpeechRef UniqueID="Gossip_Books_Normie" />
+        <SpeechRef UniqueID="Gossip_WishTheyWereHere" />
+        <SpeechRef UniqueID="Gossip_Friend" />
+        <SpeechRef UniqueID="Gossip_GotMyBack" />
+        <SpeechRef UniqueID="Gossip_Pissed" />
+        <SpeechRef UniqueID="Gossip_SayAnything" />
+        <SpeechRef UniqueID="Gossip_SeeingEachOther_GoingWell" />
+        <SpeechRef UniqueID="Gossip_SeeingEachOther_GoingBadly" />
+        <SpeechRef UniqueID="Gossip_GotMyEyeOnYou" />
+        <SpeechRef UniqueID="Gossip_Scumbag" />
+        <SpeechRef UniqueID="Gossip_NothingToSay" />
+        <SpeechRef UniqueID="Gossip_FuckOff" />
+        <SpeechRef UniqueID="Gossip_StayAwayFromMe" />
+        <SpeechRef UniqueID="Gossip_LetsNotBeFriends" />
+        <SpeechRef UniqueID="Gossip_LeaveMeAlone" />
+        <SpeechRef UniqueID="Gossip_Nothing" />
+        <SpeechRef UniqueID="Gossip_UnfinishedBusiness" />
+        <SpeechRef UniqueID="Gossip_BoozeIsAlright" />
+        <SpeechRef UniqueID="Gossip_GoodGuy" />
+        <SpeechRef UniqueID="Gossip_NeededThat" />
+        <SpeechRef UniqueID="Gossip_BloodAlcoholConcentration" />
+        <SpeechRef UniqueID="Gossip_Burp" />
+        <SpeechRef UniqueID="Gossip_SettlingIn" />
+        <SpeechRef UniqueID="Gossip_GladToBeWithYou" />
+        <SpeechRef UniqueID="Gossip_StuckHere" />
+        <SpeechRef UniqueID="Gossip_ThingsWillBeBetter" />
+        <SpeechRef UniqueID="Gossip_ThingsFallApart" />
+        <SpeechRef UniqueID="Gossip_GetOutMyWay" />
+        <SpeechRef UniqueID="Gossip_EverythingIsFine" />
+        <SpeechRef UniqueID="Gossip_DontNeedYourBullshit" />
+        <SpeechRef UniqueID="Gossip_EachOthersBusiness" />
+        <SpeechRef UniqueID="Gossip_PutOnThePounds" />
+        <SpeechRef UniqueID="Gossip_TooOldToBeUseful" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" ObjectModifier="Community" StringData="Chatted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_WhiteStrain" x="2214.39478" y="2939.087" NativeText=":-( I'm infected.  The eyes... they were white.  When I turn... make it quick." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="White" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_RedStrain" x="2967.102" y="2930.136" NativeText="8-[ I've been bitten!  It's Red Strain!  Help me!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="9" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="Red" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_BlueStrain" x="3743.43359" y="2923.4895" NativeText=":-( I've been bitten!  Blue eyes.  I need some antigen, fast." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="8" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="Blue" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_GreenStrain" x="4528.581" y="2916.95142" NativeText=":-( I've been bitten!  I need some Green Strain antigen." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="7" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInfectedInjuryWithStrain" Subject="Actor" StringData="Green" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Bleeding" x="2207.62378" y="2051.33" NativeText="{:-| I'm bleeding out!  I need medical attention!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUnbandagedInjury" Subject="Actor" StringData="White" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_FeelingFaint" x="2993.51221" y="2042.53491" NativeText=":-( Feeling... faint.  Need.. bandages." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="6" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUnbandagedInjury" Subject="Actor" StringData="White" />
+        <Condition Type="HasBloodLoss" Subject="Actor" Data="0.75" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_InjuredLeg" x="2222.328" y="1209.11426" NativeText=":-( My leg is killing me." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Or" Subject="Actor" StringData="LeftLeg">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Gossip_InjuredLeftLeg" />
+            <ConditionBlockRef UniqueID="Gossip_InjuredRightLeg" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_InjuredArm" x="2216.884" y="301.365631" NativeText=":-( My arm is killing me." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Or" Subject="Actor" StringData="LeftLeg">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Gossip_InjuredLeftArm" />
+            <ConditionBlockRef UniqueID="Gossip_InjuredRightArm" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_InjuredHead" x="2213.84644" y="-576.6136" NativeText=":-( Oh my head hurts.  Ugh." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInjuryInBodyLocation" Subject="Actor" StringData="Head" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_InjuredTorso" x="3129.879" y="-606.6966" NativeText=":-( I feel like I've been run over by a bus." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasInjuryInBodyLocation" Subject="Actor" StringData="Torso" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Hungry" x="2233.13721" y="-1430.75635" NativeText="I'm hungry!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" PriorityFactor="3" />
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasHunger" Subject="Actor" Data="2" StringData="Head" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Starving" x="3147.17725" y="-1483.34717" NativeText=":-( I'm starving... need... food." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasHunger" Subject="Actor" Data="3" StringData="Head" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Nothin" x="2211.10815" y="3552.19458" NativeText="Nothin'." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Parched" x="3154.78979" y="-2336.616" NativeText=":-( So thirsty... head hurts... need water..." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasThirst" Subject="Actor" Data="1.5" StringData="Head" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Thirsty" x="2224.43555" y="-2361.116" NativeText="I'm thirsty!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" PriorityFactor="3" />
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasThirst" Subject="Actor" Data="1" StringData="Head" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Exhausted" x="3133.47534" y="-3280.88745" NativeText=":-(  So tired... need... sleep." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSleepDeprivation" Subject="Actor" Data="3" StringData="Head" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Tired" x="2236.64136" y="-3266.82983" NativeText="I'm tired!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" PriorityFactor="3" />
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasSleepDeprivation" Subject="Actor" Data="2" StringData="Head" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Fatigue" x="2239.15625" y="-4221.02637" NativeText="Whew!  Need to catch my breath." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasFatigue" Subject="Actor" Data="0.75" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_WabbitSeason" x="2244.54443" y="-5011.07275" NativeText=":-) Shot any bunnies lately?  My belly's a-rumblin'." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+        <Condition Type="HasHunger" Subject="Actor" Data="1" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Chilli" x="2234.44971" y="-6144.0625" NativeText="Wanna know the best way to disguise the taste of the food round here?  Add some chilli, if you can find it." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Likes Spicy Food" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Gossip_FancyFood" x="3073.43262" y="-6064.297" NativeText="}:-| I hate when people put chilli in the food... just because we don't have salt and pepper anymore for flavor doesn't mean you can replace it with chilli." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Likes Bland Food" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Gossip_StiffDrink" x="2235.70264" y="-6878.415" NativeText="I could do with a good stiff drink to take my mind off things... something quality though, it's getting harder and harder to scavenge the good stuff." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Alcoholic" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Gossip_Books_Nerd" x="3112.8877" y="-6926.67871" NativeText="I'm on the lookout for new books to read... anything with a dark lord and a map in the front works for me." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Nerd" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Gossip_Books_Normie" x="3926.896" y="-6960.542" NativeText="I could use a novel to pass the time... nothing too weird though." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Normie" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Gossip_SayAnything" x="2211.86938" y="-9044.931" NativeText="Hey.. did %1 say anything about me?" Importance="Low" PerObjectType="PerRelationship" PerRelationship="InLoveWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Gossip_DontKnow" />
+        <SpeechRef UniqueID="Gossip_CrazyNotTo" />
+        <SpeechRef UniqueID="Gossip_FuckKnowsWhy" />
+        <SpeechRef UniqueID="Gossip_DoesntLikeYou" />
+        <SpeechRef UniqueID="Gossip_BetterOffWithout" />
+        <SpeechRef UniqueID="Gossip_NotInterested" />
+        <SpeechRef UniqueID="Gossip_LikesYou" />
+        <SpeechRef UniqueID="Gossip_WhatAboutMe" />
+        <SpeechRef UniqueID="Gossip_StayAway" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="ReferringTo" ThirdParty="Actor" StringData="DeclaredLove" Not="true" />
+        <Condition Type="HasMemory" Subject="Actor" Object="ReferringTo" ThirdParty="Actor" StringData="Rejected" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Gossip_CanTalkAboutCrush" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasRomanticRelationship" Subject="ReferringTo" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="Actor" ThirdParty="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="DeclaredLove" Secrecy="IgnoredByObject" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_LikesYou" x="9654.537" y="-13063.3418" NativeText="%1 said %2 likes you!" Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Gossip_Really" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsRelationshipKnownToPlayer" Subject="ReferringTo" Object="Target" StringData="InLoveWith" />
+        <Condition Type="IsPlayer" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="DeclaredLove" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_DontKnow" x="9678.052" y="-5575.50244" NativeText="Not that I know of." Importance="Low" />
+    <Speech UniqueID="Gossip_NotInterested" x="9662.066" y="-11765.9189" NativeText="%1 said %2 isn't interested in you." Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsRelationshipKnownToPlayer" Subject="ReferringTo" Object="Target" StringData="NotInLoveWith" />
+        <Condition Type="IsPlayer" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Target" StringData="Rejected" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_Friend" x="2207.569" y="-7602.15869" NativeText=":-) %1 is a good friend... we look out for each other." Importance="Low" PerObjectType="PerRelationship" PerRelationship="FriendsWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="MoraleIsAtLeast" Subject="Actor" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="Actor" ThirdParty="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_GotMyBack" x="3175.593" y="-7598.565" NativeText="{:-( At least I know %1 has got my back." Importance="Low" PerObjectType="PerRelationship" PerRelationship="FriendsWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="MoraleIsLessThan" Subject="Actor" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="Actor" ThirdParty="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_Pissed" x="4027.439" y="-7659.335" NativeText="%1 has always been my buddy but right now I'm really pissed at %2!" Importance="Low" PerObjectType="PerRelationship" PerRelationship="FriendsWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="Actor" ThirdParty="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_Really" x="10581.48" y="-13561.8467" NativeText="8-) Really?  Oh, man...!" Importance="Low" />
+    <Speech UniqueID="Gossip_SeeingEachOther_GoingWell" x="2234.85059" y="-12079.32" NativeText=":-) %1 and I have been seeing each other for a while now... I think it's going pretty well!" Importance="Low" PerObjectType="PerRelationship" PerRelationship="SleepingWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="Actor" ThirdParty="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_SeeingEachOther_GoingBadly" x="3192.63525" y="-12083.0645" NativeText="{:-( %1 and I have been seeing each other for a while now... but we're not getting along too well lately." Importance="Low" PerObjectType="PerRelationship" PerRelationship="SleepingWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="Actor" ThirdParty="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_GotMyEyeOnYou" x="2236.52881" y="-13624.876" NativeText="}:-| I've got my eye on you, stranger." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="Equals" Subject="Actor" Object="Target" SubjectModifier="Community" ObjectModifier="OldCommunity" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="10" Data2="10" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" Data2="20" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Scumbag" x="3171.26245" y="-13549.45" NativeText="}:-| I've got my eye on you, scumbag." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsAISettlement" Subject="Actor" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" Data2="20" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_NothingToSay" x="2243.53687" y="-15180.5938" NativeText="}:-[ I got nothing to say to you." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalSince" Subject="Actor" Object="Target" Data="-40" Data2="1" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_FuckOff" x="5104.516" y="-15279.0742" NativeText="}:-[ Fuck off!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalSince" Subject="Actor" Object="Target" Data="-80" Data2="1" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="30" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_LeaveMeAlone" x="5998.42725" y="-15269.2148" NativeText="8-( Leave me alone!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalSince" Subject="Actor" Object="Target" Data="-80" Data2="1" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Nothing" x="6892.689" y="-15273.418" NativeText="{:-[ Nothing." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalSince" Subject="Actor" Object="Target" Data="-80" Data2="1" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_UnfinishedBusiness" x="7731.50635" y="-15273.4141" NativeText="}:-[ You and me got unfinished business.  Watch it." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalSince" Subject="Actor" Object="Target" Data="-80" Data2="1" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_StayAwayFromMe" x="4077.89551" y="-15199.66" NativeText="{:-[ Stay away from me!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalSince" Subject="Actor" Object="Target" Data="-80" Data2="1" Not="true" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="30" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_LetsNotBeFriends" x="3171.09473" y="-15190.457" NativeText="}:-[ Let's not try to be friends." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalSince" Subject="Actor" Object="Target" Data="-40" Data2="1" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Snacks" x="3953.5874" y="-6177.756" NativeText="{:-| You know what I miss most about civilisation?  Snacks." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasUndiscoveredPersonality" Subject="Actor" StringData="Likes Sweet Food" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Gossip_BoozeIsAlright" x="-7396.216" y="-1484.38184" NativeText="Hey, this booze is alright!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.05" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_GoodGuy" x="-7394.1084" y="-2357.497" NativeText="You're a good %1, %2, you know that?" Importance="Low">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.1" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="10" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_NeededThat" x="-7394.747" y="-3670.48828" NativeText="{:-) Goddamn I needed that.  {:-| It's so hard to find a good drink around here." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_BloodAlcoholConcentration" x="-7398.64551" y="-4730.317" NativeText=":-) What's up?  My blood alcohol concentration.  Hahahahaha!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.15" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_Burp" x="-7394.003" y="-5785.317" NativeText=":-) *Burp* *Hic*" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.15" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_SettlingIn" x="-7395.23145" y="-6594.696" NativeText="Just settling in with %1 crew." Importance="Low">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+        <Condition Type="Approves" Subject="Actor" Object="Actor" ObjectModifier="Leader" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_StuckHere" x="-7400.69043" y="-9646.139" NativeText="}:-| Looks like I'm going to be stuck with %1 for now." Importance="Low">
+      <Params>
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="Approves" Subject="Actor" Object="Actor" ObjectModifier="Leader" Not="true" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_ThingsWillBeBetter" x="-7404.493" y="-11135.5938" NativeText="{:-) I don't know, maybe things will be better now that I'm in %1." Importance="Low">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_ThingsFallApart" x="-7404.89746" y="-12632.1445" NativeText="{:-| How long until %1 falls apart like everything else?" Importance="Low">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_GladToBeWithYou" x="-7401.48535" y="-8050.024" NativeText="Glad to be with %1." Importance="Low">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="TimeSinceJoinedCommunityIsAtLeast" Subject="Actor" Data="1" Not="true" />
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="Approves" Subject="Actor" Object="Actor" ObjectModifier="Leader" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_CrazyNotTo" x="9678.525" y="-5826.28125" NativeText=":-) I think %1's into you.  %2'd be crazy not to be!" Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="FlirtedSuccessfullyWith" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_FuckKnowsWhy" x="9677.569" y="-7414.24365" NativeText="}:-| I heard %1 likes you.  Fuck knows why!" Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="FlirtedSuccessfullyWith" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Gossip_DoesntLikeYou" x="9672.607" y="-9053.099" NativeText="}:-| I don't think %1 likes you very much.  That makes two of us." Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Gossip_BetterOffWithout" x="9669.547" y="-10426.2051" NativeText="{:-| You're better off without %1.  You'll find someone!" Importance="Low">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Gossip_YeahMaybe" />
+        <SpeechRef UniqueID="Gossip_WhatDoYouKnow" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Sympathized" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_YeahMaybe" x="10848.7012" y="-10130.6807" NativeText="{:-| Yeah, maybe.  Thanks, man." SuccessfulResponse="true">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" Data2="40" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_WhatDoYouKnow" x="10836.79" y="-11341.7705" NativeText="}:-| What do you know about it?">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Contradicted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Gossip_GetOutMyWay" x="2297.869" y="-16562.1152" NativeText="}:-| The fuck do you want?  Get out of my way." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" Data2="100" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_EverythingIsFine" x="3236.9375" y="-16585.4727" NativeText="}:-| Everything's just fine, no need to worry about me!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="MoraleIsLessThan" Subject="Actor" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_PutOnThePounds" x="2298.024" y="-18073.123" NativeText="/:-) At least you managed to find enough food to eat in this wasteland, eh?  Wish I could put on the pounds like you." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+        <Condition Type="HasFatness" Subject="Target" Data="0.66" />
+        <Condition Type="HasFatness" Subject="Actor" Data="0.66" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_TooOldToBeUseful" x="3244.103" y="-18086.99" NativeText="{:-| Don't worry about people saying you're too old to be useful anymore.  We can always find a use for you. /:-) Even if it's just for protein!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+        <Condition Type="IsAgeAtLeast" Subject="Target" Data="60" />
+        <Condition Type="IsAgeAtLeast" Subject="Actor" Data="60" Not="true" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_WhatAboutMe" x="9653.932" y="-14527.5273" NativeText="{:-| %1?  What about me?  I thought we had something...">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Gossip_SpreadTheLove" />
+        <SpeechRef UniqueID="Gossip_TheOnlyOne" />
+        <SpeechRef UniqueID="Gossip_GotTheWrongIdea" />
+        <SpeechRef UniqueID="Gossip_WeDidntHaveSomething" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="InLoveWith" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Gossip_TheOnlyOne" x="13454.4" y="-14940.9727" NativeText="8-) Oh.. I didn't mean it like that!  You're the only one for me, don't worry!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="InLoveWith" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_GotTheWrongIdea" x="13439.748" y="-15963.2734" NativeText="{:-| I, uh, think you got the wrong idea.  I like you but not in that way.  I hope you understand.">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="20" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="NotInLoveWith" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Sympathized" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Gossip_WeDidntHaveSomething" x="13426.8379" y="-17663.5938" NativeText="}:-| Hell no, we didn't 'have something'.  I don't even like you!">
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="NotInLoveWith" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Gossip_SpreadTheLove" x="13448.9688" y="-13708.5625" NativeText=":-) Hey, I like you but I like to spread the love around, you know?  I can't be limited to just one %1!">
+      <Params>
+        <SpeechParam Type="ManOrWoman" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="Target" StringData="InLoveWith" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_StayAway" x="9659.38" y="-15586.3984" NativeText="}:-| Stay away from %1, %2, %3's mine!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasRelationship" Subject="Actor" Object="ReferringTo" StringData="InLoveWith" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unpossessive" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" StringData="DeclaredLove" Secrecy="IgnoredByObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Gossip_DontNeedYourBullshit" x="4167.93848" y="-16749.2832" NativeText="}:-| I don't need your bullshit right now, I've got enough on my plate." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MoraleIsLessThan" Subject="Actor" Data="-10" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" Data2="20" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_EachOthersBusiness" x="5113.43262" y="-16788.9688" NativeText="}:-| Look, I don't like you and you don't like me, okay?  Let's try to stay out of each other's business." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-10" Not="true" />
+        <Condition Type="Approves" Subject="Target" Object="Actor" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Gossip_WishTheyWereHere" x="4832.72168" y="-6826.91553" NativeText="{:-( I wish my %1 %2 was here!" Importance="Low" PerObjectType="PerRelationship">
+      <Params>
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverRelationshipIfPlayer" Subject="Target" Object="Actor" ThirdParty="ReferringTo" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Gossip_InjuredLeftLeg" x="3869.014" y="691.0044">
+      <Conditions>
+        <Condition Type="HasInjuryInBodyLocation" Subject="Actor" StringData="LeftLeg" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Gossip_InjuredRightLeg" x="3880.65454" y="331.436218">
+      <Conditions>
+        <Condition Type="HasInjuryInBodyLocation" Subject="Actor" StringData="RightLeg" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Gossip_InjuredLeftArm" x="3876.81152" y="-209.620422">
+      <Conditions>
+        <Condition Type="HasInjuryInBodyLocation" Subject="Actor" StringData="LeftArm" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Gossip_InjuredRightArm" x="3888.45215" y="-569.188538">
+      <Conditions>
+        <Condition Type="HasInjuryInBodyLocation" Subject="Actor" StringData="RightArm" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Gossip_CanTalkAboutCrush" x="1190.062" y="-10350.6943" Type="Or">
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

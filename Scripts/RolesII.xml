@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>558.3534</x>
+    <y>-56.16616</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.677672744</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Roles_CookingComplete2" x="337.000549" y="-287.0005" NativeText=":-) Hey come now before I eat all of this!" Situation="CookingComplete" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_CookingComplete3" x="342.831329" y="-603.0137" NativeText=":-) Its chow time!" Situation="CookingComplete" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_CookingComplete4" x="348.564484" y="-893.991638" NativeText=":-) This looks delicious!" Situation="CookingComplete" Importance="FriendComplaint" />
+    <Speech UniqueID="Roles_CookingComplete5" x="363.320984" y="-1196.497" NativeText=":-) Its feeding time!" Situation="CookingComplete" Importance="FriendComplaint" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

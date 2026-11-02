@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cannabaceae Seeds</NativeName>
+  <NativeDescription>Needs alot of care but edible.</NativeDescription>
+  <Category>5:Food/Seeds</Category>
+  <Weight>0.05</Weight>
+  <BasePrice>0.1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.1</Nutrition>
+  <Caffeine>0.01</Caffeine>
+  <Tastiness>5</Tastiness>
+  <SeedForPlantType>Cannabaceae</SeedForPlantType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>12</TypicalLootAmount>
+  <SkillOnConsumptionProgression>0.1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

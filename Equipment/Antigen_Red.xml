@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Red Strain Antigen</NativeName>
+  <NativeDescription>The Red Strain takes over an individual very quickly, so the antigen must be administered as soon as possible.</NativeDescription>
+  <Category>3:Medical/Antigen/3</Category>
+  <Weight>0.01</Weight>
+  <BasePrice>30</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <AntigenType>Red</AntigenType>
+  <EquippedModelName>Prefabs/Equipment/Med Items Pack/Syringe</EquippedModelName>
+  <Scarcity>Uncommon</Scarcity>
+  <LootLocations>
+    <LootLocation>Survivor</LootLocation>
+    <LootLocation>FEMA</LootLocation>
+    <LootLocation>Military</LootLocation>
+    <LootLocation>Camp</LootLocation>
+    <LootLocation>Police</LootLocation>
+    <LootLocation>Medical</LootLocation>
+  </LootLocations>
+  <TypicalLootAmount>1</TypicalLootAmount>
+  <GiftFor />
+  <BadGiftFor />
+</EquipmentPrototype>

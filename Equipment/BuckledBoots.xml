@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Buckled Boots</NativeName>
+  <Category>4:Clothing/Shoes</Category>
+  <Weight>2</Weight>
+  <BasePrice>2</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Shoes</ClothingType>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Zombie</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>PassengerPlane</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>ShoeStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>136</r>
+      <g>136</g>
+      <b>136</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName>Male_Mill_All:long_coat_boots</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Shoes</FemaleMeshName>
+  <Insulation>1</Insulation>
+</EquipmentPrototype>

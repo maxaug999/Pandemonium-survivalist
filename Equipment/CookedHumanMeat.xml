@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cooked Human Meat</NativeName>
+  <NativeDescription>Needs more salt</NativeDescription>
+  <Category>5:Food/Meat</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>5</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.5</Nutrition>
+  <ContainsHumanMeat>true</ContainsHumanMeat>
+  <LootableFromLocations />
+  <TypicalLootAmount>3</TypicalLootAmount>
+  <GiftFor>
+    <string>Immoral</string>
+  </GiftFor>
+  <BadGiftFor>
+    <string>Moral</string>
+  </BadGiftFor>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>8</SkillOnConsumptionProgression>
+</EquipmentPrototype>

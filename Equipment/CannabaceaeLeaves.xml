@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Cannabaceae Leaves</NativeName>
+  <NativeDescription>Very addicting it will keep you somehow awake. also an ingridient for producing antigens.</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>0.5</Weight>
+  <BasePrice>1</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.2</Nutrition>
+  <Caffeine>0.03</Caffeine>
+  <Tastiness>5</Tastiness>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>1</SkillOnConsumptionProgression>
+</EquipmentPrototype>

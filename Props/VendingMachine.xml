@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Vending Machine</NativeName>
+  <Category>Town/Props/Shop</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropDrinkVendingMachine</string>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropDrinkVendingMachine2</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <MaxInventoryWeight>40</MaxInventoryWeight>
+  <LootLocation>VendingMachine</LootLocation>
+  <SpawnWithBackAgainstBuilding>1.0</SpawnWithBackAgainstBuilding>
+</PropPrototype>

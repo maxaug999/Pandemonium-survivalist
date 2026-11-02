@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Fried Ear of Corn</NativeName>
+  <NativeDescription>Not as good for your constitution as boiling it, but tastier</NativeDescription>
+  <Category>5:Food/Crops</Category>
+  <Weight>1</Weight>
+  <BasePrice>4</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <Nutrition>0.5</Nutrition>
+  <Tastiness>25</Tastiness>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <FoodForAnimal>
+    <BaseObjectType>Chicken</BaseObjectType>
+  </FoodForAnimal>
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgression>4</SkillOnConsumptionProgression>
+</EquipmentPrototype>

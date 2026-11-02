@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>9</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>4</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2576.95361</x>
+    <y>1345.80835</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.6245856</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Rivalry_DownAPeg" x="657.1564" y="878.6965" NativeText="}:-| %1 is such a %2!  If someone were to take %3 down a peg, that'd be sweet!  You know, hypothetically." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="AssholeOrBitch" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="-30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="-30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="30" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" StringData="Subtle" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rivalry_SeeWhatICanDo" />
+        <SpeechRef UniqueID="Rivalry_NotMyProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="MoraleIsAtLeast" Subject="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" Not="true" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" Not="true" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rivalry_HurtMorale" Not="true" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="5" StringData="Rivalry" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rivalry_BothHaveInvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="RefusedToHelp" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Rivalry_SeeWhatICanDo" x="2368.46216" y="-1840.544" NativeText="I'll see what I can do.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" StringData="Rivalry_KeepHappy" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" StringData="Rivalry_HurtMorale" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rivalry_WhyWontSomeone" x="646.7866" y="3820.60449" NativeText="}:-( Why won't someone do something about %1?!  It's like no one cares..." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="AssholeOrBitch" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="-20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="-30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="30" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" StringData="Subtle" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rivalry_SeeWhatICanDo" />
+        <SpeechRef UniqueID="Rivalry_NotMyProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="MoraleIsAtLeast" Subject="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" Not="true" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rivalry_HurtMorale" Not="true" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="5" StringData="Rivalry" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rivalry_BothHaveInvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="RefusedToHelp" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Rivalry_WipeSmileOff" x="665.4158" y="-2281.44678" NativeText="}:-[ Man, fuck %1!  Wipe the smile off %2 face and I'll give you some gold!" PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HisOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="-20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="-20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="30" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" StringData="Subtle" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rivalry_SeeWhatICanDo" />
+        <SpeechRef UniqueID="Rivalry_NotMyProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="MoraleIsAtLeast" Subject="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" Not="true" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rivalry_HurtMorale" Not="true" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="5" StringData="Rivalry" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rivalry_BothHaveInvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="RefusedToHelp" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Rivalry_Karma" x="664.7745" y="-5214.948" NativeText="{:-| %1 is really winding me up, man.  I feel like that bad karma should be coming back to %2..." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="-40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="-30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="30" />
+        <Condition Type="HasInvisibleStrain" Subject="Actor" StringData="Subtle" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Rivalry_SeeWhatICanDo" />
+        <SpeechRef UniqueID="Rivalry_NotMyProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsHuman" Subject="ReferringTo" />
+        <Condition Type="MoraleIsAtLeast" Subject="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" />
+        <Condition Type="IsAnyActiveQuestGivenBy" Subject="Actor" Not="true" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" Object="ReferringTo" StringData="Rivalry_HurtMorale" Not="true" />
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="5" StringData="Rivalry" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rivalry_BothHaveInvisibleStrain" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" StringData="RefusedToHelp" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Rivalry_NotMyProblem" x="2373.4624" y="-2660.61157" NativeText="That's not my problem.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" Secrecy="OnlyKnownToObject" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Rivalry_ThingsArentGoing" x="6187.3335" y="-3829.15576" NativeText="Things haven't been going %1 way lately..." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="FirstNamePossessive" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rivalry_EarnedIt" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rivalry_Success" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Rivalry_EarnedIt" x="7265.946" y="-3643.238" NativeText="}:-) I'm thinking you had something to do with that!  Here's some gold, you earned it.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rivalry_Success" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="60" StringData="Gold" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" Secrecy="OnlyKnownToObject" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Rivalry_NotWhatIWanted" x="7294.104" y="-5401.61035" NativeText="8-[ %1's dead!  This isn't what I wanted at all, I just wanted %2 to have shitty day!  You're a monster!">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rivalry_Success" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FailedWorkFor" Secrecy="OnlyKnownToObject" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Rivalry_WontHaveToWorryAbout" x="6194.14063" y="-5180.343" NativeText="}:-) You won't have to worry about %1 anymore." Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Rivalry_EarnedIt" />
+        <SpeechRef UniqueID="Rivalry_NotWhatIWanted" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="ReferringTo" StringData="Rivalry_Success" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Rivalry_IsDeadOrUnhappy" x="4238.44043" y="-2053.21436" Type="Or">
+      <Conditions>
+        <Condition Type="MoraleIsLessThan" Subject="ReferringTo" Data="-10" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Rivalry_BothHaveInvisibleStrain" x="-1787.81592" y="-2168.72949">
+      <Conditions>
+        <Condition Type="HasInvisibleStrain" Subject="Actor" />
+        <Condition Type="HasInvisibleStrain" Subject="ReferringTo" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Rivalry_HurtMorale" x="5004.55859" y="-1716.37744" GroupID="Rivalry_QuestGroup" NativeDescription="Find ways to sap %1 morale.">
+      <Params>
+        <SpeechParam Type="FullNamePossessive" Subject="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <Metric>ReduceQuestObjectMorale</Metric>
+      <MetricCompletedAmount>45</MetricCompletedAmount>
+      <CompletionConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Rivalry_IsDeadOrUnhappy" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="MoraleIsAtLeast" Subject="Actor" Data="-10" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="DisableEmpathy" Subject="Actor" Object="ReferringTo" Data="-100" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" StringData="Rivalry_KeepHappy" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Rivalry_Success" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="EnableEmpathy" Subject="Actor" Object="ReferringTo" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Rivalry_Success" x="9518.6875" y="-2291.54" GroupID="Rivalry_QuestGroup" NativeDescription="Let %1 know you succeeded in making %2 miserable.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="EnableEmpathy" Subject="Actor" Object="ReferringTo" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="EnableEmpathy" Subject="Actor" Object="ReferringTo" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Rivalry_KeepHappy" x="6252.99365" y="-929.6201" GroupID="Rivalry_QuestGroup" NativeDescription="Make %1 happy.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <Metric>IncreaseQuestGiverMorale</Metric>
+      <MetricCompletedAmount>45</MetricCompletedAmount>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Rivalry_QuestGroup" x="2052.46436" y="765.759033" NativeTitle="%1 doesn't like %2">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

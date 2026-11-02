@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>2</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>4</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>843.990967</x>
+    <y>-250.69046</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.464056581</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="GreetAi_HowYouDoin" x="710.425" y="1.31520081" NativeText="How you doin?" Situation="Opener" Importance="Low" RepeatTime="1800" SpecialBehaviour="Greeting">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GreetAi_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="GreetAi_RememberAll" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ChattedAi" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="GreetAi_Sup" x="694.8241" y="-1116.9823" NativeText="Sup %1?" Situation="Opener" Importance="Low" RepeatTime="1800" SpecialBehaviour="Greeting">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GreetAi_ConditionBlock" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="GreetAi_RememberAll" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="ChattedAi" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="GreetAi_RememberAll" x="-471.555" y="-1059.65186">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Target" Object="Actor" StringData="GreetAi_HowYouDoin" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Target" Object="Actor" StringData="GreetAi_Sup" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="Target" StringData="GreetAi_HowYouDoin" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="Target" StringData="GreetAi_Sup" />
+        <StoryEvent Type="SetTimer" Subject="Actor" Data="300" StringData="Greetings" />
+        <StoryEvent Type="SetTimer" Subject="Target" Data="300" StringData="Greetings" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="GreetAi_ConditionBlock" x="-485.931366" y="443.37265">
+      <Conditions>
+        <Condition Type="KnowsName" Subject="Actor" Object="Target" />
+        <Condition Type="IsDirectControlled" Subject="Target" Not="true" />
+        <Condition Type="IsLowAlert" Subject="Target" Not="true" />
+        <Condition Type="CommunityIsIntroduced" Subject="Actor" Object="Target" />
+        <Condition Type="IsTimerRunning" Subject="Actor" StringData="Greetings" Not="true" />
+        <Condition Type="IsTimerRunning" Subject="Target" StringData="Greetings" Not="true" />
+        <Condition Type="IsNormalCommunity" Subject="Actor" Not="true" />
+        <Condition Type="IsRefugeeCommunity" Subject="Actor" Not="true" />
+        <Condition Type="IsTraderCommunity" Subject="Actor" Not="true" />
+        <Condition Type="IsLooter" Subject="Actor" Not="true" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="GreetAi_NotWithdrawn" />
+            <ConditionBlockRef UniqueID="GreetAi_Withdrawn" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="GreetAi_NotWithdrawn" x="-1626.629" y="-105.433609">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-40" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="GreetAi_Withdrawn" x="-1631.22571" y="-765.7977">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="70" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

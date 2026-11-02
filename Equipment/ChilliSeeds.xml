@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Chilli Seeds</NativeName>
+  <NativeDescription>Dried chilli pepper seeds for planting</NativeDescription>
+  <Category>5:Food/Seeds</Category>
+  <Weight>0.1</Weight>
+  <BasePrice>3</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <SeedForPlantType>PepperPlant</SeedForPlantType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>GardeningStore</Name>
+      <OverrideScarcity>Common</OverrideScarcity>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>5</TypicalLootAmount>
+</EquipmentPrototype>

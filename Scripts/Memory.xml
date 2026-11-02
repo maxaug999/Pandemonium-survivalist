@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>104.937218</x>
+    <y>-100.535889</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.8935088</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Memory_ToldAboutFEMA_Like" x="77.80798" y="-176.173019" NativeText=":-) %1 talked to %2 about trying to find a quarantine zone." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ToldAboutFEMA" />
+        <Condition Type="MemoryApprovalAtLeast" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Memory_ToldAboutFEMA_Dislike" x="956.3063" y="-178.293381" NativeText="}:-| %1 told %2 some pipe dream about going to live in a safe zone." Situation="Memory" Importance="Memory">
+      <Params>
+        <SpeechParam Type="FullNameActive" Subject="MemoryActor" />
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="MemoryObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="MemoryType" StringData="ToldAboutFEMA" />
+        <Condition Type="MemoryApprovalLessThan" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

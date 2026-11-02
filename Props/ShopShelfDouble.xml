@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>TiltedProp</TypeName>
+  <NativeName>Shelves</NativeName>
+  <Category>Town/Props/Shop</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Abandoned Props Pack PBR/PropShopShelfDouple</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0.5</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>8</MaxDamage>
+  <Flammability>Low_RequiresExplosion</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <ExtentsMax>
+    <x>0</x>
+    <y>1</y>
+  </ExtentsMax>
+  <WheelPos>
+    <x>0.8</x>
+    <y>0.8</y>
+  </WheelPos>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>SteelIngot</RepairResourceType>
+  <RepairResourceNeeded>2</RepairResourceNeeded>
+  <SpawnProbabilityFactor>0.5</SpawnProbabilityFactor>
+  <Mass>40</Mass>
+</PropPrototype>

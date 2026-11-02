@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Spiked Veggie Soup</NativeName>
+  <NativeDescription>Vegan alcoholics love this.</NativeDescription>
+  <Category>5:Food/Dishes</Category>
+  <Col>
+    <r>185</r>
+    <g>184</g>
+    <b>128</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.4</BasePricePerFlOz>
+  <NutritionPerFlOz>0.03</NutritionPerFlOz>
+  <AlcoholContent>5</AlcoholContent>
+  <Tastiness>50</Tastiness>
+  <GiftFor />
+  <BadGiftFor />
+  <SkillOnConsumptionType>Constitution</SkillOnConsumptionType>
+  <SkillOnConsumptionProgressionPerFlOz>1</SkillOnConsumptionProgressionPerFlOz>
+</LiquidPrototype>

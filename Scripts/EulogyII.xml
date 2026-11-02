@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>305.126923</x>
+    <y>-16.8929958</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.727571368</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Eulogy_Unknownlucky" x="401.0005" y="-393.000244" NativeText="{:-| This %1 got lucky, I guess %2 won't suffer anymore." Situation="Eulogy">
+      <Params>
+        <SpeechParam Type="BastardOrBitch" Subject="Target" />
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="KnowsName" Subject="Actor" Object="Target" Data="10" Data2="10" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Eulogy_Tookstuff" x="1073.25586" y="-430.345856" NativeText="{:-| Took your stuff so at least I'll bury you." Situation="Eulogy">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="KnowsName" Subject="Actor" Object="Target" Data="10" Data2="10" Not="true" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

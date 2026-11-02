@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PipeBomb</TypeName>
+  <NativeName>Zeed Granade</NativeName>
+  <NativeDescription>Silent and makes unarmored targets bleed, confused and just to scare them off, not very effective on infected. </NativeDescription>
+  <Category>2:Weapons/Throwable</Category>
+  <Weight>2</Weight>
+  <BasePrice>4</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <EquippedModelName>Prefabs/Props/Abandoned Props Pack PBR/PropVodkaBottle</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>SharpObject</InjuryType>
+  <Damage>0.25</Damage>
+  <Range>20</Range>
+  <RangeBonusPerSkillLevel>1</RangeBonusPerSkillLevel>
+  <AttackSoundRadius>10</AttackSoundRadius>
+  <AccurateRange>10</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.125</MinAimTime>
+  <MaxAimTime>2</MaxAimTime>
+  <AimPenaltyWhenMoving>0.5</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>2</MinTimeBetweenFiring>
+  <DamageRadius>2</DamageRadius>
+</EquipmentPrototype>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>SniperRifle</TypeName>
+  <NativeName>Sniper Rifle</NativeName>
+  <NativeDescription>Old but reliable &amp; only needs pistol ammo</NativeDescription>
+  <Category>2:Weapons/Ranged</Category>
+  <Weight>12</Weight>
+  <BasePrice>90</BasePrice>
+  <CanBeEquipped>true</CanBeEquipped>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>2</SightRangeModifier>
+  <EquippedModelName>Prefabs/Equipment/SniperRifle/M40A3 Rifle_prefab</EquippedModelName>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>UtilityVehicle</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <InjuryType>Bullet</InjuryType>
+  <Damage>0.45</Damage>
+  <DamageBonusPerSkillLevel>0.1</DamageBonusPerSkillLevel>
+  <Range>24</Range>
+  <RangeBonusPerSkillLevel>1</RangeBonusPerSkillLevel>
+  <AttackSoundRadius>32</AttackSoundRadius>
+  <AccurateRange>14</AccurateRange>
+  <AccurateRangeBonusPerSkillLevel>1</AccurateRangeBonusPerSkillLevel>
+  <MinAimTime>0.3</MinAimTime>
+  <MaxAimTime>1.5</MaxAimTime>
+  <MinHeadAimTime>0.75</MinHeadAimTime>
+  <MaxHeadAimTime>2</MaxHeadAimTime>
+  <MinLegsAimTime>0.5</MinLegsAimTime>
+  <MaxLegsAimTime>1.75</MaxLegsAimTime>
+  <Recoil>2.5</Recoil>
+  <AimPenaltyWhenMoving>1</AimPenaltyWhenMoving>
+  <MinTimeBetweenFiring>2</MinTimeBetweenFiring>
+  <AmmoTypes>
+    <string>PistolAmmo</string>
+  </AmmoTypes>
+  <MaxAmmo>1</MaxAmmo>
+  <ReloadReleaseSounds>
+    <string>Sounds\Equipment\SniperRifle\m21_clipout</string>
+  </ReloadReleaseSounds>
+  <ReloadInsertSounds>
+    <string>Sounds\Equipment\SniperRifle\m21_clipin</string>
+  </ReloadInsertSounds>
+</EquipmentPrototype>

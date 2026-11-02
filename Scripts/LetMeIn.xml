@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>4</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>805.8393</x>
+    <y>2411.10864</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4833426</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="LetMeIn_Yo" x="575.3031" y="2017.89685" NativeText="Yo.  Can %1 come in?" Situation="LetMeIn" RepeatTime="600" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="SquadIOrWe" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_Bargains" x="-629.509033" y="-1380.00659" NativeText="Trading party here, bringing you some incredible bargains you don't wanna miss out on!  Can %1 come in?" Situation="LetMeIn" RepeatTime="600" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="SquadIOrWe" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_AnyChance" x="-640.0778" y="-372.947632" NativeText="{:-| Excuse me, any chance you could open your gates for %1?" Situation="LetMeIn" RepeatTime="600" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="SquadMeOrUs" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_Hey" x="577.9264" y="836.214355" NativeText="}:-| Hey let %1 in!" Situation="LetMeIn" RepeatTime="600" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="SquadMeOrUs" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_TakeItElsewhere" x="-630.646667" y="-2475.98462" NativeText="}:-| Hey are you going to leave %1 out here to be eaten by zombies?  I guess %2 could just take these incredible deals elsewhere?" Situation="LetMeIn" RepeatTime="600" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="SquadMeOrUs" Subject="Actor" />
+        <SpeechParam Type="SquadIOrWe" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_HowdyNeighbours" x="-636.270752" y="-3708.64941" NativeText=":-) Howdy neighbours!  %1 have got some unbeatable savings here just for you, if you allow %2 into your beautiful home!" Situation="LetMeIn" RepeatTime="600" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="SquadIOrWe" Subject="Actor" />
+        <SpeechParam Type="SquadMeOrUs" Subject="Actor" />
+      </Params>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_Questions" x="-815.0272" y="-5369.44727" NativeText="You can come in these gates but don't try anything funny." Situation="GateKeeping">
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComingIn" />
+        <SpeechRef UniqueID="LetMeIn_Cool" />
+        <SpeechRef UniqueID="LetMeIn_HassleUs" />
+        <SpeechRef UniqueID="LetMeIn_HassleMe" />
+        <SpeechRef UniqueID="LetMeIn_HonestTrader" />
+        <SpeechRef UniqueID="LetMeIn_LookingForFood" />
+        <SpeechRef UniqueID="LetMeIn_DontStartShit" />
+        <SpeechRef UniqueID="LetMeIn_TheRealThreat" />
+        <SpeechRef UniqueID="LetMeIn_Pacifist" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CanOpenPlayerGatesEquals" Subject="Target" StringData="Yes" Not="true" />
+        <Condition Type="IsCloseToBase" Subject="Target" Object="Actor" Data="32" />
+        <Condition Type="CommunityHasGates" Subject="Actor" Data="1" BoolData="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_HonestTrader" x="1745.51953" y="-4860.27441" NativeText="I'm an honest trader trying to make a living in these difficult times, the only thing that's funny is these low, low prices that I'm offering you.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingTrader" />
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Trader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_LookingForFood" x="1728.02539" y="-5818.557" NativeText="{:-| I'm just looking for some food alright, I don't want trouble.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasHunger" Subject="Actor" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_DontStartShit" x="1742.5802" y="-6513.39453" NativeText="}:-| Don't start shit with me, and I won't start shit with you, okay?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" Data="1.5" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_Cool" x="1706.6438" y="-2413.96484" NativeText="Yeah don't worry, everything's cool.">
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="LetMeIn_TheRealThreat" x="1750.3551" y="-7218.985" NativeText="}:-| Yeah sure, like I'm the real threat here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" Data="1.5" StringData="Passive-Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_Pacifist" x="1748.411" y="-7942.071" NativeText="{:-| Woah, be chill my dude - I'm a pacifist.  I'm not going to hurt anybody.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" Data="1.5" StringData="Passive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_HassleUs" x="1711.47937" y="-2820.21387" NativeText="{:-| You don't need to hassle us %1, we're just trying to find a safe place, we're not looking for any trouble.">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_HassleMe" x="1715.36682" y="-3852.36" NativeText="{:-| You don't need to hassle me %1, I'm just trying to find a safe place, I'm not looking for any trouble.">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ComeOnIn" />
+        <SpeechRef UniqueID="LetMeIn_StayOut" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LetMeIn_ComeOnIn" x="2952.60547" y="-5246.05029" NativeText="Alright, come on in.">
+      <Events>
+        <StoryEvent Type="SetGatePermission" Subject="Target" BoolData="true" />
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_Allow_Community" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LetMeIn_StayOut" x="2940.94287" y="-5854.45264" NativeText="On second thoughts, I don't like the looks of you.  Stay out.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+        <StoryEvent Type="SetGatePermission" Subject="Target" />
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_Ban_Community" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LetMeIn_DontWantYou" x="493.648743" y="-9233.828" NativeText="I don't want you coming in these gates anymore." Situation="GateKeeping">
+      <Replies>
+        <SpeechRef UniqueID="LetMeIn_ThoughtWeWereCool" />
+        <SpeechRef UniqueID="LetMeIn_DontNeedThis" />
+        <SpeechRef UniqueID="LetMeIn_BigMistake" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CanOpenPlayerGatesEquals" Subject="Target" StringData="Yes" />
+        <Condition Type="IsCloseToBase" Subject="Target" Object="Actor" Data="32" />
+        <Condition Type="CommunityHasGates" Subject="Actor" Data="1" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetGatePermission" Subject="Target" />
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_Ban_Community" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LetMeIn_ThoughtWeWereCool" x="1906.55713" y="-8833.741" NativeText="{:-| Huh?  I thought we were cool.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="50" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="LetMeIn_DontNeedThis" x="1913.33679" y="-9459.638" NativeText="}:-| Suit yourself, I don't need this place!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="50" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="LetMeIn_RentCollectionSquad" x="568.9926" y="7205.393" NativeText="}:-| Open your gates, we're here on important business.  Don't make me ask twice!" Situation="LetMeIn" Importance="Critical" RepeatTime="10" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LetMeIn_ImportantBusiness" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="VariableEquals" Subject="Actor" SubjectModifier="Community" StringData="OpenGatesExtortion" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_Inc_ExtortionCounter" />
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_AllTheThings" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LetMeIn_ComingIn" x="1706.307" y="-1248.75916" NativeText="}:-| Who do you think you're talking to?  You're lucky we didn't knock them down already!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LetMeIn_ImportantBusiness2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetGatePermission" Subject="Actor" SubjectModifier="Community" BoolData="true" />
+        <StoryEvent Type="SetVariable" Subject="Actor" SubjectModifier="Community" StringData="OpenGatesExtortion" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LetMeIn_LastChance" x="570.5016" y="5646.06738" NativeText="}:-[ This is the last chance.  Open your gates or we'll force them open!" Situation="LetMeIn" Importance="Critical" RepeatTime="10" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LetMeIn_ImportantBusiness" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="VariableEquals" Subject="Actor" SubjectModifier="Community" Data="1" StringData="OpenGatesExtortion" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_Inc_ExtortionCounter" />
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_AllTheThings" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LetMeIn_ForceThemOpen" x="574.0461" y="4117.736" NativeText="}:-[ You asked for this!  Should have opened those gates!" Situation="LetMeIn" Importance="Critical" RepeatTime="10" CanTalkOutOfRange="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LetMeIn_ImportantBusiness" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsSquadGoalAchieved" Subject="Actor" Not="true" />
+        <Condition Type="VariableIsGreaterThanOrEqual" Subject="Actor" SubjectModifier="Community" Data="2" StringData="OpenGatesExtortion" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetVariable" Subject="Actor" SubjectModifier="Community" StringData="OpenGatesExtortion" />
+        <StoryEvent Type="OneShotTrigger" StringData="LetMeIn_AllTheThings" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="PipeBomb" />
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="LetMeIn_BigMistake" x="1895.17078" y="-9972.143" NativeText="}:-[ It ain't your decision.  We'll go where we want, just try and stop us!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LetMeIn_ImportantBusiness2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetGatePermission" Subject="Actor" SubjectModifier="Community" />
+        <StoryEvent Type="SetVariable" Subject="Actor" SubjectModifier="Community" StringData="OpenGatesExtortion" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="LetMeIn_Allow_Community" x="3980.86353" y="-5247.993">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LetMeIn_IsRefugeeOrTrader" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetGatePermission" Subject="Target" SubjectModifier="Community" BoolData="true" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="LetMeIn_Ban_Community" x="3977.92554" y="-6074.09863">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="LetMeIn_IsRefugeeOrTrader" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetGatePermission" Subject="Target" SubjectModifier="Community" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="LetMeIn_AllTheThings" x="-637.560242" y="6014.63574">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" StringData="LetMeIn_RentCollectionSquad" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" StringData="LetMeIn_LastChance" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" StringData="LetMeIn_ForceThemOpen" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" StringData="LetMeIn_Yo" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" StringData="LetMeIn_Hey" />
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" StringData="LetMeIn_AnyChance" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="LetMeIn_Inc_ExtortionCounter" x="1839.4353" y="6239.66943">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsAnyMemberInCombat" Subject="Player" SubjectModifier="Community" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="IncrementVariable" Subject="Actor" SubjectModifier="Community" Data="1" StringData="OpenGatesExtortion" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="LetMeIn_IsRefugeeOrTrader" x="4793.363" y="-5603.704" Type="Or">
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="RovingRefugee" />
+        <Condition Type="CommunityTypeEquals" Subject="Target" StringData="RovingTrader" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="LetMeIn_ImportantBusiness" x="2065.87061" y="5081.966" Type="Or">
+      <Conditions>
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="ReferringTo" StringData="Extortion" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="ReferringTo" StringData="RequestAlliance" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="ReferringTo" StringData="WarnOffAlliance" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="ReferringTo" StringData="WarnPopulation" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="LetMeIn_ImportantBusiness2" x="2865.95776" y="-1569.78833" Type="Or">
+      <Conditions>
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="Extortion" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="RequestAlliance" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="WarnOffAlliance" />
+        <Condition Type="SquadBehaviourEquals" Subject="Actor" Object="Target" StringData="WarnPopulation" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Campfire</TypeName>
+  <NativeName>Campfire</NativeName>
+  <Category>Camp/Props</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Fireplace</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Fireplace_Burning</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Fireplace_BurnedOut</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Spitroast_Rabbit</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Cookingplace</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Spitroast_Steak</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Spitroast_TBoneSteak</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/Spitroast_Chicken</string>
+    <string>Prefabs/Props/Fireplace and Cooking Place/FryignPanPlace</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <CoverType>None</CoverType>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WheelPos>
+    <x>0.16</x>
+    <y>0.16</y>
+  </WheelPos>
+  <VisibleFromFarAway>true</VisibleFromFarAway>
+  <SetAreaOwnership>false</SetAreaOwnership>
+  <CanBeDemolished>true</CanBeDemolished>
+  <MaxInventoryWeight>100</MaxInventoryWeight>
+</PropPrototype>

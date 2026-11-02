@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiquidPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Rock Salt</NativeName>
+  <NativeDescription>Sometimes people are like this</NativeDescription>
+  <Category>6:Crafting</Category>
+  <Col>
+    <r>234</r>
+    <g>237</g>
+    <b>237</b>
+    <a>255</a>
+  </Col>
+  <BasePricePerFlOz>0.2</BasePricePerFlOz>
+  <NutritionPerFlOz>0.005</NutritionPerFlOz>
+  <Tastiness>-10</Tastiness>
+  <CanPourIntoBottles>true</CanPourIntoBottles>
+  <GiftFor />
+  <BadGiftFor />
+</LiquidPrototype>

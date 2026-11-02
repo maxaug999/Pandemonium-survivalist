@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Construction Helmet</NativeName>
+  <NativeDescription>Protection against falling zombies</NativeDescription>
+  <Category>4:Clothing/Armor/Helmets</Category>
+  <Weight>3</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <SightRangeModifier>-5</SightRangeModifier>
+  <ClothingType>Hat</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Miners</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>252</r>
+      <g>226</g>
+      <b>5</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName>M_Helmet6:helmet_2</MaleMeshName>
+  <FemaleMeshName>F_Helmet6:helmet_2</FemaleMeshName>
+  <DamageAbsorption>9</DamageAbsorption>
+  <SkillBonusType>Construction</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

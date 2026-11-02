@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>PlantableCrop</TypeName>
+  <NativeName>Carrot</NativeName>
+  <Category>Crops</Category>
+  <PrefabNames>
+    <string>Prefabs\Props\Farm Plants\Plants\Soil</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Carrot\Carrot_Stage1</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Carrot\Carrot_Stage2</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Carrot\Carrot</string>
+  </PrefabNames>
+  <DeadPrefabNames>
+    <string>Prefabs\Props\Farm Plants\Plants\Soil</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Carrot\Carrot_Stage1_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Carrot\Carrot_Stage2_Dead</string>
+    <string>Prefabs\Props\Farm Plants\Plants\Carrot\Carrot_Dead</string>
+  </DeadPrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>2</MaxDamage>
+  <CoverType>None</CoverType>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <BulletHitEffect>None</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WantSoundOnDemolition>false</WantSoundOnDemolition>
+  <RepairAnim>Crafting</RepairAnim>
+  <CaptureResourceType>CarrotSeeds</CaptureResourceType>
+  <HarvestType>Carrot</HarvestType>
+  <HarvestSeedsType>CarrotSeeds</HarvestSeedsType>
+  <MaxYield>1</MaxYield>
+  <MaxSeedsYield>3</MaxSeedsYield>
+  <WaterNeededPerDayInFlOz>50</WaterNeededPerDayInFlOz>
+  <Color>
+    <r>255</r>
+    <g>60</g>
+    <b>0</b>
+    <a>255</a>
+  </Color>
+</PropPrototype>

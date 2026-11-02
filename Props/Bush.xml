@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Bush</TypeName>
+  <NativeName>Bush</NativeName>
+  <Category>Nature</Category>
+  <PrefabNames>
+    <string>Prefabs/Trees/Bush01</string>
+    <string>Prefabs/Trees/Bush02</string>
+    <string>Prefabs/Trees/Bush03</string>
+    <string>Prefabs/Trees/Bush04</string>
+    <string>Prefabs/Trees/Bush05</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale>
+    <Vector2>
+      <x>1.2</x>
+      <y>1.3</y>
+    </Vector2>
+    <Vector2>
+      <x>1</x>
+      <y>1.1</y>
+    </Vector2>
+    <Vector2>
+      <x>1</x>
+      <y>1.1</y>
+    </Vector2>
+    <Vector2>
+      <x>0.9</x>
+      <y>1</y>
+    </Vector2>
+    <Vector2>
+      <x>0.9</x>
+      <y>1.1</y>
+    </Vector2>
+  </MinMaxScale>
+  <MaxDamage>5</MaxDamage>
+  <CoverType>None</CoverType>
+  <PlantCover>1</PlantCover>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <BulletHitEffect>None</BulletHitEffect>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <WantSoundOnDemolition>false</WantSoundOnDemolition>
+  <WantClearGrass>false</WantClearGrass>
+  <CanBeClearedForBuilding>true</CanBeClearedForBuilding>
+  <CanBeDemolished>true</CanBeDemolished>
+</PropPrototype>

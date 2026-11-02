@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>548.5922</x>
+    <y>-45.0873146</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.564711</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Morale_Don'tBeLazy" x="141.511139" y="-53.44935" NativeText="}:-) Come on now! don't be lazy and grab me more of those booze and meat!" Situation="Morale" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MoraleIsAtLeast" Subject="Actor" Data="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Morale_StayStrong" x="906.184753" y="-177.4821" NativeText="{:-( I wish I was Zed!" Situation="Morale" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MoraleIsLessThan" Subject="Actor" Data="-70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Morale_IFeelGreat" x="116.690125" y="-825.7011" NativeText="8-) I feel great! I'm ready for any action later." Situation="Morale" Importance="Memory">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="2" />
+        <Condition Type="IsFemale" Subject="Actor" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="MoraleIsAtLeast" Subject="Actor" Data="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Morale_I'mOk" x="-644.0596" y="-155.7656" NativeText="Oh I'm okey by the way, thank you for asking." Situation="Morale" Importance="Memory">
+      <Conditions>
+        <Condition Type="MoraleIsLessThan" Subject="Actor" Data="10" />
+        <Condition Type="MoraleIsAtLeast" Subject="Actor" Data="-10" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

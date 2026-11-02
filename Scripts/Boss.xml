@@ -1,0 +1,516 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>9</NextFreeTriggerID>
+  <NextFreeConditionBlockID>4</NextFreeConditionBlockID>
+  <NextFreeQuestID>4</NextFreeQuestID>
+  <NextFreeQuestGroupID>3</NextFreeQuestGroupID>
+  <NextFreeTemplateID>7</NextFreeTemplateID>
+  <NextFreeInvaderID>2</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-185.212585</x>
+    <y>-3329.16748</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5211395</EditorZoomScale>
+  <Speeches />
+  <Triggers>
+    <Trigger UniqueID="RogueFEMA_Trigger_Deactivate" x="-496.575684" y="-1095.58142">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Boss_HasBoss" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DeactivateInvader" Subject="ExtraParam" StringData="RogueFEMA_Invader" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Boss_InvisibleStrain_Trigger_Deactivate" x="-700.9823" y="1515.53772">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Boss_HasBoss" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DeactivateInvader" Subject="ExtraParam" StringData="Boss_InvisibleStrain" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Boss_Looters_Trigger_Deactivate" x="-610.4437" y="3237.531">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Boss_HasBoss" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DeactivateInvader" Subject="ExtraParam" StringData="Boss_Looters" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Boss_Increment_GreenPassOwed" x="-2949.107" y="1822.626">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Boss_HasBoss" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="QuestIsActive" Object="ExtraParam" StringData="HeliTeam_Quest_FEMA_Work" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Object="ExtraParam" StringData="HeliTeam_Quest_FEMA_Work" />
+        <StoryEvent Type="DiscoverQuest" Object="ExtraParam" StringData="Boss_CallFEMA" />
+        <StoryEvent Type="IncrementVariable" Data="1" StringData="GreenPassOwed" />
+        <StoryEvent Type="DeactivateInvader" Subject="ExtraParam" StringData="Boss_Looters" />
+        <StoryEvent Type="DeactivateInvader" Subject="ExtraParam" StringData="Boss_InvisibleStrain" />
+        <StoryEvent Type="DeactivateInvader" Subject="ExtraParam" StringData="RogueFEMA_Invader" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Boss_Trigger_SetSkills" x="5776.91943" y="3264.60034">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="Strength" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="HandToHand" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="Archery" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="Firearms" BoolData="true" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Boss_Trigger_RaidersEscaped" x="-2961.308" y="-29.1615982">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="CommunityHasTriggeredOnKilledEvents" Subject="ReferringTo" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="IncrementVariable" Subject="ExtraParam" Data="1" StringData="RaiderCount" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Boss_HasBoss" x="546.056152" y="531.6763" Type="Or">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="4" StringData="HasBoss" />
+        <Condition Type="VariableIsGreaterThanOrEqual" Subject="ReferringTo" SubjectModifier="InvaderSource" Data="3" StringData="RaiderCount" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Boss_Raiders_Formula" x="-457.548157" y="4259.25146" Type="Sum">
+      <Conditions>
+        <Condition Type="Variable" StringData="BossLevel" PriorityFactor="1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Boss_InvisibleStrain_Formula" x="-690.0515" y="2333.48926" Type="Sum">
+      <Conditions>
+        <Condition Type="Variable" StringData="BossLevel" PriorityFactor="1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Boss_RogueFEMA_Formula" x="-541.420959" y="-168.688324" Type="Sum">
+      <Conditions>
+        <Condition Type="Variable" StringData="BossLevel" PriorityFactor="1" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Boss_Quest_RetrieveDocuments" x="4651.673" y="-2557.62744" GroupID="Boss_QuestGroup_RetrieveDocuments" NativeDescription="Retrieve any documents you can find on the leader, in case they have contact details for the real FEMA.">
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Object="ReferringTo" Data="1" StringData="PhoneNumber" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsDeleted" Subject="Actor" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" />
+      </FailureConditions>
+    </Quest>
+    <Quest UniqueID="Boss_Quest_RaidingParty" x="3770.54272" y="-2573.85815" GroupID="Boss_QuestGroup_RetrieveDocuments" NativeDescription="Kill the leader of the approaching raiding party">
+      <CompletionConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsDeleted" Subject="Actor" Not="true" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsDeleted" Subject="Actor" />
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Boss_Quest_RetrieveDocuments" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Boss_CallFEMA" x="-3871.71069" y="1041.50513" GroupID="Boss_Bait" NativeDescription="Call FEMA to get your green pass." />
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Boss_QuestGroup_RetrieveDocuments" x="4230.80859" y="-2057.22974" NativeTitle="Paper Trail" MainQuest="true" />
+    <QuestGroup UniqueID="Boss_Bait" x="-3887.12915" y="556.175049" NativeTitle="Bait" MainQuest="true" />
+  </QuestGroups>
+  <Templates>
+    <Template UniqueID="RogueFEMA_Template_Raiders" x="479.254547" y="-566.7065">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <PlayerSurrenderDisabled>true</PlayerSurrenderDisabled>
+      <Children>
+        <TemplateChild UniqueID="RogueFEMA_Template_Grunt" Min="6" Max="12">
+          <MinFormula UniqueID="Boss_RogueFEMA_Formula" />
+          <MaxFormula UniqueID="Boss_RogueFEMA_Formula" />
+        </TemplateChild>
+        <TemplateChild UniqueID="RogueFEMA_Template_Boss" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="RogueFEMA_Template_Grunt" x="1553.00928" y="16.2766838">
+      <Type>Character</Type>
+      <LootLocation>FEMA</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <MeleeWeaponProbability>50</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <PipeBombProbability>50</PipeBombProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Boss_Balaklava_Camo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Jacket_Camo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Trousers_Camo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_CombatBoots" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Rag" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Bandage" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_SetSkills" />
+      </Events>
+    </Template>
+    <Template UniqueID="RogueFEMA_Template_Boss" x="1524.47949" y="-1826.307">
+      <Type>Character</Type>
+      <LootLocation>FEMA</LootLocation>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>100</BodyArmorProbability>
+      <LegArmorProbability>100</LegArmorProbability>
+      <HelmetProbability>100</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <PipeBombProbability>100</PipeBombProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>3</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Boss_Jacket_Camo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Trousers_Camo" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_CombatBoots" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Rag" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Bandage" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_PhoneNumber" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Boss_HasBoss" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_SetSkills" />
+      </Events>
+    </Template>
+    <Template UniqueID="Boss_PhoneNumber" x="2781.86" y="-2084.14746">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>PhoneNumber</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Conditions>
+        <Condition Type="QuestIsDiscovered" StringData="EmpireBuilding_GreenPass" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" SubjectModifier="Owner" StringData="Boss_Quest_RaidingParty" />
+      </Events>
+    </Template>
+    <Template UniqueID="Boss_Jacket_Camo" x="2729.93066" y="-264.7203">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Jacket_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Boss_Trousers_Camo" x="2733.05347" y="-706.419067">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CombatTrousers_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Boss_CombatBoots" x="2726.46045" y="-1175.8064">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CombatBoots</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+    </Template>
+    <Template UniqueID="Boss_Balaklava_Camo" x="2903.14282" y="541.034668">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Balaklava_Camo</EquipmentPrototypeName>
+      <WearMe>true</WearMe>
+      <Conditions>
+        <Condition Type="HasNItemsOfClothingType" Subject="ReferringTo" Data="1" StringData="Hat" Not="true" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Boss_InvisibleStrain_Raiders" x="398.646729" y="2022.645">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <PlayerSurrenderDisabled>true</PlayerSurrenderDisabled>
+      <Children>
+        <TemplateChild UniqueID="Boss_InvisibleStrain_Grunt" Min="6" Max="12">
+          <MinFormula UniqueID="Boss_InvisibleStrain_Formula" />
+          <MaxFormula UniqueID="Boss_InvisibleStrain_Formula" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_InvisibleStrain_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Boss_InvisibleStrain_Grunt" x="1558.7168" y="3428.44214">
+      <Type>Character</Type>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>Invisible</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>20</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <HasInvisibleStrain>Excitable</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Boss_Rag" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Bandage" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_SetSkills" />
+      </Events>
+    </Template>
+    <Template UniqueID="Boss_InvisibleStrain_Leader" x="1553.28857" y="1831.09973">
+      <Type>Character</Type>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <PipeBombProbability>100</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>Invisible</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>50</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <HasInvisibleStrain>Yes</HasInvisibleStrain>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>4</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Boss_Rag" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Bandage" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_PhoneNumber" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Boss_HasBoss" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_SetSkills" />
+      </Events>
+    </Template>
+    <Template UniqueID="Boss_Looters_Raiders" x="330.276642" y="4075.36743">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <PlayerSurrenderDisabled>true</PlayerSurrenderDisabled>
+      <Children>
+        <TemplateChild UniqueID="Boss_Looters_Grunt" Min="6" Max="12">
+          <MinFormula UniqueID="Boss_Raiders_Formula" />
+          <MaxFormula UniqueID="Boss_Raiders_Formula" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Looters_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Boss_Looters_Leader" x="1556.16077" y="5227.555">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>100</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>White</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>50</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Boss_Rag" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Bandage" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_PhoneNumber" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Boss_HasBoss" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_SetSkills" />
+      </Events>
+    </Template>
+    <Template UniqueID="Boss_Looters_Grunt" x="1563.04663" y="6793.723">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>75</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>White</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>20</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Boss_Rag" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Boss_Bandage" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_SetSkills" />
+      </Events>
+    </Template>
+    <Template UniqueID="Boss_Bandage" x="3186.54761" y="1572.60278">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Bandage</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" StringData="Bandage" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Boss_Rag" x="3180.86523" y="1063.83081">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Rag</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="3" StringData="Bandage" Not="true" />
+      </Conditions>
+    </Template>
+  </Templates>
+  <Invaders>
+    <Invader UniqueID="RogueFEMA_Invader" x="-1415.2915" y="-586.5902" NativeDescription="Looks like you found a rogue breakaway faction of FEMA, and pissed them off somehow." IconPath="BioMask.png" TemplateID="RogueFEMA_Template_Raiders" Density="10000" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="0.125" MaxCooldownDays="0.25">
+      <OnKilledEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="RogueFEMA_Trigger_Deactivate" />
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Increment_GreenPassOwed" />
+        <StoryEvent Type="IncrementVariable" Subject="ExtraParam" Data="1" StringData="RaiderCount" />
+      </OnKilledEvents>
+      <OnDeletedEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Increment_GreenPassOwed" />
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_RaidersEscaped" />
+      </OnDeletedEvents>
+    </Invader>
+    <Invader UniqueID="Boss_InvisibleStrain" x="-1639.19873" y="1921.42786" NativeDescription="Someone out there doesn't like you." IconPath="Reaper.png" TemplateID="Boss_InvisibleStrain_Raiders" Density="10000" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="0.125" MaxCooldownDays="0.25">
+      <OnKilledEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_InvisibleStrain_Trigger_Deactivate" />
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Increment_GreenPassOwed" />
+        <StoryEvent Type="IncrementVariable" Subject="ExtraParam" Data="1" StringData="RaiderCount" />
+      </OnKilledEvents>
+      <OnDeletedEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Increment_GreenPassOwed" />
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_RaidersEscaped" />
+      </OnDeletedEvents>
+    </Invader>
+    <Invader UniqueID="Boss_Looters" x="-1662.67944" y="3621.283" NativeDescription="One of the most feared gangs in the region has discovered your base." IconPath="BadassRaiders.png" TemplateID="Boss_Looters_Raiders" Density="10000" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="0.125" MaxCooldownDays="0.25">
+      <OnKilledEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Looters_Trigger_Deactivate" />
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Increment_GreenPassOwed" />
+        <StoryEvent Type="IncrementVariable" Subject="ExtraParam" Data="1" StringData="RaiderCount" />
+      </OnKilledEvents>
+      <OnDeletedEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Increment_GreenPassOwed" />
+        <StoryEvent Type="OneShotTrigger" StringData="Boss_Trigger_RaidersEscaped" />
+      </OnDeletedEvents>
+    </Invader>
+  </Invaders>
+</Script>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Kendo Armor</NativeName>
+  <NativeDescription>Makes you feel good at swinging sticks. 1 Damage absorption from zed.</NativeDescription>
+  <Category>4:Clothing/Armor/Vest</Category>
+  <Weight>6</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>BodyArmor</ClothingType>
+  <Scarcity>VeryRare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>40</r>
+      <g>46</g>
+      <b>88</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <MaleMeshName>Male_Mill_All:MaleBulletProofVest</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:FemaleBulletProofVest</FemaleMeshName>
+  <DamageAbsorption>1</DamageAbsorption>
+  <SkillBonusType>HandToHand</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

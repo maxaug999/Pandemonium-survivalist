@@ -1,0 +1,712 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>23</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-4121.744</x>
+    <y>-328.1092</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.624367237</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="AskToJoin_Friendly" x="515.361938" y="2163.02881" NativeText="How about joining %1?" Situation="AskToJoinCommunity">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_MyGroup" />
+        <SpeechRef UniqueID="AskToJoin_RelationshipWithLeader" />
+        <SpeechRef UniqueID="AskToJoin_DontKnowYou" />
+        <SpeechRef UniqueID="AskToJoin_Appreciate" />
+        <SpeechRef UniqueID="AskToJoin_Skills" />
+        <SpeechRef UniqueID="AskToJoin_Why" />
+        <SpeechRef UniqueID="AskToJoin_NeedMoreRespect" />
+        <SpeechRef UniqueID="AskToJoin_CantBeWorse" />
+        <SpeechRef UniqueID="AskToJoin_Separated" />
+        <SpeechRef UniqueID="AskToJoin_DontLetUsDown" />
+        <SpeechRef UniqueID="AskToJoin_DontWantToSplit" />
+        <SpeechRef UniqueID="AskToJoin_CantTakeMuchMore" />
+        <SpeechRef UniqueID="AskToJoin_Proven" />
+        <SpeechRef UniqueID="AskToJoin_Hoping" />
+        <SpeechRef UniqueID="AskToJoin_DontRespectLeader" />
+        <SpeechRef UniqueID="AskToJoin_DontLikeLeader" />
+        <SpeechRef UniqueID="AskToJoin_RelationshipMatters_Refugees" />
+        <SpeechRef UniqueID="AskToJoin_RelationshipMatters" />
+        <SpeechRef UniqueID="AskToJoin_LeaderWontLetMe" />
+        <SpeechRef UniqueID="AskToJoin_TheyWontLetMe" />
+        <SpeechRef UniqueID="AskToJoin_WouldntJoinWithout" />
+        <SpeechRef UniqueID="AskToJoin_MyPeeps" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Target" Object="Actor" Data="-40" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_Threatening" x="416.43808" y="-4659.384" NativeText=":-[ Work for %1, or you'll regret it!" Situation="AskToJoinCommunity">
+      <Params>
+        <SpeechParam Type="CommunityMeOrUs" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_MyGroup" />
+        <SpeechRef UniqueID="AskToJoin_RelationshipWithLeader" />
+        <SpeechRef UniqueID="AskToJoin_DontRespectLeader" />
+        <SpeechRef UniqueID="AskToJoin_DontLikeLeader" />
+        <SpeechRef UniqueID="AskToJoin_WinningSide" />
+        <SpeechRef UniqueID="AskToJoin_DontThreaten" />
+        <SpeechRef UniqueID="AskToJoin_LeaderWontLetMe" />
+        <SpeechRef UniqueID="AskToJoin_TheyWontLetMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Target" Object="Actor" Data="-40" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_DontKnowYou" x="4464.15625" y="7352.06836" NativeText="}:-| I don't know you well enough to trust you." />
+    <Speech UniqueID="AskToJoin_Hoping" x="4371.754" y="-395.764862" NativeText=":-) Really?  I was hoping you'd say that!" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantJoinCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="45" Data2="160" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="PoachedFrom" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="OneShotTrigger" StringData="AskToJoin_Join_One" />
+        <StoryEvent Type="OneShotTrigger" StringData="AskToJoin_Join_All" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" Delay="0.1" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_LetsGo" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_Proven" x="4367.87354" y="1480.49756" NativeText="You've certainly proven yourself... alright then." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantJoinCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="PoachedFrom" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="OneShotTrigger" StringData="AskToJoin_Join_One" />
+        <StoryEvent Type="OneShotTrigger" StringData="AskToJoin_Join_All" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" Delay="0.1" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_LetsGo" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_WinningSide" x="4344.875" y="-4101.48145" NativeText="8-( Uh... okay, :-( I guess it wouldn't hurt to be on the winning side." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantJoinCommunityWhenThreatened" Subject="Actor" Object="Target" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_Appreciate" x="4454.80859" y="7069.966" NativeText=":-) You're a stand-up %1 and I appreciate the offer... :-| but no thanks.">
+      <Params>
+        <SpeechParam Type="GuyOrChick" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="45" Data2="160" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_NeedMoreRespect" x="4373.16" y="4591.539" NativeText="{:-) Hey, you seem nice.  I like you - but if I'm going to join you I don't just need 'nice'.  I need to know you've got what it takes to survive out here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="45" Data2="160" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="1000" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="70" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_Skills" x="4451.258" y="6146.242" NativeText="You've got some good skills, but... no thanks.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data2="45" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_Why" x="4392.666" y="5373.60449" NativeText="}:-| Why on earth would I want to work with you?  No thanks!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="ApprovalRespectAngleBetween" Subject="Actor" Object="Target" Data="160" Data2="360" />
+        <Condition Type="ApprovalRespectAmountBetween" Subject="Actor" Object="Target" Data="10" Data2="1000" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_DontThreaten" x="4346.18555" y="-5509.52441" NativeText="}:-[ Don't think you can threaten me, buddy!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_DontRespectLeader" x="4370.07861" y="-2443.65625" NativeText="Hey I like %1 but I need a leader that's more... uh, competent.">
+      <Params>
+        <SpeechParam Type="CommunityLeaderNameOrYou" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="6" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Player" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_DontLikeLeader" x="4362.56543" y="-3332.22754" NativeText="}:-| I wouldn't join any group with %1 as leader... no way!">
+      <Params>
+        <SpeechParam Type="CommunityLeaderNameOrYou" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_MyGroup" x="-2093.16919" y="-771.0579" NativeText="}:-[ This is my group!  Stop trying to poach my people, asshole!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="8" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PoachedUnsuccessfullyFrom" Secrecy="OnlyKnownToObject" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_CantBeWorse" x="4370.03125" y="3512.51367" NativeText="{:-( I guess it can't be worse than this." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantJoinCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="Respects" Subject="Actor" Object="Target" Data="1" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" ObjectModifier="Community" StringData="PoachedFrom" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="OneShotTrigger" StringData="AskToJoin_Join_One" />
+        <StoryEvent Type="OneShotTrigger" StringData="AskToJoin_Join_All" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" Delay="0.1" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_LetsGo" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_RelationshipWithLeader" x="-2050.266" y="-2138.1748" NativeText="}:-| %1 is my %2 and %3 runs this outfit - no way I'd leave %4!  Stop trying to poach our people!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="Actor" ObjectModifier="Leader" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" SubjectModifier="Leader" />
+        <SpeechParam Type="HimOrHer" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="8" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Leader" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="Actor" ObjectModifier="Leader" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PoachedUnsuccessfullyFrom" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="Actor" ObjectModifier="Leader" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_TheyWontLetMe" x="-2085.34229" y="113.151085" NativeText="They won't let me leave!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Captive" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="AskToJoin_LeaderWontLetMe" x="-2083.609" y="1561.35461" NativeText="%1 won't let me leave!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="RankEquals" Subject="Actor" StringData="Captive" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="2" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+        <Condition Type="Respects" Subject="Actor" Object="Actor" ObjectModifier="Leader" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" ObjectModifier="Leader" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_RelationshipMatters" x="-2075.40967" y="3793.9668" NativeText="You've proven yourself but I wouldn't join you without my %1, %2.  You'd have to convince %3 too." SuccessfulResponse="true" PerObjectType="PerRelationship">
+      <Params>
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="7" />
+        <Condition Type="WantJoinCommunity" Subject="ReferringTo" Object="Target" Not="true" PriorityFactor="0.1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_MakesSense" />
+        <SpeechRef UniqueID="AskToJoin_LeaveThemBehind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="WantJoinCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="WantJoinCommunity" Subject="ReferringTo" Object="Target" BoolData="true" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_IfImJoining" x="5994.76855" y="543.331543" NativeText=":-) And if I'm joining you then so will my %1, %2." CanTalkOutOfRange="true" AIOverridesControl="true" PerObjectType="PerRelationship">
+      <Params>
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" Not="true" />
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="WasInitiallyMemberOf" Subject="Actor" Object="ReferringTo" ObjectModifier="Community" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsMemberOf" Subject="ReferringTo" Object="Target" ObjectModifier="Community" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" ObjectModifier="Community" StringData="PoachedFrom" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="JoinCommunity" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="Follow" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_AndOfCourse" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="Speak" Subject="ReferringTo" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_IfImJoining" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_WeUsedToBeFriends" x="7521.01758" y="277.58783" NativeText="{:-| %1 and I used to be good friends, but lately we don't see eye to eye on much.  I guess times change." CanTalkOutOfRange="true" AIOverridesControl="true" PerObjectType="PerRelationship" PerRelationship="FriendsWith">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="WasInitiallyMemberOf" Subject="Actor" Object="ReferringTo" ObjectModifier="Community" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsMemberOf" Subject="ReferringTo" Object="Target" ObjectModifier="Community" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_NeedToMoveOn" x="8383.523" y="252.146362" NativeText="{:-( Looks like my relationship with %1 is not a thing anymore.  We need to move on." CanTalkOutOfRange="true" AIOverridesControl="true" PerObjectType="PerRelationship" PerRelationship="SleepingWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="WasInitiallyMemberOf" Subject="Actor" Object="ReferringTo" ObjectModifier="Community" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsMemberOf" Subject="ReferringTo" Object="Target" ObjectModifier="Community" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" StringData="Ex" BoolData="true" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_MarriageDisaster" x="9235.773" y="244.912537" NativeText="{:-( My marriage with %1 has been such a disaster.  I think we both know it's over." CanTalkOutOfRange="true" AIOverridesControl="true" PerObjectType="PerRelationship" PerRelationship="MarriedTo">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="WasInitiallyMemberOf" Subject="Actor" Object="ReferringTo" ObjectModifier="Community" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsMemberOf" Subject="ReferringTo" Object="Target" ObjectModifier="Community" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" StringData="Ex" BoolData="true" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_RelationshipMatters_Refugees" x="-1223.88708" y="3796.948" NativeText="You seem okay to me, but %1 doesn't trust you.  You'd have to convince %2 too." SuccessfulResponse="true" PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="7" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_MakesSense" />
+        <SpeechRef UniqueID="AskToJoin_LeaveThemBehind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="WantJoinCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="WantLeaveCommunity" Subject="ReferringTo" Object="Target" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_AndOfCourse" x="6737.22461" y="541.5658" NativeText=":-) And my %1, %2." CanTalkOutOfRange="true" AIOverridesControl="true" PerObjectType="PerRelationship">
+      <Params>
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" Not="true" />
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="WasInitiallyMemberOf" Subject="Actor" Object="ReferringTo" ObjectModifier="Community" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsMemberOf" Subject="ReferringTo" Object="Target" ObjectModifier="Community" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" ObjectModifier="Community" StringData="PoachedFrom" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="JoinCommunity" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="Follow" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_AndOfCourse" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="Speak" Subject="ReferringTo" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_IfImJoining" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_DontLetUsDown" x="-1212.64771" y="5782.37646" NativeText="%1 seems to like you, so I guess we'll take a chance on you.  {:-| Don't let us down." SuccessfulResponse="true" PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2.7" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="WantJoinCommunity" Subject="ReferringTo" Object="Target" />
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="ApprovalRespectAngleBetween" Subject="ReferringTo" Object="Target" Data="45" Data2="160" />
+        <Condition Type="ApprovalRespectAmountAtLeast" Subject="ReferringTo" Object="Target" Data="5" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" BoolData3="true" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_CantTakeMuchMore" x="-2820.07813" y="5738.56543" NativeText="{:-| Yeah, well %1 is so tired of being on the run %2's about ready to settle with whoever will take us in.  Fuck it, %3'll just go where %4 goes." SuccessfulResponse="true" PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+        <SpeechParam Type="CommunityIOrWe" Subject="Actor" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2.6" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="WantJoinCommunity" Subject="ReferringTo" Object="Target" />
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="Respects" Subject="ReferringTo" Object="Target" Data="1" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" BoolData3="true" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_DontWantToSplit" x="-2006.19128" y="5617.341" NativeText="Eh, I think %1 wants to, and I don't want to split.  }:-| I sure hope you're not an asshole." SuccessfulResponse="true" PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2.5" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="WantJoinCommunity" Subject="ReferringTo" Object="Target" />
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" BoolData3="true" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_Separated" x="-186.534622" y="5472.212" NativeText="Maybe but I'll wait till %1 gets back here." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="7" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+        <Condition Type="AnyoneWantsToJoinCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="DistanceToIsLessThan" Subject="Actor" Object="ReferringTo" Data="32" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="AskToJoin_WouldntJoinWithout" x="1479.77185" y="1399.87378" NativeText="I couldn't join you without my %1, %2.  Can %3 come too?" SuccessfulResponse="true" PerObjectType="PerRelationship">
+      <Params>
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="0.001" />
+        <Condition Type="Always" PriorityFactor="4.2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_Welcome" />
+        <SpeechRef UniqueID="AskToJoin_CantFeed" />
+        <SpeechRef UniqueID="AskToJoin_LeaveThemBehind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="WantJoinCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_Welcome" x="2353.65649" y="598.9056" NativeText="%1's welcome!">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_CantBeWorse" />
+        <SpeechRef UniqueID="AskToJoin_Proven" />
+        <SpeechRef UniqueID="AskToJoin_Hoping" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="AskToJoin_CantFeed" x="2325.36157" y="-32.9543457" NativeText="I can't feed another person.">
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_NotSuchAGreatIdea" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="AskToJoin_LetsGo" x="5267.08" y="549.078247" NativeText=":-) %1 will be happy to get out of here." CanTalkOutOfRange="true" AIOverridesControl="true" PerObjectType="PerRelationship">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="1000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="ReferringTo" StringData="RovingRefugee" Not="true" />
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="WasInitiallyMemberOf" Subject="Actor" Object="ReferringTo" ObjectModifier="Community" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsMemberOf" Subject="ReferringTo" Object="Target" ObjectModifier="Community" />
+      </CancelConditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" ObjectModifier="Community" StringData="PoachedFrom" Secrecy="OnlyKnownToObjectCommunity" />
+        <StoryEvent Type="JoinCommunity" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="Follow" Subject="ReferringTo" Object="Target" />
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_AndOfCourse" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+        <StoryEvent Type="Speak" Subject="ReferringTo" Object="Target">
+          <Speeches>
+            <SpeechRef UniqueID="AskToJoin_IfImJoining" />
+            <SpeechRef UniqueID="AskToJoin_WeUsedToBeFriends" />
+            <SpeechRef UniqueID="AskToJoin_NeedToMoveOn" />
+            <SpeechRef UniqueID="AskToJoin_MarriageDisaster" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_MyPeeps" x="1487.05591" y="-882.680359" NativeText="I'm not going anywhere without my peeps.  There's %1 people I can't leave behind.  My %2, %3..." SuccessfulResponse="true" PerObjectType="PerRelationship">
+      <Params>
+        <SpeechParam Type="NumGoodRelationshipsInCommunity" Subject="Actor" Object="Actor" ObjectModifier="Community" />
+        <SpeechParam Type="RelationshipName" Subject="Actor" Object="ReferringTo" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="0.001" />
+        <Condition Type="Always" PriorityFactor="4.4" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_AllWelcome" />
+        <SpeechRef UniqueID="AskToJoin_CantFeedThatMany" />
+        <SpeechRef UniqueID="AskToJoin_LeaveThemBehind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="WantJoinCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+        <Condition Type="HasGoodRelationship" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="HasGoodRelationshipsInCommunity" Subject="Actor" Object="Actor" ObjectModifier="Community" Data="2" BoolData="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+        <StoryEvent Type="DiscoverRelationship" Subject="Actor" Object="ReferringTo" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="AskToJoin_AllWelcome" x="2329.39" y="-1608.59546" NativeText="They're all welcome!">
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_CantBeWorse" />
+        <SpeechRef UniqueID="AskToJoin_Proven" />
+        <SpeechRef UniqueID="AskToJoin_Hoping" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="AskToJoin_CantFeedThatMany" x="2335.68213" y="-2101.73438" NativeText="I can't feed that many.">
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_NotSuchAGreatIdea" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="AskToJoin_NotSuchAGreatIdea" x="3450.19678" y="-1879.34924" NativeText="}:-| Well, then maybe joining you ain't such a great idea anyway." />
+    <Speech UniqueID="AskToJoin_MakesSense" x="-2867.36377" y="3063.05029" NativeText="Sure, that makes sense." />
+    <Speech UniqueID="AskToJoin_LeaveThemBehind" x="2385.45435" y="-2535.854" NativeText="}:-[ Leave %1 behind, or you'll regret it!">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="AskToJoin_DontRespectLeader" />
+        <SpeechRef UniqueID="AskToJoin_DontLikeLeader" />
+        <SpeechRef UniqueID="AskToJoin_WinningSide" />
+        <SpeechRef UniqueID="AskToJoin_DontThreaten" />
+      </Replies>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="AskToJoin_Join_One" x="6071.791" y="2942.32739">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="AskToJoin_Join_All" x="6063.999" y="2174.75586">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="CommunityTypeEquals" Subject="Actor" StringData="RovingRefugee" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" BoolData3="true" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

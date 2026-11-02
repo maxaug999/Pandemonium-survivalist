@@ -1,0 +1,1202 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>54</NextFreeSpeechID>
+  <NextFreeTriggerID>13</NextFreeTriggerID>
+  <NextFreeConditionBlockID>7</NextFreeConditionBlockID>
+  <NextFreeQuestID>6</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>5</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-3064.93945</x>
+    <y>15844.584</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.7598708</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Jalopy_TimeToMoveOn" x="684.7184" y="48.60327" NativeText="}:-| I can't stick around in this crew while %1 is on it. {:-( It's time to cut and run." PerObjectType="PerMemory" PerMemory="BeatUp">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="MemoryActor" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="0.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="-0.5" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Actor" ObjectModifier="Leader" PriorityFactor="-0.005" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" />
+        <Condition Type="Equals" Subject="MemoryActor" Object="Target" Not="true" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" />
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="MemoryActor" />
+        <Condition Type="WorldHasAnyUnownedVehicles" />
+        <Condition Type="QuestIsDiscoveredGivenBy" Subject="Actor" StringData="Jalopy_Quest_AskAround" Not="true" />
+        <Condition Type="QuestGroupIsActiveWithAnyParams" StringData="Jalopy_QuestGroup" Not="true" />
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+        <Condition Type="Approves" Subject="Actor" Object="MemoryActor" Data="-30" Not="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1000" StringData="Phalange" />
+        <StoryEvent Type="SpawnTemplate" StringData="Jalopy_SpawnToolbox" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Jalopy_WhatHappened" x="-2187.1333" y="-4419.1875" NativeText="Where did %1 go?" Situation="QuestTopic" PerObjectType="PerActiveQuest" PerStringData="Jalopy_Quest_AskAround">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_DontKnowDontCare" />
+        <SpeechRef UniqueID="Jalopy_NeverKnewThem" />
+        <SpeechRef UniqueID="Jalopy_NoIdea" />
+        <SpeechRef UniqueID="Jalopy_GotOnBetter" />
+        <SpeechRef UniqueID="Jalopy_MightHaveAnIdea" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Target" />
+        <Condition Type="HasSpokenSpeech" Subject="Target" Object="ReferringTo" ObjectModifier="QuestGiver" Data="151200" StringData="Jalopy_WhatHappened" Not="true" />
+        <Condition Type="IsMostLikedCommunityMember" Subject="ReferringTo" Object="Actor" SubjectModifier="QuestGiver" BoolData="true" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_MightHaveAnIdea" x="17.058548" y="-6426.497" NativeText="Hmm, I might have an idea.  %1 mentioned a back-up plan, some old jalopy %2 knew how to get working.  The idea was to take that and hit the road, if ever things got too hot round here.">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Jalopy_OurAltercation" />
+        <SpeechRef UniqueID="Jalopy_YourAltercation" />
+        <SpeechRef UniqueID="Jalopy_TheAltercation" />
+      </Continues>
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestSeeker" Not="true" />
+        <Condition Type="IsMostLikedCommunityMember" Subject="ReferringTo" Object="Actor" SubjectModifier="QuestGiver" BoolData="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_GotOnBetter" x="8.195618" y="-5174.42" NativeText="%1 could be a good person to ask... %2 was the one who got on best with %3.">
+      <Params>
+        <SpeechParam Type="MostLikedCommunityMemberName" Subject="ReferringTo" Object="Actor" SubjectModifier="QuestGiver" ObjectModifier="Community" BoolData="true" />
+        <SpeechParam Type="MostLikedCommunityMemberHeOrShe" Subject="ReferringTo" Object="Actor" SubjectModifier="QuestGiver" ObjectModifier="Community" BoolData="true" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Street-Smart" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestGiver" StringData="Jalopy_WhatHappened" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_NoIdea" x="10.8999023" y="-4105.45068" NativeText="{:-| No idea, sorry!  Wish I could help, %1 was a good %2.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="GuyOrChick" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestGiver" Data="20" Data2="20" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestGiver" StringData="Jalopy_WhatHappened" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_TheAltercation" x="1770.63489" y="-7347.44434" NativeText="}:-| I guess after the altercation with %1, %2 decided %3'd had enough. :-| The vehicle is out round %4 way. {:-| But if you plan to go looking for %5, I suggest get %6 to go make peace.  No way you'll get %7 to come back otherwise.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="NearestTownOrSettlementName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestSeeker" Not="true" />
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" ObjectModifier="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_AskAround" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_NeverKnewThem" x="16.4434967" y="-3168.07129" NativeText="I don't know.  Never knew %1 that well.">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestGiver" Data="-20" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestGiver" StringData="Jalopy_WhatHappened" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_DontKnowDontCare" x="4.64024353" y="-2554.46387" NativeText="Don't know, don't care.  We're better off without %1!">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <Events>
+        <StoryEvent Type="RememberSpokenSpeech" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestGiver" StringData="Jalopy_WhatHappened" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_ComeBackHome" x="-6646.257" y="-10373.3193" NativeText="%1, won't you come back home?" Situation="QuestTopic" PerObjectType="PerActiveQuest" PerStringData="Jalopy_Quest_FindVehicle">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_NotWhileStillThere" />
+        <SpeechRef UniqueID="Jalopy_GotNothingToSay" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" ObjectModifier="QuestGiver" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_GotNothingToSay" x="-5386.46875" y="-12619.7246" NativeText="}:-| I got nothing to say to you!">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_BeatYouMore" />
+        <SpeechRef UniqueID="Jalopy_ThingsGotOutOfHand" />
+        <SpeechRef UniqueID="Jalopy_SuitYourself" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" ObjectModifier="QuestSeeker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_NotWhileStillThere" x="-5424.19727" y="-9614.35449" NativeText="}:-| Not while %1 is still around.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_TheyLeft" />
+        <SpeechRef UniqueID="Jalopy_TheyDead" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" ObjectModifier="QuestSeeker" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_TheyLeft" x="-4276.089" y="-8941.643" NativeText="%1 has left %2.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_MakesNoDifference" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="ReferringTo" Object="Actor" SubjectModifier="QuestSeeker" ObjectModifier="Community" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_TheyDead" x="-4266.27441" y="-9884.208" NativeText="%1 is dead.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+        <SpeechParam Type="CommunityName" Subject="Actor" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_ForMySake" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" SubjectModifier="QuestSeeker" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_MakesNoDifference" x="-3138.70435" y="-9164.036" NativeText="}:-| Makes no difference to me.  How do I know you won't take %1 back?">
+      <Params>
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Jalopy_ForMySake" x="-3147.60986" y="-9987.365" NativeText="/:-| Seriously, %1 had %2 killed for my sake?">
+      <Params>
+        <SpeechParam Type="FullNameOrMeOrYou" Subject="Target" SubjectModifier="Leader" BoolData="true" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="QuestSeeker" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_DidYouWrong" />
+        <SpeechRef UniqueID="Jalopy_ItWasAnAccident" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_DidYouWrong" x="-2023.16467" y="-9576.954" NativeText="}:-) Yeah.  %1 did you wrong and %2 took action!  So, how about it?">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" SubjectModifier="QuestSeeker" BoolData="true" />
+        <SpeechParam Type="FirstNameActive" Subject="Actor" SubjectModifier="Leader" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_JusticeServed" />
+        <SpeechRef UniqueID="Jalopy_NotAGoodPlace" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" SubjectModifier="Leader" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_ItWasAnAccident" x="-2024.62793" y="-10448.2539" NativeText="No, it was an accident.  Are you coming back or what?">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_MightAsWell" />
+        <SpeechRef UniqueID="Jalopy_NotAGoodPlace" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_JusticeServed" x="-802.0222" y="-7088.644" NativeText="}:-) Alright then, justice has been served.  The system works!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="ReferringTo" SubjectModifier="Leader" ObjectModifier="QuestSeeker" StringData="Killed" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_MightAsWell" x="-791.352661" y="-8951.191" NativeText="I suppose I might as well if I don't have to worry about %1 anymore.  Thanks for coming to get me." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="10000" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" Data2="80" />
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedSuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_NotAGoodPlace" x="-798.985962" y="-10824.5977" NativeText="{:-| %1 wasn't a good place for me.">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Jalopy_IsQuestGiver" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="PersuadedUnsuccessfully" />
+      </UninterruptibleEvents>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="AskToJoin_Friendly" />
+        <SpeechRef UniqueID="AskToJoin_Threatening" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Jalopy_ThingsGotOutOfHand" x="-4033.90259" y="-13917.6533" NativeText="{:-| Look, I'm sorry, okay?  Things got out of hand.">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_HelpMeGetOut" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_SuitYourself" x="-4058.76782" y="-14947.37" NativeText="}:-| Suit yourself." />
+    <Speech UniqueID="Jalopy_HelpMeGetOut" x="-2801.25513" y="-14151.9082" NativeText="}:-| I ain't coming back, alright?  If you're really sorry then just help me get the fuck out of here. {:-| I got this thing all fixed up, except it's missing a part and I can't find it anywhere.">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_WhatPart" />
+        <SpeechRef UniqueID="Jalopy_OnYourOwn" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_WhatPart" x="-1810.19263" y="-14087.6064" NativeText="Fine, I'll help.  What's the missing part?">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_VerySpecific" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_BeatYouMore" x="-3170.59" y="-12301.7822" NativeText="}:-[ Get your ass back here or I'll beat you a second time, only more so.">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_DoWhateverYouWant" />
+        <SpeechRef UniqueID="Jalopy_NotAsScary" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Jalopy_IsAsshole" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_DoWhateverYouWant" x="-1997.0127" y="-11182.4453" NativeText="{:-[ Just do whatever you want with me, I don't care anymore." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="30" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_FollowMe" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Humiliated" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Jalopy_FollowMe" x="-872.1688" y="-12370.13" NativeText="}:-| Follow me, you little bitch.">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_InYourDreams" />
+        <SpeechRef UniqueID="Jalopy_YesSirOrMadam" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_InYourDreams" x="223.896484" y="-11522.3975" NativeText=":-) In your dreams.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="WantLeaveCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="FleeAndDisappear" Subject="Actor" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Jalopy_YesSirOrMadam" x="218.477142" y="-12900.9258" NativeText="{:-( Yes, %1.">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="JoinCommunity" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Jalopy_OnYourOwn" x="-1805.70752" y="-14984.6914" NativeText="}:-| You jumped ship - you're on your own with that." />
+    <Speech UniqueID="Jalopy_VerySpecific" x="-825.415161" y="-14080.32" NativeText="{:-| The driver's side phalange.  It's a very specific part.  The engine will explode without it.">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_AlreadyGotOne" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_SpawnPhalange" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ApologisedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_HiddenStash" x="2969.28149" y="-16830.21" NativeText="You might be in luck.  Before I joined this crew, I had a little stash of useful supplies, including a few car parts, hidden in %1.  I'm pretty sure there was a phalange in there, maybe it'll fit!" Importance="Critical" MustFinish="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" SubjectModifier="Owner" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_NotAllBad" />
+        <SpeechRef UniqueID="Jalopy_LuckyCoincidence" />
+        <SpeechRef UniqueID="Jalopy_Really" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_Really" x="4603.073" y="-18497.877" NativeText="/:-| Really?  Hell, let's go get it then." AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_StashIsNear" x="14159.6943" y="-15983.8174" NativeText="My stash is near here, in the %1.  I'll show you where." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_HopeItsStillThere" x="14147.1631" y="-15165.0693" NativeText="It was around here.  In a %1. {:-| I hope it's still there.  I mean, I thought I hid it pretty well.  It should still be there." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_SomeBastard" x="14155.4736" y="-16651.9219" NativeText="My stash is in the %1. }:-| Unless some bastard has found it already." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_ComingOrWhat" x="14165.7256" y="-14441.3438" NativeText="I'm at the stash, %1, are you coming or what?" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_DoThisTogether" x="14156.4365" y="-13636.2207" NativeText="My stash is near here. {:-| I thought we were going to do this together, %1?" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_BetterAppreciateThis" x="14149.915" y="-17440.5156" NativeText="So I hid my stuff in the %1 here, got some valuable components which I could have used... }:-| You better appreciate this!" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Jealous" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_NeedMeToFindIt" x="14103.0225" y="-12850.0928" NativeText="You're near the stash, %1, but you'll need me to find it for you." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_IHaveToExplainEverything" x="14089.5986" y="-11924.1406" NativeText="}:-| Uh, %1, you're not going to be able to find the stash without me there.  I thought that would be obvious but apparently I have to explain everything." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_CameThroughForMe" x="4885.29" y="-21924.0645" NativeText="This looks like it would fit! {:-) You actually came through for me, %1.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_GivePart" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_OffBrand" x="4865.92432" y="-20164.46" NativeText=":-( Hmm, it's off-brand but I guess we can give it a try.  Not like I got a lot of options here.">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_GivePart" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_BlowUp" x="4883.406" y="-20953.8984" NativeText="It's a slightly different model but we can give it a try. :-) Let's hope it doesn't make the whole thing blow up or something!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_GivePart" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_LuckyCoincidence" x="4571.333" y="-17412.57" NativeText="Uh... that's a pretty lucky coincidence.  Is this some trick?  Why do you want to help me now?" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_NoTrick" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_NoTrick" x="5770.003" y="-17845.498" NativeText="{:-| It's no trick, I swear.  Just good luck.  If it even fits, that is." AIOverridesControl="true">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_Really" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_NotAllBad" x="4536.15332" y="-16624.5684" NativeText="/:-) Really?  Maybe you're not all bad." AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_AlreadyGotOne" x="2594.8562" y="-18476.1621" NativeText="You might be in luck, we've already got one of those.  Seems they're in demand lately.">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_NotAllBad" />
+        <SpeechRef UniqueID="Jalopy_LuckyCoincidence" />
+        <SpeechRef UniqueID="Jalopy_Really" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Actor" Data="1" StringData="Phalange" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Jalopy_Quest_GivePart" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_ItsWorking" x="10596.7832" y="-21816.498" NativeText=":-) We did it?  It's working!" Importance="Critical" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_WeAreGoodNow" />
+        <SpeechRef UniqueID="Jalopy_CasualAquaintance" />
+        <SpeechRef UniqueID="Jalopy_WaterUnderTheBridge" />
+        <SpeechRef UniqueID="Jalopy_HaveANiceLife" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_ItsActuallyWorking" x="10606.4258" y="-22650.7148" NativeText="/:-| Holy shit.  Can't believe we actually got that old thing working." Importance="Critical" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_WeAreGoodNow" />
+        <SpeechRef UniqueID="Jalopy_CasualAquaintance" />
+        <SpeechRef UniqueID="Jalopy_WaterUnderTheBridge" />
+        <SpeechRef UniqueID="Jalopy_HaveANiceLife" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_NothingCanStopMe" x="10620.4512" y="-23659.8066" NativeText="}:-) Fuck yeah!  It's working!  Nothing can stop us!  Go team!" Importance="Critical" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_WeAreGoodNow" />
+        <SpeechRef UniqueID="Jalopy_CasualAquaintance" />
+        <SpeechRef UniqueID="Jalopy_WaterUnderTheBridge" />
+        <SpeechRef UniqueID="Jalopy_HaveANiceLife" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_WeAreGoodNow" x="12281.2363" y="-21116.6348" NativeText="Well %1, I guess this is it then, I'm outta here.  I know we haven't always gotten along but I just want you to know that... we're good now." MustFinish="true" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_GetInCar" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_CasualAquaintance" x="12281.0918" y="-22050.7383" NativeText="Well, I guess this is goodbye, %1.  I know we haven't exactly gotten along in the past but I just want you to know that I now think of you as a... casual aquaintance." MustFinish="true" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_GetInCar" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_WaterUnderTheBridge" x="12273.24" y="-23066.33" NativeText="{:-) Well %1, I guess this is the end of the road.  I just want you to know that whatever happened between us is water under the bridge.  I will always remember that you helped me in the end!" MustFinish="true" CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bipolar" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_GetInCar" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_HaveANiceLife" x="12267.75" y="-24465.4863" NativeText="}:-| Well, guess I'll fuck off now.  Have a nice life %1." CanTalkOutOfRange="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" BoolData="true" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_GetInCar" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_HeresThePart" x="3652.9834" y="-20722.74" NativeText="Here's the phalange.  What do you think?" Situation="QuestTopic" PerObjectType="PerActiveQuest" PerStringData="Jalopy_Quest_GivePart">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_OffBrand" />
+        <SpeechRef UniqueID="Jalopy_BlowUp" />
+        <SpeechRef UniqueID="Jalopy_CameThroughForMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestSeeker" />
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" ObjectModifier="QuestGiver" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Phalange" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_OughttaDoIt" x="9506.121" y="-22868.5488" NativeText="That oughtta do it." SpecialBehaviour="NoReplyChoice">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_ItsWorking" />
+        <SpeechRef UniqueID="Jalopy_ItsActuallyWorking" />
+        <SpeechRef UniqueID="Jalopy_NothingCanStopMe" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_AnotherChance" x="16958.1875" y="-23971.1113" NativeText="{:-) You know what?  I could give %1 another chance.  I'll come back with you." Importance="Uninterruptible" MustFinish="true" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoice" PerStringData="">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_GladToHaveYouBack" />
+        <SpeechRef UniqueID="Jalopy_ComeCrawlingBack" />
+        <SpeechRef UniqueID="Jalopy_WouldntBeTheSame" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_NotAsScary" x="-2015.33655" y="-12993.2217" NativeText="/:-| You're obviously not as scary as you think you are.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Jalopy_GladToHaveYouBack" x="19140.3828" y="-23958.2383" NativeText=":-) Yeah?  Well I for one am glad to have you back.  We needed you." Importance="Uninterruptible" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_Rejoin" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_TakeMeBack" x="16953.2715" y="-25009.3652" NativeText="}:-| Ah who am I kidding, I'd probably manage to get eaten by zombies before I even left the county.  Better to die horribly with friends than alone. {:-| Take me back, I want to come home!" Importance="Uninterruptible" MustFinish="true" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoice">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_GladToHaveYouBack" />
+        <SpeechRef UniqueID="Jalopy_ComeCrawlingBack" />
+        <SpeechRef UniqueID="Jalopy_WouldntBeTheSame" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_Reconsider" x="16937.27" y="-26188.0254" NativeText="Then again, the probability of me surviving out there by myself has got to be... oh, at least a little bit lower than with a group.  I'd like to reconsider." Importance="Uninterruptible" MustFinish="true" CanTalkOutOfRange="true" SpecialBehaviour="NoReplyChoice">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_GladToHaveYouBack" />
+        <SpeechRef UniqueID="Jalopy_ComeCrawlingBack" />
+        <SpeechRef UniqueID="Jalopy_WouldntBeTheSame" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Jalopy_ComeCrawlingBack" x="19154.87" y="-25022.82" NativeText="}:-| Took you long enough to realise it!  Still, I always figured you'd come crawling back eventually." Importance="Uninterruptible" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_Rejoin" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_WouldntBeTheSame" x="19148.3066" y="-26547.1563" NativeText="{:-) I'm so glad you've changed your mind.  The place just wouldn't be the same without you!" Importance="Uninterruptible" MustFinish="true" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_Rejoin" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_GladIWasntInThat" x="25797.0742" y="-18787.9941" NativeText="8-( Holy shit!  Did you see that?  Whole thing just exploded!  I could have died!" Importance="Uninterruptible" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bipolar" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_GotOutJustInTime" x="25807.5488" y="-18292.1211" NativeText="8-| Jesus.  I got out just in time." Importance="Uninterruptible" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_AftermarketPhalange" x="25796.707" y="-19628.7188" NativeText="}:-| Shit.  Must have been that aftermarket phalange." Importance="Uninterruptible" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_OhMyGod" x="17613.9121" y="-20869.9414" NativeText="8-( Oh my god.  %1!  No!  Noooo!" Importance="Uninterruptible" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_NotTheRightType" x="17610.957" y="-21591.2676" NativeText="}:-| Dammit, must have been the wrong type of phalange." Importance="Uninterruptible" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Jalopy_SoThisIsWhere" x="5720.29053" y="-5314.39551" NativeText="So this is where you've been hiding!" Situation="QuestTopic" PerObjectType="PerActiveQuest" PerStringData="Jalopy_Quest_AskAround">
+      <Replies>
+        <SpeechRef UniqueID="Jalopy_Reunion" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" ObjectModifier="QuestGiver" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Jalopy_Reunion" x="7145.07471" y="-5021.52246" NativeText="}:-| I'm not interested in a reunion, okay?  I just want out of here.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" StringData="Jalopy_Quest_AskAround" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_AskAround" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="AskToJoin_Friendly" />
+        <SpeechRef UniqueID="AskToJoin_Threatening" />
+        <SpeechRef UniqueID="Surrender_WorkForMe" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Jalopy_YourAltercation" x="1773.92456" y="-5822.06348" NativeText="}:-| I guess after your altercation, %1 decided %2'd had enough. :-| The vehicle is out round %3 way. {:-| If you want %4 back I suggest you go yourself to make peace.">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="NearestTownOrSettlementName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+      </Params>
+      <Conditions>
+        <Condition Type="Equals" Subject="Target" Object="ReferringTo" ObjectModifier="QuestSeeker" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_AskAround" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_OurAltercation" x="1780.11707" y="-4379.64844" NativeText="{:-| I guess after our altercation, %1 decided %2'd had enough. :-| The vehicle is out round %3 way. I probably better go myself to make peace.">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" SubjectModifier="QuestGiver" />
+        <SpeechParam Type="NearestTownOrSettlementName" Subject="ReferringTo" SubjectModifier="QuestObject" />
+      </Params>
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" ObjectModifier="QuestSeeker" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_AskAround" />
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindVehicle" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Jalopy_WingIt" x="10281.2178" y="-17969.53" NativeText="{:-( Shit, there goes my best chance of getting out of here.  Just gonna have to wing it." Importance="Uninterruptible">
+      <UninterruptibleEvents>
+        <StoryEvent Type="FleeAndDisappear" Subject="Actor" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Jalopy_Trigger_Teleport" x="3065.45166" y="-617.361633">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="JoinCommunity" Subject="ReferringTo" Object="Actor" SubjectModifier="Owner" ObjectModifier="Community" />
+        <StoryEvent Type="Teleport" Subject="Actor" Object="ReferringTo" ObjectModifier="Owner" />
+        <StoryEvent Type="SetHiddenOnMap" Subject="Actor" BoolData="true" />
+        <StoryEvent Type="EnableScriptedMove" Subject="Actor" Object="ReferringTo" ObjectModifier="Owner" StringData="Run" StringData2="Low" BoolData3="true" />
+        <StoryEvent Type="StartSimulatingSurvivalFactors" Subject="Actor" BoolData2="true" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="MemoryActor" ObjectModifier="Owner" StringData="Jalopy_Quest_AskAround" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_BothClose" x="13084.0615" y="-15461.8809" TriggerRepeatTime="600">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="QuestParam" ObjectModifier="Owner" Data="32" />
+        <Condition Type="DistanceToIsLessThan" Subject="QuestSeeker" Object="QuestParam" ObjectModifier="Owner" Data="32" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="UnconcealAllItems" Subject="QuestParam" SubjectModifier="Owner" />
+        <StoryEvent Type="Speak" Subject="QuestSeeker" Object="QuestGiver" ThirdParty="QuestParam" ThirdPartyModifier="Owner">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_HopeItsStillThere" />
+            <SpeechRef UniqueID="Jalopy_StashIsNear" />
+            <SpeechRef UniqueID="Jalopy_SomeBastard" />
+            <SpeechRef UniqueID="Jalopy_BetterAppreciateThis" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_SeekerClose" x="13146.2178" y="-13697.1777" TriggerRepeatTime="600">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="QuestParam" ObjectModifier="Owner" Data="64" Not="true" />
+        <Condition Type="DistanceToIsLessThan" Subject="QuestSeeker" Object="QuestParam" ObjectModifier="Owner" Data="32" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestSeeker" Object="QuestGiver" ThirdParty="QuestParam" ThirdPartyModifier="Owner">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_DoThisTogether" />
+            <SpeechRef UniqueID="Jalopy_ComingOrWhat" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_GiverClose" x="13152.3525" y="-12151.6172" TriggerRepeatTime="600">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="QuestParam" ObjectModifier="Owner" Data="32" />
+        <Condition Type="DistanceToIsLessThan" Subject="QuestSeeker" Object="QuestParam" ObjectModifier="Owner" Data="64" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestGiver" Not="true" />
+        <Condition Type="IsInCombat" Subject="QuestSeeker" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="QuestSeeker" Object="QuestGiver" ThirdParty="QuestParam" ThirdPartyModifier="Owner">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_IHaveToExplainEverything" />
+            <SpeechRef UniqueID="Jalopy_NeedMeToFindIt" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_SpawnPhalange" x="806.631165" y="-14471.7246">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Target" Data="1" StringData="Phalange" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="ReferringTo" Object="ReferringTo" ThirdParty="ReferringTo" SubjectModifier="QuestGiver" ObjectModifier="QuestObject" ThirdPartyModifier="QuestSeeker" StringData="Jalopy_Quest_FindStash" Delay="1" />
+        <StoryEvent Type="SpawnTemplate" StringData="Jalopy_SpawnPhalange" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_GetInCar" x="13563.2744" y="-23067.0879">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="MadeUp" />
+        <StoryEvent Type="EnableScriptedMove" Subject="Actor" Object="ReferringTo" StringData="Walk" StringData2="Medium" BoolData3="true" />
+        <StoryEvent Type="EnableTrigger" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Trigger_GotInCar2" />
+        <StoryEvent Type="EnableTrigger" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Trigger_GotInCar" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_GivePart" x="6381.94727" y="-20042.6328">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="Phalange" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="1" StringData="Phalange" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" ObjectModifier="QuestObject" StringData="Jalopy_Quest_GivePart" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" ObjectModifier="QuestObject" StringData="Jalopy_Quest_RepairVehicle" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="HungOut" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Assisted" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_RepairCar" x="8656.682" y="-22582.1211" TriggerRepeatTime="10">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DistanceToIsLessThan" Subject="QuestGiver" Object="QuestObject" Data="10" />
+        <Condition Type="IsDriveableVehicle" Subject="QuestObject" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DisableCanFollowPlayer" Subject="QuestGiver" />
+        <StoryEvent Type="RepairVehicleWithItem" Subject="QuestGiver" Object="QuestObject" ThirdParty="QuestSeeker" Data="1" StringData="Jalopy_OughttaDoIt" StringData2="Phalange" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_GotInCar" x="14678.4365" y="-23991.1875">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="ScriptedMoveHasSucceeded" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Jalopy_ComeHome" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="StartEngine" Subject="ReferringTo" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Trigger_GotInCar" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Trigger_GotInCar2" />
+        <StoryEvent Type="DisableScriptedMove" Subject="Actor" Object="ReferringTo" Delay="2" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" ThirdParty="ReferringTo" Delay="2">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_AnotherChance" />
+            <SpeechRef UniqueID="Jalopy_TakeMeBack" />
+            <SpeechRef UniqueID="Jalopy_Reconsider" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_GotInCar2" x="16286.7822" y="-20303.0352">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="ScriptedMoveHasSucceeded" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Jalopy_ComeHome" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Quest_RepairVehicle" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Trigger_GotInCar" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Trigger_GotInCar2" />
+        <StoryEvent Type="DisableScriptedMove" Subject="Actor" Object="ReferringTo" Delay="2" />
+        <StoryEvent Type="Explode" Subject="ReferringTo" Data="100" Data2="0.1" Delay="2" />
+        <StoryEvent Type="DramaticDeath" Subject="Actor" Delay="2" />
+        <StoryEvent Type="Speak" Subject="Target" ThirdParty="Actor" Delay="2.5">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_OhMyGod" />
+            <SpeechRef UniqueID="Jalopy_NotTheRightType" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_Rejoin" x="23724.9844" y="-18240.5781">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="ReferringTo" ThirdParty="Actor" StringData="Jalopy_Quest_RepairVehicle" />
+        <StoryEvent Type="JoinCommunity" Subject="Target" Object="Actor" />
+        <StoryEvent Type="JoinCommunity" Subject="ReferringTo" Object="Actor" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_CarExplodes2" Delay="2" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_CarExplodes2" x="24755.041" y="-18544.4063">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="2" StringData="Boom" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Explode" Subject="ReferringTo" Data="100" Data2="0.1" />
+        <StoryEvent Type="Speak" Subject="Target" Object="Actor" Delay="0.5">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_GotOutJustInTime" />
+            <SpeechRef UniqueID="Jalopy_GladIWasntInThat" />
+            <SpeechRef UniqueID="Jalopy_AftermarketPhalange" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Jalopy_Trigger_DestroyedTooSoon" x="9330.759" y="-17680.8652">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="Actor">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_WingIt" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Jalopy_IsAsshole" x="-4092.31323" y="-12878.2861" Type="Or">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Jalopy_ComeHome" x="17536.8945" y="-22894.8477">
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-20" Data2="20" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Jalopy_IsQuestGiver" x="14.3353653" y="-10592.5762" Type="Or">
+      <Conditions>
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" StringData="Jalopy_Quest_FindVehicle" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" StringData="Jalopy_Quest_FindStash" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" StringData="Jalopy_Quest_GivePart" />
+        <Condition Type="QuestIsActiveGivenBy" Subject="Actor" StringData="Jalopy_Quest_RepairVehicle" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Jalopy_IsStashDestroyed" x="9908.101" y="-15298.3418">
+      <Conditions>
+        <Condition Type="Exists" Subject="ExtraParam" Not="true" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="ReferringTo" ThirdParty="Target" Data="10" StringData="Jalopy_Quest_FindStash" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Jalopy_Quest_AskAround" x="4924.53857" y="-3459.68848" GroupID="Jalopy_QuestGroup" NativeDescription="%1 has abandoned you!  Ask around your group to try and discover where %2 went.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" />
+      </Params>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="SetHiddenOnMap" Subject="Actor" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="SetHiddenOnMap" Subject="Actor" />
+        <StoryEvent Type="DisableScriptedMove" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_DestroyedTooSoon" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Jalopy_Quest_FindVehicle" x="5296.0083" y="-11828.4111" GroupID="Jalopy_QuestGroup" NativeDescription="Get %1 to %2 old vehicle so %3 can make peace.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="FirstNamePossessive" Subject="Actor" />
+        <SpeechParam Type="HeOrShe" Subject="Target" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DisableScriptedMove" Subject="Actor" Object="ReferringTo" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="DisableScriptedMove" Subject="Actor" Object="ReferringTo" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_DestroyedTooSoon" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Jalopy_Quest_FindStash" x="10847.3193" y="-14153.7383" GroupID="Jalopy_QuestGroup" NativeDescription="Get %1 to show %2 the phalange in %3 hidden stash.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Target" />
+        <SpeechParam Type="FirstName" Subject="Actor" />
+        <SpeechParam Type="HisOrHer" Subject="Target" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ExtraParam" Modifier="Owner" />
+      </QuestMarkers>
+      <CompletionConditions>
+        <Condition Type="HasItem" Subject="Target" Object="ExtraParam" SubjectModifier="Community" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Jalopy_IsStashDestroyed" />
+          </ConditionBlocks>
+        </Condition>
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="EnableCanFollowPlayer" Subject="Actor" />
+        <StoryEvent Type="Follow" Subject="Actor" Object="Target" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" ThirdParty="Target" StringData="Jalopy_Quest_GivePart" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="DisableCanFollowPlayer" Subject="Actor" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_DestroyedTooSoon" />
+      </FailureEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Jalopy_Trigger_GiverClose" />
+        <TriggerRef UniqueID="Jalopy_Trigger_SeekerClose" />
+        <TriggerRef UniqueID="Jalopy_Trigger_BothClose" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Jalopy_Quest_RepairVehicle" x="7576.927" y="-20437.1719" GroupID="Jalopy_QuestGroup" NativeDescription="Take %1 back to the %2 so %3 can repair it.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" BoolData="true" />
+        <SpeechParam Type="BuildingName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="ReferringTo" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DisableCanFollowPlayer" Subject="Actor" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="DisableCanFollowPlayer" Subject="Actor" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_DestroyedTooSoon" />
+      </FailureEvents>
+      <Triggers>
+        <TriggerRef UniqueID="Jalopy_Trigger_RepairCar" />
+      </Triggers>
+    </Quest>
+    <Quest UniqueID="Jalopy_Quest_GivePart" x="4544.30469" y="-19073.2832" GroupID="Jalopy_QuestGroup" NativeDescription="Give the phalange to %1.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" BoolData="true" />
+      </Params>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Target" Not="true" />
+        <Condition Type="Exists" Subject="ReferringTo" Not="true" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="DisableCanFollowPlayer" Subject="Actor" />
+        <StoryEvent Type="OneShotTrigger" StringData="Jalopy_Trigger_DestroyedTooSoon" />
+      </FailureEvents>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Jalopy_QuestGroup" x="4178.35059" y="68.31561" NativeTitle="Adventures of %1 and %2">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+        <SpeechParam Type="FirstName" Subject="Target" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates>
+    <Template UniqueID="Jalopy_SpawnToolbox" x="1969.136" y="-493.8425">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferUnownedVehicles</SpawnLocation>
+      <EquipmentPrototypeName>Toolbox</EquipmentPrototypeName>
+      <AllowExceedWeightLimit>true</AllowExceedWeightLimit>
+      <Events>
+        <StoryEvent Type="LeaveCommunity" Subject="Actor" />
+        <StoryEvent Type="FleeAndDisappear" Subject="Actor" StringData="Jalopy_Trigger_Teleport" />
+      </Events>
+    </Template>
+    <Template UniqueID="Jalopy_SpawnPhalange" x="2107.16431" y="-15467.0146">
+      <Type>Equipment</Type>
+      <SpawnLocation>PreferTownBuildings</SpawnLocation>
+      <EquipmentPrototypeName>Phalange</EquipmentPrototypeName>
+      <Concealed>true</Concealed>
+      <Children>
+        <TemplateChild UniqueID="Jalopy_SpawnCarParts" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Jalopy_SpawnGas" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Jalopy_SpawnSunflowerOil" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Jalopy_SpawnCraftingBook" Min="0" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="SetQuestParam" Subject="Actor" Object="Target" ThirdParty="ReferringTo" StringData="Jalopy_Quest_FindStash" Delay="2" />
+        <StoryEvent Type="Speak" Subject="Target" Object="Actor" ThirdParty="ReferringTo">
+          <Speeches>
+            <SpeechRef UniqueID="Jalopy_HiddenStash" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Template>
+    <Template UniqueID="Jalopy_SpawnCarParts" x="3227.08521" y="-15262.8271">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CarParts</EquipmentPrototypeName>
+      <Concealed>true</Concealed>
+    </Template>
+    <Template UniqueID="Jalopy_SpawnGas" x="3237.75171" y="-15590.3623">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>JerryCan</EquipmentPrototypeName>
+      <Concealed>true</Concealed>
+    </Template>
+    <Template UniqueID="Jalopy_SpawnSunflowerOil" x="3238.948" y="-15943.2588">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>SunflowerOilBottle</EquipmentPrototypeName>
+      <Concealed>true</Concealed>
+    </Template>
+    <Template UniqueID="Jalopy_SpawnCraftingBook" x="3238.67651" y="-16318.832">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>CraftingBook</EquipmentPrototypeName>
+      <Concealed>true</Concealed>
+    </Template>
+  </Templates>
+  <Invaders />
+</Script>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>TiltedProp</TypeName>
+  <NativeName>Crashed Jumbo Jet</NativeName>
+  <Category>Countryside/JumboCrash</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/Crashed_planes/jumbo_crash_part9</string>
+  </PrefabNames>
+  <DeadPrefabNames />
+  <Stage1PrefabNames />
+  <Stage2PrefabNames />
+  <MaterialVariationNames />
+  <ModelOffset>
+    <Vector3>
+      <x>4.97872353</x>
+      <y>1.75531924</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <ExtentsMin>
+    <x>-3</x>
+    <y>-14</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>3</x>
+    <y>14</y>
+  </ExtentsMax>
+  <WheelPos>
+    <x>1.64893615</x>
+    <y>12.5319157</y>
+  </WheelPos>
+  <WheelOffset>
+    <x>-4.61702156</x>
+    <y>0</y>
+  </WheelOffset>
+  <MaxYaw>0</MaxYaw>
+  <WantClearGrass>false</WantClearGrass>
+  <SpawnProbabilityFactor>0</SpawnProbabilityFactor>
+</PropPrototype>

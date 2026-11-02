@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Shotgun Ammo Crate</NativeName>
+  <NativeDescription>Contains 1000 Shotgun Rounds</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>100</Weight>
+  <BasePrice>2000</BasePrice>
+  <Scarcity>Legendary</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Police</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

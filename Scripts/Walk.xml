@@ -1,0 +1,991 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>1</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-2435.61035</x>
+    <y>480.430481</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.397948682</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Flirt_Bumping" x="-7110.29443" y="313.198242" NativeText=":-) We keep bumping into each other don't we?  We should do this more often!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Walk" />
+        <SpeechRef UniqueID="Flirt_HadntNoticed" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage3" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_StalkingMe" x="-7113.38" y="-604.0176" NativeText=":-) Oh hello it's you again, are you stalking me?  It's totally okay if you are!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Walk" />
+        <SpeechRef UniqueID="Flirt_HadntNoticed" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage3" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_LookingGood" x="-7121.70752" y="-1739.38867" NativeText=":-) You're looking good today!  Don't be a stranger.">
+      <Params>
+        <SpeechParam Type="None" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Walk" />
+        <SpeechRef UniqueID="Flirt_HadntNoticed" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage3" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_Walk" x="-5568.5" y="-125.773438" NativeText=":-) Wanna go for a walk a bit later?">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_IdLoveThat" />
+        <SpeechRef UniqueID="Flirt_IdLikeThat" />
+        <SpeechRef UniqueID="Flirt_UmOkay" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_HadntNoticed" x="-5571.991" y="-1010.47656" NativeText="Eh?  I hadn't noticed.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_IdLikeThat" x="-4442.039" y="76.27344" NativeText=":-) I'd like that!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_TriggerQuest" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_UmOkay" x="-4442.4834" y="-600.083" NativeText="Um... :-) okay!">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_TriggerQuest" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_IdLoveThat" x="-4430.827" y="913.194336" NativeText=":-) Ooh, I would love that!">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_TriggerQuest" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_HangOut" x="-1212.37549" y="141.9668" NativeText="Let's hang out here for a bit?" Situation="QuestTopic" PerObjectType="PerActiveQuestGivenByTarget">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_BringCarrot" />
+        <SpeechRef UniqueID="Flirt_HangOutSure" />
+        <SpeechRef UniqueID="Flirt_IBroughtBooze" />
+        <SpeechRef UniqueID="Flirt_DidYouBringBooze" />
+        <SpeechRef UniqueID="Flirt_YouBroughtBooze" />
+        <SpeechRef UniqueID="Flirt_MoreDrinks" />
+        <SpeechRef UniqueID="Flirt_NeedDrinks" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" Object="Actor" StringData="Flirt_QuestWalk" />
+        <Condition Type="AreApparentlyAloneTogether" Subject="Actor" Object="Target" Data="32" />
+        <Condition Type="HasUnbandagedInjury" Subject="Target" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_HangOutSure" x="241.623535" y="828.6787" NativeText=":-) Sure!">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HasCarrots" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestWalk" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_IBroughtBooze" x="321.02832" y="58.703125" NativeText=":-) Sure... I brought drinks!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+        <Condition Type="HasAlcoholAmountTogether" Subject="Actor" Object="Target" Data="12" BoolData="true" />
+        <Condition Type="HasAlcoholicDrink" Subject="Actor" Object="Actor" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestWalk" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_DoYouWanna" x="3071.90771" y="188.476563" NativeText="Hey... :-) do you wanna build a snowman?" Situation="Opener" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Skill" Subject="Actor" StringData="Construction" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Yes" />
+        <SpeechRef UniqueID="Flirt_No_Man" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsSnowCoverAtLeast" Data="0.9" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_EverythingLooksSoPeaceful" x="3092.398" y="-1168.97754" NativeText="Everything looks so peaceful under the snow blanket, doesn't it?  What if I just..." Situation="Opener" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Skill" Subject="Actor" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsSnowCoverAtLeast" Data="0.9" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="StartBoxingMatch" Subject="Target" Object="Actor" StringData="SnowballFight" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_YouRanAway" x="4618.193" y="-1223.18262" NativeText="{:-| Oh that's it then?" Situation="SnowballFightYouRanAway" Importance="EndFisticuffs" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="WinBoxingMatch" Subject="Actor" Object="Target" />
+        <StoryEvent Type="FailQuest" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Flirt_GettingCold" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_YouWin" x="5438.142" y="-845.8623" NativeText=":-) Haha, that was awesome!  You've got some skills!" Situation="SnowballFightYouWin" Importance="EndFisticuffs" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="LoseBoxingMatch" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WonSnowballFight" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Flirt_GettingCold" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_IWin" x="6258.011" y="-1005.68555" NativeText=":-) Ah thanks for playing along with me.. I guess you're more of a lover than a fighter!" Situation="SnowballFightIWin" Importance="EndFisticuffs" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="WinBoxingMatch" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="WonSnowballFight" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_SnowballFight" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="Target" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Flirt_GettingCold" />
+          </Speeches>
+        </StoryEvent>
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_SoProud" x="7390.814" y="497.8838" NativeText="{:-) It's beautiful!  We did a good thing here!" MustFinish="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="Flirt_GettingCold" />
+      </Continues>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_Snowman" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_Yes" x="3933.52686" y="473.727539" NativeText="Yes!">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_WeNeed" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_No_Man" x="3943.74658" y="-309.743164" NativeText="Nah.">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_OkayBye" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_OkayBye" x="4699.969" y="-299.5244" NativeText="{:-( Okay, bye.">
+      <Events>
+        <StoryEvent Type="FailQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="FlirtedUnsuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_Rabbits" x="3114.899" y="-2768.65723" NativeText=":-) Hey look!  Rabbit over there!" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="Flirt_AttractIt" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanSeeAnimal" Subject="Actor" StringData="Rabbit" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_RabbitsSoCute" x="3921.732" y="-2860.84766" NativeText="{:-) Bunnies!  They're so cute!" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Flirt_AttractIt" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanSeeAnimal" Subject="Actor" StringData="Rabbit" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_OhARabbit" x="4719.96533" y="-2694.7334" NativeText="Oh, it's a rabbit.  Hungry?" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Flirt_AttractIt" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanSeeAnimal" Subject="Actor" StringData="Rabbit" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_TastyRabbits" x="5485.72" y="-2636.005" NativeText="Bunnies!  They're so cute aren't they?  The little squeals they make when they die!" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Continues>
+        <SpeechRef UniqueID="Flirt_AttractIt" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanSeeAnimal" Subject="Actor" StringData="Rabbit" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Drink" x="3027.17334" y="-3990.0752" NativeText=":-) It's kind of beautiful isn't it?...  Let's have a drink!" Situation="Opener" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" PriorityFactor="100" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasAlcoholAmountTogether" Subject="Actor" Object="Target" Data="12" BoolData="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_WeNeed" x="4812.11963" y="2207.60938" NativeText="Okay we're gonna need a carrot and uh.. let's say, a beanie hat.">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_WeHaveBoth" />
+        <SpeechRef UniqueID="Flirt_WeHaveCarrot" />
+        <SpeechRef UniqueID="Flirt_WeHaveHat" />
+        <SpeechRef UniqueID="Flirt_WeHaveNeither" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_GoodStuff" x="4818.57373" y="-4132.4873" NativeText=":-) Woah this is the good stuff!" Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.01" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_GetMeDrunk" x="6379.5415" y="-3907.833" NativeText=":-) Heheh, are you trying to get me drunk?" Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Tipsy" x="5573.28271" y="-3894.92676" NativeText=":-) You know, I'm feeling a little... tipsy." Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.05" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Serious" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_BestestFriend" x="7157.723" y="-3920.02246" NativeText=":-) You're my best friend, you know that?  You're my beshtest... *hic* fwiend!" Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.15" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_ShowMeTheWayToGoHome" x="7904.36865" y="-4166.34668" NativeText=":-) Show me the way to go home!  Cos I'm tired and I wanna go to bed!  Eh I guess we better get to bed, huh...." AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="Flirt_Hug" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Flirt_Hug" x="8780.092" y="-4176.504" NativeText=":-) How about a goodbye hug?">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="Flirt_LaterHon" BoolData="true" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_LaterHon" x="9652.338" y="-4198.09" NativeText="See you later hon." />
+    <Speech UniqueID="Flirt_TakesEdgeOff" x="4819.12842" y="-4949.716" NativeText="Ohh yeah that takes the edge off." Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.01" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_DontDrink" x="5580.9165" y="-4912.89746" NativeText="8-| You know, I don't normally do this kind of thing.." Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.05" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Serious" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_HadIt" x="6352.859" y="-4995.42" NativeText="{:-| Man, I've had it with all these zombies, and people and.. and.. people that look like people, but they're actually zombies... Fuck all of them!" Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Fight" x="7156.50537" y="-4936.19629" NativeText="}:-| You want to fight?  Come on then, let's have a fight!  I'll take you on!  I'll take you all on!  Goddam.. goddam zombies and looters and shit...!" Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_BestestPerson" x="7156.45459" y="-6162.30762" NativeText=":-) You're my best... person that I met, you know that?" Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.15" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Someday" x="6343.973" y="-6166.30762" NativeText="{:-( Someday all this is gonna be over... there's still army units out there, there are camps.  They'll rescue us.  I gotta *hic* believe that!" Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_InfectedDrunk" x="5615.82666" y="-6172.751" NativeText="I wonder what happens if the infected eat you when you're drunk?  Do they absorb the alcohol?  I bet they're angry drunks... like, super aggressive." Situation="Opener" RepeatTime="600" AIOverridesControl="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_GetDrunk" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.05" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_SummerNights" x="3023.58057" y="2129.92188" NativeText=":-) I love these warm summer nights." Situation="Opener" RepeatTime="1200" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="Flirt_SoRomantic" />
+        <SpeechRef UniqueID="Flirt_SoMuchLessLikely" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsTemperatureAtLeast" Subject="Actor" Data="15" StringData="Rabbit" />
+        <Condition Type="IsRaining" Not="true" />
+        <Condition Type="IsDay" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_SoMuchLessLikely" x="4063.01318" y="2133.88379" NativeText="So much less likely to kill you than the freezing cold winter ones.">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_YouBroughtBooze" x="359.878418" y="-1160.13086" NativeText=":-) Sure... glad you brought booze!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+        <Condition Type="HasAlcoholAmountTogether" Subject="Actor" Object="Target" Data="12" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestWalk" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_MoreDrinks" x="418.7373" y="-2296.99414" NativeText="Let's get some more drinks first.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="4" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+        <Condition Type="HasAlcoholAmountTogether" Subject="Actor" Object="Target" Data="12" BoolData="true" Not="true" />
+        <Condition Type="HasAlcoholAmountTogether" Subject="Actor" Object="Target" Data="0.1" BoolData="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_NeedDrinks" x="387.7578" y="-3271.22656" NativeText="I want something to drink.. let's get some booze first.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Alcoholic" />
+        <Condition Type="HasAlcoholAmountTogether" Subject="Actor" Object="Target" Data="0.1" BoolData="true" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_BringCarrot" x="239.071289" y="1691.31836" NativeText=":-) If we're going for a walk let's bring carrots in case we see any rabbits.  We could use the meat.">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HasCarrots" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_AttractIt" x="6534.652" y="-3008.54" NativeText="See if you can attract it with a carrot.  Stay low, and don't make any sudden movements." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" StringData="Flirt_Quest_FeedBunny" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_ComeCloser" x="8887.552" y="-970.4276" NativeText=":-) That's it, let it come closer." Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_Quest_FeedBunny" />
+        <Condition Type="CanSeeAnimal" Subject="Target" Data="16" StringData="Rabbit" />
+        <Condition Type="IsEquipped" Subject="Target" StringData="Carrot" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Adorable" x="8885.365" y="-1996.06543" NativeText=":-) This is adorable!" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_Quest_FeedBunny" />
+        <Condition Type="CanSeeAnimal" Subject="Target" Data="8" StringData="Rabbit" />
+        <Condition Type="IsEquipped" Subject="Target" StringData="Carrot" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Working" x="9678.072" y="-1931.84351" NativeText="It's working." Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_Quest_FeedBunny" />
+        <Condition Type="CanSeeAnimal" Subject="Target" Data="8" StringData="Rabbit" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HoldingCarrot" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="Always" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_SoCute" x="9683.037" y="-3047.8584" NativeText=":-) So cute!  The bunny, I mean.  And you of course!" Situation="Opener" RepeatTime="600" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_Quest_FeedBunny" />
+        <Condition Type="CanSeeAnimal" Subject="Target" Data="2" StringData="Rabbit" />
+        <Condition Type="IsEquipped" Subject="Target" StringData="Carrot" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_TheOneThatGotAway" x="8138.37744" y="-3142.171" NativeText="{:-) You know what, let's not eat this one.  It can be the one that got away." CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="Flirt_NiceTime" />
+      </Continues>
+      <UninterruptibleEvents>
+        <StoryEvent Type="CompleteQuest" Subject="Actor" Object="Target" StringData="Flirt_Quest_FeedBunny" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_GettingCold" x="8407.473" y="336.5127" NativeText=":-) Alright I'm getting cold, let's get back.  I had a great time though!" CanTalkOutOfRange="true" AIOverridesControl="true" />
+    <Speech UniqueID="Flirt_WeHaveHat" x="5827.769" y="1981.4248" NativeText="We have the hat.">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveCarrot" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveHat" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="Actor" StringData="Flirt_FindHatAndCarrot" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_WeHaveNeither" x="5766.646" y="1032.418" NativeText=":-( We don't have either of those on us.">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveCarrot" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveHat" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="Actor" StringData="Flirt_FindHatAndCarrot" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_LookForRabbits" x="2414.01025" y="-2522.3457" NativeText="Seen any bunnies around here?  Let's check out the area, we might get lucky and catch one." Situation="Opener" RepeatTime="1200" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanSeeAnimal" Subject="Actor" StringData="Rabbit" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_LookForRabbits2" x="2404.21924" y="-3276.75" NativeText="We should try to find some rabbits, for the stew." Situation="Opener" RepeatTime="1200" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="CanSeeAnimal" Subject="Actor" StringData="Rabbit" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_NiceTime" x="8861.162" y="-3152.82715" NativeText=":-) We should head back anyway.  Thanks for this, I had a nice time." CanTalkOutOfRange="true" AIOverridesControl="true" />
+    <Speech UniqueID="Flirt_SummerDays" x="3002.15576" y="3092.35474" NativeText=":-) I love these warm summer days." Situation="Opener" RepeatTime="1200" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Continues>
+        <SpeechRef UniqueID="Flirt_SoRomantic" />
+        <SpeechRef UniqueID="Flirt_SoMuchLessLikely" />
+      </Continues>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsTemperatureAtLeast" Subject="Actor" Data="20" StringData="Rabbit" />
+        <Condition Type="IsRaining" Not="true" />
+        <Condition Type="IsDay" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_SoRomantic" x="4055.5542" y="2750.63672" NativeText=":-) So romantic!">
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Rain" x="2975.90674" y="3783.82715" NativeText="}:-| You sure picked a weird time for it.  Couldn't you have waited till the rain stopped?" Situation="Opener" RepeatTime="1200" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsRaining" Data="0.5" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_WeHaveBoth" x="5851.185" y="3901.56836" NativeText=":-) We have both already!">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveCarrot" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveHat" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="Actor" StringData="Flirt_Snowman" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_WeHaveCarrot" x="5831.901" y="2916.706" NativeText="We have a carrot.">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveCarrot" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveHat" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="CompleteQuest" Subject="Target" Object="Actor" StringData="Flirt_QuestExplore" />
+        <StoryEvent Type="DiscoverQuest" Subject="Target" Object="Actor" StringData="Flirt_FindHatAndCarrot" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_Dark" x="2969.77686" y="4501.4375" NativeText="It's dark... watch out for infected." Situation="Opener" RepeatTime="1200" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsNight" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_BeautifulDay" x="2953.09424" y="5220.77" NativeText=":-) You chose a nice day for it." Situation="Opener" RepeatTime="1200" CanTalkOutOfRange="true" AIOverridesControl="true">
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_ExploreQuest_CanTalk" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsRaining" Not="true" />
+        <Condition Type="IsDay" />
+      </Conditions>
+    </Speech>
+  </Speeches>
+  <Triggers>
+    <Trigger UniqueID="Flirt_TriggerQuest" x="-3356.05273" y="171.081055">
+      <Type>Normal</Type>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="Target" StringData="Flirt_QuestWalk" />
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Flirt_OnSnowmanBuilt" x="6441.45361" y="209.866211">
+      <Type>BuiltSomething</Type>
+      <Conditions>
+        <Condition Type="IsPropType" Subject="ExtraParam" StringData="Snowman" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_SnowmanWasBuiltByOneOfUs" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="Actor" Object="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Flirt_SoProud" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Flirt_Trigger_FeedRabbit" x="8139.766" y="-2293.94238">
+      <Type>FeedAnimal</Type>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_WhoFedRogerRabbit" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Speak" Subject="Actor" Object="ReferringTo" StringData="" Delay="2">
+          <Speeches>
+            <SpeechRef UniqueID="Flirt_TheOneThatGotAway" />
+          </Speeches>
+        </StoryEvent>
+      </Events>
+    </Trigger>
+    <Trigger UniqueID="Flirt_Failed" x="5584.74268" y="-137.4873">
+      <Type>Normal</Type>
+      <Conditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="FlirtedUnsuccessfullyWith" />
+      </Events>
+    </Trigger>
+  </Triggers>
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Flirt_Stage3" x="-8707.682" y="-248.076172">
+      <Conditions>
+        <Condition Type="CanFlirt" Subject="Actor" Object="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="60" />
+        <Condition Type="HasMemoryQuantityBetween" Subject="Actor" Object="Actor" ThirdParty="Target" Data="2" Data2="3" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_QuestNotActive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_HasCarrots" x="-1058.19336" y="1265.38379" Type="Or">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Carrot" />
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="Carrot" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_ExploreQuest_CanTalk" x="1756.36572" y="-1436.77051">
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Actor" Object="Target" StringData="Flirt_QuestExplore" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="Target" Data="10" StringData="Flirt_QuestExplore" />
+        <Condition Type="TimeSinceLastSpoke" Subject="Actor" Data="10" />
+        <Condition Type="TimeSinceLastSpoke" Subject="Target" Data="10" />
+        <Condition Type="IsHighAlert" Subject="Actor" Not="true" />
+        <Condition Type="IsHighAlert" Subject="Target" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_SnowmanWasBuiltByOneOfUs" x="7263.52" y="-321.245117" Type="Or">
+      <Conditions>
+        <Condition Type="Equals" Subject="Actor" Object="Target" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Target" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_HaveCarrot" x="6957.264" y="1858.83691" Type="Or">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Carrot" />
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="Carrot" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_HaveHat" x="6952.431" y="1227.9707" Type="Or">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Beanie" />
+        <Condition Type="HasNItemsOfType" Subject="Target" Data="1" StringData="Beanie" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_HaveCarrot2" x="9078.852" y="2368.48535" Type="Or">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Carrot" />
+        <Condition Type="HasNItemsOfType" Subject="ReferringTo" Data="1" StringData="Carrot" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_HaveHat2" x="9074.02" y="1737.61914" Type="Or">
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Beanie" />
+        <Condition Type="HasNItemsOfType" Subject="ReferringTo" Data="1" StringData="Beanie" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_WhoFedRogerRabbit" x="8132.83838" y="-1689.88477" Type="Or">
+      <Conditions>
+        <Condition Type="Equals" Subject="ReferringTo" Object="Target" />
+        <Condition Type="Equals" Subject="Actor" Object="Target" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Flirt_QuestWalk" x="-2344.061" y="-412.568359" GroupID="Flirt_QuestGroup" NativeDescription="Go for a short walk somewhere nearby where you can be alone together.">
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Flirt_QuestExplore" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Flirt_QuestExplore" x="1750.46338" y="-350.519531" GroupID="Flirt_QuestGroup" NativeDescription="Explore the area a little.  Try not to end up in a fight.">
+      <Metric>TimeSinceStarted</Metric>
+      <MetricLimit>3600</MetricLimit>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="HasUnbandagedInjury" Subject="Actor" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="ReferringTo" Data="3600" StringData="Flirt_QuestExplore" />
+      </FailureConditions>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_Failed" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Flirt_SnowballFight" x="3835.05713" y="-1139.67871" GroupID="Flirt_QuestGroup" NativeDescription="Snowball fight!  (Look directly downwards at the snowy ground to scoop snow.)" ShowNotificationEventInCombat="true">
+      <Metric>TimeSinceStarted</Metric>
+      <MetricLimit>600</MetricLimit>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="HasUnbandagedInjury" Subject="Actor" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="ReferringTo" Data="600" StringData="Flirt_SnowballFight" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="FlirtedSuccessfullyWith" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_Failed" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Flirt_Snowman" x="4818.275" y="1677.34668" GroupID="Flirt_QuestGroup" NativeDescription="Build a snowperson.  (Look directly downwards at the snowy ground to scoop snow.)">
+      <Metric>TimeSinceStarted</Metric>
+      <MetricLimit>600</MetricLimit>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="HasUnbandagedInjury" Subject="Actor" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="ReferringTo" Data="600" StringData="Flirt_Snowman" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="EnableTrigger" Subject="Actor" Object="ReferringTo" StringData="Flirt_OnSnowmanBuilt" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="FlirtedSuccessfullyWith" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" StringData="Flirt_OnSnowmanBuilt" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_Failed" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" StringData="Flirt_OnSnowmanBuilt" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Flirt_GetDrunk" x="4008.59521" y="-4012.584" GroupID="Flirt_QuestGroup" NativeDescription="Get %1 and %2 pleasantly drunk together.">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <Metric>Drunkenness</Metric>
+      <MetricLimit>0.2</MetricLimit>
+      <CompletionConditions>
+        <Condition Type="HasBloodAlcoholConcentration" Subject="Actor" Data="0.2" />
+        <Condition Type="HasBloodAlcoholConcentration" Subject="ReferringTo" Data="0.2" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="ReferringTo" Data="3600" StringData="Flirt_GetDrunk" />
+        <Condition Type="IsUnconscious" Subject="Actor" />
+        <Condition Type="IsUnconscious" Subject="ReferringTo" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="FlirtedSuccessfullyWith" />
+        <StoryEvent Type="Speak" Subject="Actor" Object="ReferringTo" StringData="">
+          <Speeches>
+            <SpeechRef UniqueID="Flirt_ShowMeTheWayToGoHome" />
+          </Speeches>
+        </StoryEvent>
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_Failed" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Flirt_Quest_FeedBunny" x="7345.21631" y="-1764.97266" GroupID="Flirt_QuestGroup" NativeDescription="Feed a rabbit">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <Metric>TimeSinceStarted</Metric>
+      <MetricLimit>600</MetricLimit>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="HasUnbandagedInjury" Subject="Actor" />
+        <Condition Type="TimeSinceQuestStarted" Subject="Actor" Object="ReferringTo" Data="600" StringData="Flirt_Quest_FeedBunny" />
+      </FailureConditions>
+      <StartEvents>
+        <StoryEvent Type="EnableTrigger" Subject="Actor" Object="ReferringTo" StringData="Flirt_Trigger_FeedRabbit" />
+      </StartEvents>
+      <CompletionEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="FlirtedSuccessfullyWith" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" StringData="Flirt_Trigger_FeedRabbit" />
+      </CompletionEvents>
+      <FailureEvents>
+        <StoryEvent Type="OneShotTrigger" StringData="Flirt_Failed" />
+        <StoryEvent Type="DisableTrigger" Subject="Actor" Object="ReferringTo" StringData="Flirt_Trigger_FeedRabbit" />
+      </FailureEvents>
+    </Quest>
+    <Quest UniqueID="Flirt_FindHatAndCarrot" x="8183.179" y="2153.60449" GroupID="Flirt_QuestGroup" NativeDescription="Find a hat and a carrot to make a snowman with.">
+      <CompletionConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveCarrot2" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HaveHat2" />
+          </ConditionBlocks>
+        </Condition>
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="ReferringTo" Not="true" />
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" Object="ReferringTo" StringData="Flirt_Snowman" />
+      </CompletionEvents>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Flirt_QuestGroup" x="-2334.43945" y="187.105469" NativeTitle="Go for a walk with %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

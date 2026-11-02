@@ -1,0 +1,801 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>80</NextFreeSpeechID>
+  <NextFreeTriggerID>6</NextFreeTriggerID>
+  <NextFreeConditionBlockID>21</NextFreeConditionBlockID>
+  <NextFreeQuestID>7</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>2</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>242.176346</x>
+    <y>6042.64551</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.5278761</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Flirt_TheUsual" x="204.763184" y="6435.15527" NativeText="Oh you know, the usual... zombie apocalypse, rumors of terrifying new strains, everybody dying, supplies getting scarce... :-) at least I found you though!" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Glad" />
+        <SpeechRef UniqueID="Flirt_Sure" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage1" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_GoodJob" x="202.321472" y="5155.549" NativeText=":-) Hey, I think you're doing a good job!  Just wanted to let you know that." Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Worthwhile" />
+        <SpeechRef UniqueID="Flirt_Sure" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage1" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="RankEquals" Subject="Target" StringData="Leader" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_Glad" x="1552.47131" y="8733.747" NativeText=":-) Yeah I'm glad we found each other!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Damn" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_Sure" x="1553.135" y="7291.383" NativeText="Uh, sure.  Okay." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="20">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_Worthwhile" x="1528.32825" y="5972.911" NativeText=":-) Thanks, you make it all worthwhile!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Damn" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_WhatsUpWithYou" x="-324.1364" y="3379.74927" NativeText=":-) What's up with me?... What's up with you, any gossip?  Seeing anyone currently?" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_SadlyNo" />
+        <SpeechRef UniqueID="Flirt_No" />
+        <SpeechRef UniqueID="Flirt_Bullshit" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage1" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_Pretty" x="3963.66333" y="5118.27734" NativeText=":-) There's just no one here as pretty as you, I guess!" Importance="Low">
+      <Params>
+        <SpeechParam Type="SirOrMadam" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Damn" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_No" x="1477.69373" y="3693.108" NativeText="No, not interested." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="20">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_Bullshit" x="1470.73657" y="2527.24927" NativeText="}:-( Relationships are bullshit!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Why" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_Why" x="2474.781" y="2151.3042" NativeText="{:-| Oh, why do you say that?" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_SoFake" />
+        <SpeechRef UniqueID="Flirt_BadBreakup" />
+        <SpeechRef UniqueID="Flirt_BiologicalUrge" />
+        <SpeechRef UniqueID="Flirt_JustSurviving" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_SoFake" x="3967.17749" y="3985.01074" NativeText="Everyone's so fake... they're always playing an angle." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_TheRightPerson" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_BadBreakup" x="4001.966" y="3092.58838" NativeText="I just got out of a bad breakup, I don't want to go into it." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_TheRightPerson" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_BiologicalUrge" x="4008.07349" y="2362.441" NativeText="Love is just your genes' way of telling you they want to be propagated already." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_TheRightPerson" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Smart" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_TheRightPerson" x="5119.966" y="2655.14282" NativeText=":-) Aw, maybe you just haven't met the right person yet!" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_CouldBeRight" />
+        <SpeechRef UniqueID="Flirt_Whatever" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_JustSurviving" x="4000.17261" y="1423.44873" NativeText="I've got enough to worry about just surviving right now." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_TheRightPerson" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_CouldBeRight" x="6102.043" y="3539.23926" NativeText=":-) Haha well, you could be right." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_Whatever" x="6088.71973" y="2336.77148" NativeText="Yeah, whatever." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="1" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_ImprovesMyDay" x="198.419586" y="-4362.638" NativeText=":-) Oh, hey!  It's real nice to see to you!  Always improves my day." Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.25" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_MineToo" />
+        <SpeechRef UniqueID="Flirt_WhoAreYou" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_MineToo" x="1400.60608" y="-3432.94116" NativeText=":-) Mine too!  Let's hang out more!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Yeah" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_FeelingShitty" x="93.66522" y="-6839.25" NativeText="{:-( Feeling pretty shitty to be honest, I could use a hug!" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_AnyTime" />
+        <SpeechRef UniqueID="Flirt_SorryNoHugs" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage2" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="MoraleIsLessThan" Subject="Actor" Data="-10" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_AnyTime" x="1420.095" y="-5772.5127" NativeText="{:-) Any time!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Actor" Object="Target" StringData="Flirt_NeededThat" />
+      </Events>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_SorryNoHugs" x="1399.63416" y="-7310.992" NativeText="Sorry, I don't give out free hugs." Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Detached" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_ImSorry" />
+        <SpeechRef UniqueID="Flirt_FuckYou" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_ImSorry" x="2458.37964" y="-7662.52148" NativeText="{:-( Oh.. right, I'm sorry." Importance="Low" />
+    <Speech UniqueID="Flirt_FuckYou" x="2482.29639" y="-8142.354" NativeText="}:-| Well, fuck you!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Flirt_Yeah" x="2568.19556" y="-3996.57" NativeText=":-) Yeah!  I'd love that!" Importance="Low" />
+    <Speech UniqueID="Flirt_Camo" x="86.51337" y="-7967.77246" NativeText=":-) Nice camo, I guess you think wearing that makes you some kind of badass?" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_SureDo" />
+        <SpeechRef UniqueID="Flirt_Wat" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage2" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsWearingAnythingWithSkillBonus" Subject="Target" StringData="Stealth" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_Glasses" x="77.78346" y="-9303.47" NativeText=":-) I suppose you think you look cool in those glasses!" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_SureDo" />
+        <SpeechRef UniqueID="Flirt_Wat" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage2" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsWearingSomething" Subject="Target" StringData="Glasses" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_SureDo" x="1406.791" y="-8748.551" NativeText=":-) I sure do!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_NotWrong" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_Wat" x="1412.51379" y="-10024.3477" NativeText="}:-| What are you talking about?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_NeverMind" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_Hat" x="70.3973541" y="-10625.2383" NativeText=":-) So... do you think we're all going to look up to you just because you're wearing that super sexy hat?" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_SureDo" />
+        <SpeechRef UniqueID="Flirt_Wat" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage2" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsWearingSomething" Subject="Target" StringData="Hat" />
+        <Condition Type="IsWearingHelmet" Subject="Actor" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_Nothing" x="-1847.98157" y="6933.116" NativeText="Oh!  Nothing." Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_WhatIDoingAsWell" />
+        <SpeechRef UniqueID="Flirt_BackToWork" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage1" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_WhatIDoingAsWell" x="-782.1478" y="6035.5957" NativeText=":-) Nice, that's what I was doing as well." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_GoodJob" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_BackToWork" x="-781.9464" y="7130.578" NativeText="}:-| Better get back to work then." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_Damn" x="4846.08" y="5477.083" NativeText=":-) Nice of you to say so!" Importance="Low" />
+    <Speech UniqueID="Flirt_SadlyNo" x="1477.11951" y="4570.93066" NativeText="{:-) Sadly no!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_WhyNot" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_WhyNot" x="2426.67944" y="4264.52051" NativeText="Oh, why not?" Importance="Low" SpecialBehaviour="NoReplyChoiceForNPC">
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Pretty" />
+        <SpeechRef UniqueID="Flirt_SoFake" />
+        <SpeechRef UniqueID="Flirt_BadBreakup" />
+        <SpeechRef UniqueID="Flirt_JustSurviving" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_NotWrong" x="2469.00586" y="-8868.281" NativeText=":-) Well.. you're not wrong!" Importance="Low" />
+    <Speech UniqueID="Flirt_NeverMind" x="2499.59448" y="-10217.6621" NativeText=":-( Uh.. never mind." Importance="Low" />
+    <Speech UniqueID="Flirt_NeededThat" x="2426.05" y="-7061.429" NativeText="{:-) I needed that." Importance="Low" CanTalkOutOfRange="true" AIOverridesControl="true" />
+    <Speech UniqueID="Flirt_WhoAreYou" x="1415.57263" y="-4596.495" NativeText="Right... who are you again?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Withdrawn" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_MyNameIs" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_MyNameIs" x="2525.20947" y="-5155.53662" NativeText="{:-| I'm %1... never mind." Importance="Low">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" />
+      </Params>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="Actor" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Flirt_HittingOnMe" x="-253.419312" y="1571.87036" NativeText="Nothing much. 8-| Wait, are you hitting on me? /:-) I mean, I like you and all but this is a bit sudden... :-| I'll have to think about it, ya know?" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_NotHittingOnYou" />
+        <SpeechRef UniqueID="Flirt_CanIfYouWant" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage1" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Stupid" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_NotHittingOnYou" x="1448.03235" y="1612.00317" NativeText="}:-| No, I'm not hitting on you." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_MyBad" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_MyBad" x="2560.10352" y="837.2303" NativeText="{:-( Oh, ha ha!  My bad." Importance="Low" />
+    <Speech UniqueID="Flirt_CanIfYouWant" x="1446.62354" y="422.050781" NativeText=":-) No, but I can if you'd like?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Anytime" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Flirt_Anytime" x="2561.18164" y="365.161133" NativeText=":-) Any time you want to!" Importance="Low">
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_TapThat" x="72.32338" y="-12170.7686" NativeText="/:-) Wooo, I'd tap that ass!  You ever get lonely, just say the word." Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_PlayYourCardsRight" />
+        <SpeechRef UniqueID="Flirt_KiddingMe" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage2" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_BeAggressive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_KiddingMe" x="1222.53638" y="-12819.23" NativeText="}:-[ Are you fucking kidding me?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="IsFemale" Subject="Actor" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="40" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_JustSaying" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_PlayYourCardsRight" x="1222.07043" y="-11560.3271" NativeText="/:-) Play your cards right and you may get the chance." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="20" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Alright" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_JustSaying" x="2265.2605" y="-13261.6807" NativeText="}:-[ I'm just saying I find you sexually attractive.  Don't be a %1!" Importance="Low">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_Alright" x="2197.77222" y="-12141.35" NativeText=":-) Alright!" Importance="Low" />
+    <Speech UniqueID="Flirt_LookingFine" x="-244.827637" y="-564.813843" NativeText="/:-| Damn, you are looking fine today!" Importance="Low" RepeatTime="12600" SpecialBehaviour="NoReplyChoiceForNPC">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.5" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_DoesThatLineEverWork" />
+        <SpeechRef UniqueID="Flirt_ThanksForTheCompliment" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage1" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_BeAggressive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Flirt_DoesThatLineEverWork" x="1449.30212" y="-397.279816" NativeText="}:-| Wow, does that line ever work for you?" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="100" />
+        <Condition Type="IsFemale" Subject="Actor" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="20" />
+        <Condition Type="ConditionBlockResult" PriorityFactor="40">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Faithfullness" />
+          </ConditionBlocks>
+        </Condition>
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_Ugly" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_Ugly" x="2475.28076" y="-1292.34546" NativeText="}:-( Fuck off then, ugly %1." Importance="Low">
+      <Params>
+        <SpeechParam Type="BastardOrBitch" Subject="Target" />
+      </Params>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_ThanksForTheCompliment" x="1455.21521" y="-1714.6333" NativeText=":-) Thanks for the slightly cheesy compliment." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="Always" PriorityFactor="100" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Flirt_AnyTimeBaby" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="Complimented" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Flirt_AnyTimeBaby" x="2451.851" y="-2294.04248" NativeText=":-) Any time baby." Importance="Low" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Flirt_Stage1" x="-4049.70874" y="3612.83252">
+      <Conditions>
+        <Condition Type="CanFlirt" Subject="Actor" Object="Target" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage1_Player" />
+            <ConditionBlockRef UniqueID="Flirt_Stage1_NPC" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_QuestNotActive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_Stage2" x="-4310.10059" y="-6899.115">
+      <Conditions>
+        <Condition Type="CanFlirt" Subject="Actor" Object="Target" />
+        <Condition Type="Or">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_Stage2_Player" />
+            <ConditionBlockRef UniqueID="Flirt_Stage2_NPC" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_QuestNotActive" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_Faithfullness" x="10555.0361" y="-2030.8999" Type="Multiply">
+      <Conditions>
+        <Condition Type="ConditionBlockResult" PriorityFactor="0.5">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Flirt_HasRomanticRelationship" />
+          </ConditionBlocks>
+        </Condition>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="0.5" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="2" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_HasRomanticRelationship" x="11342.27" y="-1975.33838" Type="Sum">
+      <Conditions>
+        <Condition Type="HasRomanticRelationshipWithAnyone" Subject="Actor" BoolData="true" PriorityFactor="2" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Actor" ObjectModifier="LivingPartner" PriorityFactor="0.01" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_Stage1_Player" x="-5205.36426" y="4021.625">
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="20" />
+        <Condition Type="HasMemoryQuantityLessThan" Subject="Actor" Object="Actor" ThirdParty="Target" Data="1" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_Stage1_NPC" x="-5216.13574" y="2992.612">
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_Stage2_Player" x="-5368.19" y="-6106.40771">
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="Target" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="40" />
+        <Condition Type="HasMemoryQuantityBetween" Subject="Actor" Object="Actor" ThirdParty="Target" Data="1" Data2="2" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="HasMemoryQuantityBetween" Subject="Actor" Object="Actor" ThirdParty="Target" Data="1" Data2="2" StringData="FlirtedSuccessfullyWith" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Actor" ThirdParty="Target" StringData="FlirtedUnsuccessfullyWith" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_Stage2_NPC" x="-5359.70068" y="-7403.782">
+      <Conditions>
+        <Condition Type="IsPlayer" Subject="Target" Not="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Flirt_BeAggressive" x="-4278.969" y="-7780.18652" Type="Or">
+      <Conditions>
+        <Condition Type="IsMale" Subject="Actor" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

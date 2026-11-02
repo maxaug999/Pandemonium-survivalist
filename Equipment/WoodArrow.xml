@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Arrow</TypeName>
+  <NativeName>Wood Arrow</NativeName>
+  <NativeDescription>Low cost arrow &amp; low damage. It won't hurt your target.</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>0.05</Weight>
+  <BasePrice>0.025</BasePrice>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Camp</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>HardwareStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <TypicalLootAmount>16</TypicalLootAmount>
+  <ArmorPiercing>-0.5</ArmorPiercing>
+  <DamageModifier>0.5</DamageModifier>
+</EquipmentPrototype>

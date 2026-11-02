@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Armor</TypeName>
+  <NativeName>Cooking Apron</NativeName>
+  <NativeDescription>The only thing your waifu needs</NativeDescription>
+  <Category>4:Clothing/Armor/Vest</Category>
+  <Weight>2</Weight>
+  <BasePrice>20</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>BodyArmor</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Farmers</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Nakedudes</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>SurvivorII</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>AmmoTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>IllegalTraders</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Junkies</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Hunters</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <ColorVariations>
+    <Color32>
+      <r>236</r>
+      <g>240</g>
+      <b>241</b>
+      <a>255</a>
+    </Color32>
+  </ColorVariations>
+  <ColorVariations2 />
+  <MaleMeshName>Male_Mill_All:MaleBulletProofVest</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:FemaleBulletProofVest</FemaleMeshName>
+  <DamageAbsorption>1</DamageAbsorption>
+  <SkillBonusType>Cooking</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+</EquipmentPrototype>

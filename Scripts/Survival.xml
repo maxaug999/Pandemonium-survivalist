@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>29</NextFreeSpeechID>
+  <NextFreeTriggerID>2</NextFreeTriggerID>
+  <NextFreeConditionBlockID>5</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-213.91716</x>
+    <y>-1866.649</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4393521</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Survival_AskFriendForWater" x="-1803.64368" y="6786.77539" NativeText="Got any water?" Situation="AskForDrink" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Survival_AskFriendForWater_Reply" />
+        <SpeechRef UniqueID="Survival_NoWater" />
+        <SpeechRef UniqueID="Survival_WontGiveWater" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostDrink" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_AskFriendForWater_Reply" x="-127.0627" y="7743.213" NativeText="Here you go." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveDrink" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BuyWater" x="-1808.09583" y="5654.60938" NativeText="Can I buy some water from you?" Situation="AskForDrink" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_NoWater" />
+        <SpeechRef UniqueID="Survival_WontGiveWater" />
+        <SpeechRef UniqueID="Survival_BuyWater_Reply" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordWater" Subject="Actor" Object="Target" StringData="PlasticBottle" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostDrink" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_BuyWater_Reply" x="-75.62984" y="5808.702" NativeText=":-) Pleasure doing business with you." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellDrink" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_WontGiveWater" x="-96.45943" y="6320.6123" NativeText="My water is for myself." Importance="Low">
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_NoWater" x="-92.00069" y="6815.81152" NativeText="I don't have any water." Importance="Low">
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_BegForWater" x="-1881.75061" y="3631.04834" NativeText="{:-( I'm so thirsty... please let me have some water?" Situation="AskForDrink" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Survival_NoWater" />
+        <SpeechRef UniqueID="Survival_BegForWater_ReplyYes" />
+        <SpeechRef UniqueID="Survival_BegForWater_ReplyReluctantYes" />
+        <SpeechRef UniqueID="Survival_BegForWater_ReplySympatheticNo" />
+        <SpeechRef UniqueID="Survival_BegForWater_ReplyAggressiveNo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordWater" Subject="Actor" Object="Target" StringData="PlasticBottle" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostDrink" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Begged" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForWater_ReplyYes" x="-57.99373" y="4877.4043" NativeText=":-) Fine, here you go." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveDrink" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Helped" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForWater_ReplyReluctantYes" x="-38.567215" y="3574.85352" NativeText=":-) Only because I like you!" Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="30" Data2="10" StringData="Passive-Aggressive" />
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveDrink" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Helped" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForWater_ReplySympatheticNo" x="-58.16243" y="2235.10156" NativeText=":-( Sorry, I've got to look after myself." Importance="Low">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForWater_ReplyAggressiveNo" x="-74.33247" y="1469.86169" NativeText="}:-[ Get out of here!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_AskFriendForFood" x="3258.639" y="7051.465" NativeText="Got any food?" Situation="AskForFood" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Survival_AskFriendForFood_Reply" />
+        <SpeechRef UniqueID="Survival_NoFood" />
+        <SpeechRef UniqueID="Survival_WontGiveFood" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostFood" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_BuyFood" x="3247.78784" y="6028.32861" NativeText="Can I buy some food from you?" Situation="AskForFood" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_NoFood" />
+        <SpeechRef UniqueID="Survival_WontGiveFood" />
+        <SpeechRef UniqueID="Survival_BuyFood_Reply" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordFood" Subject="Actor" Object="Target" StringData="PlasticBottle" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostFood" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_NoFood" x="4973.121" y="7028.834" NativeText="I don't have any food." Importance="Low">
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_AskFriendForFood_Reply" x="4979.18359" y="7951.033" NativeText="Here you go." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveFood" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_WontGiveFood" x="4968.344" y="6495.30371" NativeText="My food is for myself." Importance="Low">
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_BuyFood_Reply" x="4957.83643" y="5946.664" NativeText=":-) Pleasure doing business with you." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellFood" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForFood_ReplyYes" x="5030.16553" y="4916.093" NativeText=":-) Fine, here you go." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveFood" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Helped" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForFood" x="3241.759" y="3958.89" NativeText="{:-( I'm so hungry... please can I have some food?" Situation="AskForFood" Importance="Low">
+      <Replies>
+        <SpeechRef UniqueID="Survival_NoFood" />
+        <SpeechRef UniqueID="Survival_BegForFood_ReplyYes" />
+        <SpeechRef UniqueID="Survival_BegForFood_ReplyReluctantYes" />
+        <SpeechRef UniqueID="Survival_BegForFood_ReplySympatheticNo" />
+        <SpeechRef UniqueID="Survival_BegForFood_ReplyAggressiveNo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordFood" Subject="Actor" Object="Target" StringData="PlasticBottle" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostFood" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Begged" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForFood_ReplyReluctantYes" x="5047.165" y="3418.50684" NativeText=":-) Only because I like you!" Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="30" Data2="10" StringData="Passive-Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveFood" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Helped" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForFood_ReplySympatheticNo" x="5046.402" y="1916.13525" NativeText=":-( Sorry, I've got to look after myself." Importance="Low">
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForFood_ReplyAggressiveNo" x="5047.767" y="1133.566" NativeText="}:-[ Get out of here!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_TakingShelter" x="1794.57849" y="-5688.02539" NativeText="I'm getting out of the cold." Situation="TakingShelter" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_GetSomeWater" x="2798.61646" y="-5693.888" NativeText="It's time for a drink." Situation="FindingWater" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingSomeWater" x="2802.95581" y="-6043.39355" NativeText="I'm gonna go find some water." Situation="ScavengingWater" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingSomeWaterParched" x="2792.75146" y="-6478.36035" NativeText="I'm parched - gonna go search for water." Situation="ScavengingWater" Importance="FriendComplaint" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="HasThirst" Subject="Actor" Data="1" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Survival_GetSomeFood" x="3695.337" y="-5690.06152" NativeText="It's snack time." Situation="FindingFood" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingSomeFood" x="3699.67627" y="-6039.567" NativeText="I'm gonna go find some food." Situation="ScavengingFood" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingSomeFoodStarving" x="3689.472" y="-6474.53369" NativeText="I'm starving - gonna go search for food." Situation="ScavengingFood" Importance="FriendComplaint" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="HasHunger" Subject="Actor" Data="1" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Survival_GetSomeBandages" x="4762.983" y="-5660.723" NativeText="I'm getting some bandages." Situation="FindingBandages" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingSomeBandages" x="4767.32227" y="-6010.22852" NativeText="I'm gonna go look for some bandages." Situation="ScavengingBandages" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_GetSomeAntigen" x="5728.20166" y="-5662.63672" NativeText="I'm getting some antigen." Situation="FindingAntigen" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingSomeAntigen" x="5732.541" y="-6012.142" NativeText="I'm gonna go look for some antigen." Situation="ScavengingAntigen" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_GetSomeAmmo" x="6714.21338" y="-5665.82568" NativeText="I'm going to stock up on ammo." Situation="FindingAmmo" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingAmmo" x="6718.55273" y="-6015.331" NativeText="I'm running low on ammo, gonna go look for some." Situation="ScavengingAmmo" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_SearchingForShelter" x="1797.81226" y="-6145.437" NativeText="Gonna find somewhere that's out of the elements." Situation="SearchingForShelter" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_SearchingForShelterFreezing" x="1801.855" y="-6609.525" NativeText="I'm so cold out here... got to find shelter..!" Situation="SearchingForShelter" Importance="FriendComplaint" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="HasHypothermia" Subject="Actor" Data="32" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Survival_GoingToSitByFire" x="787.2498" y="-5674.494" NativeText="Gonna warm myself by the fire." Situation="GoingToSitByFire" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_SearchingForFire" x="790.4836" y="-6131.906" NativeText="Gotta be a nice warm campfire around here somewhere." Situation="SearchingForFire" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_SearchingForFireFreezing" x="794.5263" y="-6595.99365" NativeText="I'm freezing... where's some warmth..?" Situation="SearchingForFire" Importance="FriendComplaint" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="HasHypothermia" Subject="Actor" Data="32" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="Survival_GetALighter" x="7616.61475" y="-5669.284" NativeText="Need something to light this fire with." Situation="FindingLighter" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingLighter" x="7620.954" y="-6018.78955" NativeText="I'm going to scavenge around for something to light this fire with." Situation="ScavengingLighter" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_FindingItem" x="8527.089" y="-5672.66064" NativeText="I'm getting %1." Situation="FindingItem" Importance="Low" RepeatTime="300">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ReferringTo" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Survival_ScavengingItem" x="8519.363" y="-6177.29541" NativeText="I'm gonna go search for %1." Situation="ScavengingItem" Importance="FriendComplaint" RepeatTime="300">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ReferringTo" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Survival_StealingCrops" x="3681.06543" y="-7151.33447" NativeText="I'm starving... time for some desperate measures." Situation="StealingCrops" Importance="FriendComplaint" RepeatTime="300" />
+    <Speech UniqueID="Survival_ScavengingItemCritical" x="8499.727" y="-6748.95654" NativeText="Shit, I really need %1." Situation="ScavengingItemCritical" Importance="FriendComplaint" RepeatTime="300">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ReferringTo" />
+      </Params>
+    </Speech>
+    <Speech UniqueID="Survival_PickingCrops" x="8493.199" y="-7963.119" NativeText="These crops are looking ripe..." Situation="PickingCrops" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_GettingWaterFromRiver" x="8488.438" y="-7444.15" NativeText="Gonna head down to the river for some water..." Situation="GettingWaterFromRiver" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_ChoppingWood" x="8481.231" y="-8420.73" NativeText="Gonna go chop some wood..." Situation="ChoppingFirewood" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_BegForItem" x="6593.62842" y="3443.7" NativeText="{:-( Please could I have %1?  I really need it!" Situation="AskForItem" Importance="Low">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Survival_NoItem" />
+        <SpeechRef UniqueID="Survival_BegForItem_ReplyYes" />
+        <SpeechRef UniqueID="Survival_BegForItem_ReplyReluctantYes" />
+        <SpeechRef UniqueID="Survival_BegForItem_ReplySympatheticNo" />
+        <SpeechRef UniqueID="Survival_BegForItem_ReplyAggressiveNo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordObject" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsObjectInInventory" Subject="Target" Object="ReferringTo" Not="true" />
+      </CancelConditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Begged" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForItem_ReplyAggressiveNo" x="8189.48438" y="894.097168" NativeText="}:-[ Get out of here!" Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForItem_ReplySympatheticNo" x="8188.47852" y="1981.57214" NativeText=":-( Sorry, I've got to look after myself." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="RefusedToHelp" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForItem_ReplyReluctantYes" x="8198.707" y="3505.97583" NativeText=":-) Only because I like you!" Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="30" Data2="10" StringData="Passive-Aggressive" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <Condition Type="CanShareItemWith" Subject="Actor" Object="Target" ThirdParty="ReferringTo" PriorityFactor="2" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Helped" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BegForItem_ReplyYes" x="8214.709" y="4949.26074" NativeText=":-) Fine, here you go." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <Condition Type="CanShareItemWith" Subject="Actor" Object="Target" ThirdParty="ReferringTo" PriorityFactor="2" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Helped" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BuyItem_Reply" x="8000.354" y="6574.216" NativeText=":-) Pleasure doing business with you." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <Condition Type="CanShareItemWith" Subject="Actor" Object="Target" ThirdParty="ReferringTo" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SellObject" Subject="Actor" Object="Target" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_BuyItem" x="6578.986" y="5160.372" NativeText="Can I buy %1 from you?" Situation="AskForItem" Importance="Low">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_NoItem" />
+        <SpeechRef UniqueID="Survival_BuyItem_Reply" />
+        <SpeechRef UniqueID="Survival_NotForSale" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordObject" Subject="Actor" Object="Target" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsObjectInInventory" Subject="Target" Object="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_NoItem" x="7998.65" y="7892.36328" NativeText="I don't have any %1." Importance="Low">
+      <Params>
+        <SpeechParam Type="ItemLiquidContentsName" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_AskFriendForItem" x="6587.39" y="7377.291" NativeText="Could I borrow %1?" Situation="AskForItem" Importance="Low">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="Survival_AskFriendForItem_Reply" />
+        <SpeechRef UniqueID="Survival_NoItem" />
+        <SpeechRef UniqueID="Survival_NeedItMyself" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsObjectInInventory" Subject="Target" Object="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_AskFriendForItem_Reply" x="8015.986" y="8774.867" NativeText="Here you go." Importance="Low" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" BoolData="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_FindingClothes_Warmer" x="9490.789" y="-5679.1" NativeText="I'm going to put on something warmer." Situation="FindingClothes" Importance="Low" RepeatTime="300">
+      <Conditions>
+        <Condition Type="IsWarmerThatCurrentClothing" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_ScavengingClothes_Warmer" x="9499.958" y="-6209.054" NativeText="I'm going to look for something warmer to wear." Situation="ScavengingClothes" Importance="Low" RepeatTime="300">
+      <Conditions>
+        <Condition Type="IsWarmerThatCurrentClothing" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_ScavengingClothes_Lighter" x="9507.257" y="-7393.751" NativeText="Sure is muggy these days, I'm gonna look for something lighter to wear." Situation="ScavengingClothes" Importance="Low" RepeatTime="300">
+      <Conditions>
+        <Condition Type="IsWarmerThatCurrentClothing" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_FindingClothes_Lighter" x="9498.088" y="-6863.797" NativeText="I'm going to change into some summer clothes." Situation="FindingClothes" Importance="Low" RepeatTime="300">
+      <Conditions>
+        <Condition Type="IsWarmerThatCurrentClothing" Subject="Actor" Object="ReferringTo" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_FindingShoes" x="9505.383" y="-8013.225" NativeText="{:-| Can I have some shoes?" Situation="FindingClothes" Importance="Low" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsClothingType" Subject="ReferringTo" StringData="Shoes" />
+        <Condition Type="IsWearingSomething" Subject="Actor" Object="ReferringTo" StringData="Shoes" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_ScavengingShoes" x="9504.027" y="-8843.415" NativeText="{:-| I'm going looking for some shoes!" Situation="ScavengingClothes" Importance="Low" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsClothingType" Subject="ReferringTo" StringData="Shoes" />
+        <Condition Type="IsWearingSomething" Subject="Actor" Object="ReferringTo" StringData="Shoes" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_FindingTrousers" x="9496.565" y="-9717.014" NativeText="8-o Uh, where are my pants?" Situation="FindingClothes" Importance="Low" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsClothingType" Subject="ReferringTo" StringData="Bottom" />
+        <Condition Type="IsWearingSomething" Subject="Actor" Object="ReferringTo" StringData="Bottom" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_ScavengingTrousers" x="9495.21" y="-10547.2041" NativeText="8-o Got a slight wardrobe malfunction here, I'll be back soon." Situation="ScavengingClothes" Importance="Low" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsClothingType" Subject="ReferringTo" StringData="Bottom" />
+        <Condition Type="IsWearingSomething" Subject="Actor" Object="ReferringTo" StringData="Bottom" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_FindingTop" x="9497.924" y="-11443.8623" NativeText="I'm going to put a top on." Situation="FindingClothes" Importance="Low" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsClothingType" Subject="ReferringTo" StringData="Top" />
+        <Condition Type="IsWearingSomething" Subject="Actor" Object="ReferringTo" StringData="Top" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_ScavengingTop" x="9496.568" y="-12274.0527" NativeText="I'm going to find something to wear." Situation="ScavengingClothes" Importance="Low" RepeatTime="300">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsClothingType" Subject="ReferringTo" StringData="Top" />
+        <Condition Type="IsWearingSomething" Subject="Actor" Object="ReferringTo" StringData="Top" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_Mining" x="8478.344" y="-8920.242" NativeText="Gonna go break some rocks..." Situation="Mining" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_SkinRabbit" x="-3386.13647" y="-7068.936" NativeText="Hey, can you skin this rabbit?" Situation="Trade">
+      <Replies>
+        <SpeechRef UniqueID="Survival_SkinRabbit_Free" />
+        <SpeechRef UniqueID="Survival_SkinRabbit_ForGold" />
+        <SpeechRef UniqueID="Survival_SkinRabbit_HelpYou" />
+        <SpeechRef UniqueID="Survival_NoGood" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="DeadRabbit" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_SkinRabbit_ForGold" x="-2020.14075" y="-6484.8667" NativeText="Sure, that'll be 1 gold piece.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="2" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_SkinRabbit_OkayPay" />
+        <SpeechRef UniqueID="Survival_SkinRabbit_CantAfford" />
+        <SpeechRef UniqueID="Survival_SkinRabbit_DontPay" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="HuntingKnife" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Cooking" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_SkinRabbit_Free" x="-2016.44812" y="-5070.184" NativeText=":-) Yep, it's not that hard really!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="3" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="HuntingKnife" />
+        <Condition Type="HasSkill" Subject="Actor" Data="2" StringData="Cooking" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DeleteEquipment" Subject="Target" Data="1" StringData="DeadRabbit" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Data="1" StringData="SkinnedRabbit" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_SkinRabbit_OkayPay" x="-988.731262" y="-5709.899" NativeText="Okay">
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="GiveEquipment" Subject="Actor" Object="Target" Data="1" StringData="Gold" />
+        <StoryEvent Type="DeleteEquipment" Subject="Actor" Data="1" StringData="DeadRabbit" />
+        <StoryEvent Type="SpawnEquipment" Subject="Actor" Data="1" StringData="SkinnedRabbit" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_SkinRabbit_DontPay" x="-981.31665" y="-7485.42969" NativeText="Actually no thanks" />
+    <Speech UniqueID="Survival_SkinRabbit_CantAfford" x="-997.2164" y="-6810.83447" NativeText="}:-( I can't afford that!">
+      <Conditions>
+        <Condition Type="HasGold" Subject="Actor" Data="1" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_NoGood" x="-2002.234" y="-9110.383" NativeText=":-( Sorry I'm no good at that stuff" />
+    <Speech UniqueID="Survival_SkinRabbit_HelpYou" x="-2015.95569" y="-7765.66846" NativeText="%1 is good at that stuff." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasNItemsOfType" Subject="ReferringTo" Data="1" StringData="HuntingKnife" />
+        <Condition Type="HasSkill" Subject="ReferringTo" Data="2" StringData="Cooking" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Survival_GettingWaterFromWell" x="7532.564" y="-7473.49463" NativeText="Gonna get some water from the well." Situation="GettingWaterFromWell" Importance="Low" RepeatTime="300" />
+    <Speech UniqueID="Survival_NotForSale" x="8071.738" y="5503.30859" NativeText="It's not for sale." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_NeedItMyself" x="8000.085" y="7155.64941" NativeText="I need it for myself." Importance="Low">
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" BoolData="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Survival_GiveMeItem" x="6515.997" y="388.130249" NativeText="}:-[ Give me %1, %2." Situation="AskForItem">
+      <Params>
+        <SpeechParam Type="AnItemOrSomeLiquid" Subject="ReferringTo" />
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="-30" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_Okay" />
+        <SpeechRef UniqueID="Survival_NotAChance" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordObject" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsObjectInInventory" Subject="Target" Object="ReferringTo" Not="true" />
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_Okay" x="8199.839" y="-368.557129" NativeText="8-( Uh... okay.  I don't need it anyway!" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="50" />
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" PriorityFactor="40" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsObjectInInventory" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <Condition Type="CanShareItemWith" Subject="Actor" Object="Target" ThirdParty="ReferringTo" PriorityFactor="2" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveObject" Subject="Actor" Object="Target" ThirdParty="ReferringTo" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Survival_NotAChance" x="8203.177" y="-2477.45313" NativeText="}:-| Not a chance.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="40" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_WrongAnswer" />
+      </Replies>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Survival_WrongAnswer" x="9788.041" y="-2619.40527" NativeText="}:-[ Wrong answer.">
+      <Conditions>
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" />
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" Not="true" PriorityFactor="-40" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_AreBothFEMA" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="DeclareWar" Subject="Actor" Object="Target" />
+        <StoryEvent Type="Attack" Subject="Actor" Object="Target" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Survival_GiveMeFood" x="3667.78369" y="-463.096649" NativeText="}:-[ Give me some food, %1." Situation="AskForFood">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="-30" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_OkayFood" />
+        <SpeechRef UniqueID="Survival_NotAChance" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordObject" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostFood" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_OkayFood" x="5052.4707" y="-95.81519" NativeText="8-( Uh... okay.  I got plenty of food anyway!  You... you're welcome!" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="50" />
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" PriorityFactor="40" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasFood" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveFood" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Survival_GiveMeWater" x="128.474533" y="-1421.44666" NativeText="}:-[ Get me a drink, %1.  I'm thirsty!" Situation="AskForDrink">
+      <Params>
+        <SpeechParam Type="AssholeOrBitch" Subject="Target" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="30" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="-30" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="-1" />
+        <Condition Type="Always" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Survival_OkayWater" />
+        <SpeechRef UniqueID="Survival_NotAChance" />
+      </Replies>
+      <Conditions>
+        <Condition Type="AreMembersOfSameCommunity" Subject="Actor" Object="Target" Not="true" />
+        <Condition Type="CanAffordObject" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <CancelConditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Survival_LostDrink" />
+          </ConditionBlocks>
+        </Condition>
+      </CancelConditions>
+    </Speech>
+    <Speech UniqueID="Survival_OkayWater" x="1920.09021" y="-769.8209" NativeText="8-( Uh... okay.  Water's free!" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="-50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="50" />
+        <Condition Type="IsOutnumberedBy" Subject="Actor" Object="Target" PriorityFactor="40" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Actor" Object="Target" BoolData="true" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="GiveDrink" Subject="Actor" Object="Target" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Survival_AreBothFEMA" x="10711.0479" y="-3248.908">
+      <Conditions>
+        <Condition Type="IsFEMA" Subject="Actor" />
+        <Condition Type="IsFEMA" Subject="Target" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Survival_LostFood" x="1141.73193" y="3044.54956">
+      <Conditions>
+        <Condition Type="HasFood" Subject="Target" Object="Actor" BoolData="true" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Actor" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Survival_LostDrink" x="-3831.937" y="2494.23071">
+      <Conditions>
+        <Condition Type="HasDrink" Subject="Target" Object="Actor" BoolData="true" Not="true" />
+        <Condition Type="IsDirectControlled" Subject="Actor" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

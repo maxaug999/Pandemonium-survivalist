@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Gate</TypeName>
+  <NativeName>Wood Gate</NativeName>
+  <Category>Camp/Fences</Category>
+  <PrefabNames>
+    <string>Prefabs/Fences/WoodFenceGate</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>15</MaxDamage>
+  <Flammability>Medium_RequiresFuel</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <BulletHitEffect>Smoke</BulletHitEffect>
+  <ExtentsMin>
+    <x>0</x>
+    <y>-1</y>
+  </ExtentsMin>
+  <ExtentsMax>
+    <x>0</x>
+    <y>1</y>
+  </ExtentsMax>
+  <WantFlattenTerrain>true</WantFlattenTerrain>
+  <CanBeClearedForBuilding>true</CanBeClearedForBuilding>
+  <CanBeDemolished>true</CanBeDemolished>
+  <RepairResourceType>Wood</RepairResourceType>
+  <RepairResourceNeeded>0.5</RepairResourceNeeded>
+  <CaptureResourceType>Wood</CaptureResourceType>
+  <CaptureResourceNeeded>1</CaptureResourceNeeded>
+  <Mass>50</Mass>
+</PropPrototype>

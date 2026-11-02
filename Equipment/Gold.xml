@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Gold</NativeName>
+  <NativeDescription>Gold is a useful medium of exchange in the absence of a central government</NativeDescription>
+  <Category>1:Valuables</Category>
+  <Weight>0.01</Weight>
+  <BasePrice>1</BasePrice>
+  <Scarcity>Common</Scarcity>
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Zombie</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>House</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Motel</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>JewelryStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+</EquipmentPrototype>

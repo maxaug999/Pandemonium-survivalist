@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>24.4646072</x>
+    <y>1105.38049</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.457871646</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Bunnies_WantMeat" x="-55.39169" y="-2074.55322" NativeText="Carrots and cabbages are all very well but I need some meat!  You any good at hunting?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_CanUseBow" />
+        <SpeechRef UniqueID="Bunnies_CanUseGun" />
+        <SpeechRef UniqueID="Bunnies_ExpertMarksman" />
+        <SpeechRef UniqueID="Bunnies_No" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Cook" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="Bunnies_Hunt" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Bunnies_Frequency" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Bunnies_CanUseBow" x="1303.03625" y="-1119.69727" NativeText="I've got a bow and I know how to use it.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_SeeHowGoodYouAre" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Actor" Data="1" StringData="Archery" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="1" StringData="Bow" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Bunnies_CanUseGun" x="1270.45935" y="-2158.63745" NativeText="I've got a gun and I'm an okay shot.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_SeeHowGoodYouAre" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Bunnies_Conditions_CanUseGun" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Bunnies_ExpertMarksman" x="1276.24976" y="-3029.79541" NativeText="I'm an expert marksman with my high powered sniper rifle." Lie="true">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_IfYouSaySo" />
+        <SpeechRef UniqueID="Bunnies_LikeHellYouAre" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Bunnies_Conditions_CanUseGun" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Bunnies_No" x="1315.14465" y="-4546.903" NativeText="Actually I'm not much of a hunter.">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_NotMuchUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Bunnies_IfYouSaySo" x="2694.9375" y="-2314.739" NativeText="If you say so.  Well, go bag me a couple of rabbits then." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="1" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Bunnies_Hunt" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bunnies_NotMuchUse" x="2709.58374" y="-4650.76074" NativeText="Not much use then are you?" />
+    <Speech UniqueID="Bunnies_LikeHellYouAre" x="2688.80225" y="-3657.509" NativeText="}:-| Like Hell you are!">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="1" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="-1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" Data="0.1" StringData="LiedUnsuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunity" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bunnies_SeeHowGoodYouAre" x="2684.00464" y="-1515.91589" NativeText=":-) Let's see how good you are - shoot me a couple bunnies and I'll pay you some gold.">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Bunnies_Hunt" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bunnies_GotSome" x="4101.71143" y="-2953.54614" NativeText="Got some bunnies for you." Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_NiceJob" />
+        <SpeechRef UniqueID="Bunnies_Coneys" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="Bunnies_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="2" StringData="DeadRabbit" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Bunnies_NiceJob" x="5423.55371" y="-1747.81116" NativeText=":-) Nice job!  Here's some gold for your trouble.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="20" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="2" StringData="DeadRabbit" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="Bunnies_Return" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="5" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bunnies_HuntingJob" x="-1714.84851" y="-2513.48071" NativeText="%1 is our chef, I reckon %2 might have a hunting job for you." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Cook" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="Bunnies_Hunt" Not="true" />
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Bunnies_Frequency2" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="Bunnies_Coneys" x="5433.27" y="-3539.3623" NativeText=":-) Ah, a brace of coneys!  Here's some gold for your trouble.  Hmm, I wonder what's the best way to cook them?">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nerd" PriorityFactor="2" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="20" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="2" StringData="DeadRabbit" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="Bunnies_Return" />
+        <StoryEvent Type="PretendShakedown" Subject="Actor" Object="Target" Data="5" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bunnies_HowToHunt" x="4057.082" y="-5664.938" NativeText="How do I hunt rabbits?  It's so hard!" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_Downwind" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="Bunnies_Hunt" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Bunnies_Downwind" x="5126.861" y="-5748.8667" NativeText="Well, first of all you gotta make sure you approach downwind, so they can't smell you coming.">
+      <Continues>
+        <SpeechRef UniqueID="Bunnies_Cover" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Bunnies_Cover" x="6121.88232" y="-5806.735" NativeText="You'll also need to find some cover.  Bunnies have a wide field of view so they'll almost always see you coming otherwise.  Try to find one that's upwind of some forest, and creep up on it using bushes for cover.  Patience is key, don't startle them.">
+      <Continues>
+        <SpeechRef UniqueID="Bunnies_Bait" />
+      </Continues>
+    </Speech>
+    <Speech UniqueID="Bunnies_Bait" x="7090.49561" y="-6094.819" NativeText="You could also throw some carrots around to attract them.  Or if you're handy you could build a rabbit trap with a bucket and some string, and a carrot for bait.  Put it somewhere you've seen rabbits before, and maybe you'll catch one of them that way.">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_ThanksForTips" />
+        <SpeechRef UniqueID="Bunnies_ThanksForNothing" />
+        <SpeechRef UniqueID="Bunnies_ABetterWay" />
+        <SpeechRef UniqueID="Bunnies_HmmOkay" />
+      </Replies>
+      <Events>
+        <StoryEvent Type="SetVariable" Subject="Actor" SubjectID="TaughtHunting" Data="1" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Bunnies_ThanksForNothing" x="8216.029" y="-6112.568" NativeText="}:-| I already tried that!  Thanks for nothing, asshole.">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_MyHelp" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Bunnies_ThanksForTips" x="8209.102" y="-5165.004" NativeText=":-) Thanks for the tips, you give great advice!">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_NoProblem" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Friendly" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Bunnies_MyHelp" x="9302.401" y="-6246.093" NativeText="}:-| You don't want my help, don't ask for it!" />
+    <Speech UniqueID="Bunnies_NoProblem" x="9301.189" y="-5312.62451" NativeText=":-) No problem." />
+    <Speech UniqueID="Bunnies_HmmOkay" x="8202.372" y="-8294.416" NativeText="Hmm, okay." />
+    <Speech UniqueID="Bunnies_ABetterWay" x="8209.289" y="-7163.474" NativeText="}:-| Uh thanks, I hadn't thought about creeping up on them.  I was gonna just run at them hollering but you've shown me a better way.">
+      <Replies>
+        <SpeechRef UniqueID="Bunnies_MyHelp" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" />
+      </Conditions>
+      <UninterruptibleEvents>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+      </UninterruptibleEvents>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Bunnies_Conditions_CanUseGun" x="-50.10263" y="-3529.55">
+      <Conditions>
+        <Condition Type="HasSkill" Subject="Actor" Data="1" StringData="Firearms" />
+        <Condition Type="HasGun" Subject="Actor" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Bunnies_Frequency" x="-858.766052" y="-2589.15625" Type="Or">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="Actor" Data="5" StringData="BunnyQuest" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="Bunnies_Hunt" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Bunnies_Frequency2" x="-858.776062" y="-3088.33984" Type="Or">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="5" StringData="BunnyQuest" />
+        <Condition Type="QuestIsDiscoveredWithAnyParams" StringData="Bunnies_Hunt" Not="true" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests>
+    <Quest UniqueID="Bunnies_Hunt" x="982.0896" y="298.664978" GroupID="Bunnies_QuestGroup" NativeDescription="%1 wants two rabbits for the stew">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="2" StringData="DeadRabbit" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="Bunnies_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="Bunnies_Return" x="1945.385" y="294.4738" GroupID="Bunnies_QuestGroup" NativeDescription="Take the two dead rabbits to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="Bunnies_QuestGroup" x="110.111145" y="301.536621" NativeTitle="Hunt rabbits for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

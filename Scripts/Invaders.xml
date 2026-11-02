@@ -1,0 +1,785 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>2</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>4</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>18</NextFreeTemplateID>
+  <NextFreeInvaderID>7</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-702.7148</x>
+    <y>2790.59253</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.797058344</EditorZoomScale>
+  <Speeches />
+  <Triggers />
+  <ConditionBlocks>
+    <ConditionBlock UniqueID="Invaders_GreenStrain_Prob_Mil" x="1160.91956" y="2185.969">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="8" StringData="" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_BlueStrain_Prob_Mil" x="1251.423" y="-166.745117">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="8" StringData="" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_RedStrain_Prob_Mil" x="1272.60327" y="-2105.964">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="6" StringData="" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_WhiteStrain_Prob_Mil" x="1306.93774" y="-4421.107">
+      <Conditions>
+        <Condition Type="DeterministicRandom" Subject="ReferringTo" Data="4" StringData="" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_GreenStrain_Scale_Min" x="-98.5200958" y="2531.75439" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.12" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_GreenStrain_Scale_Max" x="-99.7440262" y="2222.73486" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.22" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Green_Mil_Scale_Max" x="-105.62355" y="1578.358" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Green_Mil_Scale_Min" x="-107.911285" y="1894.40051" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_BlueStrain_Scale_Min" x="-42.3749046" y="330.865051" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.09" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_BlueStrain_Scale_Max" x="-43.5988274" y="21.84552" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.19" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Blue_Mil_Scale_Min" x="-51.76609" y="-306.488831" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Blue_Mil_Scale_Max" x="-49.47834" y="-622.53125" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_RedStrain_Scale_Min" x="19.0776062" y="-1784.86792" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.06" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_RedStrain_Scale_Max" x="17.8537064" y="-2093.8877" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.16" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Red_Mil_Scale_Min" x="9.68643951" y="-2422.22217" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Red_Mil_Scale_Max" x="11.97419" y="-2738.26465" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_WhiteStrain_Scale_Min" x="206.948227" y="-4121.831" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.06" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_WhiteStrain_Scale_Max" x="205.724319" y="-4430.85156" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.13" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_White_Mil_Scale_Min" x="197.557053" y="-4759.18652" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_White_Mil_Scale_Max" x="199.8448" y="-5075.22852" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Raiders_Scale_Min" x="223.163086" y="9832.118" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.05" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Raiders_Scale_Max" x="212.788452" y="9180.524" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Raiders_Scale_Max_Small" x="202.257965" y="10713.0576" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.02" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_Horde_Scale_Max" x="318.664337" y="5584.432" Type="Sum">
+      <Conditions>
+        <Condition Type="Presence" PriorityFactor="0.03" />
+      </Conditions>
+    </ConditionBlock>
+    <ConditionBlock UniqueID="Invaders_MercCount" x="5004.19336" y="8173.3623" Type="Min">
+      <Conditions>
+        <Condition Type="CommunitySize" Subject="Player" PriorityFactor="0.5" />
+        <Condition Type="InitialCommunitySize" Subject="ExtraParam" PriorityFactor="0.5" />
+        <Condition Type="ValueOfAllSupplies" Subject="ExtraParam" PriorityFactor="0.1" />
+      </Conditions>
+    </ConditionBlock>
+  </ConditionBlocks>
+  <Quests />
+  <QuestGroups />
+  <Templates>
+    <Template UniqueID="Invaders_Town_GreenStrain_Community" x="1158.81433" y="3047.682">
+      <Type>Community</Type>
+      <SpawnLocation>PreferSourceTown</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="Invaders_GreenStrain_Zombie" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_GreenStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_GreenStrain_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_GreenStrain_Zombie_Mil" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_Green_Mil_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_Green_Mil_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_GreenStrain_Zombie" x="2326.145" y="3286.04858">
+      <Type>Character</Type>
+      <Infection>Green</Infection>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_GreenStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Town_BlueStrain_Community" x="1159.4679" y="665.269836">
+      <Type>Community</Type>
+      <SpawnLocation>PreferSourceTown</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="Invaders_BlueStrain_Zombie" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_BlueStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_BlueStrain_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_BlueStrain_Zombie_Mil" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_Blue_Mil_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_Blue_Mil_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_BlueStrain_Zombie" x="2319.901" y="1056.62842">
+      <Type>Character</Type>
+      <Infection>Blue</Infection>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_BlueStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Town_RedStrain_Community" x="1108.00281" y="-1273.87708">
+      <Type>Community</Type>
+      <SpawnLocation>PreferSourceTown</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="Invaders_RedStrain_Zombie" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_RedStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_RedStrain_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_RedStrain_Zombie_Mil" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_Red_Mil_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_Red_Mil_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_RedStrain_Zombie" x="2328.02319" y="-1256.68262">
+      <Type>Character</Type>
+      <Infection>Red</Infection>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_RedStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Town_WhiteStrain_Community" x="1127.56763" y="-3488.36621">
+      <Type>Community</Type>
+      <SpawnLocation>PreferSourceTown</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="Invaders_WhiteStrain_Zombie" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_WhiteStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_WhiteStrain_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_WhiteStrain_Zombie_Mil" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_White_Mil_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_White_Mil_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_WhiteStrain_Zombie" x="2278.9187" y="-3537.87817">
+      <Type>Character</Type>
+      <Infection>White</Infection>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied" Not="true">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_WhiteStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_GreenStrain_Zombie_Mil" x="2320.883" y="2635.172">
+      <Type>Character</Type>
+      <LootLocation>Military</LootLocation>
+      <Infection>Green</Infection>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <AmmoWeaponProbability>10</AmmoWeaponProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_GreenStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_BlueStrain_Zombie_Mil" x="2321.66968" y="493.0146">
+      <Type>Character</Type>
+      <LootLocation>Military</LootLocation>
+      <Infection>Blue</Infection>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <AmmoWeaponProbability>10</AmmoWeaponProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_BlueStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_RedStrain_Zombie_Mil" x="2316.54443" y="-1822.67175">
+      <Type>Character</Type>
+      <LootLocation>Military</LootLocation>
+      <Infection>Red</Infection>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <AmmoWeaponProbability>10</AmmoWeaponProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_RedStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_WhiteStrain_Zombie_Mil" x="2291.242" y="-4127.90625">
+      <Type>Character</Type>
+      <LootLocation>Military</LootLocation>
+      <Infection>White</Infection>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <AmmoWeaponProbability>10</AmmoWeaponProbability>
+      <HasInvisibleStrain>No</HasInvisibleStrain>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="IsConditionBlockSatisfied">
+          <ConditionBlocks>
+            <ConditionBlockRef UniqueID="Invaders_WhiteStrain_Prob_Mil" />
+          </ConditionBlocks>
+        </Condition>
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Horde" x="1112.94287" y="4890.82227">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Random_GreenStrain" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_GreenStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_GreenStrain_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Random_BlueStrain" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_BlueStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_BlueStrain_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Random_RedStrain" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_RedStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_RedStrain_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Random_WhiteStrain" Min="3" Max="3">
+          <MinFormula UniqueID="Invaders_WhiteStrain_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_WhiteStrain_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Random_GreenStrain" x="2370.725" y="5606.51465">
+      <Type>Character</Type>
+      <Infection>Green</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="PickStrain" Subject="ReferringTo" Data="4" StringData="Green" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Random_BlueStrain" x="2357.65869" y="5035.161">
+      <Type>Character</Type>
+      <Infection>Blue</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="PickStrain" Subject="ReferringTo" Data="4" StringData="Blue" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Random_RedStrain" x="2348.83984" y="4466.968">
+      <Type>Character</Type>
+      <Infection>Red</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="PickStrain" Subject="ReferringTo" Data="4" StringData="Red" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Random_WhiteStrain" x="2338.76123" y="3879.876">
+      <Type>Character</Type>
+      <Infection>White</Infection>
+      <SeasonallyAppropriateClothing>false</SeasonallyAppropriateClothing>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="PickStrain" Subject="ReferringTo" Data="4" StringData="White" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Group_Giant" x="1153.65845" y="7633.06641">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Raiders_Grunt_Elite" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_Raiders_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_Raiders_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Grunt_Weak" x="2340.08667" y="11260.7139">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>5</AmmoWeaponProbability>
+      <InfectedWeaponsMaxStrain>Green</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>100</WaterBottleProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Grunt_Medium" x="2325.3606" y="10434.1611">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>5</BodyArmorProbability>
+      <LegArmorProbability>5</LegArmorProbability>
+      <HelmetProbability>5</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>5</AmmoWeaponProbability>
+      <MolotovProbability>5</MolotovProbability>
+      <InfectedWeaponsMaxStrain>Blue</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>75</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Grunt_Strong" x="2342.32715" y="9252.091">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>5</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>Red</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>75</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Grunt_Elite" x="2354.168" y="7966.22">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>75</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>White</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>75</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Events>
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="Strength" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="HandToHand" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="Archery" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="3" Data2="5" StringData="Firearms" BoolData="true" />
+      </Events>
+    </Template>
+    <Template UniqueID="Invaders_Trader_Community" x="1057.113" y="12933.1357">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingTrader</CommunityType>
+      <GeneratedRelationshipsProbability>100</GeneratedRelationshipsProbability>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Trader_Leader" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Trader_Guard" Min="1" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Trader_Guard" x="2319.362" y="12241.377">
+      <Type>Character</Type>
+      <BodyArmorProbability>75</BodyArmorProbability>
+      <LegArmorProbability>75</LegArmorProbability>
+      <HelmetProbability>75</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <GeneratedLootCount>2</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Gold" Min="5" Max="10">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_PlasticBottle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Trader_Leader" x="2301.528" y="13449.8135">
+      <Type>Character</Type>
+      <Role>Trader</Role>
+      <BodyArmorProbability>50</BodyArmorProbability>
+      <LegArmorProbability>50</LegArmorProbability>
+      <HelmetProbability>50</HelmetProbability>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <MolotovProbability>10</MolotovProbability>
+      <GeneratedLootCount>32</GeneratedLootCount>
+      <Children>
+        <TemplateChild UniqueID="Invaders_SaveToken" Min="0" Max="2">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Gold" Min="50" Max="100">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_PlasticBottle" Min="1" Max="1">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Gold" x="3405.39624" y="12452.2959">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Gold</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Invaders_PlasticBottle" x="3427.17114" y="12013.3008">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>PlasticBottle</EquipmentPrototypeName>
+    </Template>
+    <Template UniqueID="Invaders_SaveToken" x="3411.655" y="13037.3262">
+      <Type>Equipment</Type>
+      <EquipmentPrototypeName>Crucifix</EquipmentPrototypeName>
+      <Conditions>
+        <Condition Type="AreSaveTokensEnabled" />
+        <Condition Type="ShouldTradersHaveSaveTokens" />
+      </Conditions>
+    </Template>
+    <Template UniqueID="Invaders_Refugees_Community" x="992.3786" y="13906.0254">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>RovingRefugee</CommunityType>
+      <GeneratedRelationshipsProbability>100</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Refugee" Min="1" Max="3">
+          <MinFormula />
+          <MaxFormula />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Refugee" x="2278.86548" y="14013.02">
+      <Type>Character</Type>
+      <GenderRatio>40</GenderRatio>
+      <MeleeWeaponProbability>75</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <GeneratedLootCount>1</GeneratedLootCount>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Group_Small" x="957.5753" y="11043.49">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Raiders_Grunt_Weak" Min="2" Max="2">
+          <MinFormula />
+          <MaxFormula UniqueID="Invaders_Raiders_Scale_Max_Small" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Group_Medium" x="973.5378" y="10333.124">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Raiders_Grunt_Medium" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_Raiders_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_Raiders_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Raiders_Group_Large" x="1086.34387" y="9101.61">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterLooter</CommunityType>
+      <GeneratedRelationshipsProbability>50</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <CanOccupyEmptyBases>true</CanOccupyEmptyBases>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Raiders_Grunt_Strong" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_Raiders_Scale_Min" />
+          <MaxFormula UniqueID="Invaders_Raiders_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_Horde_Group_Small" x="1127.88806" y="6059.47461">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterZombie</CommunityType>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Random_GreenStrain" Min="3" Max="3">
+          <MinFormula />
+          <MaxFormula UniqueID="Invaders_Horde_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Random_BlueStrain" Min="3" Max="3">
+          <MinFormula />
+          <MaxFormula UniqueID="Invaders_Horde_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Random_RedStrain" Min="3" Max="3">
+          <MinFormula />
+          <MaxFormula UniqueID="Invaders_Horde_Scale_Max" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Random_WhiteStrain" Min="3" Max="3">
+          <MinFormula />
+          <MaxFormula UniqueID="Invaders_Horde_Scale_Max" />
+        </TemplateChild>
+      </Children>
+    </Template>
+    <Template UniqueID="Invaders_HiredMercs_Group" x="5896.407" y="8957.898" NativeCommunityName="Mercenaries">
+      <Type>Community</Type>
+      <SpawnLocation>PreferRoadEntrance</SpawnLocation>
+      <CommunityType>HunterMercenary</CommunityType>
+      <GeneratedRelationshipsProbability>20</GeneratedRelationshipsProbability>
+      <PlayerTrackingProbability>100</PlayerTrackingProbability>
+      <Children>
+        <TemplateChild UniqueID="Invaders_Merc_Grunt_Low" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_MercCount" />
+          <MaxFormula UniqueID="Invaders_MercCount" />
+        </TemplateChild>
+        <TemplateChild UniqueID="Invaders_Merc_Grunt" Min="2" Max="2">
+          <MinFormula UniqueID="Invaders_MercCount" />
+          <MaxFormula UniqueID="Invaders_MercCount" />
+        </TemplateChild>
+      </Children>
+      <Events>
+        <StoryEvent Type="DiscoverCommunityName" Subject="Player" Object="ReferringTo" />
+      </Events>
+    </Template>
+    <Template UniqueID="Invaders_Merc_Grunt" x="6962.216" y="8912.22">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>25</BodyArmorProbability>
+      <LegArmorProbability>25</LegArmorProbability>
+      <HelmetProbability>25</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>50</AmmoWeaponProbability>
+      <MolotovProbability>25</MolotovProbability>
+      <PipeBombProbability>25</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>Red</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>75</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="PresenceIsAtLeast" Data="15" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="2" Data2="5" StringData="Strength" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="2" Data2="5" StringData="HandToHand" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="2" Data2="5" StringData="Archery" BoolData="true" />
+        <StoryEvent Type="SetSkill" Subject="ReferringTo" Data="2" Data2="5" StringData="Firearms" BoolData="true" />
+        <StoryEvent Type="TakeAllSupplies" Subject="ReferringTo" Object="ExtraParam" ObjectModifier="Leader" Data="10" BoolData3="true" />
+      </Events>
+    </Template>
+    <Template UniqueID="Invaders_Merc_Grunt_Low" x="6965.94434" y="10679.7852">
+      <Type>Character</Type>
+      <PersonalityFaction>Looter</PersonalityFaction>
+      <GenderRatio>75</GenderRatio>
+      <BodyArmorProbability>5</BodyArmorProbability>
+      <LegArmorProbability>5</LegArmorProbability>
+      <HelmetProbability>5</HelmetProbability>
+      <MeleeWeaponProbability>100</MeleeWeaponProbability>
+      <AmmoWeaponProbability>25</AmmoWeaponProbability>
+      <MolotovProbability>15</MolotovProbability>
+      <PipeBombProbability>5</PipeBombProbability>
+      <InfectedWeaponsMaxStrain>Blue</InfectedWeaponsMaxStrain>
+      <InfectedWeaponsProbability>10</InfectedWeaponsProbability>
+      <WaterBottleProbability>75</WaterBottleProbability>
+      <DontSimulateSurvivalFactorsUntilDiscovered>true</DontSimulateSurvivalFactorsUntilDiscovered>
+      <GeneratedLootCount>1</GeneratedLootCount>
+      <Conditions>
+        <Condition Type="PresenceIsLessThan" Data="16" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="TakeAllSupplies" Subject="ReferringTo" Object="ExtraParam" ObjectModifier="Leader" Data="10" BoolData3="true" />
+      </Events>
+    </Template>
+  </Templates>
+  <Invaders>
+    <Invader UniqueID="Invaders_Town_GreenStrain" x="-320.25592" y="3634.49121" NativeDescription="You've left some tracks in the town of %1, a hot spot for Green Strain infected." IconPath="TownInfected.png" TemplateID="Invaders_Town_GreenStrain_Community" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="6" MaxCooldownDays="12" MinTimeoutDays="21" MaxTimeoutDays="28">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" />
+      </Params>
+    </Invader>
+    <Invader UniqueID="Invaders_Town_BlueStrain" x="-104.730431" y="1252.47815" NativeDescription="You've left some tracks in the town of %1, a favourite haunt of Blue Strain infected." IconPath="TownInfected.png" TemplateID="Invaders_Town_BlueStrain_Community" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="6" MaxCooldownDays="12" MinTimeoutDays="21" MaxTimeoutDays="28">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" />
+      </Params>
+    </Invader>
+    <Invader UniqueID="Invaders_Town_RedStrain" x="15.6812057" y="-921.084839" NativeDescription="You've left some tracks in the town of %1, a popular stomping ground among Red Strain infected." IconPath="TownInfected.png" TemplateID="Invaders_Town_RedStrain_Community" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="6" MaxCooldownDays="12" MinTimeoutDays="21" MaxTimeoutDays="28">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" />
+      </Params>
+    </Invader>
+    <Invader UniqueID="Invaders_Town_WhiteStrain" x="49.8205566" y="-3207.282" NativeDescription="You've left some tracks in the town of %1, a frequent hangout for White Strain infected." IconPath="TownInfected.png" TemplateID="Invaders_Town_WhiteStrain_Community" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="1" MinCooldownDays="6" MaxCooldownDays="12" MinTimeoutDays="21" MaxTimeoutDays="28">
+      <Params>
+        <SpeechParam Type="TownName" Subject="ReferringTo" />
+      </Params>
+    </Invader>
+    <Invader UniqueID="Invaders_Horde_Small" x="-454.4552" y="6287.571" NativeDescription="Mobile clusters of infected roaming the countryside looking for a snack." IconPath="Infected.png" TemplateID="Invaders_Horde_Group_Small" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="3" MinCooldownDays="0.125" MaxCooldownDays="0.25">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Horde_Tracking" x="-339.328735" y="5023.292" NativeDescription="Your community is growing, and the infected hordes from the surrounding countryside have noticed." IconPath="TravellingInfected.png" TemplateID="Invaders_Horde" Density="200" DifficultySetting="HordeDensity" MaxActiveOnLargeMap="2" MinCooldownDays="5" MaxCooldownDays="10">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="2" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Raiders_Small" x="-516.8101" y="11122.582" NativeDescription="Small groups of opportunistic bandits passing through the area, preying on whoever they find." IconPath="Raiders.png" TemplateID="Invaders_Raiders_Group_Small" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="3" MinCooldownDays="0.125" MaxCooldownDays="0.25">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Raiders_Medium" x="-512.2586" y="10248.0283" NativeDescription="Word has spread about your community and nearby gangs are starting to take an interest." IconPath="Raiders1Star.png" TemplateID="Invaders_Raiders_Group_Medium" Density="200" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="2" MinCooldownDays="3" MaxCooldownDays="7">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="2" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Raiders_Large" x="-516.4957" y="9099.167" NativeDescription="Your community's size has made it a target for larger groups of raiders coming from further afield with more sophisticated weaponry, who are envious of your wealth." IconPath="Raiders2Star.png" TemplateID="Invaders_Raiders_Group_Large" Density="300" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="2" MinCooldownDays="5" MaxCooldownDays="10">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="10" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Raiders_Giant" x="-498.3004" y="7562.412" NativeDescription="Well-armed warlords from all over the state have heard about your thriving community and want to try their luck." IconPath="Raiders3Star.png" TemplateID="Invaders_Raiders_Group_Giant" Density="400" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="7" MaxCooldownDays="14">
+      <StartConditions>
+        <Condition Type="PresenceIsAtLeast" Data="35" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Traders" x="-350.7232" y="12792.4482" NativeDescription="Traders wandering from settlement to settlement, bartering much-needed supplies." IconPath="Traders.png" TemplateID="Invaders_Trader_Community" DifficultySetting="TraderDensity" MaxActiveOnLargeMap="2" MinCooldownDays="0.25" MaxCooldownDays="0.5">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_Refugees" x="-216.339783" y="13862.5215" NativeDescription="Small groups of refugees, usually fleeing some catastrophe that befell their former settlements to the west." IconPath="Refugees.png" TemplateID="Invaders_Refugees_Community" DifficultySetting="RefugeeDensity" MaxActiveOnLargeMap="3" MinCooldownDays="0.25" MaxCooldownDays="0.5">
+      <StartConditions>
+        <Condition Type="Always" />
+      </StartConditions>
+    </Invader>
+    <Invader UniqueID="Invaders_HiredMercs" x="4699.35449" y="9058.785" NativeDescription="%1 has hired mercenaries to come after you!" IconPath="Military.png" TemplateID="Invaders_HiredMercs_Group" Density="500" DifficultySetting="RaiderDensity" MaxActiveOnLargeMap="1" MinCooldownDays="4" MaxCooldownDays="8">
+      <Params>
+        <SpeechParam Type="CommunityName" Subject="ReferringTo" />
+      </Params>
+    </Invader>
+  </Invaders>
+</Script>

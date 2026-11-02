@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>20</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>2</NextFreeConditionBlockID>
+  <NextFreeQuestID>3</NextFreeQuestID>
+  <NextFreeQuestGroupID>2</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-222.715515</x>
+    <y>-444.446838</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.487897575</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="FetchCornSeed_FetchingJob" x="-966.2071" y="-474.913422" NativeText="Community farmer %1 is talking about needing some help about something go talk to %2 ." PerObjectType="PerCommunityMember">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+        <SpeechParam Type="HimOrHer" Subject="ReferringTo" />
+      </Params>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="ReferringTo" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="ReferringTo" StringData="FetchCornSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="DiscoverCharacterName" Subject="Target" Object="ReferringTo" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_WantSeeds" x="-90.3260956" y="-876.3183" NativeText=":-( Do you have some corn seeds? :-) I cornfused on what to do since were almost out of food. can you help?">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchCornSeeds_NoviceFarmer" />
+        <SpeechRef UniqueID="FetchCornSeed_No" />
+      </Replies>
+      <Conditions>
+        <Condition Type="RoleEquals" Subject="Actor" StringData="Farmer" />
+        <Condition Type="QuestIsDiscovered" Subject="Actor" StringData="FetchCornSeed_Fetch" Not="true" />
+        <Condition Type="CommunityHasCrops" Subject="Actor" SubjectModifier="Community" Data="1" />
+      </Conditions>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Basic_LookingForWork" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="FetchCornSeeds_NoviceFarmer" x="955.4131" y="-889.22" NativeText=":-) Ofcorns why not.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="FetchCornSeed_Okey" />
+      </Replies>
+      <Conditions>
+        <Condition Type="IsMemberOf" Subject="Actor" Object="Player" ObjectModifier="Community" Data="1" StringData="Farming" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_No" x="1000.93164" y="-1787.90344" NativeText=":-) No thanks, what a corny job.">
+      <Replies>
+        <SpeechRef UniqueID="FetchCornSeed_NotMuchUse" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_NotMuchUse" x="1818.47937" y="-1876.7157" NativeText=":-( . . ." />
+    <Speech UniqueID="FetchCornSeed_Okey" x="1813.68689" y="-1185.39124" NativeText=":-) A unicorn! I knew we could count on you!">
+      <Events>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchCornSeed_Fetch" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_GotSome" x="2685.86" y="-731.9869" NativeText="Here's the corny seeds!" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchCornSeed_SavedAss" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchCornSeed_Return" />
+        <Condition Type="HasNItemsOfType" Subject="Actor" Data="50" StringData="CornSeeds" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_SavedAss" x="3678.3186" y="-537.2533" NativeText="8-o Wow your absolutely Amaizeing!">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="WorkedFor" />
+        <StoryEvent Type="SpawnEquipment" Subject="Target" Object="Target" Data="50" StringData="Gold" />
+        <StoryEvent Type="GiveEquipment" Subject="Target" Object="Actor" Data="50" StringData="CornSeeds" />
+        <StoryEvent Type="CompleteQuest" Subject="Actor" StringData="FetchCornSeed_Return" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_HowToPlant" x="-462.723572" y="-2370.558" NativeText="Where do I find Corn seeds?" Situation="QuestTopic">
+      <Replies>
+        <SpeechRef UniqueID="FetchCornSeed_Tip" />
+      </Replies>
+      <Conditions>
+        <Condition Type="QuestIsActive" Subject="Target" StringData="FetchCornSeed_Fetch" />
+        <Condition Type="VariableEquals" Subject="Target" SubjectID="TaughtHunting" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_Tip" x="428.79425" y="-2575.49219" NativeText="Most communities nowadays corn is one of their staple crop since its resiliant, easy to cook, grows a bunch and :-) lastly you could find it in every joke!">
+      <Replies>
+        <SpeechRef UniqueID="FetchCornSeed_TipEnd" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="FetchCornSeed_TipEnd" x="1376.61548" y="-2691.60327" NativeText=":-( Very not funny!" />
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests>
+    <Quest UniqueID="FetchCornSeed_Fetch" x="927.441162" y="276.914368" GroupID="FetchCornSeed_QuestGroup" NativeDescription="%1 wants you to gather 50 Corn seeds.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <CompletionConditions>
+        <Condition Type="CommunityHasNItemsOfType" Subject="Player" Data="50" StringData="CornSeeds" />
+      </CompletionConditions>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+      <CompletionEvents>
+        <StoryEvent Type="DiscoverQuest" Subject="Actor" StringData="FetchCornSeed_Return" />
+      </CompletionEvents>
+    </Quest>
+    <Quest UniqueID="FetchCornSeed_Return" x="1774.095" y="105.1393" GroupID="FetchCornSeed_QuestGroup" NativeDescription="Take the Corn seeds to %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+      <QuestMarkers>
+        <QuestMarker Specifier="Actor" />
+      </QuestMarkers>
+      <FailureConditions>
+        <Condition Type="IsAliveAndNotZombie" Subject="Actor" Not="true" />
+        <Condition Type="IsInInitialCommunity" Subject="Actor" Not="true" />
+      </FailureConditions>
+    </Quest>
+  </Quests>
+  <QuestGroups>
+    <QuestGroup UniqueID="FetchCornSeed_QuestGroup" x="18.8628922" y="-144.3215" NativeTitle="Fetch Seeds for %1">
+      <Params>
+        <SpeechParam Type="FullName" Subject="Actor" />
+      </Params>
+    </QuestGroup>
+  </QuestGroups>
+  <Templates />
+  <Invaders />
+</Script>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>Arrow</TypeName>
+  <NativeName>Carbon Arrow</NativeName>
+  <NativeDescription>Made with the latest carbon fiber for maximum strength, sharpness, and armor penetration.</NativeDescription>
+  <Category>2:Weapons/Ammo</Category>
+  <Weight>0.05</Weight>
+  <BasePrice>5</BasePrice>
+  <CanBeDestroyed>false</CanBeDestroyed>
+  <CanSurviveBuildingCollapse>true</CanSurviveBuildingCollapse>
+  <CanBeAutoDeposited>false</CanBeAutoDeposited>
+  <Special>true</Special>
+  <ArmorPiercing>0.5</ArmorPiercing>
+  <DamageModifier>2</DamageModifier>
+  <ChanceOfArrowBreaking>0</ChanceOfArrowBreaking>
+  <ExtraAmmoTypeForWeapons>
+    <string>Bow</string>
+  </ExtraAmmoTypeForWeapons>
+</EquipmentPrototype>

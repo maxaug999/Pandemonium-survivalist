@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PropPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeName>TiltedProp</TypeName>
+  <NativeName>Dumpster</NativeName>
+  <Category>Town/Props/Shop</Category>
+  <PrefabNames>
+    <string>Prefabs/Props/GarbageAndTrashProps/Dumpster</string>
+  </PrefabNames>
+  <ModelOffset>
+    <Vector3>
+      <x>0.5</x>
+      <y>0</y>
+      <z>0</z>
+    </Vector3>
+  </ModelOffset>
+  <MinMaxScale />
+  <MaxDamage>30</MaxDamage>
+  <Flammability>Low_RequiresExplosion</Flammability>
+  <ImpactSusceptibility>Low_VehicleCollisions</ImpactSusceptibility>
+  <WantDebrisOnDemolition>false</WantDebrisOnDemolition>
+  <ExtentsMax>
+    <x>1</x>
+    <y>0</y>
+  </ExtentsMax>
+  <WheelPos>
+    <x>0.8</x>
+    <y>0.8</y>
+  </WheelPos>
+  <MaxInventoryWeight>800</MaxInventoryWeight>
+  <LootLocation>Bin</LootLocation>
+  <SpawnWithBackAgainstBuilding>0.5</SpawnWithBackAgainstBuilding>
+</PropPrototype>

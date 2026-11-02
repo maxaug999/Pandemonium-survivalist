@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>22</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>3</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-826.0799</x>
+    <y>1289.67639</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.6094043</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="Encourage_OkayOkay" x="3590.77026" y="-1794.61365" NativeText="}:-( Okay, okay!  For the love of..." Importance="Encouragement" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Respect" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Nervous" PriorityFactor="40" />
+        <Condition Type="IsControllableByPlayer" Subject="Actor" Not="true" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_FuckOff" x="3591.32568" y="-3146.89136" NativeText="}:-[ Fuck off." Importance="Encouragement">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bold" PriorityFactor="40" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="1" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="ThreatenedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_GetMoving" x="-6763.319" y="-2982.84644" NativeText="We need to get moving..." Situation="Encourage" Importance="Encouragement">
+      <Replies>
+        <SpeechRef UniqueID="Encourage_CantGoOn" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Encourage_CantGoOn" x="-5685.038" y="-2854.75684" NativeText=":-( I can't go on... what's the point?" Importance="Encouragement">
+      <Replies>
+        <SpeechRef UniqueID="Encourage_PullTogether" />
+        <SpeechRef UniqueID="Encourage_ShitHappens" />
+        <SpeechRef UniqueID="Encourage_Please" />
+        <SpeechRef UniqueID="Encourage_Miserable" />
+        <SpeechRef UniqueID="Encourage_NeedAHug" />
+        <SpeechRef UniqueID="Encourage_WeDontMind" />
+        <SpeechRef UniqueID="Encourage_TakeADayOff" />
+        <SpeechRef UniqueID="Encourage_IDontKnow" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Encourage_PullTogether" x="2093.58984" y="4516.736" NativeText="{:-) Things will get better, we just need to pull together!" Importance="Encouragement" RepeatTime="37800">
+      <Replies>
+        <SpeechRef UniqueID="Encourage_SoScrewed" />
+        <SpeechRef UniqueID="Encourage_PullApart" />
+        <SpeechRef UniqueID="Encourage_YouReallyThinkSo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Encourage_PullApart" x="4316.425" y="5523.22" NativeText="}:-( The infected are going to pull us apart... piece by piece!" Importance="Encouragement">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="50" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Joker" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="1" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_ShitHappens" x="2197.14819" y="2282.98535" NativeText=":-( Shit happens, eh?  Got to keep digging through it." Importance="Encouragement" RepeatTime="37800">
+      <Replies>
+        <SpeechRef UniqueID="Encourage_SurelyDoes" />
+        <SpeechRef UniqueID="Encourage_FeelBetter" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Encourage_SurelyDoes" x="3541.89233" y="3105.58447" NativeText=":-( It surely does." Importance="Encouragement" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="3" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_Please" x="1997.69556" y="34.72127" NativeText="{:-| I'm doing my best, but I can't get through this without your help." Importance="Encouragement" RepeatTime="37800">
+      <Replies>
+        <SpeechRef UniqueID="Encourage_TryingYourBest" />
+        <SpeechRef UniqueID="Encourage_StopBotheringMe" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Encourage_Miserable" x="2055.36768" y="-2250.92554" NativeText="}:-[ I'll give you something to really be miserable about if you don't get off your ass!" Importance="Encouragement">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="-1" />
+        <Condition Type="HasMemory" Subject="Actor" Object="Target" ThirdParty="Actor" ThirdPartyModifier="Community" StringData="Surrendered" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Encourage_OkayOkay" />
+        <SpeechRef UniqueID="Encourage_FuckOff" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Encourage_YouReallyThinkSo" x="3482.4" y="4289.79248" NativeText="{:-| You really think so?" Importance="Encouragement" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="3" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_SoScrewed" x="3459.62183" y="5443.06445" NativeText=":-( Ugh.. we're so screwed." Importance="Encouragement">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Cynical" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="1" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_FeelBetter" x="3564.23584" y="1897.61169" NativeText="}:-| How is that supposed to make me feel better!?" Importance="Encouragement">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="25" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Idealistic" PriorityFactor="50" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="1" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_StopBotheringMe" x="3533.4292" y="-669.7416" NativeText="}:-( Alright, stop bothering me!" Importance="Encouragement">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="30" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="1" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedUnsuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_TryingYourBest" x="3532.95483" y="704.984131" NativeText=":-( I'm sorry, I know you're trying your best." Importance="Encouragement" SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Loyal" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Fickle" PriorityFactor="-20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="3" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_IDontKnow" x="-1357.89" y="-10317.583" NativeText="Um... I don't know actually." Importance="Encouragement" />
+    <Speech UniqueID="Encourage_NeedAHug" x="2082.70557" y="-4547.406" NativeText="{:-) Sounds like somebody needs a hug!" RepeatTime="37800">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="-1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Encourage_CouldUseAHug" />
+        <SpeechRef UniqueID="Encourage_StayAway" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Encourage_CouldUseAHug" x="3576.60229" y="-4314.786" NativeText=":-( I could use a hug." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Flirty" PriorityFactor="40" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Prudish" PriorityFactor="-40" />
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="IsMale" Subject="Target" PriorityFactor="-40" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="IsAttractedTo" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="Hug" Subject="Target" Object="Actor" StringData="Encourage_NeededThat" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_StayAway" x="3585.48926" y="-5706.864" NativeText="{:-[ Stay away from me!">
+      <UninterruptibleEvents>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="3" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedUnsuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Encourage_NeededThat" x="4763.50928" y="-4356.21436" NativeText="{:-) I needed that.">
+      <UninterruptibleEvents>
+        <StoryEvent Type="Encourage" Subject="Actor" Data="7" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="FlirtedSuccessfullyWith" />
+      </UninterruptibleEvents>
+    </Speech>
+    <Speech UniqueID="Encourage_WeDontMind" x="1883.559" y="-7337.502" NativeText="}:-| Don't worry about the rest of us, we don't mind doing all your work as well as our own." RepeatTime="37800">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="2" />
+        <Condition Type="Always" PriorityFactor="-1" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="Encourage_IllGetBackToWork" />
+        <SpeechRef UniqueID="Encourage_Understand" />
+      </Replies>
+      <Conditions>
+        <Condition Type="CommunitySizeIsAtLeast" Subject="Actor" Data="3" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="Encourage_IllGetBackToWork" x="3587.7146" y="-6711.431" NativeText="{:-| Oh... right, I'll get back to work then." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="20" />
+        <Condition Type="ApprovalRespectSum" Subject="Actor" Object="Target" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="3" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_Understand" x="3581.029" y="-8083.54541" NativeText="}:-| Great, I knew you'd understand.">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="50" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Hypocritical" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Amoral" PriorityFactor="20" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Immoral" PriorityFactor="20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedUnsuccessfully" />
+        <StoryEvent Type="Encourage" Subject="Actor" Data="1" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_TakeADayOff" x="1902.00476" y="-12095.2451" NativeText="Okay, you deserve a break.  Take a day off and get some rest.">
+      <Replies>
+        <SpeechRef UniqueID="Encourage_YouAreTheBest" />
+        <SpeechRef UniqueID="Encourage_NotSoBad" />
+        <SpeechRef UniqueID="Encourage_WontMakeADifference" />
+        <SpeechRef UniqueID="Encourage_WillDo" />
+        <SpeechRef UniqueID="Encourage_DownTime" />
+      </Replies>
+    </Speech>
+    <Speech UniqueID="Encourage_DownTime" x="3573.43237" y="-14347.0957" NativeText="{:-) Thanks!  You're right, I'll feel better with some down time." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="0.5" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+        <StoryEvent Type="AddDownTime" Subject="Actor" Data="1" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_YouAreTheBest" x="3568.97827" y="-9757.85" NativeText="{:-) Oh man, you are the best!  I'm so glad I met you." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+        <StoryEvent Type="AddDownTime" Subject="Actor" Data="1" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_WillDo" x="3568.337" y="-13348.7715" NativeText="Cool, yeah.  Good idea, will do." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Unflappable" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+        <StoryEvent Type="AddDownTime" Subject="Actor" Data="1" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_WontMakeADifference" x="3573.75732" y="-12283.9141" NativeText="{:-( Thanks.  Probably won't make any difference... but thanks for being here." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Bipolar" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+        <StoryEvent Type="AddDownTime" Subject="Actor" Data="1" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="Encourage_NotSoBad" x="3569.80542" y="-10988.9375" NativeText="/:-| Huh, maybe you're not so bad.   Thanks, I appreciate it." SuccessfulResponse="true">
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Emotional" PriorityFactor="1" />
+      </PriorityTerms>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="MotivatedSuccessfully" />
+        <StoryEvent Type="AddDownTime" Subject="Actor" Data="1" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<Script xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NextFreeSpeechID>10</NextFreeSpeechID>
+  <NextFreeTriggerID>1</NextFreeTriggerID>
+  <NextFreeConditionBlockID>1</NextFreeConditionBlockID>
+  <NextFreeQuestID>1</NextFreeQuestID>
+  <NextFreeQuestGroupID>1</NextFreeQuestGroupID>
+  <NextFreeTemplateID>1</NextFreeTemplateID>
+  <NextFreeInvaderID>1</NextFreeInvaderID>
+  <EditorScrollPos>
+    <x>-80.91629</x>
+    <y>2064.80518</y>
+  </EditorScrollPos>
+  <EditorZoomScale>0.4098752</EditorZoomScale>
+  <Speeches>
+    <Speech UniqueID="LoveTriangle_Intimate" x="402.5876" y="1015.14136" NativeText="Sorry to tell you this but I just saw %1 getting intimate with %2..." Situation="LoveTriangle" Lie="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Target" SubjectModifier="Partner" />
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="LoveTriangle_Capable" />
+        <SpeechRef UniqueID="LoveTriangle_TakeAHike" />
+      </Replies>
+      <Conditions>
+        <Condition Type="PartnerHasRelationshipKnownToPlayer" Subject="Target" Object="ReferringTo" StringData="InLoveWith" />
+        <Condition Type="HasMemory" Subject="Target" Object="Target" ThirdParty="Target" ObjectModifier="Partner" StringData="CheatedOn" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+        <Condition Type="Equals" Subject="Actor" Object="ReferringTo" Not="true" />
+        <Condition Type="Equals" Subject="Actor" Object="Target" ObjectModifier="Partner" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_Pass" x="691.131958" y="-2264.07446" NativeText="I think you should know %2 was making a pass at %1 just now..." Situation="LoveTriangle" Lie="true">
+      <Params>
+        <SpeechParam Type="FirstNameOrMeOrYou" Subject="Target" SubjectModifier="Partner" />
+        <SpeechParam Type="FullNameActive" Subject="ReferringTo" />
+      </Params>
+      <Replies>
+        <SpeechRef UniqueID="LoveTriangle_Damn" />
+        <SpeechRef UniqueID="LoveTriangle_IDontThinkSo" />
+      </Replies>
+      <Conditions>
+        <Condition Type="HasMemory" Subject="Target" Object="ReferringTo" ThirdParty="Target" StringData="CuckoldedUnsuccessfully" Not="true" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Moral" Not="true" />
+        <Condition Type="Equals" Subject="ReferringTo" Object="Actor" Not="true" />
+      </Conditions>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_TakeAHike" x="2036.14648" y="10.080699" NativeText="}:-[ Take a hike buddy, I trust %1 a hell of a lot more than I trust you!">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Partner" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Actor" ObjectModifier="Partner" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_Capable" x="2074.07275" y="3206.533" NativeText="{:-( %1..?  I never thought %2 would be capable of this.  But I guess if you're saying it, it must be true." SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="Actor" SubjectModifier="Partner" />
+        <SpeechParam Type="HeOrShe" Subject="Actor" SubjectModifier="Partner" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Actor" ThirdParty="ReferringTo" SubjectModifier="Partner" StringData="CheatedOn" BoolData="true" Secrecy="IgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Actor" ThirdParty="Actor" ThirdPartyModifier="Partner" StringData="CuckoldedSuccessfully" BoolData="true" Secrecy="OnlyKnownToObjectCommunityIgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="GaveInformationTo" BoolData="true" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunityIgnoredByObject" />
+        <StoryEvent Type="MemorableEvent" Object="ReferringTo" StringData="LiedAbout" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="MemorableEvent" Object="Target" ObjectModifier="Partner" StringData="LiedAbout" Secrecy="OnlyKnownToObject" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_IDontThinkSo" x="2039.76489" y="-3894.90039" NativeText="}:-[ %1?  I don't think so.  Stop spreading shit around.">
+      <Params>
+        <SpeechParam Type="FullName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="ReferringTo" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Skeptical" PriorityFactor="20" />
+        <Condition Type="Always" PriorityFactor="20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedUnsuccessfullyTo" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_Damn" x="2051.727" y="-1517.24817" NativeText="}:-[ %1!  Damn!  I had no idea...!" SuccessfulResponse="true">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Approval" Subject="Actor" Object="Target" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Credulous" PriorityFactor="20" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="ReferringTo" Object="Actor" ThirdParty="Actor" ThirdPartyModifier="Partner" StringData="CuckoldedUnsuccessfully" BoolData="true" Secrecy="OnlyKnownToObjectCommunityIgnoredByThirdParty" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="GaveInformationTo" BoolData="true" Secrecy="OnlyKnownToObject" />
+        <StoryEvent Type="MemorableEvent" Subject="Target" Object="Actor" StringData="LiedSuccessfullyTo" Secrecy="OnlyKnownToSubjectCommunityIgnoredByObject" />
+        <StoryEvent Type="MemorableEvent" Object="ReferringTo" StringData="LiedAbout" Secrecy="OnlyKnownToObject" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_WhatIEverSaw" x="928.2287" y="-5465.674" NativeText="}:-| I don't know what I saw in %1!" Importance="Low" PerObjectType="PerRelationship" PerRelationship="InLoveWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.05" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="0.01" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LoveTriangle_WhatHappened" />
+        <SpeechRef UniqueID="LoveTriangle_OtherFish" />
+        <SpeechRef UniqueID="LoveTriangle_OutOfYourLeague" />
+        <SpeechRef UniqueID="LoveTriangle_YouCanDoBetter" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="-10" Not="true" />
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" Data="0.25" StringData="Rejected" Secrecy="IgnoredByObject" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_WhatHappened" x="2616.39941" y="-5228.178" NativeText="/:-| Why, what happened?" Importance="Low" SpecialBehaviour="AskOpinionOfReferringTo">
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1" />
+      </PriorityTerms>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_OtherFish" x="2607.65771" y="-5685.79736" NativeText="{:-| Plenty of other fish in the sea." Importance="Low">
+      <PriorityTerms>
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" Data2="50" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Compassionate" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Sympathized" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_MyImagination" x="924.7166" y="-7876.581" NativeText="{:-| I kinda thought %1 was into me but it must have been my imagination.  I feel like a fool!" Importance="Low" PerObjectType="PerRelationship" PerRelationship="InLoveWith">
+      <Params>
+        <SpeechParam Type="FirstName" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="Always" PriorityFactor="1.05" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive" PriorityFactor="0.01" />
+      </PriorityTerms>
+      <Replies>
+        <SpeechRef UniqueID="LoveTriangle_WhatHappened" />
+        <SpeechRef UniqueID="LoveTriangle_OtherFish" />
+        <SpeechRef UniqueID="LoveTriangle_OutOfYourLeague" />
+        <SpeechRef UniqueID="LoveTriangle_YouCanDoBetter" />
+      </Replies>
+      <Conditions>
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="-10" Not="true" />
+        <Condition Type="HasRomanticRelationship" Subject="Actor" Object="Target" Not="true" />
+      </Conditions>
+      <Events>
+        <StoryEvent Type="SetRelationship" Subject="Actor" Object="ReferringTo" BoolData="true" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" Data="0.25" StringData="Rejected" Secrecy="IgnoredByObject" />
+      </Events>
+      <ExtraReplyTo>
+        <SpeechRef UniqueID="Gossip_WhatsUp" />
+        <SpeechRef UniqueID="Greet_Speech_Yo" />
+        <SpeechRef UniqueID="Greet_Speech_Hi" />
+        <SpeechRef UniqueID="Greet_Speech_Hello" />
+      </ExtraReplyTo>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_OutOfYourLeague" x="2598.5686" y="-7002.22852" NativeText="}:-| Forget it, %1 was way out of your league." Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Sociopath" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="50" Data2="50" PriorityFactor="1" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="-50" Data2="50" Not="true" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Insulted" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Complimented" />
+      </Events>
+    </Speech>
+    <Speech UniqueID="LoveTriangle_YouCanDoBetter" x="2590.032" y="-9077.574" NativeText="{:-) %1 ain't worth your time - you can do so much better!" Importance="Low">
+      <Params>
+        <SpeechParam Type="HeOrShe" Subject="ReferringTo" />
+      </Params>
+      <PriorityTerms>
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Passive-Aggressive" PriorityFactor="1" />
+        <Condition Type="HasPersonality" Subject="Actor" StringData="Aggressive" PriorityFactor="1" />
+        <Condition Type="Approves" Subject="Actor" Object="ReferringTo" Data="-50" Data2="50" Not="true" PriorityFactor="1" />
+        <Condition Type="Approves" Subject="Actor" Object="Target" Data="50" Data2="50" PriorityFactor="1" />
+      </PriorityTerms>
+      <Events>
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="Target" StringData="Complimented" />
+        <StoryEvent Type="MemorableEvent" Subject="Actor" Object="ReferringTo" StringData="Insulted" />
+      </Events>
+    </Speech>
+  </Speeches>
+  <Triggers />
+  <ConditionBlocks />
+  <Quests />
+  <QuestGroups />
+  <Templates />
+  <Invaders />
+</Script>

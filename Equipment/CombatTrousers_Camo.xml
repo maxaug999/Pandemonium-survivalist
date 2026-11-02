@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<EquipmentPrototype xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NativeName>Camo Combat Pants</NativeName>
+  <Category>4:Clothing/Bottom</Category>
+  <Weight>2</Weight>
+  <BasePrice>16</BasePrice>
+  <CanBeCombined>false</CanBeCombined>
+  <ClothingType>Bottom</ClothingType>
+  <Scarcity>Rare</Scarcity>
+  <LootLocations />
+  <LootableFromLocations>
+    <LootableFrom>
+      <Name>Survivor</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>FEMA</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>Military</Name>
+    </LootableFrom>
+    <LootableFrom>
+      <Name>GunStore</Name>
+    </LootableFrom>
+  </LootableFromLocations>
+  <GiftFor />
+  <BadGiftFor />
+  <MaterialVariations>
+    <string>MillPants/Desert</string>
+    <string>MillPants/Snow</string>
+    <string>MillPants/Digital</string>
+    <string>MillPants/Woodland1</string>
+    <string>MillPants/Woodland2</string>
+    <string>MillPants/Woodland3</string>
+  </MaterialVariations>
+  <MaleMeshName>Male_Mill_All:Mill_hat_001</MaleMeshName>
+  <FemaleMeshName>Female_Mill_All:Mill_pants</FemaleMeshName>
+  <Insulation>2</Insulation>
+  <SkillBonusType>Stealth</SkillBonusType>
+  <SkillBonus>1</SkillBonus>
+  <FireSounds />
+  <ReloadReleaseSounds />
+  <ReloadInsertSounds />
+  <ReloadSlideSounds />
+  <ProjectileHitSounds />
+</EquipmentPrototype>
